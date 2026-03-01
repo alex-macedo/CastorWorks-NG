@@ -715,3 +715,6 @@ Settings page component showing:
 | Tenant isolation: zero cross-tenant data leaks | 0 incidents | Ongoing |
 | Churn rate | <5% monthly | After first 3 months |
 | Average revenue per tenant | R$600-800/mo | Within 12 months |
+
+---
+*Last updated: 2026-03-01 after v1.0 Foundation and Licensing milestone*

@@ -2,41 +2,40 @@
 
 ## Overview
 
-Multi-tenant SaaS transformation. Phase 0–1 complete; Phase 2 next.
+Multi-tenant SaaS transformation. **v1.0 Foundation and Licensing** shipped 2026-03-01. Next: Phase 3 (Trial & Subscription Management).
+
+## Milestones
+
+- ✅ **v1.0 Foundation and Licensing** — Phases 0–2 (shipped 2026-03-01)
+- 📋 **v1.1** — Phase 3 onward (planned)
 
 ## Phases
 
+<details>
+<summary>✅ v1.0 Foundation and Licensing (Phases 0–2) — SHIPPED 2026-03-01</summary>
+
 - [x] **Phase 0: New Supabase DB** — NG DB provisioned, schema and config/templates in place
 - [x] **Phase 1: Foundation** — Tenants, RLS, TenantContext, onboarding, super admin
-- [ ] **Phase 2: Module-Based Licensing** — Flexible feature gating at every layer
+- [x] **Phase 2: Module-Based Licensing** — Licensing schema, RPC, seed, useLicensedModules, ModuleGuard, UpgradePrompt, sidebar filter, verifyModuleAccess, TenantModules UI
 
-## Phase Details
+</details>
 
-### Phase 0: New Supabase DB
+### 📋 v1.1+ (Planned)
 
-(Complete.)
+- [ ] **Phase 3: Trial & Subscription Management** — 30-day trial, payment, tier management, sandbox fallback
+- [ ] **Phase 4: AI Action Credits & Metering** — ai_usage_log, consumeAIActions, model routing, graceful degradation
+- [ ] **Phase 5: Storage & Data Isolation** — Tenant-prefixed storage, quota, usage dashboard
+- [ ] **Phase 6: Edge Functions & API Security** — Tenant context audit, Client Portal token, Realtime, rate limiting
+- [ ] **Phase 7: Super Admin & Operations** — Dashboard, suspension, export, alerts, impersonation
+- [ ] **Phase 8: Polish & Launch Prep** — Load test, security audit, pricing page, beta
 
-### Phase 1: Foundation
+## Progress
 
-(Complete.)
-
-### Phase 2: Module-Based Licensing
-
-**Goal:** Flexible feature gating that works at every layer (DB, frontend, Edge Functions, sidebar). Tiers resolve to modules; runtime checks use modules only.
-
-**Requirements:** P2-1, P2-2, P2-3, P2-4, P2-5 (from PROJECT.md)
-
-**Plans:** 3 plans
-
-Plans:
-- [ ] 02-01-PLAN.md — Licensing schema, RPC get_tenant_licensed_modules, seed modules/tiers
-- [ ] 02-02-PLAN.md — useLicensedModules, ModuleGuard, UpgradePrompt, sidebar required_module filter
-- [ ] 02-03-PLAN.md — verifyModuleAccess (Edge Functions), super admin tenant module overrides UI
-
-**Success Criteria:**
-
-1. Tenant tier determines which modules are available; switching tier changes access.
-2. Super admin can add/remove individual modules per tenant.
-3. useLicensedModules() and ModuleGuard enforce access in the app.
-4. Sidebar options filter by required_module and tenant license.
-5. Edge Functions verify module access via shared authorization.
+| Phase | Milestone | Status | Completed |
+|-------|-----------|--------|-----------|
+| 0. New Supabase DB | v1.0 | Complete | 2026-03-01 |
+| 1. Foundation | v1.0 | Complete | 2026-03-01 |
+| 2. Module-Based Licensing | v1.0 | Complete | 2026-03-01 |
+| 3. Trial & Subscription | v1.1 | Not started | — |
+| 4. AI Action Credits | v1.1 | Not started | — |
+| 5–8 | v1.1+ | Not started | — |

@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-stopped_at: Completed 01-foundation-01-02-PLAN.md (Foundation Frontend). All 5 tasks committed; SUMMARY at `.planning/phases/01-foundation/01-02-SUMMARY.md`.
-last_updated: "2026-03-01T06:07:02.462Z"
+status: v1.0_complete
+stopped_at: "v1.0 Foundation and Licensing milestone completed and archived (2026-03-01). Phases 0–2 shipped. See .planning/MILESTONES.md and .planning/milestones/v1.0-ROADMAP.md."
+last_updated: "2026-03-01T18:45:18.003Z"
 progress:
-  total_phases: 2
-  completed_phases: 1
-  total_plans: 2
-  completed_plans: 3
+  total_phases: 3
+  completed_phases: 2
+  total_plans: 5
+  completed_plans: 6
   percent: 100
 ---
 
@@ -22,7 +22,7 @@ progress:
 ## Project Reference
 
 - **What this is:** Multi-tenant SaaS transformation of CastorWorks (construction/engineering management). Target: Brazilian construction and architecture firms. React 19 + Vite 7 + Supabase; shared-schema multi-tenancy; module-based licensing; AI Action credits.
-- **Current focus:** Phase 1 — Foundation complete (tenant DB, RLS, TenantContext, onboarding, super admin). Plan 01-02 executed.
+- **Current focus:** v1.0 complete. Planning next milestone (Phase 3: Trial & Subscription Management) or run `/gsd:new-milestone`.
 
 ---
 
@@ -30,11 +30,11 @@ progress:
 
 | Item    | Value |
 |---------|--------|
-| **Phase** | 1 of 9 — Foundation |
-| **Plan**  | 01-02 completed (Phase 1 Foundation complete) |
-| **Status** | **Executed** — Plan 01-02 (TenantContext, tenant-client, guard, onboarding, super admin) complete |
+| **Phase** | v1.0 complete (Phases 0–2 shipped) |
+| **Plan**  | — |
+| **Status** | **Milestone complete** — v1.0 Foundation and Licensing archived |
 
-**Progress:** [██████████] 100%
+**Progress:** [██████████] 100% (v1.0 scope)
 
 ---
 
@@ -63,7 +63,6 @@ progress:
 ## Session Continuity
 
 - **Last session:** 2026-03-01
-- **Stopped at:** Completed 01-foundation-01-02-PLAN.md (Foundation Frontend). All 5 tasks committed; SUMMARY at `.planning/phases/01-foundation/01-02-SUMMARY.md`.
+- **Stopped at:** Phase 2 complete. Migrations run on castorworks-ng-db; E2E phase2 passed (admin-tenant-modules, licensing-sidebar). Summaries: `.planning/phases/02-module-based-licensing/02-01-SUMMARY.md` through `02-03-SUMMARY.md`.
 
-**Next action:**  
-Phase 1 Foundation complete. Proceed to next phase or run Wave 2 verification (signup flow, tenant switch, super admin /admin/tenants).
+**Next:** Start next milestone with `/gsd:new-milestone`, or proceed to Phase 3 (Trial & Subscription Management) when ready.
