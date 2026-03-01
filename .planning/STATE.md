@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: v1.0_complete
-stopped_at: "v1.0 Foundation and Licensing milestone completed and archived (2026-03-01). Phases 0–2 shipped. See .planning/MILESTONES.md and .planning/milestones/v1.0-ROADMAP.md."
+milestone: v1.1
+milestone_name: Trial & Subscription Management
+status: ready_for_planning
+stopped_at: "Roadmap v1.1 created; Phase 3 next."
 last_updated: "2026-03-01T18:45:18.003Z"
 progress:
-  total_phases: 3
+  total_phases: 6
   completed_phases: 2
-  total_plans: 5
-  completed_plans: 6
-  percent: 100
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # CastorWorks-NG — Project State
@@ -22,7 +22,7 @@ progress:
 ## Project Reference
 
 - **What this is:** Multi-tenant SaaS transformation of CastorWorks (construction/engineering management). Target: Brazilian construction and architecture firms. React 19 + Vite 7 + Supabase; shared-schema multi-tenancy; module-based licensing; AI Action credits.
-- **Current focus:** v1.0 complete. Planning next milestone (Phase 3: Trial & Subscription Management) or run `/gsd:new-milestone`.
+- **Current focus:** v1.1 Trial & Subscription Management — Phase 3 (Trial Experience) ready for planning.
 
 ---
 
@@ -30,11 +30,11 @@ progress:
 
 | Item    | Value |
 |---------|--------|
-| **Phase** | v1.0 complete (Phases 0–2 shipped) |
+| **Phase** | 3 — Trial Experience |
 | **Plan**  | — |
-| **Status** | **Milestone complete** — v1.0 Foundation and Licensing archived |
+| **Status** | **Ready for planning** — Roadmap v1.1 complete |
 
-**Progress:** [██████████] 100% (v1.0 scope)
+**Progress:** [░░░░░░░░░░] 0% (v1.1: 0/4 phases)
 
 ---
 
@@ -65,4 +65,4 @@ progress:
 - **Last session:** 2026-03-01
 - **Stopped at:** Phase 2 complete. Migrations run on castorworks-ng-db; E2E phase2 passed (admin-tenant-modules, licensing-sidebar). Summaries: `.planning/phases/02-module-based-licensing/02-01-SUMMARY.md` through `02-03-SUMMARY.md`.
 
-**Next:** Start next milestone with `/gsd:new-milestone`, or proceed to Phase 3 (Trial & Subscription Management) when ready.
+**Next:** `/gsd:plan-phase 3` to create Phase 3 (Trial Experience) plan.
