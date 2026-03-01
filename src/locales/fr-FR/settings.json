@@ -1,0 +1,837 @@
+{
+  "adminOnly": "adminOnly",
+  "adminRequired": "adminRequired",
+  "adminTools": {
+    "database": "database",
+    "maintenance": "maintenance",
+    "telemetry": "telemetry",
+    "title": "title",
+    "whatsapp": "whatsapp"
+  },
+  "aiConfigDialog": {
+    "autoApplyHelp": "autoApplyHelp",
+    "autoApplyLabel": "autoApplyLabel",
+    "autoRefreshHelp": "autoRefreshHelp",
+    "autoRefreshLabel": "autoRefreshLabel",
+    "cacheDurationHelp": "cacheDurationHelp",
+    "cacheDurationLabel": "cacheDurationLabel",
+    "cacheSettingsTitle": "cacheSettingsTitle",
+    "confidenceThresholdHelp": "confidenceThresholdHelp",
+    "confidenceThresholdLabel": "confidenceThresholdLabel",
+    "descriptionProject": "descriptionProject",
+    "descriptionUser": "descriptionUser",
+    "featuresTitle": "featuresTitle",
+    "notificationFrequencyLabel": "notificationFrequencyLabel",
+    "notificationOptions": {
+      "daily": "daily",
+      "disabled": "disabled",
+      "hourly": "hourly",
+      "realtime": "realtime",
+      "weekly": "weekly"
+    },
+    "preferencesTitle": "preferencesTitle",
+    "resetButton": "resetButton",
+    "saveButton": "saveButton",
+    "showSimilarHelp": "showSimilarHelp",
+    "showSimilarLabel": "showSimilarLabel",
+    "title": "title"
+  },
+  "aiFeedback": {
+    "buttons": {
+      "cancel": "cancel",
+      "no": "no",
+      "submit": "submit",
+      "yes": "yes"
+    },
+    "comments": {
+      "label": "label",
+      "placeholder": "placeholder"
+    },
+    "helpful": "helpful",
+    "rate": {
+      "label": "label"
+    },
+    "tellUsMore": {
+      "description": "description",
+      "title": "title"
+    },
+    "thankYou": "thankYou",
+    "wasHelpful": "wasHelpful"
+  },
+  "bdi": {
+    "infoTitle": "À propos du BDI (Frais et Dépenses Indirects)",
+    "infoDescription": "Le BDI sert à ajouter les frais généraux, taxes et marge bénéficiaire aux budgets. Ajustez les pourcentages selon les normes de votre entreprise.",
+    "infoFormulaLabel": "Formule :",
+    "infoFormula": "BDI = (1 + Σ taux de frais et taxes) × (1 + marge bénéficiaire) − 1",
+    "infoTaxesDescription": "PIS, COFINS, ISS et charges sociales varient selon la juridiction. Consultez votre comptable pour les taux corrects.",
+    "fields": {
+      "centralAdmin": "Administration centrale",
+      "siteOverhead": "Frais de chantier",
+      "financialCosts": "Coûts financiers",
+      "risksInsurance": "Risques et assurances",
+      "pis": "PIS",
+      "cofins": "COFINS",
+      "iss": "ISS",
+      "socialTaxes": "Charges sociales",
+      "profitMargin": "Marge bénéficiaire"
+    },
+    "descriptions": {
+      "centralAdmin": "Frais généraux alloués aux projets (%)",
+      "siteOverhead": "Frais de chantier (%)",
+      "financialCosts": "Coûts financiers et bancaires (%)",
+      "risksInsurance": "Risques et assurances (%)",
+      "pis": "Taux PIS (%)",
+      "cofins": "Taux COFINS (%)",
+      "iss": "Taux ISS (%)",
+      "socialTaxes": "Charges sociales (%)",
+      "profitMargin": "Marge bénéficiaire (%)"
+    },
+    "totalLabel": "BDI total",
+    "saveButton": "Enregistrer",
+    "resetButton": "Réinitialiser"
+  },
+  "changePassword": "changePassword",
+  "cityLabel": "Ville",
+  "cityPlaceholder": "Ville",
+  "company": "company",
+  "companyName": "companyName",
+  "companyProfile": {
+    "additionalInfoLabel": "additionalInfoLabel",
+    "additionalInfoPlaceholder": "additionalInfoPlaceholder",
+    "addressLabel": "addressLabel",
+    "addressLookupErrorMessage": "addressLookupErrorMessage",
+    "addressLookupErrorTitle": "addressLookupErrorTitle",
+    "addressPlaceholder": "addressPlaceholder",
+    "charactersCount_many": "charactersCount_many",
+    "charactersCount_one": "charactersCount",
+    "charactersCount_other": "charactersCount",
+    "cnpjLabel": "cnpjLabel",
+    "cnpjPlaceholder": "cnpjPlaceholder",
+    "companyDescriptionLabel": "companyDescriptionLabel",
+    "companyDescriptionPlaceholder": "companyDescriptionPlaceholder",
+    "companyLogoAlt": "companyLogoAlt",
+    "companyLogoLabel": "companyLogoLabel",
+    "companyNameLabel": "companyNameLabel",
+    "companyNamePlaceholder": "companyNamePlaceholder",
+    "companyNameRequired": "companyNameRequired",
+    "emailLabel": "emailLabel",
+    "emailPlaceholder": "emailPlaceholder",
+    "fileSizeError": "fileSizeError",
+    "fileTypeError": "fileTypeError",
+    "generalInformation": "generalInformation",
+    "generalInformationDescription": "generalInformationDescription",
+    "generalTermsLabel": "generalTermsLabel",
+    "generalTermsPlaceholder": "generalTermsPlaceholder",
+    "invalidCNPJ": "invalidCNPJ",
+    "invalidEmail": "invalidEmail",
+    "invalidURL": "invalidURL",
+    "logoHint": "logoHint",
+    "logoProcessError": "logoProcessError",
+    "logoUploadSuccess": "logoUploadSuccess",
+    "phoneLabel": "phoneLabel",
+    "phonePlaceholder": "phonePlaceholder",
+    "quoteInformation": "quoteInformation",
+    "quoteInformationDescription": "quoteInformationDescription",
+    "saveButton": "saveButton",
+    "saveError": "saveError",
+    "saveSuccess": "saveSuccess",
+    "uploading": "uploading",
+    "websiteLabel": "websiteLabel",
+    "websitePlaceholder": "websitePlaceholder",
+    "zipCodeHint": "zipCodeHint",
+    "zipCodeLabel": "zipCodeLabel",
+    "zipCodePlaceholder": "zipCodePlaceholder"
+  },
+  "companyProfileTitle": "companyProfileTitle",
+  "contactEmail": "contactEmail",
+  "contactTypes": {
+    "addDescription": "addDescription",
+    "addType": "addType",
+    "color": "color",
+    "deleteConfirmDescription": "deleteConfirmDescription",
+    "deleteConfirmTitle": "deleteConfirmTitle",
+    "description": "description",
+    "editDescription": "editDescription",
+    "editType": "editType",
+    "errors": {
+      "idExists": "idExists",
+      "idInvalid": "idInvalid",
+      "idRequired": "idRequired",
+      "labelRequired": "labelRequired"
+    },
+    "id": "id",
+    "idCannotChange": "idCannotChange",
+    "idHint": "idHint",
+    "label": "label",
+    "labelPlaceholder": "labelPlaceholder",
+    "noTypes": "noTypes",
+    "resetConfirmDescription": "resetConfirmDescription",
+    "resetConfirmTitle": "resetConfirmTitle",
+    "resetDefaults": "resetDefaults",
+    "title": "title"
+  },
+  "currency": "currency",
+  "currencyOptions": {
+    "BRL": "BRL",
+    "EUR": "EUR",
+    "USD": "USD"
+  },
+  "currencyUpdated": "currencyUpdated",
+  "dark": "dark",
+  "dataManagement": {
+    "exportingLabel": "Export en cours...",
+    "toast": {
+      "successTitle": "Succès",
+      "exportSuccess": "Données exportées avec succès.",
+      "errorTitle": "Erreur",
+      "selectTableError": "Sélectionnez au moins une table.",
+      "exportSelectedSuccess": "Export terminé.",
+      "importSuccess": "Données importées avec succès.",
+      "exportDumpCompleteTitle": "Export terminé",
+      "exportDumpCompleteDescription": "Sauvegarde de la base téléchargée.",
+      "exportDumpFailedTitle": "Échec de l'export",
+      "exportDumpFailedDescription": "Échec de la génération du dump.",
+      "selectTableAndFileError": "Sélectionnez une table et un fichier.",
+      "partialImportTitle": "Import partiel",
+      "partialImportDescription": "Certaines lignes n'ont pas été importées.",
+      "importFailedTitle": "Échec de l'import",
+      "deleteConfirmError": "Suppression impossible.",
+      "infoTitle": "Information",
+      "clearDataNotAvailable": "Effacer les données non disponible."
+    },
+    "dumpProgress": {
+      "initializing": "Initialisation...",
+      "connecting": "Connexion...",
+      "generating": "Génération...",
+      "preparing": "Préparation..."
+    },
+    "errors": {
+      "notAuthenticated": "Non authentifié",
+      "exportDumpFailed": "Échec de l'export"
+    },
+    "lastBackup": "Dernière sauvegarde : {{date}}",
+    "exportFormatLabel": "Format",
+    "exportFormatOptions": { "json": "JSON", "csv": "CSV", "excel": "Excel" },
+    "exportFormatShort": { "json": "JSON", "csv": "CSV", "excel": "Excel" },
+    "exportingAllData": "Export en cours...",
+    "exportAllData": "Exporter toutes les données",
+    "selectTablesLabel": "Sélectionner les tables",
+    "selectAll": "Tout sélectionner",
+    "deselectAll": "Tout désélectionner",
+    "exportingLabel": "Export en cours...",
+    "exportTable": "Exporter 1 table",
+    "exportTables": "Exporter {{count}} tables",
+    "csvImportDescription": "Importer des données depuis un fichier CSV.",
+    "selectDestinationTableLabel": "Table de destination",
+    "importModeLabel": "Mode",
+    "importModeAppend": "Ajouter",
+    "importModeReplace": "Remplacer",
+    "selectCsvFileLabel": "Fichier CSV",
+    "csvFileHelper": "Sélectionnez un fichier CSV à importer.",
+    "importResultsTitle": "Résultats",
+    "importResultsSuccess": "{{count}} lignes importées",
+    "importResultsFailed": "{{count}} en échec",
+    "importResultsErrorsTitle": "Erreurs",
+    "importBackupTitle": "Importer une sauvegarde",
+    "importBackupDescription": "Sélectionnez un fichier de sauvegarde à restaurer.",
+    "completeDatabaseExportDescription": "Exporter la base complète.",
+    "sqlExportIntro": "Export SQL",
+    "sqlExportDetails": "Utilisez ce dump avec :",
+    "sqlExportTargets": {
+      "localSupabase": "Supabase local",
+      "anotherSupabase": "Autre Supabase",
+      "postgresql": "PostgreSQL"
+    },
+    "importInstructionsTitle": "Instructions",
+    "importInstructionsMigrations": "Exécuter les migrations :",
+    "importInstructionsImport": "Importer le dump :",
+    "exportingDatabaseDump": "Export en cours...",
+    "exportDatabaseDump": "Exporter le dump de la base",
+    "databaseOverviewDescription": "Aperçu de la base",
+    "databaseSizeLabel": "Taille",
+    "loadingStatistics": "Chargement...",
+    "dangerZoneTitle": "Zone de danger",
+    "dangerZoneDescription": "Actions irréversibles",
+    "dangerZoneWarning": "Cette action est irréversible.",
+    "clearAllData": "Effacer toutes les données",
+    "deleteDialogTitle": "Effacer toutes les données ?",
+    "deleteDialogDescription": "Cela supprimera toutes les données.",
+    "deleteDialogConfirmLabel": "Tapez DELETE pour confirmer"
+  },
+  "digitalSignature": {
+    "saveButton": "Enregistrer la signature"
+  },
+  "editProfileDialog": {
+    "avatarPreview": "Aperçu",
+    "avatarUpload": "Télécharger une photo",
+    "avatarChange": "Changer la photo",
+    "avatarRemove": "Supprimer la photo",
+    "avatarUploading": "Téléchargement...",
+    "avatarFileTypeError": "Type de fichier invalide",
+    "avatarFileSizeError": "Fichier trop volumineux"
+  },
+  "editUserProfile": "Modifier le profil",
+  "email": "E-mail",
+  "emailAdminOnly": "Seul un administrateur peut modifier l'e-mail.",
+  "globalAdminSupportOnly": "Administrateur global uniquement",
+  "googleDrive": {
+    "title": "Google Drive",
+    "description": "Connecter et synchroniser les documents du projet avec Google Drive.",
+    "connectionStatusLabel": "État",
+    "connectedStatus": "Connecté",
+    "disconnectedStatus": "Déconnecté",
+    "connectedBadge": "Connecté",
+    "connectButton": "Connecter",
+    "selectProjectLabel": "Sélectionner le projet",
+    "autoSyncLabel": "Synchronisation automatique",
+    "autoSyncDescription": "Synchroniser les documents automatiquement.",
+    "createFolderButton": "Créer un dossier",
+    "syncDocumentsButton": "Synchroniser les documents",
+    "folderStructureTitle": "Structure des dossiers",
+    "folderStructure": {
+      "documents": "Documents",
+      "photos": "Photos",
+      "reports": "Rapports",
+      "materials": "Matériaux"
+    },
+    "toast": {
+      "oauthTitle": "Connecté",
+      "oauthDescription": "Google Drive connecté.",
+      "selectProjectTitle": "Sélectionner le projet",
+      "selectProjectForFolder": "Choisissez un projet pour créer le dossier.",
+      "folderCreatedTitle": "Dossier créé",
+      "folderCreatedDescription": "Dossier créé dans Drive.",
+      "errorTitle": "Erreur",
+      "selectProjectForSync": "Sélectionnez un projet à synchroniser.",
+      "documentsSyncedTitle": "Synchronisé",
+      "documentsSyncedDescription": "Documents synchronisés.",
+      "syncFailedTitle": "Échec de la synchronisation"
+    }
+  },
+  "dateFormat": "dateFormat",
+  "dateFormatOptions": {
+    "DD/MM/YYYY": "DD/MM/YYYY",
+    "MM/DD/YYYY": "MM/DD/YYYY",
+    "YYYY-MM-DD": "YYYY-MM-DD"
+  },
+  "defaultValuesForm": {
+    "defaultFreightPercentage": "defaultFreightPercentage",
+    "defaultLaborRatesTitle": "defaultLaborRatesTitle",
+    "defaultPaymentTerms": "defaultPaymentTerms",
+    "defaultProfitMargin": "defaultProfitMargin",
+    "defaultProjectSettingsTitle": "defaultProjectSettingsTitle",
+    "defaultStateSINAPI": "defaultStateSINAPI",
+    "installmentsDueDays": "installmentsDueDays",
+    "laborRates": {
+      "electrician": "electrician",
+      "mason": "mason",
+      "painter": "painter",
+      "plumber": "plumber",
+      "projectManager": "projectManager"
+    },
+    "paymentTermsPlaceholder": "paymentTermsPlaceholder",
+    "saveDefaultValues": "saveDefaultValues",
+    "selectStatePlaceholder": "selectStatePlaceholder"
+  },
+  "disabled": "disabled",
+  "dropdownOptions": {
+    "addDescription": "addDescription",
+    "addOption": "addOption",
+    "default": "default",
+    "deleteDescription": "deleteDescription",
+    "deleteTitle": "deleteTitle",
+    "dependenciesNotice": "dependenciesNotice",
+    "dragDrop": {
+      "reorderDescription": "reorderDescription",
+      "reorderError": "reorderError",
+      "reorderErrorDescription": "reorderErrorDescription",
+      "reorderSuccess": "reorderSuccess"
+    },
+    "editDescription": "editDescription",
+    "editOption": "editOption",
+    "empty": "empty",
+    "errors": {
+      "labelRequired": "labelRequired",
+      "valueExists": "valueExists",
+      "valueRequired": "valueRequired"
+    },
+    "form": {
+      "active": "active",
+      "color": "color",
+      "description": "description",
+      "descriptionPlaceholder": "descriptionPlaceholder",
+      "label": "label",
+      "labelPlaceholder": "labelPlaceholder",
+      "setDefault": "setDefault",
+      "value": "value",
+      "valueHelp": "valueHelp",
+      "valuePlaceholder": "valuePlaceholder",
+      "valueReadOnly": "valueReadOnly"
+    },
+    "setDefault": "setDefault",
+    "table": {
+      "actions": "actions",
+      "active": "active",
+      "color": "color",
+      "default": "default",
+      "label": "label",
+      "value": "value"
+    },
+    "title": "title"
+  },
+  "editCompanyProfile": "editCompanyProfile",
+  "editProfile": "editProfile",
+  "email": "email",
+  "enabled": "enabled",
+  "errorSavingSettings": "errorSavingSettings",
+  "financialAlerts": "financialAlerts",
+  "integrations": {
+    "tabs": {
+      "aiProviders": "aiProviders",
+      "apiTesting": "apiTesting",
+      "google": "google",
+      "thirdParty": "thirdParty",
+      "whatsapp": ""
+    },
+    "whatsapp": {
+      "aiAutoResponderDisabled": "",
+      "aiAutoResponderEnabled": "",
+      "saved": ""
+    }
+  },
+  "language": "language",
+  "languageOptionsExtended": {
+    "en-US": "en-US",
+    "es-ES": "es-ES",
+    "fr-FR": "fr-FR",
+    "pt-BR": "pt-BR"
+  },
+  "languageUpdated": "languageUpdated",
+  "light": "light",
+  "localization": {
+    "addCategory": "addCategory",
+    "addValue": "addValue",
+    "description": "description",
+    "editor": {
+      "colorLabel": "colorLabel",
+      "description": "description",
+      "englishLabel": "englishLabel",
+      "frenchLabel": "frenchLabel",
+      "iconLabel": "iconLabel",
+      "keyLabel": "keyLabel",
+      "portugueseLabel": "portugueseLabel",
+      "saveError": "saveError",
+      "saveSuccess": "saveSuccess",
+      "sortOrderLabel": "sortOrderLabel",
+      "spanishLabel": "spanishLabel"
+    },
+    "loadingConfiguration": "loadingConfiguration",
+    "noCategoriesFound": "noCategoriesFound",
+    "table": {
+      "actions": "actions",
+      "color": "color",
+      "icon": "icon",
+      "key": "key",
+      "label": "label",
+      "order": "order"
+    },
+    "targetLanguage": "targetLanguage",
+    "title": "title",
+    "valuesCount_many": "valuesCount_many",
+    "valuesCount_one": "valuesCount",
+    "valuesCount_other": "valuesCount"
+  },
+  "loggedOut": "loggedOut",
+  "logout": "logout",
+  "logoutError": "logoutError",
+  "manageNotifications": "manageNotifications",
+  "manageRoles": "Gérer les rôles",
+  "name": "Nom",
+  "namePlaceholder": "Entrez votre nom",
+  "noName": "noName",
+  "noUsers": "Aucun utilisateur",
+  "noRoles": "Aucun rôle",
+  "notEnabled": "notEnabled",
+  "notificationPreferences": "notificationPreferences",
+  "notifications": {
+    "checkFrequency": "checkFrequency",
+    "checkFrequencyValue": "checkFrequencyValue",
+    "materialDelivery": "materialDelivery",
+    "scheduleChanges": "scheduleChanges"
+  },
+  "numberFormatDescription": "numberFormatDescription",
+  "numberFormatOptions": {
+    "compact": "compact",
+    "full": "full"
+  },
+  "password": "password",
+  "phone": "Téléphone",
+  "phoneLabel": "Téléphone",
+  "phonePlaceholder": "Numéro de téléphone",
+  "profile": "Profil",
+  "projectUpdates": "projectUpdates",
+  "pwa": {
+    "androidInstructions": "androidInstructions",
+    "available": "available",
+    "chromeAndroid": {
+      "title": "title"
+    },
+    "description": "description",
+    "installation": "installation",
+    "iosInstructions": "iosInstructions",
+    "offlineMode": "offlineMode",
+    "offlineModeDesc": "offlineModeDesc",
+    "safariIOS": {
+      "title": "title"
+    },
+    "title": "title"
+  },
+  "role": "Rôle",
+  "rolePermissions": {
+    "title": "Permissions par rôle",
+    "subtitle": "Configurez les options de la barre et onglets accessibles à chaque rôle.",
+    "noTabs": "Aucun onglet",
+    "sidebarOption": "Option de la barre",
+    "tabs": "Onglets",
+    "legend": "Cochez les cases pour autoriser l'accès."
+  },
+  "sidebarPermissions": {
+    "collapseAll": "Tout réduire",
+    "expandAll": "Tout développer",
+    "cancel": "Annuler",
+    "saving": "Enregistrement...",
+    "saveChanges": "Enregistrer les modifications",
+    "unsavedChanges": "Vous avez des modifications non enregistrées.",
+    "tabPermission": "Permission d'onglet",
+    "adminNote": "Les administrateurs ont un accès complet."
+  },
+  "salesPipelineColumns": {
+    "description": "description",
+    "selectAll": "selectAll",
+    "title": "title",
+    "updating": "updating",
+    "visibleCount": "visibleCount"
+  },
+  "saveChanges": "saveChanges",
+  "saving": "saving",
+  "security": "security",
+  "selectCurrency": "selectCurrency",
+  "selectLanguage": "selectLanguage",
+  "selectTheme": "selectTheme",
+  "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
+  "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
+  "settingsUpdated": "settingsUpdated",
+  "sinapi": {
+    "autoUpdatePrices": "autoUpdatePrices",
+    "autoUpdatePricesDescription": "autoUpdatePricesDescription",
+    "defaultState": "defaultState",
+    "downloadTable": "downloadTable",
+    "freightMarkup": "freightMarkup",
+    "freightMarkupDescription": "freightMarkupDescription",
+    "lastUpdate": "lastUpdate",
+    "materialMarkup": "materialMarkup",
+    "materialMarkupDescription": "materialMarkupDescription",
+    "pricesVaryByState": "pricesVaryByState",
+    "saveConfiguration": "saveConfiguration",
+    "selectState": "selectState",
+    "catalogTitle": "Catalogue de prix SINAPI",
+    "searchItems": "Rechercher des articles",
+    "searchPlaceholder": "Rechercher par code ou description",
+    "noResults": "Aucun résultat",
+    "code": "Code",
+    "description": "Description",
+    "unit": "Unité",
+    "materialCost": "Coût matériel",
+    "laborCost": "Coût main d'œuvre",
+    "type": "Type"
+  },
+  "status": {
+    "noRoles": "noRoles",
+    "notSet": "notSet"
+  },
+  "subtitle": "subtitle",
+  "system": "system",
+  "systemPreferences": "systemPreferences",
+  "systemPreferencesAdminDescription": "systemPreferencesAdminDescription",
+  "systemPreferencesDefaultsNote": "systemPreferencesDefaultsNote",
+  "systemPreferencesReadOnly": "systemPreferencesReadOnly",
+  "systemPreferencesViewOnlyDescription": "systemPreferencesViewOnlyDescription",
+  "systemSettingsUpdated": "systemSettingsUpdated",
+  "tabs": {
+    "admin-tools": "Outils admin",
+    "bdi": "BDI",
+    "contact-types": "Types de contact",
+    "defaults": "Par défaut",
+    "dropdown-options": "Options de liste",
+    "general": "Général",
+    "integrations": "Intégrations",
+    "pwa": "PWA",
+    "preferences": "Préférences",
+    "sinapi": "SINAPI",
+    "users": "Utilisateurs",
+    "quick-backup": "Sauvegarde rapide",
+    "selective-export": "Export sélectif",
+    "csv-import": "Import CSV"
+  },
+  "temperatureUnitOptions": {
+    "C": "C",
+    "F": "F"
+  },
+  "theme": "theme",
+  "themeCustomization": {
+    "buttons": {
+      "borderRadius": "borderRadius",
+      "borderRadiusOptions": {
+        "rounded-full": "rounded-full",
+        "rounded-lg": "rounded-lg",
+        "rounded-md": "rounded-md",
+        "rounded-none": "rounded-none"
+      },
+      "title": "title",
+      "variant": "variant",
+      "variantOptions": {
+        "default": "default",
+        "pill": "pill",
+        "rounded": "rounded",
+        "square": "square"
+      }
+    },
+    "cards": {
+      "borderRadius": "borderRadius",
+      "borderRadiusOptions": {
+        "rounded-2xl": "rounded-2xl",
+        "rounded-lg": "rounded-lg",
+        "rounded-none": "rounded-none",
+        "rounded-xl": "rounded-xl"
+      },
+      "borderWidth": "borderWidth",
+      "borderWidthOptions": {
+        "0": "0",
+        "1": "1",
+        "2": "2"
+      },
+      "shadow": "shadow",
+      "shadowOptions": {
+        "lg": "lg",
+        "md": "md",
+        "none": "none",
+        "sm": "sm"
+      },
+      "title": "title"
+    },
+    "colors": {
+      "accent": "accent",
+      "destructive": "destructive",
+      "muted": "muted",
+      "mutedForeground": "mutedForeground",
+      "primary": "primary",
+      "ring": "ring",
+      "secondary": "secondary",
+      "success": "success",
+      "tabsActive": "tabsActive",
+      "tabsActiveForeground": "tabsActiveForeground",
+      "title": "title",
+      "warning": "warning"
+    },
+    "darkMode": "darkMode",
+    "description": "description",
+    "enableCustomTheme": "enableCustomTheme",
+    "enableDescription": "enableDescription",
+    "layout": {
+      "background": "background",
+      "border": "border",
+      "foreground": "foreground",
+      "radius": "radius",
+      "title": "title"
+    },
+    "lightMode": "lightMode",
+    "livePreview": "livePreview",
+    "modeSelector": "modeSelector",
+    "preview": {
+      "description": "description",
+      "title": "title"
+    },
+    "reset": "reset",
+    "resetTheme": "resetTheme",
+    "saveTheme": "saveTheme",
+    "sidebar": {
+      "accent": "accent",
+      "background": "background",
+      "border": "border",
+      "foreground": "foreground",
+      "title": "title"
+    },
+    "title": "title",
+    "typography": {
+      "fontFamily": "fontFamily",
+      "fontFamilyOptions": {
+        "Inter": "Inter",
+        "Open Sans": "Open Sans",
+        "Roboto": "Roboto",
+        "system": "system"
+      },
+      "headingWeight": "headingWeight",
+      "headingWeightOptions": {
+        "400": "400",
+        "500": "500",
+        "600": "600",
+        "700": "700"
+      },
+      "title": "title"
+    }
+  },
+  "themeUpdated": "themeUpdated",
+  "thirdParty": {
+    "categories": {
+      "analytics": "analytics",
+      "communication": "communication",
+      "documents": "documents",
+      "email": "email",
+      "payment": "payment",
+      "storage": "storage"
+    }
+  },
+  "timeZoneOptions": {
+    "America/New_York": "America/New_York",
+    "America/Sao_Paulo": "America/Sao_Paulo",
+    "Asia/Tokyo": "Asia/Tokyo",
+    "Europe/London": "Europe/London"
+  },
+  "title": "title",
+  "translationCoverage": {
+    "description": "description",
+    "loading": "loading",
+    "missing": {
+      "action": "action",
+      "addTranslation": "addTranslation",
+      "category": "category",
+      "description_many": "description_many",
+      "description_one": "description",
+      "description_other": "description",
+      "key": "key",
+      "missingLanguages": "missingLanguages",
+      "title": "title",
+      "type": "type",
+      "value": "value"
+    },
+    "never": "never",
+    "overallCoverage": "overallCoverage",
+    "review": {
+      "action": "action",
+      "currentTranslation": "currentTranslation",
+      "description_many": "description_many",
+      "description_one": "description",
+      "description_other": "description",
+      "language": "language",
+      "lastReviewed": "lastReviewed",
+      "reviewButton": "reviewButton",
+      "title": "title"
+    },
+    "stringsTranslated": "stringsTranslated",
+    "title": "title"
+  },
+  "translationDashboard": {
+    "allComplete": "allComplete",
+    "completion": "completion",
+    "coverageByNamespace": "coverageByNamespace",
+    "coverageDescription": "coverageDescription",
+    "description": "description",
+    "exportError": "exportError",
+    "exportMissing": "exportMissing",
+    "exportNoMissing": "exportNoMissing",
+    "exportSuccess": "exportSuccess",
+    "issuesFound_many": "issuesFound_many",
+    "issuesFound_one": "issuesFound",
+    "issuesFound_other": "issuesFound",
+    "syncError": "syncError",
+    "syncNoChanges": "syncNoChanges",
+    "syncSuccess_many": "syncSuccess_many",
+    "syncSuccess_one": "syncSuccess",
+    "syncSuccess_other": "syncSuccess",
+    "syncTranslations": "syncTranslations",
+    "syncing": "syncing",
+    "title": "title"
+  },
+  "translationEditor": {
+    "allComplete": "allComplete",
+    "description": "description",
+    "downloadAll": "downloadAll",
+    "key": "key",
+    "loadError": "loadError",
+    "namespace": "namespace",
+    "noTranslations": "noTranslations",
+    "placeholder": "placeholder",
+    "search": "search",
+    "showingCount": "showingCount",
+    "sourceEnglish": "sourceEnglish",
+    "targetLanguage": "targetLanguage",
+    "targetLanguageLabel": "targetLanguageLabel",
+    "title": "title",
+    "translationsMissing_many": "translationsMissing_many",
+    "translationsMissing_one": "translationsMissing",
+    "translationsMissing_other": "translationsMissing",
+    "tryAdjustingSearch": "tryAdjustingSearch",
+    "unsavedChanges": "unsavedChanges",
+    "unsavedChangesDescription": "unsavedChangesDescription"
+  },
+  "translations": {
+    "cancel": "cancel",
+    "languageNames": {
+      "title": "title"
+    },
+    "lastReviewed": "lastReviewed",
+    "loadError": "loadError",
+    "loadingTranslations": "loadingTranslations",
+    "manageDescription": "manageDescription",
+    "manageTitle": "manageTitle",
+    "markAsReviewed": "markAsReviewed",
+    "needsReview": "needsReview",
+    "neverReviewed": "neverReviewed",
+    "reviewNotes": "reviewNotes",
+    "reviewNotesPlaceholder": "reviewNotesPlaceholder",
+    "saveError": "saveError",
+    "saveSuccess": "saveSuccess",
+    "saveTranslations": "saveTranslations",
+    "saving": "saving",
+    "translationLabel": "translationLabel"
+  },
+  "twoFactorAuth": "twoFactorAuth",
+  "unsavedChanges": "unsavedChanges",
+  "userPreferences": {
+    "appearanceLabel": "appearanceLabel",
+    "appearanceOptions": {
+      "dark": "dark",
+      "light": "light",
+      "system": "system"
+    },
+    "dateFormatOptions": {
+      "MMM_DD_YYYY": "MMM_DD_YYYY"
+    },
+    "notificationsDescriptions": {
+      "financialAlerts": "financialAlerts",
+      "materialDelivery": "materialDelivery",
+      "projectUpdates": "projectUpdates",
+      "scheduleChanges": "scheduleChanges"
+    },
+    "notificationsTitle": "notificationsTitle",
+    "reportOptions": {
+      "detailed": "detailed",
+      "standard": "standard",
+      "summary": "summary"
+    },
+    "reportsLabel": "reportsLabel",
+    "saveButton": "saveButton",
+    "supervisorModeDescription": "supervisorModeDescription",
+    "supervisorModeLabel": "supervisorModeLabel",
+    "supervisorModeOptions": {
+      "auto": "auto",
+      "desktop": "desktop",
+      "mobile": "mobile"
+    },
+    "supervisorTitle": "supervisorTitle",
+    "title": "title"
+  },
+  "userProfile": "Profil utilisateur",
+  "userManagement": "Gestion des utilisateurs",
+  "weatherLocationPlaceholder": "weatherLocationPlaceholder"
+}
