@@ -4550,6 +4550,14 @@
     "title": "Seleccionar espacio de trabajo",
     "continue": "Continuar"
   },
+  "adminTenants": {
+    "title": "Tenants",
+    "name": "Nombre",
+    "slug": "Slug",
+    "status": "Estado",
+    "userCount": "Usuarios",
+    "accessDenied": "Acceso denegado. Solo super admin."
+  },
   "onboarding": {
     "title": "Crea tu espacio de trabajo",
     "companyName": "Nombre de la empresa o espacio",

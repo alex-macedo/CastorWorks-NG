@@ -4550,6 +4550,14 @@
     "title": "Select workspace",
     "continue": "Continue"
   },
+  "adminTenants": {
+    "title": "Tenants",
+    "name": "Name",
+    "slug": "Slug",
+    "status": "Status",
+    "userCount": "Users",
+    "accessDenied": "Access denied. Super admin only."
+  },
   "onboarding": {
     "title": "Create your workspace",
     "companyName": "Company or workspace name",

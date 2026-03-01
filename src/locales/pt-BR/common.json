@@ -4550,6 +4550,14 @@
     "title": "Selecionar workspace",
     "continue": "Continuar"
   },
+  "adminTenants": {
+    "title": "Tenants",
+    "name": "Nome",
+    "slug": "Slug",
+    "status": "Status",
+    "userCount": "Usuários",
+    "accessDenied": "Acesso negado. Apenas super admin."
+  },
   "onboarding": {
     "title": "Crie seu workspace",
     "companyName": "Nome da empresa ou workspace",

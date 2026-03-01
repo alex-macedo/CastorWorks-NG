@@ -208,6 +208,7 @@ const Onboarding = lazyWithRetry(() => import("./pages/Onboarding"), "Onboarding
 const TenantPicker = lazyWithRetry(() => import("./pages/TenantPicker"), "TenantPicker");
 const Maintenance = lazyWithRetry(() => import("./pages/Maintenance"), "Maintenance");
 const MaintenanceManagement = lazyWithRetry(() => import("./pages/Admin/MaintenanceManagement"), "MaintenanceManagement");
+const TenantList = lazyWithRetry(() => import("./pages/Admin/TenantList"), "TenantList");
 const TelemetryIssues = lazyWithRetry(() => import("./pages/Admin/TelemetryIssues"), "TelemetryIssues");
 const DeliverySignatureScreen = lazyWithRetry(() => import("./pages/DeliverySignatureScreen"), "DeliverySignatureScreen");
 const PaymentDashboard = lazyWithRetry(() => import("./pages/PaymentDashboard"), "PaymentDashboard");
@@ -733,6 +734,7 @@ const AppContent = () => {
                                   <Route path="/campaigns" element={<Campaigns />} />
                                   <Route path="/campaigns/:campaignId" element={<CampaignDetail />} />
                                   <Route path="/admin/maintenance" element={<MaintenanceManagement />} />
+                                  <Route path="/admin/tenants" element={<RoleGuard allowedRoles={["super_admin"]}><TenantList /></RoleGuard>} />
                                    <Route path="/admin/telemetry" element={<TelemetryIssues />} />
                                    <Route path="/payments" element={<PaymentDashboard />} />
 
