@@ -30,11 +30,11 @@ progress:
 
 | Item    | Value |
 |---------|--------|
-| **Phase** | 3 — Trial Experience |
+| **Phase** | 4 — AI Action Credits & Metering |
 | **Plan**  | — |
-| **Status** | **Ready for planning** — Roadmap v1.1 complete |
+| **Status** | **Ready for planning** — Phase 3 committed |
 
-**Progress:** [░░░░░░░░░░] 0% (v1.1: 0/4 phases)
+**Progress:** [███░░░░░░░] 37% (v1.1: 3/6 phases complete — 0, 1, 2, 3 done)
 
 ---
 
@@ -63,5 +63,5 @@ progress:
 ## Session Continuity
 
 - **Last session:** 2026-03-01
-- **Stopped at:** Session resumed — Phase 3 plans complete (uncommitted). CSS/Tailwind/sidebar fixes done. GitHub Actions updated. Instrumentation cleaned. Runbook added. Next: `npm run ci` → commit → Phase 4.
-- **Resume file:** `.planning/phases/03-trial-experience/.continue-here.md`
+- **Stopped at:** Phase 3 committed (e1d83bd). Ready for Phase 4: AI Action Credits & Metering.
+- **Resume file:** none
