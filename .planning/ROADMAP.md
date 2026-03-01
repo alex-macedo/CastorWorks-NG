@@ -71,7 +71,12 @@ Multi-tenant SaaS transformation. **v1.0 Foundation and Licensing** shipped 2026
 4. User can view and manage subscription (upgrade, downgrade, cancel) on a dedicated subscription management page.
 5. Changing tier takes effect for the tenant and billing reflects the change (aligned with v1.0 licensing).
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Stripe backend: subscriptions table, stripe_events, change_tenant_tier RPC, webhook handler
+- [ ] 04-02-PLAN.md — Checkout & trial-to-paid: create-checkout-session, create-billing-portal-session, useSubscription hook, SubscriptionCheckoutFlow, TrialCountdownBanner CTA
+- [ ] 04-03-PLAN.md — Subscription management page + i18n (all 4 locales)
 
 ---
 
