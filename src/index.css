@@ -244,58 +244,6 @@
   }
 }
 
-/* Theme: use @theme so Tailwind v4 generates utilities; rgb() for valid colors from :root/.dark */
-@theme inline {
-  --color-background: rgb(var(--background));
-  --color-foreground: rgb(var(--foreground));
-  --color-card: rgb(var(--card));
-  --color-card-foreground: rgb(var(--card-foreground));
-  --color-popover: rgb(var(--popover));
-  --color-popover-foreground: rgb(var(--popover-foreground));
-  --color-primary: rgb(var(--primary));
-  --color-primary-foreground: rgb(var(--primary-foreground));
-  --color-primary-light: rgb(var(--primary-light));
-  --color-primary-dark: rgb(var(--primary-dark));
-  --color-secondary: rgb(var(--secondary));
-  --color-secondary-foreground: rgb(var(--secondary-foreground));
-  --color-muted: rgb(var(--muted));
-  --color-muted-foreground: rgb(var(--muted-foreground));
-  --color-accent: rgb(var(--accent));
-  --color-accent-foreground: rgb(var(--accent-foreground));
-  --color-destructive: rgb(var(--destructive));
-  --color-success: rgb(var(--success));
-  --color-success-foreground: rgb(var(--success-foreground));
-  --color-warning: rgb(var(--warning));
-  --color-warning-foreground: rgb(var(--warning-foreground));
-  --color-border: rgb(var(--border));
-  --color-input: rgb(var(--input));
-  --color-ring: rgb(var(--ring));
-  --color-sidebar: rgb(var(--sidebar));
-  --color-sidebar-foreground: rgb(var(--sidebar-foreground));
-  --color-sidebar-primary: rgb(var(--sidebar-primary));
-  --color-sidebar-primary-foreground: rgb(var(--sidebar-primary-foreground));
-  --color-sidebar-accent: rgb(var(--sidebar-accent));
-  --color-sidebar-accent-foreground: rgb(var(--sidebar-accent-foreground));
-  --color-sidebar-border: rgb(var(--sidebar-border));
-  --color-sidebar-ring: rgb(var(--sidebar-ring));
-  --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
-  --font-mono: var(--font-mono);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --shadow-sm: var(--shadow-sm);
-  --shadow: var(--shadow);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
-  --shadow-primary: var(--shadow-primary);
-  --gradient-primary: var(--gradient-primary);
-  --gradient-success: var(--gradient-success);
-  --gradient-warning: var(--gradient-warning);
-}
 
 * {
   border-color: rgb(var(--border));

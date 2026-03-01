@@ -5,9 +5,6 @@ import { toast } from '@/lib/toast-helpers';
 
 export function useOfflineStatus() {
   const [isOnline, setIsOnline] = useState(() => {
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:7',message:'Hook initialized',data:{navigatorOnline:navigator.onLine,initialIsOnline:navigator.onLine && typeof navigator.onLine !== 'undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-    // #endregion
     // Start with navigator.onLine as initial state (will be verified by connectivity check)
     return navigator.onLine && typeof navigator.onLine !== 'undefined';
   });
@@ -17,10 +14,6 @@ export function useOfflineStatus() {
 
   // Check actual connectivity to Supabase server
   const checkConnectivity = useCallback(async (): Promise<boolean> => {
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:16',message:'checkConnectivity called',data:{navigatorOnline:navigator.onLine},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,C'})}).catch(()=>{});
-    // #endregion
-    
     // NOTE: navigator.onLine can be unreliable, especially on mobile browsers.
     // Always perform actual connectivity check regardless of navigator.onLine value.
     // We'll use navigator.onLine as a hint, but verify with actual network request.
@@ -28,46 +21,25 @@ export function useOfflineStatus() {
     let timeoutId: NodeJS.Timeout | undefined;
     
     try {
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:26',message:'Starting connectivity check',data:{supabaseUrl:import.meta.env.VITE_SUPABASE_URL},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
-      // #endregion
-      
       // Use Supabase client to check connectivity - this handles CORS and auth properly
       // Try to get the current session - this is a lightweight operation
       // that will fail fast if there's no connectivity
       const timeoutPromise = new Promise<never>((_, reject) => {
         timeoutId = setTimeout(() => {
-          // #region agent log
-          fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:32',message:'Connectivity check timeout',data:{timeoutMs:5000},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-          // #endregion
           reject(new Error('Connectivity check timeout'));
         }, 5000);
       });
       
       const sessionPromise = supabase.auth.getSession();
       
-      // #region agent log
-      const checkStartTime = Date.now();
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:35',message:'Before Promise.race',data:{checkStartTime},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
-      // #endregion
-      
       const result = await Promise.race([sessionPromise, timeoutPromise]);
       if (timeoutId) clearTimeout(timeoutId);
-      
-      // #region agent log
-      const checkDuration = Date.now() - checkStartTime;
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:40',message:'Connectivity check succeeded',data:{checkDuration,hasSession:!!result?.data?.session},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
-      // #endregion
       
       // If we got here without throwing, we have connectivity
       // (Even if session is null, the request succeeded)
       return true;
     } catch (error: any) {
       if (timeoutId) clearTimeout(timeoutId);
-      
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:48',message:'Connectivity check error',data:{errorName:error?.name,errorMessage:error?.message,errorCode:error?.code,errorStack:error?.stack?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
-      // #endregion
       
       // Check if it's a network error (no internet) vs other error (server issue)
       const isNetworkError = 
@@ -77,10 +49,6 @@ export function useOfflineStatus() {
         error?.message?.includes('timeout') ||
         error?.name === 'AbortError' ||
         error?.code === 'NETWORK_ERROR';
-      
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:58',message:'Error classification',data:{isNetworkError,willReturnOffline:isNetworkError},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
-      // #endregion
       
       if (isNetworkError) {
         // Clear network error means offline
@@ -180,16 +148,9 @@ export function useOfflineStatus() {
 
     // Initial connectivity check
     const initialCheck = async () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:144',message:'Initial check starting',data:{navigatorOnline:navigator.onLine},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-      
       // Always perform actual connectivity check, regardless of navigator.onLine
       // navigator.onLine can be unreliable, especially on mobile browsers
       const actuallyOnline = await checkConnectivity();
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:148',message:'Initial check result',data:{actuallyOnline,willSetIsOnline:mounted ? actuallyOnline : 'unmounted'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
       
       if (mounted) {
         setIsOnline(actuallyOnline);
@@ -212,15 +173,8 @@ export function useOfflineStatus() {
     // navigator.onLine is wrong or network conditions change
     // Always perform actual connectivity check, regardless of navigator.onLine
     const connectivityInterval = setInterval(async () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:171',message:'Periodic check triggered',data:{navigatorOnline:navigator.onLine,currentIsOnline:isOnline},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-      // #endregion
-      
       // Always check actual connectivity, navigator.onLine can be unreliable
       const actuallyOnline = await checkConnectivity();
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:175',message:'Periodic check result',data:{actuallyOnline,willUpdate:mounted},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-      // #endregion
       
       if (mounted) {
         setIsOnline(actuallyOnline);
@@ -280,12 +234,6 @@ export function useOfflineStatus() {
       syncPendingData();
     }
   };
-
-  // #region agent log
-  useEffect(() => {
-    fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'useOfflineStatus.tsx:234',message:'Hook return value',data:{isOnline,pendingCount,syncing},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B,C,D,E'})}).catch(()=>{});
-  }, [isOnline, pendingCount, syncing]);
-  // #endregion
 
   return {
     isOnline,

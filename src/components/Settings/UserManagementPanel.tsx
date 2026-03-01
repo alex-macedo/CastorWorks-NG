@@ -3,12 +3,13 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { AvatarResolved } from "@/components/ui/AvatarResolved";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Users, Shield, Edit } from "lucide-react";
+import { Users, Shield, Edit, UserPlus } from "lucide-react";
 import { useRoleManagement } from "@/hooks/useRoleManagement";
 import { useUserRoles } from "@/hooks/useUserRoles";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { RoleManagementDialog } from "./RoleManagementDialog";
 import { EditProfileDialog } from "./EditProfileDialog";
+import { AddUserDialog } from "./AddUserDialog";
 import { useLocalization } from "@/contexts/LocalizationContext";
 import { ROLE_LABEL_KEYS } from "@/constants/rolePermissions";
 import type { AppRole } from "@/hooks/useUserRoles";
@@ -30,6 +31,7 @@ export function UserManagementPanel() {
   const { data: currentUser } = useUserProfile();
   const [selectedUser, setSelectedUser] = useState<string | null>(null);
   const [editingUserId, setEditingUserId] = useState<string | null>(null);
+  const [showAddUser, setShowAddUser] = useState(false);
 
   const isAdmin = currentUserRoles?.includes("admin");
 
@@ -40,11 +42,17 @@ export function UserManagementPanel() {
   return (
     <>
       <Card>
-        <CardHeader>
+        <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="flex items-center gap-2">
             <Users className="h-5 w-5" />
             {t("settings:userManagement")}
           </CardTitle>
+          {isAdmin && (
+            <Button size="sm" onClick={() => setShowAddUser(true)}>
+              <UserPlus className="h-4 w-4 mr-2" />
+              {t("settings:addUser")}
+            </Button>
+          )}
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -129,6 +137,13 @@ export function UserManagementPanel() {
           userId={editingUserId}
           open={!!editingUserId}
           onClose={() => setEditingUserId(null)}
+        />
+      )}
+
+      {showAddUser && (
+        <AddUserDialog
+          open={showAddUser}
+          onClose={() => setShowAddUser(false)}
         />
       )}
     </>

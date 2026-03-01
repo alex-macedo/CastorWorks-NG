@@ -273,6 +273,26 @@
       "title": "WhatsApp Integration"
     }
   },
+  "adminTenantModules": {
+    "addModule": "Adicionar módulo",
+    "addModulePlaceholder": "Selecionar módulo…",
+    "added": "Módulo adicionado.",
+    "invalidTenant": "Tenant inválido.",
+    "noOverrides": "Nenhum módulo sobrescrito. Adicione acima.",
+    "remove": "Remover",
+    "removed": "Módulo removido.",
+    "subtitle": "Módulos sobrescritos para",
+    "title": "Módulos do tenant"
+  },
+  "adminTenants": {
+    "accessDenied": "Acesso negado. Apenas super admin.",
+    "modules": "Módulos",
+    "name": "Nome",
+    "slug": "Slug",
+    "status": "Status",
+    "title": "Tenants",
+    "userCount": "Usuários"
+  },
   "agenda": {
     "dropHint": "dropHint",
     "startWithAI": "startWithAI",
@@ -3271,6 +3291,9 @@
   "date": "Date",
   "dateRange": "Date range",
   "days": "days",
+  "daysLeft_many": "",
+  "daysLeft_one": "",
+  "daysLeft_other": "",
   "dbExportImport": {
     "databaseExportImport": "Database Export / Import"
   },
@@ -4543,45 +4566,13 @@
   "language": "Language",
   "lastProcessed": "Last processed",
   "lastUpdated": "Última atualização",
-  "linkCopied": "Link copied to clipboard",
-  "loading": "Carregando...",
-  "location": "Location",
-  "tenantPicker": {
-    "title": "Selecionar workspace",
-    "continue": "Continuar"
-  },
-  "adminTenants": {
-    "title": "Tenants",
-    "name": "Nome",
-    "slug": "Slug",
-    "status": "Status",
-    "userCount": "Usuários",
-    "accessDenied": "Acesso negado. Apenas super admin.",
-    "modules": "Módulos"
-  },
   "licensing": {
     "upgradePrompt": "Este recurso requer um plano superior. Faça upgrade para acessá-lo.",
     "upgradePromptModule": "Este recurso ({{module}}) requer um plano superior. Faça upgrade para acessá-lo."
   },
-  "adminTenantModules": {
-    "title": "Módulos do tenant",
-    "subtitle": "Módulos sobrescritos para",
-    "addModule": "Adicionar módulo",
-    "addModulePlaceholder": "Selecionar módulo…",
-    "remove": "Remover",
-    "noOverrides": "Nenhum módulo sobrescrito. Adicione acima.",
-    "added": "Módulo adicionado.",
-    "removed": "Módulo removido.",
-    "invalidTenant": "Tenant inválido."
-  },
-  "onboarding": {
-    "title": "Crie seu workspace",
-    "companyName": "Nome da empresa ou workspace",
-    "slugOptional": "Slug da URL (opcional)",
-    "create": "Criar workspace",
-    "creating": "Criando...",
-    "errorCreating": "Falha ao criar workspace. Tente novamente."
-  },
+  "linkCopied": "Link copied to clipboard",
+  "loading": "Carregando...",
+  "location": "Location",
   "logistics": "Logistics",
   "maintenance": {
     "currentStatus": "currentStatus",
@@ -4909,6 +4900,14 @@
   "onTrack": "On Track",
   "on_hold": "On Hold",
   "on_track": "On Track",
+  "onboarding": {
+    "companyName": "Nome da empresa ou workspace",
+    "create": "Criar workspace",
+    "creating": "Criando...",
+    "errorCreating": "Falha ao criar workspace. Tente novamente.",
+    "slugOptional": "Slug da URL (opcional)",
+    "title": "Crie seu workspace"
+  },
   "open": "[EN] Open",
   "order": "Order",
   "ordersCompleted": "{{count}} orders completed",
@@ -8233,6 +8232,10 @@
       "simple": "simple"
     },
     "updated": "updated"
+  },
+  "tenantPicker": {
+    "continue": "Continuar",
+    "title": "Selecionar workspace"
   },
   "themePreview": {
     "accent": "Accent",

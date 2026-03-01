@@ -1,16 +1,17 @@
 # =============================================================================
-# CastorWorks Rollback Workflow
+# CastorWorks-NG Rollback Workflow
 # =============================================================================
-# Manual workflow to rollback to a previously created backup
+# Manual workflow to rollback the NG production server to a previous backup.
+# Backups are at: /var/www/castorworks-ng-backups/
 # =============================================================================
 
-name: Rollback Deployment
+name: Rollback Production Deployment
 
 on:
   workflow_dispatch:
     inputs:
       backup_name:
-        description: 'Backup folder name (e.g., backup_20260111_170000) or "latest"'
+        description: 'Backup folder name (e.g., backup_20260301_170000) or "latest"'
         required: false
         default: 'latest'
         type: string
@@ -28,47 +29,55 @@ jobs:
       name: production
     steps:
       - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+          SSH_PORT: ${{ secrets.PROD_SSH_PORT }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.PROD_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          echo "${SSH_PRIVATE_KEY}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p ${{ secrets.PROD_SSH_PORT || 22 }} ${{ secrets.PROD_SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p "${SSH_PORT:-22}" "${SSH_HOST}" >> ~/.ssh/known_hosts
 
       - name: Perform rollback
+        env:
+          SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+          SSH_USER: ${{ secrets.PROD_SSH_USER }}
+          SSH_PORT: ${{ secrets.PROD_SSH_PORT }}
+          INPUT_BACKUP: ${{ github.event.inputs.backup_name }}
         run: |
-          ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }} \
-            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} << 'ROLLBACK_SCRIPT'
-          
-          BACKUP_DIR="/var/www/castorworks-backups"
-          DEPLOY_DIR="/var/www/castorworks/dist"
-          INPUT_BACKUP="${{ github.event.inputs.backup_name }}"
-          
-          if [ "$INPUT_BACKUP" == "latest" ]; then
-            BACKUP_NAME=$(ls -t "$BACKUP_DIR" | head -1)
-          else
-            BACKUP_NAME="$INPUT_BACKUP"
-          fi
-          
-          if [ -z "$BACKUP_NAME" ] || [ ! -d "$BACKUP_DIR/$BACKUP_NAME" ]; then
-            echo "ERROR: Backup not found: $BACKUP_NAME"
-            exit 1
-          fi
-          
-          echo "Rolling back to: $BACKUP_NAME"
-          
-          # Remove current and copy from backup
-          rm -rf "$DEPLOY_DIR"
-          cp -r "$BACKUP_DIR/$BACKUP_NAME" "$DEPLOY_DIR"
-          chown -R www-data:www-data /var/www/castorworks
-          
-          echo "Rollback complete"
-          ROLLBACK_SCRIPT
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT:-22}" \
+            "${SSH_USER}@${SSH_HOST}" \
+            "BACKUP_DIR='/var/www/castorworks-ng-backups'
+             DEPLOY_DIR='/var/www/castorworks-ng/dist'
+             INPUT_BACKUP='${INPUT_BACKUP}'
+
+             if [ \"\${INPUT_BACKUP}\" = 'latest' ]; then
+               BACKUP_NAME=\$(ls -t \"\${BACKUP_DIR}\" | head -1)
+             else
+               BACKUP_NAME=\"\${INPUT_BACKUP}\"
+             fi
+
+             if [ -z \"\${BACKUP_NAME}\" ] || [ ! -d \"\${BACKUP_DIR}/\${BACKUP_NAME}\" ]; then
+               echo 'ERROR: Backup not found: '\${BACKUP_NAME}
+               exit 1
+             fi
+
+             echo 'Rolling back to: '\${BACKUP_NAME}
+             rm -rf \"\${DEPLOY_DIR}\"
+             cp -r \"\${BACKUP_DIR}/\${BACKUP_NAME}\" \"\${DEPLOY_DIR}\"
+             chown -R www-data:www-data /var/www/castorworks-ng
+             echo 'Rollback complete'"
 
       - name: Reload nginx
+        env:
+          SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+          SSH_USER: ${{ secrets.PROD_SSH_USER }}
+          SSH_PORT: ${{ secrets.PROD_SSH_PORT }}
         run: |
-          ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }} \
-            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} \
-            "nginx -t && systemctl reload nginx"
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT:-22}" \
+            "${SSH_USER}@${SSH_HOST}" \
+            'nginx -t && systemctl reload nginx'
 
       - name: Cleanup SSH key
         if: always()

@@ -1,0 +1,5 @@
+{
+  "daysLeft": "{{count}} days left in your trial",
+  "daysLeft_one": "1 day left in your trial",
+  "endsOn": "Your trial ends on {{date}}"
+}

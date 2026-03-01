@@ -46,25 +46,6 @@ export const useArchitectStatuses = () => {
 
       if (error) throw error;
 
-      // #region agent log: architect-statuses-raw
-      fetch('http://127.0.0.1:7242/ingest/00cdee38-f7cd-4531-b113-7b22603d23a1', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sessionId: 'debug-session',
-          runId: 'sales-pipeline',
-          hypothesisId: 'H1-H2-H3',
-          location: 'useArchitectStatuses.tsx:49',
-          message: 'Raw pipeline statuses from Supabase',
-          data: {
-            count: data?.length || 0,
-            ids: (data || []).map((s: any) => ({ id: s.id, name: s.name })),
-          },
-          timestamp: Date.now(),
-        }),
-      }).catch(() => {});
-      // #endregion
-
       return (data || []) as PipelineStatus[];
     },
   });

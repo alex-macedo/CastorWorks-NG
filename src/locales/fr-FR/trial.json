@@ -1,0 +1,5 @@
+{
+  "daysLeft": "{{count}} jours restants dans votre essai",
+  "daysLeft_one": "1 jour restant dans votre essai",
+  "endsOn": "Votre essai se termine le {{date}}"
+}

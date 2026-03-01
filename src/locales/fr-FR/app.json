@@ -44,26 +44,6 @@
     "titlePlaceholder": "ex : Réviser le tracé des conduits...",
     "unassigned": "Non attribué"
   },
-  "common": {
-    "back": "Retour",
-    "cancel": "Annuler",
-    "clearFilter": "Effacer",
-    "close": "Fermer",
-    "complete": "Terminé",
-    "delete": "Supprimer",
-    "edit": "Modifier",
-    "items": "éléments",
-    "loading": "Chargement...",
-    "open": "Ouvrir",
-    "preview": "Aperçu",
-    "recipient": "Destinataire",
-    "save": "Enregistrer",
-    "saving": "Enregistrement...",
-    "sendNow": "Envoyer Maintenant",
-    "share": "Partager",
-    "update": "Mettre à Jour",
-    "youAreCurrently": "Vous êtes actuellement"
-  },
   "app": {
     "active": "Actif",
     "annotations": "Annotations",

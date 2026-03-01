@@ -6,9 +6,19 @@
  *
  * Required env: SUPABASE_SERVICE_ROLE_KEY.
  * Optional: AUTH_INTERNAL_URL (e.g. http://auth:9999). If unset, uses SUPABASE_URL (request goes through Kong).
+ *
+ * Request body:
+ * {
+ *   email: string (required)
+ *   password: string (required - used for initial creation)
+ *   display_name?: string
+ *   roles?: string[] (e.g. ["viewer", "project_manager"])
+ *   send_invite?: boolean (if true, sets email_confirm: false to send verification email)
+ * }
  */
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
@@ -38,7 +48,19 @@ serve(async (req) => {
     return jsonResponse({ error: "Server configuration error" }, 500);
   }
 
-  let body: { email?: string; password?: string };
+  const supabaseAdmin = createClient(
+    Deno.env.get("SUPABASE_URL") ?? "",
+    serviceRoleKey,
+    { auth: { persistSession: false } }
+  );
+
+  let body: {
+    email?: string;
+    password?: string;
+    display_name?: string;
+    roles?: string[];
+    send_invite?: boolean;
+  };
   try {
     body = await req.json();
   } catch {
@@ -47,6 +69,9 @@ serve(async (req) => {
 
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const password = typeof body.password === "string" ? body.password : "";
+  const displayName = typeof body.display_name === "string" ? body.display_name.trim() : "";
+  const roles = Array.isArray(body.roles) ? body.roles.filter((r) => typeof r === "string") : [];
+  const sendInvite = body.send_invite === true;
 
   if (!email || !password) {
     return jsonResponse({ error: "email and password are required" }, 400);
@@ -66,7 +91,7 @@ serve(async (req) => {
     body: JSON.stringify({
       email,
       password,
-      email_confirm: true,
+      email_confirm: !sendInvite, // If send_invite, set to false so Supabase sends verification email
     }),
   });
 
@@ -87,5 +112,45 @@ serve(async (req) => {
     );
   }
 
-  return jsonResponse({ success: true, message: "Account created. Please sign in." }, 201);
+  // Get the created user ID
+  const createdUser = data as { id?: string };
+  const userId = createdUser.id;
+
+  if (!userId) {
+    console.error("create-user: No user ID returned from Auth");
+    return jsonResponse({ error: "Failed to retrieve created user ID" }, 500);
+  }
+
+  // Create user profile
+  const { error: profileError } = await supabaseAdmin.from("user_profiles").insert({
+    id: userId,
+    email,
+    display_name: displayName || null,
+  });
+
+  if (profileError) {
+    console.error("create-user: Failed to create user profile", profileError);
+    // Continue anyway - the auth user was created
+  }
+
+  // Assign roles if provided
+  if (roles.length > 0) {
+    const roleRecords = roles.map((role) => ({
+      user_id: userId,
+      role,
+    }));
+
+    const { error: rolesError } = await supabaseAdmin.from("user_roles").insert(roleRecords);
+
+    if (rolesError) {
+      console.error("create-user: Failed to assign roles", rolesError);
+      // Continue anyway - the user was created
+    }
+  }
+
+  const message = sendInvite
+    ? "User created successfully. Invitation email sent."
+    : "User created successfully.";
+
+  return jsonResponse({ success: true, message, userId }, 201);
 });

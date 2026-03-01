@@ -324,19 +324,12 @@ export default function Login() {
         stack: error.stack
       });
 
-      // #region agent log
-      const isSignUpApiErrorCheck =
-        isSignUp &&
-        (error?.message?.includes('API error happened') || error?.message?.includes('Failed to create user'));
-      if (isSignUp) {
-        fetch('http://127.0.0.1:7830/ingest/ec16fc17-1fb0-4007-bb2a-fcaab08af043',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'1dceca'},body:JSON.stringify({sessionId:'1dceca',location:'Login.tsx:catch',message:'Signup error captured',data:{status:error?.status,code:error?.code,name:error?.name,messageSnippet:error?.message?.substring?.(0,120),isSignUpApiError:isSignUpApiErrorCheck},timestamp:Date.now(),hypothesisId:'H1'})}).catch(()=>{});
-      }
-      // #endregion
-
       // Provide a user-friendly error message - distinguish known auth errors and network issues
       const isUserAlreadyRegistered = error?.message === 'User already registered';
       const isInvalidLoginCredentials = error?.message === 'Invalid login credentials';
-      const isSignUpApiError = isSignUpApiErrorCheck;
+      const isSignUpApiError =
+        isSignUp &&
+        (error?.message?.includes('API error happened') || error?.message?.includes('Failed to create user'));
       const isFailedFetch =
         error?.status === 0 ||
         (error?.message === 'Failed to fetch' && error?.name === 'AuthRetryableFetchError');

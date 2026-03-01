@@ -273,6 +273,26 @@
       "title": "Integracion de WhatsApp"
     }
   },
+  "adminTenantModules": {
+    "addModule": "Añadir módulo",
+    "addModulePlaceholder": "Seleccionar módulo…",
+    "added": "Módulo añadido.",
+    "invalidTenant": "Tenant inválido.",
+    "noOverrides": "Sin módulos de override. Añada uno arriba.",
+    "remove": "Quitar",
+    "removed": "Módulo quitado.",
+    "subtitle": "Módulos de override para",
+    "title": "Módulos del tenant"
+  },
+  "adminTenants": {
+    "accessDenied": "Acceso denegado. Solo super admin.",
+    "modules": "Módulos",
+    "name": "Nombre",
+    "slug": "Slug",
+    "status": "Estado",
+    "title": "Tenants",
+    "userCount": "Usuarios"
+  },
   "agenda": {
     "dropHint": "dropHint",
     "startWithAI": "startWithAI",
@@ -3271,6 +3291,9 @@
   "date": "Fecha",
   "dateRange": "Rango de fechas",
   "days": "días",
+  "daysLeft_many": "",
+  "daysLeft_one": "",
+  "daysLeft_other": "",
   "dbExportImport": {
     "databaseExportImport": "Exportación / Importación de Base de Datos"
   },
@@ -4543,45 +4566,13 @@
   "language": "Idioma",
   "lastProcessed": "Último procesado",
   "lastUpdated": "Última actualización",
-  "linkCopied": "Enlace copiado al portapapeles",
-  "loading": "Cargando...",
-  "location": "Ubicación",
-  "tenantPicker": {
-    "title": "Seleccionar espacio de trabajo",
-    "continue": "Continuar"
-  },
-  "adminTenants": {
-    "title": "Tenants",
-    "name": "Nombre",
-    "slug": "Slug",
-    "status": "Estado",
-    "userCount": "Usuarios",
-    "accessDenied": "Acceso denegado. Solo super admin.",
-    "modules": "Módulos"
-  },
   "licensing": {
     "upgradePrompt": "Esta función requiere un plan superior. Actualice para acceder.",
     "upgradePromptModule": "Esta función ({{module}}) requiere un plan superior. Actualice para acceder."
   },
-  "adminTenantModules": {
-    "title": "Módulos del tenant",
-    "subtitle": "Módulos de override para",
-    "addModule": "Añadir módulo",
-    "addModulePlaceholder": "Seleccionar módulo…",
-    "remove": "Quitar",
-    "noOverrides": "Sin módulos de override. Añada uno arriba.",
-    "added": "Módulo añadido.",
-    "removed": "Módulo quitado.",
-    "invalidTenant": "Tenant inválido."
-  },
-  "onboarding": {
-    "title": "Crea tu espacio de trabajo",
-    "companyName": "Nombre de la empresa o espacio",
-    "slugOptional": "Slug de URL (opcional)",
-    "create": "Crear espacio",
-    "creating": "Creando...",
-    "errorCreating": "Error al crear el espacio. Inténtalo de nuevo."
-  },
+  "linkCopied": "Enlace copiado al portapapeles",
+  "loading": "Cargando...",
+  "location": "Ubicación",
   "logistics": "Logística",
   "maintenance": {
     "currentStatus": "currentStatus",
@@ -4909,6 +4900,14 @@
   "onTrack": "En Camino",
   "on_hold": "En Espera",
   "on_track": "En Tiempo",
+  "onboarding": {
+    "companyName": "Nombre de la empresa o espacio",
+    "create": "Crear espacio",
+    "creating": "Creando...",
+    "errorCreating": "Error al crear el espacio. Inténtalo de nuevo.",
+    "slugOptional": "Slug de URL (opcional)",
+    "title": "Crea tu espacio de trabajo"
+  },
   "open": "[EN] Open",
   "order": "Orden",
   "ordersCompleted": "{{count}} pedidos completados",
@@ -8233,6 +8232,10 @@
       "simple": "simple"
     },
     "updated": "updated"
+  },
+  "tenantPicker": {
+    "continue": "Continuar",
+    "title": "Seleccionar espacio de trabajo"
   },
   "themePreview": {
     "accent": "Acento",
