@@ -45,32 +45,23 @@ export default function Onboarding() {
 
     setLoading(true)
     try {
-      const { data: tenant, error: tenantError } = await supabase
-        .from('tenants')
-        .insert({ name: finalName, slug: finalSlug })
-        .select('id')
-        .single()
-
-      if (tenantError) {
-        console.error('[Onboarding] Tenant insert failed:', tenantError)
-        toast.error(t('common:onboarding.errorCreating'))
-        return
-      }
-
-      const { error: memberError } = await supabase.from('tenant_users').insert({
-        tenant_id: tenant.id,
-        user_id: user.id,
-        role: 'admin',
-        is_owner: true,
+      const { data, error } = await supabase.functions.invoke('create-tenant', {
+        body: { name: finalName, slug: finalSlug },
       })
 
-      if (memberError) {
-        console.error('[Onboarding] tenant_users insert failed:', memberError)
+      if (error) {
+        console.error('[Onboarding] create-tenant failed:', error)
         toast.error(t('common:onboarding.errorCreating'))
         return
       }
 
-      setTenantId(tenant.id)
+      const tenantId = data?.id as string | undefined
+      if (!tenantId) {
+        toast.error(t('common:onboarding.errorCreating'))
+        return
+      }
+
+      setTenantId(tenantId)
       await refreshTenants()
       navigate('/', { replace: true })
     } finally {

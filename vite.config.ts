@@ -10,18 +10,48 @@ export default defineConfig(({ mode }) => ({
   },
   server: {
     host: "0.0.0.0",
-    port: parseInt(process.env.VITE_PORT || "5173"),
+    port: parseInt(process.env.VITE_PORT || "5181", 10),
     allowedHosts: [
       "castorworks.cloud",
       "www.castorworks.cloud",
       "dev.castorworks.cloud",
+      "devng.castorworks.cloud",
       "eagle.castorworks.cloud",
-      "demo.castorworks.cloud" 
+      "demo.castorworks.cloud"
     ],
     hmr: {
       host: "localhost",
-      port: 5173,
+      port: parseInt(process.env.VITE_PORT || "5181", 10),
       protocol: "ws"
+    },
+    // Proxy Supabase API to avoid browser cross-origin/TLS to devng when developing on localhost
+    proxy: {
+      "/auth/v1": {
+        target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
+        changeOrigin: true,
+        secure: true
+      },
+      "/rest/v1": {
+        target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
+        changeOrigin: true,
+        secure: true
+      },
+      "/storage/v1": {
+        target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
+        changeOrigin: true,
+        secure: true
+      },
+      "/functions/v1": {
+        target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
+        changeOrigin: true,
+        secure: true
+      },
+      "/realtime/v1": {
+        target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
+        changeOrigin: true,
+        secure: true,
+        ws: true
+      }
     }
   },
   plugins: [

@@ -60,12 +60,21 @@ const SUPABASE_URL = (() => {
     return rawSupabaseUrl;
   }
 
+  // In local dev, use same-origin so Vite proxy can forward to Supabase (avoids browser TLS/CORS to devng).
+  const isLocalDev =
+    import.meta.env.DEV &&
+    (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+  if (isLocalDev && rawSupabaseUrl?.includes("castorworks.cloud")) {
+    const origin = window.location.origin.replace(/\/$/, "");
+    return origin;
+  }
+
   try {
     const url = new URL(rawSupabaseUrl);
     if (window.location.protocol === "https:") {
       url.protocol = "https:";
     }
-    if (url.hostname === "dev.castorworks.cloud" || url.hostname === "castorworks.cloud") {
+    if (["dev.castorworks.cloud", "devng.castorworks.cloud", "castorworks.cloud"].includes(url.hostname)) {
       url.port = "";
     }
     // Ensure we don't have a trailing slash which can cause double slashes in API calls

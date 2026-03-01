@@ -4556,7 +4556,23 @@
     "slug": "Slug",
     "status": "Status",
     "userCount": "Usuários",
-    "accessDenied": "Acesso negado. Apenas super admin."
+    "accessDenied": "Acesso negado. Apenas super admin.",
+    "modules": "Módulos"
+  },
+  "licensing": {
+    "upgradePrompt": "Este recurso requer um plano superior. Faça upgrade para acessá-lo.",
+    "upgradePromptModule": "Este recurso ({{module}}) requer um plano superior. Faça upgrade para acessá-lo."
+  },
+  "adminTenantModules": {
+    "title": "Módulos do tenant",
+    "subtitle": "Módulos sobrescritos para",
+    "addModule": "Adicionar módulo",
+    "addModulePlaceholder": "Selecionar módulo…",
+    "remove": "Remover",
+    "noOverrides": "Nenhum módulo sobrescrito. Adicione acima.",
+    "added": "Módulo adicionado.",
+    "removed": "Módulo removido.",
+    "invalidTenant": "Tenant inválido."
   },
   "onboarding": {
     "title": "Crie seu workspace",

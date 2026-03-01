@@ -1,5 +1,15 @@
 # CastorWorks
 
+**IMPORTANT — CastorWorks vs CastorWorks-NG (do not change existing CastorWorks):**
+- **Do not change any existing configuration from CastorWorks.** The previous CastorWorks working environment is **UNTOUCHABLE**.
+- **Add new configuration** to support CastorWorks-NG in any file (nginx, containers, deploy scripts, env examples, etc.). Do not modify or remove original CastorWorks config.
+- When in doubt: add new files, new server blocks, new hosts (e.g. devng.castorworks.cloud, studiong.castorworks.cloud), or new sections; never alter existing CastorWorks (dev.castorworks.cloud, port 8000, original stack) config.
+
+**IMPORTANT — Execute, do not just recommend:**
+- **Do not recommend that the user run commands;** run them yourself (deploy, restart, scp, ssh, scripts, npm, etc.) to ensure speed. Only document commands in runbooks for reference or when execution is not possible (e.g. user-only steps like entering a password in a UI).
+
+---
+
 ## Overview
 
 CastorWorks is a TypeScript + React **construction / engineering project management platform** built on Vite, Supabase, shadcn/ui (Radix), and i18next (multi-language).

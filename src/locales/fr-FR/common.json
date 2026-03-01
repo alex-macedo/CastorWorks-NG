@@ -4556,7 +4556,23 @@
     "slug": "Slug",
     "status": "Statut",
     "userCount": "Utilisateurs",
-    "accessDenied": "Accès refusé. Super admin uniquement."
+    "accessDenied": "Accès refusé. Super admin uniquement.",
+    "modules": "Modules"
+  },
+  "licensing": {
+    "upgradePrompt": "Cette fonctionnalité nécessite un plan supérieur. Passez à une offre supérieure pour y accéder.",
+    "upgradePromptModule": "Cette fonctionnalité ({{module}}) nécessite un plan supérieur. Passez à une offre supérieure pour y accéder."
+  },
+  "adminTenantModules": {
+    "title": "Modules du tenant",
+    "subtitle": "Modules en override pour",
+    "addModule": "Ajouter un module",
+    "addModulePlaceholder": "Sélectionner un module…",
+    "remove": "Retirer",
+    "noOverrides": "Aucun module en override. Ajoutez-en un ci-dessus.",
+    "added": "Module ajouté.",
+    "removed": "Module retiré.",
+    "invalidTenant": "Tenant invalide."
   },
   "onboarding": {
     "title": "Créez votre espace de travail",

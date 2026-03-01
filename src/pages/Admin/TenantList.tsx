@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { supabase } from '@/integrations/supabase/client'
 import { useLocalization } from '@/contexts/LocalizationContext'
@@ -10,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Button } from '@/components/ui/button'
 
 interface TenantRow {
   id: string
@@ -59,6 +61,7 @@ export default function TenantList() {
                 <TableHead>{t('common:adminTenants.name')}</TableHead>
                 <TableHead>{t('common:adminTenants.slug')}</TableHead>
                 <TableHead>{t('common:adminTenants.status')}</TableHead>
+                <TableHead className="w-[100px]">{t('common:adminTenants.modules')}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -67,6 +70,11 @@ export default function TenantList() {
                   <TableCell>{tenant.name}</TableCell>
                   <TableCell>{tenant.slug}</TableCell>
                   <TableCell>{tenant.status}</TableCell>
+                  <TableCell>
+                    <Button variant="link" size="sm" asChild>
+                      <Link to={`/admin/tenants/${tenant.id}/modules`}>{t('common:adminTenants.modules')}</Link>
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

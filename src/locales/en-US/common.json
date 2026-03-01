@@ -4556,7 +4556,23 @@
     "slug": "Slug",
     "status": "Status",
     "userCount": "Users",
-    "accessDenied": "Access denied. Super admin only."
+    "accessDenied": "Access denied. Super admin only.",
+    "modules": "Modules"
+  },
+  "licensing": {
+    "upgradePrompt": "This feature requires a higher plan. Upgrade to access it.",
+    "upgradePromptModule": "This feature ({{module}}) requires a higher plan. Upgrade to access it."
+  },
+  "adminTenantModules": {
+    "title": "Tenant modules",
+    "subtitle": "Override modules for",
+    "addModule": "Add module",
+    "addModulePlaceholder": "Select module…",
+    "remove": "Remove",
+    "noOverrides": "No override modules. Add one above.",
+    "added": "Module added.",
+    "removed": "Module removed.",
+    "invalidTenant": "Invalid tenant."
   },
   "onboarding": {
     "title": "Create your workspace",

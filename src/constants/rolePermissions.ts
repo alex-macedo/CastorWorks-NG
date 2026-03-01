@@ -69,6 +69,8 @@ export type SidebarOptionConfig = {
   icon: LucideIcon;
   path?: string;
   tabs: SidebarTabConfig[];
+  /** Module ID required for this option to be visible (license gating). */
+  required_module?: string;
   /**
    * @deprecated This field is kept for backward compatibility and fallback scenarios.
    * Permissions are now managed in the database via `sidebar_option_permissions` and `sidebar_tab_permissions` tables.
@@ -148,6 +150,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.castormindAI",
     type: "collapsible",
     icon: Brain,
+    required_module: "ai_core",
     tabs: [
       { id: "overall-status", titleKey: "navigation.overallStatus", path: "/overall-status", icon: BarChart3 },
       { id: "analytics", titleKey: "navigation.analytics", path: "/analytics", icon: BarChart3 },
@@ -195,6 +198,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
      titleKey: "navigation.financials",
      type: "collapsible",
      icon: DollarSign,
+     required_module: "financial_full",
      tabs: [
        { id: "financial", titleKey: "navigation.management", path: "/financial", icon: DollarSign },
         { id: "financial-cashflow", titleKey: "navigation.financialCashflow", path: "/finance/cashflow", icon: TrendingUp },
@@ -215,6 +219,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.templates",
     type: "collapsible",
     icon: Copy,
+    required_module: "templates",
     tabs: [
       { id: "budget-templates", titleKey: "navigation.budgetTemplates", path: "/budget-templates", icon: Copy },
       { id: "materials-templates", titleKey: "navigation.materials", path: "/materials-templates", icon: Package },
@@ -231,6 +236,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.architect",
     type: "collapsible",
     icon: Ruler,
+    required_module: "architect_portal",
     tabs: [
       { id: "architect-dashboard", titleKey: "navigation.architectDashboard", path: "/architect", icon: LayoutDashboard },
       { id: "architect-projects", titleKey: "navigation.architectProjects", path: "/architect/projects", icon: Folder },
@@ -251,6 +257,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.mobileApp",
     type: "link",
     icon: Smartphone,
+    required_module: "mobile_app",
     path: "/app",
     tabs: [
       { id: "mobile-app-main", titleKey: "navigation.mobileApp", path: "/app", icon: Smartphone },
@@ -262,6 +269,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.supervisorPortal",
     type: "link",
     icon: Truck,
+    required_module: "supervisor_portal",
     path: "/supervisor/hub",
     tabs: [
       { id: "supervisor-hub", titleKey: "navigation.supervisorHub", path: "/supervisor/hub", icon: LayoutDashboard },
@@ -273,6 +281,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.clientPortal",
     type: "collapsible",
     icon: UserCircle,
+    required_module: "client_portal",
     tabs: [
       { id: "client-portal-dashboard", titleKey: "navigation.clientPortalDashboard", path: "/client-portal/section/dashboard", icon: LayoutDashboard },
       { id: "client-portal-inss-planning", titleKey: "clientPortal.navigation.inssPlanning", path: "/client-portal/section/inss-planning", icon: Calculator },
@@ -295,6 +304,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.contentHub",
     type: "collapsible",
     icon: FileStack,
+    required_module: "content_hub",
     tabs: [
       { id: "news", titleKey: "navigation.news", path: "/news", icon: Newspaper },
       { id: "articles", titleKey: "navigation.articles", path: "/articles", icon: FileText },
@@ -308,6 +318,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
     titleKey: "navigation.contentHubAdmin",
     type: "collapsible",
     icon: Edit,
+    required_module: "content_hub",
     tabs: [
       { id: "content-hub-dashboard", titleKey: "navigation.contentHubDashboard", path: "/admin/content-hub", icon: LayoutDashboard },
       { id: "content-hub-list", titleKey: "navigation.contentHubList", path: "/admin/content-hub/list", icon: ListIcon },

@@ -204,11 +204,13 @@ const ArchitectProposalBuilderPage = lazyWithRetry(() => import("./pages/archite
 const MyDashboard = lazyWithRetry(() => import("./pages/architect/MyDashboard"), "MyDashboard");
 const NotFound = lazyWithRetry(() => import("./pages/NotFound"), "NotFound");
 const Login = lazyWithRetry(() => import("./pages/Login"), "Login");
-const Onboarding = lazyWithRetry(() => import("./pages/Onboarding"), "Onboarding");
+  const ForgotPassword = lazyWithRetry(() => import("./pages/ForgotPassword"), "ForgotPassword");
+  const Onboarding = lazyWithRetry(() => import("./pages/Onboarding"), "Onboarding");
 const TenantPicker = lazyWithRetry(() => import("./pages/TenantPicker"), "TenantPicker");
 const Maintenance = lazyWithRetry(() => import("./pages/Maintenance"), "Maintenance");
 const MaintenanceManagement = lazyWithRetry(() => import("./pages/Admin/MaintenanceManagement"), "MaintenanceManagement");
 const TenantList = lazyWithRetry(() => import("./pages/Admin/TenantList"), "TenantList");
+const TenantModules = lazyWithRetry(() => import("./pages/Admin/TenantModules"), "TenantModules");
 const TelemetryIssues = lazyWithRetry(() => import("./pages/Admin/TelemetryIssues"), "TelemetryIssues");
 const DeliverySignatureScreen = lazyWithRetry(() => import("./pages/DeliverySignatureScreen"), "DeliverySignatureScreen");
 const PaymentDashboard = lazyWithRetry(() => import("./pages/PaymentDashboard"), "PaymentDashboard");
@@ -479,10 +481,13 @@ const AppContent = () => {
   // Enable real-time maintenance notifications
   // This hook requires QueryClientProvider to be set up in the parent component
   useMaintenanceNotifications();
-  
-  // Check for missing company_id and create notification
-  useCompanyIdNotification();
-  
+
+  // Subscriber for company_id notification; must run inside TenantProvider
+  const CompanyIdNotificationSubscriber = () => {
+    useCompanyIdNotification();
+    return null;
+  };
+
   // PHASE 2: Component to handle route-based translation loading
   const RouteTranslationLoader = () => {
     const location = useLocation();
@@ -506,6 +511,7 @@ const AppContent = () => {
             <BrowserRouter>
               <AuthProvider>
               <TenantProvider>
+              <CompanyIdNotificationSubscriber />
               <TimeTrackingProvider>
                 <TimeTrackerResumeDialog />
                 <ChatProvider>
@@ -516,6 +522,7 @@ const AppContent = () => {
                   <Routes>
                   {/* Public Routes - No Authentication Required */}
                   <Route path="/login" element={<Login />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
                   <Route path="/approve/:token" element={<CustomerApprovalPortal />} />
                   <Route path="/po/acknowledge/:token" element={<SupplierPOAcknowledgment />} />
                   <Route path="/architect/portal/:token" element={<ClientPortalViewPage />} />
@@ -735,6 +742,7 @@ const AppContent = () => {
                                   <Route path="/campaigns/:campaignId" element={<CampaignDetail />} />
                                   <Route path="/admin/maintenance" element={<MaintenanceManagement />} />
                                   <Route path="/admin/tenants" element={<RoleGuard allowedRoles={["super_admin"]}><TenantList /></RoleGuard>} />
+                                  <Route path="/admin/tenants/:id/modules" element={<RoleGuard allowedRoles={["super_admin"]}><TenantModules /></RoleGuard>} />
                                    <Route path="/admin/telemetry" element={<TelemetryIssues />} />
                                    <Route path="/payments" element={<PaymentDashboard />} />
 

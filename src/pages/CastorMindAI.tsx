@@ -7,8 +7,9 @@ import { ChatMessageList } from '@/components/AIChat/ChatMessageList'
 import { useLocalization } from '@/contexts/LocalizationContext'
 import { useToast } from '@/hooks/use-toast'
 import { useSuperBotAssistant } from '@/hooks/useSuperBotAssistant'
-import castorMindMascot from '../../images/CastorMind-AI.png'
 import { useNavigate } from 'react-router-dom'
+
+const castorMindMascot = '/images/CastorMind-AI.png'
 import { supabase } from '@/integrations/supabase/client'
 
 type PromptTemplate = {
@@ -175,7 +176,7 @@ export default function CastorMindAI() {
                 <div className="relative h-36 w-36 md:h-40 md:w-40 rounded-full bg-background/95 ring-1 ring-border shadow-[0_18px_50px_rgba(15,23,42,0.18)] flex items-center justify-center overflow-hidden dark:shadow-[0_18px_50px_rgba(2,6,23,0.65)]">
                   <img
                     src={castorMindMascot}
-                    alt="CastorMind-AI mascot"
+                    alt="CastorMind AI"
                     className="h-[88%] w-[88%] object-contain drop-shadow-[0_10px_20px_rgba(15,23,42,0.25)]"
                     loading="lazy"
                   />

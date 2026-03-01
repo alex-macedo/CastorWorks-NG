@@ -48,7 +48,7 @@
    ./castorworks.sh start
    ```
 
-The application will be available at `http://localhost:5173`.
+The application will be available at `http://localhost:5181`. (CastorWorks-NG uses port 5181 so it can run in parallel with CastorWorks on 5173.)
 
 ## 📖 Documentation
 

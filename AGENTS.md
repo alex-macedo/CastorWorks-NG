@@ -1,5 +1,16 @@
 # CastorWorks
 
+<!-- IMPORTANT: Top-priority rule for all agents -->
+**IMPORTANT — CastorWorks vs CastorWorks-NG (do not change existing CastorWorks):**
+- **Do not change any existing configuration from CastorWorks.** The previous CastorWorks working environment is **UNTOUCHABLE**.
+- **Add new configuration** to support CastorWorks-NG in any file (nginx, containers, deploy scripts, env examples, etc.). Do not modify or remove original CastorWorks config.
+- When in doubt: add new files, new server blocks, new hosts (e.g. devng.castorworks.cloud, studiong.castorworks.cloud), or new sections; never alter existing CastorWorks (dev.castorworks.cloud, port 8000, original stack) config.
+
+**IMPORTANT — Execute, do not just recommend:**
+- **Do not recommend that the user run commands;** run them yourself (deploy, restart, scp, ssh, scripts, npm, etc.) to ensure speed. Only document commands in runbooks for reference or when execution is not possible (e.g. user-only steps like entering a password in a UI).
+
+---
+
 ## Implementation Standards for AI Features
 
 ### 1. Edge Function Recovery Cache
@@ -94,6 +105,8 @@ Where `e2e/login-and-time-tracking.js` contains the page actions to fill the log
 2. **Run the test** - Execute `npm run test:e2e -- <pattern>` or `bash scripts/agent-browser-e2e.sh <pattern>` to verify functionality
 3. **Capture evidence** - Tests should take screenshots saved to `test-results/` for visual verification
 4. **Fix issues** - If tests fail, fix the code and re-run until passing
+
+**Phase 1 (Foundation)** has dedicated E2E: `npm run test:e2e -- phase1` (onboarding, super admin panel, tenant switch). See `e2e/README-phase1-e2e.md`. **Phase 2 (Module-Based Licensing)** has dedicated E2E: `npm run test:e2e -- phase2` (admin tenant modules page, licensing sidebar). See `e2e/README-phase2-e2e.md`. CastorWorks-NG runs on port 5181 for these tests.
 
 **Example workflow**:
 ```bash
@@ -331,7 +344,7 @@ ssh -i ~/.ssh/castorworks_deploy castorworks \
 
 ## Access Application
 
-- Frontend: <http://localhost:5173>
+- Frontend: <http://localhost:5181> (CastorWorks-NG; use 5173 for legacy CastorWorks when running in parallel)
 - Supabase: Runs in Docker container on remote provider at `/root/supabase-CastorWorks/`
 - Access Studio via SSH tunnel: `ssh -L 54323:localhost:54323 user@castorworks.cloud` then visit `http://localhost:54323`
 - Or access directly via API: `https://dev.castorworks.cloud`

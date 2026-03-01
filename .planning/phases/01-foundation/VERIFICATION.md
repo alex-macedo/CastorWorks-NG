@@ -76,26 +76,29 @@ score: 3/3 must-haves verified
 
 No stub components, no TODO/FIXME blockers, no unwired flows. TenantContext uses `return null` only inside map filter (valid).
 
-### Human Verification Recommended
+### Automated E2E (Phase 1)
 
-1. **Signup → onboarding → create tenant → app**  
-   **Test:** Sign up new user, complete onboarding (name/slug), submit.  
-   **Expected:** Redirect to `/`; projects list (or dashboard) shows only that tenant's data.  
-   **Why human:** Confirms full flow and that RLS returns correct rows in real session.
+The following flows are automated via **agent-browser** E2E scripts. Run with CastorWorks-NG on port 5181 and `.env.testing` credentials (see `e2e/README-phase1-e2e.md`).
 
-2. **Super admin panel**  
-   **Test:** As user with super_admin role, open `/admin/tenants`.  
-   **Expected:** List of all tenants. As non–super_admin, route forbidden or redirect.  
-   **Why human:** RoleGuard and RLS allow list; visual and access need spot-check.
+| Flow | Script | Command |
+|------|--------|--------|
+| Onboarding (no tenants → create workspace → app) | `e2e/phase1-onboarding.agent-browser.cjs` | `npm run test:e2e -- phase1-onboarding` |
+| Super admin panel | `e2e/phase1-admin-tenants.agent-browser.cjs` | `npm run test:e2e -- phase1-admin-tenants` |
+| Tenant switch (picker → select tenant → app) | `e2e/phase1-tenant-switch.agent-browser.cjs` | `npm run test:e2e -- phase1-tenant-switch` |
 
-3. **Tenant switch**  
-   **Test:** User in two tenants: select tenant A, then switch to tenant B (picker or UI).  
-   **Expected:** Data updates to tenant B without full reload.  
-   **Why human:** Confirms set_tenant_context and refetch behavior in browser.
+**Run all Phase 1 E2E:** `npm run test:e2e -- phase1`
+
+Screenshots: `test-results/phase1-onboarding/`, `test-results/phase1-admin-tenants/`, `test-results/phase1-tenant-switch/`.
+
+**Requirements:** For onboarding, use a user with no tenants (e.g. `ACCOUNT_ONBOARDING_EMAIL`). For admin-tenants, use a user with `super_admin` in `user_roles`. For tenant-switch, use a user in at least 2 tenants.
+
+### Optional manual spot-check
+
+After automated E2E pass, optional ad-hoc checks: sign up a brand-new user (no tenants) and complete onboarding; open `/admin/tenants` as super_admin; switch tenant and confirm data updates in UI.
 
 ### Gaps Summary
 
-None. All success criteria are met in code: tenants/tenant_users and RLS, set_tenant_context RPC, tenant_id and RLS isolation, TenantContext, tenant-client, TenantGuard, Onboarding, /admin/tenants and super_admin. Automated checks pass; optional human checks above are for confidence only.
+None. All success criteria are met in code: tenants/tenant_users and RLS, set_tenant_context RPC, tenant_id and RLS isolation, TenantContext, tenant-client, TenantGuard, Onboarding, /admin/tenants and super_admin. Automated E2E cover onboarding, super admin panel, and tenant switch; run with `npm run test:e2e -- phase1`.
 
 ---
 

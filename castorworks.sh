@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# EngProApp Development Server Management Script
+# CastorWorks-NG Development Server Management Script
 # Usage: ./castorworks.sh {start|stop|restart|clean}
+# Runs on port 5181 so it can run in parallel with CastorWorks (port 5173).
 
 PROJECT_DIR="$PWD"
-DEFAULT_PORT=5173
+DEFAULT_PORT=5181
 VITE_PID_FILE="$PROJECT_DIR/.vite.pid"
 
 # Colors for output
@@ -90,11 +91,10 @@ kill_vite_server() {
     # Kill by process name pattern
     pkill -f "vite.*$PROJECT_DIR" 2>/dev/null
 
-    # Kill by port
+    # Kill by port (only NG port and nearby fallbacks; do not touch 5173 used by CastorWorks)
     kill_port_process $DEFAULT_PORT
 
-    # Also check common alternative ports
-    for port in 5174 5175 5176; do
+    for port in 5182 5183; do
         local pids=$(check_port $port)
         if [ -n "$pids" ]; then
             log_info "Also found Vite server on port $port, killing..."
@@ -107,7 +107,7 @@ kill_vite_server() {
 
 # Function to start the development server
 start_server() {
-    log_info "Starting EngProApp development server..."
+    log_info "Starting CastorWorks-NG development server..."
 
     # Change to project directory
     cd "$PROJECT_DIR" || {
@@ -115,11 +115,11 @@ start_server() {
         exit 1
     }
 
-    # Check if already running
+    # Check if already running (only our port; 5173 may be used by CastorWorks)
     local existing_pids=$(check_port $DEFAULT_PORT)
     if [ -n "$existing_pids" ]; then
         log_warning "Port $DEFAULT_PORT is already in use"
-        log_info "Stopping existing server first..."
+        log_info "Stopping existing CastorWorks-NG server first..."
         kill_vite_server
     fi
 
@@ -146,8 +146,7 @@ start_server() {
         local port_check=$(check_port $DEFAULT_PORT)
 
         if [ -z "$port_check" ]; then
-            # Check alternative ports
-            for port in 5174 5175 5176; do
+            for port in 5182 5183; do
                 if [ -n "$(check_port $port)" ]; then
                     actual_port=$port
                     break
@@ -155,11 +154,11 @@ start_server() {
             done
         fi
 
-        log_success "EngProApp development server started successfully!"
+        log_success "CastorWorks-NG development server started successfully!"
         log_info "Server URL: http://localhost:$actual_port"
         log_info "PID: $vite_pid"
     else
-        log_error "Failed to start development server"
+        log_error "Failed to start CastorWorks-NG development server"
         rm -f "$VITE_PID_FILE"
         exit 1
     fi
@@ -167,13 +166,13 @@ start_server() {
 
 # Function to stop the development server
 stop_server() {
-    log_info "Stopping EngProApp development server..."
+    log_info "Stopping CastorWorks-NG development server..."
     kill_vite_server
 }
 
 # Function to restart the development server
 restart_server() {
-    log_info "Restarting EngProApp development server..."
+    log_info "Restarting CastorWorks-NG development server..."
     stop_server
     sleep 1
     start_server
@@ -205,18 +204,18 @@ clean_start() {
     if npm run build; then
         log_success "Build completed successfully"
     else
-        log_error "Build failed. Please fix compilation errors before starting server."
+        log_error "Build failed. Please fix compilation errors before starting CastorWorks-NG development server."
         exit 1
     fi
 
     # Start development server
-    log_info "Starting clean development server..."
+    log_info "Starting clean CastorWorks-NG development server..."
     start_server
 }
 
 # Function to show usage
 show_usage() {
-    echo "EngProApp Development Server Management"
+    echo "CastorWorks-NG Development Server Management"
     echo ""
     echo "Usage: $0 {start|stop|restart|clean}"
     echo ""
@@ -226,12 +225,12 @@ show_usage() {
     echo "  restart - Restart the development server"
     echo "  clean   - Clean build, compile, and start fresh server"
     echo ""
-    echo "The server will run on http://localhost:5173 (or next available port)"
+    echo "The server will run on http://localhost:5181 (CastorWorks-NG; CastorWorks uses 5173)"
 }
 
 # Function to show status
 show_status() {
-    log_info "EngProApp Development Server Status"
+    log_info "CastorWorks-NG Development Server Status"
     echo ""
 
     # Check PID file
@@ -247,11 +246,14 @@ show_status() {
         echo "❌ Server not running (no PID file)"
     fi
 
-    # Check ports
-    for port in 5173 5174 5175 5176; do
+    # Check ports (5181 = NG; 5173 = legacy CastorWorks)
+    for port in 5181 5182 5183 5173; do
         local pids=$(check_port $port)
         if [ -n "$pids" ]; then
-            echo "🌐 Port $port in use (PID: $pids) - http://localhost:$port"
+            local label=""
+            [ "$port" = "5181" ] && label=" (CastorWorks-NG)"
+            [ "$port" = "5173" ] && label=" (CastorWorks)"
+            echo "🌐 Port $port in use (PID: $pids) - http://localhost:$port$label"
         fi
     done
 }

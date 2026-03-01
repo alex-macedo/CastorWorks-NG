@@ -315,7 +315,7 @@ Agent-browser login automation
 
 Example (conceptual) steps your `agent-browser` script should perform:
 
-1. Open `http://localhost:5173/login`
+1. Open `http://localhost:5181/login` (CastorWorks-NG; use 5173 for legacy CastorWorks)
 2. Fill the email input (`#email`) with `$ACCOUNT_TEST_EMAIL`
 3. Fill the password input (`#password`) with `$ACCOUNT_TEST_EMAIL_PASSWORD`
 4. Click the sign-in button (`button[type=submit]` or `text="Sign in"`)
@@ -514,7 +514,7 @@ export const ProjectCard = ({ project, onEdit }: ProjectCardProps) => {
    ```
 
 5. **Access Application:**
-   - Frontend: http://localhost:5173
+   - Frontend: http://localhost:5181 (CastorWorks-NG; 5173 for legacy CastorWorks when running in parallel)
    - Supabase: Runs in Docker container on remote provider at `/root/supabase-CastorWorks/`
      - Access Studio via SSH tunnel: `ssh -L 54323:localhost:54323 user@castorworks.cloud` then visit `http://localhost:54323`
      - Or access directly via API: `https://dev.castorworks.cloud`
@@ -547,7 +547,7 @@ The `castorworks.sh` script is a wrapper that ensures proper development environ
 
 | Command | Purpose |
 |---------|---------|
-| `npm run dev` | Start Vite dev server (port 5173) |
+| `npm run dev` | Start Vite dev server (port 5181) |
 | `npm run dev:full` | Frontend + Translation API (concurrent) |
 | `npm run build` | Production build |
 | `npm run build:dev` | Development mode build |

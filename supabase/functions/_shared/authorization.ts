@@ -96,3 +96,29 @@ export async function verifyAdminRole(userId: string, client?: SupabaseClient) {
     throw new Error("Administrator privileges required for this operation");
   }
 }
+
+/**
+ * Verifies that the user has access to the tenant and that the tenant has the given module licensed.
+ * Call after authenticating and resolving tenantId (e.g. from request body or project → tenant).
+ */
+export async function verifyModuleAccess(
+  client: SupabaseClient,
+  userId: string,
+  tenantId: string,
+  moduleId: string
+): Promise<void> {
+  const hasTenantAccess = await callBooleanFunction(
+    "has_tenant_access",
+    { _user_id: userId, _tenant_id: tenantId },
+    client
+  );
+  if (!hasTenantAccess) {
+    throw new Error("Access denied to tenant");
+  }
+  const { data, error } = await client.rpc("get_tenant_licensed_modules", {
+    p_tenant_id: tenantId,
+  });
+  if (error || !Array.isArray(data) || !data.includes(moduleId)) {
+    throw new Error("Module not licensed");
+  }
+}

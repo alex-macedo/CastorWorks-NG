@@ -1,7 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-BASE_URL="${BASE_URL:-http://localhost:5173}"
+# Phase 1 (Foundation), Phase 2 (Licensing), and auth E2E run against CastorWorks-NG on 5181; other E2E default to 5173
+if [[ "${1:-}" == phase1* || "${1:-}" == phase2* || "${1:-}" == auth-signin-signup ]]; then
+  BASE_URL="${BASE_URL:-http://localhost:5181}"
+else
+  BASE_URL="${BASE_URL:-http://localhost:5173}"
+fi
 MOBILE_BASE_URL="${MOBILE_BASE_URL:-http://localhost:5174}"
 PROJECT_ID="${E2E_PROJECT_ID:-45dc7301-fbb1-485d-9280-f4a74b530596}"
 
@@ -534,6 +539,77 @@ run_roadmap_display_settings_color() {
 if [[ "$pattern_lc" == "roadmap-display-settings-color" || "$pattern_lc" == "roadmap-display-settings" ]]; then
   run_roadmap_display_settings_color
   exit 0
+fi
+
+# Phase 1 Foundation E2E (tenant onboarding, super admin, tenant switch)
+run_phase1_onboarding() {
+  node e2e/phase1-onboarding.agent-browser.cjs
+}
+
+run_phase1_admin_tenants() {
+  node e2e/phase1-admin-tenants.agent-browser.cjs
+}
+
+run_phase1_tenant_switch() {
+  node e2e/phase1-tenant-switch.agent-browser.cjs
+}
+
+if [[ "$pattern_lc" == "phase1-onboarding" ]]; then
+  run_phase1_onboarding
+  exit 0
+fi
+
+if [[ "$pattern_lc" == "phase1-admin-tenants" || "$pattern_lc" == "phase1-admin" ]]; then
+  run_phase1_admin_tenants
+  exit 0
+fi
+
+if [[ "$pattern_lc" == "phase1-tenant-switch" || "$pattern_lc" == "phase1-switch" ]]; then
+  run_phase1_tenant_switch
+  exit 0
+fi
+
+run_auth_signin_signup() {
+  node e2e/auth-signin-signup.agent-browser.cjs
+}
+
+if [[ "$pattern_lc" == "auth-signin-signup" || "$pattern_lc" == "auth-signin" ]]; then
+  run_auth_signin_signup
+  exit 0
+fi
+
+if [[ "$pattern_lc" == "phase1" ]]; then
+  failed=0
+  run_phase1_onboarding || failed=1
+  run_phase1_admin_tenants || failed=1
+  run_phase1_tenant_switch || failed=1
+  exit $failed
+fi
+
+# Phase 2 Module-Based Licensing E2E
+run_phase2_admin_tenant_modules() {
+  node e2e/phase2-admin-tenant-modules.agent-browser.cjs
+}
+
+run_phase2_licensing_sidebar() {
+  node e2e/phase2-licensing-sidebar.agent-browser.cjs
+}
+
+if [[ "$pattern_lc" == "phase2-admin-tenant-modules" || "$pattern_lc" == "phase2-admin-modules" ]]; then
+  run_phase2_admin_tenant_modules
+  exit 0
+fi
+
+if [[ "$pattern_lc" == "phase2-licensing-sidebar" || "$pattern_lc" == "phase2-sidebar" ]]; then
+  run_phase2_licensing_sidebar
+  exit 0
+fi
+
+if [[ "$pattern_lc" == "phase2" ]]; then
+  failed=0
+  run_phase2_admin_tenant_modules || failed=1
+  run_phase2_licensing_sidebar || failed=1
+  exit $failed
 fi
 
 if [[ "$pattern_lc" == "all" || "$pattern_lc" == "" || "$pattern_lc" == *"forms"* ]]; then

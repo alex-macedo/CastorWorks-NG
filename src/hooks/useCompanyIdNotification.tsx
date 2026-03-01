@@ -2,13 +2,16 @@ import { useEffect } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useUserProfile } from './useUserProfile';
+import { useTenant } from '@/contexts/TenantContext';
 
 /**
  * Hook that checks if user profile is missing company_id and creates a notification
- * This notification will appear in the Bell icon at the top right
+ * This notification will appear in the Bell icon at the top right.
+ * Skips when user has no tenant (e.g. onboarding) to avoid tenant_id NOT NULL violation.
  */
 export function useCompanyIdNotification() {
   const queryClient = useQueryClient();
+  const { tenantId } = useTenant();
   const { data: profile, isLoading: profileLoading } = useUserProfile();
 
   // Check if notification already exists for this issue
@@ -54,7 +57,8 @@ export function useCompanyIdNotification() {
     // 1. Profile is still loading
     // 2. User has company_id
     // 3. Notification already exists
-    if (profileLoading || profile?.company_id || existingNotification) {
+    // 4. User has no tenant yet (e.g. onboarding) — notifications.tenant_id is NOT NULL
+    if (profileLoading || profile?.company_id || existingNotification || !tenantId) {
       return;
     }
 
@@ -80,6 +84,7 @@ export function useCompanyIdNotification() {
             issue: 'missing_company_id',
             requiresAction: true,
           },
+          p_tenant_id: tenantId ?? undefined,
         });
 
         if (error) {
@@ -96,6 +101,6 @@ export function useCompanyIdNotification() {
     };
 
     createNotification();
-  }, [profileLoading, profile?.company_id, existingNotification, queryClient]);
+  }, [profileLoading, profile?.company_id, existingNotification, tenantId, queryClient]);
 }
 

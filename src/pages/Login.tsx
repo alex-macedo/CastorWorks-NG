@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -110,42 +110,40 @@ export default function Login() {
 
     try {
       if (isSignUp) {
-        console.log('📝 [Auth] Attempting signup...');
-        const { data, error } = await supabase.auth.signUp({
-          email,
-          password,
-        });
+        console.log('📝 [Auth] Attempting signup via create-user Edge Function...');
+        const { data: createUserData, error: createUserError } = await supabase.functions.invoke(
+          'create-user',
+          { body: { email, password } }
+        );
 
-        if (error) {
-          console.error('❌ [Auth] Signup failed:', error);
-          console.error('❌ [Auth] Error details:', {
-            message: error.message,
-            status: error.status,
-            name: error.name
-          });
-          throw error;
+        if (createUserError) {
+          console.error('❌ [Auth] create-user failed:', createUserError);
+          const msg = createUserError.message || '';
+          const body = (createUserError as { context?: { body?: { error?: string; details?: string } } })?.context?.body;
+          const details = body?.details ?? body?.error ?? msg;
+          if (/already registered|already exists|duplicate/i.test(details)) {
+            setIsSignUp(false);
+            toast.error(t('auth:login.validation.userAlreadyRegistered'));
+            setLoading(false);
+            return;
+          }
+          throw new Error(details || 'Failed to create user');
         }
 
-        console.log('✅ [Auth] Signup successful:', {
-          userId: data.user?.id,
-          email: data.user?.email,
-          emailConfirmed: data.user?.email_confirmed_at ? true : false,
-          userMetadata: data.user?.user_metadata
-        });
+        const data = createUserData as { success?: boolean; error?: string } | null;
+        if (!data?.success) {
+          throw new Error(data?.error || 'Failed to create user');
+        }
 
-        // Send registration email to user
+        console.log('✅ [Auth] Signup successful via create-user');
+
+        // Send registration email (best-effort)
         try {
-          console.log('📧 [Auth] Sending registration email...');
           await supabase.functions.invoke('send-registration-email', {
-            body: {
-              userEmail: email,
-              userName: data.user?.user_metadata?.full_name || data.user?.email?.split('@')[0],
-            },
+            body: { userEmail: email, userName: email.split('@')[0] },
           });
-          console.log('✅ [Auth] Registration email sent successfully');
-        } catch (emailError) {
-          console.error('❌ [Auth] Failed to send registration email:', emailError);
-          // Don't block signup if email fails, but log it
+        } catch (_) {
+          // Don't block; email is optional
         }
 
         toast.success(t('auth:login.messages.accountCreated'));
@@ -326,7 +324,19 @@ export default function Login() {
         stack: error.stack
       });
 
-      // Provide a user-friendly error message - distinguish network/CORS (status 0) from server timeout (504/502)
+      // #region agent log
+      const isSignUpApiErrorCheck =
+        isSignUp &&
+        (error?.message?.includes('API error happened') || error?.message?.includes('Failed to create user'));
+      if (isSignUp) {
+        fetch('http://127.0.0.1:7830/ingest/ec16fc17-1fb0-4007-bb2a-fcaab08af043',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'1dceca'},body:JSON.stringify({sessionId:'1dceca',location:'Login.tsx:catch',message:'Signup error captured',data:{status:error?.status,code:error?.code,name:error?.name,messageSnippet:error?.message?.substring?.(0,120),isSignUpApiError:isSignUpApiErrorCheck},timestamp:Date.now(),hypothesisId:'H1'})}).catch(()=>{});
+      }
+      // #endregion
+
+      // Provide a user-friendly error message - distinguish known auth errors and network issues
+      const isUserAlreadyRegistered = error?.message === 'User already registered';
+      const isInvalidLoginCredentials = error?.message === 'Invalid login credentials';
+      const isSignUpApiError = isSignUpApiErrorCheck;
       const isFailedFetch =
         error?.status === 0 ||
         (error?.message === 'Failed to fetch' && error?.name === 'AuthRetryableFetchError');
@@ -335,13 +345,23 @@ export default function Login() {
         error?.status === 502 ||
         error?.message === '{}' ||
         (!error?.message && error?.status !== 0);
-      const errorMessage = isFailedFetch
-        ? t('auth:login.validation.fetchFailed')
-        : isServerTimeout
-          ? t('auth:login.validation.connectionError')
-          : (error?.message || t('auth:login.validation.authenticationFailed'));
-      console.error('💥 [Auth] Showing user error message:', errorMessage);
-      toast.error(errorMessage);
+
+      if (isUserAlreadyRegistered) {
+        setIsSignUp(false);
+        toast.error(t('auth:login.validation.userAlreadyRegistered'));
+      } else if (isInvalidLoginCredentials) {
+        toast.error(t('auth:login.validation.invalidLoginCredentials'));
+      } else if (isSignUpApiError) {
+        toast.error(t('auth:login.validation.signUpApiError'));
+      } else {
+        const errorMessage = isFailedFetch
+          ? t('auth:login.validation.fetchFailed')
+          : isServerTimeout
+            ? t('auth:login.validation.connectionError')
+            : (error?.message || t('auth:login.validation.authenticationFailed'));
+        console.error('💥 [Auth] Showing user error message:', errorMessage);
+        toast.error(errorMessage);
+      }
     } finally {
       console.log('🔄 [Auth] Authentication process completed');
       setLoading(false);
@@ -472,6 +492,17 @@ export default function Login() {
               }}>
                 Use 8+ characters with uppercase, lowercase, number, and special symbol.
               </p>
+              {!isSignUp && (
+                <p style={{ fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                  <Link
+                    to="/forgot-password"
+                    style={{ color: '#3b82f6', textDecoration: 'none' }}
+                    className="hover:underline"
+                  >
+                    {t('auth:forgotPassword.linkLabel')}
+                  </Link>
+                </p>
+              )}
             </div>
             <Button
               type="submit"

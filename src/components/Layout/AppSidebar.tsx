@@ -43,6 +43,7 @@ import { useLocalization } from "@/contexts/LocalizationContext";
 import { getStoredClientPortalToken } from "@/lib/clientPortalAuth";
 import { SIDEBAR_OPTIONS } from "@/constants/rolePermissions";
 import { useSidebarPermissions } from "@/hooks/useSidebarPermissions";
+import { useLicensedModules } from "@/hooks/useLicensedModules";
 import { ChatWidget } from "@/components/AIChat/ChatWidget";
 import { EditProfileDialog } from "@/components/Settings/EditProfileDialog";
 import { ProjectSelectionModal } from "@/components/ClientPortal/Dialogs/ProjectSelectionModal";
@@ -194,6 +195,7 @@ export function AppSidebar() {
 
   // Get sidebar permissions from database
   const { optionPermissions, tabPermissions, optionSortOrder, tabSortOrder, hasOptionAccess, hasTabAccess, hasTabPermissions, optionHasAnyTabPermissions, isLoading: isLoadingPermissions } = useSidebarPermissions();
+  const { hasModule, isLoading: isLoadingModules } = useLicensedModules();
 
   // Ensure architect menu is expanded by default ONLY for architect users
   useEffect(() => {
@@ -309,9 +311,15 @@ export function AppSidebar() {
 
     if (!useDatabasePermissions) {
       // Fallback to constants while loading
-      return SIDEBAR_OPTIONS.filter(option => 
-        !option.allowedRoles || option.allowedRoles.some(role => roles.includes(role as AppRole))
-      ).map(option => {
+      return SIDEBAR_OPTIONS.filter(option => {
+        const roleOk = !option.allowedRoles || option.allowedRoles.some(role => roles.includes(role as AppRole));
+        if (!roleOk) return false;
+        if (option.required_module) {
+          if (isLoadingModules) return false;
+          if (!hasModule(option.required_module)) return false;
+        }
+        return true;
+      }).map(option => {
         if (option.id === 'client-portal' && currentProjectId) {
           return {
             ...option,
@@ -338,10 +346,19 @@ export function AppSidebar() {
     }
 
     // Use database-only visibility when option is configured in Permission Management; otherwise fall back to constants
+    // Module gating: hide options whose required_module is not licensed (when modules loaded); while loading, hide module-gated options
     const filtered = SIDEBAR_OPTIONS.filter(option => {
-      const isConfiguredInDb = optionPermissions.has(option.id);
-      if (isConfiguredInDb) return hasOptionAccess(option.id);
-      return option.allowedRoles?.some(role => roles.includes(role as AppRole)) ?? false;
+      const roleOk = (() => {
+        const isConfiguredInDb = optionPermissions.has(option.id);
+        if (isConfiguredInDb) return hasOptionAccess(option.id);
+        return option.allowedRoles?.some(role => roles.includes(role as AppRole)) ?? false;
+      })();
+      if (!roleOk) return false;
+      if (option.required_module) {
+        if (isLoadingModules) return false;
+        if (!hasModule(option.required_module)) return false;
+      }
+      return true;
     });
 
     // Sort the filtered options based on sort_order from database, fallback to original order
@@ -419,7 +436,7 @@ export function AppSidebar() {
 
       return processedOption;
     });
-  }, [roles, currentProjectId, optionPermissions, hasOptionAccess, hasTabAccess, hasTabPermissions, optionHasAnyTabPermissions, isLoadingPermissions, optionSortOrder, tabSortOrder]);
+  }, [roles, currentProjectId, optionPermissions, hasOptionAccess, hasTabAccess, hasTabPermissions, optionHasAnyTabPermissions, isLoadingPermissions, isLoadingModules, hasModule, optionSortOrder, tabSortOrder]);
 
   return (
     <>
