@@ -26,6 +26,9 @@ dist-ssr
 .vite.pid
 .env
 .env.ai-platform
+.env.supabase
+docs/.env.supabase
+public/docs/.env.supabase
 .specify
 .bmad-core
 .windsurf
