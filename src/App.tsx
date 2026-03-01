@@ -7,6 +7,8 @@ import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-quer
 import { BrowserRouter, Routes, Route, useLocation, Navigate, useParams, useNavigate } from "react-router-dom";
 import { LocalizationProvider } from "@/contexts/LocalizationContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { TenantProvider } from "@/contexts/TenantContext";
+import { TenantGuard } from "@/components/TenantGuard";
 import { ConfigProvider } from "@/contexts/ConfigContext";
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/Layout/AppSidebar";
@@ -202,6 +204,8 @@ const ArchitectProposalBuilderPage = lazyWithRetry(() => import("./pages/archite
 const MyDashboard = lazyWithRetry(() => import("./pages/architect/MyDashboard"), "MyDashboard");
 const NotFound = lazyWithRetry(() => import("./pages/NotFound"), "NotFound");
 const Login = lazyWithRetry(() => import("./pages/Login"), "Login");
+const Onboarding = lazyWithRetry(() => import("./pages/Onboarding"), "Onboarding");
+const TenantPicker = lazyWithRetry(() => import("./pages/TenantPicker"), "TenantPicker");
 const Maintenance = lazyWithRetry(() => import("./pages/Maintenance"), "Maintenance");
 const MaintenanceManagement = lazyWithRetry(() => import("./pages/Admin/MaintenanceManagement"), "MaintenanceManagement");
 const TelemetryIssues = lazyWithRetry(() => import("./pages/Admin/TelemetryIssues"), "TelemetryIssues");
@@ -500,6 +504,7 @@ const AppContent = () => {
           <LocalizationProvider>
             <BrowserRouter>
               <AuthProvider>
+              <TenantProvider>
               <TimeTrackingProvider>
                 <TimeTrackerResumeDialog />
                 <ChatProvider>
@@ -515,7 +520,11 @@ const AppContent = () => {
                   <Route path="/architect/portal/:token" element={<ClientPortalViewPage />} />
                   <Route path="/proposal/:token" element={<PublicProposal />} />
                   <Route path="/form/:shareToken" element={<PublicFormPage />} />
-                  
+
+                  {/* Tenant onboarding and picker (auth required, no tenant required) */}
+                  <Route path="/onboarding" element={<AuthGuard><Suspense fallback={<PageLoader />}><Onboarding /></Suspense></AuthGuard>} />
+                  <Route path="/tenant-picker" element={<AuthGuard><Suspense fallback={<PageLoader />}><TenantPicker /></Suspense></AuthGuard>} />
+
                   {/* CLIENT PORTAL ROUTES - /portal is the only entry; /client-portal redirects to /portal */}
                   <Route path="/portal-error" element={<InvalidToken />} />
                   <Route path="/portal" element={<ClientPortal />} />
@@ -611,6 +620,7 @@ const AppContent = () => {
                     path="*"
                     element={
                       <AuthGuard>
+                        <TenantGuard>
                         <AppProjectProvider>
                         <ConfigProvider>
                           <DesktopRouteLayout>
@@ -780,6 +790,7 @@ const AppContent = () => {
                           </DesktopRouteLayout>
                         </ConfigProvider>
                         </AppProjectProvider>
+                        </TenantGuard>
                       </AuthGuard>
                     }
                   />
@@ -792,6 +803,7 @@ const AppContent = () => {
                 {/* <TranslationDevTools /> */}
                 </ChatProvider>
               </TimeTrackingProvider>
+              </TenantProvider>
               </AuthProvider>
             </BrowserRouter>
           </LocalizationProvider>

@@ -4546,6 +4546,10 @@
   "linkCopied": "Enlace copiado al portapapeles",
   "loading": "Cargando...",
   "location": "Ubicación",
+  "tenantPicker": {
+    "title": "Seleccionar espacio de trabajo",
+    "continue": "Continuar"
+  },
   "logistics": "Logística",
   "maintenance": {
     "currentStatus": "currentStatus",

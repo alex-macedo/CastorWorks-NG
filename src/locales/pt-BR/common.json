@@ -4546,6 +4546,10 @@
   "linkCopied": "Link copied to clipboard",
   "loading": "Carregando...",
   "location": "Location",
+  "tenantPicker": {
+    "title": "Selecionar workspace",
+    "continue": "Continuar"
+  },
   "logistics": "Logistics",
   "maintenance": {
     "currentStatus": "currentStatus",
