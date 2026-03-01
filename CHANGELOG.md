@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Tailwind CSS v4 Compatibility** — Upgraded PostCSS configuration to use `@tailwindcss/postcss` (required for Tailwind v4) and updated CSS imports from `@tailwind base/components/utilities` to `@import "tailwindcss"`
+
 ### Added
 - **TL2-B: Client Definitions Tracking** — Track client decisions (material selections, design approvals) with:
   - Status tracking (pending, in_progress, completed, overdue, blocking) and filter chips
