@@ -1,4 +1,23 @@
 {
+  "addUser": "Ajouter un Utilisateur",
+  "addUserDialog": {
+    "create": "Creer l'Utilisateur",
+    "creating": "Creation de l'utilisateur...",
+    "displayName": "Nom d'affichage",
+    "displayNamePlaceholder": "Entrez le nom d'affichage (optionnel)",
+    "email": "E-mail",
+    "error": "Echec de la creation de l'utilisateur",
+    "password": "Mot de passe",
+    "passwordHint": "Le mot de passe doit comporter au moins 8 caracteres",
+    "passwordPlaceholder": "Entrez le mot de passe",
+    "selectRoles": "Selectionner les Roles",
+    "sendInvite": "Envoyer un e-mail d'invitation (l'utilisateur definira son propre mot de passe)",
+    "success": "Utilisateur cree avec succes. E-mail d'invitation envoye.",
+    "tempPassword": "Mot de passe Temporaire",
+    "tempPasswordHint": "L'utilisateur sera invite a changer son mot de passe lors de la premiere connexion",
+    "tempPasswordPlaceholder": "Entrez le mot de passe temporaire",
+    "title": "Ajouter un Nouvel Utilisateur"
+  },
   "adminOnly": "adminOnly",
   "adminRequired": "adminRequired",
   "adminTools": {

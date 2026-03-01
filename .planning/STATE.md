@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Trial & Subscription Management
-status: ready_for_planning
-stopped_at: "Roadmap v1.1 created; Phase 3 next."
-last_updated: "2026-03-01T18:45:18.003Z"
+status: ready_for_execution
+stopped_at: "Phase 4 plans created (04-01, 04-02, 04-03). Phase 3 complete but uncommitted."
+last_updated: "2026-03-01"
 progress:
   total_phases: 6
-  completed_phases: 2
-  total_plans: 0
+  completed_phases: 3
+  total_plans: 3
   completed_plans: 0
-  percent: 0
+  percent: 17
 ---
 
 # CastorWorks-NG — Project State
@@ -30,11 +30,13 @@ progress:
 
 | Item    | Value |
 |---------|--------|
-| **Phase** | 4 — AI Action Credits & Metering |
-| **Plan**  | — |
-| **Status** | **Ready for planning** — Phase 3 committed |
+| **Phase** | 4 — Payment & Subscription Management |
+| **Plan**  | 04-01 (next to execute) |
+| **Status** | **Ready for execution** — 3 plans created |
 
-**Progress:** [███░░░░░░░] 37% (v1.1: 3/6 phases complete — 0, 1, 2, 3 done)
+**Progress:** [███░░░░░░░] 50% (v1.1: Phase 3 done; Phase 4 planned and ready)
+
+⚠️ **Note:** Phase 3 code is complete but uncommitted. Run `npm run ci` then commit before executing Phase 4.
 
 ---
 
@@ -63,5 +65,5 @@ progress:
 ## Session Continuity
 
 - **Last session:** 2026-03-01
-- **Stopped at:** Phase 3 committed (e1d83bd). Ready for Phase 4: AI Action Credits & Metering.
-- **Resume file:** none
+- **Stopped at:** Phase 4 plans created (04-01 through 04-03). Phase 3 work complete but uncommitted.
+- **Resume file:** `.planning/phases/03-trial-experience/.continue-here.md` (Phase 3 commit needed first)

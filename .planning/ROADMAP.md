@@ -110,7 +110,7 @@ Plans:
 1. User receives trial reminder emails (e.g. 7 days, 3 days, 1 day before expiry).
 2. User receives a trial expiration warning email when trial ends or on expiry day.
 
-**Plans:** TBD
+**Plans:** [04-01] Stripe backend (DB + webhook) · [04-02] Checkout & trial-to-paid flows · [04-03] Subscription management page + i18n
 
 ---
 
@@ -121,7 +121,7 @@ Plans:
 | 0. New Supabase DB | v1.0 | — | Complete | 2026-03-01 |
 | 1. Foundation | v1.0 | — | Complete | 2026-03-01 |
 | 2. Module-Based Licensing | v1.0 | — | Complete | 2026-03-01 |
-| 3. Trial Experience | v1.1 | 0/? | Not started | — |
-| 4. Payment & Subscription | v1.1 | 0/? | Not started | — |
+| 3. Trial Experience | v1.1 | 2/2 | Complete | 2026-03-01 |
+| 4. Payment & Subscription | v1.1 | 3/3 | Planned | — |
 | 5. Billing & Invoices | v1.1 | 0/? | Not started | — |
 | 6. Trial & Subscription Emails | v1.1 | 0/? | Not started | — |

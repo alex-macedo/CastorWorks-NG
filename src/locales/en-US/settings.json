@@ -1,4 +1,23 @@
 {
+  "addUser": "Add User",
+  "addUserDialog": {
+    "create": "Create User",
+    "creating": "Creating user...",
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "Enter display name (optional)",
+    "email": "Email",
+    "error": "Failed to create user",
+    "password": "Password",
+    "passwordHint": "Password must be at least 8 characters",
+    "passwordPlaceholder": "Enter password",
+    "selectRoles": "Select Roles",
+    "sendInvite": "Send invitation email (user will set their own password)",
+    "success": "User created successfully. Invitation email sent.",
+    "tempPassword": "Temporary Password",
+    "tempPasswordHint": "User will be asked to change password on first login",
+    "tempPasswordPlaceholder": "Enter temporary password",
+    "title": "Add New User"
+  },
   "adminOnly": "adminOnly",
   "adminRequired": "adminRequired",
   "adminTools": {
@@ -1095,24 +1114,5 @@
     "title": "title"
   },
   "userProfile": "User profile",
-  "addUser": "Add User",
-  "addUserDialog": {
-    "title": "Add New User",
-    "email": "Email",
-    "password": "Password",
-    "displayName": "Display Name",
-    "displayNamePlaceholder": "Enter display name (optional)",
-    "passwordPlaceholder": "Enter password",
-    "passwordHint": "Password must be at least 8 characters",
-    "tempPassword": "Temporary Password",
-    "tempPasswordPlaceholder": "Enter temporary password",
-    "tempPasswordHint": "User will be asked to change password on first login",
-    "selectRoles": "Select Roles",
-    "sendInvite": "Send invitation email (user will set their own password)",
-    "success": "User created successfully. Invitation email sent.",
-    "error": "Failed to create user",
-    "creating": "Creating user...",
-    "create": "Create User"
-  },
   "weatherLocationPlaceholder": "weatherLocationPlaceholder"
 }

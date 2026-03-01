@@ -1,4 +1,23 @@
 {
+  "addUser": "Agregar Usuario",
+  "addUserDialog": {
+    "create": "Crear Usuario",
+    "creating": "Creando usuario...",
+    "displayName": "Nombre para Mostrar",
+    "displayNamePlaceholder": "Ingrese nombre para mostrar (opcional)",
+    "email": "Correo electronico",
+    "error": "Error al crear usuario",
+    "password": "Contrasena",
+    "passwordHint": "La contrasena debe tener al menos 8 caracteres",
+    "passwordPlaceholder": "Ingrese contrasena",
+    "selectRoles": "Seleccionar Roles",
+    "sendInvite": "Enviar correo de invitacion (el usuario establecera su propia contrasena)",
+    "success": "Usuario creado exitosamente. Correo de invitacion enviado.",
+    "tempPassword": "Contrasena Temporal",
+    "tempPasswordHint": "Se pedira al usuario que cambie la contrasena en el primer inicio de sesion",
+    "tempPasswordPlaceholder": "Ingrese contrasena temporal",
+    "title": "Agregar Nuevo Usuario"
+  },
   "adminOnly": "adminOnly",
   "adminRequired": "adminRequired",
   "adminTools": {

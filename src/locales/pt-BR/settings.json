@@ -1,4 +1,23 @@
 {
+  "addUser": "Adicionar Usuário",
+  "addUserDialog": {
+    "create": "Criar Usuário",
+    "creating": "Criando usuário...",
+    "displayName": "Nome de Exibição",
+    "displayNamePlaceholder": "Digite o nome de exibição (opcional)",
+    "email": "E-mail",
+    "error": "Falha ao criar usuário",
+    "password": "Senha",
+    "passwordHint": "A senha deve ter pelo menos 8 caracteres",
+    "passwordPlaceholder": "Digite a senha",
+    "selectRoles": "Selecionar Funções",
+    "sendInvite": "Enviar e-mail de convite (usuário definirá sua própria senha)",
+    "success": "Usuário criado com sucesso. E-mail de convite enviado.",
+    "tempPassword": "Senha Temporária",
+    "tempPasswordHint": "O usuário será solicitado a alterar a senha no primeiro login",
+    "tempPasswordPlaceholder": "Digite a senha temporária",
+    "title": "Adicionar Novo Usuário"
+  },
   "adminOnly": "adminOnly",
   "adminRequired": "adminRequired",
   "adminTools": {
@@ -1101,24 +1120,5 @@
     "title": "title"
   },
   "userProfile": "Perfil do usuário",
-  "addUser": "Adicionar Usuário",
-  "addUserDialog": {
-    "title": "Adicionar Novo Usuário",
-    "email": "E-mail",
-    "password": "Senha",
-    "displayName": "Nome de Exibição",
-    "displayNamePlaceholder": "Digite o nome de exibição (opcional)",
-    "passwordPlaceholder": "Digite a senha",
-    "passwordHint": "A senha deve ter pelo menos 8 caracteres",
-    "tempPassword": "Senha Temporária",
-    "tempPasswordPlaceholder": "Digite a senha temporária",
-    "tempPasswordHint": "O usuário será solicitado a alterar a senha no primeiro login",
-    "selectRoles": "Selecionar Funções",
-    "sendInvite": "Enviar e-mail de convite (usuário definirá sua própria senha)",
-    "success": "Usuário criado com sucesso. E-mail de convite enviado.",
-    "error": "Falha ao criar usuário",
-    "creating": "Criando usuário...",
-    "create": "Criar Usuário"
-  },
   "weatherLocationPlaceholder": "weatherLocationPlaceholder"
 }
