@@ -1,0 +1,55 @@
+{
+  "aiGenerated": "Generado por IA",
+  "backToEstimate": "Volver a Estimación",
+  "backToEstimates": "Volver a Estimaciones",
+  "characters": "{{count}} caracteres",
+  "companyName": "Tu Empresa",
+  "createProposal": "Crear Propuesta",
+  "enter": "Ingresa",
+  "error": "Error",
+  "estimateNotFound": "Estimación no encontrada",
+  "for": "Para",
+  "generateWithAI": "Generar con IA",
+  "generating": "Generando...",
+  "preview": "Vista Previa",
+  "saveDraft": "Guardar Borrador",
+  "saveFailed": "Error al guardar la propuesta",
+  "saved": "Guardado",
+  "savedDescription": "Propuesta guardada exitosamente.",
+  "saving": "Guardando...",
+  "sections": {
+    "coverLetter": "Carta de Presentación",
+    "designPhilosophy": "Filosofía de Diseño",
+    "exclusions": "Exclusiones",
+    "feeStructure": "Estructura de Honorarios",
+    "paymentTerms": "Términos de Pago",
+    "projectMethodology": "Metodología del Proyecto",
+    "scopeOfWork": "Alcance del Trabajo",
+    "sustainabilityApproach": "Enfoque de Sostenibilidad",
+    "termsAndConditions": "Términos y Condiciones",
+    "timeline": "Cronograma",
+    "title": "Secciones",
+    "warranty": "Garantía"
+  },
+  "template": "Plantilla",
+  "templates": {
+    "detailed": {
+      "description": "Exhaustivo con desglose completo",
+      "name": "Detallado"
+    },
+    "modern": {
+      "description": "Diseño contemporáneo con elementos visuales",
+      "name": "Moderno"
+    },
+    "standard": {
+      "description": "Diseño limpio y profesional",
+      "name": "Estándar"
+    }
+  },
+  "tones": {
+    "concise": "Conciso",
+    "detailed": "Detallado",
+    "friendly": "Amigable",
+    "professional": "Profesional"
+  }
+}

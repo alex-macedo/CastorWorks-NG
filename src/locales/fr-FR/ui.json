@@ -1,0 +1,21 @@
+{
+  "confidenceLevel": "[EN] Confidence Level",
+  "confidence": "[EN] Confidence",
+  "emptyMoodboard": "[EN] Empty Moodboard",
+  "root": "[EN] Root",
+  "clickToViewProjectDetails": "[EN] Click To View Project Details",
+  "lastSynced": "[EN] Last Synced",
+  "scheduledMaintenance": "[EN] Scheduled Maintenance",
+  "period": "[EN] Period",
+  "completion": "[EN] Completion",
+  "items": "[EN] Items",
+  "progress": "[EN] Progress",
+  "english": "[EN] English",
+  "previous": "[EN] Previous",
+  "next": "[EN] Next",
+  "projectManagerNotified": "[EN] Project Manager Notified",
+  "purchaseOrderStatusUpdated": "[EN] Purchase Order Status Updated",
+  "paymentTransactionScheduled": "[EN] Payment Transaction Scheduled",
+  "photosSignatureSaved": "[EN] Photos Signature Saved",
+  "projectIdRequired": "[EN] Project Id Required"
+}

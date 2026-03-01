@@ -1,0 +1,741 @@
+{
+  "backToDashboard": "Back to Dashboard",
+  "backToPortal": "Back to Portal",
+  "chat": {
+    "conversations": "Conversations",
+    "errorLoadingMessages": "Error loading messages. Check the browser console for details.",
+    "noConversations": "No conversations found.",
+    "noMessages": "No messages yet",
+    "projectChat": "Project Chat",
+    "searchMessages": "Search messages...",
+    "selectConversationDescription": "Select a conversation from the list to start chatting with your project team.",
+    "subtitle": "Chat with your project team in real-time.",
+    "title": "Project Chat",
+    "typePlaceholder": "Type a message...",
+    "yourMessages": "Your Messages"
+  },
+  "common": {
+    "loading": "Loading..."
+  },
+  "communication": {
+    "allTypes": "All Types",
+    "description": "A chronological record of all project communications.",
+    "filterButton": "Filter",
+    "noLogs": "No communication logs found.",
+    "pagination": {
+      "next": "Next",
+      "previous": "Previous",
+      "showing": "Showing {{from}} to {{to}} of {{total}} entries"
+    },
+    "searchPlaceholder": "Search logs...",
+    "tableHeaders": {
+      "actions": "Actions",
+      "dateTime": "Date & Time",
+      "participants": "Participants",
+      "subject": "Subject",
+      "type": "Type"
+    },
+    "title": "Communication Log",
+    "types": {
+      "email": "Email",
+      "meeting": "Meeting",
+      "message": "Message",
+      "phoneCall": "Phone Call"
+    },
+    "viewDetails": "View Details"
+  },
+  "creditCard": "Credit Card",
+  "dashboard": {
+    "financialSummary": {
+      "outstanding": "Outstanding:",
+      "outstandingLabel": "Outstanding",
+      "paid": "Paid:",
+      "paidLabel": "Paid",
+      "title": "Financial Summary",
+      "totalLabel": "Total",
+      "totalProjectCost": "Total Project Cost:"
+    },
+    "greeting": "Hello, {{name}} 👋",
+    "greetings": {
+      "afternoon": "Good afternoon! Let's stay productive!",
+      "evening": "It's already night, but inspiration has no time, right?",
+      "morning": "The day is just beginning!",
+      "night": "Working late? You're dedicated!"
+    },
+    "keyTeamContacts": {
+      "noMembers": "No team members found.",
+      "title": "Key Team Contacts"
+    },
+    "loading": "Loading...",
+    "myTasks": {
+      "addNew": "Add New Task",
+      "due": "Due {{date}}",
+      "noPending": "No pending tasks.",
+      "title": "My Tasks"
+    },
+    "picturesLibrary": {
+      "photoAlt": "Project photo {{number}}",
+      "title": "Image Library",
+      "viewAll": "View All Photos"
+    },
+    "recentPayments": {
+      "due": "Due {{date}}",
+      "invoice": "Invoice #{{id}} - {{amount}}",
+      "noInvoices": "No recent payments or invoices.",
+      "paid": "Paid {{date}}",
+      "paymentButton": "Payment",
+      "title": "Recent Payments and Invoices"
+    },
+    "title": "Dashboard",
+    "upcomingMeetings": {
+      "noMeetings": "No upcoming meetings scheduled.",
+      "requestMeeting": "Request Meeting",
+      "title": "Upcoming Meetings"
+    },
+    "upcomingSchedule": {
+      "milestone": "Milestone:",
+      "noMilestones": "No upcoming milestones.",
+      "noProject": "No project selected.",
+      "title": "Upcoming Schedule"
+    },
+    "welcome": "Welcome, {{userName}}!",
+    "welcomeDefault": "Welcome, User!"
+  },
+  "definitions": {
+    "noDefinitions": "No decisions or approvals pending for this project.",
+    "subtitle": "Material selections, design approvals, and required client decisions.",
+    "title": "Decisions & Approvals"
+  },
+  "description": "Description",
+  "dialogs": {
+    "addTask": {
+      "descriptionPlaceholder": "Enter task description (optional)",
+      "namePlaceholder": "Enter task name",
+      "selectTeamMember": "Select team member"
+    },
+    "payment": {
+      "referencePlaceholder": "Enter payment reference or PO number",
+      "selectInvoice": "Choose an invoice"
+    },
+    "requestMeeting": {
+      "descriptionPlaceholder": "Enter meeting description (optional)",
+      "titlePlaceholder": "Enter meeting title"
+    }
+  },
+  "documents": {
+    "noProjects": "No Projects",
+    "noProjectsDescription": "No project documents available.",
+    "searchPlaceholder": "Search projects...",
+    "selectProject": "Select Project",
+    "selectProjectDescription": "Choose a project to view its details.",
+    "subtitle": "Access and organize your project files.",
+    "title": "Project Documents",
+    "viewDocuments": "View Project Details"
+  },
+  "due": "Due",
+  "financial": {
+    "advisor": {
+      "actionItems": "Action items",
+      "activeAlerts": "Active alerts",
+      "aiStrategicOutlook": "AI Strategic Outlook",
+      "alerts": "Alerts",
+      "alertsAndAnomalies": "Alerts & Anomalies",
+      "amount": "Amount",
+      "budgetHealth": "Budget health",
+      "complexityComplex": "Complex",
+      "complexityEasy": "Easy",
+      "complexityModerate": "Moderate",
+      "confidence": "Confidence",
+      "consolidation": "Consolidation",
+      "costAnomaly": "Cost Anomaly",
+      "current": "Current",
+      "currentAllocation": "Current allocation",
+      "errorLoading": "Failed to load financial analysis. Please try again.",
+      "errorTitle": "Error Loading Financial Advisor",
+      "expectedRange": "Expected Range",
+      "growthOpportunities": "Growth opportunities",
+      "healthExcellent": "Excellent",
+      "healthFair": "Fair",
+      "healthGood": "Good",
+      "healthPoor": "Poor",
+      "increase": "Increase",
+      "lastUpdated": "Last Updated",
+      "noAlerts": "No alerts at this time",
+      "noDataAvailable": "No data available",
+      "noPredictions": "No predictions",
+      "noRecommendations": "No recommendations available",
+      "optimizationRecommendations": "Optimization recommendations",
+      "optimized": "Optimized",
+      "overBudgetWarning": "Over budget warning",
+      "overview": "Overview",
+      "possibleCauses": "Possible Causes",
+      "potentialSavings": "Potential savings",
+      "predictedFinal": "Projected Final Cost",
+      "predictedVariance": "Projected Variance",
+      "predictions": "Predictions",
+      "primaryIndicators": "Primary Indicators",
+      "priorityHigh": "High",
+      "priorityLow": "Low",
+      "priorityMedium": "Medium",
+      "projectedFinal": "Projected Final Cost",
+      "projectedFinalDesc": "AI Forecast",
+      "projectedVariance": "Projected Variance",
+      "projectedVarianceDesc": "Vs. Budget",
+      "reallocation": "Reallocation",
+      "recommendation": "Recommendation",
+      "recommendations": "Recommendations",
+      "recommendedActions": "Recommended Actions",
+      "recommendedAllocation": "Recommended allocation",
+      "reduction": "Reduction",
+      "reservesInsufficient": "Allocated reserves are insufficient",
+      "reservesStable": "Allocated reserves are stable",
+      "riskCritical": "Critical",
+      "riskHigh": "High",
+      "riskLevel": "Risk level",
+      "riskLow": "Low",
+      "riskMedium": "Medium",
+      "riskMitigation": "Risk Mitigation",
+      "riskMonitoring": "Risk monitoring",
+      "setup": "Setup",
+      "spendingDeviations": "Significant budget deviations detected",
+      "spendingOptimal": "Spending pace is optimal",
+      "subtitle": "AI-powered financial insights and recommendations for your project",
+      "summaryTitle": "Financial Summary",
+      "title": "Financial Advisor",
+      "totalBudget": "Total Budget",
+      "totalBudgetDesc": "Allocated funds",
+      "totalSpent": "Total Spent",
+      "totalSpentDesc": "Total costs",
+      "utilization": "Utilization",
+      "varianceControl": "Variance Control",
+      "variancePredictions": "Variance predictions",
+      "viewDetails": "View details"
+    },
+    "approvedBudget": "Approved budget",
+    "availableFunds": "Available funds",
+    "budgetBreakdown": {
+      "description": "Spending by category vs. allocated budget.",
+      "equipment": "Equipment",
+      "labor": "Labor",
+      "logistics": "Logistics",
+      "materials": "Materials",
+      "other": "Other",
+      "permits": "Permits & Fees",
+      "subcontractors": "Subcontractors",
+      "taxes": "Taxes",
+      "title": "Budget Breakdown"
+    },
+    "description": "Monitor your project budget and expenditures.",
+    "noExpensesFound": "No expenses recorded yet.",
+    "noTransactions": "No Transactions",
+    "outstanding": "Outstanding",
+    "percentOfBudget": "{{percent}}% of budget",
+    "recentTransactions": "Recent Transactions",
+    "remaining": "Remaining",
+    "title": "Financial Overview",
+    "totalBudget": "Total Budget",
+    "totalPaid": "Total Paid",
+    "totalSpent": "Total Spent"
+  },
+  "inssPlanning": {
+    "labels": {
+      "area": "Total Area",
+      "category": "Category",
+      "complianceDesc": "Our platform is kept updated with the latest changes from Receita Federal. All calculations follow the official equivalence tables and municipal VAU variations.",
+      "complianceStatus": "Fully Compliant",
+      "complianceTitle": "Compliance Guaranteed",
+      "constructionType": "Construction Type",
+      "downloadReport": "Download Report",
+      "ecacPortal": "e-CAC Portal (CNO Registration)",
+      "exclusiveContent": "Exclusive Content",
+      "flexible": "Flexible",
+      "installmentCount": "x {{count}}",
+      "item": "Item",
+      "lastUpdated": "Report Date",
+      "learnMore": "Learn More",
+      "location": "Location",
+      "logicLocked": "Strategy Logic Locked",
+      "logicLockedDesc": "The breakdown of our tax-saving methodologies is exclusive to clients with an active Strategic Planning service.",
+      "missingData": "Missing Data",
+      "monthlyInstallment": "Monthly Installment",
+      "monthlyPayment": "Monthly Payment (Est.)",
+      "optimizedTotal": "Optimized INSS Total",
+      "perMonth": "/ month",
+      "potentialSavings": "Potential Savings",
+      "projectInfo": "Project Information",
+      "projectName": "Project Name",
+      "recommended": "Recommended",
+      "requestActivation": "Request Service Activation",
+      "requestSent": "Request Sent",
+      "rfbInstruction": "RFB Instruction 2021/2021",
+      "scenarioComparison": "Scenario Comparison",
+      "seroOfficial": "Official SERO Portal",
+      "standard": "Standard",
+      "strategic": "Strategic",
+      "strategyLogicDesc": "Instead of paying one large amount at the end based on a government estimate (VAU), this strategy uses real monthly payroll records to document labor costs. This path lets you deduct monthly contributions already paid from the final debt, resulting in massive savings.",
+      "strategyLogicTitle": "Monthly Strategic Planning Logic",
+      "totalDue": "Total INSS Due",
+      "totalPrincipal": "Total Principal",
+      "totalSavings": "Total Savings",
+      "validationLinks": "Legal and Validation Resources",
+      "validationLinksDesc": "Legal foundations and official resources that validate this calculation method.",
+      "viewReport": "View Report"
+    },
+    "notAvailableDescription": "Tax configuration has not been set up for this project yet. Please contact your project manager.",
+    "notAvailableTitle": "INSS Planning Not Available",
+    "notSetupDescription": "Tax configuration has not been set up for this project yet. Please contact your project manager.",
+    "notSetupTitle": "INSS Planning Not Setup",
+    "pageTitle": "INSS Planning & Simulation",
+    "proposal": {
+      "area": "Area",
+      "budgetMonth": "Budget Month",
+      "clientInfo": "Client Information",
+      "companyName": "Company",
+      "effectiveSavings": "(Effective savings with advisory)",
+      "finalSavings": "Final Savings",
+      "financialSummary": "Financial Summary",
+      "inssWithPlanning": "INSS amount with planning",
+      "inssWithoutPlanning": "INSS amount without planning",
+      "legalNote": "Application of the adjustment factor benefit per IN 10.2021/21. We provide legal backing and fiscal responsibility. If the project period shifts, total values remain the same for fees and taxes; construction INSS is recalculated monthly and may have minor adjustments.",
+      "location": "Location",
+      "months": "months",
+      "or": "i.e.",
+      "owner": "Owner",
+      "paidToRevenue": "paid to revenue per month",
+      "parceled": "(installments over the project period)",
+      "perMonth": "per month",
+      "period": "Period",
+      "projectDetails": "Project Details",
+      "serviceFee": "Service fee",
+      "title": "INSS Construction Tax Reduction Advisory Proposal",
+      "validity": "Proposal valid for 10 days from the send date."
+    },
+    "scenarios": {
+      "installments": "Installment Plan",
+      "installmentsDesc": "Regularize debt over 60 months",
+      "installmentsNote": "Includes SELIC interest. No extra principal reduction.",
+      "monthly": "Monthly Planning",
+      "monthlyDesc": "Active payroll management (GFIP/eSocial)",
+      "monthlyNote": "Strategic monthly planning can significantly reduce your tax.",
+      "planned": {
+        "description": "Strategic tax planning",
+        "title": "Planned"
+      },
+      "standard": {
+        "description": "Standard tax calculation",
+        "title": "Standard"
+      },
+      "standardAfericao": "Standard Aferição",
+      "standardDesc": "Pay as a lump sum after construction",
+      "standardNote": "Uses government VAU estimation. Limited strategic reductions."
+    },
+    "strategySteps": {
+      "step1Desc": "The project is registered in the National Registry of Works (CNO) to create a unique tax ID.",
+      "step1Title": "1. CNO Opening",
+      "step2Desc": "All workers and service providers are linked monthly to the project ID via eSocial.",
+      "step2Title": "2. eSocial Reporting",
+      "step3Desc": "Monthly tax returns are sent to the Federal Revenue to record paid contributions as credits.",
+      "step3Title": "3. DCTFWeb Transmission",
+      "step4Desc": "Upon completion, the system clears the 'documented' labor against the 'estimated' requirement, resulting in a reduced final DARF.",
+      "step4Title": "4. Final Sero Clearing"
+    },
+    "subtitle": "Compare different payment strategies to optimize your construction tax liability.",
+    "title": "INSS Planning"
+  },
+  "inssStrategy": {
+    "accessPortal": "Access Portal",
+    "categories": {
+      "ACRESCIMO": "Addition",
+      "DEMOLICAO": "Demolition",
+      "OBRA_NOVA": "New Construction",
+      "REFORMA": "Renovation"
+    },
+    "classification": "Project Classification Details",
+    "dueDate": "Due: {{date}}",
+    "helpContent": {
+      "aboutDebtText": "Construction INSS is calculated in the **DCTFWEB Aferição de obras** within **SERO**. After submitting the **DCTFWeb**, the taxpayer has until the **20th** of the following month to pay the calculated amount in full, **without additional charges**, through the **DARF**.\n\nIf the 20th is not a business day, the due date is moved earlier. The taxpayer chooses whether to pay in full or in installments.",
+      "aboutDebtTitle": "About the debt",
+      "autoDebitText": "The installment plan is only effective if a bank account is provided. This account must belong to the person responsible for the construction. The account must be from a standard commercial bank, never from digital banks.",
+      "autoDebitTitle": "Automatic debit:",
+      "chargesText": "The value of each installment is increased by interest equivalent to the monthly accumulated Selic rate plus **1%** in the month of payment. There may also be penalties and interest on the total amount in case of late payment.",
+      "chargesTitle": "Charges:",
+      "dueDatesText": "The first installment will be due on the day the installment plan is requested. The others will be due on the last business day of each month.",
+      "dueDatesTitle": "Due dates of installments:",
+      "fillingText": "When filling in the client's bank details, pay attention to the rules established by the RFB. There is a PDF in the installments menu. Read this document carefully.",
+      "fillingTitle": "System entry:",
+      "firstInstallmentText": "For the installment plan to take effect, it is necessary to pay the first installment via a DARF issued by the system. The remaining installments will be automatically debited from the provided bank account.",
+      "firstInstallmentTitle": "Payment of the first installment:",
+      "installmentCountText": "Installments can be made in up to **60 times**. Minimum installments of **R$200** for individuals and **R$500** for legal entities.",
+      "installmentCountTitle": "Number of installments:",
+      "installmentsSubtitle": "Conditions and rules",
+      "installmentsTitle": "INSTALLMENT PLAN",
+      "penaltyText": "The original amount is increased by a **20%** penalty, regardless of the number of installments.\n\n**Example:** INSS in full: **R$10,000.00**. In installments: **R$12,000.00**",
+      "penaltyTitle": "Penalty:",
+      "whenText": "INSS debt calculated after submitting the **DCTFWEB** Aferição de obras can be paid in installments after **7 days past due**.",
+      "whenTitle": "When to apply:"
+    },
+    "labels": {
+      "category": "Category",
+      "help": "Help",
+      "helpTitle": "Construction INSS Installment Plan",
+      "state": "State",
+      "totalArea": "Total Area",
+      "type": "Type"
+    },
+    "noAttachment": "No attachment",
+    "notSetupDescription": "Tax strategy management has not been initialized for this project.",
+    "notSetupTitle": "INSS Strategy Not Setup",
+    "pageTitle": "INSS Strategy & Lifecycle",
+    "status": {
+      "active": "Active",
+      "completed": "Completed",
+      "pending": "Pending"
+    },
+    "subtitle": "Managed compliance journey from initial permit to final property registry. Our team handles the bureaucracy so you can focus on building.",
+    "title": "INSS Strategy",
+    "types": {
+      "ALVENARIA": "Masonry",
+      "MADEIRA": "Wood",
+      "METALICA": "Metallic",
+      "MISTA": "Mixed",
+      "PRE_MOLDADO": "Pre-molded"
+    },
+    "viewDocument": "View Document"
+  },
+  "invoiceDetails.totalAmount": "Total Amount",
+  "issued": "Issued",
+  "layout": {
+    "accessDenied": "Access Denied",
+    "appName": "CastorWorks",
+    "appSubtitle": "Client Portal",
+    "noAccessMessage": "You do not have access to this project.",
+    "signOut": "Sign Out"
+  },
+  "lineItems": "Line Items",
+  "meetings": {
+    "dialog": {
+      "allMembers": "All Team Members",
+      "cancel": "Cancel",
+      "dateLabel": "Meeting Date *",
+      "datePlaceholder": "Pick a date",
+      "dateRequired": "Meeting date is required",
+      "description": "Schedule a meeting with your project team.",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Enter meeting description (optional)",
+      "duration120": "2 hours",
+      "duration30": "30 min",
+      "duration60": "1 hour",
+      "duration90": "1.5 hours",
+      "durationLabel": "Duration (minutes)",
+      "meetingTitleLabel": "Meeting Title *",
+      "meetingTitlePlaceholder": "Enter meeting title",
+      "meetingTypeHybrid": "Hybrid",
+      "meetingTypeInPerson": "In-Person",
+      "meetingTypeLabel": "Meeting Type",
+      "meetingTypeVirtual": "Virtual",
+      "membersRequired": "Select at least one team member",
+      "requestWithLabel": "Request With *",
+      "submit": "Request Meeting",
+      "submitting": "Requesting...",
+      "success": "Meeting requested",
+      "timeLabel": "Time",
+      "title": "Request Meeting",
+      "titleRequired": "Meeting title is required"
+    },
+    "join": "Join Meeting",
+    "labels": {
+      "attendees": "Attendees:",
+      "joinMeeting": "Join Meeting",
+      "viewDetails": "View Details"
+    },
+    "linkPending": "Link Pending",
+    "noPast": "No past meetings found.",
+    "noUpcoming": "No upcoming meetings scheduled.",
+    "past": "Past Meetings",
+    "requestMeeting": "Request Meeting",
+    "subtitle": "Schedule and track meetings with your project team",
+    "tabs": {
+      "pastMeetings": "Past Meetings",
+      "upcoming": "Upcoming"
+    },
+    "title": "Upcoming Meetings"
+  },
+  "navigation": {
+    "chat": "Chat",
+    "communication": "Communication",
+    "dashboard": "Dashboard",
+    "documents": "Documents",
+    "financial": "Financial",
+    "inssPlanning": "INSS Planning",
+    "inssStrategy": "INSS Strategy",
+    "meetings": "Meetings",
+    "payments": "Payments",
+    "photos": "Photos",
+    "schedule": "Schedule",
+    "tasks": "Tasks",
+    "team": "Team"
+  },
+  "online": "Online",
+  "paymentHistory": "Payment History",
+  "paymentTerms": "Payment Terms",
+  "payments": {
+    "actions": {
+      "conversation": "Conversation",
+      "payNow": "Pay Now"
+    },
+    "allCaughtUp": "All caught up",
+    "allStatuses": "All Statuses",
+    "amountDue": "Amount due",
+    "description": "View and manage your invoices and transactions.",
+    "export": "Export",
+    "invoiceHistory": {
+      "description": "View and download your project invoices.",
+      "title": "Invoice History"
+    },
+    "noInvoices": "No invoices found matching your criteria.",
+    "overdueInvoices": "Overdue Invoices",
+    "pagination": {
+      "next": "Next",
+      "previous": "Previous",
+      "showing": "Showing {{from}} to {{to}} of {{total}} invoices"
+    },
+    "paidLast30": "Paid Last 30 Days",
+    "recentPayments": "Recent payments",
+    "requiresAttention": "Requires attention",
+    "searchPlaceholder": "Search by invoice or project...",
+    "statuses": {
+      "due": "Due",
+      "overdue": "Overdue",
+      "paid": "Paid"
+    },
+    "tableHeaders": {
+      "actions": "ACTIONS",
+      "amount": "AMOUNT",
+      "dueDate": "DUE DATE",
+      "invoiceNumber": "INVOICE #",
+      "issueDate": "ISSUE DATE",
+      "projectName": "PROJECT NAME",
+      "status": "STATUS"
+    },
+    "title": "Payments & Invoices",
+    "totalOutstanding": "Total Outstanding"
+  },
+  "photos": {
+    "categories": {
+      "after": "Final Result",
+      "before": "Before Construction",
+      "completion": "Completion",
+      "during": "During Construction",
+      "field_capture": "Field Capture",
+      "issues": "Site Issues",
+      "other": "Other",
+      "project_delivery": "Project Delivery"
+    },
+    "description": "Visual progress updates from the job site.",
+    "noPhotos": "No photos found for this phase.",
+    "tabs": {
+      "allPhotos": "All Photos",
+      "finishing": "Finishing",
+      "foundation": "Foundation",
+      "framing": "Framing",
+      "sitePrep": "Site Prep"
+    },
+    "title": "Project Photos",
+    "untitled": "Untitled Photo"
+  },
+  "portal": {
+    "loadingProjects": "Loading your project...",
+    "noProjects": {
+      "buttons": {
+        "goHome": "Go Home",
+        "signOut": "Sign Out",
+        "support": "View Support Resources"
+      },
+      "description": "You don't have access to any client projects yet.",
+      "help": {
+        "step1": "Verify you're logged in with the correct email",
+        "step2": "Try logging out and logging back in",
+        "step3": "Contact the administrator listed above",
+        "title": "If you believe this is an error, please:"
+      },
+      "nextSteps": {
+        "contactLabel": "Administrator Contact:",
+        "instruction": "Please contact your administrator to request access.",
+        "title": "Next Steps:"
+      },
+      "reasons": {
+        "accessRevoked": "Your access was revoked or has expired",
+        "notInvited": "You haven't been invited to any projects",
+        "pending": "Your account is pending activation",
+        "title": "This could mean:"
+      },
+      "subtitle": "No Projects Available",
+      "title": "Access Denied"
+    },
+    "photoGallery": {
+      "description": "Browse the latest progress photos from the job site.",
+      "details": "View the latest site photographs and galleries.",
+      "title": "Photo Gallery"
+    },
+    "sections": {
+      "financial": {
+        "description": "Review budgets, spend, and forecasts.",
+        "title": "Financial Summary"
+      },
+      "inssPlanning": {
+        "description": "Compare tax payment strategies and simulations.",
+        "notAvailableDescription": "Tax configuration has not been set up for this project yet. Please contact your project manager.",
+        "notAvailableTitle": "INSS Planning Not Available",
+        "title": "INSS Planning"
+      },
+      "inssStrategy": {
+        "description": "Managed compliance journey from permit to registry.",
+        "notSetupDescription": "Tax strategy management has not been initialized for this project.",
+        "notSetupTitle": "INSS Strategy Not Setup",
+        "title": "INSS Strategy"
+      },
+      "meetings": {
+        "description": "See the schedule for your next meetings.",
+        "title": "Upcoming Meetings"
+      },
+      "openButton": "Open",
+      "openView": "Open {{section}} view",
+      "payments": {
+        "description": "Inspect invoices, balances, and payment history.",
+        "title": "Recent Payments and Invoices"
+      },
+      "schedule": {
+        "description": "View milestones, events, and upcoming deliveries.",
+        "title": "Upcoming Schedule"
+      },
+      "tasks": {
+        "description": "Track the client-facing tasks you own.",
+        "title": "My Tasks"
+      },
+      "team": {
+        "description": "Meet your trusted project collaborators.",
+        "title": "Key Team Contacts"
+      }
+    },
+    "subtitle": "Track schedules, payments, and gallery updates for your project.",
+    "switchProject": "Switch Project"
+  },
+  "projectManager": "Project Manager",
+  "reportViewer": {
+    "emailDialog": {
+      "description": "Send this report to a recipient via email with a download link.",
+      "fileInfo": "File",
+      "linkExpiry": "The download link will expire in 1 hour.",
+      "message": "Message",
+      "messagePlaceholder": "Optional message to include with the report...",
+      "recipient": "Recipient Email",
+      "send": "Send Email",
+      "sending": "Sending...",
+      "subject": "Subject",
+      "subjectPlaceholder": "Report subject",
+      "title": "Send Report via Email"
+    },
+    "error": {
+      "email": "Failed to send email",
+      "generation": "Failed to generate report",
+      "storage": "Failed to store report",
+      "whatsapp": "Failed to send WhatsApp"
+    },
+    "generating": "Generating report...",
+    "noPreview": "No preview available",
+    "print": "Print",
+    "sendEmail": "Send Email",
+    "sendWhatsApp": "Send WhatsApp",
+    "storeToFolder": "Store to Client Folder",
+    "storing": "Storing...",
+    "success": {
+      "emailSent": "Report sent via email successfully",
+      "stored": "Report stored successfully",
+      "whatsappSent": "Report sent via WhatsApp successfully"
+    },
+    "whatsappDialog": {
+      "description": "Send this report to a recipient via WhatsApp with a download link.",
+      "fileInfo": "File",
+      "linkExpiry": "The download link will expire in 1 hour.",
+      "message": "Message",
+      "messagePlaceholder": "Enter your message...",
+      "phoneHint": "Include country code (e.g., +55 for Brazil)",
+      "phoneNumber": "Phone Number",
+      "send": "Send WhatsApp",
+      "sending": "Sending...",
+      "title": "Send Report via WhatsApp"
+    }
+  },
+  "schedule": {
+    "loading": "Loading schedule...",
+    "title": "Upcoming Schedule"
+  },
+  "scheduleComponents": {
+    "nextMonth": "Next month",
+    "previousMonth": "Previous month"
+  },
+  "subtotal": "Subtotal",
+  "tasks": {
+    "addNewTask": "Add New Task",
+    "dialog": {
+      "assigneeLabel": "Assign To",
+      "assigneeNone": "None",
+      "assigneePlaceholder": "Select team member",
+      "cancel": "Cancel",
+      "description": "Create a new task for your project team.",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Enter task description (optional)",
+      "dueDateLabel": "Due Date",
+      "dueDatePlaceholder": "Pick a date",
+      "nameLabel": "Task Name *",
+      "namePlaceholder": "Enter task name",
+      "nameRequired": "Task name is required",
+      "priorityHigh": "High",
+      "priorityLabel": "Priority",
+      "priorityLow": "Low",
+      "priorityMedium": "Medium",
+      "statusBlocked": "Blocked",
+      "statusInProgress": "In Progress",
+      "statusLabel": "Status",
+      "statusPending": "Pending",
+      "submit": "Create Task",
+      "submitting": "Creating...",
+      "success": "Task created",
+      "title": "Add New Task"
+    },
+    "filters": {
+      "all": "All",
+      "assignee": "Assignee",
+      "completed": "Completed",
+      "dueDate": "Due Date",
+      "dueDateSort": "Due Date",
+      "inProgress": "In Progress",
+      "name": "Name",
+      "nextWeek": "Next Week",
+      "overdue": "Overdue",
+      "priority": "Priority",
+      "sortBy": "Sort by",
+      "status": "Status",
+      "statusSort": "Status",
+      "thisWeek": "This Week",
+      "toDo": "To Do"
+    },
+    "noTasks": "No tasks found matching your criteria.",
+    "searchPlaceholder": "Search",
+    "subtitle": "Manage and track project tasks",
+    "tableHeaders": {
+      "assignee": "Assignee",
+      "dueDate": "Due Date",
+      "status": "Status",
+      "taskName": "Task Name"
+    },
+    "title": "My Tasks"
+  },
+  "tax": "Tax",
+  "team": {
+    "description": "Here are the key contacts for your project. Feel free to reach out with any questions.",
+    "title": "Your Project Team"
+  },
+  "title": "Title",
+  "total": "Total"
+}

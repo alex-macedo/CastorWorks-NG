@@ -1,0 +1,15 @@
+{
+  "avgCompletion": "Promedio de Finalización",
+  "categoryDistribution": "Distribución por Categoría",
+  "completed": "Completados",
+  "days": "días",
+  "effortDistribution": "Distribución por Esfuerzo",
+  "featuresDeliveredPerWeek": "Funcionalidades Entregadas por Semana",
+  "inProgress": "En Progreso",
+  "priorityDistribution": "Distribución por Prioridad",
+  "statusDistribution": "Distribución por Estado",
+  "subtitle": "Insights y métricas para el roadmap de su producto",
+  "title": "Análisis del Roadmap",
+  "totalItems": "Total de Elementos",
+  "velocityTrend": "Tendencia de Velocidad"
+}

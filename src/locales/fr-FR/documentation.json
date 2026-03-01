@@ -1,0 +1,204 @@
+{
+  "buttons": {
+    "close": "Fermer",
+    "download": "Télécharger",
+    "openNewTab": "Ouvrir dans un nouvel onglet",
+    "print": "Imprimer",
+    "reload": "Recharger",
+    "reloading": "Rechargement...",
+    "share": "Partager",
+    "view": "Voir",
+    "viewRaw": "Voir le Code"
+  },
+  "categories": {
+    "accountants": "Comptables",
+    "aiFeatures": "Fonctionnalités IA",
+    "architecture": "Architecture",
+    "components": "Composants",
+    "devOps": "DevOps",
+    "development": "Développement",
+    "planning": "Planification",
+    "product": "Produit",
+    "projectManagement": "Gestion de Projet",
+    "projectManagers": "Chefs de Projet",
+    "supervisors": "Superviseurs",
+    "suppliers": "Fournisseurs",
+    "testing": "Tests"
+  },
+  "documents": {
+    "adminPaymentGuide": {
+      "description": "Tableau de bord des paiements, flux de paiement en deux étapes et gestion des échéances",
+      "name": "Guide de Traitement des Paiements de l'Administrateur"
+    },
+    "aiFeatures": {
+      "description": "Guide étape par étape pour utiliser les fonctionnalités alimentées par l'IA dans tous les modules",
+      "name": "Guide des Fonctionnalités IA"
+    },
+    "architectureOverview": {
+      "description": "Documentation complète de l'architecture du système",
+      "name": "Vue d'Ensemble de l'Architecture"
+    },
+    "benchmarkGuide": {
+      "description": "Guide complet pour les référentiels de coûts de construction, alertes intelligentes, suggestions de budget, analyse des tendances et prédictions via IA",
+      "name": "Guide des Référentiels de Coûts de Construction"
+    },
+    "budgetGuide": {
+      "description": "Guide complet couvrant les modèles de Budget Simple, Budget Détaillé (SINAPI) et Budget de Contrôle des Coûts, incluant la création et la gestion de modèles",
+      "name": "Guide de Gestion du Budget"
+    },
+    "calendarGuide": {
+      "description": "Apprenez à utiliser les jours ouvrables et à gérer les calendriers de projet pour une planification précise",
+      "name": "Guide du Calendrier de Projet"
+    },
+    "codebaseAnalysis": {
+      "description": "Analyse détaillée de la structure de la base de code",
+      "name": "Analyse de la Base de Code"
+    },
+    "constructionPMAISkillGuide": {
+      "description": "Guide complet pour utiliser la Compétence IA de PM de Construction pour l'orientation de gestion de projet, les recommandations de flux de travail et les meilleures pratiques de l'industrie",
+      "name": "Guide de l'Utilisateur de la Compétence IA de PM de Construction"
+    },
+    "deliveryTests": {
+      "description": "12 cas de test couvrant la vérification de livraison, photos et signatures",
+      "name": "Tests de Flux de Confirmation de Livraison"
+    },
+    "deploymentGuide": {
+      "description": "Instructions de déploiement étape par étape pour Epic 4 et Story 3-9",
+      "name": "Guide de Déploiement"
+    },
+    "financialPaymentGuide": {
+      "description": "Générez des liens de paiement, partagez avec les clients et suivez le statut du paiement en temps réel",
+      "name": "Guide des Liens de Paiement Financier"
+    },
+    "inssStrategyGuide": {
+      "description": "Guide complet pour l'optimisation de la sécurité sociale dans la construction, références VAU et stratégies de conformité SERO",
+      "name": "Guide de Stratégie et de Planification de l'INSS"
+    },
+    "paymentTests": {
+      "description": "10 cas de test pour le tableau de bord des paiements et les flux de traitement",
+      "name": "Tests de Flux de Traitement des Paiements"
+    },
+    "pmAckGuide": {
+      "description": "Génération de liens de confirmation et suivi des confirmations des fournisseurs",
+      "name": "Guide de Confirmation de BC du CP"
+    },
+    "prEpic4Summary": {
+      "description": "Liste complète des fonctionnalités et statistiques d'implémentation",
+      "name": "Résumé PR Epic 4"
+    },
+    "prd": {
+      "description": "Spécifications et exigences du produit",
+      "name": "Document d'Exigences du Produit (PRD)"
+    },
+    "procurementEpics": {
+      "description": "Toutes les définitions d'epics et stories d'approvisionnement",
+      "name": "Epics d'Approvisionnement"
+    },
+    "procurementRequirements": {
+      "description": "Exigences détaillées pour les fonctionnalités d'approvisionnement",
+      "name": "Exigences du Module d'Approvisionnement"
+    },
+    "roadmapImplementation": {
+      "description": "Feuille de route du produit et calendrier d'implémentation",
+      "name": "Implémentation de la Feuille de Route"
+    },
+    "signaturePad": {
+      "description": "API et utilisation du composant de capture de signature numérique",
+      "name": "Composant de Panneau de Signature"
+    },
+    "sinapiGuide": {
+      "description": "Aperçu pratique de la table SINAPI, types de prix, compositions et codification",
+      "name": "Guide SINAPI Brésil (Tabela SINAPI)"
+    },
+    "sprintReleaseNotes": {
+      "category": "Release Notes",
+      "description": "Notes de version générées par IA pour {{sprint}} : {{title}}",
+      "name": "Sprint {{sprint}} – Release Notes"
+    },
+    "sprintStatus": {
+      "description": "Progrès actuel du sprint et état d'achèvement des stories",
+      "name": "État du Sprint"
+    },
+    "supervisorGuide": {
+      "description": "Flux optimisé pour appareils mobiles pour vérifier les livraisons, capturer des photos et des signatures numériques",
+      "name": "Guide de Confirmation de Livraison du Superviseur"
+    },
+    "supplierAckGuide": {
+      "description": "Comment confirmer les bons de commande en utilisant des liens sécurisés (sans connexion requise)",
+      "name": "Guide de Confirmation de BC du Fournisseur"
+    },
+    "supplierTests": {
+      "description": "13 cas de test pour la confirmation de BC et la validation de jeton",
+      "name": "Tests de Flux de Confirmation de Fournisseur"
+    },
+    "timelineAnalyticsGuide": {
+      "description": "Guide complet pour l'analyse de timeline, le suivi des jalons, l'analyse des retards et les métriques de performance du projet",
+      "name": "Guide d'Analyse de Timeline"
+    },
+    "whatsappGuide": {
+      "description": "Configurez les messages WhatsApp, les rappels automatiques et les notifications clients via Twilio",
+      "name": "Guide d'Intégration WhatsApp"
+    }
+  },
+  "implementationInfo": {
+    "documentation": "Documentation",
+    "filesChanged": "Fichiers Modifiés",
+    "linesOfCode": "Lignes de Code",
+    "newRoutes": "Nouvelles Routes",
+    "title": "Informations d'Implémentation"
+  },
+  "preview": {
+    "errorLoading": "Échec du chargement du document",
+    "loading": "Chargement du document...",
+    "selected": "Sélectionné",
+    "title": "Aperçu du Document"
+  },
+  "quickAccess": {
+    "accountants": "Comptables → Guide de Paiement",
+    "projectManagers": "Chefs de Projet → Guide PM",
+    "supervisors": "Superviseurs → Guide de Livraison",
+    "suppliers": "Fournisseurs → Guide de Confirmation",
+    "title": "Accès Rapide par Profil"
+  },
+  "sections": {
+    "aiFeatures": {
+      "description": "Apprenez à utiliser les informations et recommandations alimentées par l'IA",
+      "title": "Alimenté par l'IA"
+    },
+    "architecture": {
+      "description": "Architecture du système et documentation du projet",
+      "title": "Architecture et Planification"
+    },
+    "technical": {
+      "description": "Détails d'implémentation et guides de déploiement",
+      "title": "Documentation Technique"
+    },
+    "tests": {
+      "description": "Suites de tests complètes pour tous les flux (35 cas de test)",
+      "title": "Tests End-to-End"
+    },
+    "userGuides": {
+      "description": "Guides complets pour tous les profils d'utilisateurs",
+      "title": "Guides Utilisateur"
+    }
+  },
+  "stats": {
+    "storiesComplete": "Stories Complètes",
+    "storiesCompleteDesc": "100% procurement",
+    "technicalDocs": "Docs Techniques",
+    "technicalDocsDesc": "Architecture et guides",
+    "testCases": "Cas de Test",
+    "testCasesDesc": "Tests end-to-end",
+    "userGuides": "Guides Utilisateur",
+    "userGuidesDesc": "Pour tous les profils"
+  },
+  "subtitle": "Documentation complète pour Epic 4 (Livraison et Paiement) et Story 3-9 (Confirmation de BC)",
+  "tabs": {
+    "aiFeatures": "Alimenté par l'IA",
+    "architecture": "Architecture",
+    "technical": "Technique",
+    "tests": "Tests",
+    "userGuides": "Guides Utilisateur"
+  },
+  "title": "Documentation"
+}

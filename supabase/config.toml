@@ -1,0 +1,148 @@
+project_id = "adcioarujeydtbsxxest"
+
+[functions.acknowledge-purchase-order]
+verify_jwt = false
+
+[functions.ai-cache-manager]
+verify_jwt = false
+
+[functions.ai-chat-assistant]
+verify_jwt = false
+
+[functions.ai-usage-tracker]
+verify_jwt = false
+
+[functions.analyze-wbs-cost-code]
+verify_jwt = false
+
+[functions.approve-quote]
+verify_jwt = false
+
+[functions.calculate-critical-path]
+verify_jwt = false
+
+[functions.check-expired-quotes]
+verify_jwt = false
+
+[functions.execute-campaign]
+verify_jwt = false
+
+[functions.export-database-dump]
+verify_jwt = false
+
+[functions.fetch-exchange-rates]
+verify_jwt = false
+
+[functions.fetch-users-with-roles]
+verify_jwt = false
+
+[functions.fetch-weather]
+verify_jwt = false
+
+[functions.generate-analytics-insights]
+verify_jwt = false
+
+[functions.generate-approval-token]
+verify_jwt = false
+
+[functions.generate-construction-estimate]
+verify_jwt = false
+
+[functions.generate-po-acknowledgment-token]
+verify_jwt = false
+
+[functions.generate-po-pdf]
+verify_jwt = false
+
+[functions.generate-proposal-content]
+verify_jwt = false
+
+[functions.generate-purchase-order]
+verify_jwt = false
+
+[functions.generate-voice-message]
+verify_jwt = false
+
+[functions.get_pending_quotes_for_user]
+verify_jwt = false
+
+[functions.personalize-campaign-messages]
+verify_jwt = false
+
+[functions.predict-procurement-spend]
+verify_jwt = false
+
+[functions.process-ai-feedback]
+verify_jwt = false
+
+[functions.process-delivery-confirmation]
+verify_jwt = false
+
+[functions.record_admin_event]
+verify_jwt = false
+
+[functions.reject-quotes]
+verify_jwt = false
+
+[functions.seed-data]
+verify_jwt = false
+
+[functions.send-client-access-notification]
+verify_jwt = false
+
+[functions.send-email-notification]
+verify_jwt = false
+
+[functions.send-maintenance-notification]
+verify_jwt = false
+
+[functions.send-milestone-notifications]
+verify_jwt = false
+
+[functions.send-po-email]
+verify_jwt = false
+
+[functions.send-proposal-email]
+verify_jwt = false
+
+[functions.send-push-notification]
+verify_jwt = false
+
+[functions.send-quote-requests]
+verify_jwt = false
+
+[functions.send-role-notification]
+verify_jwt = false
+
+[functions.send-whatsapp-notification]
+verify_jwt = false
+
+[functions.sync-calendar-events]
+verify_jwt = false
+
+[functions.sync-google-drive]
+verify_jwt = false
+
+[functions.transcribe-voice-input]
+verify_jwt = false
+
+[functions.validate-approval-token]
+verify_jwt = false
+
+[functions.whatsapp-webhook]
+verify_jwt = false
+
+[functions.campaign-worker]
+verify_jwt = false
+
+[functions.process-campaign-queue]
+verify_jwt = false
+
+[functions.transcribe-audio]
+verify_jwt = false
+
+[functions.extract-meeting-notes]
+verify_jwt = false
+
+[functions.summarize-meeting]
+verify_jwt = false

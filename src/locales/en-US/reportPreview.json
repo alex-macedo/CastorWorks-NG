@@ -1,0 +1,17 @@
+{
+  "badge": "Badge",
+  "overview": "Overview",
+  "client": "Client",
+  "manager": "Manager",
+  "date": "Date",
+  "version": "Version",
+  "resolvedAnnotations": "Resolved Annotations",
+  "resolved": "Resolved",
+  "planView": "Plan View",
+  "fieldPhoto": "Field Photo",
+  "technicalDrawing": "Technical Drawing",
+  "siteInspection": "Site Inspection",
+  "share": "Share",
+  "download": "Download",
+  "send": "Send"
+}

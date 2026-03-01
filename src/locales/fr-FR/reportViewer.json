@@ -1,0 +1,37 @@
+{
+  "emailDialog": {
+    "title": "[EN] Title",
+    "description": "[EN] Description",
+    "recipient": "[EN] Recipient",
+    "subject": "[EN] Subject",
+    "subjectPlaceholder": "[EN] Subject Placeholder",
+    "message": "[EN] Message",
+    "messagePlaceholder": "[EN] Message Placeholder",
+    "fileInfo": "[EN] File Info",
+    "linkExpiry": "[EN] Link Expiry",
+    "sending": "[EN] Sending",
+    "send": "[EN] Send"
+  },
+  "storing": "[EN] Storing",
+  "storeToFolder": "[EN] Store To Folder",
+  "print": "[EN] Print",
+  "sendEmail": "[EN] Send Email",
+  "sendWhatsApp": "[EN] Send Whats App",
+  "generating": "[EN] Generating",
+  "error": {
+    "generation": "[EN] Generation"
+  },
+  "noPreview": "[EN] No Preview",
+  "whatsappDialog": {
+    "title": "[EN] Title",
+    "description": "[EN] Description",
+    "phoneNumber": "[EN] Phone Number",
+    "phoneHint": "[EN] Phone Hint",
+    "message": "[EN] Message",
+    "messagePlaceholder": "[EN] Message Placeholder",
+    "fileInfo": "[EN] File Info",
+    "linkExpiry": "[EN] Link Expiry",
+    "sending": "[EN] Sending",
+    "send": "[EN] Send"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "actions": "Actions",
+  "auditLogs": {
+    "subtitle": "View system activity and security events",
+    "title": "Audit Logs"
+  },
+  "automatedRlsTests": "Automated RLS Tests",
+  "cancel": "Cancel",
+  "confirmDelivery": "Confirm Delivery",
+  "database": {
+    "subtitle": "Export and import database data",
+    "title": "Database Management"
+  },
+  "delete": "Delete",
+  "edit": "Edit",
+  "error": "Error loading data",
+  "howToTestDifferentRoles": "How to test with different roles",
+  "loading": "Loading...",
+  "maintenance": {
+    "subtitle": "Schedule and manage system maintenance windows",
+    "title": "Maintenance Management"
+  },
+  "maintenanceManagement": "Maintenance Management",
+  "migrationRequired": "Database Migration Required",
+  "migrationSteps": {
+    "step1": "Go to your Supabase Dashboard SQL Editor",
+    "step2": "Run the architect module migrations:",
+    "step3": "Refresh this page after the migration completes"
+  },
+  "rlsPolicyTesting": "RLS Policy Testing",
+  "roles": {
+    "subtitle": "Manage user roles and permissions",
+    "title": "Role Management"
+  },
+  "save": "Save",
+  "subtitle": "Manage system settings and configurations",
+  "telemetry": {
+    "subtitle": "Monitor system errors and performance issues",
+    "title": "Telemetry Issues"
+  },
+  "telemetryUnlinkedApprovals": "Unlinked Approvals",
+  "testResults": "Test Results",
+  "testingInstructions": "Testing Instructions",
+  "title": "Administration",
+  "whatTheseTestsVerify": "What these tests verify",
+  "whatsapp": {
+    "actions": {
+      "changeNumber": "Change Number",
+      "connect": "Connect",
+      "disconnect": "Disconnect",
+      "generateQR": "Generate QR Code",
+      "refreshStatus": "Refresh Status",
+      "restart": "Restart",
+      "setupInstance": "Setup Instance"
+    },
+    "aiAutoResponder": {
+      "description": "CastorMind AI automatically answers incoming WhatsApp queries using project data (status, area, manager, budget). Requires WhatsApp contacts linked to projects.",
+      "enabled": "AI Auto-Responder",
+      "requiresContacts": "Link phone numbers to projects in WhatsApp Contacts for project-specific replies"
+    },
+    "connection": {
+      "connectedSince": "Connected since {{date}}",
+      "notConfigured": "WhatsApp instance not configured yet",
+      "refreshSyncHint": "Evolution Manager shows Connected? Click to sync status from API",
+      "status": "Instance Status",
+      "statusDesc": "Current WhatsApp connection status and account info"
+    },
+    "contacts": {
+      "description": "View and manage WhatsApp contacts",
+      "empty": "No contacts found",
+      "name": "Name",
+      "optedIn": "Opted In",
+      "phone": "Phone",
+      "title": "WhatsApp Contacts",
+      "type": "Type",
+      "verified": "Verified"
+    },
+    "description": "Manage WhatsApp integration via Evolution API",
+    "groups": {
+      "active": "Active",
+      "add": "Add",
+      "addParticipant": "Add Participant",
+      "addParticipantDesc": "Enter the phone number to add to the group.",
+      "addParticipantTitle": "Add Participant",
+      "admin": "Admin",
+      "connectFirst": "Connect WhatsApp in Admin Settings to manage project groups.",
+      "create": "Create WhatsApp Group",
+      "createDesc": "A WhatsApp group will be created with all team members who have phone numbers registered.",
+      "createTitle": "Create Project WhatsApp Group",
+      "createdAt": "Created",
+      "currentParticipants": "Current Participants",
+      "description": "Description",
+      "descriptionPlaceholder": "Optional group description...",
+      "groupName": "Group Name",
+      "groupNameHint": "Leave empty to use project code or name",
+      "noGroup": "No WhatsApp group exists for this project yet.",
+      "notConnected": "WhatsApp Not Connected",
+      "participants": "participants",
+      "phoneNumber": "Phone Number",
+      "syncTeam": "Sync with Team",
+      "title": "WhatsApp Group",
+      "updatedAt": "Updated"
+    },
+    "manager": {
+      "createInstance": "Create Instance",
+      "deleteInstance": "Delete",
+      "error": "Operation failed",
+      "instanceCreated": "Instance created",
+      "instanceDeleted": "Instance deleted",
+      "instanceName": "Instance name",
+      "instancesTitle": "All Instances",
+      "noInstances": "No instances found",
+      "primary": "Primary",
+      "webhookUpdated": "Webhook updated"
+    },
+    "messages": {
+      "contact": "Contact",
+      "content": "Content",
+      "description": "View recent messages sent and received",
+      "direction": "Direction",
+      "empty": "No messages yet",
+      "received": "Received",
+      "sent": "Sent",
+      "status": "Status",
+      "time": "Time",
+      "title": "Message History",
+      "type": "Type"
+    },
+    "qr": {
+      "alreadyConnected": "WhatsApp is connected!",
+      "awaitingQr": "Awaiting QR code from server. Click Generate QR to retry.",
+      "clickToGenerate": "Click Connect to generate QR code",
+      "description": "Scan with WhatsApp to connect your account",
+      "generating": "Generating QR code...",
+      "managerFallback": "If the QR doesn't appear above, use the Evolution Manager to connect:",
+      "openEvolutionManager": "Open Evolution Manager",
+      "pairingCodeExpiry": "Code expires in 60 seconds.",
+      "pairingCodeInstructions": "Open WhatsApp on your phone, go to Settings > Linked Devices > Link a Device, then tap Link with phone number and enter this code",
+      "scanInstructions": "Open WhatsApp on your phone, go to Settings > Linked Devices > Link a Device, and scan this code",
+      "title": "QR Code"
+    },
+    "status": {
+      "awaitingScan": "Awaiting Scan",
+      "connected": "Connected",
+      "connecting": "Connecting",
+      "disconnected": "Disconnected",
+      "error": "Error"
+    },
+    "tabs": {
+      "connection": "Connection",
+      "contacts": "Contacts",
+      "instances": "Instances",
+      "messages": "Messages",
+      "templates": "Templates",
+      "webhook": "Webhook"
+    },
+    "templates": {
+      "categories": {
+        "alert": "Alert",
+        "approval": "Approval",
+        "marketing": "Marketing",
+        "notification": "Notification",
+        "reminder": "Reminder",
+        "report": "Report"
+      },
+      "category": "Category",
+      "content": "Message Content",
+      "contentHelp": "Use {{variable_name}} syntax for dynamic content that will be replaced at send time",
+      "contentPlaceholder": "Enter your message template here. Use {{variable}} for dynamic content.",
+      "copied": "Template copied to clipboard",
+      "copy": "Copy",
+      "copyFailed": "Failed to copy template",
+      "create": "Create Template",
+      "createDescription": "Create a new message template with variable placeholders",
+      "createFirst": "Create Your First Template",
+      "createTitle": "Create Template",
+      "delete": "Delete",
+      "deleteConfirmDescription": "Are you sure you want to delete the template \"{{name}}\"? This action cannot be undone.",
+      "deleteConfirmTitle": "Delete Template?",
+      "description": "Manage notification templates for automated messages",
+      "detectedVariables": "Detected Variables",
+      "edit": "Edit",
+      "editDescription": "Update the template content and settings",
+      "editTitle": "Edit Template",
+      "empty": "No templates configured",
+      "key": "Template Key",
+      "keyHelp": "Unique identifier used to reference this template in code",
+      "language": "Language",
+      "name": "Template Name",
+      "namePlaceholder": "e.g., Project Update",
+      "preview": "Preview",
+      "previewResult": "Rendered Message",
+      "previewTitle": "Template Preview",
+      "test": "Test",
+      "title": "Message Templates",
+      "variableValues": "Variable Values"
+    },
+    "test": {
+      "description": "Send a test message to verify the connection is working",
+      "message": "Message",
+      "messagePlaceholder": "Enter your test message...",
+      "phone": "Phone Number",
+      "send": "Send Test Message",
+      "title": "Send Test Message"
+    },
+    "title": "WhatsApp Settings",
+    "webhook": {
+      "description": "Configure where Evolution API sends events",
+      "events": "Events",
+      "save": "Save Webhook",
+      "title": "Webhook Configuration",
+      "url": "Webhook URL"
+    }
+  }
+}

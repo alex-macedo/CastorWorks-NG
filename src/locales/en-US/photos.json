@@ -1,0 +1,25 @@
+{
+  "uploadSuccess": "Upload Success",
+  "uploadFailed": "Upload Failed",
+  "dropHere": "Drop Here",
+  "dragDropHere": "Drag Drop Here",
+  "clickToBrowse": "Click To Browse",
+  "selectPhotos": "Select Photos",
+  "photosReady": "Photos Ready",
+  "uploading": "Uploading",
+  "uploadSaveAll": "Upload Save All",
+  "uploadProgress": "Upload Progress",
+  "category": "Category",
+  "selectCategory": "Select Category",
+  "categories": {
+    "before": "Before",
+    "during": "During",
+    "after": "After",
+    "issues": "Issues",
+    "completion": "Completion",
+    "projectDelivery": "Project Delivery",
+    "other": "Other"
+  },
+  "captionOptional": "Caption Optional",
+  "addDescription": "Add Description"
+}

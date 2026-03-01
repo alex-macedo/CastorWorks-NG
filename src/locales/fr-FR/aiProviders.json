@@ -1,0 +1,86 @@
+{
+  "actions": {
+    "cancel": "Annuler",
+    "disable": "Désactiver",
+    "edit": "Modifier",
+    "enable": "Activer",
+    "moveDown": "Descendre",
+    "moveUp": "Monter",
+    "save": "Enregistrer les Modifications",
+    "test": "Tester la Connexion"
+  },
+  "adminOnly": "Accès administrateur requis pour modifier les paramètres des fournisseurs d'IA",
+  "description": "Configurez les fournisseurs d'IA pour la génération de contenu et les analyses",
+  "dialog": {
+    "apiEndpoint": "Point de Terminaison API",
+    "apiEndpointPlaceholder": "https://api.example.com/v1/...",
+    "apiKey": "Clé API",
+    "apiKeyDescription": "Votre clé est stockée de manière sécurisée. Laissez vide pour conserver la clé actuelle.",
+    "apiKeyPlaceholder": "sk-...",
+    "defaultModel": "Modèle par Défaut",
+    "defaultModelPlaceholder": "Sélectionnez ou entrez le nom du modèle",
+    "editDescription": "Configurer les paramètres pour {{provider}}",
+    "editTitle": "Modifier le Fournisseur d'IA",
+    "maxTokens": "Tokens Maximum",
+    "maxTokensDescription": "Tokens maximum pour les complétions (1-100000)",
+    "priority": "Ordre de Priorité",
+    "priorityDescription": "Nombre inférieur = priorité plus élevée dans la chaîne de secours",
+    "temperature": "Température",
+    "temperatureDescription": "Température d'échantillonnage (0.0-2.0)"
+  },
+  "help": {
+    "apiProviders": "Anthropic et OpenAI sont des services d'IA basés sur le cloud qui nécessitent des clés API et entraînent des coûts d'utilisation.",
+    "explanation": "Les fournisseurs d'IA alimentent les fonctionnalités intelligentes de CastorWorks, y compris les analyses, les résumés quotidiens et la génération de contenu. Vous pouvez configurer plusieurs fournisseurs et établir des secours automatiques.",
+    "fallbackChain": "La chaîne de secours détermine quel fournisseur essayer si le fournisseur principal échoue ou n'est pas disponible.",
+    "ollama": "OLLAMA vous permet d'exécuter des LLM open source sur votre propre infrastructure, offrant une IA à faible coût avec une forte confidentialité des données.",
+    "whatIsThis": "Que sont les Fournisseurs d'IA ?"
+  },
+  "messages": {
+    "allDisabled": "Tous les fournisseurs d'IA sont désactivés. Activez au moins un fournisseur.",
+    "noProviders": "Aucun fournisseur d'IA configuré",
+    "saveError": "Échec de l'enregistrement des paramètres",
+    "saveSuccess": "Paramètres enregistrés avec succès",
+    "testError": "Échec du test de connexion",
+    "updateError": "Échec de la mise à jour du fournisseur d'IA",
+    "updateSuccess": "Fournisseur d'IA mis à jour avec succès"
+  },
+  "providers": {
+    "anthropic": "Anthropic (Claude)",
+    "ollama": "OLLAMA (LLM Auto-hébergé)",
+    "openai": "OpenAI (GPT)",
+    "openrouter": "OpenRouter (Universel)"
+  },
+  "settings": {
+    "cacheTTL": "Durée du Cache (heures)",
+    "cacheTTLDescription": "Combien de temps mettre en cache les analyses générées par l'IA",
+    "defaultProvider": "Fournisseur par Défaut",
+    "defaultProviderDescription": "Fournisseur d'IA principal à utiliser",
+    "fallbackChain": "Chaîne de Secours",
+    "fallbackChainDescription": "Ordre des fournisseurs à essayer si le principal échoue"
+  },
+  "status": {
+    "active": "Actif",
+    "connected": "Connecté",
+    "disabled": "Désactivé",
+    "enabled": "Activé",
+    "error": "Erreur de Connexion",
+    "inactive": "Inactif",
+    "testing": "Test de connexion..."
+  },
+  "table": {
+    "actions": "Actions",
+    "endpoint": "Point de Terminaison API",
+    "model": "Modèle",
+    "priority": "Priorité",
+    "provider": "Fournisseur",
+    "status": "Statut"
+  },
+  "test": {
+    "failed": "Échec de la connexion",
+    "model": "Utilisation du modèle : {{model}}",
+    "starting": "Test de connexion...",
+    "success": "Connexion réussie !",
+    "successWithLatency": "Connecté en {{latency}}ms"
+  },
+  "title": "Configuration des Fournisseurs d'IA"
+}

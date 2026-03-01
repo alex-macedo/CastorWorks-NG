@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      # xlsx package has known vulnerabilities but no fix available
+      # Package is used for Excel import/export functionality
+      # Tracking: GHSA-4r6h-8v6p-xvw6, GHSA-5pgg-2g8v-p4x9
+      - dependency-name: "xlsx"
+        update-types: ["version-update:semver-major", "version-update:semver-minor", "version-update:semver-patch"]
+

@@ -1,0 +1,741 @@
+{
+  "backToDashboard": "Retour au tableau de bord",
+  "backToPortal": "Retour au portail",
+  "chat": {
+    "conversations": "Conversations",
+    "errorLoadingMessages": "Erreur lors du chargement des messages",
+    "noConversations": "Aucune conversation trouvée.",
+    "noMessages": "Aucun message pour l'instant",
+    "projectChat": "Chat du Projet",
+    "searchMessages": "Rechercher des messages...",
+    "selectConversationDescription": "Sélectionnez une conversation dans la liste pour commencer à discuter avec votre équipe projet.",
+    "subtitle": "Discutez avec votre équipe projet en temps réel.",
+    "title": "Chat",
+    "typePlaceholder": "Tapez un message...",
+    "yourMessages": "Vos Messages"
+  },
+  "common": {
+    "loading": "Chargement..."
+  },
+  "communication": {
+    "allTypes": "Tous les Types",
+    "description": "Un enregistrement chronologique de toutes les communications du projet.",
+    "filterButton": "Filtrer",
+    "noLogs": "Aucun journal de communication trouvé.",
+    "pagination": {
+      "next": "Suivant",
+      "previous": "Précédent",
+      "showing": "Affichage de {{from}} à {{to}} sur {{total}} entrées"
+    },
+    "searchPlaceholder": "Rechercher dans les journaux...",
+    "tableHeaders": {
+      "actions": "Actions",
+      "dateTime": "Date et Heure",
+      "participants": "Participants",
+      "subject": "Sujet",
+      "type": "Type"
+    },
+    "title": "Journal de Communication",
+    "types": {
+      "email": "E-mail",
+      "meeting": "Réunion",
+      "message": "Message",
+      "phoneCall": "Appel Téléphonique"
+    },
+    "viewDetails": "Voir les Détails"
+  },
+  "creditCard": "Carte de Crédit",
+  "dashboard": {
+    "financialSummary": {
+      "outstanding": "En Cours :",
+      "outstandingLabel": "En Cours",
+      "paid": "Payé :",
+      "paidLabel": "Payé",
+      "title": "Résumé Financier",
+      "totalLabel": "Total",
+      "totalProjectCost": "Coût Total du Projet :"
+    },
+    "greeting": "Bonjour, {{name}} 👋",
+    "greetings": {
+      "afternoon": "Bon après-midi ! Restons productifs !",
+      "evening": "C'est déjà le soir, mais l'inspiration n'a pas d'heure, n'est-ce pas ?",
+      "morning": "La journée ne fait que commencer !",
+      "night": "Vous travaillez tard ? Quel dévouement !"
+    },
+    "keyTeamContacts": {
+      "noMembers": "Aucun membre de l'équipe trouvé.",
+      "title": "Contacts Clés de l'Équipe"
+    },
+    "loading": "Chargement...",
+    "myTasks": {
+      "addNew": "Ajouter une Nouvelle Tâche",
+      "due": "Échéance {{date}}",
+      "noPending": "Aucune tâche en attente.",
+      "title": "Mes Tâches"
+    },
+    "picturesLibrary": {
+      "photoAlt": "Photo du projet {{number}}",
+      "title": "Bibliothèque d'Images",
+      "viewAll": "Voir Toutes les Photos"
+    },
+    "recentPayments": {
+      "due": "Échéance {{date}}",
+      "invoice": "Facture #{{id}} - {{amount}}",
+      "noInvoices": "Aucun paiement ou facture.",
+      "paid": "Payé {{date}}",
+      "paymentButton": "Paiement",
+      "title": "Paiements et Factures Récents"
+    },
+    "title": "Tableau de Bord",
+    "upcomingMeetings": {
+      "noMeetings": "Aucune réunion à venir.",
+      "requestMeeting": "Demander une Réunion",
+      "title": "Réunions à Venir"
+    },
+    "upcomingSchedule": {
+      "milestone": "Jalon :",
+      "noMilestones": "Aucun jalon à venir.",
+      "noProject": "Aucun projet sélectionné.",
+      "title": "Planning à Venir"
+    },
+    "welcome": "Bienvenue, {{userName}} !",
+    "welcomeDefault": "Bienvenue, Utilisateur !"
+  },
+  "definitions": {
+    "noDefinitions": "Aucune décision ou approbation en attente pour ce projet.",
+    "subtitle": "Sélections de matériaux, approbations de conception et décisions client requises.",
+    "title": "Décisions et Approbations"
+  },
+  "description": "Description",
+  "dialogs": {
+    "addTask": {
+      "descriptionPlaceholder": "Entrez la description de la tâche (facultatif)",
+      "namePlaceholder": "Entrez le nom de la tâche",
+      "selectTeamMember": "Sélectionnez un membre de l'équipe"
+    },
+    "payment": {
+      "referencePlaceholder": "Entrez la référence de paiement ou le numéro de BC",
+      "selectInvoice": "Choisissez une facture"
+    },
+    "requestMeeting": {
+      "descriptionPlaceholder": "Entrez la description de la réunion (facultatif)",
+      "titlePlaceholder": "Entrez le titre de la réunion"
+    }
+  },
+  "documents": {
+    "noProjects": "Aucun Projet",
+    "noProjectsDescription": "Aucun document de projet disponible.",
+    "searchPlaceholder": "Rechercher des projets...",
+    "selectProject": "Sélectionner un Projet",
+    "selectProjectDescription": "Choisissez un projet pour voir ses détails.",
+    "subtitle": "Accédez et organisez les fichiers de votre projet.",
+    "title": "Documents du Projet",
+    "viewDocuments": "Voir les Détails du Projet"
+  },
+  "due": "Dû",
+  "financial": {
+    "advisor": {
+      "actionItems": "Éléments d'action",
+      "activeAlerts": "Alertes actives",
+      "aiStrategicOutlook": "Perspective Stratégique IA",
+      "alerts": "Alertes",
+      "alertsAndAnomalies": "Alertes et Anomalies",
+      "amount": "Montant",
+      "budgetHealth": "Santé du budget",
+      "complexityComplex": "Complexe",
+      "complexityEasy": "Facile",
+      "complexityModerate": "Modéré",
+      "confidence": "Confiance",
+      "consolidation": "Consolidación",
+      "costAnomaly": "Anomalie de Coût",
+      "current": "Actuel",
+      "currentAllocation": "Allocation actuelle",
+      "errorLoading": "Échec du chargement de l'analyse financière. Veuillez réessayer.",
+      "errorTitle": "Erreur de Chargement du Conseiller Financier",
+      "expectedRange": "Plage Attendue",
+      "growthOpportunities": "Opportunités de croissance",
+      "healthExcellent": "Excellente",
+      "healthFair": "Passable",
+      "healthGood": "Bonne",
+      "healthPoor": "Médiocre",
+      "increase": "Augmentation",
+      "lastUpdated": "Dernière Mise à Jour",
+      "noAlerts": "Aucune alerte pour le moment",
+      "noDataAvailable": "Données non disponibles",
+      "noPredictions": "Pas de prédictions",
+      "noRecommendations": "Aucune recommandation disponible",
+      "optimizationRecommendations": "Recommandations d'optimisation",
+      "optimized": "Optimisé",
+      "overBudgetWarning": "Avertissement de dépassement de budget",
+      "overview": "Aperçu",
+      "possibleCauses": "Causes Possibles",
+      "potentialSavings": "Économies potentielles",
+      "predictedFinal": "Coût Final Projeté",
+      "predictedVariance": "Variance Projetée",
+      "predictions": "Prédictions",
+      "primaryIndicators": "Indicateurs Principaux",
+      "priorityHigh": "Haute",
+      "priorityLow": "Faible",
+      "priorityMedium": "Moyenne",
+      "projectedFinal": "Coût Final Projeté",
+      "projectedFinalDesc": "Prévision IA",
+      "projectedVariance": "Variance Projetée",
+      "projectedVarianceDesc": "Vs. Budget",
+      "reallocation": "Réallocation",
+      "recommendation": "Recommandation",
+      "recommendations": "Recommandations",
+      "recommendedActions": "Actions Recommandées",
+      "recommendedAllocation": "Allocation recommandée",
+      "reduction": "Réduction",
+      "reservesInsufficient": "Les réserves allouées sont insuffisantes",
+      "reservesStable": "Les réserves allouées sont stables",
+      "riskCritical": "Critique",
+      "riskHigh": "Élevé",
+      "riskLevel": "Niveau de risque",
+      "riskLow": "Faible",
+      "riskMedium": "Moyen",
+      "riskMitigation": "Atténuation des risques",
+      "riskMonitoring": "Surveillance des risques",
+      "setup": "Configuration",
+      "spendingDeviations": "Écarts budgétaires significatifs détectés",
+      "spendingOptimal": "Le rythme des dépenses est optimal",
+      "subtitle": "Insights financiers et recommandations avec IA pour votre projet",
+      "summaryTitle": "Résumé Financier",
+      "title": "Conseiller Financier",
+      "totalBudget": "Budget Total",
+      "totalBudgetDesc": "Fonds alloués",
+      "totalSpent": "Total Dépensé",
+      "totalSpentDesc": "Coûts totaux",
+      "utilization": "Utilisation",
+      "varianceControl": "Contrôle de Variance",
+      "variancePredictions": "Prédictions de variance",
+      "viewDetails": "Voir les détails"
+    },
+    "approvedBudget": "Budget approuvé",
+    "availableFunds": "Fonds disponibles",
+    "budgetBreakdown": {
+      "description": "Dépenses par catégorie vs budget alloué.",
+      "equipment": "Équipement",
+      "labor": "Main-d'œuvre",
+      "logistics": "Logistique",
+      "materials": "Matériaux",
+      "other": "Autre",
+      "permits": "Permis et Frais",
+      "subcontractors": "Sous-traitants",
+      "taxes": "Taxes",
+      "title": "Répartition du Budget"
+    },
+    "description": "Surveillez le budget et les dépenses de votre projet.",
+    "noExpensesFound": "Aucune dépense enregistrée pour le moment.",
+    "noTransactions": "Aucune transaction trouvée.",
+    "outstanding": "En cours",
+    "percentOfBudget": "{{percent}}% du budget",
+    "recentTransactions": "Transactions récentes",
+    "remaining": "Restant",
+    "title": "Aperçu Financier",
+    "totalBudget": "Budget Total",
+    "totalPaid": "Total payé",
+    "totalSpent": "Total Dépensé"
+  },
+  "inssPlanning": {
+    "labels": {
+      "area": "Surface Totale",
+      "category": "Catégorie",
+      "complianceDesc": "Notre plateforme est tenue à jour avec les derniers changements du Revenu Fédéral. Tous les calculs suivent les tables d'équivalence officielles et les variations municipales de VAU.",
+      "complianceStatus": "Entièrement Conforme",
+      "complianceTitle": "Conformité Garantie",
+      "constructionType": "Type de Construction",
+      "downloadReport": "Télécharger le Rapport",
+      "ecacPortal": "Portail d'enregistrement e-CAC",
+      "exclusiveContent": "Contenu Exclusif",
+      "flexible": "Flexible",
+      "installmentCount": "x {{count}}",
+      "item": "Article",
+      "lastUpdated": "Date du Rapport",
+      "learnMore": "En savoir plus",
+      "location": "Localisation",
+      "logicLocked": "Logique de Stratégie Verrouillée",
+      "logicLockedDesc": "Le détail de nos méthodologies d'économie d'impôts est exclusif aux clients bénéficiant d'un service de Planification Stratégique actif.",
+      "missingData": "Données Manquantes",
+      "monthlyInstallment": "Mensualité",
+      "monthlyPayment": "Paiement Mensuel (Est.)",
+      "optimizedTotal": "Total INSS Optimisé",
+      "perMonth": "/ mois",
+      "potentialSavings": "Économies Potentielles",
+      "projectInfo": "Informations sur le Projet",
+      "projectName": "Nom du Projet",
+      "recommended": "Recommandé",
+      "requestActivation": "Demander l'Activation du Service",
+      "requestSent": "Demande Envoyée",
+      "rfbInstruction": "Instruction Normative RFB 2021/2021",
+      "scenarioComparison": "Comparaison de Scénarios",
+      "seroOfficial": "Portail Officiel SERO",
+      "standard": "Standard",
+      "strategic": "Stratégique",
+      "strategyLogicDesc": "Au lieu de payer une somme forfaitaire importante à la fin sur la base d'une estimation gouvernementale (VAU), cette stratégie utilise les registres de paie mensuels réels pour documenter les coûts de main-d'œuvre. Cette voie vous permet de déduire les cotisations mensuelles déjà payées de la dette finale, ce qui entraîne souvent des économies massives.",
+      "strategyLogicTitle": "Logique de Planification Mensuelle Stratégique",
+      "totalDue": "Total INSS Dû",
+      "totalPrincipal": "Principal Total",
+      "totalSavings": "Économies Totales",
+      "validationLinks": "Ressources Légales et de Validation",
+      "validationLinksDesc": "Bases juridiques et ressources officielles validant cette méthode de calcul.",
+      "viewReport": "Voir le Rapport"
+    },
+    "notAvailableDescription": "La configuration fiscale n'a pas encore été établie pour ce projet. Veuillez contacter votre gestionnaire de projet.",
+    "notAvailableTitle": "Planification INSS non disponible",
+    "notSetupDescription": "La configuration fiscale n'a pas encore été établie pour ce projet. Veuillez contacter votre gestionnaire de projet.",
+    "notSetupTitle": "Planification INSS non configurée",
+    "pageTitle": "Planification et Simulation INSS",
+    "proposal": {
+      "area": "Surface",
+      "budgetMonth": "Mois du budget",
+      "clientInfo": "Informations client",
+      "companyName": "Entreprise",
+      "effectiveSavings": "(Économie effective avec accompagnement)",
+      "finalSavings": "Économie finale",
+      "financialSummary": "Résumé financier",
+      "inssWithPlanning": "Montant INSS avec planification",
+      "inssWithoutPlanning": "Montant INSS sans planification",
+      "legalNote": "Application du bénéfice du facteur d'ajustement conformément à l'IN 10.2021/21. Nous assurons un appui juridique et une responsabilité fiscale. Si la période du chantier est avancée ou prolongée, les valeurs totales restent identiques pour les honoraires et les impôts ; l'INSS de chantier est recalculé mensuellement et peut subir de légers ajustements.",
+      "location": "Localisation",
+      "months": "mois",
+      "or": "c'est-à-dire",
+      "owner": "Propriétaire",
+      "paidToRevenue": "payé au fisc par mois",
+      "parceled": "(échelonné sur la durée du projet)",
+      "perMonth": "par mois",
+      "period": "Période",
+      "projectDetails": "Détails du projet",
+      "serviceFee": "Honoraires",
+      "title": "Proposition d'accompagnement pour la réduction de l'INSS des travaux",
+      "validity": "Proposition valable 10 jours à compter de la date d'envoi."
+    },
+    "scenarios": {
+      "installments": "Plan de Paiement",
+      "installmentsDesc": "Régulariser la dette sur 60 mois",
+      "installmentsNote": "Comprend les intérêts SELIC. Pas de réduction de principal supplémentaire.",
+      "monthly": "Planification Mensuelle",
+      "monthlyDesc": "Gestion active de la paie (GFIP/eSocial)",
+      "monthlyNote": "Une planification mensuelle stratégique peut réduire considérablement vos impôts.",
+      "planned": {
+        "description": "Planification fiscale stratégique",
+        "title": "Planifié"
+      },
+      "standard": {
+        "description": "Calcul de taxe standard",
+        "title": "Standard"
+      },
+      "standardAfericao": "Aferição Standard",
+      "standardDesc": "Payer sous forme de somme forfaitaire après la construction",
+      "standardNote": "Utilise l'estimation gouvernementale VAU. Réductions stratégiques limitées."
+    },
+    "strategySteps": {
+      "step1Desc": "Le projet est inscrit au Registre National des Travaux (CNO) pour créer un identifiant fiscal unique.",
+      "step1Title": "1. Ouverture CNO",
+      "step2Desc": "Tous les travailleurs et prestataires de services sont liés mensuellement à l'identifiant du projet via eSocial.",
+      "step2Title": "2. Déclaration eSocial",
+      "step3Desc": "Les déclarations fiscales mensuelles sont envoyées au Revenu Fédéral pour enregistrer les cotisations payées comme crédits.",
+      "step3Title": "3. Transmission DCTFWeb",
+      "step4Desc": "Une fois terminé, le système compense la main-d'œuvre « documentée » par rapport à l'exigence « estimée », ce qui entraîne une réduction de la DARF finale.",
+      "step4Title": "4. Apurement Final Sero"
+    },
+    "subtitle": "Comparez différentes stratégies de paiement pour optimiser votre assujettissement à la taxe de construction.",
+    "title": "Planification INSS"
+  },
+  "inssStrategy": {
+    "accessPortal": "Accéder au portail",
+    "categories": {
+      "ACRESCIMO": "Ajout",
+      "DEMOLICAO": "Démolition",
+      "OBRA_NOVA": "Nouvelle Construction",
+      "REFORMA": "Rénovation"
+    },
+    "classification": "Détails de la classification du projet",
+    "dueDate": "Échéance : {{date}}",
+    "helpContent": {
+      "aboutDebtText": "L'INSS de construction est calculé dans la **DCTFWEB Aferição de obras** au sein de **SERO**. Après avoir soumis la **DCTFWeb**, le contribuable a jusqu'au **20** du mois suivant pour payer intégralement le montant calculé, **sans frais supplémentaires**, via la **DARF**.\n\nSi le 20 n'est pas un jour ouvrable, la date d'échéance est avancée. Le contribuable choisit de payer en totalité ou en plusieurs fois.",
+      "aboutDebtTitle": "À propos de la dette",
+      "autoDebitText": "Le plan de paiement échelonné n'est effectif que si un compte bancaire est fourni. Ce compte doit appartenir à la personne responsable de la construction. Le compte doit provenir d'une banque commerciale standard, jamais de banques numériques.",
+      "autoDebitTitle": "Prélèvement automatique :",
+      "chargesText": "La valeur de chaque mensualité est augmentée d'un intérêt équivalent au taux Selic cumulé mensuel plus **1 %** le mois du paiement. Il peut également y avoir des pénalités et des intérêts sur le montant total en cas de retard de paiement.",
+      "chargesTitle": "Frais :",
+      "dueDatesText": "La première mensualité sera due le jour de la demande du plan de paiement. Les autres seront dues le dernier jour ouvrable de chaque mois.",
+      "dueDatesTitle": "Dates d'échéance des mensualités :",
+      "fillingText": "Lors de la saisie des coordonnées bancaires du client, portez une attention particulière aux règles établies par la RFB. Il existe un PDF dans le menu des paiements échelonnés. Lisez attentivement ce document.",
+      "fillingTitle": "Saisie système :",
+      "firstInstallmentText": "Pour que le plan de paiement échelonné prenne effet, il est nécessaire de payer la première mensualité via une DARF émise par le système. Les mensualités restantes seront automatiquement débitées du compte bancaire fourni.",
+      "firstInstallmentTitle": "Paiement de la première mensualité :",
+      "installmentCountText": "Les paiements peuvent être effectués jusqu'à **60 fois**. Mensualités minimales de **200 R$** pour les particuliers et **500 R$** pour les personnes morales.",
+      "installmentCountTitle": "Nombre de mensualités :",
+      "installmentsSubtitle": "Conditions et règles",
+      "installmentsTitle": "PLAN DE PAIEMENT",
+      "penaltyText": "Le montant initial est majoré d'une pénalité de **20%**, quel que soit le nombre de mensualités.\n\n**Exemple :** INSS en totalité : **10 000,00 R$**. En plusieurs fois : **12 000,00 R$**",
+      "penaltyTitle": "Pénalité :",
+      "whenText": "La dette INSS calculée après avoir soumis la **DCTFWEB** Aferição de obras peut être payée par mensualités après **7 jours de retard**.",
+      "whenTitle": "Quand postuler :"
+    },
+    "labels": {
+      "category": "Catégorie",
+      "help": "Aide",
+      "helpTitle": "Plan de paiement de l'INSS de construction",
+      "state": "État",
+      "totalArea": "Surface Totale",
+      "type": "Type"
+    },
+    "noAttachment": "Pas de pièce jointe",
+    "notSetupDescription": "La gestion de la stratégie fiscale n'a pas été initialisée pour ce projet.",
+    "notSetupTitle": "Stratégie INSS non configurée",
+    "pageTitle": "Stratégie et cycle de vie de l'INSS",
+    "status": {
+      "active": "Actif",
+      "completed": "Terminé",
+      "pending": "En Attente"
+    },
+    "subtitle": "Parcours de conformité géré, du permis initial à l'enregistrement final de la propriété. Notre équipe s'occupe de la bureaucratie pour que vous puissiez vous concentrer sur la construction.",
+    "title": "Stratégie INSS",
+    "types": {
+      "ALVENARIA": "Maçonnerie",
+      "MADEIRA": "Bois",
+      "METALICA": "Métallique",
+      "MISTA": "Mixte",
+      "PRE_MOLDADO": "Prémoulé"
+    },
+    "viewDocument": "Voir le document"
+  },
+  "invoiceDetails.totalAmount": "Montant Total",
+  "issued": "Émis",
+  "layout": {
+    "accessDenied": "Accès Refusé",
+    "appName": "CastorWorks",
+    "appSubtitle": "Portail Client",
+    "noAccessMessage": "Vous n'avez pas accès à ce projet.",
+    "signOut": "Se Déconnecter"
+  },
+  "lineItems": "Lignes de facturation",
+  "meetings": {
+    "dialog": {
+      "allMembers": "Tous les membres de l'équipe",
+      "cancel": "Annuler",
+      "dateLabel": "Date de la réunion *",
+      "datePlaceholder": "Choisissez une date",
+      "dateRequired": "La date de la réunion est obligatoire",
+      "description": "Planifiez une réunion avec votre équipe projet.",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Saisissez la description de la réunion (optionnel)",
+      "duration120": "2 heures",
+      "duration30": "30 min",
+      "duration60": "1 heure",
+      "duration90": "1,5 heure",
+      "durationLabel": "Durée (minutes)",
+      "meetingTitleLabel": "Titre de la réunion *",
+      "meetingTitlePlaceholder": "Saisissez le titre de la réunion",
+      "meetingTypeHybrid": "Hybride",
+      "meetingTypeInPerson": "Présentielle",
+      "meetingTypeLabel": "Type de réunion",
+      "meetingTypeVirtual": "Virtuelle",
+      "membersRequired": "Sélectionnez au moins un membre de l'équipe",
+      "requestWithLabel": "Demander avec *",
+      "submit": "Demander une réunion",
+      "submitting": "Demande en cours...",
+      "success": "Réunion demandée",
+      "timeLabel": "Heure",
+      "title": "Demander une réunion",
+      "titleRequired": "Le titre de la réunion est obligatoire"
+    },
+    "join": "Rejoindre la Réunion",
+    "labels": {
+      "attendees": "Participants :",
+      "joinMeeting": "Rejoindre la Réunion",
+      "viewDetails": "Voir les Détails"
+    },
+    "linkPending": "Lien en attente",
+    "noPast": "Aucune réunion passée trouvée.",
+    "noUpcoming": "Aucune réunion à venir programmée.",
+    "past": "Passées",
+    "requestMeeting": "Demander une Réunion",
+    "subtitle": "Planifiez et suivez les réunions avec votre équipe",
+    "tabs": {
+      "pastMeetings": "Réunions Passées",
+      "upcoming": "À Venir"
+    },
+    "title": "Réunions"
+  },
+  "navigation": {
+    "chat": "Chat",
+    "communication": "Communication",
+    "dashboard": "Tableau de bord",
+    "documents": "Documents",
+    "financial": "Financier",
+    "inssPlanning": "Planification INSS",
+    "inssStrategy": "Stratégie INSS",
+    "meetings": "Réunions",
+    "payments": "Paiements",
+    "photos": "Photos",
+    "schedule": "Planning",
+    "tasks": "Tâches",
+    "team": "Équipe"
+  },
+  "online": "En ligne",
+  "paymentHistory": "Historique des Paiements",
+  "paymentTerms": "Conditions de Paiement",
+  "payments": {
+    "actions": {
+      "conversation": "Conversation",
+      "payNow": "Payer Maintenant"
+    },
+    "allCaughtUp": "Tout est à jour",
+    "allStatuses": "Tous les Statuts",
+    "amountDue": "Montant dû",
+    "description": "Consultez et gérez vos factures et transactions.",
+    "export": "Exporter",
+    "invoiceHistory": {
+      "description": "Consultez et téléchargez les factures de votre projet.",
+      "title": "Historique des Factures"
+    },
+    "noInvoices": "Aucune facture ne correspond à vos critères.",
+    "overdueInvoices": "Factures en Retard",
+    "pagination": {
+      "next": "Suivant",
+      "previous": "Précédent",
+      "showing": "Affichage de {{from}} à {{to}} sur {{total}} factures"
+    },
+    "paidLast30": "Payé ces 30 Derniers Jours",
+    "recentPayments": "Paiements récents",
+    "requiresAttention": "Nécessite une attention",
+    "searchPlaceholder": "Rechercher par facture ou projet...",
+    "statuses": {
+      "due": "Dû",
+      "overdue": "En Retard",
+      "paid": "Payé"
+    },
+    "tableHeaders": {
+      "actions": "ACTIONS",
+      "amount": "MONTANT",
+      "dueDate": "DATE D'ÉCHÉANCE",
+      "invoiceNumber": "FACTURE #",
+      "issueDate": "DATE D'ÉMISSION",
+      "projectName": "NOM DU PROJET",
+      "status": "STATUT"
+    },
+    "title": "Paiements et factures",
+    "totalOutstanding": "Total en Cours"
+  },
+  "photos": {
+    "categories": {
+      "after": "Après Travaux",
+      "before": "Avant Travaux",
+      "completion": "Achèvement",
+      "during": "Pendant Travaux",
+      "field_capture": "Capture de Terrain",
+      "issues": "Problèmes de Chantier",
+      "other": "Autre",
+      "project_delivery": "Livraison du Projet"
+    },
+    "description": "Mises à jour visuelles de l'avancement du chantier.",
+    "noPhotos": "Aucune photo trouvée pour cette phase.",
+    "tabs": {
+      "allPhotos": "Toutes les Photos",
+      "finishing": "Finitions",
+      "foundation": "Fondation",
+      "framing": "Charpente",
+      "sitePrep": "Préparation du Site"
+    },
+    "title": "Photos du Projet",
+    "untitled": "Photo sans titre"
+  },
+  "portal": {
+    "loadingProjects": "Chargement de votre projet...",
+    "noProjects": {
+      "buttons": {
+        "goHome": "Aller à l'Accueil",
+        "signOut": "Se Déconnecter",
+        "support": "Afficher les Ressources d'Assistance"
+      },
+      "description": "Vous n'avez accès à aucun projet client pour le moment.",
+      "help": {
+        "step1": "Vérifiez que vous êtes connecté avec le bon e-mail",
+        "step2": "Essayez de vous déconnecter et de vous reconnecter",
+        "step3": "Contactez l'administrateur mentionné ci-dessus",
+        "title": "Si vous pensez que c'est une erreur, veuillez :"
+      },
+      "nextSteps": {
+        "contactLabel": "Contact administrateur :",
+        "instruction": "Veuillez contacter votre administrateur pour demander l'accès.",
+        "title": "Prochaines étapes :"
+      },
+      "reasons": {
+        "accessRevoked": "Votre accès a été révoqué ou a expiré",
+        "notInvited": "Vous n'avez été invité à aucun projet",
+        "pending": "Votre compte est en attente d'activation",
+        "title": "Cela pourrait signifier :"
+      },
+      "subtitle": "Aucun Projet Disponible",
+      "title": "Accès Refusé"
+    },
+    "photoGallery": {
+      "description": "Parcourez les dernières photos d'avancement du chantier.",
+      "details": "Voir les photographies et galeries les plus récentes.",
+      "title": "Galerie photo"
+    },
+    "sections": {
+      "financial": {
+        "description": "Passez en revue budgets, dépenses et prévisions.",
+        "title": "Résumé financier"
+      },
+      "inssPlanning": {
+        "description": "Comparez les stratégies et les simulations de paiement des taxes.",
+        "notAvailableDescription": "La configuration fiscale n'a pas encore été établie pour ce projet. Veuillez contacter votre gestionnaire de projet.",
+        "notAvailableTitle": "Planification INSS non disponible",
+        "title": "Planification INSS"
+      },
+      "inssStrategy": {
+        "description": "Parcours de conformité géré du permis initial au registre foncier final.",
+        "notSetupDescription": "La gestion de la stratégie fiscale n'a pas été initialisée pour ce projet.",
+        "notSetupTitle": "Stratégie INSS non configurée",
+        "title": "Stratégie INSS"
+      },
+      "meetings": {
+        "description": "Consultez l'agenda de vos prochaines réunions.",
+        "title": "Réunions à venir"
+      },
+      "openButton": "Ouvrir",
+      "openView": "Ouvrir la vue {{section}}",
+      "payments": {
+        "description": "Consultez les factures, soldes et historique des paiements.",
+        "title": "Paiements et factures récents"
+      },
+      "schedule": {
+        "description": "Consultez les jalons, événements et prochaines livraisons.",
+        "title": "Planning à venir"
+      },
+      "tasks": {
+        "description": "Suivez les tâches client dont vous avez la charge.",
+        "title": "Mes tâches"
+      },
+      "team": {
+        "description": "Rencontrez les collaborateurs de confiance de votre projet.",
+        "title": "Contacts clés de l'équipe"
+      }
+    },
+    "subtitle": "Suivez les plannings, paiements et actualisations de galerie pour votre projet.",
+    "switchProject": "Changer de Projet"
+  },
+  "projectManager": "Gestionnaire de Projet",
+  "reportViewer": {
+    "emailDialog": {
+      "description": "Envoyez ce rapport à un destinataire par email avec un lien de téléchargement.",
+      "fileInfo": "Fichier",
+      "linkExpiry": "Le lien de téléchargement expirera dans 1 heure.",
+      "message": "Message",
+      "messagePlaceholder": "Message optionnel à inclure avec le rapport...",
+      "recipient": "Email du Destinataire",
+      "send": "Envoyer l'Email",
+      "sending": "Envoi...",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sujet du rapport",
+      "title": "Envoyer le Rapport par Email"
+    },
+    "error": {
+      "email": "Échec de l'envoi de l'email",
+      "generation": "Échec de la génération du rapport",
+      "storage": "Échec du stockage du rapport",
+      "whatsapp": "Échec de l'envoi de WhatsApp"
+    },
+    "generating": "Génération du rapport...",
+    "noPreview": "Aucun aperçu disponible",
+    "print": "Imprimer",
+    "sendEmail": "Envoyer par Email",
+    "sendWhatsApp": "Envoyer par WhatsApp",
+    "storeToFolder": "Stocker dans le Dossier Client",
+    "storing": "Stockage...",
+    "success": {
+      "emailSent": "Rapport envoyé par email avec succès",
+      "stored": "Rapport stocké avec succès",
+      "whatsappSent": "Rapport envoyé par WhatsApp avec succès"
+    },
+    "whatsappDialog": {
+      "description": "Envoyez ce rapport à un destinataire par WhatsApp avec un lien de téléchargement.",
+      "fileInfo": "Fichier",
+      "linkExpiry": "Le lien de téléchargement expirera dans 1 heure.",
+      "message": "Message",
+      "messagePlaceholder": "Entrez votre message...",
+      "phoneHint": "Inclure le code pays (ex: +55 pour le Brésil)",
+      "phoneNumber": "Numéro de Téléphone",
+      "send": "Envoyer WhatsApp",
+      "sending": "Envoi...",
+      "title": "Envoyer le Rapport par WhatsApp"
+    }
+  },
+  "schedule": {
+    "loading": "Chargement du planning…",
+    "title": "Calendrier"
+  },
+  "scheduleComponents": {
+    "nextMonth": "Mois suivant",
+    "previousMonth": "Mois précédent"
+  },
+  "subtotal": "Sous-total",
+  "tasks": {
+    "addNewTask": "Ajouter une Nouvelle Tâche",
+    "dialog": {
+      "assigneeLabel": "Attribuer à",
+      "assigneeNone": "Aucun",
+      "assigneePlaceholder": "Sélectionner un membre de l'équipe",
+      "cancel": "Annuler",
+      "description": "Créez une nouvelle tâche pour votre équipe projet.",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Saisissez la description de la tâche (optionnel)",
+      "dueDateLabel": "Date d'échéance",
+      "dueDatePlaceholder": "Choisir une date",
+      "nameLabel": "Nom de la tâche *",
+      "namePlaceholder": "Saisissez le nom de la tâche",
+      "nameRequired": "Le nom de la tâche est obligatoire",
+      "priorityHigh": "Haute",
+      "priorityLabel": "Priorité",
+      "priorityLow": "Basse",
+      "priorityMedium": "Moyenne",
+      "statusBlocked": "Bloquée",
+      "statusInProgress": "En cours",
+      "statusLabel": "Statut",
+      "statusPending": "En attente",
+      "submit": "Créer la tâche",
+      "submitting": "Création...",
+      "success": "Tâche créée",
+      "title": "Ajouter une nouvelle tâche"
+    },
+    "filters": {
+      "all": "Tous",
+      "assignee": "Assigné à",
+      "completed": "Terminé",
+      "dueDate": "Date d'Échéance",
+      "dueDateSort": "Date d'Échéance",
+      "inProgress": "En Cours",
+      "name": "Nom",
+      "nextWeek": "Semaine Prochaine",
+      "overdue": "En Retard",
+      "priority": "Priorité",
+      "sortBy": "Trier par",
+      "status": "Statut",
+      "statusSort": "Statut",
+      "thisWeek": "Cette Semaine",
+      "toDo": "À Faire"
+    },
+    "noTasks": "Aucune tâche ne correspond à vos critères.",
+    "searchPlaceholder": "Rechercher",
+    "subtitle": "Gérez et suivez les tâches du projet",
+    "tableHeaders": {
+      "assignee": "Assigné à",
+      "dueDate": "Date d'Échéance",
+      "status": "Statut",
+      "taskName": "Nom de la Tâche"
+    },
+    "title": "Tâches"
+  },
+  "tax": "Taxe",
+  "team": {
+    "description": "Découvrez les professionnels qui travaillent sur votre projet. N'hésitez pas à nous contacter pour toute question.",
+    "title": "Équipe du projet"
+  },
+  "title": "[EN] Title",
+  "total": "Total"
+}

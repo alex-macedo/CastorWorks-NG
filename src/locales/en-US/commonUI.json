@@ -1,0 +1,20 @@
+{
+  "materials": "Materials",
+  "project": "Project",
+  "filters": "Filters",
+  "projectSchedule": "Project Schedule",
+  "supplier": "Supplier",
+  "loading": "Loading",
+  "digitalSignature": "Digital Signature",
+  "projectInformation": "Project Information",
+  "location": "Location",
+  "totalBudgeted": "Total Budgeted",
+  "monthlyCashFlow": "Monthly Cash Flow",
+  "totalMaterials": "Total Materials",
+  "recommendations": "Recommendations",
+  "completeDatabaseExport": "Complete Database Export",
+  "databaseStatistics": "Database Statistics",
+  "totalProjects": "Total Projects",
+  "totalExpenses": "Total Expenses",
+  "tasks": "Tasks"
+}

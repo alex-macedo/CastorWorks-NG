@@ -1,0 +1,224 @@
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+
+export interface BudgetLineItem {
+  id: string;
+  budget_id: string;
+  phase_id?: string;
+  phase_name?: string; // Added from joined project_phases
+  sinapi_code: string;
+  item_number?: string;
+  description: string;
+  unit: string;
+  unit_cost_material: number;
+  unit_cost_labor: number;
+  quantity: number;
+  total_material: number;
+  total_labor: number;
+  total_cost: number;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+interface CreateLineItemInput {
+  budget_id: string;
+  phase_id?: string;
+  sinapi_code: string;
+  item_number?: string;
+  description: string;
+  unit: string;
+  unit_cost_material: number;
+  unit_cost_labor: number;
+  quantity?: number;
+  sort_order?: number;
+}
+
+interface UpdateLineItemInput {
+  id: string;
+  quantity?: number;
+  unit_cost_material?: number;
+  unit_cost_labor?: number;
+  phase_id?: string;
+  sort_order?: number;
+}
+
+export function useBudgetLineItems(budgetId?: string) {
+  const queryClient = useQueryClient();
+  const { toast } = useToast();
+
+  // Fetch line items with phase information
+  const lineItemsQuery = useQuery({
+    queryKey: ["budget_line_items", budgetId],
+    queryFn: async () => {
+      if (!budgetId) return [];
+
+      const { data, error } = await supabase
+        .from("budget_line_items")
+        .select(`
+          *,
+          project_phases (
+            phase_name,
+            type
+          )
+        `)
+        .eq("budget_id", budgetId)
+        .order("sort_order", { ascending: true })
+        .order("created_at", { ascending: true });
+
+      if (error) throw error;
+      
+      // Map phase_name from joined project_phases
+      // Note: We get all line items regardless of phase type to handle existing data
+      // Phase type filtering only applies when creating/matching phases for new budgets
+      return (data || []).map((item: any) => {
+        const phase = item.project_phases;
+        return {
+          ...item,
+          phase_name: phase?.phase_name || phase?.[0]?.phase_name || null,
+        };
+      }) as BudgetLineItem[];
+    },
+    enabled: !!budgetId,
+  });
+
+  // Add line item
+  const addLineItem = useMutation({
+    mutationFn: async (input: CreateLineItemInput) => {
+      // Get max sort order
+      const { data: items } = await supabase
+        .from("budget_line_items")
+        .select("sort_order")
+        .eq("budget_id", input.budget_id)
+        .order("sort_order", { ascending: false })
+        .limit(1);
+
+      const maxOrder = items?.[0]?.sort_order ?? -1;
+
+      const { data, error } = await supabase
+        .from("budget_line_items")
+        .insert({
+          ...input,
+          quantity: input.quantity || 0,
+          sort_order: input.sort_order ?? maxOrder + 1,
+        })
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data as BudgetLineItem;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["budget_line_items", budgetId] });
+      toast({
+        title: "Sucesso",
+        description: "Insumo adicionado",
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Erro",
+        description: `Falha ao adicionar: ${error.message}`,
+        variant: "destructive",
+      });
+    },
+  });
+
+  // Update line item
+  const updateLineItem = useMutation({
+    mutationFn: async (input: UpdateLineItemInput) => {
+      const { id, ...updates } = input;
+      const { data, error } = await supabase
+        .from("budget_line_items")
+        .update(updates)
+        .eq("id", id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data as BudgetLineItem;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["budget_line_items", budgetId] });
+    },
+    onError: (error) => {
+      toast({
+        title: "Erro",
+        description: `Falha ao atualizar: ${error.message}`,
+        variant: "destructive",
+      });
+    },
+  });
+
+  // Delete line item
+  const deleteLineItem = useMutation({
+    mutationFn: async (itemId: string) => {
+      const { error } = await supabase
+        .from("budget_line_items")
+        .delete()
+        .eq("id", itemId);
+
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["budget_line_items", budgetId] });
+      toast({
+        title: "Sucesso",
+        description: "Insumo removido",
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Erro",
+        description: `Falha ao remover: ${error.message}`,
+        variant: "destructive",
+      });
+    },
+  });
+
+  // Bulk import line items
+  const bulkImport = useMutation({
+    mutationFn: async (
+      items: Omit<CreateLineItemInput, "budget_id">[]
+    ) => {
+      const itemsWithBudgetId = items.map((item, index) => ({
+        ...item,
+        budget_id: budgetId!,
+        sort_order: index,
+      }));
+
+      const { data, error } = await supabase
+        .from("budget_line_items")
+        .insert(itemsWithBudgetId)
+        .select();
+
+      if (error) throw error;
+      return data as BudgetLineItem[];
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["budget_line_items", budgetId] });
+      toast({
+        title: "Sucesso",
+        description: `${data.length} insumos importados`,
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Erro",
+        description: `Falha na importação: ${error.message}`,
+        variant: "destructive",
+      });
+    },
+  });
+
+  return {
+    lineItems: lineItemsQuery.data || [],
+    isLoading: lineItemsQuery.isLoading,
+    isError: lineItemsQuery.isError,
+    addLineItem,
+    updateLineItem,
+    deleteLineItem,
+    bulkImport,
+  };
+}

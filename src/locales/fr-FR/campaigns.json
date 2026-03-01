@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "sendNow": "Envoyer maintenant",
+    "view": "Voir les détails"
+  },
+  "confirm": {
+    "cancel": "Êtes-vous sûr de vouloir annuler cette campagne ?",
+    "delete": "Êtes-vous sûr de vouloir supprimer cette campagne ? Cette action est irréversible.",
+    "sendNow": "Êtes-vous sûr de vouloir envoyer cette campagne maintenant ?"
+  },
+  "counts": {
+    "failed": "en échec",
+    "sent": "envoyés"
+  },
+  "emptyAction": "Créer une campagne",
+  "emptyDescription": "Créez votre première campagne WhatsApp pour joindre vos contacts",
+  "emptyTitle": "Pas encore de campagne",
+  "loadingTitle": "Chargement des campagnes...",
+  "new": "Nouvelle campagne",
+  "notAvailable": "-",
+  "status": {
+    "cancelled": "Annulée",
+    "completed": "Terminée",
+    "draft": "Brouillon",
+    "failed": "Échouée",
+    "scheduled": "Planifiée",
+    "sending": "Envoi en cours"
+  },
+  "subtitle": "Gérez des campagnes sortantes sur WhatsApp pour toucher entrepreneurs, partenaires et architectes",
+  "table": {
+    "actions": "Actions",
+    "created": "Créée",
+    "name": "Nom de la campagne",
+    "recipients": "Destinataires",
+    "scheduled": "Planifiée",
+    "sent": "Envoyés",
+    "status": "Statut",
+    "successRate": "Taux de réussite"
+  },
+  "title": "Campagnes WhatsApp"
+}

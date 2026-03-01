@@ -1,0 +1,321 @@
+{
+  "availableReports": "Relatórios Disponíveis",
+  "budget": {
+    "budgetAllocation": "Alocação de Orçamento",
+    "categoryBreakdown": "Detalhamento por Categoria",
+    "noBudgetItems": "Nenhum item de orçamento encontrado",
+    "overview": "Visão Geral do Orçamento",
+    "title": "Relatório de Orçamento",
+    "totalBudgeted": "Total Orçado"
+  },
+  "budgetVsActual": {
+    "budgeted": "Orçado",
+    "byCategory": "Orçado vs Realizado por Categoria",
+    "categoryAnalysis": "Análise de Categoria",
+    "categoryBreakdown": "Detalhamento por Categoria",
+    "indicators": {
+      "accuracy": "Precisão do Orçamento",
+      "onBudget": "Categorias no Orçamento",
+      "overBudget": "Categorias Acima do Orçamento",
+      "title": "Indicadores de Desempenho",
+      "underBudget": "Categorias Abaixo do Orçamento"
+    },
+    "items": "Itens",
+    "noCategoriesFound": "Nenhuma categoria de orçamento encontrada",
+    "onBudget": "No Orçamento",
+    "overBudget": "Acima do Orçamento",
+    "overallPerformance": "Desempenho Geral do Orçamento",
+    "overview": "Visão Geral Orçado vs Realizado",
+    "performanceStatus": "Status de Desempenho",
+    "significantVariances": "Itens com Variações Significativas (>10%)",
+    "title": "Relatório Orçado vs Realizado",
+    "totalActual": "Total Realizado",
+    "totalBudget": "Total Orçado",
+    "totalVariance": "Variação Total",
+    "underBudget": "Abaixo do Orçamento",
+    "utilization": "Utilização",
+    "variance": "Variação",
+    "variancePercentage": "Variação %"
+  },
+  "cashFlow": {
+    "byCategory": "Fluxo de Caixa por Categoria",
+    "inflow": "Entradas",
+    "month": "Mês",
+    "monthlyAnalysis": "Análise Mensual de Fluxo de Caixa",
+    "netCashFlow": "Fluxo de Caixa Líquido",
+    "netFlow": "Fluxo Líquido",
+    "noDataFound": "Nenhum dado de fluxo de caixa encontrado",
+    "outflow": "Saídas",
+    "projection": {
+      "disclaimer": "* Baseado nos últimos 3 meses",
+      "monthlyInflow": "Receita Mensal Projetada",
+      "monthlyOutflow": "Despesas Mensais Projetadas",
+      "netFlow": "Fluxo de Caixa Líquido Projetado",
+      "title": "Projeção de Fluxo de Caixa"
+    },
+    "status": "Status do Fluxo de Caixa",
+    "summary": "Resumo do Fluxo de Caixa",
+    "title": "Relatório de Fluxo de Caixa",
+    "totalInflow": "Total de Entradas",
+    "totalOutflow": "Total de Saídas",
+    "transactionHistory": "Histórico de Transações"
+  },
+  "config": {
+    "categoryOption": "Categoria",
+    "configureReportDescription": "Defina os parâmetros para o seu relatório gerado",
+    "dateRange": "Intervalo de Datas",
+    "dateRangeLabel": "Data Inicial",
+    "generatePdfButton": "Gerar Relatório",
+    "groupBy": "Agrupar Por",
+    "groupByLabel": "Agrupar Dados Por",
+    "includeCharts": "Incluir Gráficos",
+    "includeChartsLabel": "Incluir Gráficos e Visuais",
+    "includeLabor": "Incluir Mão de Obra",
+    "includeLaborLabel": "Incluir Detalhes de Mão de Obra",
+    "includeMaterials": "Incluir Materiais",
+    "includeMaterialsLabel": "Incluir Detalhes de Materiais",
+    "monthOption": "Mês",
+    "options": "Opções",
+    "optionsLabel": "Opções do Relatório",
+    "phaseOption": "Fase do Projeto",
+    "projectLabel": "Projeto",
+    "selectProject": "Selecionar Projeto",
+    "toLabel": "Data Final"
+  },
+  "customReport": "Relatório Customizado",
+  "dashboard": {
+    "abcCurveTitle": "Curva ABC de Gastos em R$",
+    "address": "Endereço:",
+    "available": "Disponível",
+    "budget": "Orçamento",
+    "budgetLabel": "Orçamento",
+    "budgetVsActualTitle": "Gastos Totais vs. Orçamento",
+    "category": "Categoria",
+    "categoryBreakdown": "Detalhamento por Categoria",
+    "categorySpendingTitle": "Gastos vs. Orçamento por Grupo",
+    "closeButton": "Fechar",
+    "completionPercentage": "% Conclusão:",
+    "dialogTitle": "Relatório do Painel",
+    "expectedDeliveryDate": "Data Prevista de Entrega:",
+    "generatedOn": "Gerado em",
+    "generatingReport": "Gerando Relatório",
+    "monthlySpendingTitle": "Total de Gastos Por Mês",
+    "name": "Nome",
+    "openingNewWindow": "Abrindo relatório em nova janela...",
+    "percentUsed": "% Utilizado",
+    "printButton": "Imprimir",
+    "printReport": "Imprimir Relatório",
+    "project": "Projeto",
+    "projectOf": "Projeto de:",
+    "projectSummary": "Resumo do Projeto",
+    "reportReady": "Relatório Pronto",
+    "spent": "Gasto",
+    "spentLabel": "Gasto",
+    "status": "Status",
+    "statusExceeded": "Excedido",
+    "statusOk": "OK",
+    "summaryDescription": "Este relatório apresenta uma visão geral completa do projeto, incluindo métricas de gastos, comparação orçamentária e análise ABC de custos por categoria.",
+    "title": "RELATÓRIO DO PROJETO",
+    "totalSpending": "Gastos Totais",
+    "totalSpent": "Total Gasto",
+    "viewInDialog": "Clique para ver o relatório se a nova janela não abriu"
+  },
+  "description": "Gere relatórios profissionais para seus projetos de construção",
+  "download": "Download",
+  "errors": {
+    "failedToGenerate": "Falha ao gerar relatório",
+    "failedToGenerateAI": "Falha ao gerar relatório de IA",
+    "failedToPrepareData": "Falha ao preparar dados do relatório",
+    "failedToView": "Falha ao visualizar relatório",
+    "notSupportedFromHistory": "Este tipo de relatório ainda não é suportado para visualização pelo histórico"
+  },
+  "financialSummary": {
+    "amountSpent": "Valor Gasto",
+    "budgetOverview": "Visão Geral Orçado vs Realizado",
+    "expenseBreakdown": "Detalhamento de Despesas",
+    "expensesByCategory": "Despesas por Categoria",
+    "incomeBreakdown": "Detalhamento de Receita",
+    "incomeVsExpenses": "Receita Total vs Despesas",
+    "netIncome": "Lucro Líquido",
+    "netProfitLoss": "Lucro / Prejuízo Líquido",
+    "noCategoriesFound": "Nenhuma categoria de despesa encontrada",
+    "overBudget": "Acima do Orçamento",
+    "overview": "Visão Geral Financeira",
+    "paymentMethods": "Uso de Métodos de Pagamento",
+    "profitMargin": "Margem de Lucro",
+    "recentTransactions": "Transações Recentes",
+    "title": "Relatório de Resumo Financeiro",
+    "totalBudget": "Orçamento Total do Projeto",
+    "totalExpenses": "Total de Despesas",
+    "totalIncome": "Receita Total",
+    "underBudget": "Abaixo do Orçamento"
+  },
+  "generateReport": "Gerar Relatório",
+  "keyStatistics": "Estatísticas Chave",
+  "materials": {
+    "averageCost": "Custo Médio",
+    "costAnalysis": "Análise de Custo",
+    "costPerUnit": "Custo por {{unit}}",
+    "costSummary": "Resumo de Custos",
+    "grandTotal": "Total Geral",
+    "highestCost": "Maior Custo",
+    "inventory": "Inventário de Materiais",
+    "lowestCost": "Menor Custo",
+    "overview": "Visão Geral de Materiais",
+    "taxesAndFees": "Impostos e Taxas",
+    "title": "Relatório de Materiais",
+    "totalArea": "Área Total",
+    "totalLabor": "Total de Mão de Obra"
+  },
+  "materialsUsage": {
+    "byCategory": {
+      "title": "Materiais por Categoria"
+    },
+    "byUnit": {
+      "title": "Uso por Tipo de Unidade",
+      "type": "Tipo de Unidade"
+    },
+    "itemsCount": "Quantidade de Itens",
+    "material": "Material",
+    "materialsBreakdown": "Detalhamento de Materiais",
+    "noMaterialsFound": "Nenhum material encontrado",
+    "overview": "Visão Geral de Materiais",
+    "percentage": "Porcentagem",
+    "quantity": "Quantidade",
+    "recommendations": {
+      "bulkPurchase": "Considere a compra em lote para materiais com alto custo unitário.",
+      "diversifySuppliers": "Considere diversificar fornecedores para obter melhores preços.",
+      "optimized": "O uso de materiais parece otimizado dentro dos parâmetros do projeto.",
+      "overBudget": "Os custos de materiais excedem 40% do orçamento. Revise as especificações."
+    },
+    "sinapiCode": "Código SINAPI",
+    "summary": {
+      "avgCost": "Custo Médio por Item",
+      "costPerSqm": "Custo por m²",
+      "title": "Resumo de Materiais",
+      "totalCost": "Custo Total de Materiais",
+      "totalItems": "Total de Itens de Material"
+    },
+    "supplier": "Fornecedor",
+    "title": "Relatório de Uso de Materiais",
+    "totalCost": "Custo Total",
+    "totalMaterials": "Total de Materiais",
+    "totalQuantity": "Quantidade Total",
+    "totalValue": "Valor Total",
+    "unit": "Unidade",
+    "unitCost": "Custo Unitário",
+    "unitPrice": "Preço Unitário"
+  },
+  "noReportsGeneratedYet": "Nenhum relatório gerado ainda.",
+  "profitability": {
+    "categoryProfitability": "Lucratividade por Categoria",
+    "grossProfit": "Lucro Bruto",
+    "noProfitabilityData": "Nenhum dado de lucratividade encontrado",
+    "overview": "Visão Geral de Lucratividade",
+    "profitMargin": "Margem de Lucro",
+    "roi": "ROI",
+    "title": "Relatório de Lucratividade",
+    "totalCosts": "Custos Totais",
+    "totalRevenue": "Receita Total"
+  },
+  "projectStatus": {
+    "actual": "Realizado",
+    "amount": "Valor",
+    "budgetStatus": "Status do Orçamento",
+    "budgeted": "Orçado",
+    "categories": "Categorias",
+    "category": "Categoria",
+    "date": "Data",
+    "description": "Descrição",
+    "expense": "Despesa",
+    "income": "Receita",
+    "noTransactions": "Nenhuma transação recente encontrada",
+    "onTrack": "No Prazo",
+    "overBudget": "Acima do Orçamento",
+    "progressOverview": "Visão Geral do Progresso",
+    "progressPercentage": "Progresso",
+    "projectOverview": "Visão Geral do Projeto",
+    "recentTransactions": "Transações Financeiras Recentes",
+    "status": "Status",
+    "title": "Relatório de Status do Projeto",
+    "totalActual": "Total Realizado",
+    "totalBudget": "Total Orçado",
+    "type": "Tipo",
+    "underBudget": "Abaixo do Orçamento",
+    "variance": "Variação"
+  },
+  "recentReports": "Relatórios Recentes",
+  "reportReady": "Relatório pronto",
+  "reportTypeLabels": {
+    "budget": "Orçamento",
+    "financial": "Financeiro",
+    "projectStatus": "Status do Projeto"
+  },
+  "reportTypes": {
+    "aiWeeklySummary": {
+      "description": "Resumo executivo gerado por IA da saúde financeira e progresso do projeto.",
+      "disclaimer": "Este relatório foi gerado de forma autônoma pela CastorMind AI com base em dados reais do projeto. Por favor, verifique detalhes críticos antes de tomar decisões importantes.",
+      "engine": "Motor de IA CastorMind",
+      "sections": {
+        "financialHealth": "Saúde Financeira",
+        "progressUpdate": "Atualização de Progresso",
+        "summary": "Resumo",
+        "upcomingRisks": "Riscos Próximos"
+      },
+      "title": "Resumo Semanal IA"
+    },
+    "budgetVsActual": {
+      "description": "Compare custos orçados vs realizados",
+      "title": "Orçado vs Realizado"
+    },
+    "cashFlow": {
+      "description": "Projeções de fluxo de caixa do projeto",
+      "title": "Previsão de Fluxo de Caixa"
+    },
+    "financialSummary": {
+      "description": "Análise de receita, despesas e lucro",
+      "title": "Resumo Financeiro"
+    },
+    "materialsUsage": {
+      "description": "Acompanhamento de consumo de materiais",
+      "title": "Uso de Materiais"
+    },
+    "profitability": {
+      "description": "Margens de lucro e análise",
+      "title": "Lucratividade do Projeto"
+    },
+    "projectDashboard": {
+      "description": "Visão geral completa do projeto com gráficos e métricas",
+      "title": "Painel do Projeto"
+    },
+    "projectStatus": {
+      "description": "Resumo executivo de todos os projetos ativos",
+      "title": "Relatório de Status do Projeto"
+    }
+  },
+  "stats": {
+    "hoursAgo": "{{count}} horas atrás",
+    "lastGenerated": "Último Gerado",
+    "mostPopular": "Mais Popular",
+    "reportsGenerated": "Relatórios Gerados",
+    "thisMonth": "Este mês: {{count}}",
+    "timesGenerated": "{{count}} vezes gerado"
+  },
+  "subtitle": "Gere relatórios abrangentes para seus projetos",
+  "success": {
+    "generated": "Relatório gerado com sucesso"
+  },
+  "title": "Relatórios & Analytics",
+  "viewInDialog": "Clique para ver o relatório no diálogo",
+  "viewer": {
+    "close": "Fechar",
+    "downloadPdf": "Download PDF",
+    "generatedOn": "Gerado em",
+    "pdfDownloadAvailable": "Você ainda pode baixar a versão em PDF usando o botão acima.",
+    "print": "Imprimir",
+    "printInstruction": "Use Ctrl+P ou o botão Imprimir para imprimir este relatório",
+    "reportNotSupportedMessage": "ainda não é suportado no visualizador web.",
+    "reportTypeNotSupported": "Tipo de Relatório não Suportado",
+    "webViewerComingSoon": "Visualizador Web em Breve"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "actions": {
+    "addNote": "Ajoutez une note pour votre chef de projet (optionnel)",
+    "approvalSuccess": "Devis approuvé! Votre chef de projet a été notifié.",
+    "approve": "Approuver",
+    "approveSelected": "Approuver le Devis Sélectionné",
+    "confirmApproval": "Approuver le devis de {{price}} de {{supplier}}?",
+    "confirmRejection": "Veuillez nous dire pourquoi vous rejetez ces devis",
+    "reject": "Rejeter",
+    "rejectAll": "Rejeter Tous les Devis",
+    "rejectionSuccess": "Devis rejetés. Votre chef de projet a été notifié.",
+    "selectForApproval": "Sélectionner pour Approbation"
+  },
+  "projectInfo": {
+    "customer": "Client",
+    "deliveryDate": "Date de Livraison",
+    "project": "Projet",
+    "requestDate": "Date de Demande"
+  },
+  "quoteApproval": "Approbation de Devis",
+  "quoteComparison": {
+    "deliveryDays": {
+      "multiple": "{{days}} jours",
+      "notInformed": "Délai de livraison non informé",
+      "single": "1 jour"
+    },
+    "deliveryEstimate": "Estimation de Livraison",
+    "deliveryTime": "Délai de Livraison",
+    "itemCount": "{{count}} article | {{count}} articles",
+    "loading": "Chargement des devis...",
+    "navigation": {
+      "dotsLabel": "{{current}} sur {{total}}",
+      "goToCard": "Aller au devis {{index}}",
+      "nextCard": "Devis suivant",
+      "previousCard": "Devis précédent"
+    },
+    "noQuotesMessage": "Les devis des fournisseurs apparaîtront ici lorsqu'ils seront disponibles.",
+    "noQuotesTitle": "Aucun devis reçu pour le moment",
+    "recommended": "Recommandé",
+    "supplierRating": "Évaluation",
+    "title": "Comparaison de Devis",
+    "totalPrice": "Prix Total",
+    "totalSummary": "{{itemCount}}, {{totalPrice}} total",
+    "viewDetails": "Voir Détails"
+  },
+  "quoteDetail": {
+    "backToComparison": "Retour à la Comparaison de Devis",
+    "contactPerson": "Personne de Contact",
+    "contactSupplier": "Contacter Fournisseur",
+    "deliveryEstimate": "Estimation de Livraison",
+    "description": "Description de l'Article",
+    "itemizedPricing": "Prix Détaillés",
+    "notSpecified": "Non spécifié",
+    "paymentTerms": "Conditions de Paiement",
+    "quantity": "Quantité",
+    "quoteNumber": "Devis",
+    "standardTerms": "Les conditions standard s'appliquent",
+    "subtotal": "Sous-total",
+    "supplierContact": "Contact Fournisseur",
+    "supplierNotes": "Notes du Fournisseur",
+    "tax": "Taxe",
+    "total": "Total",
+    "unitPrice": "Prix Unitaire",
+    "validUntil": "Valide Jusqu'au"
+  },
+  "reviewAndApprove": "Examinez et approuvez les devis pour votre projet",
+  "success": {
+    "approvalTitle": "Devis Approuvé!",
+    "nextSteps": "Que se passe-t-il ensuite?",
+    "rejectionTitle": "Devis Rejetés",
+    "returnHome": "Retour à la Page d'Accueil",
+    "thankYou": "Merci pour votre réponse rapide!"
+  },
+  "supplier": {
+    "contactSupplier": "Contacter Fournisseur",
+    "defaultName": "Fournisseur",
+    "name": "Fournisseur",
+    "rating": "Évaluation: {{rating}}"
+  },
+  "title": "Portail Client",
+  "validation": {
+    "alreadyProcessed": "Cette approbation de devis a déjà été traitée.",
+    "noQuoteSelected": "Veuillez sélectionner un devis à approuver.",
+    "rejectionReasonRequired": "Veuillez fournir une raison pour le rejet.",
+    "tokenExpired": "Ce lien d'approbation a expiré ou est invalide. Veuillez contacter votre chef de projet."
+  }
+}

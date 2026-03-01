@@ -1,0 +1,62 @@
+{
+  "acceptRecommendation": "Accept recommendation",
+  "actions": {
+    "cancel": "Cancel",
+    "delete": "Delete Client",
+    "save": "Save Client"
+  },
+  "additionalInfo": "Additional Information",
+  "address": "Address",
+  "addressIncompleteMessage": "Please include street number and complement for Brazil addresses.",
+  "addressIncompleteTitle": "Address details required",
+  "addressLookupErrorMessage": "We could not validate this address. You can keep editing.",
+  "addressLookupErrorTitle": "Address lookup failed",
+  "addressNumberHelp": "Add street number and complement.",
+  "basicInfo": "Basic Information",
+  "editSubtitle": "Update client information",
+  "editTitle": "Edit Client",
+  "label": {
+    "address": "Street Address",
+    "city": "City",
+    "country": "Country",
+    "district": "District",
+    "email": "Email *",
+    "line1": "Street Address",
+    "line2": "Apartment / Unit / Complement",
+    "name": "Client Name *",
+    "notes": "Notes",
+    "phone": "Phone *",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "ZIP Code",
+    "region": "State",
+    "type": "Client Type *"
+  },
+  "placeholder": {
+    "address": "Enter street address",
+    "city": "City",
+    "country": "Select country",
+    "district": "Neighborhood",
+    "email": "client@email.com",
+    "line1": "Street and number",
+    "line2": "Apartment, suite, or complement",
+    "name": "Enter client name",
+    "notes": "Any additional notes about this client",
+    "phone": "+55 11 98765-4321",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "ZIP Code",
+    "region": "State",
+    "type": "Select type"
+  },
+  "select": {
+    "company": "Company",
+    "countryBR": "Brazil",
+    "countryUS": "United States",
+    "individual": "Individual"
+  },
+  "subtitle": "Add a new client to the system",
+  "title": "New Client",
+  "uspsEnteredLabel": "You entered:",
+  "uspsRecommendationTitle": "USPS recommendation",
+  "uspsRecommendedLabel": "USPS recommends:",
+  "validateAddress": "Validate address"
+}

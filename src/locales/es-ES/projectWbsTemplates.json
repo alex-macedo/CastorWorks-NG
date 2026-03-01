@@ -1,0 +1,132 @@
+{
+  "ai": {
+    "analysisFailed": "Análisis Fallido",
+    "analysisFailedDescription": "Ocurrió un error durante el análisis de IA",
+    "analysisStarting": "Análisis de IA Iniciando",
+    "analysisStartingDescription": "Analizando {{count}} elementos en segundo plano. Esto puede tomar unos momentos.",
+    "batchAnalysisComplete": "Análisis por Lotes de IA Completado",
+    "batchAnalysisCompleteDescription": "Analizados {{count}} elementos exitosamente.",
+    "jsonFileCreated": "Archivo JSON Creado",
+    "jsonFileCreatedDescription": "Descargue el archivo JSON para analizar con IA y subir los resultados."
+  },
+  "createNew": "Crear Plantilla",
+  "createNewDescription": "createNewDescription",
+  "default": "Predeterminada",
+  "delete": "Eliminar",
+  "deleteConfirmDescription": "Esta plantilla se eliminará permanentemente. Esta acción no se puede deshacer.",
+  "deleteConfirmTitle": "¿Eliminar plantilla?",
+  "deleted": "Plantilla eliminada correctamente",
+  "dialog": {
+    "createTitle": "Crear Plantilla de EDT del Proyecto",
+    "editTitle": "Editar Plantilla de EDT del Proyecto",
+    "viewTitle": "Ver Plantilla de EDT del Proyecto"
+  },
+  "duplicate": "Duplicar",
+  "edit": "Editar",
+  "editor": {
+    "back": "Volver",
+    "createTitle": "Crear Plantilla de EDT del Proyecto",
+    "editTitle": "Editar Plantilla de EDT del Proyecto",
+    "saveError": "Se produjo un error al guardar la plantilla de EDT",
+    "saveSuccess": "Plantilla de EDT guardada correctamente",
+    "subtitle": "Edita la plantilla y sus elementos de EDT usando la cuadrícula abajo",
+    "templateSectionTitle": "Plantilla",
+    "viewTitle": "Ver Plantilla de EDT del Proyecto"
+  },
+  "errors": {
+    "duplicateProjectType": "Ya existe una plantilla para este tipo de proyecto. Cada tipo de proyecto solo puede tener una plantilla.",
+    "templateInUse": "No se puede eliminar la plantilla porque está asociada a proyectos activos."
+  },
+  "export": {
+    "button": "Exportar CSV",
+    "empty": "No hay elementos para exportar",
+    "error": "No se pudo exportar el CSV",
+    "exporting": "Exportando...",
+    "fileName": "plantilla-edt",
+    "success": "CSV exportado correctamente"
+  },
+  "fields": {
+    "description": "Descripción",
+    "descriptionPlaceholder": "Descripción opcional",
+    "isDefault": "Fields.isDefault",
+    "name": "Nombre de la plantilla",
+    "namePlaceholder": "Ingresa el nombre de la plantilla",
+    "projectType": "Tipo de proyecto",
+    "projectTypePlaceholder": "Selecciona el tipo de proyecto"
+  },
+  "grid": {
+    "actions": "Acciones",
+    "code": "Código"
+  },
+  "itemType": {
+    "control_account": "Cuenta de control",
+    "deliverable": "Entregable",
+    "phase": "Fase",
+    "work_package": "Paquete de trabajo"
+  },
+  "items": {
+    "addChild": "+ elemento hijo",
+    "addRoot": "Agregar elemento de nivel superior",
+    "collapseAll": "Colapsar Todos",
+    "costCode": "Código de Costo",
+    "costCodePlaceholder": "Seleccionar código de costo",
+    "delete": "Eliminar elemento",
+    "deleteConfirmDescription": "Este elemento y todos sus hijos serán eliminados.",
+    "deleteConfirmTitle": "¿Eliminar elemento?",
+    "description": "Descripción",
+    "descriptionPlaceholder": "Notas opcionales",
+    "dragToReorder": "Arrastra para reordenar",
+    "durationDays": "Duración (días)",
+    "durationPlaceholder": "Días",
+    "editItem": "Items.editItem",
+    "empty": "Aún no hay elementos. Agrega un elemento de nivel superior para comenzar.",
+    "expandAll": "Expandir Todos",
+    "moveDown": "Mover abajo",
+    "moveUp": "Mover arriba",
+    "name": "Nombre",
+    "namePlaceholder": "Nombre del elemento",
+    "noCostCode": "Ninguno",
+    "subtitle": "Agrega, edita, reordena o elimina elementos de la EDT",
+    "title": "Elementos",
+    "type": "Tipo"
+  },
+  "manageWbs": "[EN] Manage Wbs",
+  "noItems": "No se encontraron elementos de estructura",
+  "noTemplates": "No se encontraron plantillas de EDT",
+  "noTemplatesHint": "Pide a un administrador que cree una plantilla o habilite una plantilla predeterminada.",
+  "projectType": "Tipo: {{type}}",
+  "projectTypeAny": "Cualquiera",
+  "subtitle": "Gestiona plantillas clásicas de EDT (Estructura de Desglose del Trabajo) usadas para completar automáticamente nuevos proyectos",
+  "sync": {
+    "allPhasesMatched": "Todas las fases ya existen en la plantilla EDT",
+    "applyButton": "Aplicar Sincronización",
+    "button": "Sincronizar con Fases",
+    "dialogDescription": "Seleccione una plantilla de fases para validar y sincronizar con la plantilla EDT actual. Las fases faltantes se agregarán como elementos de la EDT.",
+    "dialogTitle": "Sincronizar Plantilla EDT con Plantilla de Fases",
+    "durationsUpdated": "Días de duración sincronizados con la plantilla de fases",
+    "matchedWith": "coincide con",
+    "notMatched": "no encontrado en EDT",
+    "of": "de",
+    "phasesAdded": "{{count}} fases agregadas a la plantilla EDT",
+    "phasesMatched": "fases coincidentes",
+    "selectPlaceholder": "Elija una plantilla de fases...",
+    "selectTemplate": "Seleccionar Plantilla de Fases",
+    "validateButton": "Validar",
+    "validating": "Validando...",
+    "validationResults": "Resultados de Validación"
+  },
+  "system": "Sistema",
+  "templates": {
+    "brazilianCommercial": {
+      "description": "Plantilla clásica predeterminada de EDT para proyectos comerciales",
+      "name": "EDT Comercial (Brasil)"
+    },
+    "brazilianResidential": {
+      "description": "Plantilla clásica predeterminada de EDT para proyectos residenciales",
+      "name": "EDT Residencial (Brasil)"
+    }
+  },
+  "title": "Plantillas de EDT del Proyecto",
+  "view": "Ver",
+  "viewStructure": "Ver Estructura"
+}

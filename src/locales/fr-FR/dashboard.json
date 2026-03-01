@@ -1,0 +1,141 @@
+{
+  "abcCurve": {
+    "cost": "Coût",
+    "cumulativePercentage": "Pourcentage Cumulé",
+    "description": "Analyse des articles par impact de coût (A, B, C)",
+    "items": "{{count}} articles",
+    "noData": "Aucune donnée de courbe ABC disponible",
+    "title": "Courbe ABC"
+  },
+  "activeProjects": "Projets Actifs",
+  "activeProjectsDescription": "Vos projets de construction actuellement actifs",
+  "activePurchases": "Achats Actifs",
+  "activityDailyLog": "Journal quotidien mis à jour",
+  "activityInvoicePaid": "Facture payée par le client",
+  "activityNewPurchase": "Nouvelle demande d'achat soumise",
+  "activityQuoteReceived": "Devis reçu du fournisseur",
+  "activityTypes": {
+    "comment": "Commentaire",
+    "meeting": "Réunion",
+    "project": "Projet",
+    "task": "Tâche"
+  },
+  "atRisk": "À Risque",
+  "avgSavings": "Moyenne {{percent}}% d'économies",
+  "budgetUsed": "Budget Utilisé",
+  "cashFlow": "Flux de Trésorerie",
+  "comprehensiveAnalyticsDescription": "Obtenez des informations détaillées sur le budget, les tendances de dépenses et les calendriers de projets",
+  "createClient": "Créer un Nouveau Client",
+  "createFinancial": "Créer une Entrée Financière",
+  "createProject": "Créer un Nouveau Projet",
+  "createPurchase": "Créer une Demande d'Achat",
+  "dayAfter": "Après-demain",
+  "dayAgo": "il y a {{count}} jour",
+  "defaultUserName": "Utilisateur",
+  "delayed": "Retardé",
+  "downtownSite": "Site Centre-ville",
+  "expenseByCategory": {
+    "categories": "{{count}} catégories",
+    "description": "Suivre le total et la vélocité des catégories",
+    "noData": "Aucune donnée de dépenses disponible",
+    "title": "Dépenses par Catégorie"
+  },
+  "filters": {
+    "allProjects": "Tous les Projets",
+    "allTime": "Toute la Période",
+    "export": "Exporter",
+    "lastThreeMonths": "3 Derniers Mois",
+    "lastYear": "Dernière Année",
+    "reset": "Réinitialiser",
+    "thisMonth": "Ce Mois-ci",
+    "unnamedProject": "Projet sans Nom"
+  },
+  "financialOverview": {
+    "collectionPower": "Pouvoir de Recouvrement",
+    "collectionRate": "Taux de Recouvrement Standard",
+    "criticalWeeks": "Semaines à Risque Critique/Élevé",
+    "currentCashPosition": "Position de Trésorerie Actuelle",
+    "manageCollections": "Gérer l'Espace de Recouvrement",
+    "outlookWeeks": "Perspectives projetées sur 13 semaines",
+    "outlookWeeks_many": "",
+    "outlookWeeks_one": "outlookWeeks",
+    "outlookWeeks_other": "outlookWeeks",
+    "riskAssessment": "Évaluation des Risques",
+    "statusRisk": "Risque de Liquidité",
+    "statusStable": "Position Stable",
+    "subtitle": "Perspectives de liquidité sur 13 semaines et performance du recouvrement",
+    "title": "Aperçu Financier Exécutif"
+  },
+  "forecast": "Prévisions",
+  "greeting": "Bonjour, {{name}} 👋",
+  "greetings": {
+    "afternoon": "Bon après-midi ! Continuons sur cette lancée !",
+    "evening": "C'est déjà la nuit, mais l'inspiration n'a pas d'horaire, n'est-ce pas ?",
+    "morning": "La journée ne fait que commencer !",
+    "night": "Vous travaillez encore ? Quelle détermination !"
+  },
+  "hoursAgo": "il y a {{count}} heures",
+  "installmentsDue": "Échéances dans {{days}} jours",
+  "kpisBrazil": {
+    "bdiDeviation": {
+      "change": "Prévu {{planned}}% | Écart {{deviation}} p.p.",
+      "title": "Écart de BDI"
+    },
+    "cashflowRisk": {
+      "change": "{{count}} semaines en risque critique/élevé",
+      "title": "Plancher de Trésorerie (13 semaines)"
+    },
+    "costPerM2": {
+      "change": "Prévu {{budget}}/m² ({{percent}}%)",
+      "title": "Coût Réel par m²"
+    },
+    "nfeReconciliation": {
+      "change": "En attente {{pending}} sur {{total}} NF-e",
+      "title": "Rapprochement NF-e"
+    },
+    "overdue": {
+      "change": "{{days}} jours moyens de retard sur {{count}} factures",
+      "title": "Créances en Retard"
+    },
+    "taxExposure": {
+      "change": "Économies potentielles {{savings}}",
+      "title": "Exposition INSS + ISS"
+    }
+  },
+  "manager": "Responsable",
+  "monthlyTrend": {
+    "description": "Suivre le total et la vélocité des catégories",
+    "noData": "Aucune donnée de tendance disponible",
+    "title": "Tendance des Dépenses Mensuelles"
+  },
+  "newProject": "Nouveau Projet",
+  "newPurchase": "Nouvel Achat",
+  "noActiveProjects": "Pas encore de projets actifs",
+  "noActiveProjectsDescription": "Commencez à créer votre premier projet pour voir le suivi du progrès et du budget ici.",
+  "noRecentActivity": "Aucune activité récente",
+  "notAssigned": "Non attribué",
+  "onSchedule": "Dans les Délais",
+  "onTrack": "Dans les Délais",
+  "onlineQuotes": "Devis en Ligne",
+  "openOverallStatus": "Ouvrir l'État Général",
+  "overBudget": "Hors Budget",
+  "partlyCloudy": "Partiellement Nuageux",
+  "pendingApproval": "{{count}} en attente d'approbation",
+  "progress": "Progrès",
+  "quickActions": "Actions Rapides",
+  "quickStats": "Statistiques Rapides",
+  "recentActivity": "Activité Récente",
+  "siteWeather": "Météo sur Site",
+  "subtitle": "Aperçu de vos opérations",
+  "temperature": "Température",
+  "thisMonth": "+{{count}} ce mois",
+  "title": "Tableau de Bord",
+  "tomorrow": "Demain",
+  "totalClients": "Total Clients",
+  "underBudget": "Dans le Budget",
+  "updated": "Mis à jour",
+  "viewAll": "Voir Tout",
+  "viewComprehensiveAnalytics": "Voir les Analyses Complètes",
+  "viewDetails": "Voir les Détails",
+  "welcomeMessage": "Bon retour ! Voici ce qui se passe aujourd'hui."
+}

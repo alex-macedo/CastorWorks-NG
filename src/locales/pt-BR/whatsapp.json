@@ -1,0 +1,28 @@
+{
+  "share": {
+    "noContacts": "[EN] No Contacts",
+    "selectRecipients": "[EN] Select Recipients",
+    "selectedCount": "[EN] Selected Count",
+    "noRecipients": "[EN] No Recipients",
+    "success": "[EN] Success",
+    "sentTo": "[EN] Sent To",
+    "error": "[EN] Error",
+    "title": "[EN] Title",
+    "description": "[EN] Description",
+    "preview": "[EN] Preview",
+    "withPhoto": "[EN] With Photo",
+    "message": "[EN] Message",
+    "messagePlaceholder": "[EN] Message Placeholder",
+    "addPhone": "[EN] Add Phone",
+    "send": "[EN] Send"
+  },
+  "templates": {
+    "placeholders": {
+      "generalVerification": "[EN] General Verification",
+      "nextSteps": "[EN] Next Steps"
+    }
+  },
+  "validation": {
+    "noPendingPayment": "[EN] No Pending Payment"
+  }
+}

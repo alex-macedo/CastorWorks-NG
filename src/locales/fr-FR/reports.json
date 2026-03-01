@@ -1,0 +1,321 @@
+{
+  "availableReports": "Rapports Disponibles",
+  "budget": {
+    "budgetAllocation": "Allocation Budgétaire",
+    "categoryBreakdown": "Ventilation par Catégorie",
+    "noBudgetItems": "Aucun élément budgétaire trouvé",
+    "overview": "Aperçu du Budget",
+    "title": "Rapport Budgétaire",
+    "totalBudgeted": "Total Budgétisé"
+  },
+  "budgetVsActual": {
+    "budgeted": "Budgétisé",
+    "byCategory": "Budget vs Réel par Catégorie",
+    "categoryAnalysis": "Analyse par Catégorie",
+    "categoryBreakdown": "Ventilation par Catégorie",
+    "indicators": {
+      "accuracy": "Précision Budgétaire",
+      "onBudget": "Catégories dans le Budget",
+      "overBudget": "Catégories Hors Budget",
+      "title": "Indicateurs de Performance",
+      "underBudget": "Catégories Sous le Budget"
+    },
+    "items": "Articles",
+    "noCategoriesFound": "Aucune catégorie budgétaire trouvée",
+    "onBudget": "Dans le Budget",
+    "overBudget": "Hors Budget",
+    "overallPerformance": "Performance Budgétaire Globale",
+    "overview": "Aperçu Budget vs Réel",
+    "performanceStatus": "Statut de Performance",
+    "significantVariances": "Articles avec Écarts Significatifs (>10%)",
+    "title": "Rapport Budget vs Réel",
+    "totalActual": "Total Réel",
+    "totalBudget": "Total Budgétisé",
+    "totalVariance": "Écart Total",
+    "underBudget": "Sous le Budget",
+    "utilization": "Utilisation",
+    "variance": "Écart",
+    "variancePercentage": "Écart %"
+  },
+  "cashFlow": {
+    "byCategory": "Flux de Trésorerie par Catégorie",
+    "inflow": "Entrées",
+    "month": "Mois",
+    "monthlyAnalysis": "Analyse Mensuelle des Flux de Trésorerie",
+    "netCashFlow": "Flux de Trésorerie Net",
+    "netFlow": "Flux Net",
+    "noDataFound": "Aucune donnée de flux de trésorerie trouvée",
+    "outflow": "Sorties",
+    "projection": {
+      "disclaimer": "* Basé sur les 3 derniers mois",
+      "monthlyInflow": "Revenus Mensuels Projetés",
+      "monthlyOutflow": "Dépenses Mensuelles Projetées",
+      "netFlow": "Flux de Trésorerie Net Projeté",
+      "title": "Projection de Trésorerie"
+    },
+    "status": "Statut du Flux de Trésorerie",
+    "summary": "Résumé des Flux de Trésorerie",
+    "title": "Rapport sur les Flux de Trésorerie",
+    "totalInflow": "Total des Entrées",
+    "totalOutflow": "Total des Sorties",
+    "transactionHistory": "Historique des Transactions"
+  },
+  "config": {
+    "categoryOption": "Catégorie",
+    "configureReportDescription": "Définissez les paramètres de votre rapport généré",
+    "dateRange": "Plage de Dates",
+    "dateRangeLabel": "Date de Début",
+    "generatePdfButton": "Générer le Rapport",
+    "groupBy": "Grouper Par",
+    "groupByLabel": "Grouper les Données Par",
+    "includeCharts": "Inclure des Graphiques",
+    "includeChartsLabel": "Inclure des Graphiques et Visuels",
+    "includeLabor": "Inclure la Main-d'œuvre",
+    "includeLaborLabel": "Inclure les Détails de Main-d'œuvre",
+    "includeMaterials": "Inclure les Matériaux",
+    "includeMaterialsLabel": "Inclure les Détails des Matériaux",
+    "monthOption": "Mois",
+    "options": "Options",
+    "optionsLabel": "Options du Rapport",
+    "phaseOption": "Phase du Projet",
+    "projectLabel": "Projet",
+    "selectProject": "Sélectionner un Projet",
+    "toLabel": "Date de Fin"
+  },
+  "customReport": "Rapport Personnalisé",
+  "dashboard": {
+    "abcCurveTitle": "Courbe ABC des Dépenses en R$",
+    "address": "Adresse :",
+    "available": "Disponible",
+    "budget": "Budget",
+    "budgetLabel": "Budget",
+    "budgetVsActualTitle": "Dépenses Totales vs Budget",
+    "category": "Catégorie",
+    "categoryBreakdown": "Ventilation par Catégorie",
+    "categorySpendingTitle": "Dépenses vs Budget par Groupe",
+    "closeButton": "Fermer",
+    "completionPercentage": "% d'Achèvement :",
+    "dialogTitle": "Rapport du Tableau de Bord",
+    "expectedDeliveryDate": "Date de Livraison Prévue du Projet :",
+    "generatedOn": "Généré le",
+    "generatingReport": "Génération du Rapport",
+    "monthlySpendingTitle": "Dépenses Totales Par Mois",
+    "name": "Nom",
+    "openingNewWindow": "Ouverture du rapport dans une nouvelle fenêtre...",
+    "percentUsed": "% Utilisé",
+    "printButton": "Imprimer",
+    "printReport": "Imprimer le Rapport",
+    "project": "Projet",
+    "projectOf": "Projet de :",
+    "projectSummary": "Résumé du Projet",
+    "reportReady": "Rapport Prêt",
+    "spent": "Dépensé",
+    "spentLabel": "Dépensé",
+    "status": "Statut",
+    "statusExceeded": "Dépassé",
+    "statusOk": "OK",
+    "summaryDescription": "Ce rapport présente une vue d'ensemble complète du projet, y compris les mesures de dépenses, la comparaison budgétaire et l'analyse ABC des coûts par catégorie.",
+    "title": "RAPPORT DE PROJET",
+    "totalSpending": "Dépenses Totales",
+    "totalSpent": "Total Dépensé",
+    "viewInDialog": "Cliquez pour voir le rapport dans la boîte de dialogue si la nouvelle fenêtre ne s'est pas ouverte"
+  },
+  "description": "Générez des rapports professionnels pour vos projets de construction",
+  "download": "Télécharger",
+  "errors": {
+    "failedToGenerate": "Échec de la génération du rapport",
+    "failedToGenerateAI": "Échec de la génération du rapport IA",
+    "failedToPrepareData": "Échec de la préparation des données du rapport",
+    "failedToView": "Échec de l'affichage du rapport",
+    "notSupportedFromHistory": "Ce type de rapport n'est pas encore pris en charge pour l'affichage à partir de l'historique"
+  },
+  "financialSummary": {
+    "amountSpent": "Montant Dépensé",
+    "budgetOverview": "Aperçu Budget vs Réel",
+    "expenseBreakdown": "Ventilation des Dépenses",
+    "expensesByCategory": "Dépenses par Catégorie",
+    "incomeBreakdown": "Ventilation des Revenus",
+    "incomeVsExpenses": "Revenus Totaux vs Dépenses",
+    "netIncome": "Revenu Net",
+    "netProfitLoss": "Bénéfice / Perte Net",
+    "noCategoriesFound": "Aucune catégorie de dépenses trouvée",
+    "overBudget": "Au-dessus du Budget",
+    "overview": "Aperçu Financier",
+    "paymentMethods": "Utilisation des Moyens de Paiement",
+    "profitMargin": "Marge Bénéficiaire",
+    "recentTransactions": "Transactions Récentes",
+    "title": "Rapport de Synthèse Financière",
+    "totalBudget": "Budget Total du Projet",
+    "totalExpenses": "Total des Dépenses",
+    "totalIncome": "Revenu Total",
+    "underBudget": "Sous le Budget"
+  },
+  "generateReport": "Générer le Rapport",
+  "keyStatistics": "Statistiques Clés",
+  "materials": {
+    "averageCost": "Coût Moyen",
+    "costAnalysis": "Analyse des Coûts",
+    "costPerUnit": "Coût par {{unit}}",
+    "costSummary": "Résumé des Coûts",
+    "grandTotal": "Grand Total",
+    "highestCost": "Coût le plus Élevé",
+    "inventory": "Inventaire des Matériaux",
+    "lowestCost": "Coût le plus Bas",
+    "overview": "Aperçu des Matériaux",
+    "taxesAndFees": "Taxes et Frais",
+    "title": "Rapport sur les Matériaux",
+    "totalArea": "Surface Totale",
+    "totalLabor": "Total Main-d'œuvre"
+  },
+  "materialsUsage": {
+    "byCategory": {
+      "title": "Matériaux par Catégorie"
+    },
+    "byUnit": {
+      "title": "Utilisation par Type d'Unité",
+      "type": "Type d'Unité"
+    },
+    "itemsCount": "Nombre d'Articles",
+    "material": "Matériau",
+    "materialsBreakdown": "Ventilation des Matériaux",
+    "noMaterialsFound": "Aucun matériau trouvé",
+    "overview": "Aperçu des Matériaux",
+    "percentage": "Pourcentage",
+    "quantity": "Quantité",
+    "recommendations": {
+      "bulkPurchase": "Envisagez l'achat en gros pour les matériaux ayant des coûts unitaires élevés.",
+      "diversifySuppliers": "Envisagez de diversifier les fournisseurs pour obtenir de meilleurs prix.",
+      "optimized": "L'utilisation des matériaux semble optimisée dans les paramètres du projet.",
+      "overBudget": "Les coûts des matériaux dépassent 40 % du budget. Révisez les spécifications."
+    },
+    "sinapiCode": "Code SINAPI",
+    "summary": {
+      "avgCost": "Coût Moyen par Article",
+      "costPerSqm": "Coût par m²",
+      "title": "Résumé des Matériaux",
+      "totalCost": "Coût Total des Matériaux",
+      "totalItems": "Total des Articles de Matériaux"
+    },
+    "supplier": "Fournisseur",
+    "title": "Rapport d'Utilisation des Matériaux",
+    "totalCost": "Coût Total",
+    "totalMaterials": "Total des Matériaux",
+    "totalQuantity": "Quantité Totale",
+    "totalValue": "Valeur Totale",
+    "unit": "Unité",
+    "unitCost": "Coût Unitaire",
+    "unitPrice": "Prix Unitaire"
+  },
+  "noReportsGeneratedYet": "Aucun rapport généré pour le moment.",
+  "profitability": {
+    "categoryProfitability": "Rentabilité par Catégorie",
+    "grossProfit": "Bénéfice Brut",
+    "noProfitabilityData": "Aucune donnée de rentabilité trouvée",
+    "overview": "Aperçu de la Rentabilité",
+    "profitMargin": "Marge Bénéficiaire",
+    "roi": "ROI",
+    "title": "Rapport de Rentabilité",
+    "totalCosts": "Coûts Totaux",
+    "totalRevenue": "Revenu Total"
+  },
+  "projectStatus": {
+    "actual": "Réel",
+    "amount": "Montant",
+    "budgetStatus": "Statut du Budget",
+    "budgeted": "Budgétisé",
+    "categories": "Catégories",
+    "category": "Catégorie",
+    "date": "Date",
+    "description": "Description",
+    "expense": "Dépense",
+    "income": "Revenu",
+    "noTransactions": "Aucune transaction récente trouvée",
+    "onTrack": "En Bonne Voie",
+    "overBudget": "Au-dessus du Budget",
+    "progressOverview": "Aperçu de l'Avancement",
+    "progressPercentage": "Avancement",
+    "projectOverview": "Aperçu du Projet",
+    "recentTransactions": "Transactions Financières Récentes",
+    "status": "Statut",
+    "title": "Rapport d'Avancement du Projet",
+    "totalActual": "Total Réel",
+    "totalBudget": "Total Budgétisé",
+    "type": "Type",
+    "underBudget": "Sous le Budget",
+    "variance": "Écart"
+  },
+  "recentReports": "Rapports Récents",
+  "reportReady": "Rapport prêt",
+  "reportTypeLabels": {
+    "budget": "Budget",
+    "financial": "Financier",
+    "projectStatus": "Statut du Projet"
+  },
+  "reportTypes": {
+    "aiWeeklySummary": {
+      "description": "Résumé exécutif généré par l'IA sur la santé financière et l'avancement du projet.",
+      "disclaimer": "Ce rapport a été généré de manière autonome par CastorMind AI sur la base de données de projet en temps réel. Veuillez vérifier les détails financiers critiques avant de prendre des décisions d'investissement majeures.",
+      "engine": "Moteur CastorMind AI",
+      "sections": {
+        "financialHealth": "Santé Financière",
+        "progressUpdate": "Mise à Jour de l'Avancement",
+        "summary": "Résumé",
+        "upcomingRisks": "Risques à Venir"
+      },
+      "title": "Résumé Hebdomadaire IA"
+    },
+    "budgetVsActual": {
+      "description": "Comparer les coûts budgétisés vs réels",
+      "title": "Budget vs Réel"
+    },
+    "cashFlow": {
+      "description": "Projections des flux de trésorerie du projet",
+      "title": "Prévision de Trésorerie"
+    },
+    "financialSummary": {
+      "description": "Analyse des revenus, des dépenses et des bénéfices",
+      "title": "Synthèse Financière"
+    },
+    "materialsUsage": {
+      "description": "Suivi de la consommation de matériaux",
+      "title": "Utilisation des Matériaux"
+    },
+    "profitability": {
+      "description": "Marges bénéficiaires et analyse",
+      "title": "Rentabilité du Projet"
+    },
+    "projectDashboard": {
+      "description": "Tableau de bord complet du projet avec graphiques et indicateurs",
+      "title": "Tableau de Bord du Projet"
+    },
+    "projectStatus": {
+      "description": "Résumé exécutif de tous les projets actifs",
+      "title": "Rapport d'Avancement du Projet"
+    }
+  },
+  "stats": {
+    "hoursAgo": "il y a {{count}} heures",
+    "lastGenerated": "Dernière Génération",
+    "mostPopular": "Le plus Populaire",
+    "reportsGenerated": "Rapports Générés",
+    "thisMonth": "Ce mois-ci : {{count}}",
+    "timesGenerated": "{{count}} fois généré"
+  },
+  "subtitle": "Générez des rapports complets pour vos projets",
+  "success": {
+    "generated": "Rapport généré avec succès"
+  },
+  "title": "Rapports et Analyses",
+  "viewInDialog": "Cliquez pour voir le rapport dans la boîte de dialogue",
+  "viewer": {
+    "close": "Fermer",
+    "downloadPdf": "Télécharger le PDF",
+    "generatedOn": "Généré le",
+    "pdfDownloadAvailable": "Vous pouvez toujours télécharger la version PDF en utilisant le bouton ci-dessus.",
+    "print": "Imprimer",
+    "printInstruction": "Utilisez Ctrl+P ou le bouton Imprimer pour imprimer ce rapport",
+    "reportNotSupportedMessage": "n'est pas encore pris en charge dans le visualiseur Web.",
+    "reportTypeNotSupported": "Type de Rapport non Pris en Charge",
+    "webViewerComingSoon": "Visualiseur Web Prochainement"
+  }
+}

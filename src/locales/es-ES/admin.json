@@ -1,0 +1,215 @@
+{
+  "actions": "Acciones",
+  "auditLogs": {
+    "subtitle": "Ver actividad del sistema y eventos de seguridad",
+    "title": "Registros de Auditoría"
+  },
+  "automatedRlsTests": "Pruebas de RLS Automatizadas",
+  "cancel": "Cancelar",
+  "confirmDelivery": "Confirmar Entrega",
+  "database": {
+    "subtitle": "Exportar e importar datos de la base de datos",
+    "title": "Gestión de Base de Datos"
+  },
+  "delete": "Eliminar",
+  "edit": "Editar",
+  "error": "Error al cargar datos",
+  "howToTestDifferentRoles": "Cómo probar con diferentes roles",
+  "loading": "Cargando...",
+  "maintenance": {
+    "subtitle": "Programa y gestiona ventanas de mantenimiento del sistema",
+    "title": "Gestión de Mantenimiento"
+  },
+  "maintenanceManagement": "Gestión de Mantenimiento",
+  "migrationRequired": "Migración de Base de Datos Necesaria",
+  "migrationSteps": {
+    "step1": "Vaya al Editor SQL de su Panel Supabase",
+    "step2": "Ejecute las migraciones del módulo de arquitecto:",
+    "step3": "Actualice esta página después de que se complete la migración"
+  },
+  "rlsPolicyTesting": "Prueba de Política RLS",
+  "roles": {
+    "subtitle": "Gestiona roles de usuario y permisos",
+    "title": "Gestión de Roles"
+  },
+  "save": "Guardar",
+  "subtitle": "Gestiona configuraciones y ajustes del sistema",
+  "telemetry": {
+    "subtitle": "Monitorea errores del sistema y problemas de rendimiento",
+    "title": "Problemas de Telemetría"
+  },
+  "telemetryUnlinkedApprovals": "Aprobaciones no vinculadas",
+  "testResults": "Resultados de las Pruebas",
+  "testingInstructions": "Instrucciones de Prueba",
+  "title": "Administración",
+  "whatTheseTestsVerify": "Lo que estas pruebas verifican",
+  "whatsapp": {
+    "actions": {
+      "changeNumber": "Cambiar Número",
+      "connect": "Conectar",
+      "disconnect": "Desconectar",
+      "generateQR": "Generar Código QR",
+      "refreshStatus": "Actualizar Estado",
+      "restart": "Reiniciar",
+      "setupInstance": "Configurar Instancia"
+    },
+    "aiAutoResponder": {
+      "description": "CastorMind AI responde automáticamente las consultas entrantes de WhatsApp con datos del proyecto (estado, área, responsable, presupuesto). Requiere contactos de WhatsApp vinculados a proyectos.",
+      "enabled": "Respuesta Automática por IA",
+      "requiresContacts": "Vincule números de teléfono a proyectos en Contactos WhatsApp para respuestas específicas del proyecto"
+    },
+    "connection": {
+      "connectedSince": "Conectado desde {{date}}",
+      "notConfigured": "Instancia de WhatsApp aún no configurada",
+      "refreshSyncHint": "Evolution Manager shows Connected? Click to sync status from API",
+      "status": "Estado de la Instancia",
+      "statusDesc": "Estado actual de la conexión de WhatsApp e información de la cuenta"
+    },
+    "contacts": {
+      "description": "Ver y gestionar contactos de WhatsApp",
+      "empty": "No se encontraron contactos",
+      "name": "Nombre",
+      "optedIn": "Optó",
+      "phone": "Teléfono",
+      "title": "Contactos de WhatsApp",
+      "type": "Tipo",
+      "verified": "Verificado"
+    },
+    "description": "Gestiona la integración de WhatsApp via Evolution API",
+    "groups": {
+      "active": "Activo",
+      "add": "Añadir",
+      "addParticipant": "Añadir Participante",
+      "addParticipantDesc": "Ingresa el número de teléfono para añadir al grupo.",
+      "addParticipantTitle": "Añadir Participante",
+      "admin": "Admin",
+      "connectFirst": "Conecta WhatsApp en Configuración de Admin para gestionar grupos del proyecto.",
+      "create": "Crear Grupo de WhatsApp",
+      "createDesc": "Se creará un grupo de WhatsApp con todos los miembros del equipo que tienen números de teléfono registrados.",
+      "createTitle": "Crear Grupo de Proyecto en WhatsApp",
+      "createdAt": "Creado",
+      "currentParticipants": "Participantes Actuales",
+      "description": "Descripción",
+      "descriptionPlaceholder": "Descripción opcional del grupo...",
+      "groupName": "Nombre del Grupo",
+      "groupNameHint": "Deja vacío para usar el código o nombre del proyecto",
+      "noGroup": "Aún no existe un grupo de WhatsApp para este proyecto.",
+      "notConnected": "WhatsApp No Conectado",
+      "participants": "participantes",
+      "phoneNumber": "Número de Teléfono",
+      "syncTeam": "Sincronizar con Equipo",
+      "title": "Grupo de WhatsApp",
+      "updatedAt": "Actualizado"
+    },
+    "manager": {
+      "createInstance": "Crear Instancia",
+      "deleteInstance": "Eliminar",
+      "error": "Operación fallida",
+      "instanceCreated": "Instancia creada",
+      "instanceDeleted": "Instancia eliminada",
+      "instanceName": "Nombre de instancia",
+      "instancesTitle": "Todas las Instancias",
+      "noInstances": "No se encontraron instancias",
+      "primary": "Principal",
+      "webhookUpdated": "Webhook actualizado"
+    },
+    "messages": {
+      "contact": "Contacto",
+      "content": "Contenido",
+      "description": "Ver mensajes recientes enviados y recibidos",
+      "direction": "Dirección",
+      "empty": "No hay mensajes aún",
+      "received": "Recibido",
+      "sent": "Enviado",
+      "status": "Estado",
+      "time": "Hora",
+      "title": "Historial de Mensajes",
+      "type": "Tipo"
+    },
+    "qr": {
+      "alreadyConnected": "¡WhatsApp está conectado!",
+      "awaitingQr": "Esperando código QR del servidor. Haz clic en Generar QR para reintentar.",
+      "clickToGenerate": "Haz clic en Conectar para generar el código QR",
+      "description": "Escanea con WhatsApp para conectar tu cuenta",
+      "generating": "Generando código QR...",
+      "managerFallback": "Si el código QR no aparece arriba, usa el Evolution Manager para conectar:",
+      "openEvolutionManager": "Abrir Evolution Manager",
+      "pairingCodeExpiry": "El código expira en 60 segundos.",
+      "pairingCodeInstructions": "Abre WhatsApp en tu teléfono, ve a Configuración > Dispositivos Vinculados > Vincular un Dispositivo, luego toca Vincular con número de teléfono e introduce este código",
+      "scanInstructions": "Abre WhatsApp en tu teléfono, ve a Configuración > Dispositivos Vinculados > Vincular un Dispositivo y escanea este código",
+      "title": "Código QR"
+    },
+    "status": {
+      "awaitingScan": "Esperando Escaneo",
+      "connected": "Conectado",
+      "connecting": "Conectando",
+      "disconnected": "Desconectado",
+      "error": "Error"
+    },
+    "tabs": {
+      "connection": "Conexión",
+      "contacts": "Contactos",
+      "instances": "Instancias",
+      "messages": "Mensajes",
+      "templates": "Plantillas",
+      "webhook": "Webhook"
+    },
+    "templates": {
+      "categories": {
+        "alert": "Alerta",
+        "approval": "Aprobacion",
+        "marketing": "Marketing",
+        "notification": "Notificacion",
+        "reminder": "Recordatorio",
+        "report": "Informe"
+      },
+      "category": "Categoria",
+      "content": "Contenido del Mensaje",
+      "contentHelp": "Usa la sintaxis {{nombre_variable}} para contenido dinamico que sera reemplazado al enviar",
+      "contentPlaceholder": "Ingresa tu plantilla de mensaje aqui. Usa {{variable}} para contenido dinamico.",
+      "copied": "Plantilla copiada al portapapeles",
+      "copy": "Copiar",
+      "copyFailed": "Error al copiar plantilla",
+      "create": "Crear Plantilla",
+      "createDescription": "Crea una nueva plantilla de mensaje con marcadores de variables",
+      "createFirst": "Crea Tu Primera Plantilla",
+      "createTitle": "Crear Plantilla",
+      "delete": "Eliminar",
+      "deleteConfirmDescription": "Estas seguro de eliminar la plantilla \"{{name}}\"? Esta accion no puede deshacerse.",
+      "deleteConfirmTitle": "Eliminar Plantilla?",
+      "description": "Gestiona plantillas de notificacion para mensajes automatizados",
+      "detectedVariables": "Variables Detectadas",
+      "edit": "Editar",
+      "editDescription": "Actualiza el contenido y configuracion de la plantilla",
+      "editTitle": "Editar Plantilla",
+      "empty": "No hay plantillas configuradas",
+      "key": "Clave de Plantilla",
+      "keyHelp": "Identificador unico usado para referenciar esta plantilla en codigo",
+      "language": "Idioma",
+      "name": "Nombre de Plantilla",
+      "namePlaceholder": "ej: Actualizacion de Proyecto",
+      "preview": "Vista Previa",
+      "previewResult": "Mensaje Renderizado",
+      "previewTitle": "Vista Previa de Plantilla",
+      "test": "Prueba",
+      "title": "Plantillas de Mensaje",
+      "variableValues": "Valores de Variables"
+    },
+    "test": {
+      "description": "Envía un mensaje de prueba para verificar que la conexión funciona",
+      "message": "Mensaje",
+      "messagePlaceholder": "Escribe tu mensaje de prueba...",
+      "phone": "Número de Teléfono",
+      "send": "Enviar Mensaje de Prueba",
+      "title": "Enviar Mensaje de Prueba"
+    },
+    "title": "Configuración de WhatsApp",
+    "webhook": {
+      "description": "Configure dónde Evolution API envía los eventos",
+      "events": "Eventos",
+      "save": "Guardar Webhook",
+      "title": "Configuración del Webhook",
+      "url": "URL del Webhook"
+    }
+  }
+}

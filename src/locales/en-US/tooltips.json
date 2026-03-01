@@ -1,0 +1,23 @@
+{
+  "schedule": "Schedule",
+  "projects": "Projects",
+  "deleteConfiguration": "Delete Configuration",
+  "calendarDaysIncludesAllDays": "Calendar Days Includes All Days",
+  "deletePhase": "Delete Phase",
+  "deleteActivity": "Delete Activity",
+  "net15": "Net15",
+  "net30": "Net30",
+  "net45": "Net45",
+  "net60": "Net60",
+  "dueOnReceipt": "Due On Receipt",
+  "drawFreehand": "Draw Freehand",
+  "eraser": "Eraser",
+  "rectangle": "Rectangle",
+  "circle": "Circle",
+  "arrow": "Arrow",
+  "addText": "Add Text",
+  "noClientsYet": "No Clients Yet",
+  "deleteClient": "Delete Client",
+  "projectCalendar": "Project Calendar",
+  "pasteFromExcel": "Paste From Excel"
+}

@@ -1,0 +1,513 @@
+import { createContext, useCallback, useContext, useEffect, useState, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useUserPreferences } from '@/hooks/useUserPreferences';
+import { useAppSettings } from '@/hooks/useAppSettings';
+import { criticalTranslations, ROUTE_NAMESPACE_MAP, FEATURE_NAMESPACES, type FeatureNamespace } from '@/locales/critical';
+import { trackMissingKey } from '@/utils/translationGenerator';
+
+export type Language = 'pt-BR' | 'en-US' | 'es-ES' | 'fr-FR';
+export type Currency = 'BRL' | 'USD' | 'EUR';
+export type DateFormat = 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'YYYY-MM-DD' | 'MMM DD, YYYY';
+export type TimeZone = 'America/Sao_Paulo' | 'America/New_York' | 'Europe/London' | 'Asia/Tokyo';
+export type TemperatureUnit = 'C' | 'F';
+export type NumberFormat = 'compact' | 'full';
+
+export const languageMetadata = {
+  'en-US': { flag: '🇺🇸', nativeName: 'English (US)' },
+  'pt-BR': { flag: '🇧🇷', nativeName: 'Português (BR)' },
+  'es-ES': { flag: '🇪🇸', nativeName: 'Español (ES)' },
+  'fr-FR': { flag: '🇫🇷', nativeName: 'Français (FR)' },
+};
+
+interface LocalizationSettings {
+  language: Language;
+  currency: Currency;
+  dateFormat: DateFormat;
+  timeZone: TimeZone;
+  weatherLocation: string;
+  temperatureUnit: TemperatureUnit;
+  numberFormat: NumberFormat;
+}
+
+type TranslationVariables = Record<string, string | number>;
+
+interface LocalizationContextType {
+  language: Language;
+  currency: Currency;
+  dateFormat: DateFormat;
+  timeZone: TimeZone;
+  weatherLocation: string;
+  temperatureUnit: TemperatureUnit;
+  numberFormat: NumberFormat;
+  setLanguage: (language: Language) => void;
+  setCurrency: (currency: Currency) => void;
+  setDateFormat: (format: DateFormat) => void;
+  setTimeZone: (timezone: TimeZone) => void;
+  setWeatherLocation: (location: string) => void;
+  setTemperatureUnit: (unit: TemperatureUnit) => void;
+  setNumberFormat: (format: NumberFormat) => void;
+  updateSettings: (settings: Partial<LocalizationSettings>) => void;
+  t: (key: string, variables?: TranslationVariables) => string;
+  loadTranslationsForRoute: (route: string) => void; // PHASE 2: Lazy-load translations for route
+}
+
+/**
+ * Get initial language from localStorage cache (synchronous, no async wait)
+ * Falls back to browser language detection for first-time users
+ */
+const getInitialLanguage = (): Language => {
+  try {
+    // Priority 1: Read from localStorage cache (instant, synchronous)
+    const cached = localStorage.getItem('user-preferences-cache');
+    if (cached) {
+      const prefs = JSON.parse(cached);
+      if (prefs.language && ['pt-BR', 'en-US', 'es-ES', 'fr-FR'].includes(prefs.language)) {
+        console.debug('Localization: Using cached language from localStorage:', prefs.language);
+        return prefs.language as Language;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to read language from cache:', e);
+  }
+  
+  // Priority 2: Detect browser language for first-time users
+  const browserLanguage = detectBrowserLanguage();
+  console.debug('Localization: Using detected browser language:', browserLanguage);
+  return browserLanguage;
+};
+
+/**
+ * Detect browser language and map to supported languages
+ */
+const detectBrowserLanguage = (): Language => {
+  const browserLang = navigator.language || navigator.languages?.[0] || 'en-US';
+  
+  // Map browser language codes to our supported languages
+  const langMap: Record<string, Language> = {
+    'en': 'en-US',
+    'en-US': 'en-US',
+    'en-GB': 'en-US',
+    'pt': 'pt-BR',
+    'pt-BR': 'pt-BR',
+    'pt-PT': 'pt-BR',
+    'es': 'es-ES',
+    'es-ES': 'es-ES',
+    'es-MX': 'es-ES',
+    'es-AR': 'es-ES',
+    'fr': 'fr-FR',
+    'fr-FR': 'fr-FR',
+    'fr-CA': 'fr-FR',
+  };
+  
+  // Try exact match first
+  if (langMap[browserLang]) {
+    return langMap[browserLang];
+  }
+  
+  // Try language code without region (e.g., "pt" from "pt-BR")
+  const langCode = browserLang.split('-')[0];
+  if (langMap[langCode]) {
+    return langMap[langCode];
+  }
+  
+  // Default to English if no match
+  return 'en-US';
+};
+
+const defaultSettings: LocalizationSettings = {
+  language: getInitialLanguage(),
+  currency: 'USD',
+  dateFormat: 'MM/DD/YYYY',
+  timeZone: 'America/New_York',
+  weatherLocation: 'New York, USA',
+  temperatureUnit: 'F',
+  numberFormat: 'compact',
+};
+
+export const LocalizationContext = createContext<LocalizationContextType | undefined>(undefined);
+
+const defer = (fn: () => void) => {
+  if (typeof queueMicrotask === 'function') {
+    queueMicrotask(fn);
+  } else {
+    Promise.resolve().then(fn);
+  }
+};
+
+export const LocalizationProvider = ({ children }: { children: ReactNode }) => {
+  const { preferences, isLoading: prefsLoading, updatePreferences } = useUserPreferences();
+  const { settings: appSettings, isLoading: appSettingsLoading } = useAppSettings();
+  const updatePreferencesMutate = updatePreferences.mutate;
+  const hasInitializedLanguage = useRef(false);
+
+  const [settings, setSettings] = useState<LocalizationSettings>(defaultSettings);
+  const [translations, setTranslations] = useState<Record<string, any>>({});
+  const [loadedNamespaces, setLoadedNamespaces] = useState<Set<string>>(new Set());
+  const [loadingNamespaces, setLoadingNamespaces] = useState<Set<string>>(new Set());
+  const [isTranslationsLoaded, setIsTranslationsLoaded] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState<Language | null>(null); // Track for preventing redundant loads
+  
+  // Use refs to avoid infinite loops in useCallback dependencies
+  const loadedNamespacesRef = useRef<Set<string>>(new Set());
+  const loadingNamespacesRef = useRef<Set<string>>(new Set());
+  
+  // Sync refs with state
+  useEffect(() => {
+    loadedNamespacesRef.current = loadedNamespaces;
+  }, [loadedNamespaces]);
+  
+  useEffect(() => {
+    loadingNamespacesRef.current = loadingNamespaces;
+  }, [loadingNamespaces]);
+
+  // Sync settings from database preferences (only when preferences first load)
+  // Implements fallback chain: user_pref → system_pref → default
+  useEffect(() => {
+    if (preferences && !prefsLoading && !appSettingsLoading && appSettings) {
+      hasInitializedLanguage.current = true;
+      const newSettings = {
+        language: (preferences.language as Language) || defaultSettings.language,
+        currency: (preferences.currency as Currency) || defaultSettings.currency,
+        dateFormat: (preferences.date_format as DateFormat) || defaultSettings.dateFormat,
+        timeZone: (preferences.time_zone as TimeZone) || defaultSettings.timeZone,
+        // ✅ Fallback chain: user_pref → system_pref → default
+        weatherLocation: preferences.weather_location || appSettings.system_weather_location || defaultSettings.weatherLocation,
+        temperatureUnit: (preferences.temperature_unit as TemperatureUnit) || (appSettings.system_temperature_unit as TemperatureUnit) || defaultSettings.temperatureUnit,
+        numberFormat: (preferences.number_format as NumberFormat) || defaultSettings.numberFormat,
+      };
+      setSettings(newSettings);
+
+      // ✅ Sync preferences to localStorage cache to keep them in sync
+      try {
+        localStorage.setItem('user-preferences-cache', JSON.stringify(preferences));
+        localStorage.setItem('user-preferences-cache-timestamp', Date.now().toString());
+      } catch (e) {
+        console.error('Failed to sync preferences to cache:', e);
+      }
+    } else if (!preferences && !prefsLoading && !hasInitializedLanguage.current) {
+      // No user preferences exist - detect browser language for first-time users
+      // Language already set from getInitialLanguage() in defaultSettings
+      hasInitializedLanguage.current = true;
+      // Just save the already-detected language to database for future sessions
+      updatePreferencesMutate({ language: settings.language });
+    }
+  }, [preferences, prefsLoading, appSettings, appSettingsLoading, updatePreferencesMutate]);
+
+  // PHASE 2: Load critical translations synchronously from bundle
+  const loadCriticalTranslations = useCallback((language: Language) => {
+    try {
+      const critical = { ...criticalTranslations[language] };
+      
+      // Set all critical translations (including estimates, proposals, supervisor)
+      setTranslations(critical);
+      setLoadedNamespaces(new Set<string>(['common', 'navigation', 'topBar', 'auth', 'ai', 'accessibility', 'estimates', 'proposals', 'supervisor']));
+      setIsTranslationsLoaded(true);
+      console.debug('Localization: loaded critical translations for', language);
+    } catch (error) {
+      console.error('Error loading critical translations:', error);
+      setIsTranslationsLoaded(true);
+    }
+  }, []);
+
+  // PHASE 2: Lazy-load feature-specific translations on demand
+  const loadFeatureTranslations = useCallback(async (language: Language, namespaces: FeatureNamespace[]) => {
+    try {
+      const modules = import.meta.glob('../locales/**/*.json');
+      const newTranslations: Record<string, any> = {};
+      const namespacesToLoad: FeatureNamespace[] = [];
+      
+      for (const namespace of namespaces) {
+        // Skip if already loaded or currently loading (use refs to avoid dependency)
+        if (loadedNamespacesRef.current.has(namespace) || loadingNamespacesRef.current.has(namespace)) continue;
+        namespacesToLoad.push(namespace);
+      }
+
+      if (namespacesToLoad.length === 0) return;
+
+      // Mark namespaces as loading
+      setLoadingNamespaces(prev => new Set([...prev, ...namespacesToLoad]));
+      
+      for (const namespace of namespacesToLoad) {
+        const path = `../locales/${language}/${namespace}.json`;
+        if (modules[path]) {
+          try {
+            const module = await modules[path]() as any;
+            newTranslations[namespace] = module.default || module;
+          } catch (error) {
+            console.error(`Failed to load translation namespace ${namespace}:`, error);
+          }
+        }
+      }
+      
+      if (Object.keys(newTranslations).length > 0) {
+        setTranslations(prev => ({ ...prev, ...newTranslations }));
+        setLoadedNamespaces(prev => new Set<string>([...prev, ...namespacesToLoad]));
+        console.debug('Localization: lazy-loaded', Object.keys(newTranslations), 'for', language);
+      }
+
+      // Remove from loading state
+      setLoadingNamespaces(prev => {
+        const next = new Set(prev);
+        namespacesToLoad.forEach(ns => next.delete(ns));
+        return next;
+      });
+    } catch (error) {
+      console.error('Error loading feature translations:', error);
+      // Clean up loading state on error
+      setLoadingNamespaces(prev => {
+        const next = new Set(prev);
+        namespaces.forEach(ns => next.delete(ns));
+        return next;
+      });
+    }
+  }, []); // No dependencies - use refs instead
+
+  // Expose method for route-based translation loading
+  const loadTranslationsForRoute = useCallback((route: string) => {
+    // Find matching route pattern
+    let namespaces: FeatureNamespace[] = [];
+    
+    for (const [pattern, ns] of Object.entries(ROUTE_NAMESPACE_MAP)) {
+      // Simple pattern matching (exact or with :params)
+      const regexPattern = pattern.replace(/:[^/]+/g, '[^/]+');
+      if (new RegExp(`^${regexPattern}$`).test(route)) {
+        namespaces = ns;
+        break;
+      }
+    }
+    
+    if (namespaces.length > 0) {
+      loadFeatureTranslations(settings.language, namespaces);
+    }
+  }, [settings.language, loadFeatureTranslations]);
+
+  // Helper function to update both local and database
+  const updateSetting = useCallback((updates: Partial<LocalizationSettings>) => {
+    setSettings(prev => ({ ...prev, ...updates }));
+    
+    // Map to database field names
+    const dbUpdates: any = {};
+    if (updates.language !== undefined) dbUpdates.language = updates.language;
+    if (updates.currency !== undefined) dbUpdates.currency = updates.currency;
+    if (updates.dateFormat !== undefined) dbUpdates.date_format = updates.dateFormat;
+    if (updates.timeZone !== undefined) dbUpdates.time_zone = updates.timeZone;
+    if (updates.weatherLocation !== undefined) dbUpdates.weather_location = updates.weatherLocation;
+    if (updates.temperatureUnit !== undefined) dbUpdates.temperature_unit = updates.temperatureUnit;
+    
+    // ✅ Immediately update localStorage cache when language changes
+    if (updates.language !== undefined) {
+      try {
+        const cached = localStorage.getItem('user-preferences-cache') || '{}';
+        const prefs = JSON.parse(cached);
+        prefs.language = updates.language;
+        localStorage.setItem('user-preferences-cache', JSON.stringify(prefs));
+        localStorage.setItem('user-preferences-cache-timestamp', Date.now().toString());
+      } catch (e) {
+        console.error('Failed to update language cache:', e);
+      }
+    }
+    
+    if (Object.keys(dbUpdates).length > 0) {
+      updatePreferencesMutate(dbUpdates);
+    }
+  }, [updatePreferencesMutate]);
+
+  // PHASE 2: Load critical translations only when language actually changes
+  useEffect(() => {
+    if (currentLanguage !== settings.language) {
+      console.debug('Localization: Language changed from', currentLanguage, 'to', settings.language, '- reloading critical translations');
+      setCurrentLanguage(settings.language);
+      
+      // Load translations asynchronously to avoid blocking render
+      Promise.resolve().then(() => {
+        loadCriticalTranslations(settings.language);
+        // Note: loadCriticalTranslations will handle setting proposals, supervisor, etc.
+        // The initial setLoadedNamespaces inside loadCriticalTranslations will include them in the Promise
+      });
+    }
+  }, [loadCriticalTranslations, settings.language, currentLanguage]);
+
+  const interpolate = (value: string, variables: TranslationVariables = {}) => {
+    // Safely replace placeholders like "{{name}}" (i18next-style) and "{name}"
+    // without constructing RegExp from untrusted input (which can produce
+    // invalid-regex exceptions like "{0}").
+    let result = value;
+    for (const [variableKey, variableValue] of Object.entries(variables)) {
+      const doubleBracePlaceholder = `{{${variableKey}}}`;
+      const singleBracePlaceholder = `{${variableKey}}`;
+      const replacement = String(variableValue);
+      // Replace double-brace first so we don't leave outer braces behind.
+      result = result.split(doubleBracePlaceholder).join(replacement);
+      result = result.split(singleBracePlaceholder).join(replacement);
+    }
+    return result;
+  };
+
+
+  const t = useCallback((key: string, variables: TranslationVariables = {}): string => {
+    // Return key if translations not loaded yet (graceful degradation)
+    if (!isTranslationsLoaded) {
+      return key;
+    }
+
+    const [section, ...rest] = key.split('.');
+    const translationKey = rest.join('.');
+
+    if (translations[section] && translationKey) {
+      const keys = translationKey.split('.');
+      let value = translations[section];
+
+      for (const k of keys) {
+        value = value?.[k];
+      }
+
+      if (typeof value === 'string') {
+        return interpolate(value, variables);
+      }
+      // Debug: missing nested value
+      try {
+        console.warn(`Localization: missing translation for key ${key} (language=${settings.language})`);
+        trackMissingKey(key, settings.language);
+      } catch (err) {
+        // ignore
+      }
+      // Always return a string, never an object
+      return key;
+    }
+
+    // If section not found, attempt to lazy-load the namespace once (non-blocking).
+    // This avoids noisy warnings when the namespace is being fetched lazily on route access.
+    try {
+      const namespace = section as FeatureNamespace;
+      // Only attempt to load if it's a recognized feature namespace, not already loaded, and not currently loading (use refs)
+      if ((FEATURE_NAMESPACES as readonly string[]).includes(namespace) && 
+          !loadedNamespacesRef.current.has(namespace) && 
+          !loadingNamespacesRef.current.has(namespace)) {
+        // Kick off async loading without blocking render.
+        defer(() => {
+          loadFeatureTranslations(settings.language, [namespace as FeatureNamespace]).catch(() => {});
+        });
+        return key;
+      }
+
+      // If it's currently loading, just return the key without logging warnings (use refs)
+      if (loadingNamespacesRef.current.has(namespace)) {
+        return key;
+      }
+
+      // Not a lazy-loadable namespace or already attempted; emit missing-section warning
+      console.warn(`Localization: missing section for key ${key} (language=${settings.language})`);
+      trackMissingKey(key, settings.language);
+    } catch (err) {
+      // ignore
+    }
+    return key;
+  }, [isTranslationsLoaded, translations, settings.language, loadFeatureTranslations]);
+
+  const setLanguage = useCallback((language: Language) => {
+    updateSetting({ language });
+  }, [updateSetting]);
+
+  const setCurrency = useCallback((currency: Currency) => {
+    updateSetting({ currency });
+  }, [updateSetting]);
+
+  const setDateFormat = useCallback((dateFormat: DateFormat) => {
+    updateSetting({ dateFormat });
+  }, [updateSetting]);
+
+  const setTimeZone = useCallback((timeZone: TimeZone) => {
+    updateSetting({ timeZone });
+  }, [updateSetting]);
+
+  const setWeatherLocation = useCallback((weatherLocation: string) => {
+    updateSetting({ weatherLocation });
+  }, [updateSetting]);
+
+  const setTemperatureUnit = useCallback((temperatureUnit: TemperatureUnit) => {
+    updateSetting({ temperatureUnit });
+  }, [updateSetting]);
+
+  const setNumberFormat = useCallback((numberFormat: NumberFormat) => {
+    updateSetting({ numberFormat });
+  }, [updateSetting]);
+
+  const updateSettingsBatch = useCallback((newSettings: Partial<LocalizationSettings>) => {
+    updateSetting(newSettings);
+  }, [updateSetting]);
+
+  // PHASE 1 + PHASE 2: Render immediately with critical translations
+  return (
+    <LocalizationContext.Provider
+      value={{
+        ...settings,
+        setLanguage,
+        setCurrency,
+        setDateFormat,
+        setTimeZone,
+        setWeatherLocation,
+        setTemperatureUnit,
+        setNumberFormat,
+        updateSettings: updateSettingsBatch,
+        t,
+        loadTranslationsForRoute, // PHASE 2: Expose lazy-loading method
+      }}
+    >
+      {children}
+    </LocalizationContext.Provider>
+  );
+};
+
+export const useLocalization = () => {
+  const context = useContext(LocalizationContext);
+  if (context === undefined) {
+    // Defensive fallback: avoid crashing the entire app if a consumer is rendered
+    // outside the provider (helps surface the underlying issue without hard failure).
+    // We emit a one-time stack trace in development to help locate the offending
+    // consumer. In production we keep the message minimal to avoid leaking internals.
+    console.warn('useLocalization called without LocalizationProvider - returning fallback implementation');
+
+    // One-time stack trace to help debugging (dev only)
+    try {
+      // Only print the full stack once to avoid noisy logs
+      const globalAny = globalThis as any;
+      if (!globalAny.__useLocalizationFallbackLogged) {
+        // eslint-disable-next-line react-hooks/immutability
+        globalAny.__useLocalizationFallbackLogged = true;
+        try {
+          // Capture a stack trace via an Error object and always emit it once.
+          const err = new Error('useLocalization fallback first invocation - stack trace:');
+          console.warn(err.stack);
+        } catch (e) {
+          // If stack capture fails for any reason, still emit a minimal hint.
+          console.warn('useLocalization fallback invoked (stack capture failed)');
+        }
+      }
+    } catch (e) {
+      // ignore any instrumentation errors
+    }
+
+    const fallback: LocalizationContextType = {
+      language: defaultSettings.language,
+      currency: defaultSettings.currency,
+      dateFormat: defaultSettings.dateFormat,
+      timeZone: defaultSettings.timeZone,
+      weatherLocation: defaultSettings.weatherLocation,
+      temperatureUnit: defaultSettings.temperatureUnit,
+      numberFormat: defaultSettings.numberFormat,
+      setLanguage: () => {},
+      setCurrency: () => {},
+      setDateFormat: () => {},
+      setTimeZone: () => {},
+      setWeatherLocation: () => {},
+      setTemperatureUnit: () => {},
+      setNumberFormat: () => {},
+      updateSettings: () => {},
+      t: (key: string) => key,
+      loadTranslationsForRoute: () => {},
+    };
+
+    return fallback;
+  }
+  return context;
+};

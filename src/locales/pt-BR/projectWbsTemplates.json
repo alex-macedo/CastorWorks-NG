@@ -1,0 +1,132 @@
+{
+  "ai": {
+    "analysisFailed": "Análise Falhou",
+    "analysisFailedDescription": "Ocorreu um erro durante a análise de IA",
+    "analysisStarting": "Análise de IA Iniciando",
+    "analysisStartingDescription": "Analisando {{count}} itens em segundo plano. Isso pode levar alguns momentos.",
+    "batchAnalysisComplete": "Análise em Lote de IA Concluída",
+    "batchAnalysisCompleteDescription": "Analisados {{count}} itens com sucesso.",
+    "jsonFileCreated": "Arquivo JSON Criado",
+    "jsonFileCreatedDescription": "Baixe o arquivo JSON para analisar com IA e fazer upload dos resultados."
+  },
+  "createNew": "Criar Modelo",
+  "createNewDescription": "createNewDescription",
+  "default": "Padrão",
+  "delete": "Excluir",
+  "deleteConfirmDescription": "Este modelo será excluído permanentemente. Esta ação não pode ser desfeita.",
+  "deleteConfirmTitle": "Excluir modelo?",
+  "deleted": "Modelo excluído com sucesso",
+  "dialog": {
+    "createTitle": "Criar Modelo de EAP do Projeto",
+    "editTitle": "Editar Modelo de EAP do Projeto",
+    "viewTitle": "Visualizar Modelo de EAP do Projeto"
+  },
+  "duplicate": "Duplicar",
+  "edit": "Editar",
+  "editor": {
+    "back": "Voltar",
+    "createTitle": "Criar Modelo de EAP do Projeto",
+    "editTitle": "Editar Modelo de EAP do Projeto",
+    "saveError": "Ocorreu um erro ao salvar o modelo de EAP",
+    "saveSuccess": "Modelo de EAP salvo com sucesso",
+    "subtitle": "Edite o modelo e seus itens de EAP usando a grade abaixo",
+    "templateSectionTitle": "Modelo",
+    "viewTitle": "Visualizar Modelo de EAP do Projeto"
+  },
+  "errors": {
+    "duplicateProjectType": "Já existe um modelo para este tipo de obra. Cada tipo de obra só pode ter um modelo.",
+    "templateInUse": "Não é possível excluir o modelo porque ele está associado a projetos ativos."
+  },
+  "export": {
+    "button": "Exportar CSV",
+    "empty": "Nenhum item para exportar",
+    "error": "Falha ao exportar CSV",
+    "exporting": "Exportando...",
+    "fileName": "modelo-eap",
+    "success": "CSV exportado com sucesso"
+  },
+  "fields": {
+    "description": "Descrição",
+    "descriptionPlaceholder": "Descrição opcional",
+    "isDefault": "Definir como Padrão",
+    "name": "Nome do modelo",
+    "namePlaceholder": "Digite o nome do modelo",
+    "projectType": "Tipo de obra",
+    "projectTypePlaceholder": "Selecione o tipo de obra"
+  },
+  "grid": {
+    "actions": "Ações",
+    "code": "Código"
+  },
+  "itemType": {
+    "control_account": "Conta de controle",
+    "deliverable": "Entregável",
+    "phase": "Fase",
+    "work_package": "Pacote de trabalho"
+  },
+  "items": {
+    "addChild": "+ item filho",
+    "addRoot": "Adicionar item de nível superior",
+    "collapseAll": "Recolher Todos",
+    "costCode": "Código de Custo",
+    "costCodePlaceholder": "Selecione o código de custo",
+    "delete": "Excluir item",
+    "deleteConfirmDescription": "Este item e todos os seus filhos serão excluídos.",
+    "deleteConfirmTitle": "Excluir item?",
+    "description": "Descrição",
+    "descriptionPlaceholder": "Observações opcionais",
+    "dragToReorder": "Arraste para reordenar",
+    "durationDays": "Duração (dias)",
+    "durationPlaceholder": "Dias",
+    "editItem": "Editar Item",
+    "empty": "Nenhum item ainda. Adicione um item de nível superior para começar.",
+    "expandAll": "Expandir Todos",
+    "moveDown": "Mover para baixo",
+    "moveUp": "Mover para cima",
+    "name": "Nome",
+    "namePlaceholder": "Nome do item",
+    "noCostCode": "Nenhum",
+    "subtitle": "Adicione, edite, reordene ou exclua itens da EAP",
+    "title": "Itens",
+    "type": "Tipo"
+  },
+  "manageWbs": "[EN] Manage Wbs",
+  "noItems": "Nenhum item de estrutura encontrado",
+  "noTemplates": "Nenhum modelo de EAP encontrado",
+  "noTemplatesHint": "Peça a um administrador para criar um modelo ou habilitar um modelo padrão.",
+  "projectType": "Tipo: {{type}}",
+  "projectTypeAny": "Qualquer",
+  "subtitle": "Gerencie modelos de EAP (Estrutura Analítica do Projeto) usados para preencher automaticamente novas obras",
+  "sync": {
+    "allPhasesMatched": "Todas as fases já existem no modelo EAP",
+    "applyButton": "Aplicar Sincronização",
+    "button": "Sincronizar com Fases",
+    "dialogDescription": "Selecione um modelo de fases para validar e sincronizar com o modelo EAP atual. Fases ausentes serão adicionadas como itens da EAP.",
+    "dialogTitle": "Sincronizar Modelo EAP com Modelo de Fases",
+    "durationsUpdated": "Dias de duração sincronizados com o modelo de fases",
+    "matchedWith": "correspondente a",
+    "notMatched": "não encontrado na EAP",
+    "of": "de",
+    "phasesAdded": "{{count}} fases adicionadas ao modelo EAP",
+    "phasesMatched": "fases correspondentes",
+    "selectPlaceholder": "Escolha um modelo de fases...",
+    "selectTemplate": "Selecionar Modelo de Fases",
+    "validateButton": "Validar",
+    "validating": "Validando...",
+    "validationResults": "Resultados da Validação"
+  },
+  "system": "Sistema",
+  "templates": {
+    "brazilianCommercial": {
+      "description": "Modelo padrão de EAP para obras comerciais",
+      "name": "EAP Comercial (Brasil)"
+    },
+    "brazilianResidential": {
+      "description": "Modelo padrão de EAP para obras residenciais",
+      "name": "EAP Residencial (Brasil)"
+    }
+  },
+  "title": "EAP do Projeto (Modelos)",
+  "view": "Visualizar",
+  "viewStructure": "Ver Estrutura"
+}

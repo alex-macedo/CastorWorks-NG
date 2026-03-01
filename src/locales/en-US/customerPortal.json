@@ -1,0 +1,87 @@
+{
+  "actions": {
+    "addNote": "Add a note for your project manager (optional)",
+    "approvalSuccess": "Quote approved! Your project manager has been notified.",
+    "approve": "Approve",
+    "approveSelected": "Approve Selected Quote",
+    "confirmApproval": "Approve {{price}} quote from {{supplier}}?",
+    "confirmRejection": "Please tell us why you're rejecting these quotes",
+    "reject": "Reject",
+    "rejectAll": "Reject All Quotes",
+    "rejectionSuccess": "Quotes rejected. Your project manager has been notified.",
+    "selectForApproval": "Select for Approval"
+  },
+  "projectInfo": {
+    "customer": "Customer",
+    "deliveryDate": "Delivery Date",
+    "project": "Project",
+    "requestDate": "Request Date"
+  },
+  "quoteApproval": "Quote Approval",
+  "quoteComparison": {
+    "deliveryDays": {
+      "multiple": "{{days}} days",
+      "notInformed": "Delivery time not informed",
+      "single": "1 day"
+    },
+    "deliveryEstimate": "Delivery Estimate",
+    "deliveryTime": "Delivery Time",
+    "itemCount": "{{count}} item | {{count}} items",
+    "loading": "Loading quotes...",
+    "navigation": {
+      "dotsLabel": "{{current}} of {{total}}",
+      "goToCard": "Go to quote {{index}}",
+      "nextCard": "Next quote",
+      "previousCard": "Previous quote"
+    },
+    "noQuotesMessage": "Supplier quotes will appear here when available.",
+    "noQuotesTitle": "No quotes received yet",
+    "recommended": "Recommended",
+    "supplierRating": "Rating",
+    "title": "Quote Comparison",
+    "totalPrice": "Total Price",
+    "totalSummary": "{{itemCount}}, {{totalPrice}} total",
+    "viewDetails": "View Details"
+  },
+  "quoteDetail": {
+    "backToComparison": "Back to Quote Comparison",
+    "contactPerson": "Contact Person",
+    "contactSupplier": "Contact Supplier",
+    "deliveryEstimate": "Delivery Estimate",
+    "description": "Item Description",
+    "itemizedPricing": "Itemized Pricing",
+    "notSpecified": "Not specified",
+    "paymentTerms": "Payment Terms",
+    "quantity": "Quantity",
+    "quoteNumber": "Quote",
+    "standardTerms": "Standard terms apply",
+    "subtotal": "Subtotal",
+    "supplierContact": "Supplier Contact",
+    "supplierNotes": "Supplier Notes",
+    "tax": "Tax",
+    "total": "Total",
+    "unitPrice": "Unit Price",
+    "validUntil": "Valid Until"
+  },
+  "reviewAndApprove": "Review and approve quotes for your project",
+  "success": {
+    "approvalTitle": "Quote Approved!",
+    "nextSteps": "What happens next?",
+    "rejectionTitle": "Quotes Rejected",
+    "returnHome": "Return to Homepage",
+    "thankYou": "Thank you for your prompt response!"
+  },
+  "supplier": {
+    "contactSupplier": "Contact Supplier",
+    "defaultName": "Supplier",
+    "name": "Supplier",
+    "rating": "Rating: {{rating}}"
+  },
+  "title": "Customer Portal",
+  "validation": {
+    "alreadyProcessed": "This quote approval has already been processed.",
+    "noQuoteSelected": "Please select a quote to approve.",
+    "rejectionReasonRequired": "Please provide a reason for rejection.",
+    "tokenExpired": "This approval link has expired or is invalid. Please contact your project manager."
+  }
+}

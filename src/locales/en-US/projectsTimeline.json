@@ -1,0 +1,7 @@
+{
+  "description": "Visual timeline of all projects",
+  "error": "Error: {{error}}",
+  "loadingProjects": "Loading projects...",
+  "myProjectsOnly": "My Projects Only",
+  "title": "Projects Timeline"
+}

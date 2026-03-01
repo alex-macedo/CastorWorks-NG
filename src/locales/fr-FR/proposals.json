@@ -1,0 +1,55 @@
+{
+  "aiGenerated": "Généré par IA",
+  "backToEstimate": "Retour à l'Estimation",
+  "backToEstimates": "Retour aux Estimations",
+  "characters": "{{count}} caractères",
+  "companyName": "Votre Entreprise",
+  "createProposal": "Créer une Proposition",
+  "enter": "Entrez",
+  "error": "Erreur",
+  "estimateNotFound": "Estimation non trouvée",
+  "for": "Pour",
+  "generateWithAI": "Générer avec IA",
+  "generating": "Génération...",
+  "preview": "Aperçu",
+  "saveDraft": "Enregistrer le Brouillon",
+  "saveFailed": "Échec de l'enregistrement de la proposition",
+  "saved": "Enregistré",
+  "savedDescription": "Proposition enregistrée avec succès.",
+  "saving": "Enregistrement...",
+  "sections": {
+    "coverLetter": "Lettre de Présentation",
+    "designPhilosophy": "Philosophie du Design",
+    "exclusions": "Exclusions",
+    "feeStructure": "Structure des Honoraires",
+    "paymentTerms": "Conditions de Paiement",
+    "projectMethodology": "Méthodologie du Projet",
+    "scopeOfWork": "Portée des Travaux",
+    "sustainabilityApproach": "Approche de Durabilité",
+    "termsAndConditions": "Termes et Conditions",
+    "timeline": "Chronogramme",
+    "title": "Sections",
+    "warranty": "Garantie"
+  },
+  "template": "Modèle",
+  "templates": {
+    "detailed": {
+      "description": "Complet avec ventilation complète",
+      "name": "Détaillé"
+    },
+    "modern": {
+      "description": "Design contemporain avec éléments visuels",
+      "name": "Moderne"
+    },
+    "standard": {
+      "description": "Mise en page propre et professionnelle",
+      "name": "Standard"
+    }
+  },
+  "tones": {
+    "concise": "Concis",
+    "detailed": "Détaillé",
+    "friendly": "Amical",
+    "professional": "Professionnel"
+  }
+}

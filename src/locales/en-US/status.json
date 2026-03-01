@@ -1,0 +1,21 @@
+{
+  "operational": "Operational",
+  "degraded": "Degraded",
+  "down": "Down",
+  "systemStatus": "System Status",
+  "realTimeMonitoring": "Real Time Monitoring",
+  "overallStatus": "Overall Status",
+  "allSystemsOperational": "All Systems Operational",
+  "someSystemsExperiencingIssues": "Some Systems Experiencing Issues",
+  "serviceDisruptionDetected": "Service Disruption Detected",
+  "refresh": "Refresh",
+  "responseTime": "Response Time",
+  "uptime": "Uptime",
+  "aboutStatusPage": "About Status Page",
+  "statusDescription": "Status Description",
+  "construction": "Construction",
+  "design": "Design",
+  "permits": "Permits",
+  "complete": "Complete",
+  "active": "Active"
+}

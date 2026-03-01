@@ -1,0 +1,321 @@
+{
+  "availableReports": "Available Reports",
+  "budget": {
+    "budgetAllocation": "Budget Allocation",
+    "categoryBreakdown": "Category Breakdown",
+    "noBudgetItems": "No budget items found",
+    "overview": "Budget Overview",
+    "title": "Budget Report",
+    "totalBudgeted": "Total Budgeted"
+  },
+  "budgetVsActual": {
+    "budgeted": "Budgeted",
+    "byCategory": "Budget vs Actual by Category",
+    "categoryAnalysis": "Category Analysis",
+    "categoryBreakdown": "Category Breakdown",
+    "indicators": {
+      "accuracy": "Budget Accuracy",
+      "onBudget": "Categories On Budget",
+      "overBudget": "Categories Over Budget",
+      "title": "Performance Indicators",
+      "underBudget": "Categories Under Budget"
+    },
+    "items": "Items",
+    "noCategoriesFound": "No budget categories found",
+    "onBudget": "On Budget",
+    "overBudget": "Over Budget",
+    "overallPerformance": "Overall Budget Performance",
+    "overview": "Budget vs Actual Overview",
+    "performanceStatus": "Performance Status",
+    "significantVariances": "Items with Significant Variances (>10%)",
+    "title": "Budget vs Actual Report",
+    "totalActual": "Total Actual",
+    "totalBudget": "Total Budget",
+    "totalVariance": "Total Variance",
+    "underBudget": "Under Budget",
+    "utilization": "Utilization",
+    "variance": "Variance",
+    "variancePercentage": "Variance %"
+  },
+  "cashFlow": {
+    "byCategory": "Cash Flow by Category",
+    "inflow": "Inflow",
+    "month": "Month",
+    "monthlyAnalysis": "Monthly Cash Flow Analysis",
+    "netCashFlow": "Net Cash Flow",
+    "netFlow": "Net Flow",
+    "noDataFound": "No cash flow data found",
+    "outflow": "Outflow",
+    "projection": {
+      "disclaimer": "* Based on the last 3 months",
+      "monthlyInflow": "Projected Monthly Income",
+      "monthlyOutflow": "Projected Monthly Expenses",
+      "netFlow": "Projected Net Cash Flow",
+      "title": "Cash Flow Projection"
+    },
+    "status": "Cash Flow Status",
+    "summary": "Cash Flow Summary",
+    "title": "Cash Flow Report",
+    "totalInflow": "Total Inflow",
+    "totalOutflow": "Total Outflow",
+    "transactionHistory": "Transaction History"
+  },
+  "config": {
+    "categoryOption": "Category",
+    "configureReportDescription": "Set the parameters for your generated report",
+    "dateRange": "Date Range",
+    "dateRangeLabel": "Start Date",
+    "generatePdfButton": "Generate Report",
+    "groupBy": "Group By",
+    "groupByLabel": "Group Data By",
+    "includeCharts": "Include Charts",
+    "includeChartsLabel": "Include Charts and Visuals",
+    "includeLabor": "Include Labor",
+    "includeLaborLabel": "Include Labor Details",
+    "includeMaterials": "Include Materials",
+    "includeMaterialsLabel": "Include Materials Details",
+    "monthOption": "Month",
+    "options": "Options",
+    "optionsLabel": "Report Options",
+    "phaseOption": "Project Phase",
+    "projectLabel": "Project",
+    "selectProject": "Select Project",
+    "toLabel": "End Date"
+  },
+  "customReport": "Custom Report",
+  "dashboard": {
+    "abcCurveTitle": "ABC Curve of Expenses in R$",
+    "address": "Address:",
+    "available": "Available",
+    "budget": "Budget",
+    "budgetLabel": "Budget",
+    "budgetVsActualTitle": "Total Spending vs. Budget",
+    "category": "Category",
+    "categoryBreakdown": "Category Breakdown",
+    "categorySpendingTitle": "Spending vs. Budget by Group",
+    "closeButton": "Close",
+    "completionPercentage": "% Completion:",
+    "dialogTitle": "Dashboard Report",
+    "expectedDeliveryDate": "Expected Project Delivery Date:",
+    "generatedOn": "Generated on",
+    "generatingReport": "Generating Report",
+    "monthlySpendingTitle": "Total Spending Per Month",
+    "name": "Name",
+    "openingNewWindow": "Opening report in new window...",
+    "percentUsed": "% Used",
+    "printButton": "Print",
+    "printReport": "Print Report",
+    "project": "Project",
+    "projectOf": "Project of:",
+    "projectSummary": "Project Summary",
+    "reportReady": "Report Ready",
+    "spent": "Spent",
+    "spentLabel": "Spent",
+    "status": "Status",
+    "statusExceeded": "Exceeded",
+    "statusOk": "OK",
+    "summaryDescription": "This report presents a complete overview of the project, including spending metrics, budget comparison and ABC analysis of costs by category.",
+    "title": "PROJECT REPORT",
+    "totalSpending": "Total Spending",
+    "totalSpent": "Total Spent",
+    "viewInDialog": "Click to view report in dialog if new window didn't open"
+  },
+  "description": "Generate professional reports for your construction projects",
+  "download": "Download",
+  "errors": {
+    "failedToGenerate": "Failed to generate report",
+    "failedToGenerateAI": "Failed to generate AI report",
+    "failedToPrepareData": "Failed to prepare report data",
+    "failedToView": "Failed to view report",
+    "notSupportedFromHistory": "This report type is not yet supported for viewing from history"
+  },
+  "financialSummary": {
+    "amountSpent": "Amount Spent",
+    "budgetOverview": "Budget vs Actual Overview",
+    "expenseBreakdown": "Expense Breakdown",
+    "expensesByCategory": "Expenses by Category",
+    "incomeBreakdown": "Income Breakdown",
+    "incomeVsExpenses": "Total Income vs Expenses",
+    "netIncome": "Net Income",
+    "netProfitLoss": "Net Profit / Loss",
+    "noCategoriesFound": "No expense categories found",
+    "overBudget": "Over Budget",
+    "overview": "Financial Overview",
+    "paymentMethods": "Payment Methods Usage",
+    "profitMargin": "Profit Margin",
+    "recentTransactions": "Recent Transactions",
+    "title": "Financial Summary Report",
+    "totalBudget": "Total Project Budget",
+    "totalExpenses": "Total Expenses",
+    "totalIncome": "Total Income",
+    "underBudget": "Under Budget"
+  },
+  "generateReport": "Generate Report",
+  "keyStatistics": "Key Statistics",
+  "materials": {
+    "averageCost": "Average Cost",
+    "costAnalysis": "Cost Analysis",
+    "costPerUnit": "Cost per {{unit}}",
+    "costSummary": "Cost Summary",
+    "grandTotal": "Grand Total",
+    "highestCost": "Highest Cost",
+    "inventory": "Materials Inventory",
+    "lowestCost": "Lowest Cost",
+    "overview": "Materials Overview",
+    "taxesAndFees": "Taxes & Fees",
+    "title": "Materials Report",
+    "totalArea": "Total Area",
+    "totalLabor": "Total Labor"
+  },
+  "materialsUsage": {
+    "byCategory": {
+      "title": "Materials by Category"
+    },
+    "byUnit": {
+      "title": "Usage by Unit Type",
+      "type": "Unit Type"
+    },
+    "itemsCount": "Items Count",
+    "material": "Material",
+    "materialsBreakdown": "Materials Breakdown",
+    "noMaterialsFound": "No materials found",
+    "overview": "Materials Overview",
+    "percentage": "Percentage",
+    "quantity": "Quantity",
+    "recommendations": {
+      "bulkPurchase": "Consider bulk purchasing for materials with high unit costs.",
+      "diversifySuppliers": "Consider diversifying suppliers for better pricing.",
+      "optimized": "Material usage appears optimized within project parameters.",
+      "overBudget": "Material costs exceed 40% of budget. Review specifications."
+    },
+    "sinapiCode": "SINAPI Code",
+    "summary": {
+      "avgCost": "Average Cost per Item",
+      "costPerSqm": "Cost per m²",
+      "title": "Materials Summary",
+      "totalCost": "Total Material Cost",
+      "totalItems": "Total Material Items"
+    },
+    "supplier": "Supplier",
+    "title": "Materials Usage Report",
+    "totalCost": "Total Cost",
+    "totalMaterials": "Total Materials",
+    "totalQuantity": "Total Quantity",
+    "totalValue": "Total Value",
+    "unit": "Unit",
+    "unitCost": "Unit Cost",
+    "unitPrice": "Unit Price"
+  },
+  "noReportsGeneratedYet": "No reports generated yet.",
+  "profitability": {
+    "categoryProfitability": "Category Profitability",
+    "grossProfit": "Gross Profit",
+    "noProfitabilityData": "No profitability data found",
+    "overview": "Profitability Overview",
+    "profitMargin": "Profit Margin",
+    "roi": "ROI",
+    "title": "Profitability Report",
+    "totalCosts": "Total Costs",
+    "totalRevenue": "Total Revenue"
+  },
+  "projectStatus": {
+    "actual": "Actual",
+    "amount": "Amount",
+    "budgetStatus": "Budget Status",
+    "budgeted": "Budgeted",
+    "categories": "Categories",
+    "category": "Category",
+    "date": "Date",
+    "description": "Description",
+    "expense": "Expense",
+    "income": "Income",
+    "noTransactions": "No recent transactions found",
+    "onTrack": "On Track",
+    "overBudget": "Over Budget",
+    "progressOverview": "Progress Overview",
+    "progressPercentage": "Progress",
+    "projectOverview": "Project Overview",
+    "recentTransactions": "Recent Financial Transactions",
+    "status": "Status",
+    "title": "Project Status Report",
+    "totalActual": "Total Actual",
+    "totalBudget": "Total Budget",
+    "type": "Type",
+    "underBudget": "Under Budget",
+    "variance": "Variance"
+  },
+  "recentReports": "Recent Reports",
+  "reportReady": "Report ready",
+  "reportTypeLabels": {
+    "budget": "Budget",
+    "financial": "Financial",
+    "projectStatus": "Project Status"
+  },
+  "reportTypes": {
+    "aiWeeklySummary": {
+      "description": "AI-generated executive summary of financial health and project progress.",
+      "disclaimer": "This report was autonomously generated by CastorMind AI based on real-time project and financial data. Please verify critical financial details before making major investment decisions.",
+      "engine": "CastorMind AI Engine",
+      "sections": {
+        "financialHealth": "Financial Health",
+        "progressUpdate": "Progress Update",
+        "summary": "Summary",
+        "upcomingRisks": "Upcoming Risks"
+      },
+      "title": "AI Weekly Summary"
+    },
+    "budgetVsActual": {
+      "description": "Compare budgeted vs actual costs",
+      "title": "Budget vs Actual"
+    },
+    "cashFlow": {
+      "description": "Project cash flow projections",
+      "title": "Cash Flow Forecast"
+    },
+    "financialSummary": {
+      "description": "Revenue, expenses, and profit analysis",
+      "title": "Financial Summary"
+    },
+    "materialsUsage": {
+      "description": "Materials consumption tracking",
+      "title": "Materials Usage"
+    },
+    "profitability": {
+      "description": "Profit margins and analysis",
+      "title": "Project Profitability"
+    },
+    "projectDashboard": {
+      "description": "Comprehensive project overview with charts and metrics",
+      "title": "Project Dashboard"
+    },
+    "projectStatus": {
+      "description": "Executive summary of all active projects",
+      "title": "Project Status Report"
+    }
+  },
+  "stats": {
+    "hoursAgo": "{{count}} hours ago",
+    "lastGenerated": "Last Generated",
+    "mostPopular": "Most Popular",
+    "reportsGenerated": "Reports Generated",
+    "thisMonth": "This month: {{count}}",
+    "timesGenerated": "{{count}} times generated"
+  },
+  "subtitle": "Generate comprehensive reports for your projects",
+  "success": {
+    "generated": "Report generated successfully"
+  },
+  "title": "Reports & Analytics",
+  "viewInDialog": "Click to view report in dialog",
+  "viewer": {
+    "close": "Close",
+    "downloadPdf": "Download PDF",
+    "generatedOn": "Generated on",
+    "pdfDownloadAvailable": "You can still download the PDF version using the button above.",
+    "print": "Print",
+    "printInstruction": "Use Ctrl+P or the Print button to print this report",
+    "reportNotSupportedMessage": "is not yet supported in the web viewer.",
+    "reportTypeNotSupported": "Report Type Not Supported",
+    "webViewerComingSoon": "Web Viewer Coming Soon"
+  }
+}

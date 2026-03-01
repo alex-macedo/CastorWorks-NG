@@ -1,0 +1,55 @@
+{
+  "aiGenerated": "AI Generated",
+  "backToEstimate": "Back to Estimate",
+  "backToEstimates": "Back to Estimates",
+  "characters": "{{count}} characters",
+  "companyName": "Your Company",
+  "createProposal": "Create Proposal",
+  "enter": "Enter",
+  "error": "Error",
+  "estimateNotFound": "Estimate not found",
+  "for": "For",
+  "generateWithAI": "Generate with AI",
+  "generating": "Generating...",
+  "preview": "Preview",
+  "saveDraft": "Save Draft",
+  "saveFailed": "Failed to save proposal",
+  "saved": "Saved",
+  "savedDescription": "Proposal saved successfully.",
+  "saving": "Saving...",
+  "sections": {
+    "coverLetter": "Cover Letter",
+    "designPhilosophy": "Design Philosophy",
+    "exclusions": "Exclusions",
+    "feeStructure": "Fee Structure",
+    "paymentTerms": "Payment Terms",
+    "projectMethodology": "Project Methodology",
+    "scopeOfWork": "Scope of Work",
+    "sustainabilityApproach": "Sustainability Approach",
+    "termsAndConditions": "Terms and Conditions",
+    "timeline": "Timeline",
+    "title": "Sections",
+    "warranty": "Warranty"
+  },
+  "template": "Template",
+  "templates": {
+    "detailed": {
+      "description": "Comprehensive with full breakdowns",
+      "name": "Detailed"
+    },
+    "modern": {
+      "description": "Contemporary design with visual elements",
+      "name": "Modern"
+    },
+    "standard": {
+      "description": "Clean, professional layout",
+      "name": "Standard"
+    }
+  },
+  "tones": {
+    "concise": "Concise",
+    "detailed": "Detailed",
+    "friendly": "Friendly",
+    "professional": "Professional"
+  }
+}

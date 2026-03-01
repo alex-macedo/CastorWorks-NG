@@ -1,0 +1,19 @@
+{
+  "additionalNotes": "AdditionalNotes",
+  "deliveryDateLabel": "DeliveryDateLabel",
+  "items": "Items",
+  "notesLabel": "NotesLabel",
+  "priorityLabel": "PriorityLabel",
+  "projectLabel": "ProjectLabel",
+  "requestInformation": "RequestInformation",
+  "requestedByLabel": "RequestedByLabel",
+  "subtitle": "Crear y gestionar solicitudes de compra",
+  "summary": {
+    "totalItems": "Total de Artículos",
+    "totalValue": "Valor Total",
+    "validationStatus": "Estado de Validación"
+  },
+  "title": "Solicitud de Compra",
+  "updateQuantity": "Update Quantity",
+  "updateUnitPrice": "Update Unit Price (R$)"
+}

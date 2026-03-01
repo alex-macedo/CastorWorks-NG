@@ -1,0 +1,140 @@
+{
+  "abcCurve": {
+    "cost": "Cost",
+    "cumulativePercentage": "Cumulative Percentage",
+    "description": "Analysis of items by cost impact (A, B, C)",
+    "items": "{{count}} items",
+    "noData": "No ABC curve data available",
+    "title": "ABC Curve"
+  },
+  "activeProjects": "Active Projects",
+  "activeProjectsDescription": "Your currently active construction projects",
+  "activePurchases": "Active Purchases",
+  "activityDailyLog": "Daily log updated",
+  "activityInvoicePaid": "Invoice paid by client",
+  "activityNewPurchase": "New purchase request submitted",
+  "activityQuoteReceived": "Quote received from supplier",
+  "activityTypes": {
+    "comment": "Comment",
+    "meeting": "Meeting",
+    "project": "Project",
+    "task": "Task"
+  },
+  "atRisk": "At Risk",
+  "avgSavings": "Avg {{percent}}% savings",
+  "budgetUsed": "Budget Used",
+  "cashFlow": "Cash Flow",
+  "comprehensiveAnalyticsDescription": "Get detailed insights into budget, spending trends, and project timelines",
+  "createClient": "Create New Client",
+  "createFinancial": "Create Financial Entry",
+  "createProject": "Create New Project",
+  "createPurchase": "Create Purchase Request",
+  "dayAfter": "Day After",
+  "dayAgo": "{{count}} day ago",
+  "defaultUserName": "User",
+  "delayed": "Delayed",
+  "downtownSite": "Downtown Site",
+  "expenseByCategory": {
+    "categories": "{{count}} categories",
+    "description": "Track total and velocity of categories",
+    "noData": "No expense data available",
+    "title": "Expense by Category"
+  },
+  "filters": {
+    "allProjects": "All Projects",
+    "allTime": "All Time",
+    "export": "Export",
+    "lastThreeMonths": "Last 3 Months",
+    "lastYear": "Last Year",
+    "reset": "Reset",
+    "thisMonth": "This Month",
+    "unnamedProject": "Unnamed Project"
+  },
+  "financialOverview": {
+    "collectionPower": "Collection Power",
+    "collectionRate": "Standard Collection Rate",
+    "criticalWeeks": "Critical/High Risk Weeks",
+    "currentCashPosition": "Current Cash Position",
+    "manageCollections": "Manage Collections Workspace",
+    "outlookWeeks": "13-week projected outlook",
+    "outlookWeeks_one": "outlookWeeks",
+    "outlookWeeks_other": "outlookWeeks",
+    "riskAssessment": "Risk Assessment",
+    "statusRisk": "Liquidity Risk",
+    "statusStable": "Stable Position",
+    "subtitle": "13-week liquidity outlook and collection performance",
+    "title": "Executive Financial Overview"
+  },
+  "forecast": "Forecast",
+  "greeting": "Hello, {{name}} 👋",
+  "greetings": {
+    "afternoon": "Good afternoon! Let's stay productive!",
+    "evening": "It's already night, but inspiration has no time, right?",
+    "morning": "The day is just beginning!",
+    "night": "Still working hard? Great dedication!"
+  },
+  "hoursAgo": "{{count}} hours ago",
+  "installmentsDue": "Installments due in {{days}} days",
+  "kpisBrazil": {
+    "bdiDeviation": {
+      "change": "Planned {{planned}}% | Deviation {{deviation}} pp",
+      "title": "BDI Deviation"
+    },
+    "cashflowRisk": {
+      "change": "{{count}} critical/high risk weeks",
+      "title": "13-Week Cash Floor"
+    },
+    "costPerM2": {
+      "change": "Budget {{budget}}/m² ({{percent}}%)",
+      "title": "Actual Cost per m²"
+    },
+    "nfeReconciliation": {
+      "change": "Pending {{pending}} across {{total}} NF-e",
+      "title": "NF-e Reconciliation"
+    },
+    "overdue": {
+      "change": "{{days}} avg days late across {{count}} invoices",
+      "title": "Overdue Receivables"
+    },
+    "taxExposure": {
+      "change": "Potential savings {{savings}}",
+      "title": "INSS + ISS Exposure"
+    }
+  },
+  "manager": "Project Manager",
+  "monthlyTrend": {
+    "description": "Track total and velocity of categories",
+    "noData": "No trend data available",
+    "title": "Monthly Spending Trend"
+  },
+  "newProject": "New Project",
+  "newPurchase": "New Purchase",
+  "noActiveProjects": "No active projects yet",
+  "noActiveProjectsDescription": "Start building your first project to see progress and budget tracking here.",
+  "noRecentActivity": "No recent activity",
+  "notAssigned": "Not assigned",
+  "onSchedule": "On Schedule",
+  "onTrack": "On Track",
+  "onlineQuotes": "Online Quotes",
+  "openOverallStatus": "Open Overall Status",
+  "overBudget": "Over Budget",
+  "partlyCloudy": "Partly Cloudy",
+  "pendingApproval": "{{count}} pending approval",
+  "progress": "Progress",
+  "quickActions": "Quick Actions",
+  "quickStats": "Quick Stats",
+  "recentActivity": "Recent Activity",
+  "siteWeather": "Site Weather",
+  "subtitle": "Overview of your operations",
+  "temperature": "Temperature",
+  "thisMonth": "+{{count}} this month",
+  "title": "Dashboard",
+  "tomorrow": "Tomorrow",
+  "totalClients": "Total Clients",
+  "underBudget": "Under Budget",
+  "updated": "Updated",
+  "viewAll": "View All",
+  "viewComprehensiveAnalytics": "View Comprehensive Analytics",
+  "viewDetails": "View Details",
+  "welcomeMessage": "Welcome back! Here's what's happening today."
+}

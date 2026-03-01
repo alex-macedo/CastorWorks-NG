@@ -1,0 +1,28 @@
+{
+  "share": {
+    "noContacts": "No Contacts",
+    "selectRecipients": "Select Recipients",
+    "selectedCount": "Selected Count",
+    "noRecipients": "No Recipients",
+    "success": "Success",
+    "sentTo": "Sent To",
+    "error": "Error",
+    "title": "Title",
+    "description": "Description",
+    "preview": "Preview",
+    "withPhoto": "With Photo",
+    "message": "Message",
+    "messagePlaceholder": "Message Placeholder",
+    "addPhone": "Add Phone",
+    "send": "Send"
+  },
+  "templates": {
+    "placeholders": {
+      "generalVerification": "General Verification",
+      "nextSteps": "Next Steps"
+    }
+  },
+  "validation": {
+    "noPendingPayment": "No Pending Payment"
+  }
+}

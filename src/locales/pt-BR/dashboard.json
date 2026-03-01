@@ -1,0 +1,141 @@
+{
+  "abcCurve": {
+    "cost": "Custo",
+    "cumulativePercentage": "Percentual Acumulado",
+    "description": "Análise de itens por impacto de custo (A, B, C)",
+    "items": "{{count}} itens",
+    "noData": "Nenhum dado de curva ABC disponível",
+    "title": "Curva ABC"
+  },
+  "activeProjects": "Obras Ativas",
+  "activeProjectsDescription": "Suas obras de construção atualmente ativas",
+  "activePurchases": "Compras Ativas",
+  "activityDailyLog": "Diário atualizado",
+  "activityInvoicePaid": "Fatura paga pelo cliente",
+  "activityNewPurchase": "Nova solicitação de compra enviada",
+  "activityQuoteReceived": "Cotação recebida do fornecedor",
+  "activityTypes": {
+    "comment": "Comentário",
+    "meeting": "Reunião",
+    "project": "Projeto",
+    "task": "Tarefa"
+  },
+  "atRisk": "Em Risco",
+  "avgSavings": "Média {{percent}}% de economia",
+  "budgetUsed": "Orçamento Utilizado",
+  "cashFlow": "Fluxo de Caixa",
+  "comprehensiveAnalyticsDescription": "Obtenha informações detalhadas sobre orçamento, tendências de gastos e cronogramas de obras",
+  "createClient": "Criar Novo Cliente",
+  "createFinancial": "Criar Lançamento Financeiro",
+  "createProject": "Criar Nova Obra",
+  "createPurchase": "Criar Solicitação de Compra",
+  "dayAfter": "Depois de Amanhã",
+  "dayAgo": "{{count}} dia atrás",
+  "defaultUserName": "Usuário",
+  "delayed": "Atrasados",
+  "downtownSite": "Canteiro Centro",
+  "expenseByCategory": {
+    "categories": "{{count}} categorias",
+    "description": "Acompanhe o total e a velocidade das categorias",
+    "noData": "Nenhum dado de despesa disponível",
+    "title": "Despesa por Categoria"
+  },
+  "filters": {
+    "allProjects": "Todas as Obras",
+    "allTime": "Todo o Período",
+    "export": "Exportar",
+    "lastThreeMonths": "Últimos 3 Meses",
+    "lastYear": "Último Ano",
+    "reset": "Redefinir",
+    "thisMonth": "Este Mês",
+    "unnamedProject": "Obra sem Nome"
+  },
+  "financialOverview": {
+    "collectionPower": "Poder de Cobrança",
+    "collectionRate": "Taxa de Recebimento Padrão",
+    "criticalWeeks": "Semanas de Risco Crítico/Alto",
+    "currentCashPosition": "Posição de Caixa Atual",
+    "manageCollections": "Gerenciar Espaço de Cobranças",
+    "outlookWeeks": "Perspectiva projetada de 13 semanas",
+    "outlookWeeks_many": "",
+    "outlookWeeks_one": "outlookWeeks",
+    "outlookWeeks_other": "outlookWeeks",
+    "riskAssessment": "Avaliação de Risco",
+    "statusRisk": "Risco de Liquidez",
+    "statusStable": "Posição Estável",
+    "subtitle": "Perspectiva de liquidez de 13 semanas e desempenho de cobrança",
+    "title": "Visão Geral Financeira Executiva"
+  },
+  "forecast": "Previsão",
+  "greeting": "Olá, {{name}} 👋",
+  "greetings": {
+    "afternoon": "Boa tarde! Vamos manter a produtividade!",
+    "evening": "Já é noite, mas a inspiração não tem hora, certo?",
+    "morning": "O dia está apenas começando!",
+    "night": "Ainda trabalhando duro? Grande dedicação!"
+  },
+  "hoursAgo": "{{count}} horas atrás",
+  "installmentsDue": "Parcelas vencendo em {{days}} dias",
+  "kpisBrazil": {
+    "bdiDeviation": {
+      "change": "Planejado {{planned}}% | Desvio {{deviation}} p.p.",
+      "title": "Desvio de BDI"
+    },
+    "cashflowRisk": {
+      "change": "{{count}} semanas em risco crítico/alto",
+      "title": "Piso de Caixa (13 semanas)"
+    },
+    "costPerM2": {
+      "change": "Orçado {{budget}}/m² ({{percent}}%)",
+      "title": "Custo Real por m²"
+    },
+    "nfeReconciliation": {
+      "change": "Pendente {{pending}} em {{total}} NF-e",
+      "title": "Conciliação de NF-e"
+    },
+    "overdue": {
+      "change": "{{days}} dias médios de atraso em {{count}} faturas",
+      "title": "Inadimplência"
+    },
+    "taxExposure": {
+      "change": "Economia potencial {{savings}}",
+      "title": "Exposição INSS + ISS"
+    }
+  },
+  "manager": "Gerente",
+  "monthlyTrend": {
+    "description": "Acompanhe o total e a velocidade das categorias",
+    "noData": "Nenhum dado de tendência disponível",
+    "title": "Tendência de Gastos Mensais"
+  },
+  "newProject": "Nova Obra",
+  "newPurchase": "Nova Compra",
+  "noActiveProjects": "Ainda não há obras ativas",
+  "noActiveProjectsDescription": "Comece criando sua primeira obra para ver o acompanhamento de progresso e orçamento aqui.",
+  "noRecentActivity": "Sem atividade recente",
+  "notAssigned": "Não atribuído",
+  "onSchedule": "No Prazo",
+  "onTrack": "No Prazo",
+  "onlineQuotes": "Cotações Online",
+  "openOverallStatus": "Abrir Status Geral",
+  "overBudget": "Acima do Orçamento",
+  "partlyCloudy": "Parcialmente Nublado",
+  "pendingApproval": "{{count}} pendentes de aprovação",
+  "progress": "Progresso",
+  "quickActions": "Ações Rápidas",
+  "quickStats": "Estatísticas Rápidas",
+  "recentActivity": "Atividade Recente",
+  "siteWeather": "Clima no Canteiro",
+  "subtitle": "Visão geral das suas operações",
+  "temperature": "Temperatura",
+  "thisMonth": "+{{count}} este mês",
+  "title": "Dashboard",
+  "tomorrow": "Amanhã",
+  "totalClients": "Total de Clientes",
+  "underBudget": "Dentro do Orçamento",
+  "updated": "Atualizado",
+  "viewAll": "Ver Todos",
+  "viewComprehensiveAnalytics": "Ver Análises Abrangentes",
+  "viewDetails": "Ver Detalhes",
+  "welcomeMessage": "Bem-vindo de volta! Aqui está o que está acontecendo hoje."
+}

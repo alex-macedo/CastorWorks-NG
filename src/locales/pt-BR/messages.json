@@ -1,0 +1,19 @@
+{
+  "unableToLoadWeatherData": "[EN] Unable To Load Weather Data",
+  "dropFilesToUpload": "[EN] Drop Files To Upload",
+  "noTasksToDisplay": "[EN] No Tasks To Display",
+  "addTasksToSeeTimeline": "[EN] Add Tasks To See Timeline",
+  "noPhotosAddedYet": "[EN] No Photos Added Yet",
+  "addPhotosToDocumentDelivery": "[EN] Add Photos To Document Delivery",
+  "someDependenciesDeleted": "[EN] Some Dependencies Deleted",
+  "sumOfAllParameters": "[EN] Sum Of All Parameters",
+  "noTranslationDataFound": "[EN] No Translation Data Found",
+  "goToFirstPage": "[EN] Go To First Page",
+  "goToPreviousPage": "[EN] Go To Previous Page",
+  "goToNextPage": "[EN] Go To Next Page",
+  "goToLastPage": "[EN] Go To Last Page",
+  "basedOnTokenUsage": "[EN] Based On Token Usage",
+  "noUsageDataAvailable": "[EN] No Usage Data Available",
+  "noLogsFound": "[EN] No Logs Found",
+  "createNewPurchaseRequest": "[EN] Create New Purchase Request"
+}

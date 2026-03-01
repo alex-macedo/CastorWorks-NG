@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "sendNow": "Enviar agora",
+    "view": "Ver detalhes"
+  },
+  "confirm": {
+    "cancel": "Tem certeza de que deseja cancelar esta campanha?",
+    "delete": "Tem certeza de que deseja excluir esta campanha? Esta ação não pode ser desfeita.",
+    "sendNow": "Tem certeza de que deseja enviar esta campanha agora?"
+  },
+  "counts": {
+    "failed": "falharam",
+    "sent": "enviadas"
+  },
+  "emptyAction": "Criar campanha",
+  "emptyDescription": "Crie sua primeira campanha de WhatsApp para falar com seus contatos",
+  "emptyTitle": "Nenhuma campanha ainda",
+  "loadingTitle": "Carregando campanhas...",
+  "new": "Nova campanha",
+  "notAvailable": "-",
+  "status": {
+    "cancelled": "Cancelada",
+    "completed": "Concluída",
+    "draft": "Rascunho",
+    "failed": "Falhou",
+    "scheduled": "Agendada",
+    "sending": "Enviando"
+  },
+  "subtitle": "Gerencie campanhas outbound no WhatsApp para alcançar empreiteiros, parceiros e arquitetos",
+  "table": {
+    "actions": "Ações",
+    "created": "Criada",
+    "name": "Nome da campanha",
+    "recipients": "Destinatários",
+    "scheduled": "Agendada",
+    "sent": "Enviados",
+    "status": "Status",
+    "successRate": "Taxa de sucesso"
+  },
+  "title": "Campanhas WhatsApp"
+}

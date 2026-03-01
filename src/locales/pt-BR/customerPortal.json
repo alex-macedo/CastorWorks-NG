@@ -1,0 +1,87 @@
+{
+  "actions": {
+    "addNote": "Adicione uma observação para seu gerente de projeto (opcional)",
+    "approvalSuccess": "Cotação aprovada! Seu gerente de projeto foi notificado.",
+    "approve": "Aprovar",
+    "approveSelected": "Aprovar Cotação Selecionada",
+    "confirmApproval": "Aprovar cotação de {{price}} do {{supplier}}?",
+    "confirmRejection": "Por favor, nos diga por que você está rejeitando essas cotações",
+    "reject": "Rejeitar",
+    "rejectAll": "Rejeitar Todas as Cotações",
+    "rejectionSuccess": "Cotações rejeitadas. Seu gerente de projeto foi notificado.",
+    "selectForApproval": "Selecionar para Aprovação"
+  },
+  "projectInfo": {
+    "customer": "Cliente",
+    "deliveryDate": "Data de Entrega",
+    "project": "Projeto",
+    "requestDate": "Data da Solicitação"
+  },
+  "quoteApproval": "Aprovação de Orçamento",
+  "quoteComparison": {
+    "deliveryDays": {
+      "multiple": "{{days}} dias",
+      "notInformed": "Prazo não informado",
+      "single": "1 dia"
+    },
+    "deliveryEstimate": "Estimativa de Entrega",
+    "deliveryTime": "Prazo de Entrega",
+    "itemCount": "{{count}} item | {{count}} itens",
+    "loading": "Carregando cotações...",
+    "navigation": {
+      "dotsLabel": "{{current}} de {{total}}",
+      "goToCard": "Ir para cotação {{index}}",
+      "nextCard": "Próxima cotação",
+      "previousCard": "Cotação anterior"
+    },
+    "noQuotesMessage": "As cotações dos fornecedores aparecerão aqui quando estiverem disponíveis.",
+    "noQuotesTitle": "Nenhuma cotação recebida ainda",
+    "recommended": "Recomendado",
+    "supplierRating": "Avaliação",
+    "title": "Comparação de Orçamentos",
+    "totalPrice": "Preço Total",
+    "totalSummary": "{{itemCount}}, {{totalPrice}} total",
+    "viewDetails": "Ver Detalhes"
+  },
+  "quoteDetail": {
+    "backToComparison": "Voltar para Comparação de Cotações",
+    "contactPerson": "Pessoa de Contato",
+    "contactSupplier": "Contatar Fornecedor",
+    "deliveryEstimate": "Estimativa de Entrega",
+    "description": "Descrição do Item",
+    "itemizedPricing": "Preços Detalhados",
+    "notSpecified": "Não especificado",
+    "paymentTerms": "Condições de Pagamento",
+    "quantity": "Quantidade",
+    "quoteNumber": "Cotação",
+    "standardTerms": "Termos padrão se aplicam",
+    "subtotal": "Subtotal",
+    "supplierContact": "Contato do Fornecedor",
+    "supplierNotes": "Observações do Fornecedor",
+    "tax": "Imposto",
+    "total": "Total",
+    "unitPrice": "Preço Unitário",
+    "validUntil": "Válido Até"
+  },
+  "reviewAndApprove": "Revise e aprove orçamentos para seu projeto",
+  "success": {
+    "approvalTitle": "Cotação Aprovada!",
+    "nextSteps": "O que acontece agora?",
+    "rejectionTitle": "Cotações Rejeitadas",
+    "returnHome": "Voltar para Página Inicial",
+    "thankYou": "Obrigado pela sua resposta rápida!"
+  },
+  "supplier": {
+    "contactSupplier": "Contatar Fornecedor",
+    "defaultName": "Fornecedor",
+    "name": "Fornecedor",
+    "rating": "Avaliação: {{rating}}"
+  },
+  "title": "Portal do Cliente",
+  "validation": {
+    "alreadyProcessed": "Esta aprovação de cotação já foi processada.",
+    "noQuoteSelected": "Por favor, selecione uma cotação para aprovar.",
+    "rejectionReasonRequired": "Por favor, forneça um motivo para a rejeição.",
+    "tokenExpired": "Este link de aprovação expirou ou é inválido. Entre em contato com seu gerente de projeto."
+  }
+}

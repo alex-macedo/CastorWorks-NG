@@ -1,0 +1,14 @@
+{
+  "addContractor": "Adicionar Empreiteiro",
+  "editContractor": "Editar Empreiteiro",
+  "subtitle": "Gerencie empreiteiros e prestadores de serviço",
+  "table": {
+    "actions": "Ações",
+    "contact": "Contato",
+    "name": "Nome",
+    "rating": "Avaliação",
+    "specialty": "Especialidade",
+    "status": "Status"
+  },
+  "title": "Empreiteiros"
+}

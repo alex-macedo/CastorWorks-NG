@@ -1,0 +1,47 @@
+/* Vibrant & Modern Dashboard Styles for CastorWorks */
+
+.bg-mesh-gradient {
+  background: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+              radial-gradient(at 50% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+              radial-gradient(at 100% 0%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
+              radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+              radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.1) 0px, transparent 50%);
+}
+
+.glass-card {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-xl;
+}
+
+.vibrant-shadow-primary {
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3), 0 4px 6px -4px rgba(99, 102, 241, 0.3);
+}
+
+.vibrant-shadow-success {
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3), 0 4px 6px -4px rgba(16, 185, 129, 0.3);
+}
+
+.vibrant-shadow-orange {
+  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3), 0 4px 6px -4px rgba(249, 115, 22, 0.3);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-secondary-foreground;
+}
+
+.metric-card-vibrant {
+  @apply relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 active:scale-95;
+}
+
+.metric-card-glow {
+  @apply absolute -right-4 -top-4 w-24 h-24 rounded-full blur-3xl opacity-20 transition-opacity group-hover:opacity-40;
+}

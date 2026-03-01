@@ -1,0 +1,204 @@
+{
+  "buttons": {
+    "close": "Close",
+    "download": "Download",
+    "openNewTab": "Open in new tab",
+    "print": "Print",
+    "reload": "Reload",
+    "reloading": "Reloading...",
+    "share": "Share",
+    "view": "View",
+    "viewRaw": "View Source"
+  },
+  "categories": {
+    "accountants": "Accountants",
+    "aiFeatures": "AI Features",
+    "architecture": "Architecture",
+    "components": "Components",
+    "devOps": "DevOps",
+    "development": "Development",
+    "planning": "Planning",
+    "product": "Product",
+    "projectManagement": "Project Management",
+    "projectManagers": "Project Managers",
+    "supervisors": "Supervisors",
+    "suppliers": "Suppliers",
+    "testing": "Testing"
+  },
+  "documents": {
+    "adminPaymentGuide": {
+      "description": "Payment dashboard, two-step payment workflow, and due date management",
+      "name": "Admin Payment Processing Guide"
+    },
+    "aiFeatures": {
+      "description": "Step-by-step guide to using AI-powered features across all modules",
+      "name": "AI Features Guide"
+    },
+    "architectureOverview": {
+      "description": "Complete system architecture documentation",
+      "name": "Architecture Overview"
+    },
+    "benchmarkGuide": {
+      "description": "Complete guide to construction cost benchmarks, smart alerts, budget suggestions, trend analysis, and AI-powered predictions",
+      "name": "Construction Cost Benchmark Guide"
+    },
+    "budgetGuide": {
+      "description": "Comprehensive guide covering Simple Budget, Detailed Budget (SINAPI), and Cost Control Budget models, including template creation and management",
+      "name": "Budget Management Guide"
+    },
+    "calendarGuide": {
+      "description": "Learn how to use working days and manage project calendars for accurate scheduling",
+      "name": "Project Calendar Guide"
+    },
+    "codebaseAnalysis": {
+      "description": "Detailed analysis of the codebase structure",
+      "name": "Codebase Analysis"
+    },
+    "constructionPMAISkillGuide": {
+      "description": "Complete guide to using the Construction PM AI Skill for project management guidance, workflow recommendations, and industry best practices",
+      "name": "Construction PM AI Skill User Guide"
+    },
+    "deliveryTests": {
+      "description": "12 test cases covering delivery verification, photos, and signatures",
+      "name": "Delivery Confirmation Workflow Tests"
+    },
+    "deploymentGuide": {
+      "description": "Step-by-step deployment instructions for Epic 4 and Story 3-9",
+      "name": "Deployment Guide"
+    },
+    "financialPaymentGuide": {
+      "description": "Generate payment links, share with clients, and track payment status in real-time",
+      "name": "Financial Payment Links Guide"
+    },
+    "inssStrategyGuide": {
+      "description": "Comprehensive guide to construction social security optimization, VAU references, and SERO compliance strategies",
+      "name": "INSS Strategy and Planning Guide"
+    },
+    "paymentTests": {
+      "description": "10 test cases for payment dashboard and processing workflows",
+      "name": "Payment Processing Workflow Tests"
+    },
+    "pmAckGuide": {
+      "description": "Generating acknowledgment links and tracking supplier confirmations",
+      "name": "PM PO Acknowledgment Guide"
+    },
+    "prEpic4Summary": {
+      "description": "Complete feature list and implementation statistics",
+      "name": "PR Epic 4 Summary"
+    },
+    "prd": {
+      "description": "Product specifications and requirements",
+      "name": "Product Requirements Document (PRD)"
+    },
+    "procurementEpics": {
+      "description": "All procurement epic definitions and stories",
+      "name": "Procurement Epics"
+    },
+    "procurementRequirements": {
+      "description": "Detailed requirements for procurement features",
+      "name": "Procurement Module Requirements"
+    },
+    "roadmapImplementation": {
+      "description": "Product roadmap and implementation timeline",
+      "name": "Roadmap Implementation"
+    },
+    "signaturePad": {
+      "description": "Digital signature capture component API and usage",
+      "name": "Signature Pad Component"
+    },
+    "sinapiGuide": {
+      "description": "Practical overview of the SINAPI table, pricing types, compositions, and coding",
+      "name": "SINAPI Brazil Guide (Tabela SINAPI)"
+    },
+    "sprintReleaseNotes": {
+      "category": "Release Notes",
+      "description": "AI-generated release notes for {{sprint}}: {{title}}",
+      "name": "Sprint {{sprint}} – Release Notes"
+    },
+    "sprintStatus": {
+      "description": "Current sprint progress and story completion status",
+      "name": "Sprint Status"
+    },
+    "supervisorGuide": {
+      "description": "Mobile-optimized workflow for verifying deliveries, capturing photos, and digital signatures",
+      "name": "Supervisor Delivery Confirmation Guide"
+    },
+    "supplierAckGuide": {
+      "description": "How to acknowledge purchase orders using secure links (no login required)",
+      "name": "Supplier PO Acknowledgment Guide"
+    },
+    "supplierTests": {
+      "description": "13 test cases for PO acknowledgment and token validation",
+      "name": "Supplier Acknowledgment Workflow Tests"
+    },
+    "timelineAnalyticsGuide": {
+      "description": "Comprehensive guide to timeline analytics, milestone tracking, delay analysis, and project performance metrics",
+      "name": "Timeline Analytics Guide"
+    },
+    "whatsappGuide": {
+      "description": "Configure WhatsApp messaging, automated reminders, and client notifications via Twilio",
+      "name": "WhatsApp Integration Guide"
+    }
+  },
+  "implementationInfo": {
+    "documentation": "Documentation",
+    "filesChanged": "Files Changed",
+    "linesOfCode": "Lines of Code",
+    "newRoutes": "New Routes",
+    "title": "Implementation Info"
+  },
+  "preview": {
+    "errorLoading": "Failed to load document",
+    "loading": "Loading document...",
+    "selected": "Selected",
+    "title": "Document Preview"
+  },
+  "quickAccess": {
+    "accountants": "Accountants → Payment Guide",
+    "projectManagers": "Project Managers → PM Guide",
+    "supervisors": "Supervisors → Delivery Guide",
+    "suppliers": "Suppliers → Acknowledgment Guide",
+    "title": "Quick Access by Role"
+  },
+  "sections": {
+    "aiFeatures": {
+      "description": "Learn how to use AI-powered insights and recommendations",
+      "title": "Powered by AI"
+    },
+    "architecture": {
+      "description": "System architecture and project documentation",
+      "title": "Architecture & Planning"
+    },
+    "technical": {
+      "description": "Implementation details and deployment guides",
+      "title": "Technical Documentation"
+    },
+    "tests": {
+      "description": "Comprehensive test suites for all workflows (35 test cases)",
+      "title": "End-to-End Tests"
+    },
+    "userGuides": {
+      "description": "Comprehensive guides for all user roles",
+      "title": "User Guides"
+    }
+  },
+  "stats": {
+    "storiesComplete": "Stories Complete",
+    "storiesCompleteDesc": "100% procurement",
+    "technicalDocs": "Technical Docs",
+    "technicalDocsDesc": "Architecture & guides",
+    "testCases": "Test Cases",
+    "testCasesDesc": "End-to-end tests",
+    "userGuides": "User Guides",
+    "userGuidesDesc": "For all user roles"
+  },
+  "subtitle": "Complete documentation for Epic 4 (Delivery & Payment) and Story 3-9 (PO Acknowledgment)",
+  "tabs": {
+    "aiFeatures": "Powered by AI",
+    "architecture": "Architecture",
+    "technical": "Technical",
+    "tests": "Tests",
+    "userGuides": "User Guides"
+  },
+  "title": "Documentation"
+}

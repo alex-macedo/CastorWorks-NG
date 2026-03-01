@@ -1,0 +1,72 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vite.pid
+.env
+.env.ai-platform
+.specify
+.bmad-core
+.windsurf
+exported
+engproapp
+
+#.github (enabled so CI workflows can be committed)
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# BMAD (local only)
+docs-Brazil
+tmp-capture
+sinapi
+.git.engproapp/
+
+# BMAD (local only)
+_bmad
+bmad
+.claude
+.opencode
+.opencode.OLD
+# .github
+.gemini
+.codex
+.agentvibes
+.agent
+.shared
+
+
+# Auto Claude data directory
+.auto-claude/
+.env.testing
+
+# Auto Claude generated files
+.auto-claude-security.json
+.auto-claude-status
+.claude_settings.json
+.worktrees/
+.security-key
+logs/security/

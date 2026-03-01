@@ -1,0 +1,132 @@
+{
+  "ai": {
+    "analysisFailed": "Analysis Failed",
+    "analysisFailedDescription": "An error occurred during AI analysis",
+    "analysisStarting": "AI Analysis Starting",
+    "analysisStartingDescription": "Analyzing {{count}} items in the background. This may take a few moments.",
+    "batchAnalysisComplete": "AI Batch Analysis Complete",
+    "batchAnalysisCompleteDescription": "Analyzed {{count}} items successfully.",
+    "jsonFileCreated": "JSON File Created",
+    "jsonFileCreatedDescription": "Download the JSON file to analyze with AI and upload the results."
+  },
+  "createNew": "Create Template",
+  "createNewDescription": "createNewDescription",
+  "default": "Default",
+  "delete": "Delete",
+  "deleteConfirmDescription": "This template will be permanently deleted. This action cannot be undone.",
+  "deleteConfirmTitle": "Delete template?",
+  "deleted": "Template deleted successfully",
+  "dialog": {
+    "createTitle": "Create Project WBS Template",
+    "editTitle": "Edit Project WBS Template",
+    "viewTitle": "View Project WBS Template"
+  },
+  "duplicate": "Duplicate",
+  "edit": "Edit",
+  "editor": {
+    "back": "Back",
+    "createTitle": "Create Project WBS Template",
+    "editTitle": "Edit Project WBS Template",
+    "saveError": "An error occurred while saving the WBS template",
+    "saveSuccess": "WBS template saved successfully",
+    "subtitle": "Edit the template and its WBS items using the grid below",
+    "templateSectionTitle": "Template",
+    "viewTitle": "View Project WBS Template"
+  },
+  "errors": {
+    "duplicateProjectType": "A template for this project type already exists. Each project type can only have one template.",
+    "templateInUse": "Cannot delete template because it is currently associated with active projects."
+  },
+  "export": {
+    "button": "Export CSV",
+    "empty": "No items to export",
+    "error": "Failed to export CSV",
+    "exporting": "Exporting...",
+    "fileName": "wbs-template",
+    "success": "CSV exported successfully"
+  },
+  "fields": {
+    "description": "Description",
+    "descriptionPlaceholder": "Optional description",
+    "isDefault": "Set as Default",
+    "name": "Template name",
+    "namePlaceholder": "Enter a template name",
+    "projectType": "Project type",
+    "projectTypePlaceholder": "Select a project type"
+  },
+  "grid": {
+    "actions": "Actions",
+    "code": "Code"
+  },
+  "itemType": {
+    "control_account": "Control account",
+    "deliverable": "Deliverable",
+    "phase": "Phase",
+    "work_package": "Work package"
+  },
+  "items": {
+    "addChild": "+Item",
+    "addRoot": "Add top-level item",
+    "collapseAll": "Collapse All",
+    "costCode": "Cost Code",
+    "costCodePlaceholder": "Select cost code",
+    "delete": "Delete item",
+    "deleteConfirmDescription": "This item and all its children will be deleted.",
+    "deleteConfirmTitle": "Delete item?",
+    "description": "Description",
+    "descriptionPlaceholder": "Optional notes",
+    "dragToReorder": "Drag to reorder",
+    "durationDays": "Duration (days)",
+    "durationPlaceholder": "Days",
+    "editItem": "Edit Item",
+    "empty": "No items yet. Add a top-level item to start.",
+    "expandAll": "Expand All",
+    "moveDown": "Move down",
+    "moveUp": "Move up",
+    "name": "Name",
+    "namePlaceholder": "Item name",
+    "noCostCode": "None",
+    "subtitle": "Add, edit, reorder, or delete WBS items",
+    "title": "Items",
+    "type": "Type"
+  },
+  "manageWbs": "Manage Wbs",
+  "noItems": "No structure items found",
+  "noTemplates": "No WBS templates found",
+  "noTemplatesHint": "Ask an administrator to create a template or enable a default template.",
+  "projectType": "Type: {{type}}",
+  "projectTypeAny": "Any",
+  "subtitle": "Manage classic WBS (Work Breakdown Structure) templates used to auto-populate new projects",
+  "sync": {
+    "allPhasesMatched": "All phases already exist in WBS template",
+    "applyButton": "Apply Sync",
+    "button": "Sync with Phases",
+    "dialogDescription": "Select a phases template to validate and sync with the current WBS template. Missing phases will be added as WBS items.",
+    "dialogTitle": "Sync WBS Template with Phases Template",
+    "durationsUpdated": "Duration days synchronized with phases template",
+    "matchedWith": "matched with",
+    "notMatched": "not found in WBS",
+    "of": "of",
+    "phasesAdded": "{{count}} phases added to WBS template",
+    "phasesMatched": "phases matched",
+    "selectPlaceholder": "Choose a phases template...",
+    "selectTemplate": "Select Phases Template",
+    "validateButton": "Validate",
+    "validating": "Validating...",
+    "validationResults": "Validation Results"
+  },
+  "system": "System",
+  "templates": {
+    "brazilianCommercial": {
+      "description": "Default classic WBS template for commercial projects",
+      "name": "Brazilian Commercial WBS"
+    },
+    "brazilianResidential": {
+      "description": "Default classic WBS template for residential projects",
+      "name": "Brazilian Residential WBS"
+    }
+  },
+  "title": "Project WBS Templates",
+  "view": "View",
+  "viewStructure": "View Structure"
+}

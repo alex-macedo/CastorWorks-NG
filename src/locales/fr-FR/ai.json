@@ -1,0 +1,57 @@
+{
+  "assistant": {
+    "clearConversation": "Effacer la conversation",
+    "copied": "Copié !",
+    "copiedDesc": "Message copié dans le presse-papiers.",
+    "copy": "Copier",
+    "copyFailed": "Échec de la copie",
+    "copyFailedDesc": "Échec de la copie du message.",
+    "headline": "Comment puis-je vous aider aujourd'hui ?",
+    "historyCleared": "Conversation effacée",
+    "historyClearedDesc": "Votre historique de chat a été effacé.",
+    "placeholder": "Demandez-moi n'importe quoi...",
+    "prompts": {
+      "conversion": "Quel est mon taux de conversion ce mois-ci ?",
+      "count": "Combien de devis ai-je ?",
+      "estimate": "Créer un devis pour une rénovation de salle de bain",
+      "recentEstimates": "Montrez-moi mes devis récents"
+    },
+    "subheadline": "Je peux vous aider à créer des devis, rechercher des données et obtenir des informations.",
+    "title": "Assistant IA",
+    "tryAsking": "Essayez de demander :",
+    "you": "Vous"
+  },
+  "insights": {
+    "emptyState": "Cliquez sur le bouton ci-dessous pour générer des informations basées sur l'IA.",
+    "generate": "Générer des informations",
+    "generating": "Génération d'informations...",
+    "regenerate": "Régénérer les informations"
+  },
+  "superBot": {
+    "clearConversation": "Effacer la conversation",
+    "greeting": "Bonjour",
+    "greetingQuestion": "Comment puis-je vous aider aujourd’hui ?",
+    "greetings": {
+      "afternoon": "Bon après-midi",
+      "evening": "Bonsoir",
+      "morning": "Bonjour",
+      "night": "Bonne nuit"
+    },
+    "headline": "Super Bot peut exécuter des actions inter-modules",
+    "helperText": "Utilisez le langage naturel pour interroger des données et lancer des actions.",
+    "historyCleared": "Conversation Super Bot effacée",
+    "historyClearedDesc": "Votre historique Super Bot a été effacé.",
+    "noHistory": "Aucune conversation pour le moment",
+    "placeholder": "Demandez à CastorMind-AI...",
+    "prompts": {
+      "delayedProjects": "Montre-moi tous les projets en retard et leurs tâches.",
+      "duePayments": "Quels clients ont des paiements dus ?",
+      "updateTasks": "Mets à jour toutes les tâches du planning du projet X jusqu'à aujourd'hui.",
+      "vendorQuotes": "Montre-moi tous les devis où les fournisseurs n'ont pas répondu."
+    },
+    "searchPlaceholder": "Rechercher des conversations...",
+    "subheadline": "Demandez en langage naturel pour interroger et mettre à jour les données.",
+    "suggestions": "Suggestions",
+    "title": "Super Bot"
+  }
+}

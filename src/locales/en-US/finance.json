@@ -1,0 +1,14 @@
+{
+  "totalProjectBudget": "Total Project Budget",
+  "utilization": "Utilization",
+  "totalExpenses": "Total Expenses",
+  "pendingInvoices": "Pending Invoices",
+  "costDistribution": "Cost Distribution",
+  "latestTransactions": "Latest Transactions",
+  "addExpense": "Add Expense",
+  "amount": "Amount",
+  "category": "Category",
+  "selectCategory": "Select Category",
+  "description": "Description",
+  "descriptionPlaceholder": "Description Placeholder"
+}

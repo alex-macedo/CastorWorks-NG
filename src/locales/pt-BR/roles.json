@@ -1,0 +1,13 @@
+{
+  "architect": "Arquiteto",
+  "engineer": "Engenheiro",
+  "contractor": "Empreiteiro",
+  "manager": "Gerente",
+  "admin": "[EN] Admin",
+  "projectManager": "[EN] Project Manager",
+  "viewer": "[EN] Viewer",
+  "siteSupervisor": "[EN] Site Supervisor",
+  "adminOffice": "[EN] Admin Office",
+  "client": "[EN] Client",
+  "accountant": "[EN] Accountant"
+}

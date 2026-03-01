@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "approve": "[EN] Approve",
+    "archive": "[EN] Archive",
+    "back": "Voltar",
+    "create": "Criar conteúdo",
+    "edit": "Editar",
+    "view": "Ver"
+  },
+  "admin": {
+    "approvalDescription": "Revisar rascunhos aguardando aprovação.",
+    "approvalTitle": "Fila de aprovação",
+    "createDescription": "Rascunhar um novo item de conteúdo.",
+    "createTitle": "Criar conteúdo",
+    "dashboardDescription": "Gerenciar notícias, artigos, documentos e FAQs.",
+    "dashboardTitle": "Hub de Conteúdo",
+    "editDescription": "Atualizar o item de conteúdo selecionado.",
+    "editTitle": "Editar conteúdo",
+    "listDescription": "Filtrar e gerenciar cada entrada de conteúdo.",
+    "listTitle": "Todo o conteúdo",
+    "manageContent": "Gerenciar conteúdo",
+    "quickActions": "Ações rápidas",
+    "reviewApprovals": "Revisar aprovações",
+    "settings": "Configurações",
+    "settingsDescription": "Configurar padrões para o hub de conteúdo.",
+    "settingsTitle": "Configurações do hub de conteúdo"
+  },
+  "articlesDescription": "Guias, práticas recomendadas e documentação interna.",
+  "articlesTitle": "Artigos de Conhecimento",
+  "createNew": "[EN] Create New",
+  "detail": {
+    "notFound": "Conteúdo não encontrado.",
+    "published": "Publicado em {{date}}",
+    "updated": "Atualizado em {{date}}"
+  },
+  "documents": {
+    "empty": "Nenhum documento publicado ainda."
+  },
+  "documentsDescription": "Documentos de referência publicados para sua equipe.",
+  "documentsTitle": "Documentos",
+  "edit": "[EN] Edit",
+  "editor": {
+    "browseFiles": "Procurar Arquivos",
+    "contentPlaceholder": "Escreva seu conteúdo aqui...",
+    "documentAttached": "Documento anexo",
+    "documentUploadHint": "Clique para carregar um documento",
+    "fields": {
+      "content": "Conteúdo",
+      "document": "Documento",
+      "slug": "Slug",
+      "status": "Status",
+      "title": "Título",
+      "type": "Tipo",
+      "visibility": "Visível para funções"
+    },
+    "markdownHint": "Markdown suportado para formatação.",
+    "previewEmpty": "A pré-visualização aparecerá aqui.",
+    "save": "Salvar conteúdo",
+    "saving": "Salvando...",
+    "slugPlaceholder": "Gerado a partir do título",
+    "statusPlaceholder": "Selecione o status",
+    "tabs": {
+      "edit": "Editar",
+      "preview": "Pré-visualização"
+    },
+    "title": "Editor de Conteúdo",
+    "titlePlaceholder": "Digite um título",
+    "typePlaceholder": "Selecione o tipo",
+    "uploading": "Carregando..."
+  },
+  "empty": {
+    "adminDescription": "Crie seu primeiro item de conteúdo para popular o hub.",
+    "adminTitle": "Nenhum conteúdo encontrado",
+    "articlesDescription": "Crie um artigo para documentar práticas recomendadas.",
+    "articlesTitle": "Nenhum artigo ainda",
+    "documentsDescription": "Publique documentos para sua equipe.",
+    "documentsTitle": "Nenhum documento ainda",
+    "faqDescription": "Adicione entradas de FAQ para ajudar os usuários.",
+    "faqTitle": "Nenhuma FAQ ainda",
+    "newsDescription": "Publique uma atualização para compartilhar novidades com a equipe.",
+    "newsTitle": "Nenhuma notícia ainda"
+  },
+  "errors": {
+    "accessDenied": "Acesso Negado",
+    "approveFailed": "[EN] Approve Failed",
+    "archiveFailed": "[EN] Archive Failed",
+    "createFailed": "[EN] Create Failed",
+    "fileTooLarge": "Arquivo muito grande",
+    "notFound": "[EN] Not Found",
+    "restoreFailed": "[EN] Restore Failed",
+    "updateFailed": "[EN] Update Failed",
+    "uploadFailed": "Falha no envio",
+    "userNotFound": "Sessão de usuário não encontrada."
+  },
+  "faqDescription": "Respostas rápidas para perguntas comuns.",
+  "faqTitle": "Perguntas Frequentes",
+  "filters": {
+    "allStatuses": "Todos os status",
+    "allTypes": "Todos os tipos",
+    "reset": "Limpar filtros",
+    "search": "Buscar conteúdo",
+    "status": "Status",
+    "type": "Tipo"
+  },
+  "newsDescription": "Atualizações da empresa e anúncios da plataforma.",
+  "newsTitle": "Notícias",
+  "noPendingApprovals": "[EN] No Pending Approvals",
+  "pendingApprovals": "[EN] Pending Approvals",
+  "status": {
+    "archived": "Arquivado",
+    "draft": "Rascunho",
+    "pending": "Aguardando aprovação",
+    "published": "Publicado"
+  },
+  "success": {
+    "approved": "[EN] Approved",
+    "archived": "[EN] Archived",
+    "fileUploaded": "Arquivo enviado com sucesso",
+    "restored": "[EN] Restored",
+    "savedAsDraft": "[EN] Saved As Draft",
+    "updated": "[EN] Updated"
+  },
+  "toast": {
+    "approveError": "Falha ao publicar conteúdo",
+    "approved": "Conteúdo publicado",
+    "archiveError": "Falha ao arquivar conteúdo",
+    "archived": "Conteúdo arquivado",
+    "createError": "Falha ao criar conteúdo",
+    "created": "Conteúdo criado",
+    "deleteError": "Falha ao excluir conteúdo",
+    "deleted": "Conteúdo excluído",
+    "restoreError": "Falha ao restaurar conteúdo",
+    "restored": "Conteúdo restaurado",
+    "submitError": "Falha ao enviar para aprovação",
+    "submitted": "Enviado para aprovação",
+    "updateError": "Falha ao atualizar conteúdo",
+    "updated": "Conteúdo atualizado"
+  },
+  "types": {
+    "article": "Artigo",
+    "document": "Documento",
+    "faq": "FAQ",
+    "news": "Notícia"
+  }
+}

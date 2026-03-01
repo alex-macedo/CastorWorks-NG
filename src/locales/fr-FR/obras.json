@@ -1,0 +1,15 @@
+{
+  "attention": "Attention",
+  "client": "Client",
+  "newProject": "Nouveau Projet",
+  "onSchedule": "Dans les Délais",
+  "progress": "Progrès",
+  "searchPlaceholder": "Rechercher des projets...",
+  "statusCompleted": "Terminé",
+  "statusInProgress": "En Cours",
+  "statusPaused": "En Pause",
+  "statusPlanning": "Planification",
+  "subtitle": "Gestion des projets et centres de coûts",
+  "title": "Projets",
+  "viewDetails": "Voir les Détails"
+}

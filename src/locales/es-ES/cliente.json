@@ -1,0 +1,62 @@
+{
+  "acceptRecommendation": "Aceptar recomendación",
+  "actions": {
+    "cancel": "Cancelar",
+    "delete": "Eliminar Cliente",
+    "save": "Guardar Cliente"
+  },
+  "additionalInfo": "Información Adicional",
+  "address": "Dirección",
+  "addressIncompleteMessage": "Incluye número y complemento para direcciones de Brasil.",
+  "addressIncompleteTitle": "Faltan datos de la dirección",
+  "addressLookupErrorMessage": "No se pudo validar esta dirección. Puedes seguir editando.",
+  "addressLookupErrorTitle": "Error al buscar la dirección",
+  "addressNumberHelp": "Agregue número y complemento.",
+  "basicInfo": "Información Básica",
+  "editSubtitle": "Actualizar la información del cliente",
+  "editTitle": "Editar Cliente",
+  "label": {
+    "address": "Dirección",
+    "city": "Ciudad",
+    "country": "País",
+    "district": "Barrio",
+    "email": "Correo electrónico *",
+    "line1": "Dirección",
+    "line2": "Complemento",
+    "name": "Nombre del Cliente *",
+    "notes": "Notas",
+    "phone": "Teléfono *",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "Código Postal",
+    "region": "Estado/Provincia",
+    "type": "Tipo de Cliente *"
+  },
+  "placeholder": {
+    "address": "Ingrese la dirección",
+    "city": "Ciudad",
+    "country": "Seleccione el país",
+    "district": "Barrio",
+    "email": "cliente@email.com",
+    "line1": "Calle y número",
+    "line2": "Apartamento, unidad o complemento",
+    "name": "Ingrese el nombre del cliente",
+    "notes": "Notas adicionales sobre este cliente",
+    "phone": "+34 600 000 000",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "Código Postal",
+    "region": "Estado/Provincia",
+    "type": "Seleccione el tipo"
+  },
+  "select": {
+    "company": "Empresa",
+    "countryBR": "Brasil",
+    "countryUS": "Estados Unidos",
+    "individual": "Persona Física"
+  },
+  "subtitle": "Agregar un nuevo cliente al sistema",
+  "title": "Nuevo Cliente",
+  "uspsEnteredLabel": "Ingresaste:",
+  "uspsRecommendationTitle": "Recomendación de USPS",
+  "uspsRecommendedLabel": "USPS recomienda:",
+  "validateAddress": "Validar dirección"
+}

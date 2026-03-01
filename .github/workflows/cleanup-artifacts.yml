@@ -1,0 +1,87 @@
+# =============================================================================
+# CastorWorks Artifact Cleanup Workflow
+# =============================================================================
+# Manually trigger to clean up old GitHub artifacts and free storage space
+# =============================================================================
+
+name: Cleanup Artifacts
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (show what would be deleted without actually deleting)'
+        required: false
+        default: 'false'
+        type: boolean
+      artifact_pattern:
+        description: 'Artifact name pattern (use * for wildcard)'
+        required: false
+        default: '*'
+        type: string
+
+jobs:
+  cleanup:
+    name: Cleanup Artifacts
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write  # Required to delete artifacts
+    steps:
+      - name: List all artifacts
+        uses: actions/github-script@v7
+        id: list-artifacts
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+            
+            console.log('Total artifacts found:', artifacts.data.artifacts.length);
+            console.log('Total storage used:', artifacts.data.total_size_in_bytes / 1024 / 1024, 'MB');
+            
+            const pattern = '${{ github.event.inputs.artifact_pattern }}';
+            const matchingArtifacts = artifacts.data.artifacts.filter(artifact => 
+              pattern === '*' || artifact.name.includes(pattern.replace('*', ''))
+            );
+            
+            console.log('Artifacts matching pattern:', matchingArtifacts.length);
+            matchingArtifacts.forEach(artifact => {
+              console.log(`- ${artifact.name}: ${artifact.size_in_bytes / 1024 / 1024}MB (Created: ${artifact.created_at})`);
+            });
+            
+            return matchingArtifacts.map(a => a.id);
+
+      - name: Delete matching artifacts
+        if: github.event_name == 'schedule' || github.event.inputs.dry_run == 'false'
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: ${{ github.event.inputs.artifact_pattern || '*' }}
+          failOnError: false
+          skipCompletions: true
+
+      - name: Show cleanup summary
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+            
+            const totalSize = artifacts.data.total_size_in_bytes / 1024 / 1024;
+            console.log('=== Cleanup Summary ===');
+            console.log('Current total artifact storage:', totalSize.toFixed(2), 'MB');
+            console.log('Number of artifacts:', artifacts.data.artifacts.length);
+            console.log('Free tier limit: 2000MB');
+            console.log('Storage usage percentage:', ((totalSize / 2000) * 100).toFixed(1) + '%');
+            
+            if (totalSize > 1800) {
+              console.log('⚠️  WARNING: Approaching storage limit!');
+            } else {
+              console.log('✅ Storage usage is healthy');
+            }

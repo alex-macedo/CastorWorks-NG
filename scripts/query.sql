@@ -1,0 +1,1 @@
+SELECT table_name, column_name, data_type FROM information_schema.columns WHERE table_name IN ('project_materials', 'project_labor', 'simplebudget_materials_template', 'simplebudget_labor_template') AND column_name = 'display_order';

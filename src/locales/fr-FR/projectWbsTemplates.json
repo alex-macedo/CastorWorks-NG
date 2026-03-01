@@ -1,0 +1,132 @@
+{
+  "ai": {
+    "analysisFailed": "Analyse Échouée",
+    "analysisFailedDescription": "Une erreur s'est produite lors de l'analyse IA",
+    "analysisStarting": "Analyse IA en cours",
+    "analysisStartingDescription": "Analyse de {{count}} éléments en arrière-plan. Cela peut prendre quelques instants.",
+    "batchAnalysisComplete": "Analyse par Lots IA Terminée",
+    "batchAnalysisCompleteDescription": "Analysé {{count}} éléments avec succès.",
+    "jsonFileCreated": "Fichier JSON Créé",
+    "jsonFileCreatedDescription": "Téléchargez le fichier JSON pour l'analyser avec l'IA et téléchargez les résultats."
+  },
+  "createNew": "Créer un Modèle",
+  "createNewDescription": "createNewDescription",
+  "default": "Par défaut",
+  "delete": "Supprimer",
+  "deleteConfirmDescription": "Ce modèle sera supprimé définitivement. Cette action est irréversible.",
+  "deleteConfirmTitle": "Supprimer le modèle ?",
+  "deleted": "Modèle supprimé avec succès",
+  "dialog": {
+    "createTitle": "Créer un Modèle de SDP du Projet",
+    "editTitle": "Modifier le Modèle de SDP du Projet",
+    "viewTitle": "Voir le Modèle de SDP du Projet"
+  },
+  "duplicate": "Dupliquer",
+  "edit": "Modifier",
+  "editor": {
+    "back": "Retour",
+    "createTitle": "Créer un Modèle de SDP du Projet",
+    "editTitle": "Modifier le Modèle de SDP du Projet",
+    "saveError": "Une erreur est survenue lors de l’enregistrement du modèle de SDP",
+    "saveSuccess": "Modèle de SDP enregistré avec succès",
+    "subtitle": "Modifiez le modèle et ses éléments de SDP à l’aide de la grille ci-dessous",
+    "templateSectionTitle": "Modèle",
+    "viewTitle": "Voir le Modèle de SDP du Projet"
+  },
+  "errors": {
+    "duplicateProjectType": "Un modèle existe déjà pour ce type de projet. Chaque type de projet ne peut avoir qu’un seul modèle.",
+    "templateInUse": "Impossible de supprimer le modèle car il est associé à des projets actifs."
+  },
+  "export": {
+    "button": "Exporter CSV",
+    "empty": "Aucun élément à exporter",
+    "error": "Échec de l’export CSV",
+    "exporting": "Exportation...",
+    "fileName": "modele-sdp",
+    "success": "CSV exporté avec succès"
+  },
+  "fields": {
+    "description": "Description",
+    "descriptionPlaceholder": "Description optionnelle",
+    "isDefault": "Fields.isDefault",
+    "name": "Nom du modèle",
+    "namePlaceholder": "Saisissez le nom du modèle",
+    "projectType": "Type de projet",
+    "projectTypePlaceholder": "Sélectionnez le type de projet"
+  },
+  "grid": {
+    "actions": "Actions",
+    "code": "Code"
+  },
+  "itemType": {
+    "control_account": "Compte de contrôle",
+    "deliverable": "Livrable",
+    "phase": "Phase",
+    "work_package": "Lot de travail"
+  },
+  "items": {
+    "addChild": "+ élément enfant",
+    "addRoot": "Ajouter un élément de niveau supérieur",
+    "collapseAll": "Tout Réduire",
+    "costCode": "Code de Coût",
+    "costCodePlaceholder": "Sélectionner le code de coût",
+    "delete": "Supprimer l’élément",
+    "deleteConfirmDescription": "Cet élément et tous ses enfants seront supprimés.",
+    "deleteConfirmTitle": "Supprimer l’élément ?",
+    "description": "Description",
+    "descriptionPlaceholder": "Notes optionnelles",
+    "dragToReorder": "Glisser pour réorganiser",
+    "durationDays": "Durée (jours)",
+    "durationPlaceholder": "Jours",
+    "editItem": "Items.editItem",
+    "empty": "Aucun élément pour le moment. Ajoutez un élément de niveau supérieur pour commencer.",
+    "expandAll": "Tout Développer",
+    "moveDown": "Descendre",
+    "moveUp": "Monter",
+    "name": "Nom",
+    "namePlaceholder": "Nom de l’élément",
+    "noCostCode": "Aucun",
+    "subtitle": "Ajoutez, modifiez, réorganisez ou supprimez des éléments de la SDP",
+    "title": "Éléments",
+    "type": "Type"
+  },
+  "manageWbs": "[EN] Manage Wbs",
+  "noItems": "Aucun élément de structure trouvé",
+  "noTemplates": "Aucun modèle de SDP trouvé",
+  "noTemplatesHint": "Demandez à un administrateur de créer un modèle ou d’activer un modèle par défaut.",
+  "projectType": "Type : {{type}}",
+  "projectTypeAny": "Tous",
+  "subtitle": "Gérez des modèles classiques de SDP (Structure de Décomposition du Projet) utilisés pour pré-remplir automatiquement les nouveaux projets",
+  "sync": {
+    "allPhasesMatched": "Toutes les phases existent déjà dans le modèle SDP",
+    "applyButton": "Appliquer la Synchronisation",
+    "button": "Synchroniser avec Phases",
+    "dialogDescription": "Sélectionnez un modèle de phases pour valider et synchroniser avec le modèle SDP actuel. Les phases manquantes seront ajoutées comme éléments de la SDP.",
+    "dialogTitle": "Synchroniser le Modèle SDP avec le Modèle de Phases",
+    "durationsUpdated": "Jours de durée synchronisés avec le modèle de phases",
+    "matchedWith": "correspond à",
+    "notMatched": "non trouvé dans la SDP",
+    "of": "sur",
+    "phasesAdded": "{{count}} phases ajoutées au modèle SDP",
+    "phasesMatched": "phases correspondantes",
+    "selectPlaceholder": "Choisissez un modèle de phases...",
+    "selectTemplate": "Sélectionner le Modèle de Phases",
+    "validateButton": "Valider",
+    "validating": "Validation en cours...",
+    "validationResults": "Résultats de Validation"
+  },
+  "system": "Système",
+  "templates": {
+    "brazilianCommercial": {
+      "description": "Modèle classique par défaut de SDP pour les projets commerciaux",
+      "name": "SDP Commerciale (Brésil)"
+    },
+    "brazilianResidential": {
+      "description": "Modèle classique par défaut de SDP pour les projets résidentiels",
+      "name": "SDP Résidentielle (Brésil)"
+    }
+  },
+  "title": "Modèles de SDP du Projet",
+  "view": "Voir",
+  "viewStructure": "Voir la Structure"
+}

@@ -1,0 +1,141 @@
+{
+  "abcCurve": {
+    "cost": "Costo",
+    "cumulativePercentage": "Porcentaje Acumulado",
+    "description": "Análisis de artículos por impacto de costo (A, B, C)",
+    "items": "{{count}} artículos",
+    "noData": "No hay datos de curva ABC disponibles",
+    "title": "Curva ABC"
+  },
+  "activeProjects": "Obras Activas",
+  "activeProjectsDescription": "Sus obras de construcción actualmente activas",
+  "activePurchases": "Compras Activas",
+  "activityDailyLog": "Registro diario actualizado",
+  "activityInvoicePaid": "Factura pagada por el cliente",
+  "activityNewPurchase": "Nueva solicitud de compra enviada",
+  "activityQuoteReceived": "Cotización recibida del proveedor",
+  "activityTypes": {
+    "comment": "Comentario",
+    "meeting": "Reunión",
+    "project": "Proyecto",
+    "task": "Tarea"
+  },
+  "atRisk": "En Riesgo",
+  "avgSavings": "Promedio {{percent}}% de ahorro",
+  "budgetUsed": "Presupuesto Utilizado",
+  "cashFlow": "Flujo de Caja",
+  "comprehensiveAnalyticsDescription": "Obtenga información detallada sobre presupuesto, tendencias de gastos y cronogramas de obras",
+  "createClient": "Crear Nuevo Cliente",
+  "createFinancial": "Crear Entrada Financiera",
+  "createProject": "Crear Nueva Obra",
+  "createPurchase": "Crear Solicitud de Compra",
+  "dayAfter": "Pasado Mañana",
+  "dayAgo": "{{count}} día atrás",
+  "defaultUserName": "Usuario",
+  "delayed": "Retrasado",
+  "downtownSite": "Sitio Centro",
+  "expenseByCategory": {
+    "categories": "{{count}} categorías",
+    "description": "Rastrear el total y la velocidad de las categorías",
+    "noData": "No hay datos de gasto disponibles",
+    "title": "Gasto por Categoría"
+  },
+  "filters": {
+    "allProjects": "Todos los Proyectos",
+    "allTime": "Todo el Tiempo",
+    "export": "Exportar",
+    "lastThreeMonths": "Últimos 3 Meses",
+    "lastYear": "Último Año",
+    "reset": "Restablecer",
+    "thisMonth": "Este Mes",
+    "unnamedProject": "Proyecto sin Nombre"
+  },
+  "financialOverview": {
+    "collectionPower": "Poder de Cobro",
+    "collectionRate": "Tasa de Cobro Estándar",
+    "criticalWeeks": "Semanas de Riesgo Crítico/Alto",
+    "currentCashPosition": "Posición de Caja Actual",
+    "manageCollections": "Gestionar Espacio de Cobros",
+    "outlookWeeks": "Perspectiva proyectada de 13 semanas",
+    "outlookWeeks_many": "",
+    "outlookWeeks_one": "outlookWeeks",
+    "outlookWeeks_other": "outlookWeeks",
+    "riskAssessment": "Evaluación de Riesgo",
+    "statusRisk": "Riesgo de Liquidez",
+    "statusStable": "Posición Estable",
+    "subtitle": "Perspectiva de liquidez de 13 semanas y desempeño de cobro",
+    "title": "Resumen Financiero Ejecutivo"
+  },
+  "forecast": "Pronóstico",
+  "greeting": "Hola, {{name}} 👋",
+  "greetings": {
+    "afternoon": "¡Buenas tardes! ¡Mantengamos la productividad!",
+    "evening": "Ya es de noche, pero la inspiración no tiene horario, ¿verdad?",
+    "morning": "¡El día acaba de comenzar!",
+    "night": "¿Todavía trabajando duro? ¡Gran dedicación!"
+  },
+  "hoursAgo": "{{count}} horas atrás",
+  "installmentsDue": "Cuotas que vencen en {{days}} días",
+  "kpisBrazil": {
+    "bdiDeviation": {
+      "change": "Planificado {{planned}}% | Desvío {{deviation}} p.p.",
+      "title": "Desvío de BDI"
+    },
+    "cashflowRisk": {
+      "change": "{{count}} semanas de riesgo crítico/alto",
+      "title": "Piso de Caja (13 semanas)"
+    },
+    "costPerM2": {
+      "change": "Presupuestado {{budget}}/m² ({{percent}}%)",
+      "title": "Costo Real por m²"
+    },
+    "nfeReconciliation": {
+      "change": "Pendiente {{pending}} en {{total}} NF-e",
+      "title": "Conciliación de NF-e"
+    },
+    "overdue": {
+      "change": "{{days}} días promedio de atraso en {{count}} facturas",
+      "title": "Cobros Vencidos"
+    },
+    "taxExposure": {
+      "change": "Ahorro potencial {{savings}}",
+      "title": "Exposición INSS + ISS"
+    }
+  },
+  "manager": "Gerente",
+  "monthlyTrend": {
+    "description": "Rastrear el total y la velocidad de las categorías",
+    "noData": "No hay datos de tendencia disponibles",
+    "title": "Tendencia de Gasto Mensual"
+  },
+  "newProject": "Nuevo Proyecto",
+  "newPurchase": "Nueva Compra",
+  "noActiveProjects": "No hay proyectos activos",
+  "noActiveProjectsDescription": "Comience creando su primera obra para ver el seguimiento de progreso y presupuesto aquí.",
+  "noRecentActivity": "Sin actividad reciente",
+  "notAssigned": "No asignado",
+  "onSchedule": "A Tiempo",
+  "onTrack": "A Tiempo",
+  "onlineQuotes": "Cotizaciones en Línea",
+  "openOverallStatus": "Abrir Estado General",
+  "overBudget": "Sobre Presupuesto",
+  "partlyCloudy": "Parcialmente Nublado",
+  "pendingApproval": "{{count}} pendientes de aprobación",
+  "progress": "Progreso",
+  "quickActions": "Acciones Rápidas",
+  "quickStats": "Estadísticas Rápidas",
+  "recentActivity": "Actividad Reciente",
+  "siteWeather": "Clima en el Sitio",
+  "subtitle": "Resumen de sus operaciones",
+  "temperature": "Temperatura",
+  "thisMonth": "+{{count}} este mes",
+  "title": "Panel",
+  "tomorrow": "Mañana",
+  "totalClients": "Total de Clientes",
+  "underBudget": "Dentro del Presupuesto",
+  "updated": "Actualizado",
+  "viewAll": "Ver Todos",
+  "viewComprehensiveAnalytics": "Ver Análisis Completos",
+  "viewDetails": "Ver Detalles",
+  "welcomeMessage": "¡Bienvenido de nuevo! Aquí está lo que está pasando hoy."
+}

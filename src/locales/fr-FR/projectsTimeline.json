@@ -1,0 +1,7 @@
+{
+  "description": "Chronologie visuelle de tous les projets",
+  "error": "Erreur : {{error}}",
+  "loadingProjects": "Chargement des projets...",
+  "myProjectsOnly": "Mes projets uniquement",
+  "title": "Chronologie des projets"
+}

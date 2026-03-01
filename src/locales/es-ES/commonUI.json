@@ -1,0 +1,20 @@
+{
+  "materials": "[EN] Materials",
+  "project": "[EN] Project",
+  "filters": "[EN] Filters",
+  "projectSchedule": "[EN] Project Schedule",
+  "supplier": "[EN] Supplier",
+  "loading": "[EN] Loading",
+  "digitalSignature": "[EN] Digital Signature",
+  "projectInformation": "[EN] Project Information",
+  "location": "[EN] Location",
+  "totalBudgeted": "[EN] Total Budgeted",
+  "monthlyCashFlow": "[EN] Monthly Cash Flow",
+  "totalMaterials": "[EN] Total Materials",
+  "recommendations": "[EN] Recommendations",
+  "completeDatabaseExport": "[EN] Complete Database Export",
+  "databaseStatistics": "[EN] Database Statistics",
+  "totalProjects": "[EN] Total Projects",
+  "totalExpenses": "[EN] Total Expenses",
+  "tasks": "[EN] Tasks"
+}

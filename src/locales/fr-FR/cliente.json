@@ -1,0 +1,62 @@
+{
+  "acceptRecommendation": "Accepter la recommandation",
+  "actions": {
+    "cancel": "Annuler",
+    "delete": "Supprimer le Client",
+    "save": "Enregistrer le Client"
+  },
+  "additionalInfo": "Informations Supplémentaires",
+  "address": "Adresse",
+  "addressIncompleteMessage": "Ajoutez le numéro et le complément pour les adresses au Brésil.",
+  "addressIncompleteTitle": "Informations d'adresse requises",
+  "addressLookupErrorMessage": "Impossible de valider cette adresse. Vous pouvez continuer.",
+  "addressLookupErrorTitle": "Recherche d'adresse échouée",
+  "addressNumberHelp": "Ajoutez le numéro et le complément.",
+  "basicInfo": "Informations de Base",
+  "editSubtitle": "Mettre à jour les informations du client",
+  "editTitle": "Modifier le Client",
+  "label": {
+    "address": "Adresse",
+    "city": "Ville",
+    "country": "Pays",
+    "district": "Quartier",
+    "email": "E-mail *",
+    "line1": "Adresse",
+    "line2": "Complément",
+    "name": "Nom du Client *",
+    "notes": "Notes",
+    "phone": "Téléphone *",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "Code Postal",
+    "region": "État / Région",
+    "type": "Type de Client *"
+  },
+  "placeholder": {
+    "address": "Saisir l'adresse",
+    "city": "Ville",
+    "country": "Sélectionner le pays",
+    "district": "Quartier",
+    "email": "client@email.com",
+    "line1": "Rue et numéro",
+    "line2": "Appartement, unité ou complément",
+    "name": "Saisir le nom du client",
+    "notes": "Notes supplémentaires sur ce client",
+    "phone": "+33 6 12 34 56 78",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "Code Postal",
+    "region": "État / Région",
+    "type": "Sélectionner le type"
+  },
+  "select": {
+    "company": "Entreprise",
+    "countryBR": "Brésil",
+    "countryUS": "États-Unis",
+    "individual": "Particulier"
+  },
+  "subtitle": "Ajouter un nouveau client au système",
+  "title": "Nouveau Client",
+  "uspsEnteredLabel": "Vous avez saisi :",
+  "uspsRecommendationTitle": "Recommandation USPS",
+  "uspsRecommendedLabel": "USPS recommande :",
+  "validateAddress": "Valider l'adresse"
+}

@@ -1,0 +1,15 @@
+{
+  "avgCompletion": "Durée Moyenne de Réalisation",
+  "categoryDistribution": "Distribution par Catégorie",
+  "completed": "Terminés",
+  "days": "jours",
+  "effortDistribution": "Distribution par Effort",
+  "featuresDeliveredPerWeek": "Fonctionnalités Livrées par Semaine",
+  "inProgress": "En Cours",
+  "priorityDistribution": "Distribution par Priorité",
+  "statusDistribution": "Distribution par Statut",
+  "subtitle": "Insights et métriques pour la feuille de route de votre produit",
+  "title": "Analyse de la Feuille de Route",
+  "totalItems": "Total d'Éléments",
+  "velocityTrend": "Tendance de Vélocité"
+}

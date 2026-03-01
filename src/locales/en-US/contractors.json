@@ -1,0 +1,14 @@
+{
+  "addContractor": "Add Contractor",
+  "editContractor": "Edit Contractor",
+  "subtitle": "Manage project contractors and service providers",
+  "table": {
+    "actions": "Actions",
+    "contact": "Contact",
+    "name": "Name",
+    "rating": "Rating",
+    "specialty": "Specialty",
+    "status": "Status"
+  },
+  "title": "Contractors"
+}

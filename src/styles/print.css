@@ -1,0 +1,118 @@
+/* Print Styles */
+@media print {
+  /* Hide navigation and UI elements */
+  header,
+  nav,
+  aside,
+  .sidebar,
+  .no-print,
+  button,
+  [role="navigation"],
+  [aria-label="navigation"] {
+    display: none !important;
+  }
+
+  /* Reset layout for printing */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Ensure content takes full width */
+  main,
+  .print-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0.5in !important;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-after: always;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+  }
+
+  table thead {
+    display: table-header-group;
+  }
+
+  table tbody tr {
+    page-break-inside: avoid;
+  }
+
+  /* Charts - ensure they're visible */
+  canvas,
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Links */
+  a {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Card borders */
+  .card {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+
+  /* Backgrounds */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Headers and footers for each page */
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  /* First page */
+  @page :first {
+    margin-top: 1in;
+  }
+
+  /* Ensure images fit */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+}

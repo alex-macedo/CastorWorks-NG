@@ -1,0 +1,37 @@
+{
+  "emailDialog": {
+    "title": "Title",
+    "description": "Description",
+    "recipient": "Recipient",
+    "subject": "Subject",
+    "subjectPlaceholder": "Subject Placeholder",
+    "message": "Message",
+    "messagePlaceholder": "Message Placeholder",
+    "fileInfo": "File Info",
+    "linkExpiry": "Link Expiry",
+    "sending": "Sending",
+    "send": "Send"
+  },
+  "storing": "Storing",
+  "storeToFolder": "Store To Folder",
+  "print": "Print",
+  "sendEmail": "Send Email",
+  "sendWhatsApp": "Send Whats App",
+  "generating": "Generating",
+  "error": {
+    "generation": "Generation"
+  },
+  "noPreview": "No Preview",
+  "whatsappDialog": {
+    "title": "Title",
+    "description": "Description",
+    "phoneNumber": "Phone Number",
+    "phoneHint": "Phone Hint",
+    "message": "Message",
+    "messagePlaceholder": "Message Placeholder",
+    "fileInfo": "File Info",
+    "linkExpiry": "Link Expiry",
+    "sending": "Sending",
+    "send": "Send"
+  }
+}

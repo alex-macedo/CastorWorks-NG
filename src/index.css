@@ -1,0 +1,390 @@
+/* Corporate Theme - Professional construction project management platform
+   Based on shadcnstudio.com/theme-generator corporate theme
+   RGB format: CSS variables contain just space-separated numbers
+   Usage: rgb(var(--variable)) to resolve to rgb(237 240 249)
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base theme variables */
+@layer base {
+  :root {
+    /* Corporate Theme - Light Mode */
+    /* NOTE: Variables contain just numbers (space-separated), NOT rgb() wrapper */
+    /* Usage: background-color: rgb(var(--background)); */
+    --background: 248 250 252;
+    --foreground: 17 24 38;
+
+    --card: 246 248 254;
+    --card-foreground: 17 24 38;
+
+    --popover: 255 255 255;
+    --popover-foreground: 17 24 38;
+
+    /* Primary corporate blue */
+    --primary: 1 82 203;
+    --primary-foreground: 255 255 255;
+    --primary-light: 79 145 246;
+    --primary-dark: 0 59 142;
+
+    --secondary: 222 226 241;
+    --secondary-foreground: 54 64 80;
+
+    --muted: 233 236 248;
+    --muted-foreground: 108 114 126;
+
+    --accent: 231 239 252;
+    --accent-foreground: 1 82 203;
+
+    --destructive: 223 34 36;
+
+    /* Status colors - WCAG AA compliant */
+    --success: 22 163 74;
+    --success-foreground: 255 255 255;
+    --warning: 234 179 8;
+    --warning-foreground: 17 24 38;
+
+    --border: 212 219 230;
+    --input: 218 222 231;
+    --ring: 1 82 203;
+
+    /* Chart colors for analytics */
+    --chart-1: 1 82 203;
+    --chart-2: 2 101 253;
+    --chart-3: 0 64 155;
+    --chart-4: 13 73 165;
+    --chart-5: 22 42 78;
+
+    /* Status badges colors */
+    --status-active: 22 163 74;
+    --status-active-foreground: 255 255 255;
+    --status-paused: 234 179 8;
+    --status-paused-foreground: 17 24 38;
+    --status-delayed: 220 38 38;
+    --status-delayed-foreground: 255 255 255;
+    --status-completed: 250 204 21;
+    --status-completed-foreground: 17 24 38;
+    --status-on-hold: 234 179 8;
+    --status-on-hold-foreground: 17 24 38;
+    --info: 1 82 203;
+    --info-foreground: 255 255 255;
+
+    /* Sidebar - Dark theme for professional SaaS look */
+    --sidebar: 28 36 51;
+    --sidebar-foreground: 228 232 239;
+    --sidebar-primary: 79 145 246;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 37 46 61;
+    --sidebar-accent-foreground: 228 232 239;
+    --sidebar-border: 47 59 80;
+    --sidebar-ring: 79 145 246;
+
+    /* Typography */
+    --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-serif: "Source Serif 4", Georgia, serif;
+    --font-mono: IBM Plex Mono, Menlo, Monaco, Consolas, monospace;
+
+    /* Border radius */
+    --radius: 0.375rem;
+
+    /* Shadows */
+    --shadow-2xs: 0 1px 3px 0px rgb(0 0 0 / 0.05);
+    --shadow-xs: 0 1px 3px 0px rgb(0 0 0 / 0.05);
+    --shadow-sm: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 1px 2px -1px rgb(0 0 0 / 0.10);
+    --shadow: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 1px 2px -1px rgb(0 0 0 / 0.10);
+    --shadow-md: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 2px 4px -1px rgb(0 0 0 / 0.10);
+    --shadow-lg: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 4px 6px -1px rgb(0 0 0 / 0.10);
+    --shadow-xl: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 8px 10px -1px rgb(0 0 0 / 0.10);
+    --shadow-2xl: 0 1px 3px 0px rgb(0 0 0 / 0.25);
+
+    /* Custom shadows */
+    --shadow-primary: 0 4px 14px 0px rgb(1 82 203 / 0.35);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, rgb(1 82 203), rgb(2 101 253));
+    --gradient-success: linear-gradient(135deg, rgb(22 163 74), rgb(34 197 94));
+    --gradient-warning: linear-gradient(135deg, rgb(234 179 8), rgb(250 204 21));
+  }
+
+  .dark {
+    /* Corporate Theme - Dark Mode */
+    --background: 28 36 51;
+    --foreground: 228 232 239;
+
+    --card: 49 58 70;
+    --card-foreground: 228 232 239;
+
+    --popover: 49 58 70;
+    --popover-foreground: 228 232 239;
+
+    /* Brighter primary for dark mode */
+    --primary: 2 101 253;
+    --primary-foreground: 255 255 255;
+    --primary-light: 79 145 246;
+    --primary-dark: 1 82 203;
+
+    --secondary: 47 59 80;
+    --secondary-foreground: 228 232 239;
+
+    --muted: 37 46 61;
+    --muted-foreground: 155 162 174;
+
+    --accent: 43 53 74;
+    --accent-foreground: 228 232 239;
+
+    --destructive: 241 68 68;
+
+    /* Status colors - adjusted for dark mode */
+    --success: 34 197 94;
+    --success-foreground: 255 255 255;
+    --warning: 234 179 8;
+    --warning-foreground: 17 24 38;
+
+    --border: 47 59 80;
+    --input: 47 59 80;
+    --ring: 2 101 253;
+
+    /* Chart colors - brighter for dark mode */
+    --chart-1: 2 101 253;
+    --chart-2: 1 82 203;
+    --chart-3: 76 155 255;
+    --chart-4: 13 73 165;
+    --chart-5: 22 42 78;
+
+    /* Status badges colors (dark mode) */
+    --status-active: 34 197 94;
+    --status-active-foreground: 255 255 255;
+    --status-paused: 234 179 8;
+    --status-paused-foreground: 17 24 38;
+    --status-delayed: 239 68 68;
+    --status-delayed-foreground: 255 255 255;
+    --status-completed: 2 101 253;
+    --status-completed-foreground: 255 255 255;
+    --status-on-hold: 234 179 8;
+    --status-on-hold-foreground: 17 24 38;
+    --info: 2 101 253;
+    --info-foreground: 255 255 255;
+
+    /* Sidebar */
+    --sidebar: 28 36 51;
+    --sidebar-foreground: 228 232 239;
+    --sidebar-primary: 2 101 253;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 43 53 74;
+    --sidebar-accent-foreground: 228 232 239;
+    --sidebar-border: 47 59 80;
+    --sidebar-ring: 2 101 253;
+
+    /* Shadows - darker for dark mode */
+    --shadow-2xs: 0 1px 3px 0px rgb(0 0 0 / 0.3);
+    --shadow-xs: 0 1px 3px 0px rgb(0 0 0 / 0.3);
+    --shadow-sm: 0 1px 3px 0px rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow: 0 1px 3px 0px rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 1px 3px 0px rgb(0 0 0 / 0.4), 0 2px 4px -1px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 1px 3px 0px rgb(0 0 0 / 0.4), 0 4px 6px -1px rgb(0 0 0 / 0.4);
+    --shadow-xl: 0 1px 3px 0px rgb(0 0 0 / 0.4), 0 8px 10px -1px rgb(0 0 0 / 0.4);
+    --shadow-2xl: 0 1px 3px 0px rgb(0 0 0 / 0.5);
+
+    --shadow-primary: 0 4px 20px 0px rgb(2 101 253 / 0.4);
+  }
+}
+
+/* CSS custom properties mapping for Tailwind @theme */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-status-active: var(--status-active);
+  --color-status-active-foreground: var(--status-active-foreground);
+  --color-status-paused: var(--status-paused);
+  --color-status-paused-foreground: var(--status-paused-foreground);
+  --color-status-delayed: var(--status-delayed);
+  --color-status-delayed-foreground: var(--status-delayed-foreground);
+  --color-status-completed: var(--status-completed);
+  --color-status-completed-foreground: var(--status-completed-foreground);
+  --color-status-on-hold: var(--status-on-hold);
+  --color-status-on-hold-foreground: var(--status-on-hold-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-primary: var(--shadow-primary);
+
+  --gradient-primary: var(--gradient-primary);
+  --gradient-success: var(--gradient-success);
+  --gradient-warning: var(--gradient-warning);
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+body {
+  background-color: rgb(var(--background));
+  font-family: var(--font-sans);
+  color: rgb(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .bg-mesh-gradient {
+    background: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.1) 0px, transparent 50%);
+  }
+
+  .glass-card {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-xl;
+  }
+
+  .vibrant-shadow-primary {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3), 0 4px 6px -4px rgba(99, 102, 241, 0.3);
+  }
+
+  .vibrant-shadow-success {
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3), 0 4px 6px -4px rgba(16, 185, 129, 0.3);
+  }
+
+  .vibrant-shadow-orange {
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3), 0 4px 6px -4px rgba(249, 115, 22, 0.3);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-secondary-foreground;
+  }
+
+  .metric-card-vibrant {
+    @apply relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 active:scale-95;
+  }
+
+  .metric-card-glow {
+    @apply absolute -right-4 -top-4 w-24 h-24 rounded-full blur-3xl opacity-20 transition-opacity group-hover:opacity-40;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+
+:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: rgb(var(--ring));
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: rgb(var(--background));
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Mobile Scrolling Improvements for mobile device emulation */
+main {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

@@ -1,0 +1,15 @@
+{
+  "attention": "Attention",
+  "client": "Client",
+  "newProject": "New Project",
+  "onSchedule": "On Schedule",
+  "progress": "Progress",
+  "searchPlaceholder": "Search projects...",
+  "statusCompleted": "Completed",
+  "statusInProgress": "In Progress",
+  "statusPaused": "Paused",
+  "statusPlanning": "Planning",
+  "subtitle": "Project and cost center management",
+  "title": "Projects",
+  "viewDetails": "View Details"
+}

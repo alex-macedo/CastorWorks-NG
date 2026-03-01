@@ -1,0 +1,7 @@
+{
+  "description": "Linha do tempo visual de todos os projetos",
+  "error": "Erro: {{error}}",
+  "loadingProjects": "Carregando projetos...",
+  "myProjectsOnly": "Somente meus projetos",
+  "title": "Linha do Tempo de Projetos"
+}

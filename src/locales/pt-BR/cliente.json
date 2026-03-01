@@ -1,0 +1,62 @@
+{
+  "acceptRecommendation": "Aceitar recomendação",
+  "actions": {
+    "cancel": "Cancelar",
+    "delete": "Excluir Cliente",
+    "save": "Salvar Cliente"
+  },
+  "additionalInfo": "Informações Adicionais",
+  "address": "Endereço",
+  "addressIncompleteMessage": "Informe número e complemento para endereços no Brasil.",
+  "addressIncompleteTitle": "Dados do endereço obrigatórios",
+  "addressLookupErrorMessage": "Não foi possível validar este endereço. Você pode continuar editando.",
+  "addressLookupErrorTitle": "Falha na busca do endereço",
+  "addressNumberHelp": "Informe número e complemento.",
+  "basicInfo": "Informações Básicas",
+  "editSubtitle": "Atualizar informações do cliente",
+  "editTitle": "Editar Cliente",
+  "label": {
+    "address": "Endereço",
+    "city": "Cidade",
+    "country": "País",
+    "district": "Bairro",
+    "email": "E-mail *",
+    "line1": "Endereço",
+    "line2": "Complemento",
+    "name": "Nome do Cliente *",
+    "notes": "Observações",
+    "phone": "Telefone *",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "ZIP Code",
+    "region": "Estado",
+    "type": "Tipo de Cliente *"
+  },
+  "placeholder": {
+    "address": "Digite o endereço",
+    "city": "Cidade",
+    "country": "Selecione o país",
+    "district": "Bairro",
+    "email": "cliente@email.com",
+    "line1": "Rua e número",
+    "line2": "Apartamento, bloco ou complemento",
+    "name": "Digite o nome do cliente",
+    "notes": "Observações adicionais sobre este cliente",
+    "phone": "+55 11 98765-4321",
+    "postalCodeBR": "CEP",
+    "postalCodeUS": "ZIP Code",
+    "region": "Estado",
+    "type": "Selecione o tipo"
+  },
+  "select": {
+    "company": "Empresa",
+    "countryBR": "Brasil",
+    "countryUS": "Estados Unidos",
+    "individual": "Pessoa Física"
+  },
+  "subtitle": "Adicionar um novo cliente ao sistema",
+  "title": "Novo Cliente",
+  "uspsEnteredLabel": "Você informou:",
+  "uspsRecommendationTitle": "Recomendação do USPS",
+  "uspsRecommendedLabel": "USPS recomenda:",
+  "validateAddress": "Validar endereço"
+}

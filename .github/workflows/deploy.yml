@@ -1,0 +1,205 @@
+# =============================================================================
+# CastorWorks Deploy Workflow
+# =============================================================================
+# Builds and deploys the production bundle on push to main
+# =============================================================================
+
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      skip_tests:
+        description: 'Skip tests (emergency deploy)'
+        required: false
+        default: 'false'
+        type: boolean
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+  DEPLOY_PATH: /var/www/castorworks/dist
+
+jobs:
+  # ============================================
+  # JOB 1: Lint & Test
+  # ============================================
+  test:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.skip_tests != 'true' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.4
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run tests
+        # Test env vars provided by vitest.config.ts - tests use mocks, not real Supabase
+        # TZ set to match local dev environment for consistent date calculations
+        # SKIP_TRANSLATION_COVERAGE: translations are work-in-progress, strict check disabled
+        env:
+          TZ: America/New_York
+          SKIP_TRANSLATION_COVERAGE: 'true'
+        run: npm run test:run
+
+  # ============================================
+  # JOB 2: Build & Deploy
+  # ============================================
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    needs: [test]
+    if: always() && (needs.test.result == 'success' || needs.test.result == 'skipped')
+    environment:
+      name: production
+      url: https://castorworks.cloud
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.4
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build production bundle
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY || secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          # Build Main App
+          npm run build
+          
+          # Build Mobile App
+          cd castorworks-mobile-app
+          bun install
+          bun run build
+          cd ..
+
+      - name: Generate build info
+        id: build_info
+        run: |
+          BUILD_ID="${{ github.sha }}-$(date +%Y%m%d%H%M%S)"
+          echo "build_id=${BUILD_ID}" >> $GITHUB_OUTPUT
+          
+          # Main app build info
+          echo "BUILD_ID=${BUILD_ID}" > dist/BUILD_INFO
+          echo "COMMIT=${{ github.sha }}" >> dist/BUILD_INFO
+          echo "TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> dist/BUILD_INFO
+          
+          # Mobile app build info
+          echo "BUILD_ID=${BUILD_ID}" > castorworks-mobile-app/dist/BUILD_INFO
+          echo "COMMIT=${{ github.sha }}" >> castorworks-mobile-app/dist/BUILD_INFO
+          echo "TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> castorworks-mobile-app/dist/BUILD_INFO
+
+      - name: Create optimized artifact folder
+        run: |
+          # Main App Artifacts
+          mkdir -p deploy-artifact/main
+          cp -r dist/* deploy-artifact/main/
+          
+          # Mobile App Artifacts
+          mkdir -p deploy-artifact/mobile
+          cp -r castorworks-mobile-app/dist/* deploy-artifact/mobile/
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PROD_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p ${{ secrets.PROD_SSH_PORT || 22 }} ${{ secrets.PROD_SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Create backup on server
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }} \
+            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} \
+            "mkdir -p /var/www/castorworks-backups && \
+             mkdir -p /var/www/castorworks/dist/app && \
+             # Backup Main App
+             if [ -d /var/www/castorworks/dist ]; then \
+               cp -r /var/www/castorworks/dist /var/www/castorworks-backups/main_backup_$(date +%Y%m%d_%H%M%S); \
+             fi && \
+             # Backup Mobile App (old location)
+             if [ -d /var/www/castorworks-mobile/dist ]; then \
+               cp -r /var/www/castorworks-mobile/dist /var/www/castorworks-backups/mobile_backup_$(date +%Y%m%d_%H%M%S); \
+             fi && \
+             ls -t /var/www/castorworks-backups | tail -n +11 | xargs -I {} rm -rf /var/www/castorworks-backups/{}"
+
+      - name: Deploy to server
+        run: |
+          # Deploy Main App
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }}" \
+            --exclude='app/' \
+            deploy-artifact/main/ \
+            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }}:/var/www/castorworks/dist/
+            
+          # Deploy Mobile App to /app subpath
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }}" \
+            deploy-artifact/mobile/ \
+            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }}:/var/www/castorworks/dist/app/
+
+      - name: Set permissions
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }} \
+            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} \
+            "chown -R www-data:www-data /var/www/castorworks && \
+             chmod -R 755 /var/www/castorworks && \
+             find /var/www/castorworks -type f -exec chmod 644 {} \;"
+
+      - name: Reload nginx
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }} \
+            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} \
+            "nginx -t && systemctl reload nginx"
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  # ============================================
+  # JOB 4: Validate Deployment
+  # ============================================
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    steps:
+      - name: Wait for propagation
+        run: sleep 10
+
+      - name: Check castorworks.cloud (Main)
+        run: |
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 --retry 3 --retry-delay 5 https://castorworks.cloud)
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "ERROR: castorworks.cloud returned $HTTP_CODE"
+            exit 1
+          fi
+
+      - name: Check castorworks.cloud/app (Mobile)
+        run: |
+          HTTP_CODE=$(curl -k -s -o /dev/null -w "%{http_code}" --max-time 30 --retry 3 --retry-delay 5 https://castorworks.cloud/app/)
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "ERROR: castorworks.cloud/app returned $HTTP_CODE"
+            exit 1
+          fi

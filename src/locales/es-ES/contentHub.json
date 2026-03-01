@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "approve": "[EN] Approve",
+    "archive": "[EN] Archive",
+    "back": "Volver",
+    "create": "Crear contenido",
+    "edit": "Editar",
+    "view": "Ver"
+  },
+  "admin": {
+    "approvalDescription": "Revisar borradores pendientes de aprobación.",
+    "approvalTitle": "Cola de aprobación",
+    "createDescription": "Redactar un nuevo elemento de contenido.",
+    "createTitle": "Crear contenido",
+    "dashboardDescription": "Gestionar noticias, artículos, documentos y FAQs.",
+    "dashboardTitle": "Hub de Contenido",
+    "editDescription": "Actualizar el elemento de contenido seleccionado.",
+    "editTitle": "Editar contenido",
+    "listDescription": "Filtrar y gestionar cada entrada de contenido.",
+    "listTitle": "Todo el contenido",
+    "manageContent": "Gestionar contenido",
+    "quickActions": "Acciones rápidas",
+    "reviewApprovals": "Revisar aprobaciones",
+    "settings": "Configuraciones",
+    "settingsDescription": "Configurar valores predeterminados para el hub de contenido.",
+    "settingsTitle": "Configuraciones del hub de contenido"
+  },
+  "articlesDescription": "Guías, mejores prácticas y documentación interna.",
+  "articlesTitle": "Artículos de Conocimiento",
+  "createNew": "[EN] Create New",
+  "detail": {
+    "notFound": "Contenido no encontrado.",
+    "published": "Publicado {{date}}",
+    "updated": "Actualizado {{date}}"
+  },
+  "documents": {
+    "empty": "Sin documentos publicados aún."
+  },
+  "documentsDescription": "Documentos de referencia publicados para su equipo.",
+  "documentsTitle": "Documentos",
+  "edit": "[EN] Edit",
+  "editor": {
+    "browseFiles": "Buscar Archivos",
+    "contentPlaceholder": "Escriba su contenido aquí...",
+    "documentAttached": "Documento adjunto",
+    "documentUploadHint": "Haga clic para subir un documento",
+    "fields": {
+      "content": "Contenido",
+      "document": "Documento",
+      "slug": "Slug",
+      "status": "Estado",
+      "title": "Título",
+      "type": "Tipo",
+      "visibility": "Visible para roles"
+    },
+    "markdownHint": "Markdown soportado para formateo.",
+    "previewEmpty": "La vista previa aparecerá aquí.",
+    "save": "Guardar contenido",
+    "saving": "Guardando...",
+    "slugPlaceholder": "Generado desde el título",
+    "statusPlaceholder": "Seleccione el estado",
+    "tabs": {
+      "edit": "Editar",
+      "preview": "Vista previa"
+    },
+    "title": "Editor de Contenido",
+    "titlePlaceholder": "Ingrese un título",
+    "typePlaceholder": "Seleccione el tipo",
+    "uploading": "Subiendo..."
+  },
+  "empty": {
+    "adminDescription": "Cree su primer elemento de contenido para poblar el hub.",
+    "adminTitle": "Sin contenido encontrado",
+    "articlesDescription": "Cree un artículo para documentar mejores prácticas.",
+    "articlesTitle": "Sin artículos aún",
+    "documentsDescription": "Publique documentos para su equipo.",
+    "documentsTitle": "Sin documentos aún",
+    "faqDescription": "Agregue entradas de FAQ para ayudar a los usuarios.",
+    "faqTitle": "Sin FAQs aún",
+    "newsDescription": "Publique una actualización para compartir noticias con el equipo.",
+    "newsTitle": "Sin noticias aún"
+  },
+  "errors": {
+    "accessDenied": "Acceso Denegado",
+    "approveFailed": "[EN] Approve Failed",
+    "archiveFailed": "[EN] Archive Failed",
+    "createFailed": "[EN] Create Failed",
+    "fileTooLarge": "Archivo demasiado grande",
+    "notFound": "[EN] Not Found",
+    "restoreFailed": "[EN] Restore Failed",
+    "updateFailed": "[EN] Update Failed",
+    "uploadFailed": "Error al subir",
+    "userNotFound": "Sesión de usuario no encontrada."
+  },
+  "faqDescription": "Respuestas rápidas a preguntas comunes.",
+  "faqTitle": "Preguntas Frecuentes",
+  "filters": {
+    "allStatuses": "Todos los estados",
+    "allTypes": "Todos los tipos",
+    "reset": "Limpiar filtros",
+    "search": "Buscar contenido",
+    "status": "Estado",
+    "type": "Tipo"
+  },
+  "newsDescription": "Actualizaciones de la empresa y anuncios de la plataforma.",
+  "newsTitle": "Noticias",
+  "noPendingApprovals": "[EN] No Pending Approvals",
+  "pendingApprovals": "[EN] Pending Approvals",
+  "status": {
+    "archived": "Archivado",
+    "draft": "Borrador",
+    "pending": "Pendiente de aprobación",
+    "published": "Publicado"
+  },
+  "success": {
+    "approved": "[EN] Approved",
+    "archived": "[EN] Archived",
+    "fileUploaded": "Archivo subido correctamente",
+    "restored": "[EN] Restored",
+    "savedAsDraft": "[EN] Saved As Draft",
+    "updated": "[EN] Updated"
+  },
+  "toast": {
+    "approveError": "Error al publicar contenido",
+    "approved": "Contenido publicado",
+    "archiveError": "Error al archivar contenido",
+    "archived": "Contenido archivado",
+    "createError": "Error al crear contenido",
+    "created": "Contenido creado",
+    "deleteError": "Error al eliminar contenido",
+    "deleted": "Contenido eliminado",
+    "restoreError": "Error al restaurar contenido",
+    "restored": "Contenido restaurado",
+    "submitError": "Error al enviar para aprobación",
+    "submitted": "Enviado para aprobación",
+    "updateError": "Error al actualizar contenido",
+    "updated": "Contenido actualizado"
+  },
+  "types": {
+    "article": "Artículo",
+    "document": "Documento",
+    "faq": "FAQ",
+    "news": "Noticia"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "approve": "Approve",
+    "archive": "Archive",
+    "back": "Back",
+    "create": "Create content",
+    "edit": "Edit",
+    "view": "View"
+  },
+  "admin": {
+    "approvalDescription": "Review drafts waiting for approval.",
+    "approvalTitle": "Approval queue",
+    "createDescription": "Draft a new content item.",
+    "createTitle": "Create content",
+    "dashboardDescription": "Manage news, articles, documents, and FAQs.",
+    "dashboardTitle": "Content Hub",
+    "editDescription": "Update the selected content item.",
+    "editTitle": "Edit content",
+    "listDescription": "Filter and manage every content entry.",
+    "listTitle": "All content",
+    "manageContent": "Manage content",
+    "quickActions": "Quick actions",
+    "reviewApprovals": "Review approvals",
+    "settings": "Settings",
+    "settingsDescription": "Configure defaults for the content hub.",
+    "settingsTitle": "Content hub settings"
+  },
+  "articlesDescription": "Guides, best practices, and internal documentation.",
+  "articlesTitle": "Knowledge Articles",
+  "createNew": "Create New",
+  "detail": {
+    "notFound": "Content not found.",
+    "published": "Published {{date}}",
+    "updated": "Updated {{date}}"
+  },
+  "documents": {
+    "empty": "No documents published yet."
+  },
+  "documentsDescription": "Reference documents published for your team.",
+  "documentsTitle": "Documents",
+  "edit": "Edit",
+  "editor": {
+    "browseFiles": "Browse Files",
+    "contentPlaceholder": "Write your content here...",
+    "documentAttached": "Document attached",
+    "documentUploadHint": "Click to upload a document (PDF, DOC, XLS, PPT, TXT, ZIP - max 10MB)",
+    "fields": {
+      "content": "Content",
+      "document": "Document",
+      "slug": "Slug",
+      "status": "Status",
+      "title": "Title",
+      "type": "Type",
+      "visibility": "Visible to roles"
+    },
+    "markdownHint": "Markdown supported for formatting.",
+    "previewEmpty": "Preview will appear here.",
+    "save": "Save content",
+    "saving": "Saving...",
+    "slugPlaceholder": "Generated from title",
+    "statusPlaceholder": "Select status",
+    "tabs": {
+      "edit": "Edit",
+      "preview": "Preview"
+    },
+    "title": "Content Editor",
+    "titlePlaceholder": "Enter a title",
+    "typePlaceholder": "Select type",
+    "uploading": "Uploading..."
+  },
+  "empty": {
+    "adminDescription": "Create your first content item to populate the hub.",
+    "adminTitle": "No content found",
+    "articlesDescription": "Create an article to document best practices.",
+    "articlesTitle": "No articles yet",
+    "documentsDescription": "Publish documents for your team.",
+    "documentsTitle": "No documents yet",
+    "faqDescription": "Add FAQ entries to help users.",
+    "faqTitle": "No FAQs yet",
+    "newsDescription": "Publish a news update to share updates with the team.",
+    "newsTitle": "No news yet"
+  },
+  "errors": {
+    "accessDenied": "Access Denied",
+    "approveFailed": "Approve Failed",
+    "archiveFailed": "Archive Failed",
+    "createFailed": "Create Failed",
+    "fileTooLarge": "File too large",
+    "notFound": "Not Found",
+    "restoreFailed": "Restore Failed",
+    "updateFailed": "Update Failed",
+    "uploadFailed": "Upload failed",
+    "userNotFound": "User session not found."
+  },
+  "faqDescription": "Quick answers to common questions.",
+  "faqTitle": "FAQs",
+  "filters": {
+    "allStatuses": "All statuses",
+    "allTypes": "All types",
+    "reset": "Reset filters",
+    "search": "Search content",
+    "status": "Status",
+    "type": "Type"
+  },
+  "newsDescription": "Company updates and platform announcements.",
+  "newsTitle": "News",
+  "noPendingApprovals": "No Pending Approvals",
+  "pendingApprovals": "Pending Approvals",
+  "status": {
+    "archived": "Archived",
+    "draft": "Draft",
+    "pending": "Pending approval",
+    "published": "Published"
+  },
+  "success": {
+    "approved": "Approved",
+    "archived": "Archived",
+    "fileUploaded": "File uploaded successfully",
+    "restored": "Restored",
+    "savedAsDraft": "Saved As Draft",
+    "updated": "Updated"
+  },
+  "toast": {
+    "approveError": "Failed to publish content",
+    "approved": "Content published",
+    "archiveError": "Failed to archive content",
+    "archived": "Content archived",
+    "createError": "Failed to create content",
+    "created": "Content created",
+    "deleteError": "Failed to delete content",
+    "deleted": "Content deleted",
+    "restoreError": "Failed to restore content",
+    "restored": "Content restored",
+    "submitError": "Failed to submit for approval",
+    "submitted": "Submitted for approval",
+    "updateError": "Failed to update content",
+    "updated": "Content updated"
+  },
+  "types": {
+    "article": "Article",
+    "document": "Document",
+    "faq": "FAQ",
+    "news": "News"
+  }
+}

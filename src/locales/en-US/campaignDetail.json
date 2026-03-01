@@ -1,0 +1,72 @@
+{
+  "loadingCampaign": "Loading Campaign",
+  "campaignNotFound": "Campaign Not Found",
+  "confirmSend": "Confirm Send",
+  "status": {
+    "draft": "Draft",
+    "scheduled": "Scheduled",
+    "sending": "Sending",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "failed": "Failed"
+  },
+  "recipientStatus": {
+    "pending": "Pending",
+    "personalizing": "Personalizing",
+    "sending": "Sending",
+    "sent": "Sent",
+    "delivered": "Delivered",
+    "failed": "Failed"
+  },
+  "never": "Never",
+  "backToCampaigns": "Back To Campaigns",
+  "voiceForVip": "Voice For Vip",
+  "sendCampaignNow": "Send Campaign Now",
+  "metrics": {
+    "totalRecipients": "Total Recipients",
+    "messagesSent": "Messages Sent",
+    "percentSent": "Percent Sent",
+    "delivered": "Delivered",
+    "percentSuccess": "Percent Success",
+    "failed": "Failed"
+  },
+  "tabs": {
+    "recipients": "Recipients",
+    "details": "Details",
+    "logs": "Logs"
+  },
+  "recipients": "Recipients",
+  "allContactsIncluded": "All Contacts Included",
+  "loadingRecipients": "Loading Recipients",
+  "noRecipientsFound": "No Recipients Found",
+  "tableHeaders": {
+    "name": "Name",
+    "type": "Type",
+    "phone": "Phone",
+    "status": "Status",
+    "vip": "Vip",
+    "voice": "Voice",
+    "sentAt": "Sent At",
+    "time": "Time",
+    "level": "Level",
+    "event": "Event",
+    "message": "Message"
+  },
+  "vipBadge": "Vip Badge",
+  "voiceBadge": "Voice Badge",
+  "campaignDetails": "Campaign Details",
+  "details": {
+    "audienceType": "Audience Type",
+    "companyName": "Company Name",
+    "scheduledAt": "Scheduled At",
+    "startedAt": "Started At",
+    "completedAt": "Completed At",
+    "voiceMessages": "Voice Messages",
+    "messageTemplate": "Message Template",
+    "noTemplate": "No Template"
+  },
+  "campaignLogs": "Campaign Logs",
+  "activityHistory": "Activity History",
+  "loadingLogs": "Loading Logs",
+  "noLogsAvailable": "No Logs Available"
+}

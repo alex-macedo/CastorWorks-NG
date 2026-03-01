@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: castorworks_ollama
+    restart: unless-stopped
+
+    volumes:
+      # Persistent storage for downloaded models
+      - ollama_models:/root/.ollama
+
+    ports:
+      # Bind to all interfaces - needed for Docker network access
+      # Security is handled via firewall rules (ufw) blocking external access to 11434
+      - "0.0.0.0:11434:11434"
+
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+      # Enable debug logging (optional)
+      - OLLAMA_DEBUG=false
+      # Keep models loaded in memory for faster inference
+      - OLLAMA_KEEP_ALIVE=5m
+      # Maximum number of models to keep loaded
+      - OLLAMA_MAX_LOADED_MODELS=2
+
+    # Resource limits to prevent server exhaustion
+    deploy:
+      resources:
+        limits:
+          # Adjust based on available server resources (2 CPU server)
+          memory: 4G
+          cpus: '1.5'
+        reservations:
+          memory: 2G
+          cpus: '0.5'
+
+    # Health check to ensure service is running
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    # Connect to Supabase network for Edge Functions access
+    networks:
+      - supabase_network
+      - default
+
+    # Optional: GPU support (uncomment if NVIDIA GPU available)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  ollama_models:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /var/lib/ollama/models  # Persistent storage location on host
+
+networks:
+  # Connect to the Supabase network (external - must already exist)
+  # This allows Edge Functions container to reach OLLAMA via hostname
+  supabase_network:
+    name: supabase-castorworks_default
+    external: true
+  # Keep a default network for any standalone operation
+  default:
+    name: castorworks_ollama_network

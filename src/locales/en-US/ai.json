@@ -1,0 +1,57 @@
+{
+  "assistant": {
+    "clearConversation": "Clear conversation",
+    "copied": "Copied!",
+    "copiedDesc": "Message copied to clipboard.",
+    "copy": "Copy",
+    "copyFailed": "Copy failed",
+    "copyFailedDesc": "Failed to copy message.",
+    "headline": "How can I help you today?",
+    "historyCleared": "Conversation cleared",
+    "historyClearedDesc": "Your chat history has been cleared.",
+    "placeholder": "Ask me anything...",
+    "prompts": {
+      "conversion": "What's my conversion rate this month?",
+      "count": "How many estimates do I have?",
+      "estimate": "Create an estimate for a bathroom remodel",
+      "recentEstimates": "Show me my recent estimates"
+    },
+    "subheadline": "I can help you create estimates, search data, and get insights.",
+    "title": "AI Assistant",
+    "tryAsking": "Try asking:",
+    "you": "You"
+  },
+  "insights": {
+    "emptyState": "Click the button below to generate AI-powered insights.",
+    "generate": "Generate Insights",
+    "generating": "Generating insights...",
+    "regenerate": "Regenerate Insights"
+  },
+  "superBot": {
+    "clearConversation": "Clear conversation",
+    "greeting": "Good Morning",
+    "greetingQuestion": "How Can I Assist You Today?",
+    "greetings": {
+      "afternoon": "Good Afternoon",
+      "evening": "Good Evening",
+      "morning": "Good Morning",
+      "night": "Good Night"
+    },
+    "headline": "Super Bot can execute cross-module actions",
+    "helperText": "Use natural language to query data and run actions.",
+    "historyCleared": "Super Bot conversation cleared",
+    "historyClearedDesc": "Your Super Bot chat history has been cleared.",
+    "noHistory": "No conversations yet",
+    "placeholder": "Ask CastorMind-AI...",
+    "prompts": {
+      "delayedProjects": "Show me all projects that are delayed and their tasks.",
+      "duePayments": "What clients have due payments?",
+      "updateTasks": "Update all the tasks in the schedule for project X until today.",
+      "vendorQuotes": "Show me all quotes where vendors did not return a proposal."
+    },
+    "searchPlaceholder": "Search chats...",
+    "subheadline": "Ask in natural language to query and update data.",
+    "suggestions": "Suggestions",
+    "title": "Super Bot"
+  }
+}

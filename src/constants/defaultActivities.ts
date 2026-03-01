@@ -1,0 +1,23 @@
+export const DEFAULT_CONSTRUCTION_ACTIVITIES = [
+  { sequence: 1, name: 'Definição da Obra', defaultDays: 10 },
+  { sequence: 2, name: 'Terraplanagem e infra da Obra', defaultDays: 10 },
+  { sequence: 3, name: 'Marcação e Escavação Alicerce', defaultDays: 10 },
+  { sequence: 4, name: 'Colocação das ferragens', defaultDays: 10 },
+  { sequence: 5, name: 'Enchimento Alicerce', defaultDays: 10 },
+  { sequence: 6, name: 'Impermeabilização', defaultDays: 5 },
+  { sequence: 7, name: 'Alvenaria (casa e muros) e colunas', defaultDays: 29 },
+  { sequence: 8, name: 'Vigas e fechamentos', defaultDays: 16 },
+  { sequence: 9, name: 'Preparação para Laje e conduítes', defaultDays: 12 },
+  { sequence: 10, name: 'Laje', defaultDays: 10 },
+  { sequence: 11, name: 'Telhado', defaultDays: 12 },
+  { sequence: 12, name: 'Instalação hidráulica', defaultDays: 10 },
+  { sequence: 13, name: 'Instalação elétrica', defaultDays: 10 },
+  { sequence: 14, name: 'Reboco interno e externo', defaultDays: 20 },
+  { sequence: 15, name: 'Contrapiso', defaultDays: 7 },
+  { sequence: 16, name: 'Esquadrias (portas e janelas)', defaultDays: 8 },
+  { sequence: 17, name: 'Revestimentos (pisos e azulejos)', defaultDays: 15 },
+  { sequence: 18, name: 'Pintura', defaultDays: 12 },
+  { sequence: 19, name: 'Louças e metais', defaultDays: 5 },
+  { sequence: 20, name: 'Acabamentos finais', defaultDays: 10 },
+  { sequence: 21, name: 'Limpeza final', defaultDays: 3 }
+];

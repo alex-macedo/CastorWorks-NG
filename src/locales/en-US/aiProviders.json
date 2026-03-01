@@ -1,0 +1,86 @@
+{
+  "actions": {
+    "cancel": "Cancel",
+    "disable": "Disable",
+    "edit": "Edit",
+    "enable": "Enable",
+    "moveDown": "Move Down",
+    "moveUp": "Move Up",
+    "save": "Save Changes",
+    "test": "Test Connection"
+  },
+  "adminOnly": "Admin access required to modify AI provider settings",
+  "description": "Configure AI providers for content generation and analytics insights",
+  "dialog": {
+    "apiEndpoint": "API Endpoint",
+    "apiEndpointPlaceholder": "https://api.example.com/v1/...",
+    "apiKey": "API Key",
+    "apiKeyDescription": "Your key is stored securely. Leave blank to keep existing key.",
+    "apiKeyPlaceholder": "sk-...",
+    "defaultModel": "Default Model",
+    "defaultModelPlaceholder": "Select or enter model name",
+    "editDescription": "Configure settings for {{provider}}",
+    "editTitle": "Edit AI Provider",
+    "maxTokens": "Max Tokens",
+    "maxTokensDescription": "Maximum tokens for completions (1-100000)",
+    "priority": "Priority Order",
+    "priorityDescription": "Lower number = higher priority in fallback chain",
+    "temperature": "Temperature",
+    "temperatureDescription": "Sampling temperature (0.0-2.0)"
+  },
+  "help": {
+    "apiProviders": "Anthropic and OpenAI are cloud-based AI services that require API keys and incur usage costs.",
+    "explanation": "AI providers power the intelligent features in CastorWorks, including analytics insights, daily briefings, and content generation. You can configure multiple providers and set up automatic fallbacks.",
+    "fallbackChain": "The fallback chain determines which provider to try if the primary provider fails or is unavailable.",
+    "ollama": "OLLAMA allows you to run open-source LLMs on your own infrastructure, providing low-cost AI with strong data privacy.",
+    "whatIsThis": "What are AI Providers?"
+  },
+  "messages": {
+    "allDisabled": "All AI providers are disabled. Enable at least one provider.",
+    "noProviders": "No AI providers configured",
+    "saveError": "Failed to save settings",
+    "saveSuccess": "Settings saved successfully",
+    "testError": "Failed to test connection",
+    "updateError": "Failed to update AI provider",
+    "updateSuccess": "AI provider updated successfully"
+  },
+  "providers": {
+    "anthropic": "Anthropic (Claude)",
+    "ollama": "OLLAMA (Self-hosted LLM)",
+    "openai": "OpenAI (GPT)",
+    "openrouter": "OpenRouter (Universal)"
+  },
+  "settings": {
+    "cacheTTL": "Cache Duration (hours)",
+    "cacheTTLDescription": "How long to cache AI-generated insights",
+    "defaultProvider": "Default Provider",
+    "defaultProviderDescription": "Primary AI provider to use",
+    "fallbackChain": "Fallback Chain",
+    "fallbackChainDescription": "Order of providers to try if primary fails"
+  },
+  "status": {
+    "active": "Active",
+    "connected": "Connected",
+    "disabled": "Disabled",
+    "enabled": "Enabled",
+    "error": "Connection Error",
+    "inactive": "Inactive",
+    "testing": "Testing connection..."
+  },
+  "table": {
+    "actions": "Actions",
+    "endpoint": "API Endpoint",
+    "model": "Model",
+    "priority": "Priority",
+    "provider": "Provider",
+    "status": "Status"
+  },
+  "test": {
+    "failed": "Connection failed",
+    "model": "Using model: {{model}}",
+    "starting": "Testing connection...",
+    "success": "Connection successful!",
+    "successWithLatency": "Connected in {{latency}}ms"
+  },
+  "title": "AI Provider Configuration"
+}

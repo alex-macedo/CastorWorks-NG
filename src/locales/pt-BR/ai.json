@@ -1,0 +1,57 @@
+{
+  "assistant": {
+    "clearConversation": "Limpar conversa",
+    "copied": "Copiado!",
+    "copiedDesc": "Mensagem copiada para a área de transferência.",
+    "copy": "Copiar",
+    "copyFailed": "Falha ao copiar",
+    "copyFailedDesc": "Falha ao copiar mensagem.",
+    "headline": "Como posso ajudá-lo hoje?",
+    "historyCleared": "Conversa limpa",
+    "historyClearedDesc": "Seu histórico de chat foi limpo.",
+    "placeholder": "Pergunte-me qualquer coisa...",
+    "prompts": {
+      "conversion": "Qual é a minha taxa de conversão este mês?",
+      "count": "Quantos orçamentos eu tenho?",
+      "estimate": "Crie um orçamento para uma reforma de banheiro",
+      "recentEstimates": "Mostre-me meus orçamentos recentes"
+    },
+    "subheadline": "Posso ajudá-lo a criar orçamentos, pesquisar dados e obter insights.",
+    "title": "Assistente IA",
+    "tryAsking": "Tente perguntar:",
+    "you": "Você"
+  },
+  "insights": {
+    "emptyState": "Clique no botão abaixo para gerar insights gerados por IA.",
+    "generate": "Gerar Insights",
+    "generating": "Gerando insights...",
+    "regenerate": "Regenerar Insights"
+  },
+  "superBot": {
+    "clearConversation": "Limpar conversa",
+    "greeting": "Bom dia",
+    "greetingQuestion": "Como posso ajudar você hoje?",
+    "greetings": {
+      "afternoon": "Boa tarde",
+      "evening": "Boa noite",
+      "morning": "Bom dia",
+      "night": "Boa noite"
+    },
+    "headline": "O Super Bot executa ações entre módulos",
+    "helperText": "Use linguagem natural para consultar dados e executar ações.",
+    "historyCleared": "Conversa do Super Bot limpa",
+    "historyClearedDesc": "Seu histórico do Super Bot foi limpo.",
+    "noHistory": "Nenhuma conversa ainda",
+    "placeholder": "Pergunte ao CastorMind-AI...",
+    "prompts": {
+      "delayedProjects": "Mostre todos os projetos atrasados e suas tarefas.",
+      "duePayments": "Quais clientes têm pagamentos em aberto?",
+      "updateTasks": "Atualize todas as tarefas do cronograma do projeto X até hoje.",
+      "vendorQuotes": "Mostre todas as cotações em que fornecedores não enviaram proposta."
+    },
+    "searchPlaceholder": "Buscar conversas...",
+    "subheadline": "Peça em linguagem natural para consultar e atualizar dados.",
+    "suggestions": "Sugestões",
+    "title": "Super Bot"
+  }
+}

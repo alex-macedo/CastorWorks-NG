@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Pipeline Test</title>
+    <script>
+        // Simple test to check if the page loads correctly
+        fetch('http://localhost:5173/architect/sales-pipeline')
+            .then(response => response.text())
+            .then(html => {
+                document.body.innerHTML = html;
+                // Look for the values we care about
+                const totalValueMatch = html.match(/\$[0-9.]+[Mk]/);
+                const opportunitiesMatch = html.match(/(\d+)\s+Opportunities/);
+                
+                console.log('TOTAL VALUE:', totalValueMatch ? totalValueMatch[0] : 'Not found');
+                console.log('OPPORTUNITIES:', opportunitiesMatch ? opportunitiesMatch[1] : 'Not found');
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</head>
+<body>
+    <h1>Loading Sales Pipeline...</h1>
+</body>
+</html>

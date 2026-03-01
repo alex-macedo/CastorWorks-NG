@@ -1,0 +1,10 @@
+{
+  "amount": "Amount",
+  "enterName": "Enter Name",
+  "invoiceNumber": "Invoice Number",
+  "transactionDetails": "Transaction Details",
+  "leaveEmpty": "Leave Empty",
+  "enterDescription": "Enter Description",
+  "quantity": "Quantity",
+  "enterNotes": "Enter Notes"
+}

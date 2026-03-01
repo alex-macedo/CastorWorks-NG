@@ -1,0 +1,75 @@
+# =============================================================================
+# CastorWorks Rollback Workflow
+# =============================================================================
+# Manual workflow to rollback to a previously created backup
+# =============================================================================
+
+name: Rollback Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      backup_name:
+        description: 'Backup folder name (e.g., backup_20260111_170000) or "latest"'
+        required: false
+        default: 'latest'
+        type: string
+      confirm:
+        description: 'Type "ROLLBACK" to confirm'
+        required: true
+        type: string
+
+jobs:
+  rollback:
+    name: Rollback
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.confirm == 'ROLLBACK' }}
+    environment:
+      name: production
+    steps:
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PROD_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p ${{ secrets.PROD_SSH_PORT || 22 }} ${{ secrets.PROD_SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Perform rollback
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }} \
+            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} << 'ROLLBACK_SCRIPT'
+          
+          BACKUP_DIR="/var/www/castorworks-backups"
+          DEPLOY_DIR="/var/www/castorworks/dist"
+          INPUT_BACKUP="${{ github.event.inputs.backup_name }}"
+          
+          if [ "$INPUT_BACKUP" == "latest" ]; then
+            BACKUP_NAME=$(ls -t "$BACKUP_DIR" | head -1)
+          else
+            BACKUP_NAME="$INPUT_BACKUP"
+          fi
+          
+          if [ -z "$BACKUP_NAME" ] || [ ! -d "$BACKUP_DIR/$BACKUP_NAME" ]; then
+            echo "ERROR: Backup not found: $BACKUP_NAME"
+            exit 1
+          fi
+          
+          echo "Rolling back to: $BACKUP_NAME"
+          
+          # Remove current and copy from backup
+          rm -rf "$DEPLOY_DIR"
+          cp -r "$BACKUP_DIR/$BACKUP_NAME" "$DEPLOY_DIR"
+          chown -R www-data:www-data /var/www/castorworks
+          
+          echo "Rollback complete"
+          ROLLBACK_SCRIPT
+
+      - name: Reload nginx
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROD_SSH_PORT || 22 }} \
+            ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} \
+            "nginx -t && systemctl reload nginx"
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

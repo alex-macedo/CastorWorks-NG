@@ -1,0 +1,165 @@
+{
+  "categories": {
+    "contracts": "Contratos",
+    "correspondence": "Correspondencia",
+    "drawings": "Planos",
+    "invoices": "Facturas",
+    "permits": "Permisos",
+    "specifications": "Especificaciones"
+  },
+  "clientAccess": {
+    "accessUpdated": "Acceso de clientes actualizado correctamente",
+    "download": "Descargar",
+    "downloadDescription": "Puede descargar archivos",
+    "failedToUpdate": "Error al actualizar acceso: {{error}}",
+    "manageAccess": "Gestionar Acceso de Clientes",
+    "manageAccessDescription": "Controla qué clientes pueden acceder a esta carpeta y qué pueden hacer con los archivos.",
+    "noClients": "Ningún cliente tiene acceso a este proyecto",
+    "saveChanges": "Guardar Cambios",
+    "saving": "Guardando...",
+    "upload": "Subir",
+    "uploadDescription": "Puede subir archivos a la carpeta",
+    "view": "Ver",
+    "viewDescription": "Puede ver la carpeta y los archivos"
+  },
+  "documentList": {
+    "cardView": "Tarjetas",
+    "cardsPerRow": "Tarjetas por fila",
+    "clientFolder": "Cliente",
+    "folderView": "Vista de carpetas",
+    "listView": "Lista",
+    "personalFolder": "Personal",
+    "sharedFolder": "Compartida"
+  },
+  "emptyState": {
+    "noFiles": "Aún no hay archivos o carpetas",
+    "noFilesInCategory": "No hay archivos en esta categoría",
+    "tryDifferentFilter": "Intente seleccionar un filtro de categoría diferente",
+    "uploadPrompt": "Suba archivos o cree carpetas para comenzar"
+  },
+  "filters": {
+    "allCategories": "Todas las Categorías"
+  },
+  "folderClientAccessError": "Error al actualizar el acceso del cliente",
+  "folderClientAccessSaved": "Acceso de cliente actualizado con éxito",
+  "folderNames": {
+    "clientDocuments": "Documentos del Cliente",
+    "construction": "Construcción",
+    "general": "General",
+    "internal": "Interno",
+    "meetingReports": "Informes de Reuniones",
+    "postConstruction": "Post-construcción",
+    "preliminaryDesign": "Diseño Preliminar",
+    "presentations": "Presentaciones",
+    "propertyDocuments": "Documentos de la Propiedad",
+    "references": "Referencias",
+    "survey": "Levantamiento"
+  },
+  "folderStructureCreated": "La estructura de carpetas del proyecto ha sido creada.",
+  "folderTemplateApplied": "Estructura de carpetas creada con éxito",
+  "folderTemplateError": "Error al aplicar la plantilla de carpeta",
+  "folders": {
+    "applyStandardStructure": "Aplicar Estructura Estándar",
+    "applyTemplate": "Aplicar Plantilla",
+    "applyTemplateDescription": "Seleccione una plantilla de carpeta para crear una estructura de carpetas estandarizada para este proyecto.",
+    "applying": "Aplicando...",
+    "backToProject": "Volver al Proyecto",
+    "canDownload": "Puede descargar",
+    "canUpload": "Puede subir",
+    "canView": "Puede ver",
+    "cancel": "Cancelar",
+    "clientAccessTip": "Los cambios se guardan automáticamente.",
+    "clientAccessible": "Hacer accesible para clientes",
+    "clientAccessibleDescription": "Permitir que los clientes vean y descarguen archivos en esta carpeta",
+    "create": "Crear Carpeta",
+    "createCustomFolder": "Crear Carpeta Personalizada",
+    "createFolder": "Crear Nueva Carpeta",
+    "createFolderDescription": "Organiza tus documentos con carpetas. Elige el tipo según quién debe tener acceso.",
+    "creating": "Creando...",
+    "description": "Descripción (Opcional)",
+    "descriptionPlaceholder": "Describe qué contiene esta carpeta...",
+    "folderName": "Nombre de la Carpeta",
+    "folderNamePlaceholder": "ej., Contratos, Fotos, Informes",
+    "folderType": "Tipo de Carpeta",
+    "foldersToCreate": "Esta plantilla creará {{count}} carpetas:",
+    "manageClientAccess": "Gestionar acceso de clientes",
+    "manageClientAccessDescription": "Controle qué clientes pueden acceder a esta carpeta y qué pueden hacer con los archivos.",
+    "newFolder": "Nueva Carpeta",
+    "noProjectClients": "No hay clientes asignados a este proyecto.",
+    "noTemplates": "No hay plantillas",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "selectTemplate": "Seleccionar Plantilla",
+    "templatePreview": "Vista Previa de la Plantilla",
+    "templateTip": "Aplicar una plantilla creará carpetas en el nivel raíz. Las carpetas existentes no se verán afectadas.",
+    "tip": "Consejo:",
+    "tipText": "Usa \"Personal\" para tus notas privadas, \"Compartida\" para colaboración en equipo, y \"Cliente\" para documentos que quieras compartir con clientes.",
+    "typeDescriptions": {
+      "client": "Accesible para clientes",
+      "personal": "Solo tú puedes ver esta carpeta",
+      "shared": "Visible para todos los miembros del equipo del proyecto"
+    },
+    "types": {
+      "client": "Cliente",
+      "personal": "Personal",
+      "shared": "Compartida"
+    },
+    "uploadFile": "Subir Archivo",
+    "uploadingFiles": "Subiendo archivos..."
+  },
+  "shareDialog": {
+    "addTeamMember": "Añadir Miembro del Equipo",
+    "allMembersHaveAccess": "Todos los miembros tienen acceso",
+    "currentPermissions": "Permisos Actuales",
+    "description": "Gestionar permisos de acceso para \"{{documentName}}\"",
+    "grantAccess": "Conceder Acceso",
+    "loadingTeamMembers": "Cargando miembros del equipo",
+    "noPermissions": "Sin Permisos",
+    "permissionLevels": {
+      "admin": "Administrador",
+      "edit": "Editar",
+      "view": "Ver"
+    },
+    "remove": "Eliminar",
+    "selectTeamMemberPlaceholder": "Seleccione un miembro del equipo",
+    "title": "Compartir Documento"
+  },
+  "templateDescriptions": {
+    "minimal": "Estructura de carpetas simple para proyectos pequeños",
+    "standard": "Estructura de carpetas predeterminada para proyectos de construcción"
+  },
+  "templateNames": {
+    "minimal": "Estructura Mínima",
+    "standard": "Proyecto de Construcción Estándar"
+  },
+  "templates": {
+    "apply": "Aplicar Plantilla",
+    "applyTemplate": "Aplicar Estructura de Carpetas Estándar",
+    "applyTemplateDescription": "Crea una estructura de carpetas estandarizada para tu proyecto. Esto creará múltiples carpetas a la vez.",
+    "applying": "Creando...",
+    "clientAccessible": "Accesible para clientes",
+    "createdFoldersFromTemplate": "Se crearon {{count}} carpetas desde la plantilla",
+    "default": "(Predeterminada)",
+    "failedToApplyTemplate": "Error al aplicar plantilla: {{error}}",
+    "foldersWillBeCreated": "Carpetas que se crearán:",
+    "noTemplatesAvailable": "No hay plantillas disponibles",
+    "selectTemplate": "Seleccionar Plantilla",
+    "selectTemplatePlaceholder": "Elige una estructura de carpetas..."
+  },
+  "uploadDialog": {
+    "cancel": "Cancelar",
+    "categoryLabel": "Categoría (Opcional)",
+    "categoryPlaceholder": "Seleccione una categoría",
+    "description": "Seleccione un archivo para subir a este proyecto",
+    "descriptionLabel": "Descripción (Opcional)",
+    "descriptionPlaceholder": "Agregue una descripción para este archivo",
+    "fileLabel": "Archivo",
+    "folderLabel": "Carpeta de destino",
+    "folderPlaceholder": "Elige dónde se guardará el archivo",
+    "folderRootOption": "Raíz (sin carpeta)",
+    "selectedFile": "Seleccionado: {{fileName}} ({{fileSize}} MB)",
+    "title": "Subir Documento",
+    "upload": "Subir",
+    "uploading": "Subiendo..."
+  }
+}

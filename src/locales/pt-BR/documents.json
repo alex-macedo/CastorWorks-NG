@@ -1,0 +1,165 @@
+{
+  "categories": {
+    "contracts": "Contratos",
+    "correspondence": "Correspondência",
+    "drawings": "Desenhos",
+    "invoices": "Faturas",
+    "permits": "Licenças",
+    "specifications": "Especificações"
+  },
+  "clientAccess": {
+    "accessUpdated": "Acesso de clientes atualizado com sucesso",
+    "download": "Baixar",
+    "downloadDescription": "Pode baixar arquivos",
+    "failedToUpdate": "Falha ao atualizar acesso: {{error}}",
+    "manageAccess": "Gerenciar Acesso de Clientes",
+    "manageAccessDescription": "Controle quais clientes podem acessar esta pasta e o que podem fazer com os arquivos.",
+    "noClients": "Nenhum cliente tem acesso a este projeto",
+    "saveChanges": "Salvar Alterações",
+    "saving": "Salvando...",
+    "upload": "Enviar",
+    "uploadDescription": "Pode enviar arquivos para a pasta",
+    "view": "Visualizar",
+    "viewDescription": "Pode ver a pasta e os arquivos"
+  },
+  "documentList": {
+    "cardView": "Cartões",
+    "cardsPerRow": "Cartões por linha",
+    "clientFolder": "Cliente",
+    "folderView": "Visualização das pastas",
+    "listView": "Lista",
+    "personalFolder": "Pessoal",
+    "sharedFolder": "Compartilhada"
+  },
+  "emptyState": {
+    "noFiles": "Ainda não há arquivos ou pastas",
+    "noFilesInCategory": "Nenhum arquivo nesta categoria",
+    "tryDifferentFilter": "Tente selecionar um filtro de categoria diferente",
+    "uploadPrompt": "Envie arquivos ou crie pastas para começar"
+  },
+  "filters": {
+    "allCategories": "Todas as Categorias"
+  },
+  "folderClientAccessError": "Falha ao atualizar acesso do cliente",
+  "folderClientAccessSaved": "Acesso do cliente atualizado com sucesso",
+  "folderNames": {
+    "clientDocuments": "Documentos do Cliente",
+    "construction": "Construção",
+    "general": "Geral",
+    "internal": "Interno",
+    "meetingReports": "Relatórios de Reuniões",
+    "postConstruction": "Pós-construção",
+    "preliminaryDesign": "Projeto Preliminar",
+    "presentations": "Apresentações",
+    "propertyDocuments": "Documentos da Propriedade",
+    "references": "Referências",
+    "survey": "Levantamento"
+  },
+  "folderStructureCreated": "A estrutura de pastas do projeto foi criada.",
+  "folderTemplateApplied": "Estrutura de pastas criada com sucesso",
+  "folderTemplateError": "Falha ao aplicar modelo de pasta",
+  "folders": {
+    "applyStandardStructure": "Aplicar Estrutura Padrão",
+    "applyTemplate": "Aplicar Modelo",
+    "applyTemplateDescription": "Selecione um modelo de pasta para criar uma estrutura de pastas padronizada para este projeto.",
+    "applying": "Aplicando...",
+    "backToProject": "Voltar ao Projeto",
+    "canDownload": "Pode baixar",
+    "canUpload": "Pode enviar",
+    "canView": "Pode visualizar",
+    "cancel": "Cancelar",
+    "clientAccessTip": "As alterações são salvas automaticamente.",
+    "clientAccessible": "Tornar acessível para clientes",
+    "clientAccessibleDescription": "Permitir que clientes visualizem e baixem arquivos nesta pasta",
+    "create": "Criar Pasta",
+    "createCustomFolder": "Criar Pasta Personalizada",
+    "createFolder": "Criar Nova Pasta",
+    "createFolderDescription": "Organize seus documentos com pastas. Escolha o tipo com base em quem deve ter acesso.",
+    "creating": "Criando...",
+    "description": "Descrição (Opcional)",
+    "descriptionPlaceholder": "Descreva o que esta pasta contém...",
+    "folderName": "Nome da Pasta",
+    "folderNamePlaceholder": "ex., Contratos, Fotos, Relatórios",
+    "folderType": "Tipo de Pasta",
+    "foldersToCreate": "Este modelo criará {{count}} pastas:",
+    "manageClientAccess": "Gerenciar acesso de clientes",
+    "manageClientAccessDescription": "Controle quais clientes podem acessar esta pasta e o que podem fazer com os arquivos.",
+    "newFolder": "Nova Pasta",
+    "noProjectClients": "Nenhum cliente atribuído a este projeto.",
+    "noTemplates": "Nenhum Modelo",
+    "save": "Salvar",
+    "saving": "Salvando...",
+    "selectTemplate": "Selecionar Modelo",
+    "templatePreview": "Pré-visualização do Modelo",
+    "templateTip": "Aplicar um modelo criará pastas no nível raiz. Pastas existentes não serão afetadas.",
+    "tip": "Dica:",
+    "tipText": "Use \"Pessoal\" para suas notas privadas, \"Compartilhada\" para colaboração em equipe, e \"Cliente\" para documentos que você deseja compartilhar com clientes.",
+    "typeDescriptions": {
+      "client": "Acessível para clientes",
+      "personal": "Apenas você pode ver esta pasta",
+      "shared": "Visível para todos os membros da equipe do projeto"
+    },
+    "types": {
+      "client": "Cliente",
+      "personal": "Pessoal",
+      "shared": "Compartilhada"
+    },
+    "uploadFile": "Enviar Arquivo",
+    "uploadingFiles": "Enviando arquivos..."
+  },
+  "shareDialog": {
+    "addTeamMember": "Adicionar Membro da Equipe",
+    "allMembersHaveAccess": "Todos os membros têm acesso",
+    "currentPermissions": "Permissões Atuais",
+    "description": "Gerenciar permissões de acesso para \"{{documentName}}\"",
+    "grantAccess": "Conceder Acesso",
+    "loadingTeamMembers": "Carregando membros da equipe",
+    "noPermissions": "Sem Permissões",
+    "permissionLevels": {
+      "admin": "Administrador",
+      "edit": "Editar",
+      "view": "Visualizar"
+    },
+    "remove": "Remover",
+    "selectTeamMemberPlaceholder": "Selecione um membro da equipe",
+    "title": "Compartilhar Documento"
+  },
+  "templateDescriptions": {
+    "minimal": "Estrutura de pastas simples para pequenos projetos",
+    "standard": "Estrutura de pastas padrão para projetos de construção"
+  },
+  "templateNames": {
+    "minimal": "Estrutura Mínima",
+    "standard": "Projeto de Construção Padrão"
+  },
+  "templates": {
+    "apply": "Aplicar Modelo",
+    "applyTemplate": "Aplicar Estrutura de Pastas Padrão",
+    "applyTemplateDescription": "Crie uma estrutura de pastas padronizada para seu projeto. Isso criará várias pastas de uma vez.",
+    "applying": "Criando...",
+    "clientAccessible": "Acessível para clientes",
+    "createdFoldersFromTemplate": "{{count}} pastas criadas a partir do modelo",
+    "default": "(Padrão)",
+    "failedToApplyTemplate": "Falha ao aplicar modelo: {{error}}",
+    "foldersWillBeCreated": "Pastas que serão criadas:",
+    "noTemplatesAvailable": "Nenhum modelo disponível",
+    "selectTemplate": "Selecionar Modelo",
+    "selectTemplatePlaceholder": "Escolha uma estrutura de pastas..."
+  },
+  "uploadDialog": {
+    "cancel": "Cancelar",
+    "categoryLabel": "Categoria (Opcional)",
+    "categoryPlaceholder": "Selecione uma categoria",
+    "description": "Selecione um arquivo para enviar para este projeto",
+    "descriptionLabel": "Descrição (Opcional)",
+    "descriptionPlaceholder": "Adicione uma descrição para este arquivo",
+    "fileLabel": "Arquivo",
+    "folderLabel": "Pasta de destino",
+    "folderPlaceholder": "Escolha onde o arquivo será salvo",
+    "folderRootOption": "Raiz (sem pasta)",
+    "selectedFile": "Selecionado: {{fileName}} ({{fileSize}} MB)",
+    "title": "Enviar Arquivo",
+    "upload": "Enviar",
+    "uploading": "Enviando..."
+  }
+}

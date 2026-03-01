@@ -1,0 +1,76 @@
+# =============================================================================
+# Emergency Artifact Cleanup
+# =============================================================================
+# Deletes ALL artifacts to immediately free storage space
+# =============================================================================
+
+name: Emergency Cleanup - Delete All Artifacts
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "DELETE ALL" to confirm deletion of ALL artifacts'
+        required: true
+        default: ''
+        type: string
+
+jobs:
+  emergency-cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    if: github.event.inputs.confirm == 'DELETE ALL'
+    steps:
+      - name: Confirm deletion
+        run: |
+          echo "🚨 EMERGENCY CLEANUP INITIATED 🚨"
+          echo "This will delete ALL artifacts in the repository"
+          echo "Confirmation received: ${{ github.event.inputs.confirm }}"
+          
+      - name: Get all artifacts
+        id: get-artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+            
+            console.log('Found', artifacts.data.artifacts.length, 'artifacts');
+            console.log('Total size:', (artifacts.data.total_size_in_bytes / 1024 / 1024).toFixed(2), 'MB');
+            
+            const artifactIds = artifacts.data.artifacts.map(a => a.id);
+            return artifactIds;
+      
+      - name: Delete all artifacts
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: '*'
+          failOnError: false
+          skipCompletions: true
+      
+      - name: Verify cleanup
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds
+            
+            const artifacts = await github.rest.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+            
+            console.log('=== CLEANUP COMPLETE ===');
+            console.log('Remaining artifacts:', artifacts.data.artifacts.length);
+            console.log('Current storage:', (artifacts.data.total_size_in_bytes / 1024 / 1024).toFixed(2), 'MB');
+            
+            if (artifacts.data.artifacts.length === 0) {
+              console.log('✅ ALL ARTIFACTS DELETED SUCCESSFULLY');
+              console.log('✅ GitHub CI should now run normally with optimized workflows');
+            } else {
+              console.log('⚠️  Some artifacts remain - may need additional cleanup');
+            }

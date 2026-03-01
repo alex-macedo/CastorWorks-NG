@@ -1,0 +1,309 @@
+{
+  "description": {
+    "backButton": "Back",
+    "charCount": "{{count}} characters",
+    "filesComingSoon": "Week 5",
+    "generateButton": "Generate Estimate",
+    "infoAlert": "Describe your project in detail. The more specific you are, the more accurate the AI estimate will be.",
+    "maxChars": "Maximum 10,000 characters",
+    "minChars": "Minimum 50 characters required",
+    "needsMore": "Add {{count}} more characters",
+    "processingAudio": "Processing audio",
+    "tabs": {
+      "files": "Files",
+      "text": "Text",
+      "voice": "Voice"
+    },
+    "textPlaceholder": "Describe your project in detail. Include:\n\n• What work needs to be done\n• Specific materials desired\n• Any special requirements\n• Timeline preferences\n• Budget constraints (if any)",
+    "textTips": {
+      "beSpecific": "Be specific about materials (e.g., 'granite countertops' vs 'countertops')",
+      "includeSize": "Include room sizes or square footage when possible",
+      "mentionQuality": "Mention quality level preferences",
+      "noteConstraints": "Note any timeline or budget constraints",
+      "title": "💡 Tips for Better Estimates"
+    },
+    "transcribing": "Transcribing your voice recording...",
+    "voiceAdded": "✓ Added",
+    "voiceInputAdded": "Voice input has been added to your description. Switch to the Text tab to review and edit.",
+    "voiceInputPrefix": "[Voice Input]:"
+  },
+  "detail": {
+    "aiContext": "AI Generation Context",
+    "backToList": "Back to Estimates",
+    "cancel": "Cancel",
+    "client": "Client",
+    "created": "Created",
+    "delete": "Delete",
+    "deleteConfirm": "Delete Estimate",
+    "deleteConfirmDescription": "This action cannot be undone. This will permanently delete the estimate.",
+    "deleteConfirmTitle": "Are you sure?",
+    "deleteFailed": "Delete Failed",
+    "deleted": "Estimate Deleted",
+    "deletedDescription": "The estimate has been permanently deleted.",
+    "descriptionPlaceholder": "Add a description for this estimate...",
+    "duplicate": "Duplicate",
+    "duplicateConfirm": "Create Duplicate",
+    "duplicateConfirmDescription": "This will create a copy of the estimate as a new draft.",
+    "duplicateConfirmTitle": "Duplicate Estimate?",
+    "duplicateFailed": "Duplicate Failed",
+    "duplicated": "Estimate Duplicated",
+    "duplicatedDescription": "A copy of the estimate has been created.",
+    "lastUpdated": "Last updated",
+    "lineItemsDescription": "Edit quantities, prices, and add or remove items as needed",
+    "lineItemsTitle": "Line Items",
+    "location": "Location",
+    "namePlaceholder": "Enter estimate name...",
+    "notFound": "Estimate Not Found",
+    "notFoundDescription": "The estimate you're looking for doesn't exist or you don't have permission to view it.",
+    "project": "Project",
+    "save": "Save Changes",
+    "saveFailed": "Save Failed",
+    "saved": "Estimate Saved",
+    "savedDescription": "Your changes have been saved successfully.",
+    "saving": "Saving...",
+    "status": {
+      "accepted": "Accepted",
+      "expired": "Expired",
+      "viewed": "Viewed"
+    },
+    "title": "Estimate Details",
+    "unsavedChanges": "Unsaved Changes"
+  },
+  "fileUpload": {
+    "clearAll": "Clear All",
+    "dragDrop": "Drag & drop files here, or click to browse",
+    "dropHere": "Drop files here...",
+    "file": "file",
+    "fileRejected": "File Rejected",
+    "fileTooLarge": "File Too Large",
+    "fileTooLargeDescription": "{{name}} exceeds the maximum size of {{max}}",
+    "files": "files",
+    "limits": "Max {{maxFile}} per file, {{maxTotal}} total",
+    "supportedFormats": "Supported: Images, PDFs, Videos, Audio files",
+    "totalSizeTooLarge": "Total Size Too Large",
+    "totalSizeTooLargeDescription": "Total file size exceeds the maximum of {{max}}",
+    "upload": "Upload Files",
+    "uploadComplete": "Upload Complete",
+    "uploadCompleteDescription": "{{count}} file(s) uploaded successfully",
+    "uploadFailed": "Upload Failed",
+    "uploading": "Uploading..."
+  },
+  "lineItems": {
+    "addItem": "Add Line Item",
+    "categories": {
+      "contingency": "Contingency",
+      "demolition": "Demolition",
+      "disposal": "Disposal",
+      "equipment": "Equipment",
+      "labor": "Labor",
+      "materials": "Materials",
+      "permits": "Permits/Fees"
+    },
+    "columns": {
+      "category": "Category",
+      "description": "Description",
+      "quantity": "Qty",
+      "total": "Total",
+      "unit": "Unit",
+      "unitPrice": "Unit Price"
+    },
+    "estimateSummary": "Estimate Summary",
+    "items": "{{count}} items",
+    "lineItemCount": "line item",
+    "markup": "Markup",
+    "newItem": "New item",
+    "noItems": "No line items yet. Click \"Add Line Item\" to get started.",
+    "subtotal": "Subtotal",
+    "subtotalWithMarkup": "Subtotal + Markup",
+    "summaryByCategory": "Summary by Category",
+    "tax": "Tax Rate",
+    "total": "Grand Total"
+  },
+  "list": {
+    "aiGenerated": "AI Generated",
+    "confidence": "confidence",
+    "deleteButton": "Delete",
+    "deleteConfirm": "Delete Estimate",
+    "deleteConfirmDescription": "This action cannot be undone. The estimate will be permanently deleted.",
+    "deleteConfirmTitle": "Delete Estimate?",
+    "deleteError": "Failed to delete estimate",
+    "deleteSuccess": "Estimate deleted successfully",
+    "deleting": "Deleting...",
+    "empty": {
+      "button": "Create Your First Estimate",
+      "description": "Get started by creating your first AI-powered construction estimate. Our AI will analyze your project and generate detailed line items in minutes.",
+      "title": "No estimates yet"
+    },
+    "error": {
+      "title": "Failed to load estimates",
+      "unknown": "Unknown error"
+    },
+    "newButton": "New AI Estimate",
+    "noClient": "No client",
+    "status": {
+      "accepted": "Accepted",
+      "approved": "Approved",
+      "draft": "Draft",
+      "rejected": "Rejected",
+      "sent": "Sent"
+    },
+    "subtitle": "Create and manage construction project estimates",
+    "table": {
+      "columns": {
+        "actions": "Actions",
+        "client": "Client",
+        "created": "Created",
+        "name": "Name",
+        "status": "Status",
+        "total": "Total"
+      },
+      "description": "View, edit, and manage your construction estimates",
+      "title": "All Estimates ({{count}})"
+    },
+    "title": "Estimates",
+    "viewButton": "View",
+    "viewButtonNote": "(Week 3)"
+  },
+  "processing": {
+    "cancelButton": "Cancel",
+    "elapsedTime": "{{seconds}}s elapsed",
+    "error": {
+      "goBack": "Go Back",
+      "title": "Generation Failed",
+      "tryAgain": "Try Again"
+    },
+    "estimatedTime": "⏱️ This typically takes 10-15 seconds",
+    "progressComplete": "{{percent}}% complete",
+    "stages": {
+      "analyzing": "Analyzing project scope and requirements...",
+      "calculating": "Calculating labor hours by trade...",
+      "finalizing": "Finalizing estimate and recommendations...",
+      "generating": "Generating detailed line items...",
+      "researching": "Researching material costs for your location..."
+    },
+    "stagesList": {
+      "finalization": "Finalization",
+      "laborCalculations": "Labor calculations",
+      "lineItemGeneration": "Line item generation",
+      "materialPricing": "Material pricing",
+      "projectAnalysis": "Project analysis"
+    },
+    "success": {
+      "description": "Your AI-powered estimate is ready for review.",
+      "title": "Estimate Generated!"
+    },
+    "title": "Generating Your Estimate"
+  },
+  "projectInfo": {
+    "client": "Client (Optional)",
+    "clientBudget": "Client Budget (Optional)",
+    "clientBudgetDescription": "If the client has a target budget, AI can optimize accordingly",
+    "clientBudgetPlaceholder": "e.g., 25000",
+    "clientDescription": "Link this estimate to an existing client (optional)",
+    "clientPlaceholder": "Select a client or skip",
+    "location": "Location (City, State) *",
+    "locationDescription": "Helps AI estimate local material and labor costs",
+    "locationPlaceholder": "e.g., Austin, TX",
+    "nextButton": "Next: Describe Project",
+    "noClientsFound": "No clients found. You can add one later.",
+    "projectType": "Project Type *",
+    "projectTypeDescription": "What type of construction project is this?",
+    "projectTypes": {
+      "addition": "➕ Home Addition",
+      "basement": "🏠 Basement Finishing",
+      "bathroom": "🚿 Bathroom Remodel",
+      "custom": "⚙️ Custom Project",
+      "deck": "🪵 Deck/Patio",
+      "flooring": "📐 Flooring",
+      "kitchen": "🍳 Kitchen Remodel",
+      "painting": "🎨 Painting",
+      "roofing": "🏚️ Roofing",
+      "whole_home": "🏡 Whole Home Renovation"
+    },
+    "qualityLevel": "Quality Level *",
+    "qualityLevelDescription": "Material quality impacts pricing and durability",
+    "qualityLevels": {
+      "economy": {
+        "description": "Budget-friendly materials",
+        "label": "Economy"
+      },
+      "luxury": {
+        "description": "Top-tier everything",
+        "label": "Luxury"
+      },
+      "premium": {
+        "description": "High-end finishes",
+        "label": "Premium"
+      },
+      "standard": {
+        "description": "Mid-range quality",
+        "label": "Standard"
+      }
+    },
+    "squareFootage": "Square Footage (Optional)",
+    "squareFootageDescription": "Approximate size of the project area in sq ft",
+    "squareFootagePlaceholder": "e.g., 150"
+  },
+  "review": {
+    "aiConfidence": "AI Confidence:",
+    "assumptions": "Assumptions Made:",
+    "createProposal": "Create Proposal",
+    "createProposalComingSoon": "(Week 7)",
+    "days": "days",
+    "duration": "Duration:",
+    "editDescription": "Edit Description",
+    "location": "Location:",
+    "projectSummary": "Project Summary",
+    "quality": "Quality:",
+    "recommendations": "💡 AI Recommendations",
+    "saveDraft": "Save as Draft",
+    "saving": "Saving...",
+    "size": "Size:",
+    "type": "Type:"
+  },
+  "transcription": {
+    "apiError": "API Configuration Error",
+    "apiErrorDescription": "OpenAI API key is not configured. Please contact support.",
+    "complete": "Transcription Complete",
+    "completeDescription": "Transcribed {{minutes}} minute{{plural}} of audio ({{confidence}}% confidence)",
+    "error": "Transcription Failed",
+    "rateLimit": "Rate Limit Exceeded",
+    "rateLimitDescription": "Too many requests. Please wait a moment before trying again.",
+    "uploadError": "Upload Failed",
+    "uploadErrorDescription": "Failed to upload audio file. Please try again."
+  },
+  "voiceRecorder": {
+    "fileSize": "{{size}} MB",
+    "maxDurationReached": "Maximum recording duration reached ({{minutes}} minutes)",
+    "microphoneAccessFailed": "Failed to access microphone. Please check your browser settings.",
+    "microphonePermissionDenied": "Microphone permission denied. Please enable microphone access in your browser settings.",
+    "noMicrophoneFound": "No microphone found. Please connect a microphone and try again.",
+    "pause": "Pause",
+    "paused": "Paused",
+    "reRecord": "Re-record",
+    "readyToRecord": "Ready to record",
+    "recording": "Recording",
+    "resume": "Resume",
+    "startRecording": "Start Recording",
+    "stop": "Stop",
+    "timeFormat": "{{minutes}}:{{seconds}}",
+    "useRecording": "Use This Recording"
+  },
+  "wizard": {
+    "cannotSave": "Cannot Save",
+    "cannotSaveDescription": "Please generate an estimate with at least one line item before saving.",
+    "draftRestored": "Draft Restored",
+    "draftRestoredDescription": "Your previous estimate draft has been restored.",
+    "estimateSaved": "Estimate Saved",
+    "estimateSavedDescription": "Your estimate has been saved as a draft.",
+    "saveFailed": "Save Failed",
+    "steps": {
+      "describe": "Describe",
+      "processing": "Processing",
+      "projectInfo": "Project Info",
+      "review": "Review & Edit"
+    },
+    "subtitle": "Generate accurate construction estimates in minutes using AI",
+    "title": "Create AI-Powered Estimate"
+  }
+}

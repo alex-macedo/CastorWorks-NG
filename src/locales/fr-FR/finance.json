@@ -1,0 +1,14 @@
+{
+  "totalProjectBudget": "[EN] Total Project Budget",
+  "utilization": "[EN] Utilization",
+  "totalExpenses": "[EN] Total Expenses",
+  "pendingInvoices": "[EN] Pending Invoices",
+  "costDistribution": "[EN] Cost Distribution",
+  "latestTransactions": "[EN] Latest Transactions",
+  "addExpense": "[EN] Add Expense",
+  "amount": "[EN] Amount",
+  "category": "[EN] Category",
+  "selectCategory": "[EN] Select Category",
+  "description": "[EN] Description",
+  "descriptionPlaceholder": "[EN] Description Placeholder"
+}

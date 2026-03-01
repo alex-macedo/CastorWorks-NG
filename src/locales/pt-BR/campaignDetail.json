@@ -1,0 +1,72 @@
+{
+  "loadingCampaign": "[EN] Loading Campaign",
+  "campaignNotFound": "[EN] Campaign Not Found",
+  "confirmSend": "[EN] Confirm Send",
+  "status": {
+    "draft": "[EN] Draft",
+    "scheduled": "[EN] Scheduled",
+    "sending": "[EN] Sending",
+    "completed": "[EN] Completed",
+    "cancelled": "[EN] Cancelled",
+    "failed": "[EN] Failed"
+  },
+  "recipientStatus": {
+    "pending": "[EN] Pending",
+    "personalizing": "[EN] Personalizing",
+    "sending": "[EN] Sending",
+    "sent": "[EN] Sent",
+    "delivered": "[EN] Delivered",
+    "failed": "[EN] Failed"
+  },
+  "never": "[EN] Never",
+  "backToCampaigns": "[EN] Back To Campaigns",
+  "voiceForVip": "[EN] Voice For Vip",
+  "sendCampaignNow": "[EN] Send Campaign Now",
+  "metrics": {
+    "totalRecipients": "[EN] Total Recipients",
+    "messagesSent": "[EN] Messages Sent",
+    "percentSent": "[EN] Percent Sent",
+    "delivered": "[EN] Delivered",
+    "percentSuccess": "[EN] Percent Success",
+    "failed": "[EN] Failed"
+  },
+  "tabs": {
+    "recipients": "[EN] Recipients",
+    "details": "[EN] Details",
+    "logs": "[EN] Logs"
+  },
+  "recipients": "[EN] Recipients",
+  "allContactsIncluded": "[EN] All Contacts Included",
+  "loadingRecipients": "[EN] Loading Recipients",
+  "noRecipientsFound": "[EN] No Recipients Found",
+  "tableHeaders": {
+    "name": "[EN] Name",
+    "type": "[EN] Type",
+    "phone": "[EN] Phone",
+    "status": "[EN] Status",
+    "vip": "[EN] Vip",
+    "voice": "[EN] Voice",
+    "sentAt": "[EN] Sent At",
+    "time": "[EN] Time",
+    "level": "[EN] Level",
+    "event": "[EN] Event",
+    "message": "[EN] Message"
+  },
+  "vipBadge": "[EN] Vip Badge",
+  "voiceBadge": "[EN] Voice Badge",
+  "campaignDetails": "[EN] Campaign Details",
+  "details": {
+    "audienceType": "[EN] Audience Type",
+    "companyName": "[EN] Company Name",
+    "scheduledAt": "[EN] Scheduled At",
+    "startedAt": "[EN] Started At",
+    "completedAt": "[EN] Completed At",
+    "voiceMessages": "[EN] Voice Messages",
+    "messageTemplate": "[EN] Message Template",
+    "noTemplate": "[EN] No Template"
+  },
+  "campaignLogs": "[EN] Campaign Logs",
+  "activityHistory": "[EN] Activity History",
+  "loadingLogs": "[EN] Loading Logs",
+  "noLogsAvailable": "[EN] No Logs Available"
+}

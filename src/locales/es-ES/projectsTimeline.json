@@ -1,0 +1,7 @@
+{
+  "description": "Cronograma visual de todos los proyectos",
+  "error": "Error: {{error}}",
+  "loadingProjects": "Cargando proyectos...",
+  "myProjectsOnly": "Solo mis proyectos",
+  "title": "Cronograma de proyectos"
+}

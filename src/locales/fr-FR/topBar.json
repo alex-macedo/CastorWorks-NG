@@ -1,0 +1,13 @@
+{
+  "helpTitle": "Besoin d'aide ?",
+  "helpTooltip": "Besoin d'aide ? Contactez le support ou consultez la documentation.",
+  "language": "Langue",
+  "roadmap": "Feuille de route",
+  "searchPlaceholder": "Rechercher des projets, des clients...",
+  "theme": "Thème",
+  "themeDark": "Sombre",
+  "themeLight": "Clair",
+  "themeSystem": "Système",
+  "themeToggle": "Changer de thème",
+  "weather": "Météo"
+}

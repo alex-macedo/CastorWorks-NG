@@ -1,0 +1,165 @@
+{
+  "categories": {
+    "contracts": "Contracts",
+    "correspondence": "Correspondence",
+    "drawings": "Drawings",
+    "invoices": "Invoices",
+    "permits": "Permits",
+    "specifications": "Specifications"
+  },
+  "clientAccess": {
+    "accessUpdated": "Client access updated successfully",
+    "download": "Download",
+    "downloadDescription": "Can download files",
+    "failedToUpdate": "Failed to update access: {{error}}",
+    "manageAccess": "Manage Client Access",
+    "manageAccessDescription": "Control which clients can access this folder and what they can do with the files.",
+    "noClients": "No clients have access to this project",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "upload": "Upload",
+    "uploadDescription": "Can upload files to folder",
+    "view": "View",
+    "viewDescription": "Can see folder and files"
+  },
+  "documentList": {
+    "cardView": "Cards",
+    "cardsPerRow": "Cards per row",
+    "clientFolder": "Client",
+    "folderView": "Folder view",
+    "listView": "List",
+    "personalFolder": "Personal",
+    "sharedFolder": "Shared"
+  },
+  "emptyState": {
+    "noFiles": "No files or folders yet",
+    "noFilesInCategory": "No files in this category",
+    "tryDifferentFilter": "Try selecting a different category filter",
+    "uploadPrompt": "Upload files or create folders to get started"
+  },
+  "filters": {
+    "allCategories": "All Categories"
+  },
+  "folderClientAccessError": "Failed to update client access",
+  "folderClientAccessSaved": "Client access updated successfully",
+  "folderNames": {
+    "clientDocuments": "Client Documents",
+    "construction": "Construction",
+    "general": "General",
+    "internal": "Internal",
+    "meetingReports": "Meeting Reports",
+    "postConstruction": "Post-construction",
+    "preliminaryDesign": "Preliminary Design",
+    "presentations": "Presentations",
+    "propertyDocuments": "Property Documents",
+    "references": "References",
+    "survey": "Survey"
+  },
+  "folderStructureCreated": "Your project folder structure has been created.",
+  "folderTemplateApplied": "Folder structure created successfully",
+  "folderTemplateError": "Failed to apply folder template",
+  "folders": {
+    "applyStandardStructure": "Apply Standard Structure",
+    "applyTemplate": "Apply Template",
+    "applyTemplateDescription": "Apply Template Description",
+    "applying": "Applying...",
+    "backToProject": "Back to Project",
+    "canDownload": "Can download",
+    "canUpload": "Can upload",
+    "canView": "Can view",
+    "cancel": "Cancel",
+    "clientAccessTip": "Changes are saved automatically.",
+    "clientAccessible": "Make accessible to clients",
+    "clientAccessibleDescription": "Allow clients to view and download files in this folder",
+    "create": "Create Folder",
+    "createCustomFolder": "Create Custom Folder",
+    "createFolder": "Create New Folder",
+    "createFolderDescription": "Organize your documents with folders. Choose the type based on who should have access.",
+    "creating": "Creating...",
+    "description": "Description (Optional)",
+    "descriptionPlaceholder": "Describe what this folder contains...",
+    "folderName": "Folder Name",
+    "folderNamePlaceholder": "e.g., Contracts, Photos, Reports",
+    "folderType": "Folder Type",
+    "foldersToCreate": "This template will create {{count}} folders:",
+    "manageClientAccess": "Manage client access",
+    "manageClientAccessDescription": "Control which clients can access this folder and what they can do with the files.",
+    "newFolder": "New Folder",
+    "noProjectClients": "No clients assigned to this project.",
+    "noTemplates": "No Templates",
+    "save": "Save",
+    "saving": "Saving...",
+    "selectTemplate": "Select Template",
+    "templatePreview": "Template Preview",
+    "templateTip": "Applying a template will create folders at the root level. Existing folders will not be affected.",
+    "tip": "Tip:",
+    "tipText": "Use \"Personal\" for your private notes, \"Shared\" for team collaboration, and \"Client\" for documents you want to share with clients.",
+    "typeDescriptions": {
+      "client": "Accessible to clients",
+      "personal": "Only you can see this folder",
+      "shared": "Visible to all project team members"
+    },
+    "types": {
+      "client": "Client",
+      "personal": "Personal",
+      "shared": "Shared"
+    },
+    "uploadFile": "Upload File",
+    "uploadingFiles": "Uploading files..."
+  },
+  "shareDialog": {
+    "addTeamMember": "Add team member",
+    "allMembersHaveAccess": "All team members have access",
+    "currentPermissions": "Current Permissions",
+    "description": "Manage access permissions for \"{{documentName}}\"",
+    "grantAccess": "Grant Access",
+    "loadingTeamMembers": "Loading team members...",
+    "noPermissions": "No specific permissions set",
+    "permissionLevels": {
+      "admin": "Admin",
+      "edit": "Edit",
+      "view": "View"
+    },
+    "remove": "Remove",
+    "selectTeamMemberPlaceholder": "Select team member",
+    "title": "Share Document"
+  },
+  "templateDescriptions": {
+    "minimal": "Simple folder structure for small projects",
+    "standard": "Default folder structure for construction projects"
+  },
+  "templateNames": {
+    "minimal": "Minimal Structure",
+    "standard": "Standard Construction Project"
+  },
+  "templates": {
+    "apply": "Apply Template",
+    "applyTemplate": "Apply Standard Folder Structure",
+    "applyTemplateDescription": "Create a standardized folder structure for your project. This will create multiple folders at once.",
+    "applying": "Creating...",
+    "clientAccessible": "Client accessible",
+    "createdFoldersFromTemplate": "Created {{count}} folders from template",
+    "default": "(Default)",
+    "failedToApplyTemplate": "Failed to apply template: {{error}}",
+    "foldersWillBeCreated": "Folders that will be created:",
+    "noTemplatesAvailable": "No templates available",
+    "selectTemplate": "Select Template",
+    "selectTemplatePlaceholder": "Choose a folder structure..."
+  },
+  "uploadDialog": {
+    "cancel": "Cancel",
+    "categoryLabel": "Category (Optional)",
+    "categoryPlaceholder": "Select a category",
+    "description": "Select a file to upload to this project",
+    "descriptionLabel": "Description (Optional)",
+    "descriptionPlaceholder": "Add a description for this file",
+    "fileLabel": "File",
+    "folderLabel": "Destination folder",
+    "folderPlaceholder": "Select where the file should go",
+    "folderRootOption": "Root (no folder)",
+    "selectedFile": "Selected: {{fileName}} ({{fileSize}} MB)",
+    "title": "Upload File",
+    "upload": "Upload",
+    "uploading": "Uploading..."
+  }
+}

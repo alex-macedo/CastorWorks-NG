@@ -1,0 +1,23 @@
+{
+  "allProjects": "Tous les Projets (Portfolio)",
+  "incomeVsExpenses": "Revenus vs Dépenses par Projet",
+  "industryBenchmark": "Référence de l'industrie",
+  "margin": "marge",
+  "netProfit": "Bénéfice Net",
+  "ofBudget": "du budget",
+  "overheadVsBenchmark": "Frais Généraux vs Référence",
+  "percentageComparison": "Comparaison en pourcentage de la marge bénéficiaire",
+  "profitMarginByProject": "Marge Bénéficiaire par Projet",
+  "profitMarginVsBenchmark": "Marge Bénéficiaire vs Référence",
+  "returnOnInvestment": "Retour sur investissement",
+  "roi": "ROI",
+  "selectProject": "Sélectionner un projet",
+  "subtitle": "Métriques complètes de rentabilité et de performance",
+  "title": "Tableau de Bord Analytique",
+  "topProjects": "Top 10 projets par rentabilité",
+  "totalExpenses": "Dépenses Totales",
+  "totalRevenue": "Revenus Totaux",
+  "variance": "Écart:",
+  "yourMargin": "Votre Marge:",
+  "yourOverhead": "Vos Frais Généraux:"
+}

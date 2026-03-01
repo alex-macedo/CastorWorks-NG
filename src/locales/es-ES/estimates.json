@@ -1,0 +1,309 @@
+{
+  "description": {
+    "backButton": "Atrás",
+    "charCount": "{{count}} caracteres",
+    "filesComingSoon": "Semana 5",
+    "generateButton": "Generar Estimación",
+    "infoAlert": "Describe tu proyecto en detalle. Cuanto más específico seas, más precisa será la estimación de la IA.",
+    "maxChars": "Máximo 10,000 caracteres",
+    "minChars": "Mínimo 50 caracteres requeridos",
+    "needsMore": "Agrega {{count}} caracteres más",
+    "processingAudio": "Procesando audio",
+    "tabs": {
+      "files": "Archivos",
+      "text": "Texto",
+      "voice": "Voz"
+    },
+    "textPlaceholder": "Describe tu proyecto en detalle. Incluye:\n\n• Qué trabajo necesita hacerse\n• Materiales específicos deseados\n• Cualquier requisito especial\n• Preferencias de tiempo\n• Restricciones presupuestarias (si las hay)",
+    "textTips": {
+      "beSpecific": "Sé específico sobre materiales (ej., 'encimeras de granito' vs 'encimeras')",
+      "includeSize": "Incluye tamaños de habitaciones o metros cuadrados cuando sea posible",
+      "mentionQuality": "Menciona preferencias de nivel de calidad",
+      "noteConstraints": "Nota cualquier restricción de tiempo o presupuesto",
+      "title": "💡 Consejos para Mejores Estimaciones"
+    },
+    "transcribing": "Transcribiendo tu grabación de voz...",
+    "voiceAdded": "✓ Agregado",
+    "voiceInputAdded": "La entrada de voz ha sido agregada a tu descripción. Cambia a la pestaña Texto para revisar y editar.",
+    "voiceInputPrefix": "[Entrada de Voz]:"
+  },
+  "detail": {
+    "aiContext": "Contexto de generación IA",
+    "backToList": "Volver a presupuestos",
+    "cancel": "Cancelar",
+    "client": "Cliente",
+    "created": "Creado",
+    "delete": "Eliminar",
+    "deleteConfirm": "Eliminar presupuesto",
+    "deleteConfirmDescription": "Esta acción no se puede deshacer. Esto eliminará permanentemente el presupuesto.",
+    "deleteConfirmTitle": "¿Estás seguro?",
+    "deleteFailed": "Error al eliminar",
+    "deleted": "Presupuesto eliminado",
+    "deletedDescription": "El presupuesto ha sido eliminado permanentemente.",
+    "descriptionPlaceholder": "Añade una descripción para este presupuesto...",
+    "duplicate": "Duplicar",
+    "duplicateConfirm": "Crear duplicado",
+    "duplicateConfirmDescription": "Esto creará una copia del presupuesto como un nuevo borrador.",
+    "duplicateConfirmTitle": "¿Duplicar presupuesto?",
+    "duplicateFailed": "Error al duplicar",
+    "duplicated": "Presupuesto duplicado",
+    "duplicatedDescription": "Se ha creado una copia del presupuesto.",
+    "lastUpdated": "Última actualización",
+    "lineItemsDescription": "Edita cantidades, precios y añade o elimina elementos según sea necesario",
+    "lineItemsTitle": "Partidas",
+    "location": "Ubicación",
+    "namePlaceholder": "Introduce el nombre del presupuesto...",
+    "notFound": "Presupuesto no encontrado",
+    "notFoundDescription": "El presupuesto que buscas no existe o no tienes permiso para verlo.",
+    "project": "Proyecto",
+    "save": "Guardar cambios",
+    "saveFailed": "Error al guardar",
+    "saved": "Presupuesto guardado",
+    "savedDescription": "Tus cambios se han guardado correctamente.",
+    "saving": "Guardando...",
+    "status": {
+      "accepted": "Aceptado",
+      "expired": "Expirado",
+      "viewed": "Visto"
+    },
+    "title": "Detalles del presupuesto",
+    "unsavedChanges": "Cambios no guardados"
+  },
+  "fileUpload": {
+    "clearAll": "Borrar todo",
+    "dragDrop": "Arrastra y suelta archivos aquí o haz clic para buscar",
+    "dropHere": "Suelta los archivos aquí...",
+    "file": "archivo",
+    "fileRejected": "Archivo rechazado",
+    "fileTooLarge": "Archivo demasiado grande",
+    "fileTooLargeDescription": "{{name}} supera el tamaño máximo de {{max}}",
+    "files": "archivos",
+    "limits": "Máx {{maxFile}} por archivo, {{maxTotal}} en total",
+    "supportedFormats": "Soportados: Imágenes, PDFs, Videos, Archivos de audio",
+    "totalSizeTooLarge": "Tamaño total demasiado grande",
+    "totalSizeTooLargeDescription": "El tamaño total de los archivos supera el máximo de {{max}}",
+    "upload": "Subir archivos",
+    "uploadComplete": "Subida completada",
+    "uploadCompleteDescription": "{{count}} archivo(s) subido(s) con éxito",
+    "uploadFailed": "Error en la subida",
+    "uploading": "Subiendo..."
+  },
+  "lineItems": {
+    "addItem": "Agregar Elemento de Línea",
+    "categories": {
+      "contingency": "Contingencia",
+      "demolition": "Demolición",
+      "disposal": "Eliminación",
+      "equipment": "Equipo",
+      "labor": "Mano de Obra",
+      "materials": "Materiales",
+      "permits": "Permisos/Tarifas"
+    },
+    "columns": {
+      "category": "Categoría",
+      "description": "Descripción",
+      "quantity": "Cant",
+      "total": "Total",
+      "unit": "Unidad",
+      "unitPrice": "Precio Unitario"
+    },
+    "estimateSummary": "Resumen de Estimación",
+    "items": "{{count}} elementos",
+    "lineItemCount": "elemento de línea",
+    "markup": "Margen",
+    "newItem": "Nuevo elemento",
+    "noItems": "Aún no hay elementos de línea. Haga clic en \"Agregar Elemento de Línea\" para comenzar.",
+    "subtotal": "Subtotal",
+    "subtotalWithMarkup": "Subtotal + Margen",
+    "summaryByCategory": "Resumen por Categoría",
+    "tax": "Tasa de Impuesto",
+    "total": "Total General"
+  },
+  "list": {
+    "aiGenerated": "Generado por IA",
+    "confidence": "confianza",
+    "deleteButton": "Eliminar",
+    "deleteConfirm": "Eliminar Estimación",
+    "deleteConfirmDescription": "Esta acción no se puede deshacer. La estimación se eliminará permanentemente.",
+    "deleteConfirmTitle": "¿Eliminar Estimación?",
+    "deleteError": "Error al eliminar la estimación",
+    "deleteSuccess": "Estimación eliminada exitosamente",
+    "deleting": "Eliminando...",
+    "empty": {
+      "button": "Crear Tu Primera Estimación",
+      "description": "Comienza creando tu primera estimación de construcción impulsada por IA. Nuestra IA analizará tu proyecto y generará elementos de línea detallados en minutos.",
+      "title": "Aún no hay estimaciones"
+    },
+    "error": {
+      "title": "Error al cargar estimaciones",
+      "unknown": "Error desconocido"
+    },
+    "newButton": "Nueva Estimación IA",
+    "noClient": "Sin cliente",
+    "status": {
+      "accepted": "Aceptado",
+      "approved": "Aprobado",
+      "draft": "Borrador",
+      "rejected": "Rechazado",
+      "sent": "Enviado"
+    },
+    "subtitle": "Crear y gestionar estimaciones de proyectos de construcción",
+    "table": {
+      "columns": {
+        "actions": "Acciones",
+        "client": "Cliente",
+        "created": "Creado",
+        "name": "Nombre",
+        "status": "Estado",
+        "total": "Total"
+      },
+      "description": "Ver, editar y gestionar tus estimaciones de construcción",
+      "title": "Todas las Estimaciones ({{count}})"
+    },
+    "title": "Estimaciones",
+    "viewButton": "Ver",
+    "viewButtonNote": "(Semana 3)"
+  },
+  "processing": {
+    "cancelButton": "Cancelar",
+    "elapsedTime": "{{seconds}}s transcurridos",
+    "error": {
+      "goBack": "Volver",
+      "title": "Generación Fallida",
+      "tryAgain": "Intentar de Nuevo"
+    },
+    "estimatedTime": "⏱️ Esto típicamente toma 10-15 segundos",
+    "progressComplete": "{{percent}}% completo",
+    "stages": {
+      "analyzing": "Analizando alcance y requisitos del proyecto...",
+      "calculating": "Calculando horas de mano de obra por oficio...",
+      "finalizing": "Finalizando estimación y recomendaciones...",
+      "generating": "Generando elementos de línea detallados...",
+      "researching": "Investigando costos de materiales para tu ubicación..."
+    },
+    "stagesList": {
+      "finalization": "Finalización",
+      "laborCalculations": "Cálculos de mano de obra",
+      "lineItemGeneration": "Generación de elementos",
+      "materialPricing": "Precios de materiales",
+      "projectAnalysis": "Análisis del proyecto"
+    },
+    "success": {
+      "description": "Tu estimación con IA está lista para revisar.",
+      "title": "¡Estimación Generada!"
+    },
+    "title": "Generando Tu Estimación"
+  },
+  "projectInfo": {
+    "client": "Cliente (Opcional)",
+    "clientBudget": "Presupuesto del Cliente (Opcional)",
+    "clientBudgetDescription": "Si el cliente tiene un presupuesto objetivo, la IA puede optimizar en consecuencia",
+    "clientBudgetPlaceholder": "ej., 25000",
+    "clientDescription": "Vincula esta estimación a un cliente existente (opcional)",
+    "clientPlaceholder": "Selecciona un cliente o omite",
+    "location": "Ubicación (Ciudad, Estado) *",
+    "locationDescription": "Ayuda a la IA a estimar costos locales de materiales y mano de obra",
+    "locationPlaceholder": "ej., Austin, TX",
+    "nextButton": "Siguiente: Describir Proyecto",
+    "noClientsFound": "No se encontraron clientes. Puedes agregar uno más tarde.",
+    "projectType": "Tipo de Proyecto *",
+    "projectTypeDescription": "¿Qué tipo de proyecto de construcción es este?",
+    "projectTypes": {
+      "addition": "➕ Ampliación",
+      "basement": "🏠 Acabado de Sótano",
+      "bathroom": "🚿 Remodelación de Baño",
+      "custom": "⚙️ Proyecto Personalizado",
+      "deck": "🪵 Deck/Patio",
+      "flooring": "📐 Pisos",
+      "kitchen": "🍳 Remodelación de Cocina",
+      "painting": "🎨 Pintura",
+      "roofing": "🏚️ Techado",
+      "whole_home": "🏡 Renovación Completa"
+    },
+    "qualityLevel": "Nivel de Calidad *",
+    "qualityLevelDescription": "La calidad del material afecta el precio y la durabilidad",
+    "qualityLevels": {
+      "economy": {
+        "description": "Materiales económicos",
+        "label": "Económico"
+      },
+      "luxury": {
+        "description": "Lo mejor de todo",
+        "label": "Lujo"
+      },
+      "premium": {
+        "description": "Acabados de alta gama",
+        "label": "Premium"
+      },
+      "standard": {
+        "description": "Calidad media",
+        "label": "Estándar"
+      }
+    },
+    "squareFootage": "Metros Cuadrados (Opcional)",
+    "squareFootageDescription": "Tamaño aproximado del área del proyecto en m²",
+    "squareFootagePlaceholder": "ej., 150"
+  },
+  "review": {
+    "aiConfidence": "Confianza de IA:",
+    "assumptions": "Supuestos Realizados:",
+    "createProposal": "Crear Propuesta",
+    "createProposalComingSoon": "(Semana 7)",
+    "days": "días",
+    "duration": "Duración:",
+    "editDescription": "Editar Descripción",
+    "location": "Ubicación:",
+    "projectSummary": "Resumen del Proyecto",
+    "quality": "Calidad:",
+    "recommendations": "💡 Recomendaciones de IA",
+    "saveDraft": "Guardar como Borrador",
+    "saving": "Guardando...",
+    "size": "Tamaño:",
+    "type": "Tipo:"
+  },
+  "transcription": {
+    "apiError": "Error de Configuración de API",
+    "apiErrorDescription": "La clave de API de OpenAI no está configurada. Por favor contacta al soporte.",
+    "complete": "Transcripción Completa",
+    "completeDescription": "Transcrito {{minutes}} minuto{{plural}} de audio ({{confidence}}% de confianza)",
+    "error": "Error de Transcripción",
+    "rateLimit": "Límite de Velocidad Excedido",
+    "rateLimitDescription": "Demasiadas solicitudes. Por favor espera un momento antes de intentar de nuevo.",
+    "uploadError": "Error de Carga",
+    "uploadErrorDescription": "Error al cargar el archivo de audio. Por favor intenta de nuevo."
+  },
+  "voiceRecorder": {
+    "fileSize": "{{size}} MB",
+    "maxDurationReached": "Duración máxima de grabación alcanzada ({{minutes}} minutos)",
+    "microphoneAccessFailed": "Error al acceder al micrófono. Por favor verifica la configuración de tu navegador.",
+    "microphonePermissionDenied": "Permiso de micrófono denegado. Por favor habilita el acceso al micrófono en la configuración de tu navegador.",
+    "noMicrophoneFound": "No se encontró micrófono. Por favor conecta un micrófono e intenta de nuevo.",
+    "pause": "Pausar",
+    "paused": "Pausado",
+    "reRecord": "Regrabar",
+    "readyToRecord": "Listo para grabar",
+    "recording": "Grabando",
+    "resume": "Reanudar",
+    "startRecording": "Iniciar Grabación",
+    "stop": "Detener",
+    "timeFormat": "{{minutes}}:{{seconds}}",
+    "useRecording": "Usar Esta Grabación"
+  },
+  "wizard": {
+    "cannotSave": "No se Puede Guardar",
+    "cannotSaveDescription": "Por favor genera una estimación con al menos un elemento antes de guardar.",
+    "draftRestored": "Borrador Restaurado",
+    "draftRestoredDescription": "Tu borrador de estimación anterior ha sido restaurado.",
+    "estimateSaved": "Estimación Guardada",
+    "estimateSavedDescription": "Tu estimación ha sido guardada como borrador.",
+    "saveFailed": "Error al Guardar",
+    "steps": {
+      "describe": "Describir",
+      "processing": "Procesando",
+      "projectInfo": "Info del Proyecto",
+      "review": "Revisar y Editar"
+    },
+    "subtitle": "Genera estimaciones de construcción precisas en minutos usando IA",
+    "title": "Crear Estimación con IA"
+  }
+}

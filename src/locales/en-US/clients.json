@@ -1,0 +1,38 @@
+{
+  "activeProject": "Active Project",
+  "activeProjects": "Active Projects",
+  "cannotDelete": "Cannot delete client",
+  "contact": "Contact",
+  "contractValue": "Contract Value",
+  "cpfLabel": "CPF/CNPJ",
+  "cpfPlaceholder": "000.000.000-00 or 00.000.000/0001-00",
+  "createNewClient": "Create new client",
+  "deleteConfirm": "Are you sure you want to delete this client?",
+  "deleteDescription": "This will permanently delete the client record. This action cannot be undone.",
+  "editClient": "Edit Client",
+  "email": "Email",
+  "emptyStateDesc": "Add your first client to start managing projects and tracking contracts.",
+  "location": "Location",
+  "metrics": {
+    "acrossAllClients": "Across all clients",
+    "activeContracts": "Active contracts",
+    "thisMonth": "+{{count}} this month"
+  },
+  "newClient": "New Client",
+  "noClientsFound": "No clients found",
+  "noProjects": "No projects",
+  "phone": "Phone",
+  "portal": "Portal",
+  "projects": "Projects",
+  "searchClients": "Search clients...",
+  "selectClient": "Select client...",
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "subtitle": "Manage your client relationships and projects",
+  "title": "Clients",
+  "totalClients": "Total Clients",
+  "totalContractValue": "Total Contract Value",
+  "totalProjects": "Total Projects"
+}

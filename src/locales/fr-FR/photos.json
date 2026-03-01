@@ -1,0 +1,25 @@
+{
+  "uploadSuccess": "[EN] Upload Success",
+  "uploadFailed": "[EN] Upload Failed",
+  "dropHere": "[EN] Drop Here",
+  "dragDropHere": "[EN] Drag Drop Here",
+  "clickToBrowse": "[EN] Click To Browse",
+  "selectPhotos": "[EN] Select Photos",
+  "photosReady": "[EN] Photos Ready",
+  "uploading": "[EN] Uploading",
+  "uploadSaveAll": "[EN] Upload Save All",
+  "uploadProgress": "[EN] Upload Progress",
+  "category": "[EN] Category",
+  "selectCategory": "[EN] Select Category",
+  "categories": {
+    "before": "[EN] Before",
+    "during": "[EN] During",
+    "after": "[EN] After",
+    "issues": "[EN] Issues",
+    "completion": "[EN] Completion",
+    "projectDelivery": "[EN] Project Delivery",
+    "other": "[EN] Other"
+  },
+  "captionOptional": "[EN] Caption Optional",
+  "addDescription": "[EN] Add Description"
+}

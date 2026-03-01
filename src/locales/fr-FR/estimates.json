@@ -1,0 +1,309 @@
+{
+  "description": {
+    "backButton": "Retour",
+    "charCount": "{{count}} caractères",
+    "filesComingSoon": "Semaine 5",
+    "generateButton": "Générer le Devis",
+    "infoAlert": "Décrivez votre projet en détail. Plus vous serez précis, plus l'estimation de l'IA sera précise.",
+    "maxChars": "Maximum 10 000 caractères",
+    "minChars": "Minimum 50 caractères requis",
+    "needsMore": "Ajoutez {{count}} caractères de plus",
+    "processingAudio": "Traitement de l'audio",
+    "tabs": {
+      "files": "Fichiers",
+      "text": "Texte",
+      "voice": "Voix"
+    },
+    "textPlaceholder": "Décrivez votre projet en détail. Incluez :\n\n• Quel travail doit être fait\n• Matériaux spécifiques souhaités\n• Toute exigence spéciale\n• Préférences de calendrier\n• Contraintes budgétaires (le cas échéant)",
+    "textTips": {
+      "beSpecific": "Soyez spécifique sur les matériaux (ex., 'comptoirs en granit' vs 'comptoirs')",
+      "includeSize": "Incluez les tailles de pièces ou la surface lorsque c'est possible",
+      "mentionQuality": "Mentionnez les préférences de niveau de qualité",
+      "noteConstraints": "Notez toute contrainte de calendrier ou de budget",
+      "title": "💡 Conseils pour de Meilleurs Devis"
+    },
+    "transcribing": "Transcription de votre enregistrement vocal...",
+    "voiceAdded": "✓ Ajouté",
+    "voiceInputAdded": "L'entrée vocale a été ajoutée à votre description. Passez à l'onglet Texte pour réviser et modifier.",
+    "voiceInputPrefix": "[Entrée Vocale] :"
+  },
+  "detail": {
+    "aiContext": "Contexte de génération IA",
+    "backToList": "Retour aux devis",
+    "cancel": "Annuler",
+    "client": "Client",
+    "created": "Créé",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer le devis",
+    "deleteConfirmDescription": "Cette action est irréversible. Cela supprimera définitivement le devis.",
+    "deleteConfirmTitle": "Êtes-vous sûr ?",
+    "deleteFailed": "Échec de la suppression",
+    "deleted": "Devis supprimé",
+    "deletedDescription": "Le devis a été supprimé définitivement.",
+    "descriptionPlaceholder": "Ajoutez une description pour ce devis...",
+    "duplicate": "Dupliquer",
+    "duplicateConfirm": "Créer la copie",
+    "duplicateConfirmDescription": "Cela créera une copie du devis comme nouveau brouillon.",
+    "duplicateConfirmTitle": "Dupliquer le devis ?",
+    "duplicateFailed": "Échec de la duplication",
+    "duplicated": "Devis dupliqué",
+    "duplicatedDescription": "Une copie du devis a été créée.",
+    "lastUpdated": "Dernière mise à jour",
+    "lineItemsDescription": "Modifiez les quantités, les prix et ajoutez ou supprimez des éléments selon les besoins",
+    "lineItemsTitle": "Lignes",
+    "location": "Emplacement",
+    "namePlaceholder": "Entrez le nom du devis...",
+    "notFound": "Devis introuvable",
+    "notFoundDescription": "Le devis que vous recherchez n'existe pas ou vous n'avez pas la permission de le voir.",
+    "project": "Projet",
+    "save": "Enregistrer les modifications",
+    "saveFailed": "Échec de l'enregistrement",
+    "saved": "Devis enregistré",
+    "savedDescription": "Vos modifications ont été enregistrées avec succès.",
+    "saving": "Enregistrement...",
+    "status": {
+      "accepted": "Accepté",
+      "expired": "Expiré",
+      "viewed": "Consulté"
+    },
+    "title": "Détails du devis",
+    "unsavedChanges": "Modifications non enregistrées"
+  },
+  "fileUpload": {
+    "clearAll": "Tout effacer",
+    "dragDrop": "Glissez-déposez des fichiers ici ou cliquez pour parcourir",
+    "dropHere": "Déposez les fichiers ici...",
+    "file": "fichier",
+    "fileRejected": "Fichier rejeté",
+    "fileTooLarge": "Fichier trop volumineux",
+    "fileTooLargeDescription": "{{name}} dépasse la taille maximale de {{max}}",
+    "files": "fichiers",
+    "limits": "Max {{maxFile}} par fichier, {{maxTotal}} au total",
+    "supportedFormats": "Prise en charge : Images, PDF, Vidéos, Fichiers audio",
+    "totalSizeTooLarge": "Taille totale trop importante",
+    "totalSizeTooLargeDescription": "La taille totale des fichiers dépasse le maximum de {{max}}",
+    "upload": "Téléverser les fichiers",
+    "uploadComplete": "Téléversement terminé",
+    "uploadCompleteDescription": "{{count}} fichier(s) téléversé(s) avec succès",
+    "uploadFailed": "Échec du téléversement",
+    "uploading": "Téléversement..."
+  },
+  "lineItems": {
+    "addItem": "Ajouter un Élément de Ligne",
+    "categories": {
+      "contingency": "Contingence",
+      "demolition": "Démolition",
+      "disposal": "Élimination",
+      "equipment": "Équipement",
+      "labor": "Main-d'Œuvre",
+      "materials": "Matériaux",
+      "permits": "Permis/Frais"
+    },
+    "columns": {
+      "category": "Catégorie",
+      "description": "Description",
+      "quantity": "Qté",
+      "total": "Total",
+      "unit": "Unité",
+      "unitPrice": "Prix Unitaire"
+    },
+    "estimateSummary": "Résumé du Devis",
+    "items": "{{count}} éléments",
+    "lineItemCount": "élément de ligne",
+    "markup": "Majoration",
+    "newItem": "Nouvel élément",
+    "noItems": "Aucun élément de ligne pour le moment. Cliquez sur \"Ajouter un Élément de Ligne\" pour commencer.",
+    "subtotal": "Sous-total",
+    "subtotalWithMarkup": "Sous-total + Majoration",
+    "summaryByCategory": "Résumé par Catégorie",
+    "tax": "Taux de Taxe",
+    "total": "Total Général"
+  },
+  "list": {
+    "aiGenerated": "Généré par IA",
+    "confidence": "confiance",
+    "deleteButton": "Supprimer",
+    "deleteConfirm": "Supprimer l'estimation",
+    "deleteConfirmDescription": "Cette action ne peut pas être annulée. L'estimation sera supprimée de façon permanente.",
+    "deleteConfirmTitle": "Supprimer l'estimation?",
+    "deleteError": "Échec de la suppression de l'estimation",
+    "deleteSuccess": "Estimation supprimée avec succès",
+    "deleting": "Suppression en cours...",
+    "empty": {
+      "button": "Créer Votre Premier Devis",
+      "description": "Commencez par créer votre premier devis de construction avec IA. Notre IA analysera votre projet et générera des éléments de ligne détaillés en quelques minutes.",
+      "title": "Aucun devis pour le moment"
+    },
+    "error": {
+      "title": "Échec du chargement des devis",
+      "unknown": "Erreur inconnue"
+    },
+    "newButton": "Nouveau Devis IA",
+    "noClient": "Aucun client",
+    "status": {
+      "accepted": "Accepté",
+      "approved": "Approuvé",
+      "draft": "Brouillon",
+      "rejected": "Rejeté",
+      "sent": "Envoyé"
+    },
+    "subtitle": "Créer et gérer les devis de projets de construction",
+    "table": {
+      "columns": {
+        "actions": "Actions",
+        "client": "Client",
+        "created": "Créé",
+        "name": "Nom",
+        "status": "Statut",
+        "total": "Total"
+      },
+      "description": "Voir, modifier et gérer vos devis de construction",
+      "title": "Tous les Devis ({{count}})"
+    },
+    "title": "Devis",
+    "viewButton": "Voir",
+    "viewButtonNote": "(Semaine 3)"
+  },
+  "processing": {
+    "cancelButton": "Annuler",
+    "elapsedTime": "{{seconds}}s écoulées",
+    "error": {
+      "goBack": "Retour",
+      "title": "Échec de la Génération",
+      "tryAgain": "Réessayer"
+    },
+    "estimatedTime": "⏱️ Cela prend généralement 10-15 secondes",
+    "progressComplete": "{{percent}}% terminé",
+    "stages": {
+      "analyzing": "Analyse de la portée et des exigences du projet...",
+      "calculating": "Calcul des heures de main-d'œuvre par métier...",
+      "finalizing": "Finalisation du devis et des recommandations...",
+      "generating": "Génération d'éléments détaillés...",
+      "researching": "Recherche des coûts des matériaux pour votre localisation..."
+    },
+    "stagesList": {
+      "finalization": "Finalisation",
+      "laborCalculations": "Calculs de main-d'œuvre",
+      "lineItemGeneration": "Génération d'éléments",
+      "materialPricing": "Tarification des matériaux",
+      "projectAnalysis": "Analyse du projet"
+    },
+    "success": {
+      "description": "Votre devis avec IA est prêt à être révisé.",
+      "title": "Devis Généré !"
+    },
+    "title": "Génération de Votre Devis"
+  },
+  "projectInfo": {
+    "client": "Client (Optionnel)",
+    "clientBudget": "Budget Client (Optionnel)",
+    "clientBudgetDescription": "Si le client a un budget cible, l'IA peut optimiser en conséquence",
+    "clientBudgetPlaceholder": "ex., 25000",
+    "clientDescription": "Lier ce devis à un client existant (optionnel)",
+    "clientPlaceholder": "Sélectionner un client ou ignorer",
+    "location": "Localisation (Ville, État) *",
+    "locationDescription": "Aide l'IA à estimer les coûts locaux des matériaux et de la main-d'œuvre",
+    "locationPlaceholder": "ex., Paris, FR",
+    "nextButton": "Suivant : Décrire le Projet",
+    "noClientsFound": "Aucun client trouvé. Vous pouvez en ajouter un plus tard.",
+    "projectType": "Type de Projet *",
+    "projectTypeDescription": "Quel type de projet de construction s'agit-il ?",
+    "projectTypes": {
+      "addition": "➕ Agrandissement",
+      "basement": "🏠 Finition de Sous-sol",
+      "bathroom": "🚿 Rénovation de Salle de Bain",
+      "custom": "⚙️ Projet Personnalisé",
+      "deck": "🪵 Terrasse/Patio",
+      "flooring": "📐 Revêtement de Sol",
+      "kitchen": "🍳 Rénovation de Cuisine",
+      "painting": "🎨 Peinture",
+      "roofing": "🏚️ Toiture",
+      "whole_home": "🏡 Rénovation Complète"
+    },
+    "qualityLevel": "Niveau de Qualité *",
+    "qualityLevelDescription": "La qualité des matériaux affecte le prix et la durabilité",
+    "qualityLevels": {
+      "economy": {
+        "description": "Matériaux économiques",
+        "label": "Économique"
+      },
+      "luxury": {
+        "description": "Le meilleur de tout",
+        "label": "Luxe"
+      },
+      "premium": {
+        "description": "Finition haut de gamme",
+        "label": "Premium"
+      },
+      "standard": {
+        "description": "Qualité moyenne",
+        "label": "Standard"
+      }
+    },
+    "squareFootage": "Surface (Optionnel)",
+    "squareFootageDescription": "Taille approximative de la zone du projet en m²",
+    "squareFootagePlaceholder": "ex., 150"
+  },
+  "review": {
+    "aiConfidence": "Confiance IA :",
+    "assumptions": "Hypothèses Faites :",
+    "createProposal": "Créer une Proposition",
+    "createProposalComingSoon": "(Semaine 7)",
+    "days": "jours",
+    "duration": "Durée :",
+    "editDescription": "Modifier la Description",
+    "location": "Localisation :",
+    "projectSummary": "Résumé du Projet",
+    "quality": "Qualité :",
+    "recommendations": "💡 Recommandations IA",
+    "saveDraft": "Enregistrer comme Brouillon",
+    "saving": "Enregistrement...",
+    "size": "Taille :",
+    "type": "Type :"
+  },
+  "transcription": {
+    "apiError": "Erreur de Configuration de l'API",
+    "apiErrorDescription": "La clé API OpenAI n'est pas configurée. Veuillez contacter le support.",
+    "complete": "Transcription Terminée",
+    "completeDescription": "Transcrit {{minutes}} minute{{plural}} d'audio ({{confidence}}% de confiance)",
+    "error": "Échec de la Transcription",
+    "rateLimit": "Limite de Taux Dépassée",
+    "rateLimitDescription": "Trop de demandes. Veuillez attendre un moment avant de réessayer.",
+    "uploadError": "Échec du Téléchargement",
+    "uploadErrorDescription": "Échec du téléchargement du fichier audio. Veuillez réessayer."
+  },
+  "voiceRecorder": {
+    "fileSize": "{{size}} Mo",
+    "maxDurationReached": "Durée maximale d'enregistrement atteinte ({{minutes}} minutes)",
+    "microphoneAccessFailed": "Échec de l'accès au microphone. Veuillez vérifier les paramètres de votre navigateur.",
+    "microphonePermissionDenied": "Permission du microphone refusée. Veuillez activer l'accès au microphone dans les paramètres de votre navigateur.",
+    "noMicrophoneFound": "Aucun microphone trouvé. Veuillez connecter un microphone et réessayer.",
+    "pause": "Pause",
+    "paused": "En pause",
+    "reRecord": "Réenregistrer",
+    "readyToRecord": "Prêt à enregistrer",
+    "recording": "Enregistrement",
+    "resume": "Reprendre",
+    "startRecording": "Démarrer l'Enregistrement",
+    "stop": "Arrêter",
+    "timeFormat": "{{minutes}}:{{seconds}}",
+    "useRecording": "Utiliser Cet Enregistrement"
+  },
+  "wizard": {
+    "cannotSave": "Impossible de Sauvegarder",
+    "cannotSaveDescription": "Veuillez générer un devis avec au moins un élément avant de sauvegarder.",
+    "draftRestored": "Brouillon Restauré",
+    "draftRestoredDescription": "Votre brouillon de devis précédent a été restauré.",
+    "estimateSaved": "Devis Sauvegardé",
+    "estimateSavedDescription": "Votre devis a été sauvegardé comme brouillon.",
+    "saveFailed": "Échec de la Sauvegarde",
+    "steps": {
+      "describe": "Décrire",
+      "processing": "Traitement",
+      "projectInfo": "Info Projet",
+      "review": "Réviser et Modifier"
+    },
+    "subtitle": "Générez des devis de construction précis en quelques minutes grâce à l'IA",
+    "title": "Créer un Devis avec IA"
+  }
+}

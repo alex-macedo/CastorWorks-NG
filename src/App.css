@@ -1,0 +1,126 @@
+/* App.css - Custom application styles
+ * 
+ * This file is available for application-specific CSS that doesn't fit into
+ * the Tailwind utility classes or component-specific styles.
+ * 
+ * Note: Most styling is handled through:
+ * - Tailwind CSS utilities (index.css)
+ * - Component-specific styles (inline or CSS modules)
+ * - shadcn/ui component styles
+ * 
+ * Custom CSS for specific layouts and behaviors:
+ */
+
+/* Supervisor Mobile Layout - Full width without container constraints */
+body.supervisor-mobile .container {
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Override any container-like elements in supervisor mobile */
+body.supervisor-mobile .container,
+body.supervisor-mobile [class*="container"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.supervisor-mobile {
+  /* Supervisor module visual theme aligned with mobile app UI */
+  --background: 0 0 0;
+  --foreground: 241 245 249;
+  --card: 18 22 25;
+  --card-foreground: 241 245 249;
+  --popover: 16 22 29;
+  --popover-foreground: 241 245 249;
+  --muted: 15 23 33;
+  --muted-foreground: 148 163 184;
+  --accent: 20 30 44;
+  --accent-foreground: 241 245 249;
+  --border: 39 46 57;
+  --input: 39 46 57;
+  --primary: 251 191 36;
+  --primary-foreground: 17 24 38;
+  --sidebar: 0 0 0;
+  --sidebar-foreground: 241 245 249;
+  --sidebar-primary: 37 99 235;
+  --sidebar-primary-foreground: 255 255 255;
+  --sidebar-accent: 15 23 33;
+  --sidebar-accent-foreground: 241 245 249;
+  --sidebar-border: 39 46 57;
+
+  overflow-x: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Ensure html and body don't have margins */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure root element always takes full width */
+#root {
+  width: 100% !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Supervisor mobile specific overrides */
+body.supervisor-mobile #root {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure supervisor mobile content takes full width */
+body.supervisor-mobile .supervisor-mobile {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure all direct children of supervisor-mobile take full width */
+body.supervisor-mobile .supervisor-mobile > * {
+  width: 100%;
+}
+
+/* Keep supervisor sticky headers within layout bounds */
+body.supervisor-mobile .supervisor-mobile .sticky.top-0 {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure project selector doesn't cause overflow */
+body.supervisor-mobile .supervisor-mobile .sticky.top-0 select {
+  max-width: 100%;
+}
+
+/* Handle responsive project selector */
+@media (max-width: 640px) {
+  body.supervisor-mobile .supervisor-mobile .sticky.top-0 .min-w-\[120px\] {
+    min-width: 100px !important;
+  }
+  body.supervisor-mobile .supervisor-mobile .sticky.top-0 .max-w-\[200px\] {
+    max-width: 150px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.supervisor-mobile .supervisor-mobile .sticky.top-0 .min-w-\[120px\] {
+    min-width: 80px !important;
+  }
+  body.supervisor-mobile .supervisor-mobile .sticky.top-0 .max-w-\[200px\] {
+    max-width: 120px !important;
+  }
+}

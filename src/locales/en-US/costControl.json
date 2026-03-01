@@ -1,0 +1,16 @@
+{
+  "importFromWbs": "Import From Wbs",
+  "importFromWbsDescription": "Import From Wbs Description",
+  "wbsTemplate": "Wbs Template",
+  "selectWbsTemplate": "Select Wbs Template",
+  "budgetVersionName": "Budget Version Name",
+  "enterVersionName": "Enter Version Name",
+  "effectiveDate": "Effective Date",
+  "importPreview": "Import Preview",
+  "phases": "Phases",
+  "itemsWithCostCodes": "Items With Cost Codes",
+  "uniqueCostCodes": "Unique Cost Codes",
+  "availableCostCodes": "Available Cost Codes",
+  "noCostCodesWarning": "No Cost Codes Warning",
+  "import": "Import"
+}

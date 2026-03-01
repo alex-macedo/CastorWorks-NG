@@ -1,0 +1,14 @@
+{
+  "addContractor": "Agregar Contratista",
+  "editContractor": "Editar Contratista",
+  "subtitle": "Administrar contratistas y proveedores de servicios",
+  "table": {
+    "actions": "Acciones",
+    "contact": "Contacto",
+    "name": "Nombre",
+    "rating": "Calificación",
+    "specialty": "Especialidad",
+    "status": "Estado"
+  },
+  "title": "Contratistas"
+}

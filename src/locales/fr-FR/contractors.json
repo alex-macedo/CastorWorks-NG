@@ -1,0 +1,14 @@
+{
+  "addContractor": "Ajouter un Entrepreneur",
+  "editContractor": "Modifier l'Entrepreneur",
+  "subtitle": "Gérer les entrepreneurs et prestataires de services",
+  "table": {
+    "actions": "Actions",
+    "contact": "Contact",
+    "name": "Nom",
+    "rating": "Évaluation",
+    "specialty": "Spécialité",
+    "status": "Statut"
+  },
+  "title": "Entrepreneurs"
+}

@@ -1,0 +1,15 @@
+{
+  "attention": "Atenção",
+  "client": "Cliente",
+  "newProject": "Nova Obra",
+  "onSchedule": "No Prazo",
+  "progress": "Progresso",
+  "searchPlaceholder": "Buscar obras...",
+  "statusCompleted": "Concluído",
+  "statusInProgress": "Em Andamento",
+  "statusPaused": "Pausado",
+  "statusPlanning": "Planejamento",
+  "subtitle": "Gestão de obras e centros de custo",
+  "title": "Obras",
+  "viewDetails": "Ver Detalhes"
+}

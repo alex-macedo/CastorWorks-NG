@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # ... existing services ...
+
+  whisper-cpp:
+    image: ghcr.io/ggerganov/whisper.cpp:latest
+    container_name: castorworks-whisper
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./whisper-models:/root/.cache/whisper.cpp
+    environment:
+      # Model: base (140M) - good balance of speed/accuracy
+      # Options: tiny (39M), base (140M), small (466M), medium (1.5G), large (2.9G)
+      WHISPER_MODEL: base
+      # Enable GPU acceleration (requires nvidia-docker)
+      # WHISPER_CUDA: "1"
+    # GPU support (uncomment if using nvidia-docker)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - default

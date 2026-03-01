@@ -1,0 +1,21 @@
+{
+  "operational": "[EN] Operational",
+  "degraded": "[EN] Degraded",
+  "down": "[EN] Down",
+  "systemStatus": "[EN] System Status",
+  "realTimeMonitoring": "[EN] Real Time Monitoring",
+  "overallStatus": "[EN] Overall Status",
+  "allSystemsOperational": "[EN] All Systems Operational",
+  "someSystemsExperiencingIssues": "[EN] Some Systems Experiencing Issues",
+  "serviceDisruptionDetected": "[EN] Service Disruption Detected",
+  "refresh": "[EN] Refresh",
+  "responseTime": "[EN] Response Time",
+  "uptime": "[EN] Uptime",
+  "aboutStatusPage": "[EN] About Status Page",
+  "statusDescription": "[EN] Status Description",
+  "construction": "[EN] Construction",
+  "design": "[EN] Design",
+  "permits": "[EN] Permits",
+  "complete": "[EN] Complete",
+  "active": "[EN] Active"
+}

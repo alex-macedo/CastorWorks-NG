@@ -1,0 +1,15 @@
+{
+  "saveSuccess": "[EN] Save Success",
+  "saveFailed": "[EN] Save Failed",
+  "title": "[EN] Title",
+  "description": "[EN] Description",
+  "taskReminders": "[EN] Task Reminders",
+  "reminderDays": "[EN] Reminder Days",
+  "dueDay": "[EN] Due Day",
+  "daysBefore": "[EN] Days Before",
+  "channels": "[EN] Channels",
+  "bellNotification": "[EN] Bell Notification",
+  "whatsappNotification": "[EN] Whatsapp Notification",
+  "paymentReminders": "[EN] Payment Reminders",
+  "save": "[EN] Save"
+}

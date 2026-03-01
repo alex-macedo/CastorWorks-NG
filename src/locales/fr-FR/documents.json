@@ -1,0 +1,165 @@
+{
+  "categories": {
+    "contracts": "Contrats",
+    "correspondence": "Correspondance",
+    "drawings": "Plans",
+    "invoices": "Factures",
+    "permits": "Permis",
+    "specifications": "Spécifications"
+  },
+  "clientAccess": {
+    "accessUpdated": "Accès des clients mis à jour avec succès",
+    "download": "Télécharger",
+    "downloadDescription": "Peut télécharger des fichiers",
+    "failedToUpdate": "Échec de la mise à jour de l'accès: {{error}}",
+    "manageAccess": "Gérer l'Accès des Clients",
+    "manageAccessDescription": "Contrôlez quels clients peuvent accéder à ce dossier et ce qu'ils peuvent faire avec les fichiers.",
+    "noClients": "Aucun client n'a accès à ce projet",
+    "saveChanges": "Enregistrer les Modifications",
+    "saving": "Enregistrement en cours...",
+    "upload": "Téléverser",
+    "uploadDescription": "Peut téléverser des fichiers dans le dossier",
+    "view": "Voir",
+    "viewDescription": "Peut voir le dossier et les fichiers"
+  },
+  "documentList": {
+    "cardView": "Cartes",
+    "cardsPerRow": "Cartes par ligne",
+    "clientFolder": "Client",
+    "folderView": "Affichage des dossiers",
+    "listView": "Liste",
+    "personalFolder": "Personnel",
+    "sharedFolder": "Partagé"
+  },
+  "emptyState": {
+    "noFiles": "Aucun fichier ou dossier pour le moment",
+    "noFilesInCategory": "Aucun fichier dans cette catégorie",
+    "tryDifferentFilter": "Essayez de sélectionner un filtre de catégorie différent",
+    "uploadPrompt": "Téléversez des fichiers ou créez des dossiers pour commencer"
+  },
+  "filters": {
+    "allCategories": "Toutes les Catégories"
+  },
+  "folderClientAccessError": "FolderClientAccessError",
+  "folderClientAccessSaved": "FolderClientAccessSaved",
+  "folderNames": {
+    "clientDocuments": "Client Documents",
+    "construction": "Construction",
+    "general": "General",
+    "internal": "Internal",
+    "meetingReports": "Meeting Reports",
+    "postConstruction": "Post-construction",
+    "preliminaryDesign": "Preliminary Design",
+    "presentations": "Presentations",
+    "propertyDocuments": "Property Documents",
+    "references": "References",
+    "survey": "Survey"
+  },
+  "folderStructureCreated": "La structure de dossiers du projet a été créée.",
+  "folderTemplateApplied": "FolderTemplateApplied",
+  "folderTemplateError": "FolderTemplateError",
+  "folders": {
+    "applyStandardStructure": "Appliquer une Structure Standard",
+    "applyTemplate": "[fr-FR] Apply Template",
+    "applyTemplateDescription": "[fr-FR] Apply Template Description",
+    "applying": "Application...",
+    "backToProject": "Retour au Projet",
+    "canDownload": "Folders.canDownload",
+    "canUpload": "Folders.canUpload",
+    "canView": "Folders.canView",
+    "cancel": "Annuler",
+    "clientAccessTip": "Folders.clientAccessTip",
+    "clientAccessible": "Rendre accessible aux clients",
+    "clientAccessibleDescription": "Permettre aux clients de voir et télécharger les fichiers dans ce dossier",
+    "create": "Créer le Dossier",
+    "createCustomFolder": "Créer un Dossier Personnalisé",
+    "createFolder": "Créer un Nouveau Dossier",
+    "createFolderDescription": "Organisez vos documents avec des dossiers. Choisissez le type en fonction de qui doit avoir accès.",
+    "creating": "Création en cours...",
+    "description": "Description (Optionnel)",
+    "descriptionPlaceholder": "Décrivez ce que contient ce dossier...",
+    "folderName": "Nom du Dossier",
+    "folderNamePlaceholder": "ex., Contrats, Photos, Rapports",
+    "folderType": "Type de Dossier",
+    "foldersToCreate": "Folders.foldersToCreate",
+    "manageClientAccess": "Gérer l'accès des clients",
+    "manageClientAccessDescription": "Folders.manageClientAccessDescription",
+    "newFolder": "Nouveau Dossier",
+    "noProjectClients": "Folders.noProjectClients",
+    "noTemplates": "[fr-FR] No Templates",
+    "save": "Folders.save",
+    "saving": "Folders.saving",
+    "selectTemplate": "Folders.selectTemplate",
+    "templatePreview": "Folders.templatePreview",
+    "templateTip": "Folders.templateTip",
+    "tip": "Astuce:",
+    "tipText": "Utilisez \"Personnel\" pour vos notes privées, \"Partagé\" pour la collaboration d'équipe, et \"Client\" pour les documents que vous souhaitez partager avec les clients.",
+    "typeDescriptions": {
+      "client": "Accessible aux clients",
+      "personal": "Seulement vous pouvez voir ce dossier",
+      "shared": "Visible par tous les membres de l'équipe du projet"
+    },
+    "types": {
+      "client": "Client",
+      "personal": "Personnel",
+      "shared": "Partagé"
+    },
+    "uploadFile": "Téléverser un Fichier",
+    "uploadingFiles": "Téléversement de fichiers..."
+  },
+  "shareDialog": {
+    "addTeamMember": "Ajouter un Membre de l'Équipe",
+    "allMembersHaveAccess": "Tous les membres ont accès",
+    "currentPermissions": "Permissions Actuelles",
+    "description": "Gérer les permissions d'accès pour \"{{documentName}}\"",
+    "grantAccess": "Accorder l'Accès",
+    "loadingTeamMembers": "Chargement des membres de l'équipe",
+    "noPermissions": "Aucune Permission",
+    "permissionLevels": {
+      "admin": "Administrateur",
+      "edit": "Modifier",
+      "view": "Voir"
+    },
+    "remove": "Supprimer",
+    "selectTeamMemberPlaceholder": "Sélectionnez un membre de l'équipe",
+    "title": "Partager le Document"
+  },
+  "templateDescriptions": {
+    "minimal": "Simple folder structure for small projects",
+    "standard": "Default folder structure for construction projects"
+  },
+  "templateNames": {
+    "minimal": "Minimal Structure",
+    "standard": "Standard Construction Project"
+  },
+  "templates": {
+    "apply": "Appliquer le Modèle",
+    "applyTemplate": "Appliquer une Structure de Dossiers Standard",
+    "applyTemplateDescription": "Créez une structure de dossiers standardisée pour votre projet. Cela créera plusieurs dossiers à la fois.",
+    "applying": "Création en cours...",
+    "clientAccessible": "Accessible aux clients",
+    "createdFoldersFromTemplate": "{{count}} dossiers créés à partir du modèle",
+    "default": "(Par défaut)",
+    "failedToApplyTemplate": "Échec de l'application du modèle: {{error}}",
+    "foldersWillBeCreated": "Dossiers qui seront créés:",
+    "noTemplatesAvailable": "Aucun modèle disponible",
+    "selectTemplate": "Sélectionner un Modèle",
+    "selectTemplatePlaceholder": "Choisissez une structure de dossiers..."
+  },
+  "uploadDialog": {
+    "cancel": "Annuler",
+    "categoryLabel": "Catégorie (Optionnel)",
+    "categoryPlaceholder": "Sélectionnez une catégorie",
+    "description": "Sélectionnez un fichier à téléverser pour ce projet",
+    "descriptionLabel": "Description (Optionnel)",
+    "descriptionPlaceholder": "Ajoutez une description pour ce fichier",
+    "fileLabel": "Fichier",
+    "folderLabel": "Dossier de destination",
+    "folderPlaceholder": "Choisissez où enregistrer le fichier",
+    "folderRootOption": "Racine (sans dossier)",
+    "selectedFile": "Sélectionné: {{fileName}} ({{fileSize}} MB)",
+    "title": "Téléverser un Fichier",
+    "upload": "Téléverser",
+    "uploading": "Téléversement en cours..."
+  }
+}

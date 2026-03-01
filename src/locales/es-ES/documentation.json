@@ -1,0 +1,204 @@
+{
+  "buttons": {
+    "close": "Cerrar",
+    "download": "Descargar",
+    "openNewTab": "Abrir en nueva pestaña",
+    "print": "Imprimir",
+    "reload": "Recargar",
+    "reloading": "Recargando...",
+    "share": "Compartir",
+    "view": "Ver",
+    "viewRaw": "Ver Código"
+  },
+  "categories": {
+    "accountants": "Contadores",
+    "aiFeatures": "Funciones de IA",
+    "architecture": "Arquitectura",
+    "components": "Componentes",
+    "devOps": "DevOps",
+    "development": "Desarrollo",
+    "planning": "Planificación",
+    "product": "Producto",
+    "projectManagement": "Gestión de Proyectos",
+    "projectManagers": "Gerentes de Proyecto",
+    "supervisors": "Supervisores",
+    "suppliers": "Proveedores",
+    "testing": "Pruebas"
+  },
+  "documents": {
+    "adminPaymentGuide": {
+      "description": "Panel de pagos, flujo de pago en dos pasos y gestión de vencimientos",
+      "name": "Guía de Procesamiento de Pago del Administrador"
+    },
+    "aiFeatures": {
+      "description": "Guía paso a paso para usar funciones impulsadas por IA en todos los módulos",
+      "name": "Guía de Funciones de IA"
+    },
+    "architectureOverview": {
+      "description": "Documentación completa de arquitectura del sistema",
+      "name": "Visión General de Arquitectura"
+    },
+    "benchmarkGuide": {
+      "description": "Guía completa para benchmarks de costos de construcción, alertas inteligentes, sugerencias de presupuesto, análisis de tendencias y predicciones via IA",
+      "name": "Guía de Benchmark de Costos de Construcción"
+    },
+    "budgetGuide": {
+      "description": "Guía completa que cubre los modelos de Presupuesto Simple, Presupuesto Detallado (SINAPI) y Presupuesto de Control de Costos, incluyendo creación y gestión de plantillas",
+      "name": "Guía de Gestión de Presupuesto"
+    },
+    "calendarGuide": {
+      "description": "Aprenda a usar días laborables y gestionar calendarios de proyectos para programación precisa",
+      "name": "Guía de Calendario de Proyecto"
+    },
+    "codebaseAnalysis": {
+      "description": "Análisis detallado de la estructura de la base de código",
+      "name": "Análisis de la Base de Código"
+    },
+    "constructionPMAISkillGuide": {
+      "description": "Guía completa para usar la Habilidad IA de PM de Construcción para orientación de gestión de proyectos, recomendaciones de flujo de travail y mejores prácticas de la industria",
+      "name": "Guía del Usuario de la Habilidad IA de PM de Construcción"
+    },
+    "deliveryTests": {
+      "description": "12 casos de prueba cubriendo verificación de entrega, fotos y firmas",
+      "name": "Pruebas de Flujo de Confirmación de Entrega"
+    },
+    "deploymentGuide": {
+      "description": "Instrucciones paso a paso de despliegue para Epic 4 y Story 3-9",
+      "name": "Guía de Despliegue"
+    },
+    "financialPaymentGuide": {
+      "description": "Genere enlaces de pago, comparta con clientes y supervise el estado del pago en tiempo real",
+      "name": "Guía de Enlaces de Pago Financiero"
+    },
+    "inssStrategyGuide": {
+      "description": "Guía completa para la optimización de la seguridad social en la construcción, referencias VAU y estrategias de cumplimiento con SERO",
+      "name": "Guía de Estrategia y Planificación de INSS"
+    },
+    "paymentTests": {
+      "description": "10 casos de prueba para panel de pagos y flujos de procesamiento",
+      "name": "Pruebas de Flujo de Procesamiento de Pago"
+    },
+    "pmAckGuide": {
+      "description": "Generación de enlaces de confirmación y seguimiento de confirmaciones de proveedores",
+      "name": "Guía de Confirmación de OC del GP"
+    },
+    "prEpic4Summary": {
+      "description": "Lista completa de características y estadísticas de implementación",
+      "name": "Resumen PR Epic 4"
+    },
+    "prd": {
+      "description": "Especificaciones y requisitos del producto",
+      "name": "Documento de Requisitos del Producto (PRD)"
+    },
+    "procurementEpics": {
+      "description": "Todas las definiciones de epics y stories de compras",
+      "name": "Epics de Compras"
+    },
+    "procurementRequirements": {
+      "description": "Requisitos detallados para características de compras",
+      "name": "Requisitos del Módulo de Compras"
+    },
+    "roadmapImplementation": {
+      "description": "Roadmap del producto y cronograma de implementación",
+      "name": "Implementación del Roadmap"
+    },
+    "signaturePad": {
+      "description": "API y uso del componente de captura de firma digital",
+      "name": "Componente de Panel de Firma"
+    },
+    "sinapiGuide": {
+      "description": "Resumen práctico de la tabla SINAPI, tipos de precios, composiciones y codificación",
+      "name": "Guía SINAPI Brasil (Tabela SINAPI)"
+    },
+    "sprintReleaseNotes": {
+      "category": "Release Notes",
+      "description": "Notas de versión generadas por IA para {{sprint}}: {{title}}",
+      "name": "Sprint {{sprint}} – Release Notes"
+    },
+    "sprintStatus": {
+      "description": "Progreso actual del sprint y estado de finalización de las stories",
+      "name": "Estado del Sprint"
+    },
+    "supervisorGuide": {
+      "description": "Flujo optimizado para dispositivos móviles para verificar entregas, capturar fotos y firmas digitales",
+      "name": "Guía de Confirmación de Entrega del Supervisor"
+    },
+    "supplierAckGuide": {
+      "description": "Cómo confirmar órdenes de compra usando enlaces seguros (sin necesidad de inicio de sesión)",
+      "name": "Guía de Confirmación de OC del Proveedor"
+    },
+    "supplierTests": {
+      "description": "13 casos de prueba para confirmación de OC y validación de token",
+      "name": "Pruebas de Flujo de Confirmación de Proveedor"
+    },
+    "timelineAnalyticsGuide": {
+      "description": "Guía completa para análisis de timeline, seguimiento de hitos, análisis de retrasos y métricas de rendimiento del proyecto",
+      "name": "Guía de Análisis de Timeline"
+    },
+    "whatsappGuide": {
+      "description": "Configure mensajes de WhatsApp, recordatorios automáticos y notificaciones de clientes via Twilio",
+      "name": "Guía de Integración WhatsApp"
+    }
+  },
+  "implementationInfo": {
+    "documentation": "Documentación",
+    "filesChanged": "Archivos Modificados",
+    "linesOfCode": "Líneas de Código",
+    "newRoutes": "Nuevas Rutas",
+    "title": "Información de Implementación"
+  },
+  "preview": {
+    "errorLoading": "Error al cargar documento",
+    "loading": "Cargando documento...",
+    "selected": "Seleccionado",
+    "title": "Vista Previa del Documento"
+  },
+  "quickAccess": {
+    "accountants": "Contadores → Guía de Pago",
+    "projectManagers": "Gerentes de Proyecto → Guía PM",
+    "supervisors": "Supervisores → Guía de Entrega",
+    "suppliers": "Proveedores → Guía de Confirmación",
+    "title": "Acceso Rápido por Perfil"
+  },
+  "sections": {
+    "aiFeatures": {
+      "description": "Aprenda a usar información y recomendaciones impulsadas por IA",
+      "title": "Impulsado por IA"
+    },
+    "architecture": {
+      "description": "Arquitectura del sistema y documentación del proyecto",
+      "title": "Arquitectura y Planificación"
+    },
+    "technical": {
+      "description": "Detalles de implementación y guías de despliegue",
+      "title": "Documentación Técnica"
+    },
+    "tests": {
+      "description": "Suites de pruebas completas para todos los flujos (35 casos de prueba)",
+      "title": "Pruebas End-to-End"
+    },
+    "userGuides": {
+      "description": "Guías completas para todos los perfiles de usuarios",
+      "title": "Guías de Usuario"
+    }
+  },
+  "stats": {
+    "storiesComplete": "Stories Completas",
+    "storiesCompleteDesc": "100% procurement",
+    "technicalDocs": "Docs Técnicos",
+    "technicalDocsDesc": "Arquitectura y guías",
+    "testCases": "Casos de Prueba",
+    "testCasesDesc": "Pruebas end-to-end",
+    "userGuides": "Guías de Usuario",
+    "userGuidesDesc": "Para todos los perfiles"
+  },
+  "subtitle": "Documentación completa para Epic 4 (Entrega y Pago) y Story 3-9 (Confirmación de OC)",
+  "tabs": {
+    "aiFeatures": "Impulsado por IA",
+    "architecture": "Arquitectura",
+    "technical": "Técnico",
+    "tests": "Pruebas",
+    "userGuides": "Guías de Usuario"
+  },
+  "title": "Documentación"
+}

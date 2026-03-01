@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "approve": "[EN] Approve",
+    "archive": "[EN] Archive",
+    "back": "Retour",
+    "create": "Créer du contenu",
+    "edit": "Modifier",
+    "view": "Voir"
+  },
+  "admin": {
+    "approvalDescription": "Réviser les brouillons en attente d'approbation.",
+    "approvalTitle": "File d'attente d'approbation",
+    "createDescription": "Rédiger un nouvel élément de contenu.",
+    "createTitle": "Créer du contenu",
+    "dashboardDescription": "Gérer les actualités, articles, documents et FAQ.",
+    "dashboardTitle": "Hub de Contenu",
+    "editDescription": "Mettre à jour l'élément de contenu sélectionné.",
+    "editTitle": "Modifier le contenu",
+    "listDescription": "Filtrer et gérer chaque entrée de contenu.",
+    "listTitle": "Tout le contenu",
+    "manageContent": "Gérer le contenu",
+    "quickActions": "Actions rapides",
+    "reviewApprovals": "Réviser les approbations",
+    "settings": "Paramètres",
+    "settingsDescription": "Configurer les valeurs par défaut pour le hub de contenu.",
+    "settingsTitle": "Paramètres du hub de contenu"
+  },
+  "articlesDescription": "Guides, bonnes pratiques et documentation interne.",
+  "articlesTitle": "Articles de Connaissance",
+  "createNew": "[EN] Create New",
+  "detail": {
+    "notFound": "Contenu non trouvé.",
+    "published": "Publié le {{date}}",
+    "updated": "Mis à jour le {{date}}"
+  },
+  "documents": {
+    "empty": "Aucun document publié."
+  },
+  "documentsDescription": "Documents de référence publiés pour votre équipe.",
+  "documentsTitle": "Documents",
+  "edit": "[EN] Edit",
+  "editor": {
+    "browseFiles": "Parcourir les fichiers",
+    "contentPlaceholder": "Écrivez votre contenu ici...",
+    "documentAttached": "Document joint",
+    "documentUploadHint": "Cliquez pour téléverser un document",
+    "fields": {
+      "content": "Contenu",
+      "document": "Document",
+      "slug": "Slug",
+      "status": "Statut",
+      "title": "Titre",
+      "type": "Type",
+      "visibility": "Visible pour les rôles"
+    },
+    "markdownHint": "Markdown pris en charge pour le formatage.",
+    "previewEmpty": "L'aperçu apparaîtra ici.",
+    "save": "Enregistrer le contenu",
+    "saving": "Enregistrement...",
+    "slugPlaceholder": "Généré à partir du titre",
+    "statusPlaceholder": "Sélectionnez le statut",
+    "tabs": {
+      "edit": "Modifier",
+      "preview": "Aperçu"
+    },
+    "title": "Éditeur de contenu",
+    "titlePlaceholder": "Entrez un titre",
+    "typePlaceholder": "Sélectionnez le type",
+    "uploading": "Téléchargement..."
+  },
+  "empty": {
+    "adminDescription": "Créez votre premier élément de contenu pour populate le hub.",
+    "adminTitle": "Aucun contenu trouvé",
+    "articlesDescription": "Créez un article pour documenter les bonnes pratiques.",
+    "articlesTitle": "Aucun article",
+    "documentsDescription": "Publiez des documents pour votre équipe.",
+    "documentsTitle": "Aucun document",
+    "faqDescription": "Ajoutez des entrées FAQ pour aider les utilisateurs.",
+    "faqTitle": "Aucune FAQ",
+    "newsDescription": "Publiez une mise à jour pour partager des nouvelles avec l'équipe.",
+    "newsTitle": "Aucune actualité"
+  },
+  "errors": {
+    "accessDenied": "Accès Refusé",
+    "approveFailed": "[EN] Approve Failed",
+    "archiveFailed": "[EN] Archive Failed",
+    "createFailed": "[EN] Create Failed",
+    "fileTooLarge": "Fichier trop volumineux",
+    "notFound": "[EN] Not Found",
+    "restoreFailed": "[EN] Restore Failed",
+    "updateFailed": "[EN] Update Failed",
+    "uploadFailed": "Échec du téléversement",
+    "userNotFound": "Session utilisateur non trouvée."
+  },
+  "faqDescription": "Réponses rapides aux questions courantes.",
+  "faqTitle": "FAQ",
+  "filters": {
+    "allStatuses": "Tous les statuts",
+    "allTypes": "Tous les types",
+    "reset": "Réinitialiser les filtres",
+    "search": "Rechercher du contenu",
+    "status": "Statut",
+    "type": "Type"
+  },
+  "newsDescription": "Mises à jour de l'entreprise et annonces de la plateforme.",
+  "newsTitle": "Actualités",
+  "noPendingApprovals": "[EN] No Pending Approvals",
+  "pendingApprovals": "[EN] Pending Approvals",
+  "status": {
+    "archived": "Archivé",
+    "draft": "Brouillon",
+    "pending": "En attente d'approbation",
+    "published": "Publié"
+  },
+  "success": {
+    "approved": "[EN] Approved",
+    "archived": "[EN] Archived",
+    "fileUploaded": "Fichier téléversé avec succès",
+    "restored": "[EN] Restored",
+    "savedAsDraft": "[EN] Saved As Draft",
+    "updated": "[EN] Updated"
+  },
+  "toast": {
+    "approveError": "Échec de la publication du contenu",
+    "approved": "Contenu publié",
+    "archiveError": "Échec de l'archivage du contenu",
+    "archived": "Contenu archivé",
+    "createError": "Échec de la création du contenu",
+    "created": "Contenu créé",
+    "deleteError": "Échec de la suppression du contenu",
+    "deleted": "Contenu supprimé",
+    "restoreError": "Échec de la restauration du contenu",
+    "restored": "Contenu restauré",
+    "submitError": "Échec de l'envoi pour approbation",
+    "submitted": "Envoyé pour approbation",
+    "updateError": "Échec de la mise à jour du contenu",
+    "updated": "Contenu mis à jour"
+  },
+  "types": {
+    "article": "Article",
+    "document": "Document",
+    "faq": "FAQ",
+    "news": "Actualité"
+  }
+}

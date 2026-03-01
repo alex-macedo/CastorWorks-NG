@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "sendNow": "Send Now",
+    "view": "View Details"
+  },
+  "confirm": {
+    "cancel": "Are you sure you want to cancel this campaign?",
+    "delete": "Are you sure you want to delete this campaign? This cannot be undone.",
+    "sendNow": "Are you sure you want to send this campaign now?"
+  },
+  "counts": {
+    "failed": "failed",
+    "sent": "sent"
+  },
+  "emptyAction": "Create Campaign",
+  "emptyDescription": "Create your first WhatsApp campaign to reach out to your contacts",
+  "emptyTitle": "No campaigns yet",
+  "loadingTitle": "Loading campaigns...",
+  "new": "New Campaign",
+  "notAvailable": "-",
+  "status": {
+    "cancelled": "Cancelled",
+    "completed": "Completed",
+    "draft": "Draft",
+    "failed": "Failed",
+    "scheduled": "Scheduled",
+    "sending": "Sending"
+  },
+  "subtitle": "Manage outbound WhatsApp campaigns to reach contractors, partners, and architects",
+  "table": {
+    "actions": "Actions",
+    "created": "Created",
+    "name": "Campaign Name",
+    "recipients": "Recipients",
+    "scheduled": "Scheduled",
+    "sent": "Sent",
+    "status": "Status",
+    "successRate": "Success Rate"
+  },
+  "title": "WhatsApp Campaigns"
+}

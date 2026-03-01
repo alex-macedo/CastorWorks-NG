@@ -1,0 +1,86 @@
+{
+  "actions": {
+    "cancel": "Cancelar",
+    "disable": "Deshabilitar",
+    "edit": "Editar",
+    "enable": "Habilitar",
+    "moveDown": "Bajar",
+    "moveUp": "Subir",
+    "save": "Guardar Cambios",
+    "test": "Probar Conexión"
+  },
+  "adminOnly": "Se requiere acceso de administrador para modificar la configuración de proveedores de IA",
+  "description": "Configure proveedores de IA para generación de contenido e información analítica",
+  "dialog": {
+    "apiEndpoint": "Punto de Acceso API",
+    "apiEndpointPlaceholder": "https://api.example.com/v1/...",
+    "apiKey": "Clave API",
+    "apiKeyDescription": "Su clave se almacena de forma segura. Déjela en blanco para mantener la clave existente.",
+    "apiKeyPlaceholder": "sk-...",
+    "defaultModel": "Modelo Predeterminado",
+    "defaultModelPlaceholder": "Seleccione o ingrese el nombre del modelo",
+    "editDescription": "Configurar ajustes para {{provider}}",
+    "editTitle": "Editar Proveedor de IA",
+    "maxTokens": "Tokens Máximos",
+    "maxTokensDescription": "Tokens máximos para completaciones (1-100000)",
+    "priority": "Orden de Prioridad",
+    "priorityDescription": "Número menor = mayor prioridad en la cadena de respaldo",
+    "temperature": "Temperatura",
+    "temperatureDescription": "Temperatura de muestreo (0.0-2.0)"
+  },
+  "help": {
+    "apiProviders": "Anthropic y OpenAI son servicios de IA basados en la nube que requieren claves API e incurren en costos de uso.",
+    "explanation": "Los proveedores de IA potencian las funciones inteligentes en CastorWorks, incluidas las información analíticas, resúmenes diarios y generación de contenido. Puede configurar múltiples proveedores y establecer respaldos automáticos.",
+    "fallbackChain": "La cadena de respaldo determina qué proveedor intentar si el proveedor principal falla o no está disponible.",
+    "ollama": "OLLAMA le permite ejecutar LLM de código abierto en su propia infraestructura, ofreciendo IA de bajo costo con sólida privacidad de datos.",
+    "whatIsThis": "¿Qué son los Proveedores de IA?"
+  },
+  "messages": {
+    "allDisabled": "Todos los proveedores de IA están deshabilitados. Habilite al menos un proveedor.",
+    "noProviders": "No hay proveedores de IA configurados",
+    "saveError": "Error al guardar la configuración",
+    "saveSuccess": "Configuración guardada exitosamente",
+    "testError": "Error al probar la conexión",
+    "updateError": "Error al actualizar el proveedor de IA",
+    "updateSuccess": "Proveedor de IA actualizado exitosamente"
+  },
+  "providers": {
+    "anthropic": "Anthropic (Claude)",
+    "ollama": "OLLAMA (LLM Autoalojado)",
+    "openai": "OpenAI (GPT)",
+    "openrouter": "OpenRouter (Universal)"
+  },
+  "settings": {
+    "cacheTTL": "Duración de Caché (horas)",
+    "cacheTTLDescription": "Cuánto tiempo almacenar en caché información generada por IA",
+    "defaultProvider": "Proveedor Predeterminado",
+    "defaultProviderDescription": "Proveedor de IA principal a utilizar",
+    "fallbackChain": "Cadena de Respaldo",
+    "fallbackChainDescription": "Orden de proveedores a intentar si falla el principal"
+  },
+  "status": {
+    "active": "Activo",
+    "connected": "Conectado",
+    "disabled": "Deshabilitado",
+    "enabled": "Habilitado",
+    "error": "Error de Conexión",
+    "inactive": "Inactivo",
+    "testing": "Probando conexión..."
+  },
+  "table": {
+    "actions": "Acciones",
+    "endpoint": "Punto de Acceso API",
+    "model": "Modelo",
+    "priority": "Prioridad",
+    "provider": "Proveedor",
+    "status": "Estado"
+  },
+  "test": {
+    "failed": "Conexión fallida",
+    "model": "Usando modelo: {{model}}",
+    "starting": "Probando conexión...",
+    "success": "¡Conexión exitosa!",
+    "successWithLatency": "Conectado en {{latency}}ms"
+  },
+  "title": "Configuración de Proveedores de IA"
+}

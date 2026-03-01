@@ -1,0 +1,57 @@
+{
+  "assistant": {
+    "clearConversation": "Borrar conversación",
+    "copied": "¡Copiado!",
+    "copiedDesc": "Mensaje copiado al portapapeles.",
+    "copy": "Copiar",
+    "copyFailed": "Error al copiar",
+    "copyFailedDesc": "Error al copiar el mensaje.",
+    "headline": "¿Cómo puedo ayudarte hoy?",
+    "historyCleared": "Conversación borrada",
+    "historyClearedDesc": "Tu historial de chat ha sido borrado.",
+    "placeholder": "Pregúntame lo que quieras...",
+    "prompts": {
+      "conversion": "¿Cuál es mi tasa de conversión este mes?",
+      "count": "¿Cuántos presupuestos tengo?",
+      "estimate": "Crear un presupuesto para una remodelación de baño",
+      "recentEstimates": "Muéstrame mis presupuestos recientes"
+    },
+    "subheadline": "Puedo ayudarte a crear presupuestos, buscar datos y obtener información.",
+    "title": "Asistente IA",
+    "tryAsking": "Intenta preguntar:",
+    "you": "Tú"
+  },
+  "insights": {
+    "emptyState": "Haga clic en el botón de abajo para generar información impulsada por IA.",
+    "generate": "Generar Información",
+    "generating": "Generando información...",
+    "regenerate": "Regenerar Información"
+  },
+  "superBot": {
+    "clearConversation": "Borrar conversación",
+    "greeting": "Buenos días",
+    "greetingQuestion": "¿Cómo puedo ayudarte hoy?",
+    "greetings": {
+      "afternoon": "Buenas tardes",
+      "evening": "Buenas noches",
+      "morning": "Buenos días",
+      "night": "Buenas noches"
+    },
+    "headline": "Super Bot puede ejecutar acciones entre módulos",
+    "helperText": "Usa lenguaje natural para consultar datos y ejecutar acciones.",
+    "historyCleared": "Conversación de Super Bot borrada",
+    "historyClearedDesc": "Se borró tu historial de Super Bot.",
+    "noHistory": "Aún no hay conversaciones",
+    "placeholder": "Pregúntale a CastorMind-AI...",
+    "prompts": {
+      "delayedProjects": "Muéstrame todos los proyectos retrasados y sus tareas.",
+      "duePayments": "¿Qué clientes tienen pagos vencidos?",
+      "updateTasks": "Actualiza todas las tareas del cronograma del proyecto X hasta hoy.",
+      "vendorQuotes": "Muéstrame todas las cotizaciones donde proveedores no enviaron propuesta."
+    },
+    "searchPlaceholder": "Buscar chats...",
+    "subheadline": "Pide en lenguaje natural para consultar y actualizar datos.",
+    "suggestions": "Sugerencias",
+    "title": "Super Bot"
+  }
+}

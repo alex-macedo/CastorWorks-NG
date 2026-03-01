@@ -1,0 +1,23 @@
+{
+  "allProjects": "All Projects (Portfolio)",
+  "incomeVsExpenses": "Income vs Expenses by Project",
+  "industryBenchmark": "Industry benchmark",
+  "margin": "margin",
+  "netProfit": "Net Profit",
+  "ofBudget": "of budget",
+  "overheadVsBenchmark": "Overhead vs Benchmark",
+  "percentageComparison": "Percentage profit margin comparison",
+  "profitMarginByProject": "Profit Margin by Project",
+  "profitMarginVsBenchmark": "Profit Margin vs Benchmark",
+  "returnOnInvestment": "Return on investment",
+  "roi": "ROI",
+  "selectProject": "Select project",
+  "subtitle": "Comprehensive profitability and performance metrics",
+  "title": "Analytics Dashboard",
+  "topProjects": "Top 10 projects by profitability",
+  "totalExpenses": "Total Expenses",
+  "totalRevenue": "Total Revenue",
+  "variance": "Variance:",
+  "yourMargin": "Your Margin:",
+  "yourOverhead": "Your Overhead:"
+}
