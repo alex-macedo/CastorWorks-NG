@@ -62,7 +62,7 @@
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
-    "@github/copilot-sdk": "^0.1.18",
+    "@github/copilot-sdk": "^0.1.29",
     "@hookform/resolvers": "^5.2.2",
     "@huggingface/transformers": "^3.8.0",
     "@protobi/exceljs": "^4.4.0-protobi.6",
