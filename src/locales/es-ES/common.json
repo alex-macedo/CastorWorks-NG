@@ -4550,6 +4550,14 @@
     "title": "Seleccionar espacio de trabajo",
     "continue": "Continuar"
   },
+  "onboarding": {
+    "title": "Crea tu espacio de trabajo",
+    "companyName": "Nombre de la empresa o espacio",
+    "slugOptional": "Slug de URL (opcional)",
+    "create": "Crear espacio",
+    "creating": "Creando...",
+    "errorCreating": "Error al crear el espacio. Inténtalo de nuevo."
+  },
   "logistics": "Logística",
   "maintenance": {
     "currentStatus": "currentStatus",

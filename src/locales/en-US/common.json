@@ -4550,6 +4550,14 @@
     "title": "Select workspace",
     "continue": "Continue"
   },
+  "onboarding": {
+    "title": "Create your workspace",
+    "companyName": "Company or workspace name",
+    "slugOptional": "URL slug (optional)",
+    "create": "Create workspace",
+    "creating": "Creating...",
+    "errorCreating": "Failed to create workspace. Please try again."
+  },
   "logistics": "Logistics",
   "maintenance": {
     "currentStatus": "currentStatus",
