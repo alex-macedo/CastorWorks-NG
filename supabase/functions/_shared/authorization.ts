@@ -98,6 +98,25 @@ export async function verifyAdminRole(userId: string, client?: SupabaseClient) {
 }
 
 /**
+ * Verifies that the user is authenticated and has access to the given tenant.
+ * Use in Edge Functions that accept tenant_id in the body.
+ */
+export async function verifyTenantAccess(
+  req: Request,
+  tenantId: string
+): Promise<{ user: User }> {
+  const { user } = await authenticateRequest(req);
+  const hasAccess = await callBooleanFunction("has_tenant_access", {
+    _user_id: user.id,
+    _tenant_id: tenantId,
+  });
+  if (!hasAccess) {
+    throw new Error("Access denied to tenant");
+  }
+  return { user };
+}
+
+/**
  * Verifies that the user has access to the tenant and that the tenant has the given module licensed.
  * Call after authenticating and resolving tenantId (e.g. from request body or project → tenant).
  */
