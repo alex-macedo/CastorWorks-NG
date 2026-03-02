@@ -56,21 +56,22 @@ serve(async (req) => {
       );
     }
 
-    // Check if the user has admin role
-    const { data: userRoles, error: rolesError } = await supabaseAdmin
-      .from('user_roles')
-      .select('role')
-      .eq('user_id', user.id);
+     // Check if the user has admin role - query user_roles directly
+     const { data: userRoles, error: rolesError } = await supabaseAdmin
+       .from('user_roles')
+       .select('role')
+       .eq('user_id', user.id)
+       .eq('role', 'admin');
 
-    if (rolesError) {
-      console.error('Error fetching user roles:', rolesError);
-      return new Response(
-        JSON.stringify({ error: 'Failed to verify permissions' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
+     if (rolesError) {
+       console.error('Error fetching user roles:', rolesError);
+       return new Response(
+         JSON.stringify({ error: 'Failed to verify permissions' }),
+         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+       );
+     }
 
-    const isAdmin = userRoles?.some((r: { role: string }) => r.role === 'admin');
+     const isAdmin = userRoles && userRoles.length > 0;
     if (!isAdmin) {
       return new Response(
         JSON.stringify({ error: 'Admin access required' }),

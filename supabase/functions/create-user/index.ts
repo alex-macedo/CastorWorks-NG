@@ -33,17 +33,19 @@ function jsonResponse(body: object, status: number) {
 
 async function verifyAdminRole(userId: string, client: SupabaseClient): Promise<boolean> {
   try {
-    const { data, error } = await client.rpc("has_role", {
-      _user_id: userId,
-      _role: "admin",
-    });
+    const { data, error } = await client
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", userId)
+      .eq("role", "admin")
+      .maybeSingle();
 
     if (error) {
       console.error("Error checking admin role:", error);
       return false;
     }
 
-    return Boolean(data);
+    return data !== null;
   } catch (err) {
     console.error("Exception checking admin role:", err);
     return false;
