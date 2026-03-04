@@ -63,6 +63,9 @@ bmad
 .agent
 .shared
 
+# Stripe Phase 4 setup output (contains webhook secret)
+scripts/.stripe-phase4-out/
+
 
 # Auto Claude data directory
 .auto-claude/

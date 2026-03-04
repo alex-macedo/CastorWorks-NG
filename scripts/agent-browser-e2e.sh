@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-# Phase 1 (Foundation), Phase 2 (Licensing), and auth E2E run against CastorWorks-NG on 5181; other E2E default to 5173
-if [[ "${1:-}" == phase1* || "${1:-}" == phase2* || "${1:-}" == auth-signin-signup ]]; then
+# Phase 1 (Foundation), Phase 2 (Licensing), auth, add-user E2E run against CastorWorks-NG on 5181; other E2E default to 5173
+if [[ "${1:-}" == phase1* || "${1:-}" == phase2* || "${1:-}" == auth-signin-signup || "${1:-}" == add-user ]]; then
   BASE_URL="${BASE_URL:-http://localhost:5181}"
 else
   BASE_URL="${BASE_URL:-http://localhost:5173}"
@@ -575,6 +575,15 @@ run_auth_signin_signup() {
 
 if [[ "$pattern_lc" == "auth-signin-signup" || "$pattern_lc" == "auth-signin" ]]; then
   run_auth_signin_signup
+  exit 0
+fi
+
+run_add_user() {
+  node e2e/add-user.agent-browser.cjs
+}
+
+if [[ "$pattern_lc" == "add-user" ]]; then
+  run_add_user
   exit 0
 fi
 

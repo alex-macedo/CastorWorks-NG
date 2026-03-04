@@ -588,6 +588,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
+  "annual": "",
   "app": {
     "active": "Activo",
     "activeProjects": "Proyectos Activos",
@@ -1486,6 +1487,12 @@
   "bi-weekly": "Quincenal",
   "biWeekly": "Quincenal",
   "billableHours": "billableHours",
+  "billing": {
+    "downloadInvoice": "",
+    "emptyState": "",
+    "title": ""
+  },
+  "billingPeriod": "",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1787,6 +1794,7 @@
     "taxes": "Impuestos"
   },
   "change": "[EN] Change",
+  "changePlan": "",
   "clear": "Limpiar",
   "clearAll": "Limpiar Todos",
   "clearFilter": "Limpar Filtro",
@@ -3114,6 +3122,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
+  "currentPlan": "",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Artículos que solicitó cotizaciones",
@@ -4572,6 +4581,7 @@
   },
   "linkCopied": "Enlace copiado al portapapeles",
   "loading": "Cargando...",
+  "loadingSubscription": "",
   "location": "Ubicación",
   "logistics": "Logística",
   "maintenance": {
@@ -4590,6 +4600,7 @@
     "startTimeLabel": "Hora de Inicio",
     "titleLabel": "Título"
   },
+  "manageBilling": "",
   "materials": "Materiales",
   "meetingReview": {
     "confirm": "confirm",
@@ -4703,8 +4714,10 @@
   },
   "new": "Nuevo",
   "next": "Siguiente",
+  "nextRenewal": "",
   "nextStep": "Siguiente paso",
   "no": "No",
+  "noActiveSubscription": "",
   "noAddress": "No se proporcionó dirección",
   "noChanges": "No hay cambios para guardar",
   "noContactsAvailable": "No hay contactos disponibles. Agregue clientes, proveedores o contratistas primero.",
@@ -4977,6 +4990,7 @@
     "projectCalendarDesc": "Administre días laborales y días festivos para una programación precisa del proyecto",
     "systemOperational": "Sistema Operacional"
   },
+  "pageTitle": "",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5193,6 +5207,7 @@
     }
   },
   "paused": "Pausado",
+  "paymentCanceled": "",
   "paymentLinks": {
     "title": "title"
   },
@@ -5207,6 +5222,7 @@
     "debitCard": "Tarjeta de Débito",
     "wireTransfer": "Transferencia Electrónica"
   },
+  "paymentSuccess": "",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -7658,6 +7674,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
+    "canceled": "",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7668,6 +7685,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
+    "past_due": "",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7687,6 +7705,7 @@
   "studioTools": "studioTools",
   "submit": "Enviar",
   "submitting": "Enviando...",
+  "subscribeNow": "",
   "success": "Éxito",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8263,6 +8282,18 @@
     "withBadges": "Con insignias"
   },
   "thisMonth": "Este mes",
+  "tierPicker": {
+    "annual": "",
+    "cancel": "",
+    "checkoutError": "",
+    "confirm": "",
+    "custom": "",
+    "loading": "",
+    "monthly": "",
+    "perMonthAnnual": "",
+    "selectTier": "",
+    "title": ""
+  },
   "timeline": {
     "actions": {
       "closePhase": "closePhase",
@@ -8755,6 +8786,12 @@
     "other": "Otro",
     "services": "Servicios"
   },
+  "trialDaysLeft_many": "",
+  "trialDaysLeft_one": "",
+  "trialDaysLeft_other": "",
+  "trialDaysLeft_other_many": "",
+  "trialDaysLeft_other_one": "",
+  "trialDaysLeft_other_other": "",
   "tryDifferentSearch": "Pruebe con un término de búsqueda diferente",
   "ui": {
     "clickToViewProjectDetails": "Haz clic para ver los detalles del proyecto",
@@ -8794,6 +8831,8 @@
   "updated": "actualizado con éxito",
   "updatedAt": "Actualizado en",
   "updating": "Actualizando...",
+  "upgradeNow": "",
+  "upgradeToPaid": "",
   "upload": "Subir",
   "uploadErrorDescription": "Ocurrió un error al subir el archivo",
   "uploadErrorTitle": "Error de Carga",

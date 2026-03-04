@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-01T22:35:15.292Z",
+  "timestamp": "2026-03-04T00:46:10.403Z",
   "summary": {
-    "totalMissing": 0,
+    "totalMissing": 786,
     "languages": [
       {
         "code": "en-US",
@@ -10,25 +10,3958 @@
       },
       {
         "code": "pt-BR",
-        "missing": 0,
-        "complete": true
+        "missing": 262,
+        "complete": false
       },
       {
         "code": "es-ES",
-        "missing": 0,
-        "complete": true
+        "missing": 262,
+        "complete": false
       },
       {
         "code": "fr-FR",
-        "missing": 0,
-        "complete": true
+        "missing": 262,
+        "complete": false
       }
     ]
   },
   "details": {
     "en-US": [],
-    "pt-BR": [],
-    "es-ES": [],
-    "fr-FR": []
+    "pt-BR": [
+      {
+        "namespace": "settings",
+        "key": "confirmPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "confirmPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "currentPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "currentPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.csvImportTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.csvSizeLimit",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.deleteDialogCancel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.deleteDialogConfirm",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.dropCsvFile",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportSelectedTables",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTable_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTable_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTables_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTables_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsFailed_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsFailed_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsSuccess_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsSuccess_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.quickBackupDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.quickBackupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectFile",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectTargetTable",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectiveExportDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectiveExportTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.targetTableLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.toast.csvImportSuccess_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.toast.csvImportSuccess_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultBudgetModelLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultCurrencyLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultDateFormatLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultLanguageLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "googleDrive.toast.documentsSyncedDescription_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "googleDrive.toast.documentsSyncedDescription_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.categoriesDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.categoriesTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.destinationsDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.destinationsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorAjusteDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorAjusteTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorSocialDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorSocialTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.applicableReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.appliesTo",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.excludedItems",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.fixedDeduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.minInvoices",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.usinadosNote",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.laborDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.laborTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.lastUpdated",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.prefabDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.prefabTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.ratesDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.ratesTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.areaRange",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.areaThreshold",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.category",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.component",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.constructionType",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.destination",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.effectiveReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.equivalence",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.maxReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.minRemuneration",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.multiplier",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.percentage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.reduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.specialRules",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.value",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.ajuste",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.categories",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.equivalence",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.fatorSocial",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.labor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.prefab",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.rates",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.usinados",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.usinadosDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.usinadosTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.addFirstStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.addStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.externalUrlLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.externalUrlPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.newStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.noSteps",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.saveChanges",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.saving",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepDescriptionLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepDescriptionPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepSummaryLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepSummaryPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.successUpdate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.unsavedChanges",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.tabs.whatsapp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.aiAutoResponderDisabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.aiAutoResponderEnabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.saved",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "localization.editor.createValue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "localization.editor.updateValue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "newPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "newPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "notifications.checkFrequencyHelp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "numberFormatPreviewHeading",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordMismatch",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordMustBeDifferent",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordTooShort",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAccountant",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAdmin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAdminOffice",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleArchitect",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleClient",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleGlobalAdmin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleProjectManager",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleSiteSupervisor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleViewer",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemNumberFormatLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemTemperatureUnitLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemTimeZoneLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemWeatherLocationLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.business-settings",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.data-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.demoData",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.inss-reference",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.inss-strategy",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.menu-order",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.permission-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.system-preferences",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.system-translation",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.translation-dashboard",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.translation-editor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.user-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.user-preferences",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.generate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.login",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.navigate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.paste",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.backButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.configurationDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.configurationTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.enabledLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.errors.connectionFailed",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.errors.missingRequiredFields",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.lastTested",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.copyCredentials",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.createApp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.setRedirect",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.optionalSettingsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.placeholders.enterField",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.placeholders.enterOptionalField",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.requiredFieldLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.requiredSettingsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.saveConfigurationButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.setupInstructionsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.tabs.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.tabs.overview",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.testConnectionButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.configurationSavedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.configurationSavedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionFailedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionFailedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionSuccessDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionSuccessTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.endpoint",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.secret",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookUrlHelp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "annual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.downloadInvoice",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.emptyState",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billingPeriod",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "changePlan",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.noDefinitions",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.subtitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "common.preview",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "currentPlan",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "daysLeft_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "daysLeft_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "loadingSubscription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "manageBilling",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.resume",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.transcriptPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.unmute",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "nextRenewal",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "noActiveSubscription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.payNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.reviewBudget",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.view",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.viewSchedule",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.payNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.reviewBudget",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.viewSchedule",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "pageTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "paymentCanceled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "paymentSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.bridgeNotRunning",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.bridgeTimeout",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.checking",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.copyTerminalCommand",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.output",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.running",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.startBridge",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.taskSummary",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.untitledTask",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItem",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItemConfirmDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItemConfirmTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.noDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.tabs.whatsapp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.aiAutoResponderDisabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.aiAutoResponderEnabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.saved",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "status.canceled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "status.past_due",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "studioPrincipal",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "subscribeNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.annual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.cancel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.checkoutError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.confirm",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.custom",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.loading",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.monthly",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.perMonthAnnual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.selectTier",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.createError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.createSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.deleteError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.deleteSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.followUpError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.followUpSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.updateError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.updateSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.createError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.createSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.updateError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.updateSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.validation.delayDaysMin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.validation.descriptionMinLength",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.clientDecisions",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.clientOverdue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.highImpact",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "upgradeNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "upgradeToPaid",
+        "reason": "empty"
+      }
+    ],
+    "es-ES": [
+      {
+        "namespace": "settings",
+        "key": "confirmPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "confirmPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "currentPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "currentPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.csvImportTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.csvSizeLimit",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.deleteDialogCancel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.deleteDialogConfirm",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.dropCsvFile",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportSelectedTables",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTable_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTable_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTables_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTables_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsFailed_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsFailed_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsSuccess_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsSuccess_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.quickBackupDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.quickBackupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectFile",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectTargetTable",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectiveExportDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectiveExportTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.targetTableLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.toast.csvImportSuccess_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.toast.csvImportSuccess_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultBudgetModelLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultCurrencyLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultDateFormatLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultLanguageLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "googleDrive.toast.documentsSyncedDescription_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "googleDrive.toast.documentsSyncedDescription_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.categoriesDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.categoriesTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.destinationsDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.destinationsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorAjusteDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorAjusteTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorSocialDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorSocialTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.applicableReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.appliesTo",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.excludedItems",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.fixedDeduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.minInvoices",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.usinadosNote",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.laborDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.laborTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.lastUpdated",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.prefabDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.prefabTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.ratesDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.ratesTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.areaRange",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.areaThreshold",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.category",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.component",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.constructionType",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.destination",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.effectiveReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.equivalence",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.maxReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.minRemuneration",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.multiplier",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.percentage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.reduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.specialRules",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.value",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.ajuste",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.categories",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.equivalence",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.fatorSocial",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.labor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.prefab",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.rates",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.usinados",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.usinadosDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.usinadosTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.addFirstStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.addStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.externalUrlLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.externalUrlPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.newStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.noSteps",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.saveChanges",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.saving",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepDescriptionLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepDescriptionPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepSummaryLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepSummaryPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.successUpdate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.unsavedChanges",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.tabs.whatsapp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.aiAutoResponderDisabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.aiAutoResponderEnabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.saved",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "localization.editor.createValue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "localization.editor.updateValue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "newPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "newPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "notifications.checkFrequencyHelp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "numberFormatPreviewHeading",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordMismatch",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordMustBeDifferent",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordTooShort",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAccountant",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAdmin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAdminOffice",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleArchitect",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleClient",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleGlobalAdmin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleProjectManager",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleSiteSupervisor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleViewer",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemNumberFormatLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemTemperatureUnitLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemTimeZoneLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemWeatherLocationLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.business-settings",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.data-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.demoData",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.inss-reference",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.inss-strategy",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.menu-order",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.permission-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.system-preferences",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.system-translation",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.translation-dashboard",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.translation-editor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.user-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.user-preferences",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.generate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.login",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.navigate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.paste",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.backButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.configurationDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.configurationTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.enabledLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.errors.connectionFailed",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.errors.missingRequiredFields",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.lastTested",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.copyCredentials",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.createApp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.setRedirect",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.optionalSettingsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.placeholders.enterField",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.placeholders.enterOptionalField",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.requiredFieldLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.requiredSettingsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.saveConfigurationButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.setupInstructionsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.tabs.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.tabs.overview",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.testConnectionButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.configurationSavedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.configurationSavedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionFailedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionFailedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionSuccessDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionSuccessTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.endpoint",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.secret",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookUrlHelp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "annual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.downloadInvoice",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.emptyState",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billingPeriod",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "changePlan",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.noDefinitions",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.subtitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "common.preview",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "currentPlan",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "daysLeft_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "daysLeft_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "loadingSubscription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "manageBilling",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.resume",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.transcriptPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.unmute",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "nextRenewal",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "noActiveSubscription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.payNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.reviewBudget",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.view",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.viewSchedule",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.payNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.reviewBudget",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.viewSchedule",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "pageTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "paymentCanceled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "paymentSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.bridgeNotRunning",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.bridgeTimeout",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.checking",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.copyTerminalCommand",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.output",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.running",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.startBridge",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.taskSummary",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.untitledTask",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItem",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItemConfirmDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItemConfirmTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.noDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.tabs.whatsapp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.aiAutoResponderDisabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.aiAutoResponderEnabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.saved",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "status.canceled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "status.past_due",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "studioPrincipal",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "subscribeNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.annual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.cancel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.checkoutError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.confirm",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.custom",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.loading",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.monthly",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.perMonthAnnual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.selectTier",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.createError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.createSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.deleteError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.deleteSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.followUpError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.followUpSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.updateError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.updateSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.createError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.createSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.updateError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.updateSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.validation.delayDaysMin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.validation.descriptionMinLength",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.clientDecisions",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.clientOverdue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.highImpact",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "upgradeNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "upgradeToPaid",
+        "reason": "empty"
+      }
+    ],
+    "fr-FR": [
+      {
+        "namespace": "settings",
+        "key": "confirmPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "confirmPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "currentPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "currentPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.csvImportTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.csvSizeLimit",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.deleteDialogCancel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.deleteDialogConfirm",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.dropCsvFile",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportSelectedTables",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTable_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTable_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTables_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.exportTables_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsFailed_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsFailed_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsSuccess_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.importResultsSuccess_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.quickBackupDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.quickBackupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectFile",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectTargetTable",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectiveExportDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.selectiveExportTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.targetTableLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.toast.csvImportSuccess_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "dataManagement.toast.csvImportSuccess_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultBudgetModelLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultCurrencyLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultDateFormatLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "defaultLanguageLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "googleDrive.toast.documentsSyncedDescription_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "googleDrive.toast.documentsSyncedDescription_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.categoriesDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.categoriesTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.destinationsDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.destinationsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorAjusteDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorAjusteTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorSocialDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.fatorSocialTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.applicableReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.appliesTo",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.excludedItems",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.fixedDeduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.minInvoices",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.labels.usinadosNote",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.laborDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.laborTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.lastUpdated",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.prefabDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.prefabTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.ratesDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.ratesTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.areaRange",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.areaThreshold",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.category",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.component",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.constructionType",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.destination",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.effectiveReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.equivalence",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.maxReduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.minRemuneration",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.multiplier",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.percentage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.reduction",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.specialRules",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.table.value",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.ajuste",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.categories",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.equivalence",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.fatorSocial",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.labor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.prefab",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.rates",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.tabs.usinados",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.usinadosDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssReference.usinadosTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.addFirstStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.addStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.externalUrlLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.externalUrlPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.newStep",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.noSteps",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.saveChanges",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.saving",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepDescriptionLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepDescriptionPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepSummaryLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.stepSummaryPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.successUpdate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "inssStrategyLinks.unsavedChanges",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.tabs.whatsapp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.aiAutoResponderDisabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.aiAutoResponderEnabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "integrations.whatsapp.saved",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "localization.editor.createValue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "localization.editor.updateValue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "newPassword",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "newPasswordPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "notifications.checkFrequencyHelp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "numberFormatPreviewHeading",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordMismatch",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordMustBeDifferent",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "passwordTooShort",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAccountant",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAdmin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleAdminOffice",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleArchitect",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleClient",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleGlobalAdmin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleProjectManager",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleSiteSupervisor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "roleViewer",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemNumberFormatLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemTemperatureUnitLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemTimeZoneLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "systemWeatherLocationLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.business-settings",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.data-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.demoData",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.inss-reference",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.inss-strategy",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.menu-order",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.permission-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.system-preferences",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.system-translation",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.translation-dashboard",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.translation-editor",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.user-management",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "tabs.user-preferences",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.generate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.login",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.navigate",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.apiKeySteps.paste",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.backButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.configurationDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.configurationTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.description",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.enabledLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.errors.connectionFailed",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.errors.missingRequiredFields",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.lastTested",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.copyCredentials",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.createApp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.oauthSteps.setRedirect",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.optionalSettingsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.placeholders.enterField",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.placeholders.enterOptionalField",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.requiredFieldLabel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.requiredSettingsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.saveConfigurationButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.setupInstructionsTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.tabs.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.tabs.overview",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.testConnectionButton",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.configurationSavedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.configurationSavedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionFailedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionFailedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionSuccessDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.toast.connectionSuccessTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSetupTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.configure",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.endpoint",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookSteps.secret",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "settings",
+        "key": "thirdParty.webhookUrlHelp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "annual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.downloadInvoice",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.emptyState",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billing.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "billingPeriod",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "changePlan",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.noDefinitions",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.subtitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "clientPortal.definitions.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "common.preview",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "currentPlan",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "daysLeft_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "daysLeft_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "loadingSubscription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "manageBilling",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.resume",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.transcriptPlaceholder",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "meetings.unmute",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "nextRenewal",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "noActiveSubscription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.payNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.reviewBudget",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.view",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.actions.viewSchedule",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.payNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.reviewBudget",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "notifications.viewSchedule",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "pageTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "paymentCanceled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "paymentSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.bridgeNotRunning",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.bridgeTimeout",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.checking",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.copyTerminalCommand",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.output",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.running",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.startBridge",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.taskSummary",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.aiToWorkDialog.untitledTask",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItem",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItemConfirmDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.deleteItemConfirmTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "roadmap.noDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.tabs.whatsapp",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.aiAutoResponderDisabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.aiAutoResponderEnabled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "settings.integrations.whatsapp.saved",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "status.canceled",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "status.past_due",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "studioPrincipal",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "subscribeNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.annual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.cancel",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.checkoutError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.confirm",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.custom",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.loading",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.monthly",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.perMonthAnnual",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.selectTier",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "tierPicker.title",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.createError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.createSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.deleteError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.deleteSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.followUpError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.followUpSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.updateError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.clientDefinitions.updateSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.createError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.createSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.updateError",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.updateSuccess",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.validation.delayDaysMin",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.delays.validation.descriptionMinLength",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.clientDecisions",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.clientOverdue",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "timeline.summary.highImpact",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other_one",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "trialDaysLeft_other_other",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "upgradeNow",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "upgradeToPaid",
+        "reason": "empty"
+      }
+    ]
   }
 }

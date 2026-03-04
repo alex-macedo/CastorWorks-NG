@@ -1,5 +1,6 @@
 {
   "daysLeft": "{{count}} días restantes de tu prueba",
   "daysLeft_one": "1 día restante de tu prueba",
-  "endsOn": "Tu prueba termina el {{date}}"
+  "endsOn": "Tu prueba termina el {{date}}",
+  "upgradeNow": "Actualizar ahora"
 }

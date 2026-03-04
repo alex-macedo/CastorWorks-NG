@@ -588,6 +588,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
+  "annual": "",
   "app": {
     "active": "Active",
     "activeProjects": "Active Projects",
@@ -1486,6 +1487,12 @@
   "bi-weekly": "Bi-Weekly",
   "biWeekly": "Bi-Weekly",
   "billableHours": "billableHours",
+  "billing": {
+    "downloadInvoice": "",
+    "emptyState": "",
+    "title": ""
+  },
+  "billingPeriod": "",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1787,6 +1794,7 @@
     "taxes": "Taxes"
   },
   "change": "[EN] Change",
+  "changePlan": "",
   "clear": "Clear",
   "clearAll": "Clear All",
   "clearFilter": "Clear Filter",
@@ -3114,6 +3122,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
+  "currentPlan": "",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Items you requested quotes for",
@@ -4572,6 +4581,7 @@
   },
   "linkCopied": "Link copied to clipboard",
   "loading": "Carregando...",
+  "loadingSubscription": "",
   "location": "Location",
   "logistics": "Logistics",
   "maintenance": {
@@ -4590,6 +4600,7 @@
     "startTimeLabel": "Start Time",
     "titleLabel": "Title"
   },
+  "manageBilling": "",
   "materials": "Materials",
   "meetingReview": {
     "confirm": "confirm",
@@ -4703,8 +4714,10 @@
   },
   "new": "New",
   "next": "Next",
+  "nextRenewal": "",
   "nextStep": "Next Step",
   "no": "No",
+  "noActiveSubscription": "",
   "noAddress": "No address provided",
   "noChanges": "No changes to save",
   "noContactsAvailable": "No contacts available. Add clients, suppliers, or contractors first.",
@@ -4977,6 +4990,7 @@
     "projectCalendarDesc": "Manage working days and holidays for accurate project scheduling",
     "systemOperational": "System Operational"
   },
+  "pageTitle": "",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5193,6 +5207,7 @@
     }
   },
   "paused": "Paused",
+  "paymentCanceled": "",
   "paymentLinks": {
     "title": "title"
   },
@@ -5207,6 +5222,7 @@
     "debitCard": "Debit Card",
     "wireTransfer": "Wire Transfer"
   },
+  "paymentSuccess": "",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -7658,6 +7674,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
+    "canceled": "",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7668,6 +7685,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
+    "past_due": "",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7687,6 +7705,7 @@
   "studioTools": "studioTools",
   "submit": "Submit",
   "submitting": "Submitting...",
+  "subscribeNow": "",
   "success": "Success",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8263,6 +8282,18 @@
     "withBadges": "With badges"
   },
   "thisMonth": "This month",
+  "tierPicker": {
+    "annual": "",
+    "cancel": "",
+    "checkoutError": "",
+    "confirm": "",
+    "custom": "",
+    "loading": "",
+    "monthly": "",
+    "perMonthAnnual": "",
+    "selectTier": "",
+    "title": ""
+  },
   "timeline": {
     "actions": {
       "closePhase": "closePhase",
@@ -8755,6 +8786,12 @@
     "other": "Other",
     "services": "Services"
   },
+  "trialDaysLeft_many": "",
+  "trialDaysLeft_one": "",
+  "trialDaysLeft_other": "",
+  "trialDaysLeft_other_many": "",
+  "trialDaysLeft_other_one": "",
+  "trialDaysLeft_other_other": "",
   "tryDifferentSearch": "Try a different search term",
   "ui": {
     "clickToViewProjectDetails": "Click to view project details",
@@ -8794,6 +8831,8 @@
   "updated": "atualizado com sucesso",
   "updatedAt": "Atualizado em",
   "updating": "Atualizando...",
+  "upgradeNow": "",
+  "upgradeToPaid": "",
   "upload": "Enviar",
   "uploadErrorDescription": "Ocorreu um erro ao enviar o arquivo",
   "uploadErrorTitle": "Erro no Upload",

@@ -18,6 +18,7 @@
     "tempPasswordPlaceholder": "Ingrese contrasena temporal",
     "title": "Agregar Nuevo Usuario"
   },
+  "addValue": "Agregar Nuevo Valor",
   "adminOnly": "adminOnly",
   "adminRequired": "adminRequired",
   "adminTools": {
@@ -39,6 +40,48 @@
     "confidenceThresholdLabel": "confidenceThresholdLabel",
     "descriptionProject": "descriptionProject",
     "descriptionUser": "descriptionUser",
+    "features": {
+      "budget_insights": {
+        "description": "Proporciona perspectivas accionables sobre presupuestos de proyectos y gastos.",
+        "label": "Perspectivas del Presupuesto"
+      },
+      "budget_risk_assessment": {
+        "description": "Analiza riesgos financieros y destaca posibles excesos.",
+        "label": "Evaluación de Riesgo del Presupuesto"
+      },
+      "cost_prediction": {
+        "description": "Predice costos de construcción basados en datos históricos y tendencias del mercado.",
+        "label": "Predicción de Costos"
+      },
+      "delay_prediction": {
+        "description": "Predicts tasks likely to be delayed and recommends mitigation.",
+        "label": "Delay Prediction"
+      },
+      "financial_anomaly_detection": {
+        "description": "Finds unusual financial patterns that may indicate errors or fraud.",
+        "label": "Financial Anomaly Detection"
+      },
+      "material_analysis": {
+        "description": "Evaluates material choices and availability impacts.",
+        "label": "Material Analysis"
+      },
+      "procurement_recommendations": {
+        "description": "Suggests procurement actions to optimize costs and timelines.",
+        "label": "Procurement Recommendations"
+      },
+      "quality_inspection": {
+        "description": "Assists with automated checks and quality scoring.",
+        "label": "Quality Inspection"
+      },
+      "safety_scanning": {
+        "description": "Detects potential safety issues from plans and reports.",
+        "label": "Safety Scanning"
+      },
+      "schedule_optimization": {
+        "description": "Sugiere mejoras en el cronograma basado en dependencias y recursos disponibles.",
+        "label": "Optimización de Cronograma"
+      }
+    },
     "featuresTitle": "featuresTitle",
     "notificationFrequencyLabel": "notificationFrequencyLabel",
     "notificationOptions": {
@@ -78,62 +121,63 @@
     "wasHelpful": "wasHelpful"
   },
   "apiTesting": {
-    "addHeaderButton": "",
+    "addHeaderButton": "Agregar Encabezado",
     "authOptions": {
-      "apiKey": "",
-      "basic": "",
-      "bearer": "",
-      "none": ""
+      "apiKey": "API Key",
+      "basic": "Basic",
+      "bearer": "Bearer Token",
+      "none": "Ninguno"
     },
-    "authenticationLabel": "",
-    "copyButton": "",
-    "headersLabel": "",
-    "lastUsed": "",
-    "loadButton": "",
-    "methodLabel": "",
-    "newTestButton": "",
-    "noHeaders": "",
-    "noResponse": "",
-    "noSavedTests": "",
-    "requestBodyLabel": "",
-    "requestHeadersTitle": "",
-    "responseBodyLabel": "",
-    "responseHeadersTitle": "",
-    "savedTestsTitle": "",
-    "sendRequestButton": "",
+    "authenticationLabel": "Autenticación",
+    "copyButton": "Copiar",
+    "headersLabel": "Encabezados",
+    "lastUsed": "Último uso",
+    "loadButton": "Cargar",
+    "methodLabel": "Método",
+    "newTestButton": "Nueva Prueba",
+    "noHeaders": "Sin encabezados",
+    "noResponse": "Sin respuesta aún",
+    "noSavedTests": "No hay pruebas guardadas aún",
+    "requestBodyLabel": "Cuerpo de la Solicitud",
+    "requestHeadersTitle": "Encabezados de Solicitud",
+    "responseBodyLabel": "Cuerpo de la Respuesta",
+    "responseHeadersTitle": "Encabezados de Respuesta",
+    "savedTestsTitle": "Pruebas Guardadas",
+    "sendRequestButton": "Enviar Solicitud",
     "tabs": {
-      "headers": "",
-      "history": "",
-      "request": "",
-      "response": ""
+      "headers": "Encabezados",
+      "history": "Historial",
+      "request": "Solicitud",
+      "response": "Respuesta"
     },
-    "testNameLabel": "",
-    "title": "",
+    "testNameLabel": "Nombre de la Prueba",
+    "title": "Pruebas de API",
     "toast": {
-      "copiedDescription": "",
-      "copiedTitle": "",
+      "copiedDescription": "Respuesta copiada al portapapeles",
+      "copiedTitle": "Copiado",
       "errorTitle": "Error",
-      "invalidUrl": "",
-      "missingTestName": "",
+      "invalidUrl": "URL no válida",
+      "missingTestName": "Por favor, ingrese un nombre de prueba",
       "networkError": "Error de red",
-      "requestCompletedDescription": "",
-      "requestCompletedTitle": "",
-      "requestFailedTitle": "",
-      "testDeletedDescription": "",
-      "testDeletedTitle": "",
-      "testLoadedDescription": "",
-      "testLoadedTitle": "",
-      "testSavedDescription": "",
-      "testSavedTitle": ""
+      "requestCompletedDescription": "Solicitud completada con éxito",
+      "requestCompletedTitle": "Solicitud Completada",
+      "requestFailedTitle": "Solicitud Fallida",
+      "testDeletedDescription": "Prueba eliminada con éxito",
+      "testDeletedTitle": "Prueba Eliminada",
+      "testLoadedDescription": "Prueba cargada con éxito",
+      "testLoadedTitle": "Prueba Cargada",
+      "testSavedDescription": "Prueba guardada con éxito",
+      "testSavedTitle": "Prueba Guardada"
     },
-    "urlLabel": ""
+    "urlLabel": "URL"
   },
+  "assignRole": "Asignar Rol",
   "autoCreateBudgets": {
-    "bdiBrazil": "",
-    "costControl": "",
-    "simple": ""
+    "bdiBrazil": "BDI Brasil",
+    "costControl": "Control de Costos",
+    "simple": "Simple"
   },
-  "autoCreateBudgetsLabel": "",
+  "autoCreateBudgetsLabel": "Crear presupuestos automáticamente",
   "bdi": {
     "descriptions": {
       "centralAdmin": "Gastos corporativos asignados a proyectos (%)",
@@ -166,9 +210,15 @@
     "saveButton": "Guardar",
     "totalLabel": "BDI total"
   },
+  "billing": {
+    "downloadInvoice": "Descargar factura",
+    "emptyState": "Aún no hay historial de facturación",
+    "title": "Historial de facturación"
+  },
   "changePassword": "changePassword",
   "cityLabel": "Ciudad",
   "cityPlaceholder": "Ciudad",
+  "comingSoon": "Próximamente",
   "company": "company",
   "companyName": "companyName",
   "companyProfile": {
@@ -178,11 +228,13 @@
     "addressLookupErrorMessage": "addressLookupErrorMessage",
     "addressLookupErrorTitle": "addressLookupErrorTitle",
     "addressPlaceholder": "addressPlaceholder",
+    "charactersCount": "{{count}}/500 caracteres",
     "charactersCount_many": "charactersCount_many",
     "charactersCount_one": "charactersCount",
     "charactersCount_other": "charactersCount",
     "cnpjLabel": "cnpjLabel",
     "cnpjPlaceholder": "cnpjPlaceholder",
+    "collapseCompanyProfile": "Collapse Company Profile",
     "companyDescriptionLabel": "companyDescriptionLabel",
     "companyDescriptionPlaceholder": "companyDescriptionPlaceholder",
     "companyLogoAlt": "companyLogoAlt",
@@ -206,6 +258,9 @@
     "logoUploadSuccess": "logoUploadSuccess",
     "phoneLabel": "phoneLabel",
     "phonePlaceholder": "phonePlaceholder",
+    "processing": "Procesando",
+    "processingDescription": "Eliminando fondo con IA... Esto puede tomar un momento.",
+    "processingWithAI": "Procesando con IA...",
     "quoteInformation": "quoteInformation",
     "quoteInformationDescription": "quoteInformationDescription",
     "saveButton": "saveButton",
@@ -218,6 +273,7 @@
     "zipCodeLabel": "zipCodeLabel",
     "zipCodePlaceholder": "zipCodePlaceholder"
   },
+  "companyProfileSaved": "Perfil de empresa actualizado",
   "companyProfileTitle": "companyProfileTitle",
   "confirmPassword": "",
   "confirmPasswordPlaceholder": "",
@@ -259,6 +315,7 @@
   "currentPasswordPlaceholder": "",
   "dark": "dark",
   "dataManagement": {
+    "backupFileLabel": "Backup File",
     "clearAllData": "Borrar todos los datos",
     "completeDatabaseExportDescription": "Exportar la base de datos completa.",
     "csvFileHelper": "Seleccione un archivo CSV para importar.",
@@ -300,6 +357,7 @@
       "excel": "Excel",
       "json": "JSON"
     },
+    "exportProgressLabel": "Export Progress",
     "exportSelectedTables": "",
     "exportTable": "Exportar 1 tabla",
     "exportTable_many": "",
@@ -312,8 +370,11 @@
     "exportingAllData": "Exportando...",
     "exportingDatabaseDump": "Exportando...",
     "exportingLabel": "Exportando...",
+    "exportingSelectedTables": "Exporting Selected Tables...",
+    "importBackupButton": "Import Backup",
     "importBackupDescription": "Seleccione un archivo de backup para restaurar.",
     "importBackupTitle": "Importar backup",
+    "importCsvDataButton": "Import CSV Data",
     "importInstructionsImport": "Importar volcado:",
     "importInstructionsMigrations": "Ejecutar migraciones:",
     "importInstructionsTitle": "Instrucciones",
@@ -332,6 +393,7 @@
     "importResultsTitle": "Resultados",
     "lastBackup": "Último backup: {{date}}",
     "loadingStatistics": "Cargando...",
+    "noFileChosen": "No file chosen",
     "quickBackupDescription": "",
     "quickBackupTitle": "",
     "selectAll": "Seleccionar todo",
@@ -349,9 +411,16 @@
       "localSupabase": "Supabase local",
       "postgresql": "PostgreSQL"
     },
+    "tableOptions": {
+      "clients": "Clients",
+      "financialEntries": "Financial Entries",
+      "projects": "Projects",
+      "users": "Users"
+    },
     "targetTableLabel": "",
     "toast": {
       "clearDataNotAvailable": "Limpiar datos no disponible.",
+      "csvImportSuccess": "Successfully imported {{count}} records into {{table}}",
       "csvImportSuccess_many": "",
       "csvImportSuccess_one": "",
       "csvImportSuccess_other": "",
@@ -379,6 +448,7 @@
     "MM/DD/YYYY": "MM/DD/YYYY",
     "YYYY-MM-DD": "YYYY-MM-DD"
   },
+  "defaultBudgetModel": "Default Budget Model",
   "defaultBudgetModelLabel": "",
   "defaultCurrencyLabel": "",
   "defaultDateFormatLabel": "",
@@ -402,17 +472,41 @@
     "saveDefaultValues": "saveDefaultValues",
     "selectStatePlaceholder": "selectStatePlaceholder"
   },
+  "demoData": {
+    "description": "Generar datos de ejemplo para pruebas y demostración",
+    "errorGenerating": "Error al generar datos de pago",
+    "generatePayments": "Generar Pagos",
+    "generatingPayments": "Generando pagos...",
+    "paymentsGenerated": "Generadas exitosamente {{count}} transacciones de pago",
+    "title": "Datos de Demostración"
+  },
   "digitalSignature": {
-    "saveButton": "Guardar firma"
+    "currentSignature": "Current Signature",
+    "description": "Draw your signature below. It will be used on PDF documents when digital signatures are enabled.",
+    "saveButton": "Guardar firma",
+    "title": "Digital Signature"
   },
   "disabled": "disabled",
   "dropdownOptions": {
     "addDescription": "addDescription",
     "addOption": "addOption",
+    "categories": {
+      "constructionUnit": "Unidad de Construcción",
+      "finishingType": "Tipo de Acabado",
+      "floorType": "Tipo de Piso",
+      "projectStatus": "Estado del Proyecto",
+      "projectType": "Tipo de Proyecto",
+      "roofType": "Tipo de Techo",
+      "salesPipelineColumns": "Pipeline de Ventas",
+      "taskPriority": "Prioridad de Tarea",
+      "taskStatus": "Estado de Tarea",
+      "terrainType": "Tipo de Terreno"
+    },
     "default": "default",
     "deleteDescription": "deleteDescription",
     "deleteTitle": "deleteTitle",
     "dependenciesNotice": "dependenciesNotice",
+    "description": "Gestione los valores de dropdown para formularios y campos en toda la aplicación",
     "dragDrop": {
       "reorderDescription": "reorderDescription",
       "reorderError": "reorderError",
@@ -441,6 +535,11 @@
       "valueReadOnly": "valueReadOnly"
     },
     "setDefault": "setDefault",
+    "success": {
+      "added": "Opción agregada exitosamente",
+      "deleted": "Opción eliminada exitosamente",
+      "updated": "Opción actualizada exitosamente"
+    },
     "table": {
       "actions": "actions",
       "active": "active",
@@ -457,14 +556,20 @@
     "avatarChange": "Cambiar foto",
     "avatarFileSizeError": "Archivo demasiado grande",
     "avatarFileTypeError": "Tipo de archivo no válido",
+    "avatarHelp": "Ingrese una URL pública o una ruta de almacenamiento.",
     "avatarPreview": "Vista previa",
     "avatarRemove": "Eliminar foto",
+    "avatarRemoveSuccess": "Avatar eliminado exitosamente",
     "avatarUpload": "Subir foto",
+    "avatarUploadError": "Error al subir avatar",
+    "avatarUploadSuccess": "Avatar subido exitosamente",
     "avatarUploading": "Subiendo..."
   },
   "editUserProfile": "Editar perfil",
+  "editValue": "Editar Valor",
   "email": "email",
   "emailAdminOnly": "Solo un administrador puede cambiar el correo.",
+  "emailNotifications": "Notificaciones por Correo",
   "enabled": "enabled",
   "errorSavingSettings": "errorSavingSettings",
   "financialAlerts": "financialAlerts",
@@ -596,7 +701,14 @@
       "saved": ""
     }
   },
+  "internationalization": "Internacionalización",
+  "internationalizationDescription": "Configure las preferencias de idioma para la aplicación",
+  "invalidCurrentPassword": "Contraseña actual incorrecta",
   "language": "language",
+  "languageOptions": {
+    "en-US": "English (EE.UU.)",
+    "pt-BR": "Português (Brasil)"
+  },
   "languageOptionsExtended": {
     "en-US": "en-US",
     "es-ES": "es-ES",
@@ -622,6 +734,8 @@
       "saveSuccess": "saveSuccess",
       "sortOrderLabel": "sortOrderLabel",
       "spanishLabel": "spanishLabel",
+      "unsavedChanges": "Cambios sin Guardar",
+      "unsavedChangesDesc": "Tienes cambios sin guardar en el editor de traducciones.",
       "updateValue": ""
     },
     "loadingConfiguration": "loadingConfiguration",
@@ -636,6 +750,7 @@
     },
     "targetLanguage": "targetLanguage",
     "title": "title",
+    "valuesCount": "{{count}} valores",
     "valuesCount_many": "valuesCount_many",
     "valuesCount_one": "valuesCount",
     "valuesCount_other": "valuesCount"
@@ -645,6 +760,7 @@
   "logoutError": "logoutError",
   "manageNotifications": "manageNotifications",
   "manageRoles": "Gestionar roles",
+  "manageTranslations": "Gestionar Traducciones",
   "name": "Nombre",
   "namePlaceholder": "Introduzca su nombre",
   "newPassword": "",
@@ -661,6 +777,8 @@
     "materialDelivery": "materialDelivery",
     "scheduleChanges": "scheduleChanges"
   },
+  "notificationsSaved": "Preferencias de notificación guardadas",
+  "numberFormat": "Formato de Números",
   "numberFormatDescription": "numberFormatDescription",
   "numberFormatOptions": {
     "compact": "compact",
@@ -668,6 +786,7 @@
   },
   "numberFormatPreviewHeading": "",
   "password": "password",
+  "passwordChanged": "Contraseña cambiada exitosamente",
   "passwordMismatch": "",
   "passwordMustBeDifferent": "",
   "passwordTooShort": "",
@@ -679,26 +798,70 @@
   "pwa": {
     "androidInstructions": "androidInstructions",
     "available": "available",
+    "benefits": {
+      "fasterLoading": "Tiempos de carga más rápidos",
+      "nativeExperience": "Experiencia similar a aplicación nativa",
+      "notifications": "Notificaciones push (si están habilitadas)",
+      "offlineAccess": "Acceso sin conexión a datos en caché",
+      "shortcut": "Acceso directo en escritorio/pantalla de inicio",
+      "title": "Beneficios de Instalar"
+    },
     "chromeAndroid": {
+      "step1": "Toca el menú (⋮)",
+      "step2": "Toca \"Añadir a la pantalla de inicio\"",
+      "step3": "Toca \"Instalar\"",
       "title": "title"
     },
+    "chromeDesktop": {
+      "step1": "Haz clic en el icono de instalación en la barra de direcciones",
+      "step2": "O haz clic en el menú (⋮) → \"Instalar CastorWorks\"",
+      "title": "En Chrome/Edge (Escritorio):"
+    },
     "description": "description",
+    "installInstructions": "Instrucciones de Instalación",
     "installation": "installation",
+    "installationInstructions": "Instrucciones de Instalación",
     "iosInstructions": "iosInstructions",
     "offlineMode": "offlineMode",
     "offlineModeDesc": "offlineModeDesc",
     "safariIOS": {
+      "step1": "Toca el botón Compartir",
+      "step2": "Desplázate hacia abajo y toca \"Añadir a la pantalla de inicio\"",
+      "step3": "Toca \"Añadir\"",
       "title": "title"
     },
-    "title": "title"
+    "status": {
+      "installed": "✓ Aplicación instalada",
+      "notInstalled": "Aplicación no instalada",
+      "title": "Estado de Instalación"
+    },
+    "title": "title",
+    "toastMessage": "Usa la función de instalación de tu navegador para añadir esta aplicación a tu dispositivo"
   },
+  "removeRole": "Eliminar Rol",
   "role": "Rol",
   "roleAccountant": "",
   "roleAdmin": "",
   "roleAdminOffice": "",
   "roleArchitect": "",
   "roleClient": "",
+  "roleDescriptions": {
+    "admin": "Acceso total a todas las opciones y configuraciones.",
+    "admin_office": "Enfoque administrativo (clientes, finanzas y compras).",
+    "architect": "Acceso solo a las páginas del portal del arquitecto para diseño de proyectos y gestión de clientes.",
+    "client": "Acceso de solo lectura a paneles y documentación compartida.",
+    "global_admin": "Solo personal de soporte. Acceso total a todos los proyectos incluidos los de arquitectos. Solo se puede asignar a usuarios marcados como soporte.",
+    "project_manager": "Acceso completo a las herramientas del proyecto excepto Configuración.",
+    "site_supervisor": "Enfoque en obra y confirmaciones de entrega en campo.",
+    "viewer": "Puede revisar paneles y reportes sin realizar cambios."
+  },
   "roleGlobalAdmin": "",
+  "roleManagement": {
+    "assignFailed": "Error al asignar rol: {{error}}",
+    "assignedSuccess": "Rol asignado exitosamente",
+    "removeFailed": "Error al eliminar rol: {{error}}",
+    "removedSuccess": "Rol eliminado exitosamente"
+  },
   "rolePermissions": {
     "legend": "Marque las casillas para permitir el acceso.",
     "noTabs": "Sin pestañas",
@@ -717,12 +880,21 @@
     "updating": "updating",
     "visibleCount": "visibleCount"
   },
+  "salesPipelineColumnsHeading": "Columnas del Pipeline de Ventas",
   "saveChanges": "saveChanges",
   "saving": "saving",
   "security": "security",
   "selectCurrency": "selectCurrency",
   "selectLanguage": "selectLanguage",
   "selectTheme": "selectTheme",
+  "settings": {
+    "aiFeedback": {
+      "buttons": {
+        "no": "No",
+        "yes": "Yes"
+      }
+    }
+  },
   "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
   "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
   "settingsUpdated": "settingsUpdated",
@@ -730,10 +902,15 @@
     "adminNote": "Los administradores tienen acceso completo.",
     "cancel": "Cancelar",
     "collapseAll": "Contraer todo",
+    "confirmChanges": "¿Está seguro de que desea guardar estos cambios de permisos?",
     "expandAll": "Expandir todo",
     "saveChanges": "Guardar cambios",
+    "saveError": "Error al actualizar permisos",
+    "saveSuccess": "Permisos actualizados correctamente",
     "saving": "Guardando...",
+    "subtitle": "Gestione qué roles pueden acceder a cada opción de la barra lateral y sus pestañas hijas. Haga clic en la flecha para expandir y gestionar permisos a nivel de pestaña.",
     "tabPermission": "Permiso de pestaña",
+    "title": "Gestión de Acceso de la Barra Lateral",
     "unsavedChanges": "Tiene cambios sin guardar."
   },
   "sinapi": {
@@ -760,15 +937,20 @@
     "type": "Tipo",
     "unit": "Unidad"
   },
+  "sourceBadge": "Fuente",
+  "sourceLanguage": "Idioma de Origen (Base)",
+  "sourceLanguageDescription": "Todas las traducciones se basan en el texto en inglés",
   "status": {
     "noRoles": "noRoles",
     "notSet": "notSet"
   },
+  "stringsTranslated": "{{translated}} de {{total}} cadenas traducidas",
   "subtitle": "subtitle",
   "system": "system",
   "systemNumberFormatLabel": "",
   "systemPreferences": "systemPreferences",
   "systemPreferencesAdminDescription": "systemPreferencesAdminDescription",
+  "systemPreferencesAutoSave": "Las configuraciones se guardan automáticamente cuando se cambian.",
   "systemPreferencesDefaultsNote": "systemPreferencesDefaultsNote",
   "systemPreferencesReadOnly": "systemPreferencesReadOnly",
   "systemPreferencesViewOnlyDescription": "systemPreferencesViewOnlyDescription",
@@ -778,10 +960,15 @@
   "systemWeatherLocationLabel": "",
   "tabs": {
     "admin-tools": "Herramientas admin",
+    "ai-providers": "Proveedores de IA",
+    "api-testing": "Pruebas de API",
     "bdi": "BDI",
+    "billing": "Facturación",
     "business-settings": "",
+    "company": "Empresa",
     "contact-types": "Tipos de contacto",
     "csv-import": "Importar CSV",
+    "data": "Datos",
     "data-management": "",
     "defaults": "Valores por defecto",
     "demoData": "",
@@ -790,6 +977,8 @@
     "inss-reference": "",
     "inss-strategy": "",
     "integrations": "Integraciones",
+    "internationalization": "Internacionalización",
+    "localization": "Localización",
     "menu-order": "",
     "permission-management": "",
     "preferences": "Preferencias",
@@ -797,14 +986,20 @@
     "quick-backup": "Backup rápido",
     "selective-export": "Exportación selectiva",
     "sinapi": "SINAPI",
+    "subscription": "Suscripción",
     "system-preferences": "",
     "system-translation": "",
+    "theme": "Tema",
+    "third-party": "Servicios de Terceros",
     "translation-dashboard": "",
     "translation-editor": "",
     "user-management": "",
     "user-preferences": "",
     "users": "Usuarios"
   },
+  "targetLanguage": "Target Language",
+  "targetLanguageDescription": "Select your preferred language for the interface",
+  "temperatureUnit": "Temperature Unit",
   "temperatureUnitOptions": {
     "C": "C",
     "F": "F"
@@ -880,8 +1075,12 @@
     "livePreview": "livePreview",
     "modeSelector": "modeSelector",
     "preview": {
+      "buttonStyles": "Estilos de Botón",
+      "cardStyles": "Estilos de Tarjeta",
+      "colorPalette": "Paleta de Colores",
       "description": "description",
-      "title": "title"
+      "title": "title",
+      "typography": "Tipografía"
     },
     "reset": "reset",
     "resetTheme": "resetTheme",
@@ -938,6 +1137,41 @@
       "connectionFailed": "",
       "missingRequiredFields": ""
     },
+    "integrations": {
+      "awsS3": {
+        "description": "Amazon S3 para almacenamiento de archivos y CDN"
+      },
+      "cloudinary": {
+        "description": "Gestión de imágenes y videos con transformaciones"
+      },
+      "docusign": {
+        "description": "Firma electrónica y flujo de trabajo de documentos"
+      },
+      "googleAnalytics": {
+        "description": "Analíticas de sitio web y seguimiento del comportamiento del usuario"
+      },
+      "mailgun": {
+        "description": "Servicio de entrega de correo con analíticas"
+      },
+      "microsoftTeams": {
+        "description": "Comunicación empresarial y colaboración"
+      },
+      "mixpanel": {
+        "description": "Analíticas de producto e información de compromiso del usuario"
+      },
+      "paypal": {
+        "description": "Procesar pagos de PayPal y desembolsos"
+      },
+      "sendgrid": {
+        "description": "Entrega de correo transaccional y correos de marketing"
+      },
+      "slack": {
+        "description": "Comunicación de equipo y notificaciones"
+      },
+      "stripe": {
+        "description": "Aceptar pagos con tarjeta de crédito y gestionar suscripciones"
+      }
+    },
     "lastTested": "",
     "oauthSetupTitle": "",
     "oauthSteps": {
@@ -955,6 +1189,13 @@
     "requiredSettingsTitle": "",
     "saveConfigurationButton": "",
     "setupInstructionsTitle": "",
+    "status": {
+      "configured": "Configurado",
+      "connected": "Conectado",
+      "error": "Error",
+      "not_configured": "No configurado",
+      "testing": "Probando"
+    },
     "tabs": {
       "configure": "",
       "overview": ""
@@ -978,6 +1219,7 @@
     "webhookTitle": "",
     "webhookUrlHelp": ""
   },
+  "timeZone": "Time Zone",
   "timeZoneOptions": {
     "America/New_York": "America/New_York",
     "America/Sao_Paulo": "America/Sao_Paulo",
@@ -992,6 +1234,7 @@
       "action": "action",
       "addTranslation": "addTranslation",
       "category": "category",
+      "description": "{{count}} elemento(s) necesitan traducción",
       "description_many": "description_many",
       "description_one": "description",
       "description_other": "description",
@@ -1006,6 +1249,7 @@
     "review": {
       "action": "action",
       "currentTranslation": "currentTranslation",
+      "description": "{{count}} traducción(es) marcadas para revisión",
       "description_many": "description_many",
       "description_one": "description",
       "description_other": "description",
@@ -1027,11 +1271,13 @@
     "exportMissing": "exportMissing",
     "exportNoMissing": "exportNoMissing",
     "exportSuccess": "exportSuccess",
+    "issuesFound": "Problemas Encontrados ({{count}})",
     "issuesFound_many": "issuesFound_many",
     "issuesFound_one": "issuesFound",
     "issuesFound_other": "issuesFound",
     "syncError": "syncError",
     "syncNoChanges": "syncNoChanges",
+    "syncSuccess": "¡Sincronización completa! Se agregaron {{count}} claves en {{files}} archivos.",
     "syncSuccess_many": "syncSuccess_many",
     "syncSuccess_one": "syncSuccess",
     "syncSuccess_other": "syncSuccess",
@@ -1054,6 +1300,7 @@
     "targetLanguage": "targetLanguage",
     "targetLanguageLabel": "targetLanguageLabel",
     "title": "title",
+    "translationsMissing": "Falta(n) {{count}} traducción(es)",
     "translationsMissing_many": "translationsMissing_many",
     "translationsMissing_one": "translationsMissing",
     "translationsMissing_other": "translationsMissing",
@@ -1064,6 +1311,10 @@
   "translations": {
     "cancel": "cancel",
     "languageNames": {
+      "en-US": "Inglés",
+      "es-ES": "Español",
+      "fr-FR": "Francés",
+      "pt-BR": "Português",
       "title": "title"
     },
     "lastReviewed": "lastReviewed",
@@ -1084,6 +1335,7 @@
   },
   "twoFactorAuth": "twoFactorAuth",
   "unsavedChanges": "unsavedChanges",
+  "updatePreferences": "Actualizar Preferencias",
   "userManagement": "Gestión de usuarios",
   "userPreferences": {
     "appearanceLabel": "appearanceLabel",
@@ -1120,5 +1372,8 @@
     "title": "title"
   },
   "userProfile": "Perfil de usuario",
+  "userProfileSaved": "Perfil de usuario actualizado",
+  "users": "Usuarios",
+  "weatherLocation": "Ubicación del Clima",
   "weatherLocationPlaceholder": "weatherLocationPlaceholder"
 }

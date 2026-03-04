@@ -6,10 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
-- **Tailwind CSS v4 Compatibility** — Upgraded PostCSS configuration to use `@tailwindcss/postcss` (required for Tailwind v4) and updated CSS imports from `@tailwind base/components/utilities` to `@import "tailwindcss"`
-
 ### Added
+- **Phase 4 — Payment & Subscription (Stripe):**
+  - `SubscriptionPage` and `SubscriptionCheckoutFlow` components with plan selection, upgrade/downgrade flow, and Stripe Checkout redirect
+  - `BillingPage` component with invoice history, PDF download, and Stripe Customer Portal link
+  - `useSubscription` and `useBillingHistory` hooks for server state via TanStack Query
+  - `subscription` i18n namespace (en-US, es-ES, fr-FR, pt-BR)
+  - Edge Functions: `create-checkout-session`, `create-billing-portal-session`, `list-billing-history`, `get-invoice-pdf`, `stripe-webhook`
+  - DB migrations: `20260304000000_subscriptions_and_stripe.sql` (schema + RLS), `20260304000001_stripe_price_ids.sql`
+  - Setup scripts: `scripts/stripe-phase4-setup.mjs`, `scripts/stripe-phase4-apply.sh`, `scripts/set-stripe-price-ids.sql`
+  - Runbook: `docs/runbooks/stripe-phase4-setup.md`
+  - Settings page gains **Subscription** and **Billing** tabs
+- **i18n tooling:** `scripts/i18n-add-namespace.mjs` — scaffolds a new namespace across all 4 locales and wires up `critical.ts` + `i18n.ts` automatically (`npm run i18n:add-namespace -- <name>`)
+- **E2E tests:** `e2e/add-user.agent-browser.cjs` and companion fixtures for the add-user flow
+- **Deploy script:** `deploy/deploy-edge-functions-ng.sh` for CastorWorks-NG edge function deployments
 - **TL2-B: Client Definitions Tracking** — Track client decisions (material selections, design approvals) with:
   - Status tracking (pending, in_progress, completed, overdue, blocking) and filter chips
   - Date-based overdue counters: past-due items (required_by_date < today) counted regardless of explicit status
@@ -49,6 +59,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **AppLiveMeeting**: Audio recording via MediaRecorder (start on meeting create, stop and upload to project-documents on finish); finishMeeting accepts audio_url and duration_seconds; debounced notes auto-sync; real data only (no mock transcript/meetings)
   - **AppNotifications**: Real notification data integration (no demo fallback); Realtime subscription for new notifications
   - **i18n**: transcriptPlaceholder for meetings (en-US, pt-BR, es-ES, fr-FR); annotations.reopen
+
+### Fixed
+- **Auth / Add-User Edge Function:** Resolved JWT validation and RLS errors (`PGRST301`) that blocked user creation; service_role can now manage `user_roles` and `user_profiles`
+- **useCallback stability:** Wrapped Supabase module references in `useMemo` to prevent hook dependency churn
+- **Tailwind CSS v4 Compatibility** — Upgraded PostCSS configuration to use `@tailwindcss/postcss` (required for Tailwind v4) and updated CSS imports from `@tailwind base/components/utilities` to `@import "tailwindcss"`
 
 ### Security
 - **milestone_delays RLS** (TL2-A.1): Require `has_project_access` for INSERT and UPDATE policies so managers can only create/update delay records for projects they have access to

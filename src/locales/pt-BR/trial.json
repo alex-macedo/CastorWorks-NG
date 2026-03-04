@@ -1,5 +1,6 @@
 {
   "daysLeft": "{{count}} dias restantes no seu período de teste",
   "daysLeft_one": "1 dia restante no seu período de teste",
-  "endsOn": "Seu período de teste termina em {{date}}"
+  "endsOn": "Seu período de teste termina em {{date}}",
+  "upgradeNow": "Fazer upgrade agora"
 }

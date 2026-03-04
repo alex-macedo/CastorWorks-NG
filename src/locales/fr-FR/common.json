@@ -588,6 +588,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
+  "annual": "",
   "app": {
     "active": "Actif",
     "activeProjects": "Projets Actifs",
@@ -1486,6 +1487,12 @@
   "bi-weekly": "Bimensuel",
   "biWeekly": "Bimensuel",
   "billableHours": "billableHours",
+  "billing": {
+    "downloadInvoice": "",
+    "emptyState": "",
+    "title": ""
+  },
+  "billingPeriod": "",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1787,6 +1794,7 @@
     "taxes": "Taxes/Impôts"
   },
   "change": "[EN] Change",
+  "changePlan": "",
   "clear": "Effacer",
   "clearAll": "Tout Effacer",
   "clearFilter": "Effacer le filtre",
@@ -3114,6 +3122,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
+  "currentPlan": "",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Articles pour lesquels vous avez demandé des devis",
@@ -4572,6 +4581,7 @@
   },
   "linkCopied": "Lien copié dans le presse-papiers",
   "loading": "Chargement...",
+  "loadingSubscription": "",
   "location": "Emplacement",
   "logistics": "Logistique",
   "maintenance": {
@@ -4590,6 +4600,7 @@
     "startTimeLabel": "Heure de Début",
     "titleLabel": "Titre"
   },
+  "manageBilling": "",
   "materials": "Matériaux",
   "meetingReview": {
     "confirm": "confirm",
@@ -4703,8 +4714,10 @@
   },
   "new": "Nouveau",
   "next": "Suivant",
+  "nextRenewal": "",
   "nextStep": "Étape suivante",
   "no": "Non",
+  "noActiveSubscription": "",
   "noAddress": "Aucune adresse fournie",
   "noChanges": "Aucune modification à enregistrer",
   "noContactsAvailable": "Aucun contact disponible. Ajoutez d'abord des clients, des fournisseurs ou des entrepreneurs.",
@@ -4977,6 +4990,7 @@
     "projectCalendarDesc": "Gérez les jours ouvrables et les jours fériés pour une planification précise du projet",
     "systemOperational": "Système Opérationnel"
   },
+  "pageTitle": "",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5193,6 +5207,7 @@
     }
   },
   "paused": "En Pause",
+  "paymentCanceled": "",
   "paymentLinks": {
     "title": "title"
   },
@@ -5207,6 +5222,7 @@
     "debitCard": "Carte de Débit",
     "wireTransfer": "Virement Électronique"
   },
+  "paymentSuccess": "",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -7658,6 +7674,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
+    "canceled": "",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7668,6 +7685,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
+    "past_due": "",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7687,6 +7705,7 @@
   "studioTools": "studioTools",
   "submit": "Soumettre",
   "submitting": "Soumission...",
+  "subscribeNow": "",
   "success": "Succès",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8263,6 +8282,18 @@
     "withBadges": "Avec des badges"
   },
   "thisMonth": "Ce mois-ci",
+  "tierPicker": {
+    "annual": "",
+    "cancel": "",
+    "checkoutError": "",
+    "confirm": "",
+    "custom": "",
+    "loading": "",
+    "monthly": "",
+    "perMonthAnnual": "",
+    "selectTier": "",
+    "title": ""
+  },
   "timeline": {
     "actions": {
       "closePhase": "closePhase",
@@ -8755,6 +8786,12 @@
     "other": "Autre",
     "services": "Services"
   },
+  "trialDaysLeft_many": "",
+  "trialDaysLeft_one": "",
+  "trialDaysLeft_other": "",
+  "trialDaysLeft_other_many": "",
+  "trialDaysLeft_other_one": "",
+  "trialDaysLeft_other_other": "",
   "tryDifferentSearch": "Essayez un autre terme de recherche",
   "ui": {
     "clickToViewProjectDetails": "Cliquez pour voir les détails du projet",
@@ -8794,6 +8831,8 @@
   "updated": "mis à jour avec succès",
   "updatedAt": "Mis à jour le",
   "updating": "Mise à jour...",
+  "upgradeNow": "",
+  "upgradeToPaid": "",
   "upload": "Téléverser",
   "uploadErrorDescription": "Une erreur est survenue lors du téléchargement du fichier",
   "uploadErrorTitle": "Erreur de Téléchargement",

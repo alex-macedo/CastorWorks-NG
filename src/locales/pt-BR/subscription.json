@@ -1,0 +1,35 @@
+{
+  "annual": "Anual",
+  "billingPeriod": "Período de cobrança",
+  "changePlan": "Alterar plano",
+  "currentPlan": "Plano atual",
+  "loadingSubscription": "Carregando assinatura…",
+  "manageBilling": "Gerenciar cobrança",
+  "monthly": "Mensal",
+  "nextRenewal": "Próxima renovação",
+  "noActiveSubscription": "Nenhuma assinatura ativa",
+  "pageTitle": "Assinatura",
+  "paymentCanceled": "Pagamento cancelado",
+  "paymentSuccess": "Pagamento realizado com sucesso",
+  "status": {
+    "active": "Ativo",
+    "canceled": "Cancelado",
+    "past_due": "Em atraso"
+  },
+  "subscribeNow": "Assinar agora",
+  "tierPicker": {
+    "annual": "Anual",
+    "cancel": "Cancelar",
+    "checkoutError": "Erro ao iniciar o checkout",
+    "confirm": "Confirmar",
+    "custom": "Personalizado",
+    "loading": "Carregando…",
+    "monthly": "Mensal",
+    "perMonthAnnual": "por mês (anual)",
+    "selectTier": "Selecione um plano",
+    "title": "Escolha seu plano"
+  },
+  "trialDaysLeft": "{{count}} dias restantes no período de teste",
+  "trialDaysLeft_other": "{{count}} dias restantes no período de teste",
+  "upgradeToPaid": "Fazer upgrade para plano pago"
+}

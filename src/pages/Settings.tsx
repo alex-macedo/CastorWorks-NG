@@ -59,6 +59,8 @@ import { ThirdPartyServices } from "@/components/Settings/ThirdPartyServices";
 import { AIProviderSettings } from "@/components/Settings/AIProviderSettings";
 import { WhatsAppAiAutoResponderCard } from "@/components/Settings/WhatsAppAiAutoResponderCard";
 import { AdminToolsPanel } from "@/components/Settings/AdminToolsPanel";
+import { SubscriptionPage } from "@/components/Settings/SubscriptionPage";
+import { BillingPage } from "@/components/Settings/BillingPage";
 const Settings = () => {
   const navigate = useNavigate();
   const { language, currency, timeZone, weatherLocation, temperatureUnit, numberFormat, updateSettings, t } = useLocalization();
@@ -287,6 +289,8 @@ const Settings = () => {
           </RequireAdministrativeRoles>
 
           <TabsTrigger value="preferences" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.preferences")}</TabsTrigger>
+          <TabsTrigger value="subscription" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.subscription")}</TabsTrigger>
+          <TabsTrigger value="billing" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.billing")}</TabsTrigger>
           <TabsTrigger value="business-settings" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.business-settings")}</TabsTrigger>
           <TabsTrigger value="integrations" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.integrations')}</TabsTrigger>
           <TabsTrigger value="data-management" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.data-management")}</TabsTrigger>
@@ -486,7 +490,13 @@ const Settings = () => {
 
          </TabsContent>
 
+         <TabsContent value="subscription" className="mt-6">
+           <SubscriptionPage />
+         </TabsContent>
 
+         <TabsContent value="billing" className="mt-6">
+           <BillingPage />
+         </TabsContent>
 
          <TabsContent value="users" className="space-y-6">
            <Tabs defaultValue="user-management" className="w-full">

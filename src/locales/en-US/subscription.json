@@ -1,0 +1,35 @@
+{
+  "annual": "Annual",
+  "billingPeriod": "Billing Period",
+  "changePlan": "Change Plan",
+  "currentPlan": "Current Plan",
+  "loadingSubscription": "Loading subscription…",
+  "manageBilling": "Manage Billing",
+  "monthly": "Monthly",
+  "nextRenewal": "Next Renewal",
+  "noActiveSubscription": "No active subscription",
+  "pageTitle": "Subscription",
+  "paymentCanceled": "Payment canceled",
+  "paymentSuccess": "Payment successful",
+  "status": {
+    "active": "Active",
+    "canceled": "Canceled",
+    "past_due": "Past Due"
+  },
+  "subscribeNow": "Subscribe Now",
+  "tierPicker": {
+    "annual": "Annual",
+    "cancel": "Cancel",
+    "checkoutError": "Error starting checkout",
+    "confirm": "Confirm",
+    "custom": "Custom",
+    "loading": "Loading…",
+    "monthly": "Monthly",
+    "perMonthAnnual": "per month (annual)",
+    "selectTier": "Select a plan",
+    "title": "Choose your plan"
+  },
+  "trialDaysLeft": "{{count}} days left in your trial",
+  "trialDaysLeft_other": "{{count}} days left in your trial",
+  "upgradeToPaid": "Upgrade to Paid Plan"
+}

@@ -588,6 +588,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
+  "annual": "annual",
   "app": {
     "active": "Active",
     "activeProjects": "Active Projects",
@@ -1486,6 +1487,12 @@
   "bi-weekly": "Bi-Weekly",
   "biWeekly": "Bi-Weekly",
   "billableHours": "billableHours",
+  "billing": {
+    "downloadInvoice": "downloadInvoice",
+    "emptyState": "emptyState",
+    "title": "title"
+  },
+  "billingPeriod": "billingPeriod",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1787,6 +1794,7 @@
     "taxes": "Taxes"
   },
   "change": "Change",
+  "changePlan": "changePlan",
   "clear": "Clear",
   "clearAll": "Clear All",
   "clearFilter": "Clear Filter",
@@ -3114,6 +3122,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
+  "currentPlan": "currentPlan",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Items you requested quotes for",
@@ -4571,6 +4580,7 @@
   },
   "linkCopied": "Link copied to clipboard",
   "loading": "Loading...",
+  "loadingSubscription": "loadingSubscription",
   "location": "Location",
   "logistics": "Logistics",
   "maintenance": {
@@ -4589,6 +4599,7 @@
     "startTimeLabel": "Start Time",
     "titleLabel": "Title"
   },
+  "manageBilling": "manageBilling",
   "materials": "Materials",
   "meetingReview": {
     "confirm": "confirm",
@@ -4702,8 +4713,10 @@
   },
   "new": "New",
   "next": "Next",
+  "nextRenewal": "nextRenewal",
   "nextStep": "Next Step",
   "no": "No",
+  "noActiveSubscription": "noActiveSubscription",
   "noAddress": "No address provided",
   "noChanges": "No changes to save",
   "noContactsAvailable": "No contacts available. Add clients, suppliers, or contractors first.",
@@ -4976,6 +4989,7 @@
     "projectCalendarDesc": "Manage working days and holidays for accurate project scheduling",
     "systemOperational": "System Operational"
   },
+  "pageTitle": "pageTitle",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5192,6 +5206,7 @@
     }
   },
   "paused": "Paused",
+  "paymentCanceled": "paymentCanceled",
   "paymentLinks": {
     "title": "title"
   },
@@ -5206,6 +5221,7 @@
     "debitCard": "Debit Card",
     "wireTransfer": "Wire Transfer"
   },
+  "paymentSuccess": "paymentSuccess",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -7657,6 +7673,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
+    "canceled": "canceled",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7667,6 +7684,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
+    "past_due": "past_due",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7686,6 +7704,7 @@
   "studioTools": "studioTools",
   "submit": "Submit",
   "submitting": "Submitting...",
+  "subscribeNow": "subscribeNow",
   "success": "Success",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8262,6 +8281,18 @@
     "withBadges": "With badges"
   },
   "thisMonth": "This month",
+  "tierPicker": {
+    "annual": "annual",
+    "cancel": "cancel",
+    "checkoutError": "checkoutError",
+    "confirm": "confirm",
+    "custom": "custom",
+    "loading": "loading",
+    "monthly": "monthly",
+    "perMonthAnnual": "perMonthAnnual",
+    "selectTier": "selectTier",
+    "title": "title"
+  },
   "timeline": {
     "actions": {
       "closePhase": "closePhase",
@@ -8754,6 +8785,10 @@
     "other": "Other",
     "services": "Services"
   },
+  "trialDaysLeft_one": "trialDaysLeft",
+  "trialDaysLeft_other": "trialDaysLeft",
+  "trialDaysLeft_other_one": "trialDaysLeft_other",
+  "trialDaysLeft_other_other": "trialDaysLeft_other",
   "tryDifferentSearch": "Try a different search term",
   "ui": {
     "clickToViewProjectDetails": "Click to view project details",
@@ -8793,6 +8828,8 @@
   "updated": "updated successfully",
   "updatedAt": "Updated at",
   "updating": "Updating...",
+  "upgradeNow": "upgradeNow",
+  "upgradeToPaid": "upgradeToPaid",
   "upload": "Upload",
   "uploadErrorDescription": "uploadErrorDescription",
   "uploadErrorTitle": "uploadErrorTitle",
