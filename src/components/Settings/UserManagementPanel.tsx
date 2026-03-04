@@ -62,12 +62,12 @@ export function UserManagementPanel() {
                   <div className="flex items-center gap-3">
                     <AvatarResolved
                       src={user.avatar_url}
-                      alt={user.display_name || user.email || 'User'}
-                      fallback={(user.display_name || user.email || 'User').substring(0, 2).toUpperCase()}
+                      alt={user.display_name || user.email || t('settings.userManagementUnknownUser')}
+                      fallback={(user.display_name || user.email || t('settings.userManagementUnknownUser')).substring(0, 2).toUpperCase()}
                       className="h-10 w-10"
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium truncate">{user.display_name || user.email || 'Unknown User'}</p>
+                      <p className="font-medium truncate">{user.display_name || user.email || t('settings.userManagementUnknownUser')}</p>
                       <p className="text-sm text-muted-foreground truncate">{user.email}</p>
                     </div>
                   </div>

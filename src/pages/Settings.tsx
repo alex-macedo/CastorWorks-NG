@@ -196,9 +196,11 @@ const Settings = () => {
     setIsExporting(true);
     try {
       await exportAllData();
-      toast.success('Data exported successfully');
-    } catch (error: any) {
-      toast.error(`Export failed: ${error.message}`);
+      toast.success(t('settings.dataManagement.toast.exportSuccess'));
+    } catch (error: unknown) {
+      toast.error(t('settings.dataManagement.toast.exportFailedWithMessage', {
+        message: error instanceof Error ? error.message : String(error)
+      }));
     } finally {
       setIsExporting(false);
     }
@@ -206,7 +208,7 @@ const Settings = () => {
 
   const handleSelectiveExport = async () => {
     if (selectedTables.length === 0) {
-      toast.error('Please select at least one table to export');
+      toast.error(t('settings.dataManagement.toast.selectTableError'));
       return;
     }
 
@@ -214,9 +216,13 @@ const Settings = () => {
     setExportProgress(0);
     try {
       await exportTables(selectedTables, exportFormat, setExportProgress);
-      toast.success(`Data exported successfully as ${exportFormat.toUpperCase()}`);
-    } catch (error: any) {
-      toast.error(`Export failed: ${error.message}`);
+      toast.success(t('settings.dataManagement.toast.exportSuccessWithFormat', {
+        format: exportFormat.toUpperCase()
+      }));
+    } catch (error: unknown) {
+      toast.error(t('settings.dataManagement.toast.exportFailedWithMessage', {
+        message: error instanceof Error ? error.message : String(error)
+      }));
     } finally {
       setIsExporting(false);
       setExportProgress(0);
@@ -303,7 +309,7 @@ const Settings = () => {
           </RequireAdmin>
           <TabsTrigger value="pwa" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.pwa')}</TabsTrigger>
           <RequireAdmin>
-            <TabsTrigger value="admin-tools" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.adminTools.title', 'Admin Tools')}</TabsTrigger>
+            <TabsTrigger value="admin-tools" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.adminTools.title')}</TabsTrigger>
           </RequireAdmin>
         </TabsList>
 
@@ -503,7 +509,7 @@ const Settings = () => {
              <TabsList className="grid w-full grid-cols-3">
                <TabsTrigger value="user-management">{t("settings:tabs.user-management")}</TabsTrigger>
                <TabsTrigger value="permissions">{t("settings:tabs.permission-management")}</TabsTrigger>
-               <TabsTrigger value="menu-order">{t("settings:tabs.menu-order") || "Menu Order"}</TabsTrigger>
+               <TabsTrigger value="menu-order">{t("settings:tabs.menu-order")}</TabsTrigger>
              </TabsList>
 
              <TabsContent value="user-management" className="mt-6">

@@ -21,6 +21,8 @@
     "annual": "Annual",
     "cancel": "Cancel",
     "checkoutError": "Error starting checkout",
+    "noPortalUrl": "No portal URL returned",
+    "portalOpenFailed": "Failed to open billing portal",
     "confirm": "Confirm",
     "custom": "Custom",
     "loading": "Loading…",

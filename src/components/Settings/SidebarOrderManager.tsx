@@ -78,7 +78,7 @@ function SortableSidebarOption({ option, isExpanded, onToggle }: SortableSidebar
                 {option.titleKey ? t(option.titleKey) : (option.title ?? option.id)}
               </h4>
               <p className="text-sm text-muted-foreground">
-                {option.type === 'link' ? 'Direct link' : `${option.tabs.length} items`}
+                {option.type === 'link' ? t('settings.sidebarOrder.directLink') : t('settings.sidebarOrder.itemsCount', { count: option.tabs.length })}
               </p>
             </div>
 
@@ -89,7 +89,7 @@ function SortableSidebarOption({ option, isExpanded, onToggle }: SortableSidebar
                 size="sm"
                 onClick={onToggle}
                 className="p-1"
-                aria-label={isExpanded ? 'Collapse' : 'Expand'}
+                aria-label={isExpanded ? t('settings.sidebarOrder.collapse') : t('settings.sidebarOrder.expand')}
               >
                 {isExpanded ? (
                   <ChevronDown className="h-4 w-4" />
@@ -101,7 +101,7 @@ function SortableSidebarOption({ option, isExpanded, onToggle }: SortableSidebar
 
             {/* Type Badge */}
             <Badge variant={option.type === 'link' ? 'default' : 'secondary'}>
-              {option.type === 'link' ? 'Link' : 'Menu'}
+              {option.type === 'link' ? t('settings.sidebarOrder.link') : t('settings.sidebarOrder.menu')}
             </Badge>
           </div>
 
@@ -368,9 +368,9 @@ export function SidebarOrderManager() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-semibold">Menu Order Management</h3>
+            <h3 className="text-lg font-semibold">{t('settings.sidebarOrder.title')}</h3>
             <p className="text-sm text-muted-foreground">
-              Drag and drop to reorder sidebar menu items and submenus
+              {t('settings.sidebarOrder.description')}
             </p>
           </div>
           <div className="flex gap-2">
@@ -380,14 +380,14 @@ export function SidebarOrderManager() {
               disabled={isUpdating}
             >
               <RotateCcw className="h-4 w-4 mr-2" />
-              Reset to Default
+              {t('settings.sidebarOrder.resetToDefault')}
             </Button>
             <Button
               onClick={handleSaveChanges}
               disabled={!hasChanges || isUpdating}
             >
               <Save className="h-4 w-4 mr-2" />
-              Save Changes
+              {t('settings.sidebarOrder.saveChanges')}
             </Button>
           </div>
         </div>
@@ -396,7 +396,7 @@ export function SidebarOrderManager() {
         {hasChanges && (
           <Alert>
             <AlertDescription>
-              You have unsaved changes. Click "Save Changes" to apply the new menu order.
+              {t('settings.sidebarOrder.unsavedChangesAlert')}
             </AlertDescription>
           </Alert>
         )}
@@ -451,7 +451,7 @@ export function SidebarOrderManager() {
                               {option.titleKey ? t(option.titleKey) : (option.title ?? option.id)}
                             </h4>
                               <p className="text-sm text-muted-foreground">
-                                {option.type === 'link' ? 'Direct link' : `${option.tabs.length} items`}
+                                {option.type === 'link' ? t('settings.sidebarOrder.directLink') : t('settings.sidebarOrder.itemsCount', { count: option.tabs.length })}
                               </p>
                             </div>
                           </div>

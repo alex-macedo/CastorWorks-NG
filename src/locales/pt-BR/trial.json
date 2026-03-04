@@ -2,5 +2,15 @@
   "daysLeft": "{{count}} dias restantes no seu período de teste",
   "daysLeft_one": "1 dia restante no seu período de teste",
   "endsOn": "Seu período de teste termina em {{date}}",
-  "upgradeNow": "Fazer upgrade agora"
+  "upgradeNow": "Fazer upgrade agora",
+  "emails": {
+    "reminder_7d_title": "Seu período de teste do CastorWorks termina em 7 dias",
+    "reminder_7d_body": "Seu período de teste para {{tenantName}} termina em 7 dias ({{expiryDate}}). Faça o upgrade agora para manter acesso completo.",
+    "reminder_3d_title": "Seu período de teste do CastorWorks termina em 3 dias",
+    "reminder_3d_body": "Seu período de teste para {{tenantName}} termina em 3 dias ({{expiryDate}}). Não perca — faça o upgrade agora para continuar usando o CastorWorks.",
+    "reminder_1d_title": "Seu período de teste do CastorWorks termina amanhã",
+    "reminder_1d_body": "Seu período de teste para {{tenantName}} termina amanhã ({{expiryDate}}). Faça o upgrade agora. Após o término, você terá acesso limitado ao nível sandbox.",
+    "expiration_title": "Seu período de teste do CastorWorks terminou",
+    "expiration_body": "Seu período de teste para {{tenantName}} terminou. Você agora tem acesso limitado ao nível sandbox. Faça o upgrade a qualquer momento para recuperar o acesso completo."
+  }
 }

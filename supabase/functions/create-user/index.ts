@@ -87,14 +87,18 @@ serve(async (req) => {
       },
     });
 
-    // Verify the user making the request is authenticated
+    // Verify the user JWT by calling Auth directly (bypasses Kong key-auth which rejects user JWTs)
     const token = authHeader.replace("Bearer ", "");
-    const { data: { user }, error: userError } = await supabaseAnon.auth.getUser(token);
-
-    if (userError || !user) {
-      console.error("Auth error:", userError);
+    const authInternalUrl = Deno.env.get("GOTRUE_URL") ?? "http://auth:9999";
+    const userRes = await fetch(`${authInternalUrl}/user`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!userRes.ok) {
+      console.error("Auth error:", userRes.status, await userRes.text());
       return jsonResponse({ error: "Unauthorized" }, 401);
     }
+    const userData = await userRes.json();
+    const user = { id: userData.id };
 
     // Check if user has admin role using the PostgreSQL function
     const isAdmin = await verifyAdminRole(user.id, supabaseAdmin);
@@ -119,48 +123,80 @@ serve(async (req) => {
       return jsonResponse({ error: "Password must be at least 6 characters" }, 400);
     }
 
-     // Check if user already exists by attempting to look up their email
-     // Note: We'll let the Auth API handle the duplicate email check
-     // as it's more efficient than listing all users
-
     // Create user via Supabase Admin SDK
     console.log(`Creating user: ${email}`);
-    
+
+    const rolesToAssign = roles && roles.length > 0 ? roles : ["viewer"];
+    const displayName = display_name || email.split("@")[0];
+
     const { data: newUserData, error: createError } = await supabaseAdmin.auth.admin.createUser({
       email,
       password,
       email_confirm: !send_invite, // If sending invite, user needs to verify email
       user_metadata: {
-        display_name: display_name || email.split("@")[0],
+        display_name: displayName,
       },
     });
 
+    let userId: string;
+
     if (createError) {
-      console.error("Auth API error:", createError);
-      return jsonResponse(
-        { error: createError.message || "Failed to create user in Auth" },
-        500
-      );
+      // User may already exist - try to assign roles to existing user
+      const errMsg = (createError.message || "").toLowerCase();
+      const isExistingUser =
+        errMsg.includes("already") ||
+        errMsg.includes("registered") ||
+        errMsg.includes("exists") ||
+        errMsg.includes("duplicate");
+
+      if (isExistingUser) {
+        const { data: existingUserId, error: lookupError } = await supabaseAdmin.rpc(
+          "get_auth_user_id_by_email",
+          { p_email: email }
+        );
+
+        if (lookupError || !existingUserId) {
+          console.error("Lookup existing user failed:", lookupError);
+          return jsonResponse(
+            {
+              error:
+                "A user with this email already exists, but we could not look them up. Please try again or contact support.",
+            },
+            400
+          );
+        }
+
+        userId = existingUserId as string;
+        console.log(`User ${email} already exists (${userId}), assigning roles`);
+      } else {
+        console.error("Auth API error:", createError);
+        return jsonResponse(
+          { error: createError.message || "Failed to create user in Auth" },
+          400
+        );
+      }
+    } else {
+      userId = newUserData!.user.id;
+      console.log(`User created in Auth: ${userId}`);
     }
 
-    const userId = newUserData.user.id;
-    console.log(`User created in Auth: ${userId}`);
-
-    // Create user profile
+    // Upsert user profile (create or update)
     const { error: profileError } = await supabaseAdmin
       .from("user_profiles")
-      .insert({
-        user_id: userId,
-        display_name: display_name || email.split("@")[0],
-      });
+      .upsert(
+        {
+          user_id: userId,
+          display_name: displayName,
+        },
+        { onConflict: "user_id", ignoreDuplicates: false }
+      );
 
     if (profileError) {
-      console.error("Error creating user profile:", profileError);
-      // Don't fail completely if profile creation fails
+      console.error("Error upserting user profile:", profileError);
+      // Don't fail completely
     }
 
-    // Assign roles (default to viewer if none specified)
-    const rolesToAssign = roles && roles.length > 0 ? roles : ["viewer"];
+    // Assign roles (insert, ignore conflicts for existing role assignments)
     const roleInserts = rolesToAssign.map((role: string) => ({
       user_id: userId,
       role,
@@ -168,23 +204,31 @@ serve(async (req) => {
 
     const { error: rolesInsertError } = await supabaseAdmin
       .from("user_roles")
-      .insert(roleInserts);
+      .upsert(roleInserts, {
+        onConflict: "user_id,role",
+        ignoreDuplicates: true,
+      });
 
     if (rolesInsertError) {
       console.error("Error assigning roles:", rolesInsertError);
-      // Don't fail completely if roles assignment fails
+      // Don't fail completely
     }
 
-    console.log(`User ${email} created successfully with roles: ${rolesToAssign.join(", ")}`);
+    const isNewUser = !createError;
+    console.log(
+      `User ${email} ${isNewUser ? "created" : "roles updated"} with roles: ${rolesToAssign.join(", ")}`
+    );
 
     return jsonResponse(
       {
         success: true,
-        message: "User created successfully",
+        message: isNewUser
+          ? "User created successfully"
+          : "User already exists. Roles have been assigned.",
         user: {
           id: userId,
           email,
-          display_name: display_name || email.split("@")[0],
+          display_name: displayName,
           roles: rolesToAssign,
         },
       },

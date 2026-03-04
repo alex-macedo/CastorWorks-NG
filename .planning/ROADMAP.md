@@ -2,12 +2,13 @@
 
 ## Overview
 
-Multi-tenant SaaS transformation. **v1.0 Foundation and Licensing** shipped 2026-03-01. Next: Phase 3 (Trial & Subscription Management).
+Multi-tenant SaaS transformation. **v1.0 Foundation and Licensing** shipped 2026-03-01. **v1.1 Trial & Subscription Management** shipped 2026-03-04. Next: Phase 7 (AI Action Credits & Metering).
 
 ## Milestones
 
 - ✅ **v1.0 Foundation and Licensing** — Phases 0–2 (shipped 2026-03-01)
-- 📋 **v1.1 Trial & Subscription Management** — Phases 3–6 (planned)
+- ✅ **v1.1 Trial & Subscription Management** — Phases 3–6 (shipped 2026-03-04)
+- 📋 **v1.1+ Later Milestones** — Phases 7–11 (planned)
 
 ## Phases
 
@@ -22,10 +23,10 @@ Multi-tenant SaaS transformation. **v1.0 Foundation and Licensing** shipped 2026
 
 ### 📋 v1.1 Trial & Subscription Management (Phases 3–6)
 
-- [ ] **Phase 3: Trial Experience** — 30-day trial start, countdown UI, sandbox fallback on expiry
-- [ ] **Phase 4: Payment & Subscription Management** — Gateway, pay, trial-to-paid, subscription page, tier changes
+- [x] **Phase 3: Trial Experience** — 30-day trial start, countdown UI, sandbox fallback on expiry
+- [x] **Phase 4: Payment & Subscription Management** — Gateway, pay, trial-to-paid, subscription page, tier changes
 - [x] **Phase 5: Billing & Invoices** — Billing history, invoice generation or gateway links
-- [ ] **Phase 6: Trial & Subscription Emails** — Trial reminders and expiration warning emails
+- [x] **Phase 6: Trial & Subscription Emails** — Trial reminders and expiration warning emails
 
 ### 📋 v1.1+ (Later milestones)
 
@@ -74,9 +75,9 @@ Multi-tenant SaaS transformation. **v1.0 Foundation and Licensing** shipped 2026
 **Plans:** 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Stripe backend: subscriptions table, stripe_events, change_tenant_tier RPC, webhook handler
-- [ ] 04-02-PLAN.md — Checkout & trial-to-paid: create-checkout-session, create-billing-portal-session, useSubscription hook, SubscriptionCheckoutFlow, TrialCountdownBanner CTA
-- [ ] 04-03-PLAN.md — Subscription management page + i18n (all 4 locales)
+- [x] 04-01-PLAN.md — Stripe backend: subscriptions table, stripe_events, change_tenant_tier RPC, webhook handler
+- [x] 04-02-PLAN.md — Checkout & trial-to-paid: create-checkout-session, create-billing-portal-session, useSubscription hook, SubscriptionCheckoutFlow, TrialCountdownBanner CTA
+- [x] 04-03-PLAN.md — Subscription management page + i18n (all 4 locales)
 
 ---
 
@@ -114,7 +115,11 @@ Plans:
 1. User receives trial reminder emails (e.g. 7 days, 3 days, 1 day before expiry).
 2. User receives a trial expiration warning email when trial ends or on expiry day.
 
-**Plans:** [04-01] Stripe backend (DB + webhook) · [04-02] Checkout & trial-to-paid flows · [04-03] Subscription management page + i18n
+**Plans:** 2 plans
+
+Plans:
+- [x] 06-01-PLAN.md — Schema: primary_contact_email, opt_out_trial_emails, trial_email_logs, trial_reminder_due_candidates view, trial_expiration_email_queue, trigger
+- [x] 06-02-PLAN.md — Edge Function execute-trial-emails, branded templates, trialEmailCopy (4 locales), i18n
 
 ---
 
@@ -126,6 +131,6 @@ Plans:
 | 1. Foundation | v1.0 | — | Complete | 2026-03-01 |
 | 2. Module-Based Licensing | v1.0 | — | Complete | 2026-03-01 |
 | 3. Trial Experience | v1.1 | 2/2 | Complete | 2026-03-01 |
-| 4. Payment & Subscription | v1.1 | 3/3 | Planned | — |
-| 5. Billing & Invoices | v1.1 | 2/2 | Complete | — |
-| 6. Trial & Subscription Emails | v1.1 | 0/? | Not started | — |
+| 4. Payment & Subscription | v1.1 | 3/3 | Complete | 2026-03-04 |
+| 5. Billing & Invoices | v1.1 | 2/2 | Complete | 2026-03-04 |
+| 6. Trial & Subscription Emails | v1.1 | 2/2 | Complete | 2026-03-04 |

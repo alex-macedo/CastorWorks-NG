@@ -6,6 +6,7 @@
     "displayName": "Display Name",
     "displayNamePlaceholder": "Enter display name (optional)",
     "email": "Email",
+    "emailPlaceholder": "user@example.com",
     "error": "Failed to create user",
     "password": "Password",
     "passwordHint": "Password must be at least 8 characters",
@@ -85,11 +86,11 @@
     "featuresTitle": "featuresTitle",
     "notificationFrequencyLabel": "notificationFrequencyLabel",
     "notificationOptions": {
-      "daily": "daily",
-      "disabled": "disabled",
-      "hourly": "hourly",
-      "realtime": "realtime",
-      "weekly": "weekly"
+      "daily": "Daily",
+      "disabled": "Disabled",
+      "hourly": "Hourly",
+      "realtime": "Real-time",
+      "weekly": "Weekly"
     },
     "preferencesTitle": "preferencesTitle",
     "resetButton": "resetButton",
@@ -212,6 +213,7 @@
   },
   "billing": {
     "downloadInvoice": "Download invoice",
+    "downloadInvoiceFailed": "Failed to download invoice",
     "emptyState": "No billing history yet",
     "title": "Billing history"
   },
@@ -277,7 +279,7 @@
   "companyProfileTitle": "Company Profile",
   "confirmPassword": "confirmPassword",
   "confirmPasswordPlaceholder": "confirmPasswordPlaceholder",
-  "contactEmail": "contactEmail",
+  "contactEmail": "Contact Email",
   "contactTypes": {
     "addDescription": "addDescription",
     "addType": "addType",
@@ -296,6 +298,7 @@
     "id": "id",
     "idCannotChange": "idCannotChange",
     "idHint": "idHint",
+    "idPlaceholder": "contractor",
     "label": "label",
     "labelPlaceholder": "labelPlaceholder",
     "noTypes": "noTypes",
@@ -425,15 +428,17 @@
       "exportDumpCompleteTitle": "Export complete",
       "exportDumpFailedDescription": "Failed to generate dump.",
       "exportDumpFailedTitle": "Export failed",
+      "exportFailedWithMessage": "Export failed: {{message}}",
       "exportSelectedSuccess": "Export completed.",
       "exportSuccess": "Data exported successfully.",
+      "exportSuccessWithFormat": "Data exported successfully as {{format}}",
       "importFailedTitle": "Import failed",
       "importSuccess": "Data imported successfully.",
       "infoTitle": "Information",
       "partialImportDescription": "Some rows failed to import.",
       "partialImportTitle": "Partial import",
       "selectTableAndFileError": "Select a table and file.",
-      "selectTableError": "Please select at least one table.",
+      "selectTableError": "Please select at least one table to export",
       "successTitle": "Success"
     }
   },
@@ -481,7 +486,7 @@
     "saveButton": "Save signature",
     "title": "Digital Signature"
   },
-  "disabled": "disabled",
+  "disabled": "Disabled",
   "dropdownOptions": {
     "addDescription": "addDescription",
     "addOption": "addOption",
@@ -565,9 +570,9 @@
   "email": "email",
   "emailAdminOnly": "Only an administrator can change the email.",
   "emailNotifications": "Email Notifications",
-  "enabled": "enabled",
+  "enabled": "Enabled",
   "errorSavingSettings": "Error saving settings",
-  "financialAlerts": "financialAlerts",
+  "financialAlerts": "Financial Alerts",
   "globalAdminSupportOnly": "Global admin only",
   "googleDrive": {
     "autoSyncDescription": "Automatically sync documents.",
@@ -692,7 +697,8 @@
     "whatsapp": {
       "aiAutoResponderDisabled": "aiAutoResponderDisabled",
       "aiAutoResponderEnabled": "aiAutoResponderEnabled",
-      "saved": "saved"
+      "saved": "saved",
+      "updateFailed": "Failed to update"
     }
   },
   "internationalization": "Internationalization",
@@ -752,7 +758,7 @@
   "loggedOut": "loggedOut",
   "logout": "logout",
   "logoutError": "logoutError",
-  "manageNotifications": "manageNotifications",
+  "manageNotifications": "Manage Notifications",
   "manageRoles": "Manage roles",
   "manageTranslations": "Manage Translations",
   "name": "Name",
@@ -762,14 +768,14 @@
   "noName": "noName",
   "noRoles": "No roles",
   "noUsers": "No users",
-  "notEnabled": "notEnabled",
+  "notEnabled": "Not enabled",
   "notificationPreferences": "Notification Preferences",
   "notifications": {
-    "checkFrequency": "checkFrequency",
-    "checkFrequencyHelp": "checkFrequencyHelp",
-    "checkFrequencyValue": "checkFrequencyValue",
-    "materialDelivery": "materialDelivery",
-    "scheduleChanges": "scheduleChanges"
+    "checkFrequency": "Check Frequency",
+    "checkFrequencyHelp": "How often to check for new notifications (seconds)",
+    "checkFrequencyValue": "Every {{value}}s",
+    "materialDelivery": "Material Delivery",
+    "scheduleChanges": "Schedule Changes"
   },
   "notificationsSaved": "Notification preferences saved",
   "numberFormat": "Number Format",
@@ -788,7 +794,7 @@
   "phoneLabel": "Phone",
   "phonePlaceholder": "Phone number",
   "profile": "Profile",
-  "projectUpdates": "projectUpdates",
+  "projectUpdates": "Project Updates",
   "pwa": {
     "androidInstructions": "androidInstructions",
     "available": "available",
@@ -834,11 +840,11 @@
   },
   "removeRole": "Remove Role",
   "role": "Role",
-  "roleAccountant": "roleAccountant",
-  "roleAdmin": "roleAdmin",
-  "roleAdminOffice": "roleAdminOffice",
-  "roleArchitect": "roleArchitect",
-  "roleClient": "roleClient",
+  "roleAccountant": "Accountant",
+  "roleAdmin": "Admin",
+  "roleAdminOffice": "Admin Office",
+  "roleArchitect": "Architect",
+  "roleClient": "Client",
   "roleDescriptions": {
     "admin": "Full access to every sidebar option and application setting.",
     "admin_office": "Back-office focus with client, finance, and procurement tools.",
@@ -849,7 +855,7 @@
     "site_supervisor": "Field execution focus with delivery and build-tracking tools.",
     "viewer": "Can monitor dashboards and reports without making changes."
   },
-  "roleGlobalAdmin": "roleGlobalAdmin",
+  "roleGlobalAdmin": "Global Admin",
   "roleManagement": {
     "assignFailed": "Failed to assign role: {{error}}",
     "assignedSuccess": "Role assigned successfully",
@@ -864,9 +870,9 @@
     "tabs": "Tabs",
     "title": "Role permissions"
   },
-  "roleProjectManager": "roleProjectManager",
-  "roleSiteSupervisor": "roleSiteSupervisor",
-  "roleViewer": "roleViewer",
+  "roleProjectManager": "Project Manager",
+  "roleSiteSupervisor": "Site Supervisor",
+  "roleViewer": "Viewer",
   "salesPipelineColumns": {
     "description": "description",
     "selectAll": "selectAll",
@@ -892,6 +898,19 @@
   "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
   "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
   "settingsUpdated": "settingsUpdated",
+  "sidebarOrder": {
+    "collapse": "Collapse",
+    "description": "Drag and drop to reorder sidebar menu items and submenus",
+    "directLink": "Direct link",
+    "expand": "Expand",
+    "itemsCount": "{{count}} items",
+    "link": "Link",
+    "menu": "Menu",
+    "resetToDefault": "Reset to Default",
+    "saveChanges": "Save Changes",
+    "title": "Menu Order Management",
+    "unsavedChangesAlert": "You have unsaved changes. Click \"Save Changes\" to apply the new menu order."
+  },
   "sidebarPermissions": {
     "adminNote": "Admins have full access.",
     "cancel": "Cancel",
@@ -935,11 +954,11 @@
   "sourceLanguage": "Source Language (Base)",
   "sourceLanguageDescription": "All translations are based on English source text",
   "status": {
-    "noRoles": "noRoles",
-    "notSet": "notSet"
+    "noRoles": "No roles",
+    "notSet": "Not set"
   },
   "stringsTranslated": "{{translated}} of {{total}} strings translated",
-  "subtitle": "subtitle",
+  "subtitle": "Manage your account and application preferences",
   "system": "system",
   "systemNumberFormatLabel": "systemNumberFormatLabel",
   "systemPreferences": "systemPreferences",
@@ -958,38 +977,38 @@
     "api-testing": "API Testing",
     "bdi": "BDI",
     "billing": "Billing",
-    "business-settings": "business-settings",
+    "business-settings": "Business Settings",
     "company": "Company",
     "contact-types": "Contact types",
     "csv-import": "CSV import",
     "data": "Data",
-    "data-management": "data-management",
+    "data-management": "Data Management",
     "defaults": "Defaults",
-    "demoData": "demoData",
+    "demoData": "Demo Data",
     "dropdown-options": "Dropdown options",
     "general": "General",
-    "inss-reference": "inss-reference",
-    "inss-strategy": "inss-strategy",
+    "inss-reference": "INSS Reference",
+    "inss-strategy": "INSS Strategy",
     "integrations": "Integrations",
-    "log-search": "Log Search",
     "internationalization": "Internationalization",
     "localization": "Localization",
-    "menu-order": "menu-order",
-    "permission-management": "permission-management",
+    "log-search": "Log Search",
+    "menu-order": "Menu Order",
+    "permission-management": "Permission Management",
     "preferences": "Preferences",
     "pwa": "PWA",
     "quick-backup": "Quick backup",
     "selective-export": "Selective export",
     "sinapi": "SINAPI",
     "subscription": "Subscription",
-    "system-preferences": "system-preferences",
-    "system-translation": "system-translation",
+    "system-preferences": "System Preferences",
+    "system-translation": "System Translation",
     "theme": "Theme",
     "third-party": "Third-Party Services",
-    "translation-dashboard": "translation-dashboard",
-    "translation-editor": "translation-editor",
-    "user-management": "user-management",
-    "user-preferences": "user-preferences",
+    "translation-dashboard": "Translation Dashboard",
+    "translation-editor": "Translation Editor",
+    "user-management": "User Management",
+    "user-preferences": "User Preferences",
     "users": "Users"
   },
   "targetLanguage": "Target Language",
@@ -1221,7 +1240,7 @@
     "Asia/Tokyo": "Asia/Tokyo",
     "Europe/London": "Europe/London"
   },
-  "title": "title",
+  "title": "Settings",
   "translationCoverage": {
     "description": "description",
     "loading": "loading",
@@ -1303,6 +1322,25 @@
     "unsavedChanges": "unsavedChanges",
     "unsavedChangesDescription": "unsavedChangesDescription"
   },
+  "translationMaintenance": {
+    "allComplete": "All translations complete!",
+    "category": "Category",
+    "description": "Review and update all translations for the selected language",
+    "loadError": "Failed to load translations. Check browser console for details.",
+    "missing": "{{count}} translations missing",
+    "missing_one": "{{count}} translation missing",
+    "missing_other": "{{count}} translations missing",
+    "noSourceText": "No source text",
+    "noTranslationsToSave": "No translations to save",
+    "percentComplete": "{{percent}}% complete",
+    "placeholder": "Enter {{language}} translation...",
+    "saveError": "Failed to save translations",
+    "saveSuccess": "Successfully saved {{count}} translations for {{language}}",
+    "title": "Translation Maintenance",
+    "translated": "{{completed}} / {{total}} translated",
+    "unsavedChanges": "Unsaved changes",
+    "value": "Value"
+  },
   "translations": {
     "cancel": "cancel",
     "languageNames": {
@@ -1328,10 +1366,11 @@
     "saving": "saving",
     "translationLabel": "translationLabel"
   },
-  "twoFactorAuth": "twoFactorAuth",
+  "twoFactorAuth": "Two-factor authentication",
   "unsavedChanges": "unsavedChanges",
   "updatePreferences": "Update Preferences",
   "userManagement": "User management",
+  "userManagementUnknownUser": "Unknown User",
   "userPreferences": {
     "appearanceLabel": "Appearance",
     "appearanceOptions": {
@@ -1343,12 +1382,12 @@
       "MMM_DD_YYYY": "MMM_DD_YYYY"
     },
     "notificationsDescriptions": {
-      "financialAlerts": "financialAlerts",
-      "materialDelivery": "materialDelivery",
-      "projectUpdates": "projectUpdates",
-      "scheduleChanges": "scheduleChanges"
+      "financialAlerts": "Alerts for financial events (invoices, payments, budgets)",
+      "materialDelivery": "Updates when materials are delivered",
+      "projectUpdates": "General project status and milestone updates",
+      "scheduleChanges": "Schedule and timeline change alerts"
     },
-    "notificationsTitle": "notificationsTitle",
+    "notificationsTitle": "Notification Preferences",
     "reportOptions": {
       "detailed": "detailed",
       "standard": "standard",

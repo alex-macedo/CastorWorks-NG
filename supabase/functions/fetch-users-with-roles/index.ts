@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { Pool } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -16,24 +16,32 @@ interface UserWithRoles {
   last_sign_in_at: string | null;
 }
 
+function getPool(): Pool {
+  const dbUrl = Deno.env.get('SUPABASE_DB_URL');
+  if (!dbUrl) throw new Error('SUPABASE_DB_URL is required');
+  const url = new URL(dbUrl.replace(/^postgresql:\/\//, 'postgres://'));
+  return new Pool(
+    {
+      database: url.pathname.slice(1) || 'postgres',
+      hostname: url.hostname,
+      port: parseInt(url.port || '5432', 10),
+      user: url.username || 'postgres',
+      password: url.password,
+      tls: { enabled: false },
+    },
+    1
+  );
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const pool = getPool();
+
   try {
-    // Create a Supabase client with the service role key
-    const supabaseAdmin = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',
-      {
-        auth: {
-          autoRefreshToken: false,
-          persistSession: false
-        }
-      }
-    );
 
     // Verify the request is authenticated
     const authHeader = req.headers.get('Authorization');
@@ -44,101 +52,104 @@ serve(async (req) => {
       );
     }
 
-    // Verify the user making the request
+    // Verify the user JWT by calling Auth directly (bypasses Kong key-auth which rejects user JWTs)
     const token = authHeader.replace('Bearer ', '');
-    const { data: { user }, error: userError } = await supabaseAdmin.auth.getUser(token);
-
-    if (userError || !user) {
-      console.error('Auth error:', userError);
+    const authInternalUrl = Deno.env.get('GOTRUE_URL') ?? 'http://auth:9999';
+    const userRes = await fetch(`${authInternalUrl}/user`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!userRes.ok) {
+      console.error('Auth error:', userRes.status, await userRes.text());
       return new Response(
         JSON.stringify({ error: 'Unauthorized' }),
         { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
+    const user = await userRes.json();
 
-     // Check if the user has admin role - query user_roles directly
-     const { data: userRoles, error: rolesError } = await supabaseAdmin
-       .from('user_roles')
-       .select('role')
-       .eq('user_id', user.id)
-       .eq('role', 'admin');
+    // Query user_roles and user_profiles via direct DB (bypasses Kong/PostgREST auth issues)
+    const conn = await pool.connect();
+    let allUserRolesRows: { user_id: string; role: string }[] = [];
+    let userProfilesRows: { user_id: string; display_name: string; avatar_url: string | null }[] = [];
+    try {
+      const adminRoles = await conn.queryObject<{ role: string }>({
+        text: "SELECT role FROM user_roles WHERE user_id = $1 AND role = 'admin'",
+        args: [user.id],
+      });
+      const isAdmin = adminRoles.rows && adminRoles.rows.length > 0;
+      if (!isAdmin) {
+        return new Response(
+          JSON.stringify({ error: 'Admin access required' }),
+          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
 
-     if (rolesError) {
-       console.error('Error fetching user roles:', rolesError);
-       return new Response(
-         JSON.stringify({ error: 'Failed to verify permissions' }),
-         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-       );
-     }
-
-     const isAdmin = userRoles && userRoles.length > 0;
-    if (!isAdmin) {
-      return new Response(
-        JSON.stringify({ error: 'Admin access required' }),
-        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    // Fetch all user_roles to get user IDs and roles
-    const { data: allUserRoles, error: allRolesError } = await supabaseAdmin
-      .from('user_roles')
-      .select('user_id, role');
-
-    if (allRolesError) {
-      console.error('Error fetching all user roles:', allRolesError);
-      return new Response(
-        JSON.stringify({ error: 'Failed to fetch user roles' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      const allUserRolesRes = await conn.queryObject<{ user_id: string; role: string }>({
+        text: "SELECT user_id, role FROM user_roles",
+        args: [],
+      });
+      const userProfilesRes = await conn.queryObject<{ user_id: string; display_name: string; avatar_url: string | null }>({
+        text: "SELECT user_id, display_name, avatar_url FROM user_profiles",
+        args: [],
+      });
+      allUserRolesRows = allUserRolesRes.rows || [];
+      userProfilesRows = userProfilesRes.rows || [];
+    } finally {
+      conn.release();
     }
 
     // Group roles by user_id
     const rolesByUser: Record<string, string[]> = {};
     const userIds = new Set<string>();
-
-    allUserRoles?.forEach((item: { user_id: string; role: string }) => {
-      if (!rolesByUser[item.user_id]) {
-        rolesByUser[item.user_id] = [];
-      }
+    allUserRolesRows.forEach((item) => {
+      if (!rolesByUser[item.user_id]) rolesByUser[item.user_id] = [];
       rolesByUser[item.user_id].push(item.role);
       userIds.add(item.user_id);
     });
+    userProfilesRows.forEach((profile) => userIds.add(profile.user_id));
 
-    // Fetch user details from auth.users using admin client
-    const { data: authUsers, error: authUsersError } = await supabaseAdmin.auth.admin.listUsers();
-
-    if (authUsersError) {
-      console.error('Error fetching auth users:', authUsersError);
-      return new Response(
-        JSON.stringify({ error: 'Failed to fetch user details' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    // Fetch user profiles for display names and avatars
-    const { data: userProfiles, error: profilesError } = await supabaseAdmin
-      .from('user_profiles')
-      .select('user_id, display_name, avatar_url');
-
-    if (profilesError) {
-      console.error('Error fetching user profiles:', profilesError);
-      // Don't fail completely if profiles can't be fetched
-    }
-
-    // Create a map of user_id to profile data
     const profileMap: Record<string, { display_name: string; avatar_url: string | null }> = {};
-    userProfiles?.forEach((profile: { user_id: string; display_name: string; avatar_url: string | null }) => {
+    userProfilesRows.forEach((profile) => {
       profileMap[profile.user_id] = {
         display_name: profile.display_name,
         avatar_url: profile.avatar_url,
       };
     });
 
+    // Fetch auth user details via direct Auth admin API (bypasses Kong key-auth)
+    const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
+    const authUsersRes = await fetch(
+      `${authInternalUrl}/admin/users?per_page=1000&page=1`,
+      { headers: { Authorization: `Bearer ${serviceRoleKey}` } }
+    );
+
+    if (!authUsersRes.ok) {
+      console.error('Error fetching auth users:', authUsersRes.status, await authUsersRes.text());
+      return new Response(
+        JSON.stringify({ error: 'Failed to fetch user details' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const authUsersData = await authUsersRes.json();
+    const authUsers = authUsersData?.users ?? [];
+
+    const authUserMap: Record<string, { email?: string; created_at: string; last_sign_in_at?: string | null }> = {};
+    authUsers.forEach((u: { id: string; email?: string; created_at: string; last_sign_in_at?: string | null }) => {
+      authUserMap[u.id] = {
+        email: u.email,
+        created_at: u.created_at,
+        last_sign_in_at: u.last_sign_in_at ?? null,
+      };
+    });
+
+    const userIdArray = Array.from(userIds);
+
     // Build the response with user emails, profiles, and roles
     const usersWithRoles: UserWithRoles[] = [];
     
-    for (const userId of Array.from(userIds)) {
-      const authUser = authUsers.users.find((u: { id: string; email?: string; created_at: string; last_sign_in_at?: string | null }) => u.id === userId);
+    for (const userId of userIdArray) {
+      const authUser = authUserMap[userId];
       if (authUser) {
         const profile = profileMap[userId];
         usersWithRoles.push({
@@ -169,5 +180,7 @@ serve(async (req) => {
       JSON.stringify({ error: errorMessage }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
+  } finally {
+    await pool.end();
   }
 });

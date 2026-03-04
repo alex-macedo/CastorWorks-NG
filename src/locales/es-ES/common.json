@@ -588,7 +588,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
-  "annual": "",
+  "annual": "Anual",
   "app": {
     "active": "Activo",
     "activeProjects": "Proyectos Activos",
@@ -1488,11 +1488,12 @@
   "biWeekly": "Quincenal",
   "billableHours": "billableHours",
   "billing": {
-    "downloadInvoice": "",
-    "emptyState": "",
-    "title": ""
+    "downloadInvoice": "Descargar Factura",
+    "downloadInvoiceFailed": "Error al descargar la factura",
+    "emptyState": "Sin historial de facturación aún",
+    "title": "Historial de Facturación"
   },
-  "billingPeriod": "",
+  "billingPeriod": "Período de Facturación",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1794,7 +1795,7 @@
     "taxes": "Impuestos"
   },
   "change": "[EN] Change",
-  "changePlan": "",
+  "changePlan": "Cambiar Plan",
   "clear": "Limpiar",
   "clearAll": "Limpiar Todos",
   "clearFilter": "Limpar Filtro",
@@ -1984,9 +1985,9 @@
       "welcomeDefault": "welcomeDefault"
     },
     "definitions": {
-      "noDefinitions": "",
-      "subtitle": "",
-      "title": ""
+      "noDefinitions": "Sin definiciones aún",
+      "subtitle": "Rastree decisiones y definiciones del cliente",
+      "title": "Definiciones"
     },
     "description": "Descripción:",
     "documents": {
@@ -2702,7 +2703,7 @@
     },
     "post": "post",
     "posting": "posting",
-    "preview": "",
+    "preview": "Vista Previa",
     "previous": "previous",
     "print": "print",
     "promoting": "promoting",
@@ -3122,7 +3123,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
-  "currentPlan": "",
+  "currentPlan": "Plan Actual",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Artículos que solicitó cotizaciones",
@@ -3300,9 +3301,9 @@
   "date": "Fecha",
   "dateRange": "Rango de fechas",
   "days": "días",
-  "daysLeft_many": "",
-  "daysLeft_one": "",
-  "daysLeft_other": "",
+  "daysLeft_many": "{{count}} días restantes",
+  "daysLeft_one": "{{count}} día restante",
+  "daysLeft_other": "{{count}} días restantes",
   "dbExportImport": {
     "databaseExportImport": "Exportación / Importación de Base de Datos"
   },
@@ -4581,7 +4582,7 @@
   },
   "linkCopied": "Enlace copiado al portapapeles",
   "loading": "Cargando...",
-  "loadingSubscription": "",
+  "loadingSubscription": "Cargando suscripción...",
   "location": "Ubicación",
   "logistics": "Logística",
   "maintenance": {
@@ -4600,7 +4601,7 @@
     "startTimeLabel": "Hora de Inicio",
     "titleLabel": "Título"
   },
-  "manageBilling": "",
+  "manageBilling": "Administrar Facturación",
   "materials": "Materiales",
   "meetingReview": {
     "confirm": "confirm",
@@ -4631,7 +4632,7 @@
     "quickNote": "quickNote",
     "recordWithAI": "recordWithAI",
     "recording": "recording",
-    "resume": "",
+    "resume": "Reanudar",
     "show": "show",
     "showWhisper": "showWhisper",
     "start": "start",
@@ -4640,8 +4641,8 @@
     "startNewMeeting": "startNewMeeting",
     "titlePlaceholder": "titlePlaceholder",
     "total": "total",
-    "transcriptPlaceholder": "",
-    "unmute": "",
+    "transcriptPlaceholder": "La transcripción de la reunión aparecerá aquí...",
+    "unmute": "Activar Sonido",
     "waitingForSpeech": "waitingForSpeech",
     "whisperModeActive": "whisperModeActive"
   },
@@ -4714,10 +4715,10 @@
   },
   "new": "Nuevo",
   "next": "Siguiente",
-  "nextRenewal": "",
+  "nextRenewal": "Próxima Renovación",
   "nextStep": "Siguiente paso",
   "no": "No",
-  "noActiveSubscription": "",
+  "noActiveSubscription": "Sin suscripción activa",
   "noAddress": "No se proporcionó dirección",
   "noChanges": "No hay cambios para guardar",
   "noContactsAvailable": "No hay contactos disponibles. Agregue clientes, proveedores o contratistas primero.",
@@ -4767,10 +4768,10 @@
   },
   "notifications": {
     "actions": {
-      "payNow": "",
-      "reviewBudget": "",
-      "view": "",
-      "viewSchedule": ""
+      "payNow": "Pagar Ahora",
+      "reviewBudget": "Revisar Presupuesto",
+      "view": "Ver",
+      "viewSchedule": "Ver Cronograma"
     },
     "aiAssistant": {
       "description": "description",
@@ -4835,10 +4836,10 @@
     "empty": "empty",
     "failed": "failed",
     "older": "older",
-    "payNow": "",
+    "payNow": "Pagar Ahora",
     "pending": "pending",
     "requiresAction": "requiresAction",
-    "reviewBudget": "",
+    "reviewBudget": "Revisar Presupuesto",
     "sendEmail": "sendEmail",
     "sendWhatsApp": "sendWhatsApp",
     "subtitle": "subtitle",
@@ -4853,7 +4854,7 @@
     "totalSent": "totalSent",
     "unread": "unread",
     "urgent": "urgent",
-    "viewSchedule": "",
+    "viewSchedule": "Ver Cronograma",
     "whatsApp": {
       "cancel": "cancel",
       "dialogDescription": "dialogDescription",
@@ -4990,7 +4991,7 @@
     "projectCalendarDesc": "Administre días laborales y días festivos para una programación precisa del proyecto",
     "systemOperational": "Sistema Operacional"
   },
-  "pageTitle": "",
+  "pageTitle": "Suscripción",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5207,7 +5208,7 @@
     }
   },
   "paused": "Pausado",
-  "paymentCanceled": "",
+  "paymentCanceled": "Pago cancelado",
   "paymentLinks": {
     "title": "title"
   },
@@ -5222,7 +5223,7 @@
     "debitCard": "Tarjeta de Débito",
     "wireTransfer": "Transferencia Electrónica"
   },
-  "paymentSuccess": "",
+  "paymentSuccess": "Pago exitoso",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -6773,19 +6774,19 @@
     "addComment": "addComment",
     "aiToWork": "aiToWork",
     "aiToWorkDialog": {
-      "bridgeNotRunning": "",
-      "bridgeTimeout": "",
-      "checking": "",
+      "bridgeNotRunning": "El puente no está ejecutándose",
+      "bridgeTimeout": "Tiempo de conexión del puente agotado",
+      "checking": "Verificando...",
       "copied": "copiado",
       "copy": "copiar",
-      "copyTerminalCommand": "",
+      "copyTerminalCommand": "Copiar Comando de Terminal",
       "description": "descripción",
-      "output": "",
-      "running": "",
-      "startBridge": "",
-      "taskSummary": "",
+      "output": "Salida",
+      "running": "Ejecutando...",
+      "startBridge": "Iniciar Puente",
+      "taskSummary": "Resumen de Tarea",
       "title": "título",
-      "untitledTask": ""
+      "untitledTask": "Tarea Sin Título"
     },
     "allCategories": "allCategories",
     "analytics": "analytics",
@@ -6860,9 +6861,9 @@
     "created": "created",
     "defaultColumn": "Columna predeterminada",
     "deleteAttachment": "deleteAttachment",
-    "deleteItem": "",
-    "deleteItemConfirmDescription": "",
-    "deleteItemConfirmTitle": "",
+    "deleteItem": "Eliminar Elemento",
+    "deleteItemConfirmDescription": "¿Está seguro de que desea eliminar este elemento? Esta acción no se puede deshacer.",
+    "deleteItemConfirmTitle": "¿Eliminar Elemento?",
     "description": "description",
     "descriptionField": "descriptionField",
     "descriptionPlaceholder": "descriptionPlaceholder",
@@ -6888,7 +6889,7 @@
     "newItemDescription": "newItemDescription",
     "noAttachments": "noAttachments",
     "noComments": "noComments",
-    "noDescription": "",
+    "noDescription": "Sin descripción",
     "noItems": "noItems",
     "noSprint": "Sin sprint",
     "notes": "notes",
@@ -7146,6 +7147,7 @@
       "id": "id",
       "idCannotChange": "idCannotChange",
       "idHint": "idHint",
+      "idPlaceholder": "ej.: contratista",
       "label": "label",
       "labelPlaceholder": "labelPlaceholder",
       "noTypes": "noTypes",
@@ -7163,7 +7165,13 @@
     "currencyUpdated": "currencyUpdated",
     "dark": "dark",
     "dataManagement": {
-      "exportingLabel": "exportingLabel"
+      "exportingLabel": "exportingLabel",
+      "toast": {
+        "exportFailedWithMessage": "Error en la exportación: {{message}}",
+        "exportSuccess": "Datos exportados correctamente",
+        "exportSuccessWithFormat": "Datos exportados correctamente como {{format}}",
+        "selectTableError": "Seleccione al menos una tabla para exportar"
+      }
     },
     "dateFormat": "dateFormat",
     "dateFormatOptions": {
@@ -7248,12 +7256,13 @@
         "apiTesting": "apiTesting",
         "google": "google",
         "thirdParty": "thirdParty",
-        "whatsapp": ""
+        "whatsapp": "WhatsApp"
       },
       "whatsapp": {
-        "aiAutoResponderDisabled": "",
-        "aiAutoResponderEnabled": "",
-        "saved": ""
+        "aiAutoResponderDisabled": "Respondedor Automático de IA Desactivado",
+        "aiAutoResponderEnabled": "Respondedor Automático de IA Activado",
+        "saved": "Configuración de WhatsApp guardada",
+        "updateFailed": "Error al actualizar"
       }
     },
     "language": "language",
@@ -7355,6 +7364,21 @@
     "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
     "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
     "settingsUpdated": "settingsUpdated",
+    "sidebarOrder": {
+      "collapse": "Contraer",
+      "description": "Arrastra y suelta para reordenar los elementos y submenús de la barra lateral",
+      "directLink": "Enlace directo",
+      "expand": "Expandir",
+      "itemsCount_many": "",
+      "itemsCount_one": "{{count}} elemento",
+      "itemsCount_other": "{{count}} elementos",
+      "link": "Enlace",
+      "menu": "Menú",
+      "resetToDefault": "Restablecer Predeterminado",
+      "saveChanges": "Guardar Cambios",
+      "title": "Gestión del Orden del Menú",
+      "unsavedChangesAlert": "Tiene cambios sin guardar. Haga clic en Guardar Cambios para aplicar el nuevo orden del menú."
+    },
     "sinapi": {
       "autoUpdatePrices": "autoUpdatePrices",
       "autoUpdatePricesDescription": "autoUpdatePricesDescription",
@@ -7389,6 +7413,7 @@
       "dropdown-options": "dropdown-options",
       "general": "general",
       "integrations": "integrations",
+      "log-search": "Búsqueda de registros",
       "pwa": "pwa",
       "sinapi": "sinapi",
       "users": "users"
@@ -7594,6 +7619,27 @@
       "unsavedChanges": "unsavedChanges",
       "unsavedChangesDescription": "unsavedChangesDescription"
     },
+    "translationMaintenance": {
+      "allComplete": "¡Todas las traducciones completas!",
+      "category": "Categoría",
+      "description": "Revise y actualice todas las traducciones para el idioma seleccionado",
+      "loadError": "Error al cargar traducciones",
+      "missing_many": "",
+      "missing_one": "{{count}} traducción faltante",
+      "missing_other": "{{count}} traducciones faltantes",
+      "noSourceText": "Sin texto de origen",
+      "noTranslationsToSave": "No hay traducciones para guardar",
+      "percentComplete": "{{percent}}% completo",
+      "placeholder": "Ingrese la traducción en {{language}}...",
+      "saveError": "Error al guardar traducciones",
+      "saveSuccess_many": "",
+      "saveSuccess_one": "{{count}} traducción guardada correctamente para {{language}}",
+      "saveSuccess_other": "{{count}} traducciones guardadas correctamente para {{language}}",
+      "title": "Mantenimiento de Traducciones",
+      "translated": "{{completed}} / {{total}} traducidas",
+      "unsavedChanges": "Cambios sin guardar",
+      "value": "Valor"
+    },
     "translations": {
       "cancel": "cancel",
       "languageNames": {
@@ -7617,6 +7663,7 @@
     },
     "twoFactorAuth": "twoFactorAuth",
     "unsavedChanges": "unsavedChanges",
+    "userManagementUnknownUser": "Usuario Desconocido",
     "userPreferences": {
       "appearanceLabel": "appearanceLabel",
       "appearanceOptions": {
@@ -7674,7 +7721,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
-    "canceled": "",
+    "canceled": "Cancelado",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7685,7 +7732,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
-    "past_due": "",
+    "past_due": "Vencido",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7701,11 +7748,11 @@
     "inactive": "Inactivo"
   },
   "stop": "Detener",
-  "studioPrincipal": "",
+  "studioPrincipal": "Estudio Principal",
   "studioTools": "studioTools",
   "submit": "Enviar",
   "submitting": "Enviando...",
-  "subscribeNow": "",
+  "subscribeNow": "Suscribirse Ahora",
   "success": "Éxito",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8283,16 +8330,18 @@
   },
   "thisMonth": "Este mes",
   "tierPicker": {
-    "annual": "",
-    "cancel": "",
-    "checkoutError": "",
-    "confirm": "",
-    "custom": "",
-    "loading": "",
-    "monthly": "",
-    "perMonthAnnual": "",
-    "selectTier": "",
-    "title": ""
+    "annual": "Anual",
+    "cancel": "Cancelar",
+    "checkoutError": "Error en el pago. Por favor, inténtelo de nuevo.",
+    "confirm": "Confirmar",
+    "custom": "Personalizado",
+    "loading": "Cargando...",
+    "monthly": "Mensual",
+    "noPortalUrl": "No se devolvió la URL del portal",
+    "perMonthAnnual": "/mes (facturado anualmente)",
+    "portalOpenFailed": "Error al abrir el portal de facturación",
+    "selectTier": "Seleccionar Plan",
+    "title": "Elija su Plan"
   },
   "timeline": {
     "actions": {
@@ -8420,14 +8469,14 @@
       "blockingCount_many": "blockingCount",
       "blockingCount_one": "blockingCount",
       "blockingCount_other": "blockingCount",
-      "createError": "",
-      "createSuccess": "",
+      "createError": "Error al crear definición",
+      "createSuccess": "Definición creada",
       "daysOverdue": "daysOverdue",
       "daysRemaining": "daysRemaining",
       "deleteConfirm": "deleteConfirm",
       "deleteDefinition": "deleteDefinition",
-      "deleteError": "",
-      "deleteSuccess": "",
+      "deleteError": "Error al eliminar definición",
+      "deleteSuccess": "Definición eliminada",
       "dueToday": "dueToday",
       "editDefinition": "editDefinition",
       "filterAll": "filterAll",
@@ -8439,9 +8488,9 @@
       "followUpCount_many": "followUpCount",
       "followUpCount_one": "followUpCount",
       "followUpCount_other": "followUpCount",
-      "followUpError": "",
+      "followUpError": "Error al enviar seguimiento",
       "followUpPlaceholder": "followUpPlaceholder",
-      "followUpSuccess": "",
+      "followUpSuccess": "Seguimiento enviado",
       "form": {
         "contactLabel": "contactLabel",
         "dateLabel": "dateLabel",
@@ -8476,8 +8525,8 @@
       "totalDefinitions_many": "totalDefinitions",
       "totalDefinitions_one": "totalDefinitions",
       "totalDefinitions_other": "totalDefinitions",
-      "updateError": "",
-      "updateSuccess": ""
+      "updateError": "Error al actualizar definición",
+      "updateSuccess": "Definición actualizada"
     },
     "comments": {
       "title": "Comentarios"
@@ -8493,8 +8542,8 @@
       "addDelay": "addDelay",
       "correctiveActions": "correctiveActions",
       "correctiveActionsPlaceholder": "correctiveActionsPlaceholder",
-      "createError": "",
-      "createSuccess": "",
+      "createError": "Error al crear retraso",
+      "createSuccess": "Retraso creado",
       "delayDays": "delayDays",
       "description": "description",
       "descriptionPlaceholder": "descriptionPlaceholder",
@@ -8504,11 +8553,11 @@
       "subcontractorTrade": "subcontractorTrade",
       "subcontractorTradePlaceholder": "subcontractorTradePlaceholder",
       "title": "title",
-      "updateError": "",
-      "updateSuccess": "",
+      "updateError": "Error al actualizar retraso",
+      "updateSuccess": "Retraso actualizado",
       "validation": {
-        "delayDaysMin": "",
-        "descriptionMinLength": ""
+        "delayDaysMin": "El retraso debe ser de al menos 1 día",
+        "descriptionMinLength": "La descripción debe tener al menos 10 caracteres"
       }
     },
     "dependencies": {
@@ -8620,13 +8669,13 @@
     },
     "summary": {
       "categoryLabel": "categoryLabel",
-      "clientDecisions": "",
-      "clientOverdue": "",
+      "clientDecisions": "Decisiones del Cliente",
+      "clientOverdue": "Cliente Vencido",
       "completed": "completed",
       "completedPhases": "completedPhases",
       "definitions": "definitions",
       "delayedDays": "delayedDays",
-      "highImpact": "",
+      "highImpact": "Alto Impacto",
       "nextMilestone": "nextMilestone",
       "overallStatus": "overallStatus",
       "pending": "pending",
@@ -8786,12 +8835,12 @@
     "other": "Otro",
     "services": "Servicios"
   },
-  "trialDaysLeft_many": "",
-  "trialDaysLeft_one": "",
-  "trialDaysLeft_other": "",
-  "trialDaysLeft_other_many": "",
-  "trialDaysLeft_other_one": "",
-  "trialDaysLeft_other_other": "",
+  "trialDaysLeft_many": "{{count}} días de prueba restantes",
+  "trialDaysLeft_one": "{{count}} día de prueba restante",
+  "trialDaysLeft_other": "{{count}} días de prueba restantes",
+  "trialDaysLeft_other_many": "{{count}} días de prueba restantes",
+  "trialDaysLeft_other_one": "{{count}} día de prueba restante",
+  "trialDaysLeft_other_other": "{{count}} días de prueba restantes",
   "tryDifferentSearch": "Pruebe con un término de búsqueda diferente",
   "ui": {
     "clickToViewProjectDetails": "Haz clic para ver los detalles del proyecto",
@@ -8831,8 +8880,8 @@
   "updated": "actualizado con éxito",
   "updatedAt": "Actualizado en",
   "updating": "Actualizando...",
-  "upgradeNow": "",
-  "upgradeToPaid": "",
+  "upgradeNow": "Actualizar Ahora",
+  "upgradeToPaid": "Actualizar a Pago",
   "upload": "Subir",
   "uploadErrorDescription": "Ocurrió un error al subir el archivo",
   "uploadErrorTitle": "Error de Carga",

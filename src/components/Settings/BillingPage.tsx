@@ -43,7 +43,7 @@ export function BillingPage() {
       URL.revokeObjectURL(objectUrl)
       toast.success(t('billing.downloadInvoice'))
     } catch (e) {
-      const message = e instanceof Error ? e.message : 'Failed to download invoice'
+      const message = e instanceof Error ? e.message : t('billing.downloadInvoiceFailed')
       toast.error(message)
     }
   }
@@ -53,7 +53,7 @@ export function BillingPage() {
       <Card>
         <CardContent className="flex items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-          <span className="ml-2">{t('billing.title', 'Billing history')}</span>
+          <span className="ml-2">{t('billing.title')}</span>
         </CardContent>
       </Card>
     )

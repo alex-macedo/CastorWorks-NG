@@ -261,7 +261,7 @@ export function ContactTypesManager() {
                 id="id"
                 value={formData.id}
                 onChange={(e) => setFormData((prev) => ({ ...prev, id: e.target.value }))}
-                placeholder="contractor"
+                placeholder={t('settings.contactTypes.idPlaceholder')}
                 className="font-mono"
               />
               <p className="text-xs text-muted-foreground">

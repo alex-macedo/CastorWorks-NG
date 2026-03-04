@@ -2,5 +2,15 @@
   "daysLeft": "{{count}} días restantes de tu prueba",
   "daysLeft_one": "1 día restante de tu prueba",
   "endsOn": "Tu prueba termina el {{date}}",
-  "upgradeNow": "Actualizar ahora"
+  "upgradeNow": "Actualizar ahora",
+  "emails": {
+    "reminder_7d_title": "Tu prueba de CastorWorks termina en 7 días",
+    "reminder_7d_body": "Tu prueba para {{tenantName}} termina en 7 días ({{expiryDate}}). Actualiza ahora para mantener el acceso completo.",
+    "reminder_3d_title": "Tu prueba de CastorWorks termina en 3 días",
+    "reminder_3d_body": "Tu prueba para {{tenantName}} termina en 3 días ({{expiryDate}}). No te lo pierdas — actualiza ahora para seguir usando CastorWorks sin interrupciones.",
+    "reminder_1d_title": "Tu prueba de CastorWorks termina mañana",
+    "reminder_1d_body": "Tu prueba para {{tenantName}} termina mañana ({{expiryDate}}). Actualiza ahora. Después del vencimiento, tendrás acceso limitado al nivel sandbox.",
+    "expiration_title": "Tu prueba de CastorWorks ha terminado",
+    "expiration_body": "Tu prueba para {{tenantName}} ha terminado. Ahora tienes acceso limitado al nivel sandbox. Actualiza en cualquier momento para recuperar el acceso completo."
+  }
 }

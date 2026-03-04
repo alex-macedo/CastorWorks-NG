@@ -1489,6 +1489,7 @@
   "billableHours": "billableHours",
   "billing": {
     "downloadInvoice": "downloadInvoice",
+    "downloadInvoiceFailed": "Failed to download invoice",
     "emptyState": "emptyState",
     "title": "title"
   },
@@ -3300,6 +3301,7 @@
   "date": "Date",
   "dateRange": "Date range",
   "days": "days",
+  "daysLeft_many": "{{count}} days left",
   "daysLeft_one": "daysLeft_one",
   "daysLeft_other": "daysLeft",
   "dbExportImport": {
@@ -7145,6 +7147,7 @@
       "id": "id",
       "idCannotChange": "idCannotChange",
       "idHint": "idHint",
+      "idPlaceholder": "e.g. contractor",
       "label": "label",
       "labelPlaceholder": "labelPlaceholder",
       "noTypes": "noTypes",
@@ -7162,7 +7165,13 @@
     "currencyUpdated": "currencyUpdated",
     "dark": "dark",
     "dataManagement": {
-      "exportingLabel": "exportingLabel"
+      "exportingLabel": "exportingLabel",
+      "toast": {
+        "exportFailedWithMessage": "Export failed: {{message}}",
+        "exportSuccess": "Data exported successfully",
+        "exportSuccessWithFormat": "Data exported successfully as {{format}}",
+        "selectTableError": "Please select at least one table to export"
+      }
     },
     "dateFormat": "dateFormat",
     "dateFormatOptions": {
@@ -7252,7 +7261,8 @@
       "whatsapp": {
         "aiAutoResponderDisabled": "aiAutoResponderDisabled",
         "aiAutoResponderEnabled": "aiAutoResponderEnabled",
-        "saved": "saved"
+        "saved": "saved",
+        "updateFailed": "Failed to update"
       }
     },
     "language": "language",
@@ -7354,6 +7364,20 @@
     "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
     "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
     "settingsUpdated": "settingsUpdated",
+    "sidebarOrder": {
+      "collapse": "Collapse",
+      "description": "Drag and drop to reorder sidebar menu items and submenus",
+      "directLink": "Direct link",
+      "expand": "Expand",
+      "itemsCount_one": "{{count}} item",
+      "itemsCount_other": "{{count}} items",
+      "link": "Link",
+      "menu": "Menu",
+      "resetToDefault": "Reset to Default",
+      "saveChanges": "Save Changes",
+      "title": "Menu Order Management",
+      "unsavedChangesAlert": "You have unsaved changes. Click Save Changes to apply the new menu order."
+    },
     "sinapi": {
       "autoUpdatePrices": "autoUpdatePrices",
       "autoUpdatePricesDescription": "autoUpdatePricesDescription",
@@ -7388,6 +7412,7 @@
       "dropdown-options": "dropdown-options",
       "general": "general",
       "integrations": "integrations",
+      "log-search": "log-search",
       "pwa": "pwa",
       "sinapi": "sinapi",
       "users": "users"
@@ -7593,6 +7618,25 @@
       "unsavedChanges": "unsavedChanges",
       "unsavedChangesDescription": "unsavedChangesDescription"
     },
+    "translationMaintenance": {
+      "allComplete": "All translations complete!",
+      "category": "Category",
+      "description": "Review and update all translations for the selected language",
+      "loadError": "Failed to load translations",
+      "missing_one": "{{count}} translation missing",
+      "missing_other": "{{count}} translations missing",
+      "noSourceText": "No source text",
+      "noTranslationsToSave": "No translations to save",
+      "percentComplete": "{{percent}}% complete",
+      "placeholder": "Enter {{language}} translation...",
+      "saveError": "Failed to save translations",
+      "saveSuccess_one": "Successfully saved {{count}} translation for {{language}}",
+      "saveSuccess_other": "Successfully saved {{count}} translations for {{language}}",
+      "title": "Translation Maintenance",
+      "translated": "{{completed}} / {{total}} translated",
+      "unsavedChanges": "Unsaved changes",
+      "value": "Value"
+    },
     "translations": {
       "cancel": "cancel",
       "languageNames": {
@@ -7616,6 +7660,7 @@
     },
     "twoFactorAuth": "twoFactorAuth",
     "unsavedChanges": "unsavedChanges",
+    "userManagementUnknownUser": "Unknown User",
     "userPreferences": {
       "appearanceLabel": "appearanceLabel",
       "appearanceOptions": {
@@ -8289,7 +8334,9 @@
     "custom": "custom",
     "loading": "loading",
     "monthly": "monthly",
+    "noPortalUrl": "No portal URL returned",
     "perMonthAnnual": "perMonthAnnual",
+    "portalOpenFailed": "Failed to open billing portal",
     "selectTier": "selectTier",
     "title": "title"
   },
@@ -8785,8 +8832,10 @@
     "other": "Other",
     "services": "Services"
   },
+  "trialDaysLeft_many": "{{count}} days left",
   "trialDaysLeft_one": "trialDaysLeft",
   "trialDaysLeft_other": "trialDaysLeft",
+  "trialDaysLeft_other_many": "{{count}} days left",
   "trialDaysLeft_other_one": "trialDaysLeft_other",
   "trialDaysLeft_other_other": "trialDaysLeft_other",
   "tryDifferentSearch": "Try a different search term",

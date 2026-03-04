@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: Trial & Subscription Management
-status: unknown
-stopped_at: Phase 6 context gathered
-last_updated: "2026-03-04T01:43:49.996Z"
+milestone: v1.1+
+milestone_name: Later Milestones
+status: ready
+stopped_at: v1.1 shipped; Phase 7 next
+last_updated: "2026-03-04"
 progress:
-  total_phases: 7
-  completed_phases: 5
-  total_plans: 12
+  total_phases: 11
+  completed_phases: 7
+  total_plans: 13
   completed_plans: 13
-  percent: 50
+  percent: 64
 ---
 
 # CastorWorks-NG — Project State
@@ -22,7 +22,7 @@ progress:
 ## Project Reference
 
 - **What this is:** Multi-tenant SaaS transformation of CastorWorks (construction/engineering management). Target: Brazilian construction and architecture firms. React 19 + Vite 7 + Supabase; shared-schema multi-tenancy; module-based licensing; AI Action credits.
-- **Current focus:** v1.1 Trial & Subscription Management — Phase 3 (Trial Experience) ready for planning.
+- **Current focus:** v1.1+ Later Milestones — Phase 7 (AI Action Credits & Metering) is next.
 
 ---
 
@@ -30,13 +30,11 @@ progress:
 
 | Item    | Value |
 |---------|--------|
-| **Phase** | 4 — Payment & Subscription Management |
-| **Plan**  | 04-01 (next to execute) |
-| **Status** | **Ready for execution** — 3 plans created |
+| **Phase** | 7 — AI Action Credits & Metering (next) |
+| **Plan**  | Not yet planned |
+| **Status** | **v1.1 complete** — ready to start Phase 7 |
 
-**Progress:** [███░░░░░░░] 50% (v1.1: Phase 3 done; Phase 4 planned and ready)
-
-⚠️ **Note:** Phase 3 code is complete but uncommitted. Run `npm run ci` then commit before executing Phase 4.
+**Progress:** [██████░░░░] 64% (v1.0 + v1.1 shipped; Phases 7–11 remaining)
 
 ---
 
@@ -64,6 +62,6 @@ progress:
 
 ## Session Continuity
 
-- **Last session:** 2026-03-04T01:43:49.993Z
-- **Stopped at:** Phase 6 context gathered
-- **Resume file:** .planning/phases/06-trial-subscription-emails/06-CONTEXT.md
+- **Last session:** 2026-03-04
+- **Stopped at:** v1.1 shipped; Phase 7 next
+- **Resume file:** .planning/ROADMAP.md

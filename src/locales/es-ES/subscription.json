@@ -21,6 +21,8 @@
     "annual": "Anual",
     "cancel": "Cancelar",
     "checkoutError": "Error al iniciar el pago",
+    "noPortalUrl": "No se devolvió URL del portal",
+    "portalOpenFailed": "Error al abrir el portal de facturación",
     "confirm": "Confirmar",
     "custom": "Personalizado",
     "loading": "Cargando…",

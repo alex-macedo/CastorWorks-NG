@@ -95,7 +95,7 @@ export function AddUserDialog({ open, onClose }: AddUserDialogProps) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="user@example.com"
+              placeholder={t("settings:addUserDialog.emailPlaceholder")}
               disabled={isLoading}
             />
           </div>

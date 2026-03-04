@@ -65,11 +65,11 @@ export function SubscriptionPage() {
         window.location.href = url
         return
       }
-      throw new Error('No portal URL returned')
+      throw new Error(t('tierPicker.noPortalUrl'))
     } catch (e) {
-      const message = e instanceof Error ? e.message : 'Failed to open billing portal'
+      const message = e instanceof Error ? e.message : t('tierPicker.portalOpenFailed')
       toast({
-        title: t('tierPicker.checkoutError', 'Error'),
+        title: t('tierPicker.checkoutError'),
         description: message,
         variant: 'destructive',
       })
@@ -83,7 +83,7 @@ export function SubscriptionPage() {
       <Card>
         <CardContent className="flex items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-          <span className="ml-2">{t('loadingSubscription', 'Loading subscription…')}</span>
+          <span className="ml-2">{t('loadingSubscription')}</span>
         </CardContent>
       </Card>
     )
@@ -97,9 +97,9 @@ export function SubscriptionPage() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>{t('pageTitle', 'Subscription')}</CardTitle>
+          <CardTitle>{t('pageTitle')}</CardTitle>
           <CardDescription>
-            {t('currentPlan', 'Current Plan')} · {t('billingPeriod', 'Billing Period')}
+            {t('currentPlan')} · {t('billingPeriod')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -108,13 +108,13 @@ export function SubscriptionPage() {
               <div className="flex flex-wrap items-center gap-2">
                 <span className="font-medium">{subscription.tier_id}</span>
                 {isCancelling && (
-                  <Badge variant="secondary">{t('status.canceled', 'Canceled')}</Badge>
+                  <Badge variant="secondary">{t('status.canceled')}</Badge>
                 )}
                 {!isCancelling && isActive && (
-                  <Badge variant="default">{t('status.active', 'Active')}</Badge>
+                  <Badge variant="default">{t('status.active')}</Badge>
                 )}
                 {subscription.status === 'past_due' && (
-                  <Badge variant="destructive">{t('status.past_due', 'Past Due')}</Badge>
+                  <Badge variant="destructive">{t('status.past_due')}</Badge>
                 )}
               </div>
               <p className="text-sm text-muted-foreground">

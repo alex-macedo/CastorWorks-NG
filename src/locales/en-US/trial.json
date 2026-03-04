@@ -2,5 +2,15 @@
   "daysLeft": "{{count}} days left in your trial",
   "daysLeft_one": "1 day left in your trial",
   "endsOn": "Your trial ends on {{date}}",
-  "upgradeNow": "Upgrade Now"
+  "upgradeNow": "Upgrade Now",
+  "emails": {
+    "reminder_7d_title": "Your CastorWorks trial ends in 7 days",
+    "reminder_7d_body": "Your trial for {{tenantName}} ends in 7 days ({{expiryDate}}). Upgrade now to keep full access to all features.",
+    "reminder_3d_title": "Your CastorWorks trial ends in 3 days",
+    "reminder_3d_body": "Your trial for {{tenantName}} ends in 3 days ({{expiryDate}}). Don't miss out — upgrade now to continue using CastorWorks without interruption.",
+    "reminder_1d_title": "Your CastorWorks trial ends tomorrow",
+    "reminder_1d_body": "Your trial for {{tenantName}} ends tomorrow ({{expiryDate}}). Upgrade now to keep full access. After expiry, you'll move to a limited sandbox tier.",
+    "expiration_title": "Your CastorWorks trial has ended",
+    "expiration_body": "Your trial for {{tenantName}} has ended. You now have access to a limited sandbox tier. Upgrade at any time to regain full access to all modules."
+  }
 }
