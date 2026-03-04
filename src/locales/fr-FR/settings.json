@@ -19,14 +19,14 @@
     "title": "Ajouter un Nouvel Utilisateur"
   },
   "addValue": "Ajouter une Nouvelle Valeur",
-  "adminOnly": "adminOnly",
-  "adminRequired": "adminRequired",
+  "adminOnly": "Administrateur uniquement",
+  "adminRequired": "Administrateur requis",
   "adminTools": {
-    "database": "database",
-    "maintenance": "maintenance",
-    "telemetry": "telemetry",
-    "title": "title",
-    "whatsapp": "whatsapp"
+    "database": "Base de données",
+    "maintenance": "Maintenance",
+    "telemetry": "Télémétrie",
+    "title": "Outils d'administration",
+    "whatsapp": "WhatsApp"
   },
   "aiConfigDialog": {
     "autoApplyHelp": "autoApplyHelp",
@@ -215,12 +215,12 @@
     "emptyState": "Aucun historique de facturation pour le moment",
     "title": "Historique de facturation"
   },
-  "changePassword": "changePassword",
+  "changePassword": "Changer le mot de passe",
   "cityLabel": "Ville",
   "cityPlaceholder": "Ville",
   "comingSoon": "Bientôt Disponible",
   "company": "company",
-  "companyName": "companyName",
+  "companyName": "Nom de l'entreprise",
   "companyProfile": {
     "additionalInfoLabel": "additionalInfoLabel",
     "additionalInfoPlaceholder": "additionalInfoPlaceholder",
@@ -274,7 +274,7 @@
     "zipCodePlaceholder": "zipCodePlaceholder"
   },
   "companyProfileSaved": "Profil d'entreprise mis à jour",
-  "companyProfileTitle": "companyProfileTitle",
+  "companyProfileTitle": "Profil de l'entreprise",
   "confirmPassword": "",
   "confirmPasswordPlaceholder": "",
   "contactEmail": "contactEmail",
@@ -550,8 +550,8 @@
     },
     "title": "title"
   },
-  "editCompanyProfile": "editCompanyProfile",
-  "editProfile": "editProfile",
+  "editCompanyProfile": "Modifier le profil de l'entreprise",
+  "editProfile": "Modifier le profil",
   "editProfileDialog": {
     "avatarChange": "Changer la photo",
     "avatarFileSizeError": "Fichier trop volumineux",
@@ -571,7 +571,7 @@
   "emailAdminOnly": "Seul un administrateur peut modifier l'e-mail.",
   "emailNotifications": "Email Notifications",
   "enabled": "enabled",
-  "errorSavingSettings": "errorSavingSettings",
+  "errorSavingSettings": "Erreur lors de l'enregistrement des paramètres",
   "financialAlerts": "financialAlerts",
   "globalAdminSupportOnly": "Administrateur global uniquement",
   "googleDrive": {
@@ -769,7 +769,7 @@
   "noRoles": "Aucun rôle",
   "noUsers": "Aucun utilisateur",
   "notEnabled": "notEnabled",
-  "notificationPreferences": "notificationPreferences",
+  "notificationPreferences": "Préférences de notification",
   "notifications": {
     "checkFrequency": "checkFrequency",
     "checkFrequencyHelp": "",
@@ -883,7 +883,7 @@
   "salesPipelineColumnsHeading": "Sales Pipeline Columns",
   "saveChanges": "saveChanges",
   "saving": "saving",
-  "security": "security",
+  "security": "Sécurité",
   "selectCurrency": "selectCurrency",
   "selectLanguage": "selectLanguage",
   "selectTheme": "selectTheme",
@@ -977,6 +977,7 @@
     "inss-reference": "",
     "inss-strategy": "",
     "integrations": "Intégrations",
+    "log-search": "Recherche de journaux",
     "internationalization": "Internationalisation",
     "localization": "Localisation",
     "menu-order": "",

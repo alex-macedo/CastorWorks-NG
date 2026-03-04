@@ -69,7 +69,7 @@ jobs:
     if: always() && (needs.test.result == 'success' || needs.test.result == 'skipped')
     environment:
       name: production
-      url: https://app.castorworks.cloud
+      url: https://devng.castorworks.cloud
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -171,13 +171,13 @@ jobs:
       - name: Wait for propagation
         run: sleep 10
 
-      - name: Check app.castorworks.cloud
+      - name: Check devng.castorworks.cloud
         run: |
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
             --max-time 30 --retry 3 --retry-delay 5 \
-            https://app.castorworks.cloud)
+            https://devng.castorworks.cloud)
           if [ "${HTTP_CODE}" != "200" ]; then
-            echo "ERROR: app.castorworks.cloud returned ${HTTP_CODE}"
+            echo "ERROR: devng.castorworks.cloud returned ${HTTP_CODE}"
             exit 1
           fi
-          echo "app.castorworks.cloud is up (HTTP ${HTTP_CODE})"
+          echo "devng.castorworks.cloud is up (HTTP ${HTTP_CODE})"

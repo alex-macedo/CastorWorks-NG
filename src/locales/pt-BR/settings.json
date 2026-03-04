@@ -19,14 +19,14 @@
     "title": "Adicionar Novo Usuário"
   },
   "addValue": "Adicionar Novo Valor",
-  "adminOnly": "adminOnly",
-  "adminRequired": "adminRequired",
+  "adminOnly": "Somente administrador",
+  "adminRequired": "Requer administrador",
   "adminTools": {
-    "database": "database",
-    "maintenance": "maintenance",
-    "telemetry": "telemetry",
-    "title": "title",
-    "whatsapp": "whatsapp"
+    "database": "Banco de dados",
+    "maintenance": "Manutenção",
+    "telemetry": "Telemetria",
+    "title": "Ferramentas de administração",
+    "whatsapp": "WhatsApp"
   },
   "aiConfigDialog": {
     "autoApplyHelp": "autoApplyHelp",
@@ -215,12 +215,12 @@
     "emptyState": "Nenhum histórico de faturamento ainda",
     "title": "Histórico de faturamento"
   },
-  "changePassword": "changePassword",
+  "changePassword": "Alterar senha",
   "cityLabel": "Cidade",
   "cityPlaceholder": "Cidade",
   "comingSoon": "Em Breve",
   "company": "company",
-  "companyName": "companyName",
+  "companyName": "Nome da empresa",
   "companyProfile": {
     "additionalInfoLabel": "additionalInfoLabel",
     "additionalInfoPlaceholder": "additionalInfoPlaceholder",
@@ -274,7 +274,7 @@
     "zipCodePlaceholder": "zipCodePlaceholder"
   },
   "companyProfileSaved": "Perfil da empresa atualizado",
-  "companyProfileTitle": "companyProfileTitle",
+  "companyProfileTitle": "Perfil da empresa",
   "confirmPassword": "",
   "confirmPasswordPlaceholder": "",
   "contactEmail": "contactEmail",
@@ -550,8 +550,8 @@
     },
     "title": "title"
   },
-  "editCompanyProfile": "editCompanyProfile",
-  "editProfile": "editProfile",
+  "editCompanyProfile": "Editar perfil da empresa",
+  "editProfile": "Editar perfil",
   "editProfileDialog": {
     "avatarChange": "Trocar foto",
     "avatarFileSizeError": "Arquivo muito grande",
@@ -571,7 +571,7 @@
   "emailAdminOnly": "Apenas um administrador pode alterar o e-mail.",
   "emailNotifications": "Notificações por E-mail",
   "enabled": "enabled",
-  "errorSavingSettings": "errorSavingSettings",
+  "errorSavingSettings": "Erro ao salvar configurações",
   "financialAlerts": "financialAlerts",
   "globalAdminSupportOnly": "Apenas administrador global",
   "googleDrive": {
@@ -769,7 +769,7 @@
   "noRoles": "Nenhuma função",
   "noUsers": "Nenhum usuário",
   "notEnabled": "notEnabled",
-  "notificationPreferences": "notificationPreferences",
+  "notificationPreferences": "Preferências de notificação",
   "notifications": {
     "checkFrequency": "checkFrequency",
     "checkFrequencyHelp": "",
@@ -883,7 +883,7 @@
   "salesPipelineColumnsHeading": "Colunas do Pipeline de Vendas",
   "saveChanges": "saveChanges",
   "saving": "saving",
-  "security": "security",
+  "security": "Segurança",
   "selectCurrency": "selectCurrency",
   "selectLanguage": "selectLanguage",
   "selectTheme": "selectTheme",
@@ -977,6 +977,7 @@
     "inss-reference": "",
     "inss-strategy": "",
     "integrations": "Integrações",
+    "log-search": "Pesquisa de registros",
     "internationalization": "Internacionalização",
     "localization": "Localização",
     "menu-order": "",

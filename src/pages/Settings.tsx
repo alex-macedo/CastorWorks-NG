@@ -295,7 +295,7 @@ const Settings = () => {
           <TabsTrigger value="integrations" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.integrations')}</TabsTrigger>
           <TabsTrigger value="data-management" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.data-management")}</TabsTrigger>
           <RequireAdmin>
-            <TabsTrigger value="log-search" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">Log Search</TabsTrigger>
+            <TabsTrigger value="log-search" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.log-search')}</TabsTrigger>
           </RequireAdmin>
 
           <RequireAdmin>

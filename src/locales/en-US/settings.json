@@ -19,14 +19,14 @@
     "title": "Add New User"
   },
   "addValue": "Add New Value",
-  "adminOnly": "adminOnly",
-  "adminRequired": "adminRequired",
+  "adminOnly": "Admin Only",
+  "adminRequired": "Admin Required",
   "adminTools": {
-    "database": "database",
-    "maintenance": "maintenance",
-    "telemetry": "telemetry",
-    "title": "title",
-    "whatsapp": "whatsapp"
+    "database": "Database",
+    "maintenance": "Maintenance",
+    "telemetry": "Telemetry",
+    "title": "Admin Tools",
+    "whatsapp": "WhatsApp"
   },
   "aiConfigDialog": {
     "autoApplyHelp": "autoApplyHelp",
@@ -215,12 +215,12 @@
     "emptyState": "No billing history yet",
     "title": "Billing history"
   },
-  "changePassword": "changePassword",
+  "changePassword": "Change Password",
   "cityLabel": "City",
   "cityPlaceholder": "City",
   "comingSoon": "Coming Soon",
   "company": "company",
-  "companyName": "companyName",
+  "companyName": "Company Name",
   "companyProfile": {
     "additionalInfoLabel": "additionalInfoLabel",
     "additionalInfoPlaceholder": "additionalInfoPlaceholder",
@@ -274,7 +274,7 @@
     "zipCodePlaceholder": "zipCodePlaceholder"
   },
   "companyProfileSaved": "Company profile updated",
-  "companyProfileTitle": "companyProfileTitle",
+  "companyProfileTitle": "Company Profile",
   "confirmPassword": "confirmPassword",
   "confirmPasswordPlaceholder": "confirmPasswordPlaceholder",
   "contactEmail": "contactEmail",
@@ -545,8 +545,8 @@
     },
     "title": "title"
   },
-  "editCompanyProfile": "editCompanyProfile",
-  "editProfile": "editProfile",
+  "editCompanyProfile": "Edit Company Profile",
+  "editProfile": "Edit Profile",
   "editProfileDialog": {
     "avatarChange": "Change photo",
     "avatarFileSizeError": "File too large",
@@ -566,7 +566,7 @@
   "emailAdminOnly": "Only an administrator can change the email.",
   "emailNotifications": "Email Notifications",
   "enabled": "enabled",
-  "errorSavingSettings": "errorSavingSettings",
+  "errorSavingSettings": "Error saving settings",
   "financialAlerts": "financialAlerts",
   "globalAdminSupportOnly": "Global admin only",
   "googleDrive": {
@@ -763,7 +763,7 @@
   "noRoles": "No roles",
   "noUsers": "No users",
   "notEnabled": "notEnabled",
-  "notificationPreferences": "notificationPreferences",
+  "notificationPreferences": "Notification Preferences",
   "notifications": {
     "checkFrequency": "checkFrequency",
     "checkFrequencyHelp": "checkFrequencyHelp",
@@ -877,7 +877,7 @@
   "salesPipelineColumnsHeading": "Sales Pipeline Columns",
   "saveChanges": "saveChanges",
   "saving": "saving",
-  "security": "security",
+  "security": "Security",
   "selectCurrency": "selectCurrency",
   "selectLanguage": "selectLanguage",
   "selectTheme": "selectTheme",
@@ -971,6 +971,7 @@
     "inss-reference": "inss-reference",
     "inss-strategy": "inss-strategy",
     "integrations": "Integrations",
+    "log-search": "Log Search",
     "internationalization": "Internationalization",
     "localization": "Localization",
     "menu-order": "menu-order",
