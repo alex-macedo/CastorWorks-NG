@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Phase 6 — Trial & Subscription Emails:**
+  - `execute-trial-emails` Edge Function with branded HTML templates and 4-locale support
+  - Shared modules: `trialEmailCopy.ts` (localized email copy), `trialEmailTemplates.ts` (HTML templates)
+  - DB migration `20260306000000_trial_email_schema.sql`: `trial_email_logs`, `trial_reminder_due_candidates` view, `trial_expiration_email_queue`, auto-trigger on trial expiry
+  - Trial locale updates (en-US, es-ES, fr-FR, pt-BR)
+
+### Fixed
+- **Edge Function `fetch-users-with-roles`:** Fixed `SyntaxError: Identifier 'authInternalUrl' has already been declared` that prevented the function from loading; bypass Kong for Auth admin API calls; use direct Postgres for `user_roles`/`user_profiles` queries
+- **Edge Function `create-user`:** Direct Auth verification to bypass Kong key-auth JWT rejection
+- **SERVICE_ROLE_KEY signature mismatch:** Regenerated `SERVICE_ROLE_KEY` JWT to match current `JWT_SECRET` — GoTrue was rejecting admin API calls with `403 bad_jwt`
+- **i18n:** Filled 156 empty translation values across pt-BR, es-ES, fr-FR (sidebar order, translation maintenance, billing, subscription, user management)
+
+### Changed
+- **ROADMAP/STATE:** Marked v1.1 (Phases 3–6) as shipped; Phase 7 (AI Action Credits & Metering) is next
 - **Phase 4 — Payment & Subscription (Stripe):**
   - `SubscriptionPage` and `SubscriptionCheckoutFlow` components with plan selection, upgrade/downgrade flow, and Stripe Checkout redirect
   - `BillingPage` component with invoice history, PDF download, and Stripe Customer Portal link

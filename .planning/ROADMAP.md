@@ -123,6 +123,26 @@ Plans:
 
 ---
 
+### Phase 7: AI Action Credits & Metering
+
+**Goal:** Tenants have per-tier AI credit budgets; AI actions are tracked, metered, and gracefully degraded when credits are exhausted.
+
+**Depends on:** Phase 2 (Module-Based Licensing)
+
+**Requirements:** AI-01, AI-02, AI-03, AI-04
+
+**Success Criteria** (what must be TRUE):
+
+1. Every AI action is logged in `ai_usage_log` with tenant, model, tokens, and cost.
+2. Each subscription tier has a configured AI credit budget (monthly).
+3. `consumeAIActions` RPC/helper atomically debits credits and rejects when budget is exceeded.
+4. Model routing selects the appropriate model tier based on tenant plan.
+5. When credits are exhausted, the app gracefully degrades (no hard error; shows upgrade prompt).
+
+**Plans:** TBD
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans | Status | Completed |
