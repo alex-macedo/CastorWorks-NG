@@ -147,7 +147,7 @@ export const TranslationMaintenanceEditor = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [targetLanguage]);
+  }, [t, targetLanguage]);
 
   useEffect(() => {
     loadTranslations();

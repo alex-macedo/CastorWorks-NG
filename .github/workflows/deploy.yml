@@ -74,6 +74,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Validate required secrets
+        env:
+          PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          PROD_SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+          PROD_SSH_PORT: ${{ secrets.PROD_SSH_PORT }}
+          PROD_SSH_USER: ${{ secrets.PROD_SSH_USER }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: |
+          MISSING=""
+          [ -z "${PROD_SSH_PRIVATE_KEY}" ] && MISSING="${MISSING} PROD_SSH_PRIVATE_KEY"
+          [ -z "${PROD_SSH_HOST}" ]       && MISSING="${MISSING} PROD_SSH_HOST"
+          [ -z "${PROD_SSH_PORT}" ]       && MISSING="${MISSING} PROD_SSH_PORT"
+          [ -z "${PROD_SSH_USER}" ]       && MISSING="${MISSING} PROD_SSH_USER"
+          [ -z "${VITE_SUPABASE_URL}" ]   && MISSING="${MISSING} VITE_SUPABASE_URL"
+          [ -z "${VITE_SUPABASE_ANON_KEY}" ] && MISSING="${MISSING} VITE_SUPABASE_ANON_KEY"
+          if [ -n "${MISSING}" ]; then
+            echo "::error::Missing required secrets:${MISSING}"
+            echo "Add these in Settings → Secrets and variables → Actions (or in Environment 'production' secrets)."
+            echo "See .github/docs/DEPLOY_SECRETS.md for the full list."
+            exit 1
+          fi
+          echo "All required deploy secrets are set."
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
