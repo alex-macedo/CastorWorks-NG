@@ -793,24 +793,35 @@
   "numberFormatPreviewHeading": "Vista Previa",
   "onboarding": {
     "confirmButton": "Confirmar incorporación",
+    "deleteButton": "Eliminar",
+    "deleteDialog": {
+      "cancel": "Cancelar",
+      "confirm": "Eliminar usuario",
+      "description": "Esto eliminará permanentemente a {{email}} del sistema. Esta acción no se puede deshacer.",
+      "title": "¿Eliminar usuario pendiente?"
+    },
     "description": "Usuarios que se han registrado pero aún no tienen acceso concedido. Confirme cada usuario para crear su perfil, asignar un rol y enviar un correo de bienvenida.",
     "empty": {
       "description": "Todos los usuarios registrados ya han sido incorporados. Los nuevos registros aparecerán aquí.",
       "title": "Todos los usuarios incorporados"
     },
+    "onboardButton": "Incorporar",
     "pendingCount": "{{count}} usuario pendiente",
     "pendingCount_many": "",
     "pendingCount_one": "{{count}} usuario pendiente",
     "pendingCount_other": "{{count}} usuarios pendientes",
     "refresh": "Actualizar",
     "table": {
-      "action": "Acción",
+      "action": "Acciones",
       "email": "Correo",
       "registeredAt": "Registrado",
       "role": "Rol predeterminado"
     },
     "title": "Incorporación pendiente",
     "toast": {
+      "deleteError": "Error al eliminar usuario",
+      "deleteSuccess": "Usuario eliminado",
+      "deleteSuccessDescription": "{{email}} ha sido eliminado permanentemente del sistema.",
       "error": "Error en la incorporación",
       "success": "Usuario incorporado",
       "successDescription": "{{email}} ha sido incorporado con el rol {{role}} y recibirá un correo de bienvenida."

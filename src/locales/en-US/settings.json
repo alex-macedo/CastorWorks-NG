@@ -787,23 +787,34 @@
   "numberFormatPreviewHeading": "numberFormatPreviewHeading",
   "onboarding": {
     "confirmButton": "Confirm onboarding",
+    "deleteButton": "Delete",
+    "deleteDialog": {
+      "cancel": "Cancel",
+      "confirm": "Delete user",
+      "description": "This will permanently delete {{email}} from the system. This action cannot be undone.",
+      "title": "Delete pending user?"
+    },
     "description": "Users who have registered but have not yet been granted access. Confirm each user to create their profile, assign a role, and send a welcome email.",
     "empty": {
       "description": "All registered users have been onboarded. New registrations will appear here.",
       "title": "All users are onboarded"
     },
+    "onboardButton": "Onboard",
     "pendingCount": "{{count}} user pending",
     "pendingCount_one": "{{count}} user pending",
     "pendingCount_other": "{{count}} users pending",
     "refresh": "Refresh",
     "table": {
-      "action": "Action",
+      "action": "Actions",
       "email": "Email",
       "registeredAt": "Registered",
       "role": "Default role"
     },
     "title": "Pending onboarding",
     "toast": {
+      "deleteError": "Failed to delete user",
+      "deleteSuccess": "User deleted",
+      "deleteSuccessDescription": "{{email}} has been permanently removed from the system.",
       "error": "Onboarding failed",
       "success": "User onboarded",
       "successDescription": "{{email}} has been onboarded with role {{role}} and will receive a welcome email."

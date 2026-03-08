@@ -793,24 +793,35 @@
   "numberFormatPreviewHeading": "Pré-visualização",
   "onboarding": {
     "confirmButton": "Confirmar integração",
+    "deleteButton": "Excluir",
+    "deleteDialog": {
+      "cancel": "Cancelar",
+      "confirm": "Excluir usuário",
+      "description": "Isso irá excluir permanentemente {{email}} do sistema. Essa ação não pode ser desfeita.",
+      "title": "Excluir usuário pendente?"
+    },
     "description": "Usuários que se cadastraram mas ainda não tiveram o acesso concedido. Confirme cada usuário para criar o perfil, atribuir uma função e enviar um e-mail de boas-vindas.",
     "empty": {
       "description": "Todos os usuários cadastrados já foram integrados. Novos cadastros aparecerão aqui.",
       "title": "Todos os usuários integrados"
     },
+    "onboardButton": "Integrar",
     "pendingCount": "{{count}} usuário pendente",
     "pendingCount_many": "",
     "pendingCount_one": "{{count}} usuário pendente",
     "pendingCount_other": "{{count}} usuários pendentes",
     "refresh": "Atualizar",
     "table": {
-      "action": "Ação",
+      "action": "Ações",
       "email": "E-mail",
       "registeredAt": "Cadastrado em",
       "role": "Função padrão"
     },
     "title": "Integração pendente",
     "toast": {
+      "deleteError": "Falha ao excluir usuário",
+      "deleteSuccess": "Usuário excluído",
+      "deleteSuccessDescription": "{{email}} foi removido permanentemente do sistema.",
       "error": "Falha na integração",
       "success": "Usuário integrado",
       "successDescription": "{{email}} foi integrado com a função {{role}} e receberá um e-mail de boas-vindas."

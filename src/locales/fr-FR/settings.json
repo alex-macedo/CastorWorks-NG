@@ -793,24 +793,35 @@
   "numberFormatPreviewHeading": "Aperçu",
   "onboarding": {
     "confirmButton": "Confirmer l'intégration",
+    "deleteButton": "Supprimer",
+    "deleteDialog": {
+      "cancel": "Annuler",
+      "confirm": "Supprimer l'utilisateur",
+      "description": "Cela supprimera définitivement {{email}} du système. Cette action est irréversible.",
+      "title": "Supprimer l'utilisateur en attente ?"
+    },
     "description": "Utilisateurs inscrits mais n'ayant pas encore reçu l'accès. Confirmez chaque utilisateur pour créer son profil, attribuer un rôle et envoyer un e-mail de bienvenue.",
     "empty": {
       "description": "Tous les utilisateurs inscrits ont été intégrés. Les nouvelles inscriptions apparaîtront ici.",
       "title": "Tous les utilisateurs sont intégrés"
     },
+    "onboardButton": "Intégrer",
     "pendingCount": "{{count}} utilisateur en attente",
     "pendingCount_many": "",
     "pendingCount_one": "{{count}} utilisateur en attente",
     "pendingCount_other": "{{count}} utilisateurs en attente",
     "refresh": "Actualiser",
     "table": {
-      "action": "Action",
+      "action": "Actions",
       "email": "E-mail",
       "registeredAt": "Inscrit le",
       "role": "Rôle par défaut"
     },
     "title": "Intégration en attente",
     "toast": {
+      "deleteError": "Échec de la suppression",
+      "deleteSuccess": "Utilisateur supprimé",
+      "deleteSuccessDescription": "{{email}} a été définitivement supprimé du système.",
       "error": "Échec de l'intégration",
       "success": "Utilisateur intégré",
       "successDescription": "{{email}} a été intégré avec le rôle {{role}} et recevra un e-mail de bienvenue."
