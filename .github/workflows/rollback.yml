@@ -23,6 +23,7 @@ on:
 jobs:
   rollback:
     name: Rollback
+    permissions: {}
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.confirm == 'ROLLBACK' }}
     environment:
