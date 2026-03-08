@@ -42,6 +42,7 @@ import { LogSearchPanel } from "@/components/Settings/LogSearchPanel";
 import { GoogleDriveSettings } from "@/components/Settings/GoogleDriveSettings";
 import { CalendarSyncButton } from "@/components/Schedule/CalendarSyncButton";
 import { UserManagementPanel } from "@/components/Settings/UserManagementPanel";
+import { OnboardingPanel } from "@/components/Settings/OnboardingPanel";
 import { EditCompanyProfileDialog } from "@/components/Settings/EditCompanyProfileDialog";
 import { EditProfileDialog } from "@/components/Settings/EditProfileDialog";
 import { NotificationPreferencesDialog } from "@/components/Settings/NotificationPreferencesDialog";
@@ -506,10 +507,11 @@ const Settings = () => {
 
          <TabsContent value="users" className="space-y-6">
            <Tabs defaultValue="user-management" className="w-full">
-             <TabsList className="grid w-full grid-cols-3">
+             <TabsList className="grid w-full grid-cols-4">
                <TabsTrigger value="user-management">{t("settings:tabs.user-management")}</TabsTrigger>
                <TabsTrigger value="permissions">{t("settings:tabs.permission-management")}</TabsTrigger>
                <TabsTrigger value="menu-order">{t("settings:tabs.menu-order")}</TabsTrigger>
+               <TabsTrigger value="onboarding">{t("settings:tabs.onboarding")}</TabsTrigger>
              </TabsList>
 
              <TabsContent value="user-management" className="mt-6">
@@ -522,6 +524,10 @@ const Settings = () => {
 
              <TabsContent value="menu-order" className="mt-6">
                <SidebarOrderManager />
+             </TabsContent>
+
+             <TabsContent value="onboarding" className="mt-6">
+               <OnboardingPanel />
              </TabsContent>
            </Tabs>
          </TabsContent>

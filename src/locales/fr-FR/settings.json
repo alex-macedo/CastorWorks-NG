@@ -791,6 +791,31 @@
     "full": "full"
   },
   "numberFormatPreviewHeading": "Aperçu",
+  "onboarding": {
+    "confirmButton": "Confirmer l'intégration",
+    "description": "Utilisateurs inscrits mais n'ayant pas encore reçu l'accès. Confirmez chaque utilisateur pour créer son profil, attribuer un rôle et envoyer un e-mail de bienvenue.",
+    "empty": {
+      "description": "Tous les utilisateurs inscrits ont été intégrés. Les nouvelles inscriptions apparaîtront ici.",
+      "title": "Tous les utilisateurs sont intégrés"
+    },
+    "pendingCount": "{{count}} utilisateur en attente",
+    "pendingCount_many": "",
+    "pendingCount_one": "{{count}} utilisateur en attente",
+    "pendingCount_other": "{{count}} utilisateurs en attente",
+    "refresh": "Actualiser",
+    "table": {
+      "action": "Action",
+      "email": "E-mail",
+      "registeredAt": "Inscrit le",
+      "role": "Rôle par défaut"
+    },
+    "title": "Intégration en attente",
+    "toast": {
+      "error": "Échec de l'intégration",
+      "success": "Utilisateur intégré",
+      "successDescription": "{{email}} a été intégré avec le rôle {{role}} et recevra un e-mail de bienvenue."
+    }
+  },
   "password": "password",
   "passwordChanged": "Password changed successfully",
   "passwordMismatch": "Les mots de passe ne correspondent pas",
@@ -1000,6 +1025,7 @@
     "localization": "Localisation",
     "log-search": "Recherche de journaux",
     "menu-order": "Ordre du menu",
+    "onboarding": "Intégration",
     "permission-management": "Gestion des permissions",
     "preferences": "Préférences",
     "pwa": "PWA",

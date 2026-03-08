@@ -785,6 +785,30 @@
     "full": "full"
   },
   "numberFormatPreviewHeading": "numberFormatPreviewHeading",
+  "onboarding": {
+    "confirmButton": "Confirm onboarding",
+    "description": "Users who have registered but have not yet been granted access. Confirm each user to create their profile, assign a role, and send a welcome email.",
+    "empty": {
+      "description": "All registered users have been onboarded. New registrations will appear here.",
+      "title": "All users are onboarded"
+    },
+    "pendingCount": "{{count}} user pending",
+    "pendingCount_one": "{{count}} user pending",
+    "pendingCount_other": "{{count}} users pending",
+    "refresh": "Refresh",
+    "table": {
+      "action": "Action",
+      "email": "Email",
+      "registeredAt": "Registered",
+      "role": "Default role"
+    },
+    "title": "Pending onboarding",
+    "toast": {
+      "error": "Onboarding failed",
+      "success": "User onboarded",
+      "successDescription": "{{email}} has been onboarded with role {{role}} and will receive a welcome email."
+    }
+  },
   "password": "password",
   "passwordChanged": "Password changed successfully",
   "passwordMismatch": "passwordMismatch",
@@ -994,6 +1018,7 @@
     "localization": "Localization",
     "log-search": "Log Search",
     "menu-order": "Menu Order",
+    "onboarding": "Onboarding",
     "permission-management": "Permission Management",
     "preferences": "Preferences",
     "pwa": "PWA",

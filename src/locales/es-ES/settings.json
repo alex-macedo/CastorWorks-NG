@@ -791,6 +791,31 @@
     "full": "full"
   },
   "numberFormatPreviewHeading": "Vista Previa",
+  "onboarding": {
+    "confirmButton": "Confirmar incorporación",
+    "description": "Usuarios que se han registrado pero aún no tienen acceso concedido. Confirme cada usuario para crear su perfil, asignar un rol y enviar un correo de bienvenida.",
+    "empty": {
+      "description": "Todos los usuarios registrados ya han sido incorporados. Los nuevos registros aparecerán aquí.",
+      "title": "Todos los usuarios incorporados"
+    },
+    "pendingCount": "{{count}} usuario pendiente",
+    "pendingCount_many": "",
+    "pendingCount_one": "{{count}} usuario pendiente",
+    "pendingCount_other": "{{count}} usuarios pendientes",
+    "refresh": "Actualizar",
+    "table": {
+      "action": "Acción",
+      "email": "Correo",
+      "registeredAt": "Registrado",
+      "role": "Rol predeterminado"
+    },
+    "title": "Incorporación pendiente",
+    "toast": {
+      "error": "Error en la incorporación",
+      "success": "Usuario incorporado",
+      "successDescription": "{{email}} ha sido incorporado con el rol {{role}} y recibirá un correo de bienvenida."
+    }
+  },
   "password": "password",
   "passwordChanged": "Contraseña cambiada exitosamente",
   "passwordMismatch": "Las contraseñas no coinciden",
@@ -1000,6 +1025,7 @@
     "localization": "Localización",
     "log-search": "Búsqueda de registros",
     "menu-order": "Orden del Menú",
+    "onboarding": "Incorporación",
     "permission-management": "Gestión de Permisos",
     "preferences": "Preferencias",
     "pwa": "PWA",

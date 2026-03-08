@@ -791,6 +791,31 @@
     "full": "full"
   },
   "numberFormatPreviewHeading": "Pré-visualização",
+  "onboarding": {
+    "confirmButton": "Confirmar integração",
+    "description": "Usuários que se cadastraram mas ainda não tiveram o acesso concedido. Confirme cada usuário para criar o perfil, atribuir uma função e enviar um e-mail de boas-vindas.",
+    "empty": {
+      "description": "Todos os usuários cadastrados já foram integrados. Novos cadastros aparecerão aqui.",
+      "title": "Todos os usuários integrados"
+    },
+    "pendingCount": "{{count}} usuário pendente",
+    "pendingCount_many": "",
+    "pendingCount_one": "{{count}} usuário pendente",
+    "pendingCount_other": "{{count}} usuários pendentes",
+    "refresh": "Atualizar",
+    "table": {
+      "action": "Ação",
+      "email": "E-mail",
+      "registeredAt": "Cadastrado em",
+      "role": "Função padrão"
+    },
+    "title": "Integração pendente",
+    "toast": {
+      "error": "Falha na integração",
+      "success": "Usuário integrado",
+      "successDescription": "{{email}} foi integrado com a função {{role}} e receberá um e-mail de boas-vindas."
+    }
+  },
   "password": "password",
   "passwordChanged": "Senha alterada com sucesso",
   "passwordMismatch": "As senhas não coincidem",
@@ -1000,6 +1025,7 @@
     "localization": "Localização",
     "log-search": "Pesquisa de registros",
     "menu-order": "Ordem do Menu",
+    "onboarding": "Integração",
     "permission-management": "Gestão de Permissões",
     "preferences": "Preferências",
     "pwa": "PWA",
