@@ -110,44 +110,51 @@ export default function Login() {
 
     try {
       if (isSignUp) {
-        console.log('📝 [Auth] Attempting signup via create-user Edge Function...');
-        const { data: createUserData, error: createUserError } = await supabase.functions.invoke(
-          'create-user',
-          { body: { email, password } }
-        );
+        console.log('📝 [Auth] Attempting signup via supabase.auth.signUp...');
 
-        if (createUserError) {
-          console.error('❌ [Auth] create-user failed:', createUserError);
-          const msg = createUserError.message || '';
-          const body = (createUserError as { context?: { body?: { error?: string; details?: string } } })?.context?.body;
-          const details = body?.details ?? body?.error ?? msg;
-          if (/already registered|already exists|duplicate/i.test(details)) {
+        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: { display_name: email.split('@')[0] },
+          },
+        });
+
+        if (signUpError) {
+          console.error('❌ [Auth] signUp failed:', signUpError);
+          const msg = signUpError.message ?? '';
+          if (/already registered|already exists|already in use/i.test(msg)) {
             setIsSignUp(false);
             toast.error(t('auth:login.validation.userAlreadyRegistered'));
             setLoading(false);
             return;
           }
-          throw new Error(details || 'Failed to create user');
+          throw signUpError;
         }
 
-        const data = createUserData as { success?: boolean; error?: string } | null;
-        if (!data?.success) {
-          throw new Error(data?.error || 'Failed to create user');
+        // Supabase returns identities=[] when the email is already confirmed (duplicate user)
+        if (signUpData.user && signUpData.user.identities?.length === 0) {
+          console.warn('⚠️ [Auth] signUp returned empty identities — email already registered');
+          setIsSignUp(false);
+          toast.error(t('auth:login.validation.userAlreadyRegistered'));
+          setLoading(false);
+          return;
         }
 
-        console.log('✅ [Auth] Signup successful via create-user');
+        console.log('✅ [Auth] Signup successful — user pending onboarding:', signUpData.user?.id);
 
-        // Send registration email (best-effort)
+        // Best-effort registration notification (admin will onboard via Settings > Users > Onboarding)
         try {
           await supabase.functions.invoke('send-registration-email', {
             body: { userEmail: email, userName: email.split('@')[0] },
           });
         } catch (_) {
-          // Don't block; email is optional
+          // Don't block on email failures
         }
 
         toast.success(t('auth:login.messages.accountCreated'));
         setIsSignUp(false);
+
       } else {
         console.log('🔑 [Auth] Attempting signin...');
         console.log('🔑 [Auth] Sign-in request details:', {
