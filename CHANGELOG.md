@@ -192,7 +192,7 @@ Sprint close enhancements with AI-generated release notes, configurable Kanban c
   - ✅ 0 linting errors (ESLint pass)
   - ✅ 36/36 JSON files valid with no empty values
   - ✅ Cross-language consistency check passing
-  - ✅ Full CI pipeline passed locally
+  - ✅ Full CI pipeline (lint, i18n, test, build) passed locally
   - ✅ Build successful (Vite + PWA)
   - ✅ GitHub Actions CI passed (Deno, Lint Hooks, Deploy to Production)
 

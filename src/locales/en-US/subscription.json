@@ -16,6 +16,9 @@
     "canceled": "Canceled",
     "past_due": "Past Due"
   },
+  "activatedDescription": "Sign out and sign back in to unlock your new plan features.",
+  "activatedTitle": "Plan activated!",
+  "signOutNow": "Sign out now",
   "subscribeNow": "Subscribe Now",
   "tierPicker": {
     "annual": "Annual",

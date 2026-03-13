@@ -16,6 +16,9 @@
     "canceled": "Cancelado",
     "past_due": "Em atraso"
   },
+  "activatedDescription": "Saia e entre novamente para desbloquear os recursos do seu novo plano.",
+  "activatedTitle": "Plano ativado!",
+  "signOutNow": "Sair agora",
   "subscribeNow": "Assinar agora",
   "tierPicker": {
     "annual": "Anual",

@@ -16,6 +16,9 @@
     "canceled": "Cancelado",
     "past_due": "Vencido"
   },
+  "activatedDescription": "Cierra sesión e inicia sesión nuevamente para desbloquear las funciones de tu nuevo plan.",
+  "activatedTitle": "¡Plan activado!",
+  "signOutNow": "Cerrar sesión ahora",
   "subscribeNow": "Suscribirse ahora",
   "tierPicker": {
     "annual": "Anual",

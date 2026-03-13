@@ -536,6 +536,11 @@ export default function AppAnnotations() {
 
         <Dialog open={!!selectedAnnotation} onOpenChange={() => setSelectedAnnotation(null)}>
           <DialogContent className="bg-[#121619] border-white/10 text-white max-w-sm">
+            <DialogHeader>
+              <DialogTitle className="sr-only">
+                {selectedAnnotation?.title || 'Annotation Details'}
+              </DialogTitle>
+            </DialogHeader>
             {selectedAnnotation && (
               <div className="space-y-6">
                 <div className="relative h-48 -mx-6 -mt-6 rounded-b-3xl overflow-hidden border-b border-white/5">

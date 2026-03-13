@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-08T05:54:17.001Z",
+  "timestamp": "2026-03-13T01:37:46.606Z",
   "summary": {
-    "totalMissing": 0,
+    "totalMissing": 9,
     "languages": [
       {
         "code": "en-US",
@@ -10,25 +10,73 @@
       },
       {
         "code": "pt-BR",
-        "missing": 0,
-        "complete": true
+        "missing": 3,
+        "complete": false
       },
       {
         "code": "es-ES",
-        "missing": 0,
-        "complete": true
+        "missing": 3,
+        "complete": false
       },
       {
         "code": "fr-FR",
-        "missing": 0,
-        "complete": true
+        "missing": 3,
+        "complete": false
       }
     ]
   },
   "details": {
     "en-US": [],
-    "pt-BR": [],
-    "es-ES": [],
-    "fr-FR": []
+    "pt-BR": [
+      {
+        "namespace": "common",
+        "key": "activatedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "activatedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "signOutNow",
+        "reason": "empty"
+      }
+    ],
+    "es-ES": [
+      {
+        "namespace": "common",
+        "key": "activatedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "activatedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "signOutNow",
+        "reason": "empty"
+      }
+    ],
+    "fr-FR": [
+      {
+        "namespace": "common",
+        "key": "activatedDescription",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "activatedTitle",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "signOutNow",
+        "reason": "empty"
+      }
+    ]
   }
 }

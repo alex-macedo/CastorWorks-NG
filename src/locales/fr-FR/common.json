@@ -17,6 +17,8 @@
     "takePhoto": "Prendre une Photo",
     "transactionReferenceOptional": "Référence de transaction (facultatif)"
   },
+  "activatedDescription": "",
+  "activatedTitle": "",
   "active": "Actif",
   "activeProjects": "activeProjects",
   "activity": {
@@ -7712,6 +7714,7 @@
   "showLess": "Afficher moins",
   "showMore": "Afficher plus",
   "signOutError": "Échec de la déconnexion",
+  "signOutNow": "",
   "signOutSuccess": "Déconnexion réussie",
   "skip": "Passer",
   "start": "Démarrer",

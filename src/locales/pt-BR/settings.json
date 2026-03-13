@@ -627,20 +627,40 @@
     "fatorSocialDescription": "Fator social aplicado às alíquotas do INSS",
     "fatorSocialTitle": "Fator Social",
     "labels": {
+      "adicionalRat": "Adicional RAT",
+      "adicionalRatDecimal": "Adicional RAT (decimal)",
       "applicableReduction": "Redução Aplicável",
       "appliesTo": "Aplica-se a",
       "excludedItems": "Itens Excluídos",
       "fixedDeduction": "Dedução Fixa",
       "minInvoices": "Mín. de Notas Fiscais",
+      "patronalRate": "Contribuição Patronal",
+      "patronalRateDecimal": "Contribuição Patronal (decimal)",
+      "ratGilrat": "RAT/GILRAT",
+      "ratGilratDecimal": "RAT/GILRAT (decimal)",
+      "terceiros": "Terceiros",
+      "terceirosDecimal": "Terceiros (decimal)",
+      "totalRateDecimal": "Taxa Total (decimal)",
       "usinadosNote": "Observação sobre Usinados"
     },
     "laborDescription": "Taxas de mão de obra para o INSS",
     "laborTitle": "Mão de Obra",
     "lastUpdated": "Última Atualização",
+    "ofRmt": "de RMT",
+    "placeholders": {
+      "limit": "Limite",
+      "reductionPct": "Red. %"
+    },
     "prefabDescription": "Alíquotas de INSS para construção pré-fabricada",
     "prefabTitle": "Pré-fabricado",
     "ratesDescription": "Tabelas de alíquotas do INSS para construção",
+    "ratesDescriptionAdicionalRat": "Aposentadoria Especial",
+    "ratesDescriptionPatronal": "Previdência Social",
+    "ratesDescriptionRatGilrat": "Riscos Ambientais do Trabalho",
+    "ratesDescriptionTerceiros": "Sesi, Senai, Sebrae, etc.",
     "ratesTitle": "Alíquotas",
+    "reductionSuffix": "{{pct}}% de redução",
+    "specialRulesNone": "Nenhum",
     "table": {
       "areaRange": "Faixa de Área",
       "areaThreshold": "Limite de Área",
@@ -657,6 +677,7 @@
       "percentage": "Percentual",
       "reduction": "Redução",
       "specialRules": "Regras Especiais",
+      "total": "TOTAL",
       "value": "Valor"
     },
     "tabs": {
@@ -670,6 +691,8 @@
       "usinados": "Usinados"
     },
     "title": "Referência INSS",
+    "upTo": "Até",
+    "upToArea": "até {{area}} m²",
     "usinadosDescription": "Alíquotas de INSS para elementos usinados",
     "usinadosTitle": "Usinados"
   },

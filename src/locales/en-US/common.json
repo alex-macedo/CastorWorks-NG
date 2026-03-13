@@ -17,6 +17,8 @@
     "takePhoto": "Take Photo",
     "transactionReferenceOptional": "Transaction Reference (Optional)"
   },
+  "activatedDescription": "activatedDescription",
+  "activatedTitle": "activatedTitle",
   "active": "Active",
   "activeProjects": "activeProjects",
   "activity": {
@@ -7709,6 +7711,7 @@
   "showLess": "Show less",
   "showMore": "Show more",
   "signOutError": "Failed to sign out",
+  "signOutNow": "signOutNow",
   "signOutSuccess": "Signed out successfully",
   "skip": "Skip",
   "start": "Start",

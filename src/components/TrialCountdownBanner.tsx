@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
+  DialogHeader,
+  DialogTitle,
 } from '@/components/ui/dialog'
 import { useTenantTrial } from '@/hooks/useTenantTrial'
 import { useTranslation } from 'react-i18next'
@@ -40,6 +42,9 @@ export function TrialCountdownBanner() {
       </Alert>
       <Dialog open={checkoutOpen} onOpenChange={setCheckoutOpen}>
         <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="sr-only">{t('upgradeNow')}</DialogTitle>
+          </DialogHeader>
           <SubscriptionCheckoutFlow onClose={() => setCheckoutOpen(false)} />
         </DialogContent>
       </Dialog>

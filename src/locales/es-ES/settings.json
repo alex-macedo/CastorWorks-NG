@@ -627,20 +627,40 @@
     "fatorSocialDescription": "Factor social aplicado a las tasas del INSS",
     "fatorSocialTitle": "Factor Social",
     "labels": {
+      "adicionalRat": "Adicional RAT",
+      "adicionalRatDecimal": "Adicional RAT (decimal)",
       "applicableReduction": "Reducción Aplicable",
       "appliesTo": "Aplica a",
       "excludedItems": "Elementos Excluidos",
       "fixedDeduction": "Deducción Fija",
       "minInvoices": "Mín. de Facturas",
+      "patronalRate": "Contribución Patronal",
+      "patronalRateDecimal": "Contribución Patronal (decimal)",
+      "ratGilrat": "RAT/GILRAT",
+      "ratGilratDecimal": "RAT/GILRAT (decimal)",
+      "terceiros": "Terceros",
+      "terceirosDecimal": "Terceros (decimal)",
+      "totalRateDecimal": "Tasa Total (decimal)",
       "usinadosNote": "Nota sobre Usinados"
     },
     "laborDescription": "Tasas de mano de obra para el INSS",
     "laborTitle": "Mano de Obra",
     "lastUpdated": "Última Actualización",
+    "ofRmt": "de RMT",
+    "placeholders": {
+      "limit": "Límite",
+      "reductionPct": "Red. %"
+    },
     "prefabDescription": "Tasas INSS para construcción prefabricada",
     "prefabTitle": "Prefabricado",
     "ratesDescription": "Tablas de tasas del INSS para construcción",
+    "ratesDescriptionAdicionalRat": "Jubilación Especial",
+    "ratesDescriptionPatronal": "Seguridad Social",
+    "ratesDescriptionRatGilrat": "Riesgos Ambientales del Trabajo",
+    "ratesDescriptionTerceiros": "Sesi, Senai, Sebrae, etc.",
     "ratesTitle": "Tasas",
+    "reductionSuffix": "{{pct}}% de reducción",
+    "specialRulesNone": "Ninguno",
     "table": {
       "areaRange": "Rango de Área",
       "areaThreshold": "Umbral de Área",
@@ -657,6 +677,7 @@
       "percentage": "Porcentaje",
       "reduction": "Reducción",
       "specialRules": "Reglas Especiales",
+      "total": "TOTAL",
       "value": "Valor"
     },
     "tabs": {
@@ -670,6 +691,8 @@
       "usinados": "Usinados"
     },
     "title": "Referencia INSS",
+    "upTo": "Hasta",
+    "upToArea": "hasta {{area}} m²",
     "usinadosDescription": "Tasas INSS para elementos mecanizados",
     "usinadosTitle": "Usinados"
   },

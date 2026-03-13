@@ -16,6 +16,9 @@
     "canceled": "Annulé",
     "past_due": "En retard"
   },
+  "activatedDescription": "Déconnectez-vous et reconnectez-vous pour accéder aux fonctionnalités de votre nouveau plan.",
+  "activatedTitle": "Plan activé !",
+  "signOutNow": "Se déconnecter maintenant",
   "subscribeNow": "S'abonner maintenant",
   "tierPicker": {
     "annual": "Annuel",

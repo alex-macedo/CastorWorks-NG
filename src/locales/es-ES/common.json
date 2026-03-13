@@ -17,6 +17,8 @@
     "takePhoto": "Tomar Foto",
     "transactionReferenceOptional": "Referencia de Transacción (Opcional)"
   },
+  "activatedDescription": "",
+  "activatedTitle": "",
   "active": "Activo",
   "activeProjects": "activeProjects",
   "activity": {
@@ -7712,6 +7714,7 @@
   "showLess": "Mostrar menos",
   "showMore": "Mostrar más",
   "signOutError": "Error al cerrar sesión",
+  "signOutNow": "",
   "signOutSuccess": "Cierre de sesión realizado correctamente",
   "skip": "Omitir",
   "start": "Iniciar",

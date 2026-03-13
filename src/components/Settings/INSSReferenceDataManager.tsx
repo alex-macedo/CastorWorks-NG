@@ -92,7 +92,7 @@ export function INSSReferenceDataManager() {
               {editingSection === 'rates' ? (
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <Label>Contribuição Patronal (decimal)</Label>
+                    <Label>{t("settings:inssReference.labels.patronalRateDecimal")}</Label>
                     <Input 
                       type="number" step="0.001" 
                       value={editFormData.patronal_rate} 
@@ -100,7 +100,7 @@ export function INSSReferenceDataManager() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label>RAT/GILRAT (decimal)</Label>
+                    <Label>{t("settings:inssReference.labels.ratGilratDecimal")}</Label>
                     <Input 
                       type="number" step="0.001" 
                       value={editFormData.sat_gilrat_rate} 
@@ -108,7 +108,7 @@ export function INSSReferenceDataManager() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label>Terceiros (decimal)</Label>
+                    <Label>{t("settings:inssReference.labels.terceirosDecimal")}</Label>
                     <Input 
                       type="number" step="0.001" 
                       value={editFormData.terceiros_rate} 
@@ -116,7 +116,7 @@ export function INSSReferenceDataManager() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label>Adicional RAT (decimal)</Label>
+                    <Label>{t("settings:inssReference.labels.adicionalRatDecimal")}</Label>
                     <Input 
                       type="number" step="0.001" 
                       value={editFormData.additional_rate} 
@@ -124,7 +124,7 @@ export function INSSReferenceDataManager() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label>Total Rate (decimal)</Label>
+                    <Label>{t("settings:inssReference.labels.totalRateDecimal")}</Label>
                     <Input 
                       type="number" step="0.001" 
                       value={editFormData.total_rate} 
@@ -143,27 +143,27 @@ export function INSSReferenceDataManager() {
                   </TableHeader>
                   <TableBody>
                     <TableRow>
-                      <TableCell className="font-medium">Contribuição Patronal</TableCell>
+                      <TableCell className="font-medium">{t("settings:inssReference.labels.patronalRate")}</TableCell>
                       <TableCell>{(refData.rates?.patronal_rate * 100 || 0).toFixed(1)}%</TableCell>
-                      <TableCell>Previdência Social</TableCell>
+                      <TableCell>{t("settings:inssReference.ratesDescriptionPatronal")}</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium">RAT/GILRAT</TableCell>
+                      <TableCell className="font-medium">{t("settings:inssReference.labels.ratGilrat")}</TableCell>
                       <TableCell>{(refData.rates?.sat_gilrat_rate * 100 || 0).toFixed(1)}%</TableCell>
-                      <TableCell>Riscos Ambientais do Trabalho</TableCell>
+                      <TableCell>{t("settings:inssReference.ratesDescriptionRatGilrat")}</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium">Terceiros</TableCell>
+                      <TableCell className="font-medium">{t("settings:inssReference.labels.terceiros")}</TableCell>
                       <TableCell>{(refData.rates?.terceiros_rate * 100 || 0).toFixed(1)}%</TableCell>
-                      <TableCell>Sesi, Senai, Sebrae, etc.</TableCell>
+                      <TableCell>{t("settings:inssReference.ratesDescriptionTerceiros")}</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium">Adicional RAT</TableCell>
+                      <TableCell className="font-medium">{t("settings:inssReference.labels.adicionalRat")}</TableCell>
                       <TableCell>{(refData.rates?.additional_rate * 100 || 0).toFixed(1)}%</TableCell>
-                      <TableCell>Aposentadoria Especial</TableCell>
+                      <TableCell>{t("settings:inssReference.ratesDescriptionAdicionalRat")}</TableCell>
                     </TableRow>
                     <TableRow className="bg-muted/50 font-bold">
-                      <TableCell>TOTAL</TableCell>
+                      <TableCell>{t("settings:inssReference.table.total")}</TableCell>
                       <TableCell>{(refData.rates?.total_rate * 100 || 0).toFixed(1)}%</TableCell>
                       <TableCell></TableCell>
                     </TableRow>
@@ -224,7 +224,7 @@ export function INSSReferenceDataManager() {
                             />
                           </div>
                         ) : (
-                          <>{bracket.area_min === 0 ? "Up to" : `${bracket.area_min.toFixed(2)} -`} {bracket.area_max > 100000 ? "" : bracket.area_max.toFixed(2)} m²</>
+                          <>{bracket.area_min === 0 ? t("settings:inssReference.upTo") : `${bracket.area_min.toFixed(2)} -`} {bracket.area_max > 100000 ? "" : bracket.area_max.toFixed(2)} m²</>
                         )}
                       </TableCell>
                       <TableCell>
@@ -575,20 +575,20 @@ export function INSSReferenceDataManager() {
                         {editingSection === `dest_${dest.id}` ? (
                           <div className="flex items-center gap-2">
                             <Input 
-                              type="number" placeholder="Red. %" className="w-20 h-8"
+                              type="number" placeholder={t("settings:inssReference.placeholders.reductionPct")} className="w-20 h-8"
                               value={editFormData.special_reduction_pct || ""} 
                               onChange={(e) => setEditFormData({...editFormData, special_reduction_pct: parseFloat(e.target.value)})}
                             />
                             <Input 
-                              type="number" placeholder="Limit" className="w-20 h-8"
+                              type="number" placeholder={t("settings:inssReference.placeholders.limit")} className="w-20 h-8"
                               value={editFormData.area_limit || ""} 
                               onChange={(e) => setEditFormData({...editFormData, area_limit: parseFloat(e.target.value)})}
                             />
                           </div>
                         ) : (
                           <>
-                            {dest.special_reduction_pct ? `${dest.special_reduction_pct}% reduction` : "None"}
-                            {dest.area_limit ? ` (up to ${dest.area_limit}m²)` : ""}
+                            {dest.special_reduction_pct ? t("settings:inssReference.reductionSuffix", { pct: dest.special_reduction_pct }) : t("settings:inssReference.specialRulesNone")}
+                            {dest.area_limit ? ` (${t("settings:inssReference.upToArea", { area: dest.area_limit })})` : ""}
                           </>
                         )}
                       </TableCell>
@@ -643,7 +643,7 @@ export function INSSReferenceDataManager() {
                             onChange={(e) => setEditFormData({...editFormData, area_threshold: parseFloat(e.target.value)})}
                           />
                         ) : (
-                          <>Up to {rule.area_threshold} m²</>
+                          <>{t("settings:inssReference.upTo")} {rule.area_threshold} m²</>
                         )}
                       </TableCell>
                       <TableCell>
@@ -654,7 +654,7 @@ export function INSSReferenceDataManager() {
                             onChange={(e) => setEditFormData({...editFormData, min_remuneration_pct: parseFloat(e.target.value)})}
                           />
                         ) : (
-                          <>{rule.min_remuneration_pct}% of RMT</>
+                          <>{rule.min_remuneration_pct}% {t("settings:inssReference.ofRmt")}</>
                         )}
                       </TableCell>
                       <TableCell className="text-green-600 font-bold">

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '@/integrations/supabase/client'
 import { useTenantId } from '@/contexts/TenantContext'
@@ -7,6 +7,7 @@ import { useToast } from '@/hooks/use-toast'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
+import { CheckCircle2, LogOut } from 'lucide-react'
 
 interface SubscriptionTier {
   id: string
@@ -28,9 +29,12 @@ export default function SubscriptionCheckoutFlow({
   const { t } = useTranslation('subscription')
   const { toast } = useToast()
   const tenantId = useTenantId()
+  const queryClient = useQueryClient()
   const [selectedTierId, setSelectedTierId] = useState<string | null>(preselectedTierId ?? null)
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annual'>('monthly')
   const [loading, setLoading] = useState(false)
+  const [activated, setActivated] = useState(false)
+  const [activatedTierName, setActivatedTierName] = useState<string>('')
 
   const { data: tiers = [], isLoading: tiersLoading } = useQuery({
     queryKey: ['subscription_tiers'],
@@ -58,20 +62,31 @@ export default function SubscriptionCheckoutFlow({
     }
     setLoading(true)
     try {
-      const { data, error } = await supabase.functions.invoke('create-checkout-session', {
+      const { data, error } = await supabase.functions.invoke('activate-plan', {
         body: { tenant_id: tenantId, tier_id: selectedTierId, billing_period: billingPeriod },
       })
-      if (error) throw error
-      const url = (data as { url?: string })?.url
-      if (url) {
-        window.location.href = url
-        return
+      if (error) {
+        let message = error.message
+        try {
+          const body = await (error as unknown as { context: Response }).context?.json?.()
+          if (body?.error) message = body.error
+        } catch { /* ignore parse errors */ }
+        throw new Error(message)
       }
-      throw new Error('No checkout URL returned')
+      if (!(data as { success?: boolean })?.success) {
+        throw new Error('Activation failed')
+      }
+      // Invalidate subscription + licensed-modules caches
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['tenant', tenantId, 'subscription'] }),
+        queryClient.invalidateQueries({ queryKey: ['tenant-licensed-modules', tenantId] }),
+      ])
+      setActivatedTierName(selectedTier?.name ?? '')
+      setActivated(true)
     } catch (e) {
-      const message = e instanceof Error ? e.message : 'Checkout failed'
+      const message = e instanceof Error ? e.message : 'Activation failed'
       toast({
-        title: t('tierPicker.checkoutError', 'Checkout error'),
+        title: t('tierPicker.checkoutError', 'Error activating plan'),
         description: message,
         variant: 'destructive',
       })
@@ -80,10 +95,37 @@ export default function SubscriptionCheckoutFlow({
     }
   }
 
+  const handleSignOut = async () => {
+    await supabase.auth.signOut()
+  }
+
   if (tiersLoading) {
     return (
       <div className="py-6 text-center text-muted-foreground">
         {t('tierPicker.loading', 'Loading plans...')}
+      </div>
+    )
+  }
+
+  if (activated) {
+    return (
+      <div className="flex flex-col items-center gap-4 py-8 text-center">
+        <CheckCircle2 className="h-12 w-12 text-green-500" />
+        <div>
+          <p className="text-lg font-semibold">
+            {t('activatedTitle', 'Plan activated!')}
+          </p>
+          <p className="text-sm text-muted-foreground mt-1">
+            {activatedTierName}
+          </p>
+        </div>
+        <p className="text-sm text-muted-foreground max-w-xs">
+          {t('activatedDescription', 'Sign out and sign back in to unlock your new plan features.')}
+        </p>
+        <Button onClick={handleSignOut} className="gap-2">
+          <LogOut className="h-4 w-4" />
+          {t('signOutNow', 'Sign out now')}
+        </Button>
       </div>
     )
   }
@@ -124,12 +166,15 @@ export default function SubscriptionCheckoutFlow({
                 key={tier.id}
                 className={cn(
                   'cursor-pointer transition-colors',
-                  isSelected ? 'ring-2 ring-primary' : 'hover:bg-muted/50'
+                  isSelected ? 'ring-2 ring-green-500 bg-green-50/50 dark:bg-green-950/20' : 'hover:bg-muted/50'
                 )}
                 onClick={() => setSelectedTierId(tier.id)}
               >
                 <CardHeader className="pb-2">
-                  <span className="font-medium">{tier.name}</span>
+                  <span className="font-medium flex items-center gap-2">
+                    {tier.name}
+                    {isSelected && <CheckCircle2 className="h-4 w-4 text-green-500" />}
+                  </span>
                 </CardHeader>
                 <CardContent className="pt-0">
                   {p != null ? (

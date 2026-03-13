@@ -43,6 +43,7 @@ engproapp
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+./playwright-mcp/
 
 # BMAD (local only)
 docs-Brazil
