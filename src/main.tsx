@@ -1,10 +1,38 @@
 import { createRoot } from "react-dom/client";
+import { registerSW } from "virtual:pwa-register";
 import App from "./App.tsx";
 import "./index.css";
 import "./styles/print.css";
 import "react-day-picker/style.css";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { logger } from "@/lib/logger";
+
+const PWA_DISABLED_HOSTS = new Set(["devng.castorworks.cloud", "studiong.castorworks.cloud"]);
+
+const configureServiceWorker = async () => {
+	if (typeof window === "undefined" || !("serviceWorker" in navigator)) {
+		return;
+	}
+
+	if (PWA_DISABLED_HOSTS.has(window.location.hostname)) {
+		const registrations = await navigator.serviceWorker.getRegistrations();
+		await Promise.allSettled(registrations.map((registration) => registration.unregister()));
+
+		if ("caches" in window) {
+			const cacheKeys = await caches.keys();
+			await Promise.allSettled(cacheKeys.map((key) => caches.delete(key)));
+		}
+
+		return;
+	}
+
+	registerSW({
+		immediate: true,
+		onRegisterError(error) {
+			console.error("[main.tsx] Failed to register service worker", error);
+		},
+	});
+};
 
 if (import.meta.env.DEV) {
 	console.log("[main.tsx] Starting application initialization...");
@@ -25,6 +53,7 @@ if (!rootElement) {
 	document.body.innerHTML = '<div style="padding: 20px; color: red;">ERROR: Root element not found. Check if index.html has a div with id="root"</div>';
 } else {
 	try {
+		void configureServiceWorker();
 		if (import.meta.env.DEV) console.log("[main.tsx] Creating React root...");
 		const root = createRoot(rootElement);
 		if (import.meta.env.DEV) console.log("[main.tsx] Rendering app...");

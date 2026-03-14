@@ -1,7 +1,7 @@
 {
   "addHoliday": "Agregar Día Festivo",
-  "backToProject": "Volver al Proyecto",
   "adding": "Agregando...",
+  "backToProject": "Volver al Proyecto",
   "calendarSettings": "Configuración del Calendario",
   "clickToMarkHoliday": "Haga clic en un día laborable para marcarlo como festivo. Haga clic en un festivo para eliminarlo.",
   "configureWorkingDaysAndHolidays": "Configure días laborables y festivos para una programación precisa del proyecto",
@@ -14,7 +14,15 @@
     "tuesday": "Martes",
     "wednesday": "Miércoles"
   },
-  "dayNamesShort": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+  "dayNamesShort": [
+    "Dom",
+    "Lun",
+    "Mar",
+    "Mié",
+    "Jue",
+    "Vie",
+    "Sáb"
+  ],
   "description": "Gestione días laborables y festivos para una programación precisa del proyecto",
   "enableCalendar": "Habilitar Calendario",
   "enableCalendarDesc": "Usar cálculos de días laborables",

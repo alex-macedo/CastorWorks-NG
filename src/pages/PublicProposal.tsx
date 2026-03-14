@@ -196,13 +196,17 @@ const PublicProposal = () => {
 
   // Check if already rejected
   if (proposal.status === 'rejected') {
+    const rejectedAt = proposal.rejected_at
+      ? formatLongDate(new Date(proposal.rejected_at))
+      : '';
+
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <Card className="p-8 text-center">
           <XCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-2">{t("pages.publicProposal.proposalDeclinedTitle")}</h2>
           <p className="text-gray-600">
-            {t("pages.publicProposal.proposalDeclinedMessage", { date: formatLongDate(new Date(proposal.rejected_at!)) })}
+            {t("pages.publicProposal.proposalDeclinedMessage", { date: rejectedAt })}
           </p>
         </Card>
       </div>

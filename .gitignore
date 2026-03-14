@@ -1,3 +1,22 @@
+# AI Agents (local only)
+.agents
+.bmad-core
+.claude
+.codex
+.cursor
+.gemini
+.husky
+.migration-dumps
+.opencode
+.playwright-mcp
+.vscode
+.worktrees/
+.windsurf
+
+# Stripe Phase 4 setup output (contains webhook secret)
+scripts/.stripe-phase4-out/
+.env.testing
+
 # Logs
 logs
 *.log
@@ -7,6 +26,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Runtime Application Files
 node_modules
 dist
 dist-ssr
@@ -14,10 +34,6 @@ dist-ssr
 .migration-dumps
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.cursor/
 .DS_Store
 *.suo
 *.ntvs*
@@ -28,54 +44,32 @@ dist-ssr
 .env
 .env.ai-platform
 .env.supabase
-docs/.env.supabase
-public/docs/.env.supabase
-.specify
-.bmad-core
-.windsurf
-exported
-engproapp
 
 #.github (enabled so CI workflows can be committed)
 # Playwright
 /test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
 ./playwright-mcp/
 
-# BMAD (local only)
-docs-Brazil
-tmp-capture
-sinapi
-.git.engproapp/
 
-# BMAD (local only)
-_bmad
-bmad
-.claude
-.opencode
-.opencode.OLD
-# .github
-.gemini
-.codex
-.agentvibes
-.agent
-.agents
-.shared
-
-# Stripe Phase 4 setup output (contains webhook secret)
-scripts/.stripe-phase4-out/
-
-# Auto Claude data directory
-.auto-claude/
-.env.testing
-
-# Auto Claude generated files
-.auto-claude-security.json
-.auto-claude-status
-.claude_settings.json
-.worktrees/
-.security-key
-logs/security/
+#--------------------------
+# CastorWorks-LandingPage
+#--------------------------
+# dependencies
+/CastorWorks-LandingPage/node_modules
+# next.js
+/CastorWorks-LandingPage/.next/
+/CastorWorks-LandingPage/out/
+# production
+/CastorWorks-LandingPage/build
+# debug
+/CastorWorks-LandingPage/npm-debug.log*
+/CastorWorks-LandingPage/yarn-debug.log*
+/CastorWorks-LandingPage/yarn-error.log*
+/CastorWorks-LandingPage/.pnpm-debug.log*
+# env files
+/CastorWorks-LandingPage/.env*
+# vercel
+/CastorWorks-LandingPage.vercel
+# typescript
+/CastorWorks-LandingPage/*.tsbuildinfo
+/CastorWorks-LandingPage/next-env.d.ts

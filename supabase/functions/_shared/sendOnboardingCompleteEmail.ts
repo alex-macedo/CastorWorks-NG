@@ -1,7 +1,6 @@
-import { Resend } from "https://esm.sh/resend@4.0.0";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { sendEmailViaHostinger } from './providers/index.ts';
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY")!);
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
@@ -23,6 +22,11 @@ export async function sendOnboardingCompleteEmail(data: OnboardingCompleteEmailD
       .single();
 
     const companyName = companySettings?.name || 'CastorWorks';
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
+    if (!hostingerFromEmail) {
+      throw new Error('Hostinger SMTP not configured');
+    }
     const appUrl = Deno.env.get('APP_URL') || 'https://studio.castorworks.cloud';
 
     const emailHtml = `
@@ -67,11 +71,13 @@ export async function sendOnboardingCompleteEmail(data: OnboardingCompleteEmailD
       </html>
     `;
 
-    const emailResponse = await resend.emails.send({
-      from: `${companyName} <onboarding@resend.dev>`,
-      to: [userEmail],
-      subject: `Welcome to ${companyName} – your account is ready`,
+    const emailResponse = await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: companyName,
       html: emailHtml,
+      replyTo: companySettings?.email || hostingerFromEmail,
+      subject: `Welcome to ${companyName} – your account is ready`,
+      to: [userEmail],
     });
 
     // Log the email notification
@@ -83,7 +89,7 @@ export async function sendOnboardingCompleteEmail(data: OnboardingCompleteEmailD
       sent_at: new Date().toISOString(),
     });
 
-    return { success: true, emailId: emailResponse.data?.id };
+    return { success: true, emailId: emailResponse.messageId };
   } catch (error) {
     console.error('Error sending onboarding complete email:', error);
 

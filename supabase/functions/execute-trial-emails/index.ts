@@ -6,7 +6,7 @@
 
 import { serve } from 'https://deno.land/std@0.180.0/http/server.ts';
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { sendEmailViaResend } from '../_shared/providers/index.ts';
+import { sendEmailViaHostinger } from '../_shared/providers/index.ts';
 import { trialEmailCopy } from '../_shared/trialEmailCopy.ts';
 import {
   buildTrialReminderHtml,
@@ -16,7 +16,9 @@ import type { TrialEmailLocale } from '../_shared/trialEmailCopy.ts';
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') || '';
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') || '';
+const HOSTINGER_FROM_EMAIL = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+  || Deno.env.get('HOSTINGER_SMTP_USER')
+  || '';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
   auth: { persistSession: false }
@@ -47,8 +49,8 @@ serve(async (_req: Request) => {
   const results = { remindersSent: 0, expirationSent: 0, errors: [] as string[] };
 
   try {
-    if (!RESEND_API_KEY) {
-      results.errors.push('RESEND_API_KEY not configured');
+    if (!HOSTINGER_FROM_EMAIL) {
+      results.errors.push('Hostinger SMTP not configured');
       return new Response(JSON.stringify(results), {
         status: 200,
         headers: { 'Content-Type': 'application/json' }
@@ -81,20 +83,21 @@ serve(async (_req: Request) => {
             locale,
             trialEmailCopy
           );
-          const sendResult = await sendEmailViaResend(
-            RESEND_API_KEY,
-            c.recipient_email ?? '',
+          const sendResult = await sendEmailViaHostinger({
+            fromEmail: HOSTINGER_FROM_EMAIL,
+            fromName: 'CastorWorks',
+            html,
             subject,
-            html
-          );
-          const status = sendResult?.ok ? 'sent' : 'failed';
+            to: c.recipient_email ?? '',
+          });
+          const status = sendResult?.messageId ? 'sent' : 'failed';
           await supabase.from('trial_email_logs').insert({
             tenant_id: c.tenant_id,
             email_type: emailType,
             recipient_email: c.recipient_email,
             status
           });
-          if (sendResult?.ok) results.remindersSent++;
+          if (sendResult?.messageId) results.remindersSent++;
         } catch (err) {
           results.errors.push(
             `Reminder tenant ${c.tenant_id}: ${err instanceof Error ? err.message : String(err)}`
@@ -170,15 +173,21 @@ serve(async (_req: Request) => {
             locale,
             trialEmailCopy
           );
-          const sendResult = await sendEmailViaResend(RESEND_API_KEY, recipient, subject, html);
-          const status = sendResult?.ok ? 'sent' : 'failed';
+          const sendResult = await sendEmailViaHostinger({
+            fromEmail: HOSTINGER_FROM_EMAIL,
+            fromName: 'CastorWorks',
+            html,
+            subject,
+            to: recipient,
+          });
+          const status = sendResult?.messageId ? 'sent' : 'failed';
           await supabase.from('trial_email_logs').insert({
             tenant_id: row.tenant_id,
             email_type: 'expiration',
             recipient_email: recipient,
             status
           });
-          if (sendResult?.ok) results.expirationSent++;
+          if (sendResult?.messageId) results.expirationSent++;
           await supabase
             .from('trial_expiration_email_queue')
             .update({ processed_at: new Date().toISOString() })

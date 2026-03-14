@@ -17,8 +17,8 @@
     "takePhoto": "Take Photo",
     "transactionReferenceOptional": "Transaction Reference (Optional)"
   },
-  "activatedDescription": "activatedDescription",
-  "activatedTitle": "activatedTitle",
+  "activatedDescription": "Your account is now active.",
+  "activatedTitle": "Activated",
   "active": "Active",
   "activeProjects": "activeProjects",
   "activity": {
@@ -4700,6 +4700,7 @@
     "financial": "financial",
     "materials": "materials",
     "myDashboard": "myDashboard",
+    "myTimesheet": "My timesheet",
     "notifications": "notifications",
     "platform": "platform",
     "procurement": "procurement",
@@ -7711,7 +7712,7 @@
   "showLess": "Show less",
   "showMore": "Show more",
   "signOutError": "Failed to sign out",
-  "signOutNow": "signOutNow",
+  "signOutNow": "Sign out now",
   "signOutSuccess": "Signed out successfully",
   "skip": "Skip",
   "start": "Start",

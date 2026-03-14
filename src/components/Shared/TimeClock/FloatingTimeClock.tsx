@@ -4,22 +4,36 @@ import { Button } from "@/components/ui/button";
 import { Clock } from "lucide-react";
 import { TimeClockModal } from "./TimeClockModal";
 import { useTimer } from "@/hooks/useTimeTracking";
-import { useArchitectTasks } from "@/hooks/useArchitectTasks";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { useLocalization } from "@/contexts/LocalizationContext";
+ 
+interface FloatingTimeClockProps {
+  variant?: "floating" | "topbar";
+}
 
-export const FloatingTimeClock = () => {
+export const FloatingTimeClock = ({
+  variant = "floating",
+}: FloatingTimeClockProps) => {
+  const { t } = useLocalization();
   const [open, setOpen] = useState(false);
-  const { isRunning, formattedElapsed, projectId, taskId } = useTimer();
-  const { tasks } = useArchitectTasks(projectId || undefined);
-  
-  const activeTask = tasks?.find(t => t.id === taskId);
+  const { isRunning } = useTimer();
 
-  // Only render the bottom floating button when NOT running.
+  // Only render the shortcut button when NOT running.
   if (isRunning) return null;
 
-  return (
-    <>
+  const trigger =
+    variant === "topbar" ? (
+      <Button
+        type="button"
+        variant="ghost"
+        size="sm"
+        onClick={() => setOpen(true)}
+        className="gap-2"
+      >
+        <Clock className="h-4 w-4" />
+        <span className="hidden sm:inline">{t("navigation.myTimesheet")}</span>
+      </Button>
+    ) : (
       <div className="fixed bottom-20 right-6 z-[100] flex flex-col items-end gap-2 md:right-auto md:left-[calc(var(--sidebar-width)-4.25rem)]">
         <AnimatePresence mode="wait">
           <motion.div
@@ -38,7 +52,11 @@ export const FloatingTimeClock = () => {
           </motion.div>
         </AnimatePresence>
       </div>
+    );
 
+  return (
+    <>
+      {trigger}
       <TimeClockModal open={open} onOpenChange={setOpen} />
     </>
   );

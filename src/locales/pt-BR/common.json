@@ -17,8 +17,8 @@
     "takePhoto": "Take Photo",
     "transactionReferenceOptional": "Transaction Reference (Optional)"
   },
-  "activatedDescription": "",
-  "activatedTitle": "",
+  "activatedDescription": "Sua conta está ativa.",
+  "activatedTitle": "Ativado",
   "active": "Ativo",
   "activeProjects": "activeProjects",
   "activity": {
@@ -4700,6 +4700,7 @@
     "financial": "financial",
     "materials": "materials",
     "myDashboard": "myDashboard",
+    "myTimesheet": "Meu ponto",
     "notifications": "notifications",
     "platform": "platform",
     "procurement": "procurement",
@@ -7714,7 +7715,7 @@
   "showLess": "Show less",
   "showMore": "Mostrar mais",
   "signOutError": "Failed to sign out",
-  "signOutNow": "",
+  "signOutNow": "Sair agora",
   "signOutSuccess": "Signed out successfully",
   "skip": "Skip",
   "start": "Start",

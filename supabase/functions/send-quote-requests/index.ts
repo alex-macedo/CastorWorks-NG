@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { authenticateRequest, createServiceRoleClient, verifyProjectAdminAccess } from "../_shared/authorization.ts";
+import { sendEmailViaHostinger } from "../_shared/providers/index.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -64,7 +65,8 @@ serve(async (req) => {
     }
 
     const results: QuoteRequestResult[] = [];
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
+    const HOSTINGER_FROM_EMAIL = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
     const TWILIO_ACCOUNT_SID = Deno.env.get('TWILIO_ACCOUNT_SID');
     const TWILIO_AUTH_TOKEN = Deno.env.get('TWILIO_AUTH_TOKEN');
     const TWILIO_WHATSAPP_FROM = Deno.env.get('TWILIO_WHATSAPP_FROM');
@@ -137,25 +139,16 @@ serve(async (req) => {
 
         // Send via email if applicable
         if (sendVia === 'email' || sendVia === 'both') {
-          if (supplier.email && RESEND_API_KEY) {
+          if (supplier.email && HOSTINGER_FROM_EMAIL) {
             try {
-              const emailResponse = await fetch('https://api.resend.com/emails', {
-                method: 'POST',
-                headers: {
-                  'Authorization': `Bearer ${RESEND_API_KEY}`,
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  from: 'Construction Management <onboarding@resend.dev>',
-                  to: [supplier.email],
-                  subject: `Quote Request ${trackingCode} - ${projectName}`,
-                  html: messageContent.emailHtml,
-                }),
+              await sendEmailViaHostinger({
+                fromEmail: HOSTINGER_FROM_EMAIL,
+                fromName: 'Construction Management',
+                html: messageContent.emailHtml,
+                subject: `Quote Request ${trackingCode} - ${projectName}`,
+                to: [supplier.email],
               });
-
-              if (emailResponse.ok) {
-                emailSent = true;
-              }
+              emailSent = true;
             } catch (err) {
               console.error(`Email send error for supplier ${supplier.id}:`, err);
             }
@@ -393,4 +386,3 @@ Thank you for your prompt response!
 
   return { emailHtml, whatsappText };
 }
-

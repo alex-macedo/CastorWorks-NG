@@ -1,0 +1,183 @@
+name: Deploy DevNG Landing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'CastorWorks-LandingPage/**'
+      - '.github/workflows/deploy-devng-landing.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: devng-landing-deploy
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+  LANDING_APP_DIR: CastorWorks-LandingPage
+  LANDING_OUTPUT_DIR: CastorWorks-LandingPage/out
+  LANDING_DEPLOY_ROOT: /var/www/castorworks-ng-landing
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL != '' && secrets.NEXT_PUBLIC_SUPABASE_URL || secrets.VITE_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY != '' && secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || secrets.VITE_SUPABASE_ANON_KEY }}
+
+jobs:
+  build:
+    name: Build landing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            CastorWorks-LandingPage/package-lock.json
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install landing dependencies
+        run: npm ci
+        working-directory: ${{ env.LANDING_APP_DIR }}
+
+      - name: Validate landing public env
+        run: |
+          MISSING=""
+          [ -z "${NEXT_PUBLIC_SUPABASE_URL}" ] && MISSING="${MISSING} NEXT_PUBLIC_SUPABASE_URL/VITE_SUPABASE_URL"
+          [ -z "${NEXT_PUBLIC_SUPABASE_ANON_KEY}" ] && MISSING="${MISSING} NEXT_PUBLIC_SUPABASE_ANON_KEY/VITE_SUPABASE_ANON_KEY"
+          if [ -n "${MISSING}" ]; then
+            echo "::error::Missing required build secrets:${MISSING}"
+            exit 1
+          fi
+
+      - name: Lint landing code
+        run: npx eslint --ext .ts,.tsx CastorWorks-LandingPage/app CastorWorks-LandingPage/components CastorWorks-LandingPage/hooks CastorWorks-LandingPage/lib
+
+      - name: Clean previous landing export
+        run: find "${LANDING_OUTPUT_DIR}" -mindepth 1 -delete 2>/dev/null || true
+
+      - name: Build landing site
+        run: npm run build
+        working-directory: ${{ env.LANDING_APP_DIR }}
+
+      - name: Add build metadata
+        run: |
+          BUILD_TIMESTAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "built_at=${BUILD_TIMESTAMP}"
+          } > "${LANDING_OUTPUT_DIR}/BUILD_INFO"
+
+      - name: Upload landing artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: devng-landing-site
+          path: ${{ env.LANDING_OUTPUT_DIR }}
+          if-no-files-found: error
+
+  deploy:
+    name: Deploy landing
+    runs-on: ubuntu-latest
+    needs: [build]
+    environment:
+      name: production
+      url: https://devng.castorworks.cloud
+    steps:
+      - name: Download landing artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: devng-landing-site
+          path: landing-out
+
+      - name: Validate required secrets
+        env:
+          NG_SSH_PRIVATE_KEY: ${{ secrets.NG_SSH_PRIVATE_KEY }}
+          NG_SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          NG_SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+          NG_SSH_USER: ${{ secrets.NG_SSH_USER }}
+        run: |
+          MISSING=""
+          [ -z "${NG_SSH_PRIVATE_KEY}" ] && MISSING="${MISSING} NG_SSH_PRIVATE_KEY"
+          [ -z "${NG_SSH_HOST}" ] && MISSING="${MISSING} NG_SSH_HOST"
+          [ -z "${NG_SSH_PORT}" ] && MISSING="${MISSING} NG_SSH_PORT"
+          [ -z "${NG_SSH_USER}" ] && MISSING="${MISSING} NG_SSH_USER"
+          if [ -n "${MISSING}" ]; then
+            echo "::error::Missing required secrets:${MISSING}"
+            exit 1
+          fi
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.NG_SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${SSH_PRIVATE_KEY}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${SSH_PORT}" "${SSH_HOST}" >> ~/.ssh/known_hosts
+
+      - name: Deploy release
+        env:
+          SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+          SSH_USER: ${{ secrets.NG_SSH_USER }}
+        run: |
+          RELEASE_ID="${GITHUB_SHA::12}"
+          REMOTE_RELEASE_DIR="${LANDING_DEPLOY_ROOT}/releases/${RELEASE_ID}"
+
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" "
+            mkdir -p '${LANDING_DEPLOY_ROOT}/releases'
+            rm -rf '${REMOTE_RELEASE_DIR}'
+            mkdir -p '${REMOTE_RELEASE_DIR}'
+          "
+
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${SSH_PORT}" \
+            landing-out/ \
+            "${SSH_USER}@${SSH_HOST}:${REMOTE_RELEASE_DIR}/"
+
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" "
+            ln -sfn '${REMOTE_RELEASE_DIR}' '${LANDING_DEPLOY_ROOT}/current'
+            chown -h www-data:www-data '${LANDING_DEPLOY_ROOT}/current'
+            chown -R www-data:www-data '${LANDING_DEPLOY_ROOT}'
+            find '${LANDING_DEPLOY_ROOT}' -type d -exec chmod 755 {} \;
+            find '${LANDING_DEPLOY_ROOT}' -type f -exec chmod 644 {} \;
+            ls -1dt '${LANDING_DEPLOY_ROOT}/releases'/* 2>/dev/null | tail -n +6 | xargs -r rm -rf
+          "
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  validate:
+    name: Validate landing
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    steps:
+      - name: Wait for propagation
+        run: sleep 10
+
+      - name: Validate landing page
+        run: |
+          curl -fsSL https://devng.castorworks.cloud/ -o landing.html
+          grep -q 'data-page="castorworks-landing"' landing.html
+          grep -q 'https://devng.castorworks.cloud/login' landing.html
+
+      - name: Validate landing assets
+        run: |
+          curl -fsSI https://devng.castorworks.cloud/landing-assets/images/hero-bg.jpg
+          curl -fsSI https://devng.castorworks.cloud/landing-assets/icons/icon.svg
+
+      - name: Validate Next static assets
+        run: |
+          NEXT_ASSET=$(grep -oE '/_next/static/[^"]+' landing.html | head -n 1)
+          if [ -z "${NEXT_ASSET}" ]; then
+            echo "::error::No Next static asset found in landing HTML"
+            exit 1
+          fi
+          curl -fsSI "https://devng.castorworks.cloud${NEXT_ASSET}"

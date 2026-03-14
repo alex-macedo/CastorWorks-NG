@@ -1,12 +1,15 @@
 import { serve } from 'https://deno.land/std@0.180.0/http/server.ts';
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+import { sendEmailViaHostinger } from '../_shared/providers/index.ts';
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') || '';
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
 const TWILIO_ACCOUNT_SID = Deno.env.get('TWILIO_ACCOUNT_SID') || '';
 const TWILIO_AUTH_TOKEN = Deno.env.get('TWILIO_AUTH_TOKEN') || '';
 const TWILIO_WHATSAPP_FROM = Deno.env.get('TWILIO_WHATSAPP_FROM') || '';
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') || '';
+const HOSTINGER_FROM_EMAIL = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+  || Deno.env.get('HOSTINGER_SMTP_USER')
+  || '';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -262,8 +265,8 @@ async function sendEmailNotification(
   messageText: string,
   conversationId: string
 ) {
-  if (!RESEND_API_KEY) {
-    console.log('Resend not configured, skipping email notification');
+  if (!HOSTINGER_FROM_EMAIL) {
+    console.log('Hostinger SMTP not configured, skipping email notification');
     return;
   }
 
@@ -302,26 +305,14 @@ async function sendEmailNotification(
   `;
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'CastorWorks <notifications@castorworks.com>',
-        to: [email],
-        subject: `New message from ${senderName} - ${projectName}`,
-        html: emailHtml,
-      }),
+    await sendEmailViaHostinger({
+      fromEmail: HOSTINGER_FROM_EMAIL,
+      fromName: 'CastorWorks',
+      html: emailHtml,
+      subject: `New message from ${senderName} - ${projectName}`,
+      to: [email],
     });
-
-    if (!response.ok) {
-      const errorData = await response.text();
-      console.error('Email send error:', errorData);
-    } else {
-      console.log(`Email sent to ${email}`);
-    }
+    console.log(`Email sent to ${email}`);
   } catch (err) {
     console.error('Email send exception:', err);
   }

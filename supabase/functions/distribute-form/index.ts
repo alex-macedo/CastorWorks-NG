@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4";
 import { authenticateRequest } from "../_shared/authorization.ts";
+import { sendEmailViaHostinger } from "../_shared/providers/index.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
 const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
@@ -95,8 +96,9 @@ serve(async (req) => {
         );
       }
 
-      const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
-      if (!RESEND_API_KEY) {
+      const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+        ?? Deno.env.get('HOSTINGER_SMTP_USER');
+      if (!hostingerFromEmail) {
         return new Response(
           JSON.stringify({ success: false, error: 'Email service not configured' }),
           { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -125,32 +127,15 @@ serve(async (req) => {
 
         for (const recipient of batch) {
           try {
-            const emailResponse = await fetch('https://api.resend.com/emails', {
-              method: 'POST',
-              headers: {
-                'Authorization': `Bearer ${RESEND_API_KEY}`,
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                from: 'CastorWorks Forms <forms@castorworks.com>',
-                to: [recipient],
-                subject: `Form Invitation: ${form.title}`,
-                html: emailHtml,
-              }),
+            await sendEmailViaHostinger({
+              fromEmail: hostingerFromEmail,
+              fromName: 'CastorWorks Forms',
+              html: emailHtml,
+              subject: `Form Invitation: ${form.title}`,
+              to: [recipient],
             });
-
-            if (emailResponse.ok) {
-              sentCount++;
-              results.push({ recipient, status: 'sent' });
-            } else {
-              failedCount++;
-              const errorData = await emailResponse.text();
-              results.push({ 
-                recipient, 
-                status: 'failed', 
-                error: errorData 
-              });
-            }
+            sentCount++;
+            results.push({ recipient, status: 'sent' });
           } catch (error) {
             failedCount++;
             results.push({

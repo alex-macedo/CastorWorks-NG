@@ -17,8 +17,8 @@
     "takePhoto": "Prendre une Photo",
     "transactionReferenceOptional": "Référence de transaction (facultatif)"
   },
-  "activatedDescription": "",
-  "activatedTitle": "",
+  "activatedDescription": "Votre compte est maintenant actif.",
+  "activatedTitle": "Activé",
   "active": "Actif",
   "activeProjects": "activeProjects",
   "activity": {
@@ -4700,6 +4700,7 @@
     "financial": "financial",
     "materials": "materials",
     "myDashboard": "myDashboard",
+    "myTimesheet": "Ma feuille de temps",
     "notifications": "notifications",
     "platform": "platform",
     "procurement": "procurement",
@@ -7714,7 +7715,7 @@
   "showLess": "Afficher moins",
   "showMore": "Afficher plus",
   "signOutError": "Échec de la déconnexion",
-  "signOutNow": "",
+  "signOutNow": "Se déconnecter maintenant",
   "signOutSuccess": "Déconnexion réussie",
   "skip": "Passer",
   "start": "Démarrer",

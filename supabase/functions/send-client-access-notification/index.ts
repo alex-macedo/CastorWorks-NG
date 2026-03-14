@@ -1,9 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "https://esm.sh/resend@4.0.0";
 import { createErrorResponse } from "../_shared/errorHandler.ts";
 import { authenticateRequest } from "../_shared/authorization.ts";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+import { sendEmailViaHostinger } from "../_shared/providers/index.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -65,8 +63,15 @@ const handler = async (req: Request): Promise<Response> => {
 
     const action = isUpdate ? "updated" : "granted";
 
-    const emailResponse = await resend.emails.send({
-      from: "EngProApp <onboarding@resend.dev>",
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
+    if (!hostingerFromEmail) {
+      throw new Error('Hostinger SMTP not configured');
+    }
+
+    const emailResponse = await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: 'CastorWorks',
       to: [clientEmail],
       subject: subject,
       html: `
@@ -145,7 +150,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Email sent successfully:", emailResponse);
 
     return new Response(
-      JSON.stringify({ success: true, emailId: emailResponse.data?.id }),
+      JSON.stringify({ success: true, emailId: emailResponse.messageId }),
       {
         status: 200,
         headers: {

@@ -29,7 +29,7 @@ module.exports = {
       'financial', 'financialInvoice', 'forms', 'logistics', 'maintenance', 'materials', 
       'navigation', 'notFound', 'notifications', 'obras', 'overallStatus', 
       'pages', 'payments', 'phases', 'phaseTemplates', 'procurement', 
-      'projectDetail', 'projectPhases', 'projects', 'projectsTimeline', 
+      'projectCalendar', 'projectDetail', 'projectPhases', 'projects', 'projectsTimeline', 
       'proposals', 'purchaseRequest', 'reports', 'roadmap', 'roadmapAnalytics', 
       'schedule', 'settings', 'supervisor', 'suppliers', 'taskManagement', 
       'topBar', 'weather', 'templates', 'projectWbsTemplates',

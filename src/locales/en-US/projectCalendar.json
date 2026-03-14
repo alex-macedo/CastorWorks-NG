@@ -1,7 +1,7 @@
 {
   "addHoliday": "Add Holiday",
-  "backToProject": "Back to Project",
   "adding": "Adding...",
+  "backToProject": "Back to Project",
   "calendarSettings": "Calendar Settings",
   "clickToMarkHoliday": "Click on a working day to mark it as a holiday. Click on a holiday to remove it.",
   "configureWorkingDaysAndHolidays": "Configure working days and holidays for accurate project scheduling",
@@ -14,7 +14,15 @@
     "tuesday": "Tuesday",
     "wednesday": "Wednesday"
   },
-  "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "dayNamesShort": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+  ],
   "description": "Manage working days and holidays for accurate project scheduling",
   "enableCalendar": "Enable Calendar",
   "enableCalendarDesc": "Use working day calculations",

@@ -6,20 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+\n### Added\n
 - **Phase 6 — Trial & Subscription Emails:**
   - `execute-trial-emails` Edge Function with branded HTML templates and 4-locale support
   - Shared modules: `trialEmailCopy.ts` (localized email copy), `trialEmailTemplates.ts` (HTML templates)
   - DB migration `20260306000000_trial_email_schema.sql`: `trial_email_logs`, `trial_reminder_due_candidates` view, `trial_expiration_email_queue`, auto-trigger on trial expiry
   - Trial locale updates (en-US, es-ES, fr-FR, pt-BR)
 
-### Fixed
+\n### Fixed\n
 - **Edge Function `fetch-users-with-roles`:** Fixed `SyntaxError: Identifier 'authInternalUrl' has already been declared` that prevented the function from loading; bypass Kong for Auth admin API calls; use direct Postgres for `user_roles`/`user_profiles` queries
 - **Edge Function `create-user`:** Direct Auth verification to bypass Kong key-auth JWT rejection
 - **SERVICE_ROLE_KEY signature mismatch:** Regenerated `SERVICE_ROLE_KEY` JWT to match current `JWT_SECRET` — GoTrue was rejecting admin API calls with `403 bad_jwt`
 - **i18n:** Filled 156 empty translation values across pt-BR, es-ES, fr-FR (sidebar order, translation maintenance, billing, subscription, user management)
+- **i18n + projects:** Added `projectCalendar` to scanner namespaces, resolved scanner parse errors, and filled missing translation values for project result counts and account/navigation copy
 
-### Changed
+\n### Changed
+\n
 - **ROADMAP/STATE:** Marked v1.1 (Phases 3–6) as shipped; Phase 7 (AI Action Credits & Metering) is next
 - **Phase 4 — Payment & Subscription (Stripe):**
   - `SubscriptionPage` and `SubscriptionCheckoutFlow` components with plan selection, upgrade/downgrade flow, and Stripe Checkout redirect
@@ -74,20 +76,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **AppNotifications**: Real notification data integration (no demo fallback); Realtime subscription for new notifications
   - **i18n**: transcriptPlaceholder for meetings (en-US, pt-BR, es-ES, fr-FR); annotations.reopen
 
-### Fixed
+\n### Fixed\n
 - **Auth / Add-User Edge Function:** Resolved JWT validation and RLS errors (`PGRST301`) that blocked user creation; service_role can now manage `user_roles` and `user_profiles`
 - **useCallback stability:** Wrapped Supabase module references in `useMemo` to prevent hook dependency churn
 - **Tailwind CSS v4 Compatibility** — Upgraded PostCSS configuration to use `@tailwindcss/postcss` (required for Tailwind v4) and updated CSS imports from `@tailwind base/components/utilities` to `@import "tailwindcss"`
 
-### Security
+\n### Security\n
 - **milestone_delays RLS** (TL2-A.1): Require `has_project_access` for INSERT and UPDATE policies so managers can only create/update delay records for projects they have access to
 
 ## [1.56.5] - 2026-02-22
 
-### Summary
+\n### Summary\n
 Complete i18n translation coverage - fixed all missing translations and empty placeholder values.
 
-### Fixed
+\n### Fixed\n
 - **Missing Translations in roadmap.json**
   - pt-BR: Added `bugRecorder.title`, moved `projectDetail` to correct top-level location (22 keys)
   - es-ES: Added `bugRecorder.title`, moved `projectDetail` to correct top-level location (22 keys)
@@ -97,7 +99,7 @@ Complete i18n translation coverage - fixed all missing translations and empty pl
   - Filled 139 empty translation values across pt-BR, es-ES, fr-FR common.json files
   - Used `scripts/fill-all-empty-translations.py` to auto-fill from en-US source
 
-### Technical
+\n### Technical\n
 - **Quality Metrics**
   - ✅ 738 unit tests passing
   - ✅ 0 linting errors
@@ -106,37 +108,37 @@ Complete i18n translation coverage - fixed all missing translations and empty pl
   - ✅ Full CI pipeline passed
   - ✅ Build successful (Vite + PWA)
 
-### Commits
+\n### Commits\n
 - `d3d86f7e` - fix(i18n): complete translation coverage for roadmap and common locales
 
 ---
 
 ## [1.56.11] - 2026-02-27
 
-### Summary
+\n### Summary\n
 Dashboard UI refresh with Google Flights-style card corners, translation consistency fixes, merge resolution, and Deno lint fixes.
 
-### Fixed
+\n### Fixed\n
 - **RoadmapItemDetailDialog** — Resolved broken JSX structure from merge conflict (removed extra closing `</div>` that caused build failure)
 - **Deno require-await** — Replaced `async () => ({...})` mocks with `() => Promise.resolve({...})` in `whatsapp-ai-auto-respond.test.ts` to satisfy Deno lint
 - **Translation Consistency** — Added missing `_many` plural keys to en-US common.json; filled 7 empty translation values in pt-BR, es-ES, fr-FR; removed duplicate `collections.status.*` from es-ES financial.json; cross-language consistency: all 36 locale files valid
 
-### Changed
+\n### Changed\n
 - **Active Project Card (Dashboard)** — Google Flights-style asymmetric corner radii: top-left and bottom-right `1.5rem`, top-right and bottom-left `0.375rem`; full-bleed image with gradient overlay and overlaid text
 - **Dashboard Cards** — FinancialExecutiveOverview and InstallmentsDue: asymmetrical corner styling; KPI and Quick Stats cards: corner styling adjustments
 
 ## [1.56.2] - 2026-02-22
 
-### Summary
+\n### Summary\n
 Quality assurance pass with translation consistency fixes and version bump.
 
-### Fixed
+\n### Fixed\n
 - **Translation Consistency**
   - Added missing `collections.status.*` translations in pt-BR financial.json
   - Fixed empty `_many` plural form keys causing consistency warnings
   - Cross-language consistency improved for common.json and financial.json
 
-### Technical
+\n### Technical\n
 - **Quality Metrics**
   - ✅ 738 unit tests passing
   - ✅ 0 linting errors (ESLint pass)
@@ -146,7 +148,7 @@ Quality assurance pass with translation consistency fixes and version bump.
   - ✅ GitHub Actions: Deno ✅, Lint Hooks ✅
   - ⚠️ Deploy to Production: Validation timeout (network issue, not code)
 
-### Commits
+\n### Commits\n
 - `a32fcf5f` - chore: bump version to 1.56.1 and update translation report
 - `44c38d3c` - fix: translation consistency and empty value fixes
 
@@ -154,10 +156,10 @@ Quality assurance pass with translation consistency fixes and version bump.
 
 ## [1.56.0] - 2026-02-22
 
-### Summary
+\n### Summary\n
 Sprint close enhancements with AI-generated release notes, configurable Kanban column colors, and additional translation fixes.
 
-### Added
+\n### Added\n
 - **Sprint Close with AI Release Notes**
   - `generate-sprint-release-notes` Edge Function for AI-powered release note generation
   - `20260222000000_close_sprint_reassign_and_ai_release_notes.sql` migration
@@ -176,7 +178,7 @@ Sprint close enhancements with AI-generated release notes, configurable Kanban c
   - Removed old Playwright test files (`*.spec.ts`)
   - Added `roadmap-display-settings-color.agent-browser.cjs` for new E2E tests
 
-### Fixed
+\n### Fixed\n
 - **Translation Completeness**
   - Added missing `bugRecorder.permissionError`, `bugRecorder.reportBug`, `bugRecorder.tryAgain` translations
   - Added missing `roadmap.*` translations across all languages
@@ -186,7 +188,7 @@ Sprint close enhancements with AI-generated release notes, configurable Kanban c
 - **Deno Lint Issues**
   - Fixed unused variable `user` in `generate-sprint-release-notes/index.ts`
 
-### Technical
+\n### Technical\n
 - **Quality Metrics**
   - ✅ 738+ unit tests passing
   - ✅ 0 linting errors (ESLint pass)
@@ -196,7 +198,7 @@ Sprint close enhancements with AI-generated release notes, configurable Kanban c
   - ✅ Build successful (Vite + PWA)
   - ✅ GitHub Actions CI passed (Deno, Lint Hooks, Deploy to Production)
 
-### Commits
+\n### Commits\n
 - `387b0eb9` - feat: sprint close enhancements, roadmap display settings, and translation fixes
 - `459250ed` - fix: prefix unused user variable in generate-sprint-release-notes
 

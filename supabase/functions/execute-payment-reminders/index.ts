@@ -1,6 +1,6 @@
 import { serve } from 'https://deno.land/std@0.180.0/http/server.ts';
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { sendEmailViaResend, sendWhatsAppViaTwilio } from '../_shared/providers/index.ts';
+import { sendEmailViaHostinger, sendWhatsAppViaTwilio } from '../_shared/providers/index.ts';
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') || '';
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
@@ -42,11 +42,18 @@ serve(async (_req: Request) => {
 
         if (rem.reminder_type === 'email' && invoiceData?.client_email) {
           recipient = invoiceData.client_email;
-          const apiKey = Deno.env.get('RESEND_API_KEY');
-          if (apiKey) {
+          const fromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT') || Deno.env.get('HOSTINGER_SMTP_USER');
+          if (fromEmail) {
             const subject = `Payment reminder: Invoice ${rem.invoice_number ?? rem.invoice_id}`;
             const html = `<p>Dear customer,</p><p>This is a reminder that invoice ${rem.invoice_number ?? rem.invoice_id} is due on ${rem.due_date}.</p>`;
-            sendResult = await sendEmailViaResend(apiKey, recipient, subject, html);
+            const hostingerResult = await sendEmailViaHostinger({
+              fromEmail,
+              fromName: 'CastorWorks',
+              html,
+              subject,
+              to: recipient,
+            });
+            sendResult = { ok: true, data: hostingerResult };
           }
         } else if (rem.reminder_type === 'whatsapp' && invoiceData?.client_phone) {
           recipient = invoiceData.client_phone;

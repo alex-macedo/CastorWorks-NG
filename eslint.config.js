@@ -7,7 +7,7 @@ import path from 'path';
 import localMissingHookRule from './eslint-rules/no-missing-react-hook-imports.js';
 
 export default tseslint.config(
-  { ignores: ["dist", "sinapi"] },
+  { ignores: ["dist", "sinapi", ".next", "CastorWorks-LandingPage/.next"] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],

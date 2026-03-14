@@ -41,7 +41,6 @@ import { useLocalization } from "@/contexts/LocalizationContext";
 import RouterErrorBoundary from "@/components/RouterErrorBoundary";
 import { TimeTracker } from "@/components/Architect/TimeTracking/TimeTracker";
 import { TimeTrackerResumeDialog } from "@/components/Architect/TimeTracking/TimeTrackerResumeDialog";
-import { FloatingTimeClock } from "@/components/Shared/TimeClock/FloatingTimeClock";
 import { TimeTrackingProvider } from "@/contexts/TimeTrackingContext";
 import { BugRecorderProvider } from "@/contexts/BugRecorderContext";
 
@@ -371,7 +370,6 @@ const DesktopRouteLayout = ({
           {children}
         </main>
       </SidebarInset>
-        {isInternalUser && <FloatingTimeClock />}
       </div>
     </BugRecorderProvider>
   );
@@ -616,9 +614,11 @@ const AppContent = () => {
                     path="/roadmap/ai-to-work"
                     element={
                       <AuthGuard>
-                        <Suspense fallback={<PageLoader />}>
-                          <AiToWorkPage />
-                        </Suspense>
+                        <RoleGuard allowedRoles={["global_admin"]}>
+                          <Suspense fallback={<PageLoader />}>
+                            <AiToWorkPage />
+                          </Suspense>
+                        </RoleGuard>
                       </AuthGuard>
                     }
                   />
@@ -757,8 +757,8 @@ const AppContent = () => {
                                    <Route path="/documentation" element={<Documentation />} />
                                   <Route path="/documentation/viewer" element={<DocumentViewer />} />
                                    <Route path="/releases-report" element={<ReleasesReport />} />
-                                  <Route path="/roadmap" element={<Roadmap />} />
-                                  <Route path="/roadmap/analytics" element={<RoadmapAnalytics />} />
+                                  <Route path="/roadmap" element={<RoleGuard allowedRoles={["global_admin"]}><Roadmap /></RoleGuard>} />
+                                  <Route path="/roadmap/analytics" element={<RoleGuard allowedRoles={["global_admin"]}><RoadmapAnalytics /></RoleGuard>} />
                                   <Route path="/projects-timeline" element={<ProjectsTimelinePage />} />
                                   <Route path="/task-management" element={<TaskManagementPage />} />
                                   <Route path="/calendar" element={<CalendarPage />} />

@@ -1,11 +1,14 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import { createErrorResponse } from '../_shared/errorHandler.ts'
+import { sendEmailViaHostinger } from '../_shared/providers/index.ts'
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? ''
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
 const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY') ?? ''
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? ''
+const HOSTINGER_FROM_EMAIL = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+  ?? Deno.env.get('HOSTINGER_SMTP_USER')
+  ?? ''
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -351,9 +354,9 @@ async function notifyAdminsQuotaExhausted(
     return
   }
 
-  // Send email via Resend
-  if (!RESEND_API_KEY) {
-    console.warn('[ai-bug-monitor] RESEND_API_KEY not configured — cannot send quota alert email')
+  // Send email via Hostinger SMTP
+  if (!HOSTINGER_FROM_EMAIL) {
+    console.warn('[ai-bug-monitor] Hostinger SMTP not configured — cannot send quota alert email')
     return
   }
 
@@ -411,26 +414,14 @@ async function notifyAdminsQuotaExhausted(
   `
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'CastorWorks AI <onboarding@resend.dev>',
-        to: adminEmails,
-        subject: '🚨 AI Bug Monitor — OpenAI API Quota Exhausted',
-        html: emailHtml,
-      }),
+    await sendEmailViaHostinger({
+      fromEmail: HOSTINGER_FROM_EMAIL,
+      fromName: 'CastorWorks AI',
+      html: emailHtml,
+      subject: '🚨 AI Bug Monitor — OpenAI API Quota Exhausted',
+      to: adminEmails,
     })
-
-    if (!response.ok) {
-      const errText = await response.text()
-      console.error('[ai-bug-monitor] Failed to send quota alert email:', errText)
-    } else {
-      console.log(`[ai-bug-monitor] Quota alert email sent to ${adminEmails.length} admin(s): ${adminEmails.join(', ')}`)
-    }
+    console.log(`[ai-bug-monitor] Quota alert email sent to ${adminEmails.length} admin(s): ${adminEmails.join(', ')}`)
   } catch (emailErr) {
     console.error('[ai-bug-monitor] Error sending quota alert email:', emailErr)
   }

@@ -1,5 +1,6 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { sendEmailViaHostinger } from '../_shared/providers/index.ts'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -100,10 +101,11 @@ async function sendExpirationNotification(
   supabaseClient: any
 ): Promise<{ success: boolean; email: string; error?: string }> {
   try {
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
-    if (!RESEND_API_KEY) {
-      console.warn('RESEND_API_KEY not configured, skipping email notification')
-      return { success: false, email: managerEmail, error: 'RESEND_API_KEY not configured' }
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER')
+    if (!hostingerFromEmail) {
+      console.warn('Hostinger SMTP not configured, skipping email notification')
+      return { success: false, email: managerEmail, error: 'Hostinger SMTP not configured' }
     }
 
     const BASE_URL = Deno.env.get('SUPABASE_URL')?.replace('/rest/v1', '') || ''
@@ -177,26 +179,13 @@ async function sendExpirationNotification(
       </html>
     `
 
-    // Send email via Resend
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'EngPro <onboarding@resend.dev>',
-        to: [managerEmail],
-        subject: `⏰ ${quotes.length} Quote Request${quotes.length > 1 ? 's' : ''} Expired`,
-        html: emailHtml,
-      }),
+    await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: 'CastorWorks',
+      html: emailHtml,
+      subject: `⏰ ${quotes.length} Quote Request${quotes.length > 1 ? 's' : ''} Expired`,
+      to: [managerEmail],
     })
-
-    if (!response.ok) {
-      const errorText = await response.text()
-      console.error('Resend API error:', errorText)
-      return { success: false, email: managerEmail, error: `Resend API error: ${errorText}` }
-    }
 
     // Log notifications in database
     const notificationInserts = quotes.map(quote => ({

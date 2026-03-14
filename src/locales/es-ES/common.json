@@ -17,8 +17,8 @@
     "takePhoto": "Tomar Foto",
     "transactionReferenceOptional": "Referencia de Transacción (Opcional)"
   },
-  "activatedDescription": "",
-  "activatedTitle": "",
+  "activatedDescription": "Tu cuenta está activa.",
+  "activatedTitle": "Activado",
   "active": "Activo",
   "activeProjects": "activeProjects",
   "activity": {
@@ -4700,6 +4700,7 @@
     "financial": "financial",
     "materials": "materials",
     "myDashboard": "myDashboard",
+    "myTimesheet": "Mi hoja de tiempo",
     "notifications": "notifications",
     "platform": "platform",
     "procurement": "procurement",
@@ -7714,7 +7715,7 @@
   "showLess": "Mostrar menos",
   "showMore": "Mostrar más",
   "signOutError": "Error al cerrar sesión",
-  "signOutNow": "",
+  "signOutNow": "Cerrar sesión ahora",
   "signOutSuccess": "Cierre de sesión realizado correctamente",
   "skip": "Omitir",
   "start": "Iniciar",
