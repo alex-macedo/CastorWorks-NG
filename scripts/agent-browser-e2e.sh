@@ -523,6 +523,33 @@ if [[ "$pattern_lc" == "financial-kpi" || "$pattern_lc" == "financial-kpi-review
   exit 0
 fi
 
+run_financial_cashflow_forecast() {
+  node e2e/financial-cashflow-forecast.agent-browser.cjs
+}
+
+if [[ "$pattern_lc" == "financial-cashflow-forecast" || "$pattern_lc" == "cashflow-forecast" ]]; then
+  run_financial_cashflow_forecast
+  exit 0
+fi
+
+run_castormind_ai_localization() {
+  node e2e/castormind-ai-localization.agent-browser.cjs
+}
+
+if [[ "$pattern_lc" == "castormind-ai-localization" || "$pattern_lc" == "castormind-localization" ]]; then
+  run_castormind_ai_localization
+  exit 0
+fi
+
+run_castormind_ai_response_language() {
+  node e2e/castormind-ai-response-language.agent-browser.cjs
+}
+
+if [[ "$pattern_lc" == "castormind-ai-response-language" || "$pattern_lc" == "castormind-response-language" ]]; then
+  run_castormind_ai_response_language
+  exit 0
+fi
+
 run_timeline_circle_colors_test() {
   node e2e/timeline-circle-colors-test.cjs
 }

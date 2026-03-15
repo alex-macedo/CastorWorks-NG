@@ -28,7 +28,9 @@
     "regenerate": "Regenerar Información"
   },
   "superBot": {
+    "analytics": "Analíticas",
     "clearConversation": "Borrar conversación",
+    "errorPrefix": "Error de Super Bot",
     "greeting": "Buenos días",
     "greetingQuestion": "¿Cómo puedo ayudarte hoy?",
     "greetings": {
@@ -52,6 +54,12 @@
     "searchPlaceholder": "Buscar chats...",
     "subheadline": "Pide en lenguaje natural para consultar y actualizar datos.",
     "suggestions": "Sugerencias",
+    "templateTitles": {
+      "delayedProjects": "Resumen de Proyectos Retrasados",
+      "duePayments": "Resumen de Pagos Pendientes",
+      "updateTasks": "Cerrar Tareas Hasta Hoy",
+      "vendorQuotes": "Proveedores sin Propuesta"
+    },
     "title": "Super Bot"
   }
 }

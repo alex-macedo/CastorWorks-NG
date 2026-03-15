@@ -49,6 +49,7 @@ import {
   Database,
   Activity,
   Smartphone,
+  Building2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { AppRole } from "@/hooks/useUserRoles";
@@ -81,6 +82,9 @@ export type SidebarOptionConfig = {
 
 export const ALL_ROLES: AppRole[] = ["admin", "project_manager", "site_supervisor", "admin_office", "client", "viewer", "accountant", "editor", "architect", "global_admin"];
 
+/** Platform-team roles. Not tenant-facing; kept separate from ALL_ROLES intentionally. */
+export const PLATFORM_ROLES: AppRole[] = ["platform_owner", "platform_support", "platform_sales"];
+
 export const ROLE_LABEL_KEYS: Record<AppRole, string> = {
   admin: "settings:roleAdmin",
   project_manager: "settings:roleProjectManager",
@@ -92,6 +96,10 @@ export const ROLE_LABEL_KEYS: Record<AppRole, string> = {
   editor: "settings:roleEditor",
   architect: "settings:roleArchitect",
   global_admin: "settings:roleGlobalAdmin",
+  super_admin: "settings:roleSuperAdmin",
+  platform_owner: "settings:rolePlatformOwner",
+  platform_support: "settings:rolePlatformSupport",
+  platform_sales: "settings:rolePlatformSales",
   supervisor: "settings:roleSiteSupervisor", // Fallback
 };
 
@@ -106,6 +114,10 @@ export const ROLE_DESCRIPTION_KEYS: Record<AppRole, string> = {
   editor: "settings:roleDescriptions.editor",
   architect: "settings:roleDescriptions.architect",
   global_admin: "settings:roleDescriptions.global_admin",
+  super_admin: "settings:roleDescriptions.super_admin",
+  platform_owner: "settings:roleDescriptions.platform_owner",
+  platform_support: "settings:roleDescriptions.platform_support",
+  platform_sales: "settings:roleDescriptions.platform_sales",
   supervisor: "settings:roleDescriptions.site_supervisor", // Fallback
 };
 
@@ -349,5 +361,23 @@ export const SIDEBAR_OPTIONS: SidebarOptionConfig[] = [
       { id: "settings", titleKey: "navigation.settings", path: "/settings", icon: SettingsIcon },
     ],
     allowedRoles: ["admin"],
+  },
+  {
+    id: "platform-workspace",
+    titleKey: "navigation.platformWorkspace",
+    type: "collapsible",
+    icon: Building2,
+    tabs: [
+      { id: "platform-dashboard", titleKey: "navigation.platformDashboard", path: "/platform", icon: LayoutDashboard },
+      { id: "platform-support-chat", titleKey: "navigation.platformSupportChat", path: "/platform/support-chat", icon: MessageCircle },
+      { id: "platform-campaigns", titleKey: "navigation.platformCampaigns", path: "/platform/campaigns", icon: Send },
+      { id: "platform-contacts", titleKey: "navigation.platformContacts", path: "/platform/contacts", icon: Users },
+      { id: "platform-forms", titleKey: "navigation.platformForms", path: "/platform/forms", icon: FileQuestion },
+      { id: "platform-tasks", titleKey: "navigation.platformTasks", path: "/platform/tasks", icon: KanbanSquare },
+      { id: "platform-communication-log", titleKey: "navigation.platformCommunicationLog", path: "/platform/communication-log", icon: MessageSquare },
+      { id: "platform-customers", titleKey: "navigation.platformCustomers", path: "/platform/customers", icon: Briefcase },
+      { id: "platform-global-templates", titleKey: "navigation.platformGlobalTemplates", path: "/platform/global-templates", icon: Copy },
+    ],
+    allowedRoles: ["platform_owner", "platform_support", "platform_sales", "super_admin"],
   },
 ];

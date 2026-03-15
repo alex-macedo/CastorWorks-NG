@@ -125,6 +125,7 @@ export const aiClient = {
   superBot: async (input: {
     message: string;
     sessionId: string;
+    language?: 'pt-BR' | 'en-US' | 'es-ES' | 'fr-FR';
     context?: Record<string, unknown>;
     forceUpdate?: boolean;
     overridePhrase?: string;

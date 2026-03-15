@@ -16,6 +16,7 @@ type AssistantResult = {
 }
 
 type QueueStatus = 'queued' | 'processing' | 'succeeded' | 'exhausted' | 'cancelled'
+type SupportedLanguage = 'pt-BR' | 'en-US' | 'es-ES' | 'fr-FR'
 
 type LLMIntentPayload = {
   intent: AssistantIntent
@@ -34,6 +35,196 @@ const corsHeaders = {
 const DEFAULT_LIMIT = 100
 const BULK_LIMIT = 100
 const OVERRIDE_PHRASE = 'override bulk update'
+const DEFAULT_LANGUAGE: SupportedLanguage = 'en-US'
+
+const isSupportedLanguage = (value: string): value is SupportedLanguage =>
+  ['pt-BR', 'en-US', 'es-ES', 'fr-FR'].includes(value)
+
+const getLanguage = (value: unknown): SupportedLanguage => {
+  const normalized = String(value || '').trim()
+  return isSupportedLanguage(normalized) ? normalized : DEFAULT_LANGUAGE
+}
+
+type SuperBotCopy = {
+  delayedProjectsHeading: string
+  delayedProjectsEmpty: string
+  delayedProjectItem: (project: string, count: number) => string
+  delayedTaskItem: (title: string, dueDate: string) => string
+  duePaymentsHeading: string
+  duePaymentsEmpty: string
+  duePaymentsClientItem: (client: string, count: number) => string
+  duePaymentsInvoiceItem: (invoice: string, dueDate: string, status: string) => string
+  quotesHeading: string
+  quotesEmpty: string
+  quotesItem: (requestNumber: string, supplier: string, deadline: string, status: string) => string
+  unauthorized: (role: string) => string
+  projectRequired: string
+  projectNotFound: (identifier: string) => string
+  guardrailBlocked: (count: number) => string
+  noPendingTasks: (projectName: string, untilDate: string) => string
+  tasksUpdated: (count: number, projectName: string, untilDate: string) => string
+  unknownIntent: string
+  operationFailed: (reason: string) => string
+}
+
+const copyByLanguage: Record<SupportedLanguage, SuperBotCopy> = {
+  'en-US': {
+    delayedProjectsHeading: '### Delayed Projects and Tasks',
+    delayedProjectsEmpty: 'No delayed tasks were found for accessible projects.',
+    delayedProjectItem: (project, count) => `- **${project}** (${count} delayed tasks)`,
+    delayedTaskItem: (title, dueDate) => `  - ${title} (due: ${dueDate})`,
+    duePaymentsHeading: '### Clients with Due Payments',
+    duePaymentsEmpty: 'No due payments were found.',
+    duePaymentsClientItem: (client, count) => `- **${client}** (${count} invoices)`,
+    duePaymentsInvoiceItem: (invoice, dueDate, status) =>
+      `  - ${invoice} | due ${dueDate} | status ${status}`,
+    quotesHeading: '### Overdue Quote Requests without Vendor Proposal',
+    quotesEmpty: 'No overdue quote requests pending vendor proposal were found.',
+    quotesItem: (requestNumber, supplier, deadline, status) =>
+      `- ${requestNumber} | vendor: **${supplier}** | deadline: ${deadline} | status: ${status}`,
+    unauthorized: (role) =>
+      [
+        'You are not authorized to run this operation with your current role.',
+        `Role: ${role}`,
+        'Please contact an administrator if this access is required.',
+      ].join('\n'),
+    projectRequired:
+      'Please specify the project name or id in quotes, for example: update tasks for project "Project X" until today.',
+    projectNotFound: (identifier) => `Project not found for identifier: ${identifier}`,
+    guardrailBlocked: (count) =>
+      `Guardrail blocked: ${count} tasks would be updated (> ${BULK_LIMIT}). Retry with forceUpdate=true and overridePhrase="${OVERRIDE_PHRASE}".`,
+    noPendingTasks: (projectName, untilDate) =>
+      `No pending tasks found for project ${projectName} up to ${untilDate}.`,
+    tasksUpdated: (count, projectName, untilDate) =>
+      `Updated ${count} tasks to completed for project ${projectName} up to ${untilDate}.`,
+    unknownIntent: [
+      'I can help with these operations:',
+      '- Show delayed projects and tasks',
+      '- Show clients with due payments',
+      '- Update project tasks up to today',
+      '- Show overdue quote requests without vendor proposal',
+    ].join('\n'),
+    operationFailed: (reason) =>
+      ['I could not complete that operation right now.', `Reason: ${reason}`, 'Please try again in a moment.'].join('\n'),
+  },
+  'pt-BR': {
+    delayedProjectsHeading: '### Projetos Atrasados e Tarefas',
+    delayedProjectsEmpty: 'Nenhuma tarefa atrasada foi encontrada nos projetos acessíveis.',
+    delayedProjectItem: (project, count) => `- **${project}** (${count} tarefas atrasadas)`,
+    delayedTaskItem: (title, dueDate) => `  - ${title} (vencimento: ${dueDate})`,
+    duePaymentsHeading: '### Clientes com Pagamentos em Aberto',
+    duePaymentsEmpty: 'Nenhum pagamento em aberto foi encontrado.',
+    duePaymentsClientItem: (client, count) => `- **${client}** (${count} faturas)`,
+    duePaymentsInvoiceItem: (invoice, dueDate, status) =>
+      `  - ${invoice} | vence em ${dueDate} | status ${status}`,
+    quotesHeading: '### Cotações Vencidas sem Proposta do Fornecedor',
+    quotesEmpty: 'Nenhuma cotação vencida sem proposta do fornecedor foi encontrada.',
+    quotesItem: (requestNumber, supplier, deadline, status) =>
+      `- ${requestNumber} | fornecedor: **${supplier}** | prazo: ${deadline} | status: ${status}`,
+    unauthorized: (role) =>
+      [
+        'Você não tem autorização para executar esta operação com o seu perfil atual.',
+        `Perfil: ${role}`,
+        'Fale com um administrador se esse acesso for necessário.',
+      ].join('\n'),
+    projectRequired:
+      'Informe o nome ou o id do projeto entre aspas, por exemplo: atualizar tarefas do projeto "Projeto X" até hoje.',
+    projectNotFound: (identifier) => `Projeto não encontrado para o identificador: ${identifier}`,
+    guardrailBlocked: (count) =>
+      `Bloqueio de segurança: ${count} tarefas seriam atualizadas (> ${BULK_LIMIT}). Tente novamente com forceUpdate=true e overridePhrase="${OVERRIDE_PHRASE}".`,
+    noPendingTasks: (projectName, untilDate) =>
+      `Nenhuma tarefa pendente foi encontrada para o projeto ${projectName} até ${untilDate}.`,
+    tasksUpdated: (count, projectName, untilDate) =>
+      `${count} tarefas foram atualizadas para concluídas no projeto ${projectName} até ${untilDate}.`,
+    unknownIntent: [
+      'Posso ajudar com estas operações:',
+      '- Mostrar projetos e tarefas atrasadas',
+      '- Mostrar clientes com pagamentos em aberto',
+      '- Atualizar tarefas do projeto até hoje',
+      '- Mostrar cotações vencidas sem proposta do fornecedor',
+    ].join('\n'),
+    operationFailed: (reason) =>
+      ['Não consegui concluir essa operação agora.', `Motivo: ${reason}`, 'Tente novamente em alguns instantes.'].join('\n'),
+  },
+  'es-ES': {
+    delayedProjectsHeading: '### Proyectos Retrasados y Tareas',
+    delayedProjectsEmpty: 'No se encontraron tareas retrasadas en los proyectos accesibles.',
+    delayedProjectItem: (project, count) => `- **${project}** (${count} tareas retrasadas)`,
+    delayedTaskItem: (title, dueDate) => `  - ${title} (vence: ${dueDate})`,
+    duePaymentsHeading: '### Clientes con Pagos Pendientes',
+    duePaymentsEmpty: 'No se encontraron pagos pendientes.',
+    duePaymentsClientItem: (client, count) => `- **${client}** (${count} facturas)`,
+    duePaymentsInvoiceItem: (invoice, dueDate, status) =>
+      `  - ${invoice} | vence ${dueDate} | estado ${status}`,
+    quotesHeading: '### Solicitudes de Cotización Vencidas sin Propuesta del Proveedor',
+    quotesEmpty: 'No se encontraron solicitudes de cotización vencidas pendientes de propuesta.',
+    quotesItem: (requestNumber, supplier, deadline, status) =>
+      `- ${requestNumber} | proveedor: **${supplier}** | fecha límite: ${deadline} | estado: ${status}`,
+    unauthorized: (role) =>
+      [
+        'No tienes autorización para ejecutar esta operación con tu rol actual.',
+        `Rol: ${role}`,
+        'Contacta a un administrador si necesitas este acceso.',
+      ].join('\n'),
+    projectRequired:
+      'Indica el nombre o el id del proyecto entre comillas, por ejemplo: actualizar tareas del proyecto "Proyecto X" hasta hoy.',
+    projectNotFound: (identifier) => `No se encontró el proyecto para el identificador: ${identifier}`,
+    guardrailBlocked: (count) =>
+      `Bloqueo de seguridad: se actualizarían ${count} tareas (> ${BULK_LIMIT}). Vuelve a intentarlo con forceUpdate=true y overridePhrase="${OVERRIDE_PHRASE}".`,
+    noPendingTasks: (projectName, untilDate) =>
+      `No se encontraron tareas pendientes para el proyecto ${projectName} hasta ${untilDate}.`,
+    tasksUpdated: (count, projectName, untilDate) =>
+      `Se actualizaron ${count} tareas a completadas para el proyecto ${projectName} hasta ${untilDate}.`,
+    unknownIntent: [
+      'Puedo ayudarte con estas operaciones:',
+      '- Mostrar proyectos y tareas retrasadas',
+      '- Mostrar clientes con pagos pendientes',
+      '- Actualizar tareas del proyecto hasta hoy',
+      '- Mostrar solicitudes de cotización vencidas sin propuesta del proveedor',
+    ].join('\n'),
+    operationFailed: (reason) =>
+      ['No pude completar esa operación en este momento.', `Motivo: ${reason}`, 'Vuelve a intentarlo en unos instantes.'].join('\n'),
+  },
+  'fr-FR': {
+    delayedProjectsHeading: '### Projets en Retard et Tâches',
+    delayedProjectsEmpty: 'Aucune tâche en retard n’a été trouvée pour les projets accessibles.',
+    delayedProjectItem: (project, count) => `- **${project}** (${count} tâches en retard)`,
+    delayedTaskItem: (title, dueDate) => `  - ${title} (échéance : ${dueDate})`,
+    duePaymentsHeading: '### Clients avec Paiements Dus',
+    duePaymentsEmpty: 'Aucun paiement dû n’a été trouvé.',
+    duePaymentsClientItem: (client, count) => `- **${client}** (${count} factures)`,
+    duePaymentsInvoiceItem: (invoice, dueDate, status) =>
+      `  - ${invoice} | échéance ${dueDate} | statut ${status}`,
+    quotesHeading: '### Demandes de Devis en Retard sans Proposition du Fournisseur',
+    quotesEmpty: 'Aucune demande de devis en retard sans proposition fournisseur n’a été trouvée.',
+    quotesItem: (requestNumber, supplier, deadline, status) =>
+      `- ${requestNumber} | fournisseur : **${supplier}** | date limite : ${deadline} | statut : ${status}`,
+    unauthorized: (role) =>
+      [
+        'Vous n’êtes pas autorisé à exécuter cette opération avec votre rôle actuel.',
+        `Rôle : ${role}`,
+        'Veuillez contacter un administrateur si cet accès est nécessaire.',
+      ].join('\n'),
+    projectRequired:
+      'Veuillez préciser le nom ou l’identifiant du projet entre guillemets, par exemple : mettre à jour les tâches du projet "Projet X" jusqu’à aujourd’hui.',
+    projectNotFound: (identifier) => `Projet introuvable pour l’identifiant : ${identifier}`,
+    guardrailBlocked: (count) =>
+      `Blocage de sécurité : ${count} tâches seraient mises à jour (> ${BULK_LIMIT}). Réessayez avec forceUpdate=true et overridePhrase="${OVERRIDE_PHRASE}".`,
+    noPendingTasks: (projectName, untilDate) =>
+      `Aucune tâche en attente n’a été trouvée pour le projet ${projectName} jusqu’au ${untilDate}.`,
+    tasksUpdated: (count, projectName, untilDate) =>
+      `${count} tâches ont été marquées comme terminées pour le projet ${projectName} jusqu’au ${untilDate}.`,
+    unknownIntent: [
+      'Je peux vous aider avec ces opérations :',
+      '- Afficher les projets et tâches en retard',
+      '- Afficher les clients avec des paiements dus',
+      '- Mettre à jour les tâches du projet jusqu’à aujourd’hui',
+      '- Afficher les demandes de devis en retard sans proposition fournisseur',
+    ].join('\n'),
+    operationFailed: (reason) =>
+      ['Je n’ai pas pu terminer cette opération pour le moment.', `Raison : ${reason}`, 'Veuillez réessayer dans un instant.'].join('\n'),
+  },
+}
 
 const isUUID = (value: string) =>
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value)
@@ -47,7 +238,11 @@ const RETRYABLE_INTENTS: AssistantIntent[] = [
   'update_tasks_until_today',
 ]
 
-const summarizeDelayedProjects = (rows: Array<Record<string, unknown>>) => {
+const summarizeDelayedProjects = (
+  rows: Array<Record<string, unknown>>,
+  language: SupportedLanguage
+) => {
+  const copy = copyByLanguage[language]
   const byProject = new Map<string, Array<Record<string, unknown>>>()
 
   for (const row of rows) {
@@ -57,23 +252,27 @@ const summarizeDelayedProjects = (rows: Array<Record<string, unknown>>) => {
     byProject.set(projectName, list)
   }
 
-  const lines: string[] = ['### Delayed Projects and Tasks']
+  const lines: string[] = [copy.delayedProjectsHeading]
   for (const [project, tasks] of byProject.entries()) {
-    lines.push(`- **${project}** (${tasks.length} delayed tasks)`)
+    lines.push(copy.delayedProjectItem(project, tasks.length))
     for (const task of tasks.slice(0, 8)) {
-      lines.push(`  - ${String(task.title)} (due: ${String(task.due_date || 'n/a')})`)
+      lines.push(copy.delayedTaskItem(String(task.title), String(task.due_date || 'n/a')))
     }
   }
 
   if (byProject.size === 0) {
-    return 'No delayed tasks were found for accessible projects.'
+    return copy.delayedProjectsEmpty
   }
 
   return lines.join('\n')
 }
 
-const summarizeDuePayments = (rows: Array<Record<string, unknown>>) => {
-  if (rows.length === 0) return 'No due payments were found.'
+const summarizeDuePayments = (
+  rows: Array<Record<string, unknown>>,
+  language: SupportedLanguage
+) => {
+  const copy = copyByLanguage[language]
+  if (rows.length === 0) return copy.duePaymentsEmpty
 
   const grouped = new Map<string, Array<Record<string, unknown>>>()
   for (const row of rows) {
@@ -83,29 +282,35 @@ const summarizeDuePayments = (rows: Array<Record<string, unknown>>) => {
     grouped.set(client, list)
   }
 
-  const lines: string[] = ['### Clients with Due Payments']
+  const lines: string[] = [copy.duePaymentsHeading]
   for (const [client, invoices] of grouped.entries()) {
-    lines.push(`- **${client}** (${invoices.length} invoices)`)
+    lines.push(copy.duePaymentsClientItem(client, invoices.length))
     for (const inv of invoices.slice(0, 6)) {
-      lines.push(
-        `  - ${String(inv.invoice_number || inv.id)} | due ${String(inv.due_date || 'n/a')} | status ${String(inv.status || 'n/a')}`
-      )
+      lines.push(copy.duePaymentsInvoiceItem(
+        String(inv.invoice_number || inv.id),
+        String(inv.due_date || 'n/a'),
+        String(inv.status || 'n/a')
+      ))
     }
   }
 
   return lines.join('\n')
 }
 
-const summarizeQuotes = (rows: Array<Record<string, unknown>>) => {
-  if (rows.length === 0) return 'No overdue quote requests pending vendor proposal were found.'
+const summarizeQuotes = (
+  rows: Array<Record<string, unknown>>,
+  language: SupportedLanguage
+) => {
+  const copy = copyByLanguage[language]
+  if (rows.length === 0) return copy.quotesEmpty
 
-  const lines: string[] = ['### Overdue Quote Requests without Vendor Proposal']
+  const lines: string[] = [copy.quotesHeading]
   for (const row of rows.slice(0, DEFAULT_LIMIT)) {
     const supplier = String((row.suppliers as { name?: string } | null)?.name || 'Unknown supplier')
     const reqNum = String(row.request_number || row.id)
     const deadline = String(row.response_deadline || 'n/a')
     const status = String(row.status || 'n/a')
-    lines.push(`- ${reqNum} | vendor: **${supplier}** | deadline: ${deadline} | status: ${status}`)
+    lines.push(copy.quotesItem(reqNum, supplier, deadline, status))
   }
 
   return lines.join('\n')
@@ -203,6 +408,8 @@ serve(async (req) => {
     const body = await req.json()
     const message = String(body?.message || '').trim()
     const sessionId = String(body?.sessionId || '').trim()
+    const language = getLanguage(body?.language)
+    const copy = copyByLanguage[language]
     const forceUpdate = Boolean(body?.forceUpdate)
     const overridePhrase = String(body?.overridePhrase || '').trim().toLowerCase()
 
@@ -393,9 +600,7 @@ serve(async (req) => {
       const isAllowed = Boolean(permissionRows?.[0]?.is_allowed)
       if (!isAllowed) {
         assistantMessage = [
-          'You are not authorized to run this operation with your current role.',
-          `Role: ${userRole}`,
-          'Please contact an administrator if this access is required.',
+          copy.unauthorized(userRole)
         ].join('\n')
 
         await logEvent('warning', 'Intent blocked by role policy', 'ai.superbot.permission.blocked', {
@@ -488,7 +693,10 @@ serve(async (req) => {
         data: delayedTasks,
       })
 
-      assistantMessage = summarizeDelayedProjects(delayedTasks as Array<Record<string, unknown>>)
+      assistantMessage = summarizeDelayedProjects(
+        delayedTasks as Array<Record<string, unknown>>,
+        language
+      )
       await logEvent('info', 'Delayed projects tool finished', 'ai.superbot.tool.finish', { count: delayedTasks.length })
     }
 
@@ -528,7 +736,7 @@ serve(async (req) => {
         data: normalized,
       })
 
-      assistantMessage = summarizeDuePayments(normalized)
+      assistantMessage = summarizeDuePayments(normalized, language)
       await logEvent('info', 'Due payments tool finished', 'ai.superbot.tool.finish', { count: normalized.length })
     }
 
@@ -537,7 +745,7 @@ serve(async (req) => {
 
       const projectIdentifier = llmIntent?.project_identifier || extractProjectIdentifier(message)
       if (!projectIdentifier) {
-        assistantMessage = 'Please specify the project name or id in quotes, for example: update tasks for project "Project X" until today.'
+        assistantMessage = copy.projectRequired
       } else {
         const projectQuery = isUUID(projectIdentifier)
           ? supabase.from('projects').select('id, name').eq('id', projectIdentifier).limit(1)
@@ -548,7 +756,7 @@ serve(async (req) => {
 
         const project = projectRows?.[0]
         if (!project) {
-          assistantMessage = `Project not found for identifier: ${projectIdentifier}`
+          assistantMessage = copy.projectNotFound(projectIdentifier)
         } else {
           const untilDate = llmIntent?.until_date && llmIntent.until_date !== 'current_date'
             ? llmIntent.until_date
@@ -572,7 +780,7 @@ serve(async (req) => {
           const effectiveOverride = (overridePhrase || llmIntent?.override_phrase || '').trim().toLowerCase()
 
           if (candidates.length > BULK_LIMIT && !effectiveForce && effectiveOverride !== OVERRIDE_PHRASE) {
-            assistantMessage = `Guardrail blocked: ${candidates.length} tasks would be updated (> ${BULK_LIMIT}). Retry with forceUpdate=true and overridePhrase="${OVERRIDE_PHRASE}".`
+            assistantMessage = copy.guardrailBlocked(candidates.length)
             await logEvent(
               'warning',
               'Bulk task update blocked by guardrail',
@@ -581,7 +789,7 @@ serve(async (req) => {
               'high'
             )
           } else if (candidates.length === 0) {
-            assistantMessage = `No pending tasks found for project ${project.name} up to ${untilDate}.`
+            assistantMessage = copy.noPendingTasks(project.name, untilDate)
           } else {
             const { data: statuses } = await supabase
               .from('project_task_statuses')
@@ -620,7 +828,7 @@ serve(async (req) => {
               },
             })
 
-            assistantMessage = `Updated ${candidates.length} tasks to completed for project ${project.name} up to ${untilDate}.`
+            assistantMessage = copy.tasksUpdated(candidates.length, project.name, untilDate)
 
             await logEvent(
               'info',
@@ -670,18 +878,12 @@ serve(async (req) => {
         data: data || [],
       })
 
-      assistantMessage = summarizeQuotes((data || []) as Array<Record<string, unknown>>)
+      assistantMessage = summarizeQuotes((data || []) as Array<Record<string, unknown>>, language)
       await logEvent('info', 'Quotes tool finished', 'ai.superbot.tool.finish', { count: data?.length || 0 })
     }
 
     if (intent === 'unknown') {
-      assistantMessage = [
-        'I can help with these operations:',
-        '- Show delayed projects and tasks',
-        '- Show clients with due payments',
-        '- Update project tasks up to today',
-        '- Show overdue quote requests without vendor proposal',
-      ].join('\n')
+      assistantMessage = copy.unknownIntent
     }
     } catch (toolError) {
       toolErrorOccurred = true
@@ -729,11 +931,7 @@ serve(async (req) => {
         })
       }
 
-      assistantMessage = [
-        'I could not complete that operation right now.',
-        `Reason: ${errorMessage}`,
-        'Please try again in a moment.',
-      ].join('\n')
+      assistantMessage = copy.operationFailed(errorMessage)
     }
 
     await supabase.from('ai_chat_messages').insert([

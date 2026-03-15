@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Platform Team Workspace & Role Model:**
+  - DB migration `20260315000000_add_platform_roles.sql`: adds `platform_owner`, `platform_support`, `platform_sales` to the `app_role` enum using the idempotent `IF NOT EXISTS` pattern
+  - `AppRole` TypeScript union extended with all three new platform roles
+  - `PLATFORM_ROLES` constant in `rolePermissions.ts` — kept separate from `ALL_ROLES` to prevent platform roles appearing in tenant-facing role pickers
+  - `ROLE_LABEL_KEYS` and `ROLE_DESCRIPTION_KEYS` updated with `super_admin`, `platform_owner`, `platform_support`, `platform_sales`
+  - New `platform-workspace` sidebar option visible only to platform roles and `super_admin`, with 9 tabs: Dashboard, Support Chat, Campaigns, Contacts, Forms, Tasks, Communication Log, Customer Admin, Global Templates
+  - Platform workspace pages under `src/pages/Platform/`: `PlatformDashboard`, `PlatformSupportChat`, `PlatformCampaigns`, `PlatformContacts`, `PlatformForms`, `PlatformTasks`, `PlatformCommunicationLog`, `PlatformCustomers`, `PlatformGlobalTemplates`
+  - 9 `/platform/*` routes in `App.tsx`, each guarded by `RoleGuard` enforcing per-route role access from the plan
+  - `RequirePlatformRoles` and `RequirePlatformOwner` convenience guard components in `RoleGuard.tsx`
+  - i18n: 10 new navigation keys + role labels/descriptions for all new platform roles across en-US, pt-BR, es-ES, fr-FR
+
 \n### Added\n
 - **Phase 6 — Trial & Subscription Emails:**
   - `execute-trial-emails` Edge Function with branded HTML templates and 4-locale support

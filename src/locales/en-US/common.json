@@ -331,7 +331,9 @@
       "regenerate": "Regenerate Insights"
     },
     "superBot": {
+      "analytics": "analytics",
       "clearConversation": "clearConversation",
+      "errorPrefix": "errorPrefix",
       "greetingQuestion": "greetingQuestion",
       "greetings": {
         "afternoon": "afternoon",
@@ -352,7 +354,13 @@
       },
       "searchPlaceholder": "searchPlaceholder",
       "subheadline": "subheadline",
-      "suggestions": "suggestions"
+      "suggestions": "suggestions",
+      "templateTitles": {
+        "delayedProjects": "delayedProjects",
+        "duePayments": "duePayments",
+        "updateTasks": "updateTasks",
+        "vendorQuotes": "vendorQuotes"
+      }
     }
   },
   "aiAnalyze": "AI Analyze",
@@ -2474,6 +2482,7 @@
   "collapse": "Collapse",
   "collapseAll": "Collapse All",
   "colors": "Colors",
+  "comingSoon": "comingSoon",
   "common": {
     "accessDenied": "accessDenied",
     "accessNotEnabled": "accessNotEnabled",
@@ -4603,6 +4612,7 @@
     "startTimeLabel": "Start Time",
     "titleLabel": "Title"
   },
+  "manage": "manage",
   "manageBilling": "manageBilling",
   "materials": "Materials",
   "meetingReview": {

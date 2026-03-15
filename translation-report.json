@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-14T22:45:47.611Z",
+  "timestamp": "2026-03-15T04:55:37.971Z",
   "summary": {
-    "totalMissing": 0,
+    "totalMissing": 24,
     "languages": [
       {
         "code": "en-US",
@@ -10,25 +10,148 @@
       },
       {
         "code": "pt-BR",
-        "missing": 0,
-        "complete": true
+        "missing": 8,
+        "complete": false
       },
       {
         "code": "es-ES",
-        "missing": 0,
-        "complete": true
+        "missing": 8,
+        "complete": false
       },
       {
         "code": "fr-FR",
-        "missing": 0,
-        "complete": true
+        "missing": 8,
+        "complete": false
       }
     ]
   },
   "details": {
     "en-US": [],
-    "pt-BR": [],
-    "es-ES": [],
-    "fr-FR": []
+    "pt-BR": [
+      {
+        "namespace": "common",
+        "key": "ai.superBot.analytics",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.errorPrefix",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.delayedProjects",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.duePayments",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.updateTasks",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.vendorQuotes",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "comingSoon",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "manage",
+        "reason": "empty"
+      }
+    ],
+    "es-ES": [
+      {
+        "namespace": "common",
+        "key": "ai.superBot.analytics",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.errorPrefix",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.delayedProjects",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.duePayments",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.updateTasks",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.vendorQuotes",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "comingSoon",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "manage",
+        "reason": "empty"
+      }
+    ],
+    "fr-FR": [
+      {
+        "namespace": "common",
+        "key": "ai.superBot.analytics",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.errorPrefix",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.delayedProjects",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.duePayments",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.updateTasks",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "ai.superBot.templateTitles.vendorQuotes",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "comingSoon",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "manage",
+        "reason": "empty"
+      }
+    ]
   }
 }

@@ -331,7 +331,9 @@
       "regenerate": "Régénérer les Insights"
     },
     "superBot": {
+      "analytics": "",
       "clearConversation": "clearConversation",
+      "errorPrefix": "",
       "greetingQuestion": "greetingQuestion",
       "greetings": {
         "afternoon": "afternoon",
@@ -352,7 +354,13 @@
       },
       "searchPlaceholder": "searchPlaceholder",
       "subheadline": "subheadline",
-      "suggestions": "suggestions"
+      "suggestions": "suggestions",
+      "templateTitles": {
+        "delayedProjects": "",
+        "duePayments": "",
+        "updateTasks": "",
+        "vendorQuotes": ""
+      }
     }
   },
   "aiAnalyze": "Analyse IA",
@@ -2474,6 +2482,7 @@
   "collapse": "Réduire",
   "collapseAll": "Tout réduire",
   "colors": "Couleurs",
+  "comingSoon": "",
   "common": {
     "accessDenied": "accessDenied",
     "accessNotEnabled": "accessNotEnabled",
@@ -4603,6 +4612,7 @@
     "startTimeLabel": "Heure de Début",
     "titleLabel": "Titre"
   },
+  "manage": "",
   "manageBilling": "Gérer la facturation",
   "materials": "Matériaux",
   "meetingReview": {

@@ -1,4 +1,5 @@
 import { useParams, useSearchParams } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import { FormRenderer } from '@/components/forms/Renderer/FormRenderer';
 import { PublicFormLayout } from '@/components/forms/Renderer/PublicFormLayout';
 import { useEffect, useState } from 'react';
@@ -35,6 +36,27 @@ export function PublicFormPage() {
   const [formData, setFormData] = useState<FormData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const { data: branding } = useQuery({
+    queryKey: ['public-form-branding', shareToken],
+    queryFn: async () => {
+      if (!shareToken) return null;
+
+      const { data, error: invokeError } = await supabase.functions.invoke('get-public-branding', {
+        body: { formShareToken: shareToken },
+      });
+
+      if (invokeError) throw invokeError;
+      if (!data?.success) throw new Error(data?.error || 'Failed to load public form branding');
+
+      return data.branding as {
+        companyName?: string | null;
+        companyLogoUrl?: string | null;
+      } | null;
+    },
+    enabled: !!shareToken,
+    retry: false,
+  });
 
   useEffect(() => {
     const fetchFormByToken = async () => {
@@ -124,7 +146,8 @@ export function PublicFormPage() {
   return (
     <PublicFormLayout 
       formTitle={formData.title}
-      logoUrl={theme?.logoUrl}
+      companyName={branding?.companyName || undefined}
+      logoUrl={theme?.logoUrl || branding?.companyLogoUrl || undefined}
       primaryColor={theme?.primaryColor}
       themeVariant={themeVariant}
     >
