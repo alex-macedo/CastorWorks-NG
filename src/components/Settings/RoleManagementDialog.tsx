@@ -18,10 +18,12 @@ import { ROLE_LABEL_KEYS } from "@/constants/rolePermissions";
 import type { AppRole } from "@/hooks/useUserRoles";
 
 type AppRoleBase = Database["public"]["Enums"]["app_role"];
-// Temporary extended type until backend types include all roles
-type AppRoleExtended = AppRoleBase | "site_supervisor" | "admin_office" | "client" | "architect" | "global_admin";
+type AppRoleExtended = AppRoleBase | "site_supervisor" | "admin_office" | "client" | "architect" | "global_admin" | "super_admin" | "platform_owner" | "platform_support" | "platform_sales";
 
-const availableRoles: AppRoleExtended[] = ["admin", "project_manager", "site_supervisor", "admin_office", "client", "viewer", "architect", "global_admin"];
+/** Roles that require is_support_user = TRUE (enforced by DB trigger). */
+const INTERNAL_ONLY_ROLES = new Set<AppRoleExtended>(["global_admin", "super_admin", "platform_owner", "platform_support", "platform_sales"]);
+
+const availableRoles: AppRoleExtended[] = ["admin", "project_manager", "site_supervisor", "admin_office", "client", "viewer", "architect", "global_admin", "super_admin", "platform_owner", "platform_support", "platform_sales"];
 
 interface RoleManagementDialogProps {
   userId: string;
@@ -96,7 +98,7 @@ export function RoleManagementDialog({
               />
               <Label htmlFor={role} className="cursor-pointer">
                 {t(ROLE_LABEL_KEYS[role as AppRole] || role)}
-                {role === "global_admin" && (
+                {INTERNAL_ONLY_ROLES.has(role) && (
                   <span className="ml-1 text-muted-foreground text-xs font-normal">
                     ({t("settings:globalAdminSupportOnly")})
                   </span>

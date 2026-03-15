@@ -17,9 +17,9 @@ import { ROLE_LABEL_KEYS } from "@/constants/rolePermissions";
 import type { AppRole } from "@/hooks/useUserRoles";
 
 type AppRoleBase = Database["public"]["Enums"]["app_role"];
-type AppRoleExtended = AppRoleBase | "site_supervisor" | "admin_office" | "client" | "architect" | "global_admin";
+type AppRoleExtended = AppRoleBase | "site_supervisor" | "admin_office" | "client" | "architect" | "global_admin" | "super_admin" | "platform_owner" | "platform_support" | "platform_sales";
 
-const availableRoles: AppRoleExtended[] = ["admin", "project_manager", "site_supervisor", "admin_office", "client", "viewer", "architect", "global_admin"];
+const availableRoles: AppRoleExtended[] = ["admin", "project_manager", "site_supervisor", "admin_office", "client", "viewer", "architect", "global_admin", "super_admin", "platform_owner", "platform_support", "platform_sales"];
 
 interface AddUserDialogProps {
   open: boolean;
