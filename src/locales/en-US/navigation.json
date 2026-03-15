@@ -140,5 +140,18 @@
   "weather": "Weather",
   "whatsAppTemplates": "WhatsApp Templates",
   "whatsapp": "WhatsApp Chat Center",
-  "whatsappSettings": "WhatsApp Settings"
+  "whatsappSettings": "WhatsApp Settings",
+  "platformWorkspaceSubtitle": "Manage platform operations, customers, and team tools",
+  "platformSupportChatSubtitle": "Handle incoming support conversations from customers",
+  "platformCampaignsSubtitle": "Manage outbound marketing and sales campaigns",
+  "platformContactsSubtitle": "View and manage all platform contacts",
+  "platformFormsSubtitle": "Design and manage data-collection forms",
+  "platformTasksSubtitle": "Track and manage platform team tasks",
+  "platformCommunicationLogSubtitle": "Review all customer communications and interactions",
+  "platformCustomersSubtitle": "Manage tenant accounts and module access",
+  "platformGlobalTemplatesSubtitle": "Publish and manage global templates for onboarded tenants",
+  "adminTenantsSubtitle": "View and manage all platform tenants",
+  "adminTenantModulesSubtitle": "Configure licensed module overrides for this tenant",
+  "telemetryIssuesSubtitle": "Review unlinked approvals and telemetry events",
+  "maintenanceSubtitle": "Control maintenance mode and scheduled downtime windows"
 }

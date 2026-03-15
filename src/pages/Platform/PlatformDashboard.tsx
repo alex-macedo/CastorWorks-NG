@@ -2,6 +2,7 @@ import { Building2, Users, MessageCircle, Send, FileQuestion, KanbanSquare, Mess
 import { Link } from 'react-router-dom'
 import { useLocalization } from '@/contexts/LocalizationContext'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SidebarHeaderShell } from '@/components/Layout/SidebarHeaderShell'
 
 const PLATFORM_TILES = [
   { titleKey: 'navigation:platformSupportChat', path: '/platform/support-chat', icon: MessageCircle },
@@ -19,13 +20,15 @@ export default function PlatformDashboard() {
 
   return (
     <div className="p-6 space-y-6">
-      <div className="flex items-center gap-3">
-        <Building2 className="h-7 w-7 text-primary" />
-        <div>
-          <h1 className="text-2xl font-semibold">{t('navigation:platformWorkspace')}</h1>
-          <p className="text-sm text-muted-foreground">{t('settings:roleDescriptions.platform_owner')}</p>
+      <SidebarHeaderShell>
+        <div className="flex items-center gap-4">
+          <Building2 className="h-8 w-8 shrink-0" />
+          <div>
+            <h1 className="text-2xl font-bold">{t('navigation:platformWorkspace')}</h1>
+            <p className="text-muted-foreground mt-1">{t('navigation:platformWorkspaceSubtitle')}</p>
+          </div>
         </div>
-      </div>
+      </SidebarHeaderShell>
 
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {PLATFORM_TILES.map(({ titleKey, path, icon: Icon }) => (

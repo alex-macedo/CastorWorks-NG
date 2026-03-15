@@ -140,5 +140,18 @@
   "weather": "Météo",
   "whatsAppTemplates": "Modèles WhatsApp",
   "whatsapp": "Centre de Chat WhatsApp",
-  "whatsappSettings": "Config. WhatsApp"
+  "whatsappSettings": "Config. WhatsApp",
+  "platformWorkspaceSubtitle": "Gérez les opérations de la plateforme, les clients et les outils d'équipe",
+  "platformSupportChatSubtitle": "Gérez les conversations de support entrantes des clients",
+  "platformCampaignsSubtitle": "Gérez les campagnes marketing et commerciales sortantes",
+  "platformContactsSubtitle": "Consultez et gérez tous les contacts de la plateforme",
+  "platformFormsSubtitle": "Concevez et gérez les formulaires de collecte de données",
+  "platformTasksSubtitle": "Suivez et gérez les tâches de l'équipe de la plateforme",
+  "platformCommunicationLogSubtitle": "Consultez toutes les communications et interactions avec les clients",
+  "platformCustomersSubtitle": "Gérez les comptes locataires et l'accès aux modules",
+  "platformGlobalTemplatesSubtitle": "Publiez et gérez les modèles globaux pour les locataires intégrés",
+  "adminTenantsSubtitle": "Consultez et gérez tous les locataires de la plateforme",
+  "adminTenantModulesSubtitle": "Configurez les remplacements de modules sous licence pour ce locataire",
+  "telemetryIssuesSubtitle": "Consultez les approbations non liées et les événements de télémétrie",
+  "maintenanceSubtitle": "Contrôlez le mode maintenance et les fenêtres d'arrêt planifiées"
 }

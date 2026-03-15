@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/table'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { SidebarHeaderShell } from '@/components/Layout/SidebarHeaderShell'
 
 interface TenantRow {
   id: string
@@ -39,11 +40,16 @@ export default function PlatformCustomers() {
   })
 
   return (
-    <div className="p-6 space-y-4">
-      <div className="flex items-center gap-3">
-        <Briefcase className="h-6 w-6 text-primary" />
-        <h1 className="text-2xl font-semibold">{t('navigation:platformCustomers')}</h1>
-      </div>
+    <div className="p-6 space-y-6">
+      <SidebarHeaderShell>
+        <div className="flex items-center gap-4">
+          <Briefcase className="h-8 w-8 shrink-0" />
+          <div>
+            <h1 className="text-2xl font-bold">{t('navigation:platformCustomers')}</h1>
+            <p className="text-muted-foreground mt-1">{t('navigation:platformCustomersSubtitle')}</p>
+          </div>
+        </div>
+      </SidebarHeaderShell>
 
       {isLoading && <p className="text-sm text-muted-foreground">{t('common:loading')}</p>}
       {error && <p className="text-sm text-destructive">{String(error)}</p>}
