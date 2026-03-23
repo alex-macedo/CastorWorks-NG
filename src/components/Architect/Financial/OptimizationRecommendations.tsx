@@ -71,8 +71,16 @@ export function OptimizationRecommendations({
 
   // Sort by priority: high > medium > low
   const sortedRecommendations = [...recommendations].sort((a, b) => {
-    const priorityOrder = { high: 0, medium: 1, low: 2 };
-    return priorityOrder[a.priority] - priorityOrder[b.priority];
+    const priorityOrder: Record<string, number> = {
+      critical: 0,
+      urgent: 0,
+      high: 1,
+      medium: 2,
+      low: 3,
+    }
+    const aPriority = priorityOrder[a.priority] ?? priorityOrder.medium
+    const bPriority = priorityOrder[b.priority] ?? priorityOrder.medium
+    return aPriority - bPriority
   });
 
   const displayedRecommendations = isOpen ? sortedRecommendations : sortedRecommendations.slice(0, maxItems);
@@ -152,6 +160,8 @@ function RecommendationCard({ recommendation, onApply, context = 'architect' }: 
   };
 
   const priorityConfig = {
+    critical: { badge: 'destructive', label: t(getTranslationKey('priorityHigh')) },
+    urgent: { badge: 'destructive', label: t(getTranslationKey('priorityHigh')) },
     high: { badge: 'destructive', label: t(getTranslationKey('priorityHigh')) },
     medium: { badge: 'secondary', label: t(getTranslationKey('priorityMedium')) },
     low: { badge: 'outline', label: t(getTranslationKey('priorityLow')) },
@@ -163,9 +173,9 @@ function RecommendationCard({ recommendation, onApply, context = 'architect' }: 
     complex: { icon: Layers, color: 'text-red-600', label: t(getTranslationKey('complexityComplex')) },
   };
 
-  const type = typeConfig[recommendation.type] || typeConfig.reallocation;
-  const priority = priorityConfig[recommendation.priority];
-  const complexity = complexityConfig[recommendation.implementationComplexity] || complexityConfig.moderate;
+  const type = typeConfig[recommendation.type as keyof typeof typeConfig] || typeConfig.reallocation;
+  const priority = priorityConfig[recommendation.priority as keyof typeof priorityConfig] || priorityConfig.medium;
+  const complexity = complexityConfig[recommendation.implementationComplexity as keyof typeof complexityConfig] || complexityConfig.moderate;
   const TypeIcon = type.icon;
   const ComplexityIcon = complexity.icon;
 
