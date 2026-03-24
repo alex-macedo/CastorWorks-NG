@@ -6,7 +6,7 @@ const { spawnSync } = require('child_process')
 const baseUrl = process.env.BASE_URL || 'https://devng.castorworks.cloud'
 const session = `e2e-devng-waitlist-${Date.now()}`
 const outDir = 'test-results/devng-waitlist'
-const email = `waitlist+${Date.now()}@castorworks.test`
+const email = `waitlist+${Date.now()}@example.com`
 
 fs.mkdirSync(outDir, { recursive: true })
 
@@ -62,37 +62,11 @@ try {
   run(['wait', '1200'])
   run(['screenshot', `${outDir}/02-waitlist-modal.png`, '--full'])
 
-  run([
-    'eval',
-    `
-      (() => {
-        const inputs = Array.from(document.querySelectorAll('input'))
-        const textarea = document.querySelector('textarea')
-        const values = ['Maria Silva', 'Construtora Horizonte', ${JSON.stringify(email)}, '+55 11 99999-9999']
-        const inputSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set
-        const textareaSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set
-
-        inputs.slice(0, 4).forEach((input, index) => {
-          input.focus()
-          inputSetter.call(input, values[index])
-          input.dispatchEvent(new Event('input', { bubbles: true }))
-          input.dispatchEvent(new Event('change', { bubbles: true }))
-        })
-
-        if (textarea) {
-          textarea.focus()
-          textareaSetter.call(textarea, 'Quero entender onboarding, cronograma e controle financeiro.')
-          textarea.dispatchEvent(new Event('input', { bubbles: true }))
-          textarea.dispatchEvent(new Event('change', { bubbles: true }))
-        }
-
-        return {
-          inputCount: inputs.length,
-          hasTextarea: Boolean(textarea),
-        }
-      })()
-    `,
-  ])
+  run(['fill', 'input[name="fullName"]', 'Maria Silva'])
+  run(['fill', 'input[name="companyName"]', 'Construtora Horizonte'])
+  run(['fill', 'input[name="email"]', email])
+  run(['fill', 'input[name="cellPhone"]', '+55 11 99999-9999'])
+  run(['fill', 'textarea[name="moreInfoRequest"]', 'Quero entender onboarding, cronograma e controle financeiro.'])
 
   run(['screenshot', `${outDir}/03-waitlist-filled.png`, '--full'])
 
