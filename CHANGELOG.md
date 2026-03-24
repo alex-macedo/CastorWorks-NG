@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **i18n E2E Audit Suite** — comprehensive two-layer test system to detect hardcoded English strings and missing translations at runtime:
+  - `scripts/audit-hardcoded-strings.cjs` — static AST-style scan of all 1,279 TSX/TS source files; detects JSX text nodes and UI attributes (`placeholder`, `aria-label`, etc.) that bypass `t()`; reports by file and line; generates `hardcoded-strings-report.json`
+  - `e2e/i18n-audit.agent-browser.cjs` — runtime browser audit using `agent-browser`; forces language via `localStorage` (pt-BR / es-ES / fr-FR), visits all 20 routes (3 public + 17 authenticated), and detects i18n key placeholders and hardcoded English words with word-boundary matching to avoid false positives on cognates (e.g. "Export" inside "Exportar")
+  - New npm scripts: `i18n:audit:static`, `i18n:audit:browser`, `i18n:audit` (full suite)
+  - New `bash scripts/agent-browser-e2e.sh i18n` pattern wiring all three sub-checks
 - **Platform Admin Module — Full CRUD (2026-03-16):**
   - 6 new DB migrations:
     - `20260316000000_create_platform_tasks.sql` — `platform_tasks` table with RLS (any platform role read/write; owner+super_admin delete)
@@ -54,6 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Trial locale updates (en-US, es-ES, fr-FR, pt-BR)
 
 \n### Fixed\n
+- **pt-BR `common.noData` untranslated** — `src/locales/pt-BR/common.json` top-level `noData` key was copied from en-US and never translated; fixed to `"Nenhum dado disponível"` (discovered by runtime audit on Projects list page)
+- **Procurement AI recommendations in es-ES / fr-FR** — `ProcurementAIRecommendations.tsx` `translateRecommendation()` only handled `pt-BR`; `es-ES` and `fr-FR` fell through to the Portuguese→English path, leaving AI recommendation text in English; added `en-to-es` and `en-to-fr` dictionaries with full phrase mappings and a `directionMap` for all supported locales
 - **Edge Function `fetch-users-with-roles`:** Fixed `SyntaxError: Identifier 'authInternalUrl' has already been declared` that prevented the function from loading; bypass Kong for Auth admin API calls; use direct Postgres for `user_roles`/`user_profiles` queries
 - **Edge Function `create-user`:** Direct Auth verification to bypass Kong key-auth JWT rejection
 - **SERVICE_ROLE_KEY signature mismatch:** Regenerated `SERVICE_ROLE_KEY` JWT to match current `JWT_SECRET` — GoTrue was rejecting admin API calls with `403 bad_jwt`

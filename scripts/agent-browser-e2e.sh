@@ -648,6 +648,45 @@ if [[ "$pattern_lc" == "phase2" ]]; then
   exit $failed
 fi
 
+# i18n audit — static hardcoded string analysis + runtime browser check
+run_i18n_static_audit() {
+  echo "🔍 Running static hardcoded-string audit..."
+  node scripts/audit-hardcoded-strings.cjs --report
+}
+
+run_i18n_browser_audit() {
+  echo "🌐 Running browser i18n audit (pt-BR, es-ES, fr-FR)..."
+  node e2e/i18n-audit.agent-browser.cjs
+}
+
+run_i18n_full_audit() {
+  failed=0
+  run_i18n_static_audit || failed=1
+  node scripts/check-translations.cjs || failed=1
+  run_i18n_browser_audit || failed=1
+  echo ""
+  if [[ $failed -eq 0 ]]; then
+    echo "✅ i18n audit complete — no issues found"
+  else
+    echo "❌ i18n audit found issues — see output above"
+  fi
+  exit $failed
+}
+
+if [[ "$pattern_lc" == "i18n-static" ]]; then
+  run_i18n_static_audit
+  exit $?
+fi
+
+if [[ "$pattern_lc" == "i18n-browser" ]]; then
+  run_i18n_browser_audit
+  exit $?
+fi
+
+if [[ "$pattern_lc" == "i18n" || "$pattern_lc" == "i18n-audit" ]]; then
+  run_i18n_full_audit
+fi
+
 if [[ "$pattern_lc" == "all" || "$pattern_lc" == "" || "$pattern_lc" == *"forms"* ]]; then
   run_forms_full_flow
 fi
