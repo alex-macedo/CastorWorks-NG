@@ -64,6 +64,8 @@ done
 
 If a migration fails (e.g. object already exists), fix or skip and continue. Ensure at least one user exists in NG’s `auth.users` (e.g. sign up once via the app) if any table has FK to `auth.users` and you plan to preserve `created_by`; otherwise use the FK-drop and NULL-out approach below.
 
+**Onboarding (tenant creation):** NG container on Hostinger is `castorworks-ng-db`. For sign-up → onboarding (create workspace) to work, apply: `20260301000001_create_tenants_and_tenant_users.sql`, `20260301100000_fix_tenants_insert_for_onboarding.sql`, `20260301100001_tenant_users_insert_allow_after_tenant_create.sql`.
+
 ---
 
 ## Step 2: Export data from current DB (config & templates only)

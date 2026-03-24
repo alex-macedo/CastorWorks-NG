@@ -273,6 +273,26 @@
       "title": "Integration WhatsApp"
     }
   },
+  "adminTenantModules": {
+    "addModule": "Ajouter un module",
+    "addModulePlaceholder": "Sélectionner un module…",
+    "added": "Module ajouté.",
+    "invalidTenant": "Tenant invalide.",
+    "noOverrides": "Aucun module en override. Ajoutez-en un ci-dessus.",
+    "remove": "Retirer",
+    "removed": "Module retiré.",
+    "subtitle": "Modules en override pour",
+    "title": "Modules du tenant"
+  },
+  "adminTenants": {
+    "accessDenied": "Accès refusé. Super admin uniquement.",
+    "modules": "Modules",
+    "name": "Nom",
+    "slug": "Slug",
+    "status": "Statut",
+    "title": "Tenants",
+    "userCount": "Utilisateurs"
+  },
   "agenda": {
     "dropHint": "dropHint",
     "startWithAI": "startWithAI",
@@ -4543,45 +4563,13 @@
   "language": "Langue",
   "lastProcessed": "Dernier traitement",
   "lastUpdated": "Dernière mise à jour",
-  "linkCopied": "Lien copié dans le presse-papiers",
-  "loading": "Chargement...",
-  "location": "Emplacement",
-  "tenantPicker": {
-    "title": "Sélectionner l'espace de travail",
-    "continue": "Continuer"
-  },
-  "adminTenants": {
-    "title": "Tenants",
-    "name": "Nom",
-    "slug": "Slug",
-    "status": "Statut",
-    "userCount": "Utilisateurs",
-    "accessDenied": "Accès refusé. Super admin uniquement.",
-    "modules": "Modules"
-  },
   "licensing": {
     "upgradePrompt": "Cette fonctionnalité nécessite un plan supérieur. Passez à une offre supérieure pour y accéder.",
     "upgradePromptModule": "Cette fonctionnalité ({{module}}) nécessite un plan supérieur. Passez à une offre supérieure pour y accéder."
   },
-  "adminTenantModules": {
-    "title": "Modules du tenant",
-    "subtitle": "Modules en override pour",
-    "addModule": "Ajouter un module",
-    "addModulePlaceholder": "Sélectionner un module…",
-    "remove": "Retirer",
-    "noOverrides": "Aucun module en override. Ajoutez-en un ci-dessus.",
-    "added": "Module ajouté.",
-    "removed": "Module retiré.",
-    "invalidTenant": "Tenant invalide."
-  },
-  "onboarding": {
-    "title": "Créez votre espace de travail",
-    "companyName": "Nom de l'entreprise ou de l'espace",
-    "slugOptional": "Slug d'URL (optionnel)",
-    "create": "Créer l'espace",
-    "creating": "Création...",
-    "errorCreating": "Échec de la création. Veuillez réessayer."
-  },
+  "linkCopied": "Lien copié dans le presse-papiers",
+  "loading": "Chargement...",
+  "location": "Emplacement",
   "logistics": "Logistique",
   "maintenance": {
     "currentStatus": "currentStatus",
@@ -4909,6 +4897,14 @@
   "onTrack": "Dans les Temps",
   "on_hold": "En Attente",
   "on_track": "Dans les Temps",
+  "onboarding": {
+    "companyName": "Nom de l'entreprise ou de l'espace",
+    "create": "Créer l'espace",
+    "creating": "Création...",
+    "errorCreating": "Échec de la création. Veuillez réessayer.",
+    "slugOptional": "Slug d'URL (optionnel)",
+    "title": "Créez votre espace de travail"
+  },
   "open": "[EN] Open",
   "order": "Ordre",
   "ordersCompleted": "{{count}} commandes terminées",
@@ -8233,6 +8229,10 @@
       "simple": "simple"
     },
     "updated": "updated"
+  },
+  "tenantPicker": {
+    "continue": "Continuer",
+    "title": "Sélectionner l'espace de travail"
   },
   "themePreview": {
     "accent": "Accent",

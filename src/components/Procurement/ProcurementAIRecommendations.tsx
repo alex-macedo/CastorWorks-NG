@@ -20,18 +20,18 @@ interface ProcurementAIRecommendationsProps {
 }
 
 /**
- * Translates AI recommendations to match the user's selected language
- * Supports bidirectional translation between Portuguese and English
+ * Translates AI recommendations to match the user's selected language.
+ * AI output is always in English; we map known phrases to each supported locale.
  */
 const translateRecommendation = (recommendation: string, language: string): string => {
-  // Translation mappings - bidirectional
   const translations: Record<string, Record<string, string>> = {
-    // English to Portuguese
+    // English → Portuguese (Brazil)
     'en-to-pt': {
       'Top supplier:': 'Melhor fornecedor:',
       '(Score:': '(Pontuação:',
       'Optimal purchase window:': 'Janela ideal de compra:',
       'Week': 'Semana',
+      'Optimal for bulk orders - Save': 'Ideal para pedidos em massa - Economizar',
       'Optimal for bulk orders': 'Ideal para pedidos em massa',
       'Save': 'Economizar',
       'Forecasted spend for next': 'Gasto previsto para os próximos',
@@ -44,10 +44,48 @@ const translateRecommendation = (recommendation: string, language: string): stri
       'Budget': 'Orçamento',
       'Spend': 'Gastar',
       'Forecast': 'Previsão',
-      // Specific phrases
-      'Optimal for bulk orders - Save': 'Ideal para pedidos em massa - Economizar',
     },
-    // Portuguese to English
+    // English → Spanish
+    'en-to-es': {
+      'Top supplier:': 'Mejor proveedor:',
+      '(Score:': '(Puntuación:',
+      'Optimal purchase window:': 'Ventana óptima de compra:',
+      'Week': 'Semana',
+      'Optimal for bulk orders - Save': 'Óptimo para pedidos al por mayor - Ahorrar',
+      'Optimal for bulk orders': 'Óptimo para pedidos al por mayor',
+      'Save': 'Ahorrar',
+      'Forecasted spend for next': 'Gasto previsto para los próximos',
+      'days: Review budget allocation': 'días: Revisar asignación de presupuesto',
+      'Review budget allocation': 'Revisar asignación de presupuesto',
+      'Supplier': 'Proveedor',
+      'Best': 'Mejor',
+      'Recommended': 'Recomendado',
+      'Optimize': 'Optimizar',
+      'Budget': 'Presupuesto',
+      'Spend': 'Gasto',
+      'Forecast': 'Previsión',
+    },
+    // English → French
+    'en-to-fr': {
+      'Top supplier:': 'Meilleur fournisseur:',
+      '(Score:': '(Score:',
+      'Optimal purchase window:': "Fenêtre d'achat optimale:",
+      'Week': 'Semaine',
+      'Optimal for bulk orders - Save': 'Optimal pour les commandes en gros - Économiser',
+      'Optimal for bulk orders': 'Optimal pour les commandes en gros',
+      'Save': 'Économiser',
+      'Forecasted spend for next': 'Dépenses prévues pour les',
+      'days: Review budget allocation': "prochains jours: Réviser l'allocation budgétaire",
+      'Review budget allocation': "Réviser l'allocation budgétaire",
+      'Supplier': 'Fournisseur',
+      'Best': 'Meilleur',
+      'Recommended': 'Recommandé',
+      'Optimize': 'Optimiser',
+      'Budget': 'Budget',
+      'Spend': 'Dépense',
+      'Forecast': 'Prévision',
+    },
+    // Portuguese → English (for AI responses that come in pt-BR)
     'pt-to-en': {
       'Recomendações Inteligentes de Compras': 'Smart Procurement Recommendations',
       'Melhor fornecedor:': 'Top supplier:',
@@ -69,8 +107,12 @@ const translateRecommendation = (recommendation: string, language: string): stri
     },
   };
 
-  // Determine translation direction based on target language
-  const direction = language === 'pt-BR' ? 'en-to-pt' : 'pt-to-en';
+  const directionMap: Record<string, string> = {
+    'pt-BR': 'en-to-pt',
+    'es-ES': 'en-to-es',
+    'fr-FR': 'en-to-fr',
+  };
+  const direction = directionMap[language] ?? 'pt-to-en';
   const translationMap = translations[direction];
 
   // Apply translations by replacing known patterns

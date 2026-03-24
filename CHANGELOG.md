@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **i18n E2E Audit Suite** — comprehensive two-layer test system to detect hardcoded English strings and missing translations at runtime:
+  - `scripts/audit-hardcoded-strings.cjs` — static AST-style scan of all 1,279 TSX/TS source files; detects JSX text nodes and UI attributes (`placeholder`, `aria-label`, etc.) that bypass `t()`; reports by file and line; generates `hardcoded-strings-report.json`
+  - `e2e/i18n-audit.agent-browser.cjs` — runtime browser audit using `agent-browser`; forces language via `localStorage` (pt-BR / es-ES / fr-FR), visits all 20 routes (3 public + 17 authenticated), and detects i18n key placeholders and hardcoded English words with word-boundary matching to avoid false positives on cognates (e.g. "Export" inside "Exportar")
+  - New npm scripts: `i18n:audit:static`, `i18n:audit:browser`, `i18n:audit` (full suite)
+  - New `bash scripts/agent-browser-e2e.sh i18n` pattern wiring all three sub-checks
+
+### Fixed
+- **pt-BR `common.noData` untranslated** — `src/locales/pt-BR/common.json` top-level `noData` key was copied from en-US and never translated; fixed to `"Nenhum dado disponível"` (discovered by runtime audit on Projects list page)
+- **Procurement AI recommendations in es-ES / fr-FR** — `ProcurementAIRecommendations.tsx` `translateRecommendation()` only handled `pt-BR`; `es-ES` and `fr-FR` fell through to the Portuguese→English path, leaving AI recommendation text in English; added `en-to-es` and `en-to-fr` dictionaries with full phrase mappings and a `directionMap` for all supported locales
+
+### Added
 - **TL2-B: Client Definitions Tracking** — Track client decisions (material selections, design approvals) with:
   - Status tracking (pending, in_progress, completed, overdue, blocking) and filter chips
   - Date-based overdue counters: past-due items (required_by_date < today) counted regardless of explicit status
