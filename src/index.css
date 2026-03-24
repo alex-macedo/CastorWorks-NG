@@ -4,9 +4,62 @@
    Usage: rgb(var(--variable)) to resolve to rgb(237 240 249)
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4: load JS config for plugins (tailwindcss-animate, typography) and theme extend */
+@config "../tailwind.config.ts";
+@source "./**/*.{ts,tsx}";
+/* Theme: @theme before @import so v4 generates bg-card, text-foreground etc. */
+@theme inline {
+  --color-background: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
+  --color-card: rgb(var(--card));
+  --color-card-foreground: rgb(var(--card-foreground));
+  --color-popover: rgb(var(--popover));
+  --color-popover-foreground: rgb(var(--popover-foreground));
+  --color-primary: rgb(var(--primary));
+  --color-primary-foreground: rgb(var(--primary-foreground));
+  --color-primary-light: rgb(var(--primary-light));
+  --color-primary-dark: rgb(var(--primary-dark));
+  --color-secondary: rgb(var(--secondary));
+  --color-secondary-foreground: rgb(var(--secondary-foreground));
+  --color-muted: rgb(var(--muted));
+  --color-muted-foreground: rgb(var(--muted-foreground));
+  --color-accent: rgb(var(--accent));
+  --color-accent-foreground: rgb(var(--accent-foreground));
+  --color-destructive: rgb(var(--destructive));
+  --color-success: rgb(var(--success));
+  --color-success-foreground: rgb(var(--success-foreground));
+  --color-warning: rgb(var(--warning));
+  --color-warning-foreground: rgb(var(--warning-foreground));
+  --color-border: rgb(var(--border));
+  --color-input: rgb(var(--input));
+  --color-ring: rgb(var(--ring));
+  --color-sidebar: rgb(var(--sidebar));
+  --color-sidebar-foreground: rgb(var(--sidebar-foreground));
+  --color-sidebar-primary: rgb(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: rgb(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: rgb(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: rgb(var(--sidebar-accent-foreground));
+  --color-sidebar-border: rgb(var(--sidebar-border));
+  --color-sidebar-ring: rgb(var(--sidebar-ring));
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-primary: var(--shadow-primary);
+  --gradient-primary: var(--gradient-primary);
+  --gradient-success: var(--gradient-success);
+  --gradient-warning: var(--gradient-warning);
+}
+@import "tailwindcss";
 
 /* Base theme variables */
 @layer base {
@@ -191,87 +244,15 @@
   }
 }
 
-/* CSS custom properties mapping for Tailwind @theme */
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary-light: var(--primary-light);
-  --color-primary-dark: var(--primary-dark);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
-  --color-warning: var(--warning);
-  --color-warning-foreground: var(--warning-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  --color-status-active: var(--status-active);
-  --color-status-active-foreground: var(--status-active-foreground);
-  --color-status-paused: var(--status-paused);
-  --color-status-paused-foreground: var(--status-paused-foreground);
-  --color-status-delayed: var(--status-delayed);
-  --color-status-delayed-foreground: var(--status-delayed-foreground);
-  --color-status-completed: var(--status-completed);
-  --color-status-completed-foreground: var(--status-completed-foreground);
-  --color-status-on-hold: var(--status-on-hold);
-  --color-status-on-hold-foreground: var(--status-on-hold-foreground);
-  --color-info: var(--info);
-  --color-info-foreground: var(--info-foreground);
-
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
-  --font-mono: var(--font-mono);
-
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-
-  --shadow-2xs: var(--shadow-2xs);
-  --shadow-xs: var(--shadow-xs);
-  --shadow-sm: var(--shadow-sm);
-  --shadow: var(--shadow);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
-  --shadow-primary: var(--shadow-primary);
-
-  --gradient-primary: var(--gradient-primary);
-  --gradient-success: var(--gradient-success);
-  --gradient-warning: var(--gradient-warning);
-}
 
 * {
   border-color: rgb(var(--border));
+}
+
+/* Sidebar: ensure dark background always applied (legacy CastorWorks look) */
+[data-sidebar="sidebar"] {
+  background-color: rgb(var(--sidebar));
+  color: rgb(var(--sidebar-foreground));
 }
 
 body {
@@ -300,7 +281,14 @@ body {
   }
 
   .glass-card {
-    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-xl;
+    background-color: rgb(255 255 255 / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.2);
+    box-shadow: var(--shadow-xl);
+  }
+  .dark .glass-card {
+    background-color: rgb(15 23 42 / 0.7);
+    border-color: rgb(255 255 255 / 0.1);
   }
 
   .vibrant-shadow-primary {
@@ -326,15 +314,36 @@ body {
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-secondary-foreground;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, rgb(var(--primary)), rgb(var(--primary-light)), rgb(var(--secondary-foreground)));
   }
 
   .metric-card-vibrant {
-    @apply relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 active:scale-95;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .metric-card-vibrant:hover {
+    transform: scale(1.02) translateY(-4px);
+  }
+  .metric-card-vibrant:active {
+    transform: scale(0.95);
   }
 
   .metric-card-glow {
-    @apply absolute -right-4 -top-4 w-24 h-24 rounded-full blur-3xl opacity-20 transition-opacity group-hover:opacity-40;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 9999px;
+    filter: blur(48px);
+    opacity: 0.2;
+    transition: opacity 0.3s;
+  }
+  .group:hover .metric-card-glow {
+    opacity: 0.4;
   }
 }
 

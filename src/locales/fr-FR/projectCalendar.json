@@ -1,7 +1,7 @@
 {
   "addHoliday": "Ajouter un Jour Férié",
-  "backToProject": "Retour au Projet",
   "adding": "Ajout en cours...",
+  "backToProject": "Retour au Projet",
   "calendarSettings": "Paramètres du Calendrier",
   "clickToMarkHoliday": "Cliquez sur un jour ouvrable pour le marquer comme férié. Cliquez sur un férié pour le supprimer.",
   "configureWorkingDaysAndHolidays": "Configurez les jours ouvrables et les fériés pour une planification précise du projet",
@@ -14,7 +14,15 @@
     "tuesday": "Mardi",
     "wednesday": "Mercredi"
   },
-  "dayNamesShort": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+  "dayNamesShort": [
+    "Dim",
+    "Lun",
+    "Mar",
+    "Mer",
+    "Jeu",
+    "Ven",
+    "Sam"
+  ],
   "description": "Gérez les jours ouvrables et les fériés pour une planification précise du projet",
   "enableCalendar": "Activer le Calendrier",
   "enableCalendarDesc": "Utiliser les calculs de jours ouvrables",

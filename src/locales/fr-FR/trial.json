@@ -1,0 +1,16 @@
+{
+  "daysLeft": "{{count}} jours restants dans votre essai",
+  "daysLeft_one": "1 jour restant dans votre essai",
+  "endsOn": "Votre essai se termine le {{date}}",
+  "upgradeNow": "Mettre à niveau maintenant",
+  "emails": {
+    "reminder_7d_title": "Votre essai CastorWorks se termine dans 7 jours",
+    "reminder_7d_body": "Votre essai pour {{tenantName}} se termine dans 7 jours ({{expiryDate}}). Passez à la version payante maintenant pour conserver l'accès complet.",
+    "reminder_3d_title": "Votre essai CastorWorks se termine dans 3 jours",
+    "reminder_3d_body": "Votre essai pour {{tenantName}} se termine dans 3 jours ({{expiryDate}}). Ne manquez pas — passez à la version payante pour continuer à utiliser CastorWorks.",
+    "reminder_1d_title": "Votre essai CastorWorks se termine demain",
+    "reminder_1d_body": "Votre essai pour {{tenantName}} se termine demain ({{expiryDate}}). Passez à la version payante maintenant. Après expiration, vous aurez un accès limité au niveau sandbox.",
+    "expiration_title": "Votre essai CastorWorks est terminé",
+    "expiration_body": "Votre essai pour {{tenantName}} est terminé. Vous avez maintenant un accès limité au niveau sandbox. Passez à la version payante à tout moment pour retrouver l'accès complet."
+  }
+}

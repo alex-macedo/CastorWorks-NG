@@ -42,6 +42,7 @@ import { LogSearchPanel } from "@/components/Settings/LogSearchPanel";
 import { GoogleDriveSettings } from "@/components/Settings/GoogleDriveSettings";
 import { CalendarSyncButton } from "@/components/Schedule/CalendarSyncButton";
 import { UserManagementPanel } from "@/components/Settings/UserManagementPanel";
+import { OnboardingPanel } from "@/components/Settings/OnboardingPanel";
 import { EditCompanyProfileDialog } from "@/components/Settings/EditCompanyProfileDialog";
 import { EditProfileDialog } from "@/components/Settings/EditProfileDialog";
 import { NotificationPreferencesDialog } from "@/components/Settings/NotificationPreferencesDialog";
@@ -59,6 +60,8 @@ import { ThirdPartyServices } from "@/components/Settings/ThirdPartyServices";
 import { AIProviderSettings } from "@/components/Settings/AIProviderSettings";
 import { WhatsAppAiAutoResponderCard } from "@/components/Settings/WhatsAppAiAutoResponderCard";
 import { AdminToolsPanel } from "@/components/Settings/AdminToolsPanel";
+import { SubscriptionPage } from "@/components/Settings/SubscriptionPage";
+import { BillingPage } from "@/components/Settings/BillingPage";
 const Settings = () => {
   const navigate = useNavigate();
   const { language, currency, timeZone, weatherLocation, temperatureUnit, numberFormat, updateSettings, t } = useLocalization();
@@ -194,9 +197,11 @@ const Settings = () => {
     setIsExporting(true);
     try {
       await exportAllData();
-      toast.success('Data exported successfully');
-    } catch (error: any) {
-      toast.error(`Export failed: ${error.message}`);
+      toast.success(t('settings.dataManagement.toast.exportSuccess'));
+    } catch (error: unknown) {
+      toast.error(t('settings.dataManagement.toast.exportFailedWithMessage', {
+        message: error instanceof Error ? error.message : String(error)
+      }));
     } finally {
       setIsExporting(false);
     }
@@ -204,7 +209,7 @@ const Settings = () => {
 
   const handleSelectiveExport = async () => {
     if (selectedTables.length === 0) {
-      toast.error('Please select at least one table to export');
+      toast.error(t('settings.dataManagement.toast.selectTableError'));
       return;
     }
 
@@ -212,9 +217,13 @@ const Settings = () => {
     setExportProgress(0);
     try {
       await exportTables(selectedTables, exportFormat, setExportProgress);
-      toast.success(`Data exported successfully as ${exportFormat.toUpperCase()}`);
-    } catch (error: any) {
-      toast.error(`Export failed: ${error.message}`);
+      toast.success(t('settings.dataManagement.toast.exportSuccessWithFormat', {
+        format: exportFormat.toUpperCase()
+      }));
+    } catch (error: unknown) {
+      toast.error(t('settings.dataManagement.toast.exportFailedWithMessage', {
+        message: error instanceof Error ? error.message : String(error)
+      }));
     } finally {
       setIsExporting(false);
       setExportProgress(0);
@@ -287,11 +296,13 @@ const Settings = () => {
           </RequireAdministrativeRoles>
 
           <TabsTrigger value="preferences" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.preferences")}</TabsTrigger>
+          <TabsTrigger value="subscription" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.subscription")}</TabsTrigger>
+          <TabsTrigger value="billing" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.billing")}</TabsTrigger>
           <TabsTrigger value="business-settings" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.business-settings")}</TabsTrigger>
           <TabsTrigger value="integrations" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.integrations')}</TabsTrigger>
           <TabsTrigger value="data-management" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.data-management")}</TabsTrigger>
           <RequireAdmin>
-            <TabsTrigger value="log-search" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">Log Search</TabsTrigger>
+            <TabsTrigger value="log-search" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.log-search')}</TabsTrigger>
           </RequireAdmin>
 
           <RequireAdmin>
@@ -299,7 +310,7 @@ const Settings = () => {
           </RequireAdmin>
           <TabsTrigger value="pwa" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.pwa')}</TabsTrigger>
           <RequireAdmin>
-            <TabsTrigger value="admin-tools" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.adminTools.title', 'Admin Tools')}</TabsTrigger>
+            <TabsTrigger value="admin-tools" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.adminTools.title')}</TabsTrigger>
           </RequireAdmin>
         </TabsList>
 
@@ -486,14 +497,21 @@ const Settings = () => {
 
          </TabsContent>
 
+         <TabsContent value="subscription" className="mt-6">
+           <SubscriptionPage />
+         </TabsContent>
 
+         <TabsContent value="billing" className="mt-6">
+           <BillingPage />
+         </TabsContent>
 
          <TabsContent value="users" className="space-y-6">
            <Tabs defaultValue="user-management" className="w-full">
-             <TabsList className="grid w-full grid-cols-3">
+             <TabsList className="grid w-full grid-cols-4">
                <TabsTrigger value="user-management">{t("settings:tabs.user-management")}</TabsTrigger>
                <TabsTrigger value="permissions">{t("settings:tabs.permission-management")}</TabsTrigger>
-               <TabsTrigger value="menu-order">{t("settings:tabs.menu-order") || "Menu Order"}</TabsTrigger>
+               <TabsTrigger value="menu-order">{t("settings:tabs.menu-order")}</TabsTrigger>
+               <TabsTrigger value="onboarding">{t("settings:tabs.onboarding")}</TabsTrigger>
              </TabsList>
 
              <TabsContent value="user-management" className="mt-6">
@@ -506,6 +524,10 @@ const Settings = () => {
 
              <TabsContent value="menu-order" className="mt-6">
                <SidebarOrderManager />
+             </TabsContent>
+
+             <TabsContent value="onboarding" className="mt-6">
+               <OnboardingPanel />
              </TabsContent>
            </Tabs>
          </TabsContent>

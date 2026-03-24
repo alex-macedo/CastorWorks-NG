@@ -7,6 +7,7 @@ const corsHeaders = {
 }
 
 const isAdminRole = (role: string) => ['admin', 'global_admin'].includes(role)
+const defaultLocale = 'en-US'
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -27,16 +28,24 @@ serve(async (req) => {
     const role = String(roles?.[0]?.role || 'viewer')
 
     if (req.method === 'GET') {
-      const locale = String(new URL(req.url).searchParams.get('locale') || 'en-US')
+      const locale = String(new URL(req.url).searchParams.get('locale') || defaultLocale)
       const { data, error } = await supabase
         .from('castormind_prompt_templates')
         .select('*')
         .eq('is_active', true)
-        .or(`locale.eq.${locale},locale.eq.en-US`)
+        .or(`locale.eq.${locale},locale.eq.${defaultLocale}`)
         .order('updated_at', { ascending: false })
 
       if (error) throw error
-      return new Response(JSON.stringify({ items: data || [] }), {
+      const prioritizedItems = (data || [])
+        .sort((a, b) => {
+          const aPriority = a.locale === locale ? 0 : 1
+          const bPriority = b.locale === locale ? 0 : 1
+          return aPriority - bPriority
+        })
+        .filter((item, index, items) => index === items.findIndex(candidate => candidate.intent === item.intent))
+
+      return new Response(JSON.stringify({ items: prioritizedItems }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
     }
@@ -145,4 +154,3 @@ serve(async (req) => {
     )
   }
 })
-

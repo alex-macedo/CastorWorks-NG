@@ -143,11 +143,11 @@ export const TranslationMaintenanceEditor = () => {
       setHasChanges(false);
     } catch (error) {
       console.error('❌ Error loading translations:', error);
-      toast.error('Failed to load translations. Check browser console for details.');
+      toast.error(t('settings.translationMaintenance.loadError'));
     } finally {
       setIsLoading(false);
     }
-  }, [targetLanguage]);
+  }, [t, targetLanguage]);
 
   useEffect(() => {
     loadTranslations();
@@ -174,7 +174,7 @@ export const TranslationMaintenanceEditor = () => {
         }));
 
       if (upsertData.length === 0) {
-        toast.warning('No translations to save');
+        toast.warning(t('settings.translationMaintenance.noTranslationsToSave'));
         return;
       }
 
@@ -187,14 +187,14 @@ export const TranslationMaintenanceEditor = () => {
 
       if (error) throw error;
 
-      toast.success(`Successfully saved ${upsertData.length} translations for ${languageMetadata[targetLanguage].nativeName}`);
+      toast.success(t('settings.translationMaintenance.saveSuccess', { count: upsertData.length, language: languageMetadata[targetLanguage].nativeName }));
       setHasChanges(false);
 
       // Reload to get fresh data with IDs
       await loadTranslations();
     } catch (error) {
       console.error('Error saving translations:', error);
-      toast.error('Failed to save translations');
+      toast.error(t('settings.translationMaintenance.saveError'));
     } finally {
       setIsSaving(false);
     }
@@ -211,18 +211,18 @@ export const TranslationMaintenanceEditor = () => {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Translation Maintenance</CardTitle>
+            <CardTitle>{t('settings.translationMaintenance.title')}</CardTitle>
             <CardDescription>
-              Review and update all translations for the selected language
+              {t('settings.translationMaintenance.description')}
             </CardDescription>
           </div>
           <div className="flex items-center gap-4">
             <div className="text-right">
               <div className="text-sm font-medium">
-                {completedCount} / {translations.length} translated
+                {t('settings.translationMaintenance.translated', { completed: completedCount, total: translations.length })}
               </div>
               <div className="text-xs text-muted-foreground">
-                {completionPercentage}% complete
+                {t('settings.translationMaintenance.percentComplete', { percent: completionPercentage })}
               </div>
             </div>
           </div>
@@ -330,7 +330,7 @@ export const TranslationMaintenanceEditor = () => {
                     <TableRow key={`${item.entityType}-${item.entityId}`}>
                       <TableCell>
                         <Badge variant={item.entityType === 'category' ? 'default' : 'outline'}>
-                          {item.entityType === 'category' ? 'Category' : 'Value'}
+                          {item.entityType === 'category' ? t('settings.translationMaintenance.category') : t('settings.translationMaintenance.value')}
                         </Badge>
                       </TableCell>
                       <TableCell className="font-mono text-sm">
@@ -338,14 +338,14 @@ export const TranslationMaintenanceEditor = () => {
                       </TableCell>
                       <TableCell>
                         <div className="text-sm text-muted-foreground">
-                          {item.sourceText || <em className="text-destructive">No source text</em>}
+                          {item.sourceText || <em className="text-destructive">{t('settings.translationMaintenance.noSourceText')}</em>}
                         </div>
                       </TableCell>
                       <TableCell>
                         <Input
                           value={item.targetText}
                           onChange={(e) => updateTranslation(index, e.target.value)}
-                          placeholder={`Enter ${languageMetadata[targetLanguage].nativeName} translation...`}
+                          placeholder={t('settings.translationMaintenance.placeholder', { language: languageMetadata[targetLanguage].nativeName })}
                           className={!item.targetText.trim() ? 'border-warning' : ''}
                         />
                       </TableCell>
@@ -362,18 +362,18 @@ export const TranslationMaintenanceEditor = () => {
           <div className="text-sm text-muted-foreground">
             {missingCount > 0 && (
               <span className="text-warning font-medium">
-                {missingCount} translation{missingCount !== 1 ? 's' : ''} missing
+                {t('settings.translationMaintenance.missing', { count: missingCount })}
               </span>
             )}
             {missingCount === 0 && (
               <span className="text-success font-medium">
-                All translations complete!
+                {t('settings.translationMaintenance.allComplete')}
               </span>
             )}
           </div>
           {hasChanges && (
             <div className="text-sm text-muted-foreground">
-              Unsaved changes
+              {t('settings.translationMaintenance.unsavedChanges')}
             </div>
           )}
         </div>

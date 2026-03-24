@@ -1,7 +1,7 @@
 {
   "addHoliday": "Adicionar Feriado",
-  "backToProject": "Voltar ao Projeto",
   "adding": "Adicionando...",
+  "backToProject": "Voltar ao Projeto",
   "calendarSettings": "Configurações do Calendário",
   "clickToMarkHoliday": "Clique em um dia útil para marcar como feriado. Clique em um feriado para removê-lo.",
   "configureWorkingDaysAndHolidays": "Configure dias úteis e feriados para agendamento preciso do projeto",
@@ -14,7 +14,15 @@
     "tuesday": "Terça-feira",
     "wednesday": "Quarta-feira"
   },
-  "dayNamesShort": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+  "dayNamesShort": [
+    "Dom",
+    "Seg",
+    "Ter",
+    "Qua",
+    "Qui",
+    "Sex",
+    "Sáb"
+  ],
   "description": "Gerencie dias úteis e feriados para agendamento preciso do projeto",
   "enableCalendar": "Habilitar Calendário",
   "enableCalendarDesc": "Usar cálculos de dias úteis",

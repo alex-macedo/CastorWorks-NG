@@ -1,6 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { useTenant } from '@/contexts/TenantContext';
 import type { Database } from '@/integrations/supabase/types';
 
 type Client = Database['public']['Tables']['clients']['Row'];
@@ -10,10 +11,15 @@ type ClientUpdate = Database['public']['Tables']['clients']['Update'];
 export const useClients = () => {
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const { tenantId } = useTenant();
 
   const { data: clients, isLoading, error } = useQuery({
-    queryKey: ['clients'],
+    queryKey: ['clients', tenantId],
     queryFn: async () => {
+      if (!tenantId) {
+        return [] as Client[];
+      }
+
       try {
         const { data, error } = await supabase
           .from('clients')
@@ -27,13 +33,21 @@ export const useClients = () => {
         return [] as Client[];
       }
     },
+    enabled: !!tenantId,
   });
 
   const createClient = useMutation({
     mutationFn: async (client: ClientInsert) => {
+      if (!tenantId) {
+        throw new Error('No active tenant selected');
+      }
+
       const { data, error } = await supabase
         .from('clients')
-        .insert(client)
+        .insert({
+          ...client,
+          tenant_id: tenantId,
+        })
         .select()
         .single();
 
@@ -41,7 +55,7 @@ export const useClients = () => {
       return data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['clients'] });
+      queryClient.invalidateQueries({ queryKey: ['clients', tenantId] });
       toast({
         title: 'Client created',
         description: 'The client has been created successfully.',
@@ -69,7 +83,7 @@ export const useClients = () => {
       return data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['clients'] });
+      queryClient.invalidateQueries({ queryKey: ['clients', tenantId] });
       toast({
         title: 'Client updated',
         description: 'The client has been updated successfully.',
@@ -94,7 +108,7 @@ export const useClients = () => {
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['clients'] });
+      queryClient.invalidateQueries({ queryKey: ['clients', tenantId] });
       toast({
         title: 'Client deleted',
         description: 'The client has been deleted successfully.',

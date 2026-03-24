@@ -1,0 +1,143 @@
+name: Deploy DevNG Nginx
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'deploy/nginx/devng.castorworks.conf'
+      - '.github/workflows/deploy-devng-nginx.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: devng-nginx-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Upload and reload nginx
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://devng.castorworks.cloud
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate required secrets
+        env:
+          NG_SSH_PRIVATE_KEY: ${{ secrets.NG_SSH_PRIVATE_KEY }}
+          NG_SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          NG_SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+          NG_SSH_USER: ${{ secrets.NG_SSH_USER }}
+        run: |
+          MISSING=""
+          [ -z "${NG_SSH_PRIVATE_KEY}" ] && MISSING="${MISSING} NG_SSH_PRIVATE_KEY"
+          [ -z "${NG_SSH_HOST}" ] && MISSING="${MISSING} NG_SSH_HOST"
+          [ -z "${NG_SSH_PORT}" ] && MISSING="${MISSING} NG_SSH_PORT"
+          [ -z "${NG_SSH_USER}" ] && MISSING="${MISSING} NG_SSH_USER"
+          if [ -n "${MISSING}" ]; then
+            echo "::error::Missing required secrets:${MISSING}"
+            exit 1
+          fi
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.NG_SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${SSH_PRIVATE_KEY}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${SSH_PORT}" "${SSH_HOST}" >> ~/.ssh/known_hosts
+
+      - name: Upload nginx config
+        env:
+          SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+          SSH_USER: ${{ secrets.NG_SSH_USER }}
+        run: |
+          scp -i ~/.ssh/deploy_key -P "${SSH_PORT}" \
+            deploy/nginx/devng.castorworks.conf \
+            "${SSH_USER}@${SSH_HOST}:/tmp/devng.castorworks.conf.new"
+
+      - name: Install nginx config with rollback
+        env:
+          SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+          SSH_USER: ${{ secrets.NG_SSH_USER }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" '
+            set -euo pipefail
+            TARGET="/etc/nginx/sites-available/devng.castorworks.conf"
+            BACKUP="/etc/nginx/sites-available/devng.castorworks.conf.bak.$(date +%Y%m%d%H%M%S)"
+            if [ -f "${TARGET}" ]; then
+              cp "${TARGET}" "${BACKUP}"
+            fi
+            cp /tmp/devng.castorworks.conf.new "${TARGET}"
+            if nginx -t; then
+              systemctl reload nginx
+            else
+              if [ -f "${BACKUP}" ]; then
+                cp "${BACKUP}" "${TARGET}"
+              fi
+              nginx -t
+              exit 1
+            fi
+          '
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  validate:
+    name: Validate nginx routing
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    steps:
+      - name: Wait for propagation
+        run: sleep 10
+
+      - name: Validate root landing route
+        run: |
+          curl -fsSL https://devng.castorworks.cloud/ -o landing.html
+          grep -q 'data-page="castorworks-landing"' landing.html
+
+      - name: Validate login route
+        run: |
+          curl -fsSL https://devng.castorworks.cloud/login -o login.html
+          if grep -q 'data-page="castorworks-landing"' login.html; then
+            echo "::error::Login route is serving the landing page"
+            exit 1
+          fi
+          grep -q '<div id="root"></div>' login.html
+
+  cleanup:
+    name: Cleanup temp config
+    runs-on: ubuntu-latest
+    needs: [deploy, validate]
+    if: always()
+    steps:
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.NG_SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${SSH_PRIVATE_KEY}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${SSH_PORT}" "${SSH_HOST}" >> ~/.ssh/known_hosts
+
+      - name: Remove uploaded temp file
+        env:
+          SSH_HOST: ${{ secrets.NG_SSH_HOST }}
+          SSH_PORT: ${{ secrets.NG_SSH_PORT }}
+          SSH_USER: ${{ secrets.NG_SSH_USER }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" \
+            'rm -f /tmp/devng.castorworks.conf.new'
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

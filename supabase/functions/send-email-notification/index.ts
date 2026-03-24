@@ -3,6 +3,7 @@ import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import DOMPurify from "https://esm.sh/isomorphic-dompurify@2.9.0";
 import { authenticateRequest, createServiceRoleClient, verifyAdminRole, verifyProjectAdminAccess } from "../_shared/authorization.ts";
 import { createErrorResponse } from "../_shared/errorHandler.ts";
+import { sendEmailViaHostinger } from "../_shared/providers/index.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -57,9 +58,10 @@ serve(async (req) => {
       throw new Error('Email integration is not enabled');
     }
 
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
-    if (!RESEND_API_KEY) {
-      throw new Error('RESEND_API_KEY not configured');
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
+    if (!hostingerFromEmail) {
+      throw new Error('Hostinger SMTP not configured');
     }
 
     // Get company settings for sender info
@@ -69,7 +71,7 @@ serve(async (req) => {
       .single();
 
     const senderName = companySettings?.company_name || 'Construction Management';
-    const senderEmail = companySettings?.email || 'onboarding@resend.dev';
+    const senderEmail = companySettings?.email || hostingerFromEmail;
 
     // Create notification record
     const { data: notification, error: notificationError } = await supabaseClient
@@ -87,28 +89,15 @@ serve(async (req) => {
 
     if (notificationError) throw notificationError;
 
-    // Send email via Resend API
     try {
-      const emailResponse = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: `${senderName} <${senderEmail}>`,
-          to: [recipientEmail],
-          subject,
-          html: sanitizedBody,
-        }),
+      const result = await sendEmailViaHostinger({
+        fromEmail: hostingerFromEmail,
+        fromName: senderName,
+        html: sanitizedBody,
+        replyTo: senderEmail,
+        subject,
+        to: [recipientEmail],
       });
-
-      if (!emailResponse.ok) {
-        const errorData = await emailResponse.json();
-        throw new Error(`Resend API error: ${JSON.stringify(errorData)}`);
-      }
-
-      const result = await emailResponse.json();
       console.log('Email sent successfully:', result);
 
       // Update notification status

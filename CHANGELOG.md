@@ -12,12 +12,77 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `e2e/i18n-audit.agent-browser.cjs` — runtime browser audit using `agent-browser`; forces language via `localStorage` (pt-BR / es-ES / fr-FR), visits all 20 routes (3 public + 17 authenticated), and detects i18n key placeholders and hardcoded English words with word-boundary matching to avoid false positives on cognates (e.g. "Export" inside "Exportar")
   - New npm scripts: `i18n:audit:static`, `i18n:audit:browser`, `i18n:audit` (full suite)
   - New `bash scripts/agent-browser-e2e.sh i18n` pattern wiring all three sub-checks
+- **Platform Admin Module — Full CRUD (2026-03-16):**
+  - 6 new DB migrations:
+    - `20260316000000_create_platform_tasks.sql` — `platform_tasks` table with RLS (any platform role read/write; owner+super_admin delete)
+    - `20260316000001_create_platform_communication_log.sql` — append-only `platform_communication_log` table (no UPDATE RLS)
+    - `20260316000002_create_platform_support_tickets.sql` — `platform_support_tickets` + `platform_support_messages` tables with thread-based messaging
+    - `20260316000003_create_global_templates.sql` — `global_templates` table with family/status lifecycle and versioning
+    - `20260316000004_extend_contacts_rls_for_platform_roles.sql` — extends contact RLS to include all platform roles
+    - `20260316000005_extend_tenants_policies_for_platform.sql` — adds tenants UPDATE/DELETE policies and extends SELECT for platform roles
+  - New `platform` i18n namespace with all keys across en-US, pt-BR, es-ES, fr-FR
+  - New `src/types/platform.types.ts` — TypeScript interfaces + Zod schemas for Tasks, CommLog, SupportTickets, GlobalTemplates, Tenants
+  - 5 new hooks: `usePlatformTasks`, `usePlatformCommunicationLog`, `usePlatformSupportTickets`, `useGlobalTemplates`, `useTenants`
+  - 16 new shared components under `src/components/Platform/`:
+    - Contacts: `ContactSheet`, `DeleteContactDialog`
+    - Customers: `TenantSheet`, `DeleteTenantDialog`
+    - Tasks: `TaskSheet`, `DeleteTaskDialog`, `TaskStatusBadge`, `TaskPriorityBadge`
+    - CommunicationLog: `LogEntrySheet`, `DeleteLogEntryDialog`
+    - SupportChat: `TicketSheet`, `SupportTicketStatusBadge`, `SupportTicketPriorityBadge`
+    - GlobalTemplates: `TemplateSheet`, `DeleteTemplateDialog`, `TemplateStatusBadge`
+  - All 8 Platform workspace pages rewritten with full CRUD tables, Sheet forms, and AlertDialog confirms:
+    - `PlatformContacts` — create/edit/delete contacts
+    - `PlatformCustomers` — create/edit/delete tenants (with cascade warning) + slug auto-gen
+    - `PlatformForms` — status tabs + publish/unpublish/duplicate/delete
+    - `PlatformCampaigns` — execute/cancel/delete with confirm dialogs
+    - `PlatformTasks` — status filter tabs + create/edit/delete with priority & status badges
+    - `PlatformCommunicationLog` — append-only log with channel icons, direction/status badges
+    - `PlatformGlobalTemplates` — family filter tabs + publish/archive/delete lifecycle (delete blocked on published)
+    - `PlatformSupportChat` — two-pane layout (ticket list + message thread + reply form)
 
-### Fixed
+- **Platform Team Workspace & Role Model:**
+  - DB migration `20260315000000_add_platform_roles.sql`: adds `platform_owner`, `platform_support`, `platform_sales` to the `app_role` enum using the idempotent `IF NOT EXISTS` pattern
+  - `AppRole` TypeScript union extended with all three new platform roles
+  - `PLATFORM_ROLES` constant in `rolePermissions.ts` — kept separate from `ALL_ROLES` to prevent platform roles appearing in tenant-facing role pickers
+  - `ROLE_LABEL_KEYS` and `ROLE_DESCRIPTION_KEYS` updated with `super_admin`, `platform_owner`, `platform_support`, `platform_sales`
+  - New `platform-workspace` sidebar option visible only to platform roles and `super_admin`, with 9 tabs: Dashboard, Support Chat, Campaigns, Contacts, Forms, Tasks, Communication Log, Customer Admin, Global Templates
+  - Platform workspace pages under `src/pages/Platform/`: `PlatformDashboard`, `PlatformSupportChat`, `PlatformCampaigns`, `PlatformContacts`, `PlatformForms`, `PlatformTasks`, `PlatformCommunicationLog`, `PlatformCustomers`, `PlatformGlobalTemplates`
+  - 9 `/platform/*` routes in `App.tsx`, each guarded by `RoleGuard` enforcing per-route role access from the plan
+  - `RequirePlatformRoles` and `RequirePlatformOwner` convenience guard components in `RoleGuard.tsx`
+  - i18n: 10 new navigation keys + role labels/descriptions for all new platform roles across en-US, pt-BR, es-ES, fr-FR
+
+\n### Added\n
+- **Phase 6 — Trial & Subscription Emails:**
+  - `execute-trial-emails` Edge Function with branded HTML templates and 4-locale support
+  - Shared modules: `trialEmailCopy.ts` (localized email copy), `trialEmailTemplates.ts` (HTML templates)
+  - DB migration `20260306000000_trial_email_schema.sql`: `trial_email_logs`, `trial_reminder_due_candidates` view, `trial_expiration_email_queue`, auto-trigger on trial expiry
+  - Trial locale updates (en-US, es-ES, fr-FR, pt-BR)
+
+\n### Fixed\n
 - **pt-BR `common.noData` untranslated** — `src/locales/pt-BR/common.json` top-level `noData` key was copied from en-US and never translated; fixed to `"Nenhum dado disponível"` (discovered by runtime audit on Projects list page)
 - **Procurement AI recommendations in es-ES / fr-FR** — `ProcurementAIRecommendations.tsx` `translateRecommendation()` only handled `pt-BR`; `es-ES` and `fr-FR` fell through to the Portuguese→English path, leaving AI recommendation text in English; added `en-to-es` and `en-to-fr` dictionaries with full phrase mappings and a `directionMap` for all supported locales
+- **Edge Function `fetch-users-with-roles`:** Fixed `SyntaxError: Identifier 'authInternalUrl' has already been declared` that prevented the function from loading; bypass Kong for Auth admin API calls; use direct Postgres for `user_roles`/`user_profiles` queries
+- **Edge Function `create-user`:** Direct Auth verification to bypass Kong key-auth JWT rejection
+- **SERVICE_ROLE_KEY signature mismatch:** Regenerated `SERVICE_ROLE_KEY` JWT to match current `JWT_SECRET` — GoTrue was rejecting admin API calls with `403 bad_jwt`
+- **i18n:** Filled 156 empty translation values across pt-BR, es-ES, fr-FR (sidebar order, translation maintenance, billing, subscription, user management)
+- **i18n + projects:** Added `projectCalendar` to scanner namespaces, resolved scanner parse errors, and filled missing translation values for project result counts and account/navigation copy
 
-### Added
+\n### Changed
+\n
+- **ROADMAP/STATE:** Marked v1.1 (Phases 3–6) as shipped; Phase 7 (AI Action Credits & Metering) is next
+- **Phase 4 — Payment & Subscription (Stripe):**
+  - `SubscriptionPage` and `SubscriptionCheckoutFlow` components with plan selection, upgrade/downgrade flow, and Stripe Checkout redirect
+  - `BillingPage` component with invoice history, PDF download, and Stripe Customer Portal link
+  - `useSubscription` and `useBillingHistory` hooks for server state via TanStack Query
+  - `subscription` i18n namespace (en-US, es-ES, fr-FR, pt-BR)
+  - Edge Functions: `create-checkout-session`, `create-billing-portal-session`, `list-billing-history`, `get-invoice-pdf`, `stripe-webhook`
+  - DB migrations: `20260304000000_subscriptions_and_stripe.sql` (schema + RLS), `20260304000001_stripe_price_ids.sql`
+  - Setup scripts: `scripts/stripe-phase4-setup.mjs`, `scripts/stripe-phase4-apply.sh`, `scripts/set-stripe-price-ids.sql`
+  - Runbook: `docs/runbooks/stripe-phase4-setup.md`
+  - Settings page gains **Subscription** and **Billing** tabs
+- **i18n tooling:** `scripts/i18n-add-namespace.mjs` — scaffolds a new namespace across all 4 locales and wires up `critical.ts` + `i18n.ts` automatically (`npm run i18n:add-namespace -- <name>`)
+- **E2E tests:** `e2e/add-user.agent-browser.cjs` and companion fixtures for the add-user flow
+- **Deploy script:** `deploy/deploy-edge-functions-ng.sh` for CastorWorks-NG edge function deployments
 - **TL2-B: Client Definitions Tracking** — Track client decisions (material selections, design approvals) with:
   - Status tracking (pending, in_progress, completed, overdue, blocking) and filter chips
   - Date-based overdue counters: past-due items (required_by_date < today) counted regardless of explicit status
@@ -58,15 +123,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **AppNotifications**: Real notification data integration (no demo fallback); Realtime subscription for new notifications
   - **i18n**: transcriptPlaceholder for meetings (en-US, pt-BR, es-ES, fr-FR); annotations.reopen
 
-### Security
+\n### Fixed\n
+- **Auth / Add-User Edge Function:** Resolved JWT validation and RLS errors (`PGRST301`) that blocked user creation; service_role can now manage `user_roles` and `user_profiles`
+- **useCallback stability:** Wrapped Supabase module references in `useMemo` to prevent hook dependency churn
+- **Tailwind CSS v4 Compatibility** — Upgraded PostCSS configuration to use `@tailwindcss/postcss` (required for Tailwind v4) and updated CSS imports from `@tailwind base/components/utilities` to `@import "tailwindcss"`
+
+\n### Security\n
 - **milestone_delays RLS** (TL2-A.1): Require `has_project_access` for INSERT and UPDATE policies so managers can only create/update delay records for projects they have access to
 
 ## [1.56.5] - 2026-02-22
 
-### Summary
+\n### Summary\n
 Complete i18n translation coverage - fixed all missing translations and empty placeholder values.
 
-### Fixed
+\n### Fixed\n
 - **Missing Translations in roadmap.json**
   - pt-BR: Added `bugRecorder.title`, moved `projectDetail` to correct top-level location (22 keys)
   - es-ES: Added `bugRecorder.title`, moved `projectDetail` to correct top-level location (22 keys)
@@ -76,7 +146,7 @@ Complete i18n translation coverage - fixed all missing translations and empty pl
   - Filled 139 empty translation values across pt-BR, es-ES, fr-FR common.json files
   - Used `scripts/fill-all-empty-translations.py` to auto-fill from en-US source
 
-### Technical
+\n### Technical\n
 - **Quality Metrics**
   - ✅ 738 unit tests passing
   - ✅ 0 linting errors
@@ -85,37 +155,37 @@ Complete i18n translation coverage - fixed all missing translations and empty pl
   - ✅ Full CI pipeline passed
   - ✅ Build successful (Vite + PWA)
 
-### Commits
+\n### Commits\n
 - `d3d86f7e` - fix(i18n): complete translation coverage for roadmap and common locales
 
 ---
 
 ## [1.56.11] - 2026-02-27
 
-### Summary
+\n### Summary\n
 Dashboard UI refresh with Google Flights-style card corners, translation consistency fixes, merge resolution, and Deno lint fixes.
 
-### Fixed
+\n### Fixed\n
 - **RoadmapItemDetailDialog** — Resolved broken JSX structure from merge conflict (removed extra closing `</div>` that caused build failure)
 - **Deno require-await** — Replaced `async () => ({...})` mocks with `() => Promise.resolve({...})` in `whatsapp-ai-auto-respond.test.ts` to satisfy Deno lint
 - **Translation Consistency** — Added missing `_many` plural keys to en-US common.json; filled 7 empty translation values in pt-BR, es-ES, fr-FR; removed duplicate `collections.status.*` from es-ES financial.json; cross-language consistency: all 36 locale files valid
 
-### Changed
+\n### Changed\n
 - **Active Project Card (Dashboard)** — Google Flights-style asymmetric corner radii: top-left and bottom-right `1.5rem`, top-right and bottom-left `0.375rem`; full-bleed image with gradient overlay and overlaid text
 - **Dashboard Cards** — FinancialExecutiveOverview and InstallmentsDue: asymmetrical corner styling; KPI and Quick Stats cards: corner styling adjustments
 
 ## [1.56.2] - 2026-02-22
 
-### Summary
+\n### Summary\n
 Quality assurance pass with translation consistency fixes and version bump.
 
-### Fixed
+\n### Fixed\n
 - **Translation Consistency**
   - Added missing `collections.status.*` translations in pt-BR financial.json
   - Fixed empty `_many` plural form keys causing consistency warnings
   - Cross-language consistency improved for common.json and financial.json
 
-### Technical
+\n### Technical\n
 - **Quality Metrics**
   - ✅ 738 unit tests passing
   - ✅ 0 linting errors (ESLint pass)
@@ -125,7 +195,7 @@ Quality assurance pass with translation consistency fixes and version bump.
   - ✅ GitHub Actions: Deno ✅, Lint Hooks ✅
   - ⚠️ Deploy to Production: Validation timeout (network issue, not code)
 
-### Commits
+\n### Commits\n
 - `a32fcf5f` - chore: bump version to 1.56.1 and update translation report
 - `44c38d3c` - fix: translation consistency and empty value fixes
 
@@ -133,10 +203,10 @@ Quality assurance pass with translation consistency fixes and version bump.
 
 ## [1.56.0] - 2026-02-22
 
-### Summary
+\n### Summary\n
 Sprint close enhancements with AI-generated release notes, configurable Kanban column colors, and additional translation fixes.
 
-### Added
+\n### Added\n
 - **Sprint Close with AI Release Notes**
   - `generate-sprint-release-notes` Edge Function for AI-powered release note generation
   - `20260222000000_close_sprint_reassign_and_ai_release_notes.sql` migration
@@ -155,7 +225,7 @@ Sprint close enhancements with AI-generated release notes, configurable Kanban c
   - Removed old Playwright test files (`*.spec.ts`)
   - Added `roadmap-display-settings-color.agent-browser.cjs` for new E2E tests
 
-### Fixed
+\n### Fixed\n
 - **Translation Completeness**
   - Added missing `bugRecorder.permissionError`, `bugRecorder.reportBug`, `bugRecorder.tryAgain` translations
   - Added missing `roadmap.*` translations across all languages
@@ -165,17 +235,17 @@ Sprint close enhancements with AI-generated release notes, configurable Kanban c
 - **Deno Lint Issues**
   - Fixed unused variable `user` in `generate-sprint-release-notes/index.ts`
 
-### Technical
+\n### Technical\n
 - **Quality Metrics**
   - ✅ 738+ unit tests passing
   - ✅ 0 linting errors (ESLint pass)
   - ✅ 36/36 JSON files valid with no empty values
   - ✅ Cross-language consistency check passing
-  - ✅ Full CI pipeline passed locally
+  - ✅ Full CI pipeline (lint, i18n, test, build) passed locally
   - ✅ Build successful (Vite + PWA)
   - ✅ GitHub Actions CI passed (Deno, Lint Hooks, Deploy to Production)
 
-### Commits
+\n### Commits\n
 - `387b0eb9` - feat: sprint close enhancements, roadmap display settings, and translation fixes
 - `459250ed` - fix: prefix unused user variable in generate-sprint-release-notes
 

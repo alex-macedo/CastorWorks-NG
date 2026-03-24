@@ -9,41 +9,78 @@ import { useState } from 'react';
 import { useDateFormat } from '@/hooks/useDateFormat';
 import { CheckCircle, XCircle, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import resolveStorageUrl from '@/utils/storage';
 
 import { useLocalization } from "@/contexts/LocalizationContext";
+
+interface PublicProposalCompanyInfo {
+  name: string;
+  logo?: string;
+  email?: string;
+  phone?: string;
+  website?: string;
+  address?: string;
+}
+
 const PublicProposal = () => {
   const { token } = useParams<{ token: string }>();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { t } = useLocalization();
   const [showSignature, setShowSignature] = useState(false);
   const { formatLongDate } = useDateFormat();
 
   // Fetch proposal by public token
-  const { data: proposal, isLoading } = useQuery({
+  const { data: publicProposalData, isLoading } = useQuery({
     queryKey: ['public-proposal', token],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('proposals')
-        .select('*, estimates(*, clients(name, email))')
-        .eq('public_token', token)
-        .single();
+      if (!token) return null;
+
+      const { data, error } = await supabase.functions.invoke('get-public-proposal', {
+        body: { token },
+      });
 
       if (error) throw error;
+      if (!data?.success) throw new Error(data?.error || 'Failed to load public proposal');
 
       // Track view timestamp if not already viewed
-      if (data && !data.viewed_at) {
+      if (data.proposal && !data.proposal.viewed_at) {
         await supabase
           .from('proposals')
           .update({
             viewed_at: new Date().toISOString(),
             status: 'viewed',
           })
-          .eq('id', data.id);
+          .eq('id', data.proposal.id);
       }
 
       return data;
     },
     enabled: !!token,
+    retry: false,
+  });
+
+  const proposal = publicProposalData?.proposal ?? null;
+  const estimate = publicProposalData?.estimate ?? null;
+  const { data: companyInfo } = useQuery<PublicProposalCompanyInfo>({
+    queryKey: ['public-proposal-company-info', publicProposalData?.companyInfo],
+    queryFn: async () => {
+      const rawCompanyInfo = publicProposalData?.companyInfo;
+      if (!rawCompanyInfo) {
+        return { name: 'Your Company' };
+      }
+
+      const logo = await resolveStorageUrl(rawCompanyInfo.logo);
+      return {
+        name: rawCompanyInfo.name || 'Your Company',
+        logo: logo || undefined,
+        email: rawCompanyInfo.email || undefined,
+        phone: rawCompanyInfo.phone || undefined,
+        website: rawCompanyInfo.website || undefined,
+        address: rawCompanyInfo.address || undefined,
+      };
+    },
+    enabled: !!publicProposalData,
     retry: false,
   });
 
@@ -57,7 +94,7 @@ const PublicProposal = () => {
         .update({
           status: 'accepted',
           signature_data: signatureData,
-          signed_by: proposal.estimates?.clients?.name || 'Client',
+          signed_by: estimate?.clients?.name || 'Client',
           signed_at: new Date().toISOString(),
           accepted_at: new Date().toISOString(),
         })
@@ -171,8 +208,8 @@ const PublicProposal = () => {
 
           <ProposalPreview
             proposal={proposal}
-            estimate={proposal.estimates}
-            companyInfo={{ name: 'Your Company' }} // TODO: Get from user profile
+            estimate={estimate}
+            companyInfo={companyInfo || { name: 'Your Company' }}
           />
 
           {proposal.signature_data && (
@@ -196,13 +233,17 @@ const PublicProposal = () => {
 
   // Check if already rejected
   if (proposal.status === 'rejected') {
+    const rejectedAt = proposal.rejected_at
+      ? formatLongDate(new Date(proposal.rejected_at))
+      : '';
+
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <Card className="p-8 text-center">
           <XCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-2">{t("pages.publicProposal.proposalDeclinedTitle")}</h2>
           <p className="text-gray-600">
-            {t("pages.publicProposal.proposalDeclinedMessage", { date: formatLongDate(new Date(proposal.rejected_at!)) })}
+            {t("pages.publicProposal.proposalDeclinedMessage", { date: rejectedAt })}
           </p>
         </Card>
       </div>
@@ -215,8 +256,8 @@ const PublicProposal = () => {
       <div className="container max-w-4xl mx-auto">
         <ProposalPreview
           proposal={proposal}
-          estimate={proposal.estimates}
-          companyInfo={{ name: 'Your Company' }} // TODO: Get from user profile
+          estimate={estimate}
+          companyInfo={companyInfo || { name: 'Your Company' }}
         />
 
         {/* Response Section */}

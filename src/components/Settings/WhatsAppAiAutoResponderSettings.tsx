@@ -37,7 +37,7 @@ export function WhatsAppAiAutoResponderSettings() {
     } catch (err) {
       toast({
         title: t('admin:error'),
-        description: err instanceof Error ? err.message : 'Failed to update',
+        description: err instanceof Error ? err.message : t('settings.integrations.whatsapp.updateFailed'),
         variant: 'destructive',
       })
     }

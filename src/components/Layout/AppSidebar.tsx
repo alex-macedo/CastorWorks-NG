@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
-import { ChevronRight, Bell, LogOut, HardHat, Settings as SettingsIcon, MessageSquare, User, Lock, RotateCw, Bot, Bug } from "lucide-react";
+import { ChevronRight, Bell, LogOut, HardHat, Settings as SettingsIcon, User, Lock, RotateCw, Bot, Bug } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useUserRoles } from "@/hooks/useUserRoles";
@@ -44,7 +44,6 @@ import { getStoredClientPortalToken } from "@/lib/clientPortalAuth";
 import { SIDEBAR_OPTIONS } from "@/constants/rolePermissions";
 import { useSidebarPermissions } from "@/hooks/useSidebarPermissions";
 import { useLicensedModules } from "@/hooks/useLicensedModules";
-import { ChatWidget } from "@/components/AIChat/ChatWidget";
 import { EditProfileDialog } from "@/components/Settings/EditProfileDialog";
 import { ProjectSelectionModal } from "@/components/ClientPortal/Dialogs/ProjectSelectionModal";
 import { useQueryClient } from "@tanstack/react-query";
@@ -107,7 +106,6 @@ export function AppSidebar() {
   const { t } = useLocalization();
   const queryClient = useQueryClient();
   const { setOpen: setBugRecorderOpen } = useBugRecorder();
-  const [isChatOpen, setIsChatOpen] = useState(false);
   const [isProfileDialogOpen, setIsProfileDialogOpen] = useState(false);
   const [isProjectSwitcherOpen, setIsProjectSwitcherOpen] = useState(false);
   const [pendingPortalModal, setPendingPortalModal] = useState<PortalModalConfig | null>(null);
@@ -575,12 +573,12 @@ export function AppSidebar() {
 
       <SidebarFooter>
         <SidebarMenu>
-          <SidebarMenuItem>
+          {/* <SidebarMenuItem>
             <SidebarMenuButton onClick={() => setIsChatOpen(true)} className="w-full">
               <MessageSquare className="h-5 w-5" />
               <span>{t("navigation.aiChat") || "AI Assistant"}</span>
             </SidebarMenuButton>
-          </SidebarMenuItem>
+          </SidebarMenuItem> */}
           <SidebarMenuItem>
             <SidebarMenuButton data-testid="open-superbot" onClick={() => navigate('/castormind-ai')} className="w-full">
               <Bot className="h-5 w-5" />
@@ -649,7 +647,7 @@ export function AppSidebar() {
       </SidebarFooter>
       <SidebarRail />
       
-      <ChatWidget isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
+      {/* <ChatWidget isOpen={isChatOpen} onOpenChange={setIsChatOpen} /> */}
       {profile && (
         <EditProfileDialog 
           userId={profile.id}

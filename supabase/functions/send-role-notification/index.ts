@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 import { createErrorResponse } from "../_shared/errorHandler.ts";
+import { sendEmailViaHostinger } from "../_shared/providers/index.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -65,7 +66,11 @@ serve(async (req) => {
       .single();
 
     const companyName = companySettings?.company_name || 'Your Company';
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
+    if (!hostingerFromEmail) {
+      throw new Error('Hostinger SMTP not configured');
+    }
 
     // Generate email content based on action
     const roleNames: Record<string, string> = {
@@ -169,27 +174,13 @@ serve(async (req) => {
       `;
     }
 
-    // Send email via Resend API
-    const emailResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: `${companyName} <onboarding@resend.dev>`,
-        to: [targetUser.email],
-        subject,
-        html: htmlContent,
-      }),
+    const emailResult = await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: companyName,
+      html: htmlContent,
+      subject,
+      to: [targetUser.email],
     });
-
-    if (!emailResponse.ok) {
-      const errorData = await emailResponse.json();
-      throw new Error(`Resend API error: ${JSON.stringify(errorData)}`);
-    }
-
-    const emailResult = await emailResponse.json();
 
     // Log the notification
     await supabaseAdmin.from('email_notifications').insert({
@@ -203,7 +194,7 @@ serve(async (req) => {
     console.log(`Role ${action} notification sent to ${targetUser.email} for role ${role}`);
 
     return new Response(
-      JSON.stringify({ success: true, messageId: emailResult.id }),
+      JSON.stringify({ success: true, messageId: emailResult.messageId }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 

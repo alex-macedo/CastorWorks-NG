@@ -110,3 +110,13 @@ export function RequireEditorOrAdmin({ children }: { children: React.ReactNode }
 export function RequireFinancialRoles({ children }: { children: React.ReactNode }) {
   return <RoleGuard allowedRoles={["admin", "financial"]}>{children}</RoleGuard>;
 }
+
+/** Guards platform-workspace routes. Allows all three platform roles plus super_admin. */
+export function RequirePlatformRoles({ children }: { children: React.ReactNode }) {
+  return <RoleGuard allowedRoles={["platform_owner", "platform_support", "platform_sales", "super_admin"]}>{children}</RoleGuard>;
+}
+
+/** Guards customer-admin and global-template management routes (higher-trust). */
+export function RequirePlatformOwner({ children }: { children: React.ReactNode }) {
+  return <RoleGuard allowedRoles={["platform_owner", "super_admin"]}>{children}</RoleGuard>;
+}

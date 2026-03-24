@@ -14,6 +14,7 @@ import { supabase } from '@/integrations/supabase/client'
 
 type PromptTemplate = {
   id: string
+  intent: string
   title: string
   prompt_text: string
 }
@@ -21,7 +22,7 @@ type PromptTemplate = {
 export default function CastorMindAI() {
   const navigate = useNavigate()
   const { messages, sendMessage, isProcessing, clearHistory } = useSuperBotAssistant()
-  const { t } = useLocalization()
+  const { t, language } = useLocalization()
   const { toast } = useToast()
   const currentHour = new Date().getHours()
   const [templates, setTemplates] = useState<PromptTemplate[]>([])
@@ -45,6 +46,19 @@ export default function CastorMindAI() {
     t('ai.superBot.prompts.vendorQuotes') ||
       'Show me all quotes where vendors did not return a proposal.',
   ]
+
+  const getTemplateLabel = (template: PromptTemplate) => {
+    const labelByIntent: Record<string, string> = {
+      delayed_projects: t('ai.superBot.templateTitles.delayedProjects') || 'Delayed Projects Overview',
+      due_payments: t('ai.superBot.templateTitles.duePayments') || 'Due Payments Snapshot',
+      update_tasks_until_today:
+        t('ai.superBot.templateTitles.updateTasks') || 'Close Tasks Until Today',
+      quotes_without_vendor_proposal:
+        t('ai.superBot.templateTitles.vendorQuotes') || 'Vendors Missing Proposals',
+    }
+
+    return labelByIntent[template.intent] || template.title
+  }
 
   const groupedMessages = messages.reduce<Record<string, typeof messages>>((acc, item) => {
     const dayKey = new Date(item.created_at).toDateString()
@@ -72,9 +86,8 @@ export default function CastorMindAI() {
         const token = sessionData.session?.access_token
         if (!token) return
 
-        const locale = (navigator.language || 'en-US').slice(0, 5)
         const res = await fetch(
-          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/castormind-prompt-templates?locale=${encodeURIComponent(locale)}`,
+          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/castormind-prompt-templates?locale=${encodeURIComponent(language)}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           },
@@ -90,7 +103,7 @@ export default function CastorMindAI() {
       }
     }
     loadTemplates()
-  }, [])
+  }, [language])
 
   return (
     <Card className="h-[calc(100vh-8.5rem)] w-full flex overflow-hidden rounded-xl border border-border bg-background text-foreground shadow-sm">
@@ -163,7 +176,7 @@ export default function CastorMindAI() {
           </div>
           <div className="ml-auto">
             <Button variant="outline" size="sm" onClick={() => navigate('/castormind-ai/analytics')}>
-              Analytics
+              {t('ai.superBot.analytics') || 'Analytics'}
             </Button>
           </div>
         </div>
@@ -224,7 +237,7 @@ export default function CastorMindAI() {
                     className="!rounded-full bg-background text-foreground text-xs hover:bg-accent dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
                     onClick={() => sendMessage(tpl.prompt_text)}
                   >
-                    {tpl.title}
+                    {getTemplateLabel(tpl)}
                   </Button>
                 ))}
               </div>

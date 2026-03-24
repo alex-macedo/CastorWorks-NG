@@ -1,8 +1,8 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { format } from 'https://esm.sh/date-fns@3.0.0';
+import { sendEmailViaHostinger } from '../_shared/providers/index.ts';
 
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const APP_URL = Deno.env.get('APP_URL') || 'http://localhost:5173';
@@ -23,9 +23,10 @@ serve(async (req) => {
   }
 
   try {
-    // Check API key
-    if (!RESEND_API_KEY) {
-      throw new Error('RESEND_API_KEY not configured');
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
+    if (!hostingerFromEmail) {
+      throw new Error('Hostinger SMTP not configured');
     }
 
     // Get user from auth header
@@ -197,33 +198,19 @@ serve(async (req) => {
 </html>
     `;
 
-    // Send email via Resend
-    const emailResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: `${companyName} <onboarding@resend.dev>`, // TODO: Use actual company email
-        to: [proposal.estimates.clients?.email || ''],
-        subject: `Proposal from ${companyName} - ${proposal.estimates.name}`,
-        html: emailHtml,
-      }),
+    const emailData = await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: companyName,
+      html: emailHtml,
+      subject: `Proposal from ${companyName} - ${proposal.estimates.name}`,
+      to: [proposal.estimates.clients?.email || ''],
     });
-
-    if (!emailResponse.ok) {
-      const errorData = await emailResponse.json();
-      throw new Error(`Failed to send email: ${JSON.stringify(errorData)}`);
-    }
-
-    const emailData = await emailResponse.json();
 
     return new Response(
       JSON.stringify({
         success: true,
         publicUrl,
-        emailId: emailData.id,
+        emailId: emailData.messageId,
       }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },

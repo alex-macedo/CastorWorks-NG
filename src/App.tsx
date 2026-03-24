@@ -41,7 +41,6 @@ import { useLocalization } from "@/contexts/LocalizationContext";
 import RouterErrorBoundary from "@/components/RouterErrorBoundary";
 import { TimeTracker } from "@/components/Architect/TimeTracking/TimeTracker";
 import { TimeTrackerResumeDialog } from "@/components/Architect/TimeTracking/TimeTrackerResumeDialog";
-import { FloatingTimeClock } from "@/components/Shared/TimeClock/FloatingTimeClock";
 import { TimeTrackingProvider } from "@/contexts/TimeTrackingContext";
 import { BugRecorderProvider } from "@/contexts/BugRecorderContext";
 
@@ -212,6 +211,15 @@ const MaintenanceManagement = lazyWithRetry(() => import("./pages/Admin/Maintena
 const TenantList = lazyWithRetry(() => import("./pages/Admin/TenantList"), "TenantList");
 const TenantModules = lazyWithRetry(() => import("./pages/Admin/TenantModules"), "TenantModules");
 const TelemetryIssues = lazyWithRetry(() => import("./pages/Admin/TelemetryIssues"), "TelemetryIssues");
+const PlatformDashboard = lazyWithRetry(() => import("./pages/Platform/PlatformDashboard"), "PlatformDashboard");
+const PlatformSupportChat = lazyWithRetry(() => import("./pages/Platform/PlatformSupportChat"), "PlatformSupportChat");
+const PlatformCampaigns = lazyWithRetry(() => import("./pages/Platform/PlatformCampaigns"), "PlatformCampaigns");
+const PlatformContacts = lazyWithRetry(() => import("./pages/Platform/PlatformContacts"), "PlatformContacts");
+const PlatformForms = lazyWithRetry(() => import("./pages/Platform/PlatformForms"), "PlatformForms");
+const PlatformTasks = lazyWithRetry(() => import("./pages/Platform/PlatformTasks"), "PlatformTasks");
+const PlatformCommunicationLog = lazyWithRetry(() => import("./pages/Platform/PlatformCommunicationLog"), "PlatformCommunicationLog");
+const PlatformCustomers = lazyWithRetry(() => import("./pages/Platform/PlatformCustomers"), "PlatformCustomers");
+const PlatformGlobalTemplates = lazyWithRetry(() => import("./pages/Platform/PlatformGlobalTemplates"), "PlatformGlobalTemplates");
 const DeliverySignatureScreen = lazyWithRetry(() => import("./pages/DeliverySignatureScreen"), "DeliverySignatureScreen");
 const PaymentDashboard = lazyWithRetry(() => import("./pages/PaymentDashboard"), "PaymentDashboard");
 const PaymentProcessing = lazyWithRetry(() => import("./pages/PaymentProcessing"), "PaymentProcessing");
@@ -371,7 +379,6 @@ const DesktopRouteLayout = ({
           {children}
         </main>
       </SidebarInset>
-        {isInternalUser && <FloatingTimeClock />}
       </div>
     </BugRecorderProvider>
   );
@@ -616,9 +623,11 @@ const AppContent = () => {
                     path="/roadmap/ai-to-work"
                     element={
                       <AuthGuard>
-                        <Suspense fallback={<PageLoader />}>
-                          <AiToWorkPage />
-                        </Suspense>
+                        <RoleGuard allowedRoles={["global_admin"]}>
+                          <Suspense fallback={<PageLoader />}>
+                            <AiToWorkPage />
+                          </Suspense>
+                        </RoleGuard>
                       </AuthGuard>
                     }
                   />
@@ -744,6 +753,16 @@ const AppContent = () => {
                                   <Route path="/admin/tenants" element={<RoleGuard allowedRoles={["super_admin"]}><TenantList /></RoleGuard>} />
                                   <Route path="/admin/tenants/:id/modules" element={<RoleGuard allowedRoles={["super_admin"]}><TenantModules /></RoleGuard>} />
                                    <Route path="/admin/telemetry" element={<TelemetryIssues />} />
+                                  {/* Platform workspace — platform-team only */}
+                                  <Route path="/platform" element={<RoleGuard allowedRoles={["platform_owner", "platform_support", "platform_sales", "super_admin"]}><PlatformDashboard /></RoleGuard>} />
+                                  <Route path="/platform/support-chat" element={<RoleGuard allowedRoles={["platform_owner", "platform_support", "super_admin"]}><PlatformSupportChat /></RoleGuard>} />
+                                  <Route path="/platform/campaigns" element={<RoleGuard allowedRoles={["platform_owner", "platform_sales", "super_admin"]}><PlatformCampaigns /></RoleGuard>} />
+                                  <Route path="/platform/contacts" element={<RoleGuard allowedRoles={["platform_owner", "platform_support", "platform_sales", "super_admin"]}><PlatformContacts /></RoleGuard>} />
+                                  <Route path="/platform/forms" element={<RoleGuard allowedRoles={["platform_owner", "platform_support", "platform_sales", "super_admin"]}><PlatformForms /></RoleGuard>} />
+                                  <Route path="/platform/tasks" element={<RoleGuard allowedRoles={["platform_owner", "platform_support", "platform_sales", "super_admin"]}><PlatformTasks /></RoleGuard>} />
+                                  <Route path="/platform/communication-log" element={<RoleGuard allowedRoles={["platform_owner", "platform_support", "platform_sales", "super_admin"]}><PlatformCommunicationLog /></RoleGuard>} />
+                                  <Route path="/platform/customers" element={<RoleGuard allowedRoles={["platform_owner", "super_admin"]}><PlatformCustomers /></RoleGuard>} />
+                                  <Route path="/platform/global-templates" element={<RoleGuard allowedRoles={["platform_owner", "super_admin"]}><PlatformGlobalTemplates /></RoleGuard>} />
                                    <Route path="/payments" element={<PaymentDashboard />} />
 
                                   <Route path="/payments/:paymentId" element={<PaymentProcessing />} />
@@ -757,8 +776,8 @@ const AppContent = () => {
                                    <Route path="/documentation" element={<Documentation />} />
                                   <Route path="/documentation/viewer" element={<DocumentViewer />} />
                                    <Route path="/releases-report" element={<ReleasesReport />} />
-                                  <Route path="/roadmap" element={<Roadmap />} />
-                                  <Route path="/roadmap/analytics" element={<RoadmapAnalytics />} />
+                                  <Route path="/roadmap" element={<RoleGuard allowedRoles={["global_admin"]}><Roadmap /></RoleGuard>} />
+                                  <Route path="/roadmap/analytics" element={<RoleGuard allowedRoles={["global_admin"]}><RoadmapAnalytics /></RoleGuard>} />
                                   <Route path="/projects-timeline" element={<ProjectsTimelinePage />} />
                                   <Route path="/task-management" element={<TaskManagementPage />} />
                                   <Route path="/calendar" element={<CalendarPage />} />

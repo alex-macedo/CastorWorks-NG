@@ -18,13 +18,19 @@ import type {
 // CAMPAIGNS HOOK
 // ============================================================================
 
-export const useCampaigns = () => {
+interface UseCampaignsOptions {
+  scope?: 'user' | 'platform'
+}
+
+export const useCampaigns = (options?: UseCampaignsOptions) => {
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const scope = options?.scope ?? 'user';
+  const campaignsQueryKey = scope === 'platform' ? ['platform', 'campaigns'] : ['campaigns'];
 
-  // Fetch all campaigns for current user
+  // Fetch campaigns within the active RLS scope.
   const { data: campaigns, isLoading, error } = useQuery<OutboundCampaign[]>({
-    queryKey: ['campaigns'],
+    queryKey: campaignsQueryKey,
     queryFn: async () => {
       const { data, error } = await supabase
         .from('outbound_campaigns')
@@ -145,7 +151,7 @@ export const useCampaigns = () => {
       return campaign as OutboundCampaign;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['campaigns'] });
+      queryClient.invalidateQueries({ queryKey: campaignsQueryKey });
       toast({
         title: 'Campaign created',
         description: 'The campaign has been created successfully.',
@@ -174,7 +180,7 @@ export const useCampaigns = () => {
       return data as OutboundCampaign;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['campaigns'] });
+      queryClient.invalidateQueries({ queryKey: campaignsQueryKey });
       toast({
         title: 'Campaign updated',
         description: 'The campaign has been updated successfully.',
@@ -200,7 +206,7 @@ export const useCampaigns = () => {
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['campaigns'] });
+      queryClient.invalidateQueries({ queryKey: campaignsQueryKey });
       toast({
         title: 'Campaign deleted',
         description: 'The campaign has been deleted successfully.',
@@ -226,7 +232,7 @@ export const useCampaigns = () => {
       return data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['campaigns'] });
+      queryClient.invalidateQueries({ queryKey: campaignsQueryKey });
       toast({
         title: 'Campaign executed',
         description: 'The campaign is now being sent to recipients.',
@@ -255,7 +261,7 @@ export const useCampaigns = () => {
       return data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['campaigns'] });
+      queryClient.invalidateQueries({ queryKey: campaignsQueryKey });
       toast({
         title: 'Campaign cancelled',
         description: 'The campaign has been cancelled.',

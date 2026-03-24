@@ -567,6 +567,21 @@ Settings page component showing:
 
 ## Implementation Phases
 
+## Current Milestone: v1.1 Trial & Subscription Management
+
+**Goal:** Self-service trial, payment, and tier management so users can start a trial, convert to paid, and manage their subscription.
+
+**Target features:**
+- 30-day trial flow (full access, countdown UI)
+- Trial-to-paid conversion flow
+- Payment gateway integration (Stripe or Brazilian gateway)
+- Subscription management page (upgrade/downgrade/cancel)
+- Sandbox fallback when trial expires
+- Billing history and invoice generation
+- Automated email sequences (trial reminders, expiration warnings)
+
+---
+
 ### Phase 0: New Supabase Database & Config/Template Migration (Weeks 0–1)
 **Goal**: Provision CastorWorks-NG’s own Supabase database and populate it with schema plus configuration/templates only (no projects, clients, purchases, or other transactional data).
 
@@ -717,4 +732,4 @@ Settings page component showing:
 | Average revenue per tenant | R$600-800/mo | Within 12 months |
 
 ---
-*Last updated: 2026-03-01 after v1.0 Foundation and Licensing milestone*
+*Last updated: 2026-03-01 — v1.1 Trial & Subscription Management started*

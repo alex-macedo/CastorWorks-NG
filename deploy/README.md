@@ -1,6 +1,109 @@
 # CastorWorks Production Deployment Guide
 
-This guide explains how to set up and deploy CastorWorks to a clean production environment.
+This guide covers both the **original CastorWorks** stack and the **CastorWorks-NG** stack.
+They run on the same server but are fully isolated — separate paths, separate Supabase instances, separate nginx configs.
+
+| | Original CastorWorks | CastorWorks-NG |
+|---|---|---|
+| Frontend URL | castorworks.cloud / dev.castorworks.cloud | **devng.castorworks.cloud** |
+| Supabase Studio | — | studiong.castorworks.cloud |
+| Static files | /var/www/castorworks | /var/www/castorworks-ng |
+| Supabase port (Kong) | 8000 | 8003 |
+| Supabase dir | /root/supabase-CastorWorks | /root/supabase-CastorWorks-NG |
+| Deploy script | deploy/deploy.sh | **deploy/deploy-ng.sh** |
+| Server setup | deploy/setup-production.sh | **deploy/setup-production-ng.sh** |
+| Edge functions | deploy/deploy-edge-functions.sh | **deploy/deploy-edge-functions-ng.sh** |
+| Nginx config | nginx/castorworks.conf, dev.castorworks.conf | **nginx/devng.castorworks.conf**, nginx/studiong.castorworks.conf |
+
+---
+
+## CastorWorks-NG Quick Deploy
+
+```bash
+# Full deployment (tests → build → rsync → nginx reload)
+./deploy/deploy-ng.sh
+
+# Skip tests
+./deploy/deploy-ng.sh --skip-tests
+
+# Dry run — see what would happen
+./deploy/deploy-ng.sh --dry-run
+```
+
+## CastorWorks-NG Initial Server Setup (first time only)
+
+```bash
+# 1. Issue SSL certs on the server (if not already done)
+certbot certonly --nginx -d devng.castorworks.cloud
+certbot certonly --nginx -d studiong.castorworks.cloud
+
+# 2. Upload nginx configs and setup script from local machine
+scp deploy/nginx/devng.castorworks.conf root@castorworks.cloud:/tmp/
+scp deploy/nginx/studiong.castorworks.conf root@castorworks.cloud:/tmp/
+scp deploy/setup-production-ng.sh root@castorworks.cloud:/tmp/
+
+# 3. Run setup on the server
+ssh root@castorworks.cloud "chmod +x /tmp/setup-production-ng.sh && /tmp/setup-production-ng.sh"
+
+# 4. Deploy the NG build
+./deploy/deploy-ng.sh
+```
+
+## CastorWorks-NG Edge Functions
+
+```bash
+# Deploy all edge functions to NG Supabase
+./deploy/deploy-edge-functions-ng.sh
+
+# Deploy specific functions
+./deploy/deploy-edge-functions-ng.sh stripe-webhook create-checkout-session create-billing-portal-session
+```
+
+## CastorWorks-NG Rollback
+
+```bash
+ssh root@castorworks.cloud
+
+# List available NG backups
+ls -la /var/www/castorworks-ng-backups/
+
+# Rollback to a specific backup
+BACKUP_NAME="backup_20260304_120000"
+rm -rf /var/www/castorworks-ng/dist
+cp -r /var/www/castorworks-ng-backups/${BACKUP_NAME} /var/www/castorworks-ng/dist
+chown -R www-data:www-data /var/www/castorworks-ng
+systemctl reload nginx
+```
+
+## CastorWorks-NG Logs
+
+```bash
+tail -f /var/log/nginx/devng.castorworks.access.log
+tail -f /var/log/nginx/devng.castorworks.error.log
+
+# NG Supabase services
+cd /root/supabase-CastorWorks-NG && docker compose ps
+docker compose logs -f --tail=100
+```
+
+## GitHub Actions (CI/CD)
+
+The `.github/workflows/deploy.yml` workflow builds and deploys to `devng.castorworks.cloud` on every push to `main`.
+
+Required GitHub repository secrets:
+
+| Secret | Value |
+|---|---|
+| `PROD_SSH_PRIVATE_KEY` | Private key whose public half is in `~/.ssh/authorized_keys` on the server |
+| `PROD_SSH_HOST` | Server IP or hostname |
+| `PROD_SSH_PORT` | SSH port (usually `22`) |
+| `PROD_SSH_USER` | SSH user (e.g. `root`) |
+| `VITE_SUPABASE_URL` | `https://devng.castorworks.cloud` |
+| `VITE_SUPABASE_ANON_KEY` | NG anon key from Supabase dashboard |
+
+---
+
+## Original CastorWorks (unchanged)
 
 ## Architecture Overview
 

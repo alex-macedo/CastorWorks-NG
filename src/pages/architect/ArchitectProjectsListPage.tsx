@@ -221,6 +221,9 @@ export default function ArchitectProjectsListPage() {
     });
   }, [projectsFromFilter, searchTerm, sortBy, filters.minBudget, filters.maxBudget, filters.startDateFrom, filters.startDateTo]);
 
+  const filteredProjectsCount = filteredProjects.length;
+  const totalProjectsCount = Array.isArray(projects) ? projects.length : 0;
+
   useEffect(() => {
     if (!filteredProjects.length) return;
     const loadImages = async () => {
@@ -373,9 +376,9 @@ export default function ArchitectProjectsListPage() {
         </ToggleGroup>
       </div>
 
-      {(filteredProjects as any[]).length > 0 && (
+      {filteredProjectsCount > 0 && (
         <div className="text-sm text-muted-foreground">
-          {t('projects:showingResults', { count: (filteredProjects as any[]).length, total: (projects as any)?.length ?? 0 })}
+          {t('projects:showingResults', { count: filteredProjectsCount, total: totalProjectsCount })}
         </div>
       )}
 

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useLocalization } from '@/contexts/LocalizationContext';
 import { Shield } from 'lucide-react';
 import { getFormTheme, type FormThemeVariant } from './glassTokens';
-import { useCompanySettings } from '@/hooks/useCompanySettings';
 import resolveStorageUrl from '@/utils/storage';
 
 interface PublicFormLayoutProps {
   children: React.ReactNode;
   formTitle?: string;
+  companyName?: string;
   logoUrl?: string;
   primaryColor?: string;
   themeVariant?: FormThemeVariant;
@@ -25,18 +25,18 @@ interface PublicFormLayoutProps {
 export function PublicFormLayout({ 
   children, 
   formTitle,
+  companyName,
   logoUrl,
   primaryColor = '#3B82F6',
   themeVariant = 'light'
 }: PublicFormLayoutProps) {
   const { t } = useLocalization();
-  const { settings: companySettings } = useCompanySettings();
   const [resolvedLogo, setResolvedLogo] = useState<string | null>(null);
   const theme = getFormTheme(themeVariant);
 
   useEffect(() => {
     const loadLogo = async () => {
-      const candidate = logoUrl || companySettings?.company_logo_url || null;
+      const candidate = logoUrl || null;
       if (!candidate) {
         setResolvedLogo(null);
         return;
@@ -45,7 +45,7 @@ export function PublicFormLayout({
       setResolvedLogo(url);
     };
     loadLogo();
-  }, [logoUrl, companySettings?.company_logo_url]);
+  }, [logoUrl]);
   
   return (
     <div className={`min-h-screen flex flex-col relative selection:bg-[#F97316]/20 ${theme.backdrop}`} style={{ color: themeVariant === 'darkGold' ? '#e5e7eb' : '#334155' }}>
@@ -74,7 +74,7 @@ export function PublicFormLayout({
             </div>
             <div className="flex flex-col leading-tight">
               <span className={`text-sm font-semibold ${themeVariant === 'darkGold' ? 'text-slate-100' : 'text-slate-900'} truncate max-w-[240px]`}>
-                {formTitle || t('forms:publicForm.formTitleFallback')}
+                {companyName || formTitle || t('forms:publicForm.formTitleFallback')}
               </span>
               <span className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
                 Powered by CastorMind-AI

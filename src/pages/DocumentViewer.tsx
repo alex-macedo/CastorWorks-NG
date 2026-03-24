@@ -22,6 +22,27 @@ import { formatDate } from "@/utils/reportFormatters";
 import ReactMarkdown from "react-markdown";
 import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
+import { useHasRole } from "@/hooks/useUserRoles";
+
+const ADMIN_ONLY_DOC_PATH_PREFIXES = [
+  '/docs/deployment/',
+  '/docs/PR-EPIC-4-SUMMARY.md',
+  '/docs/components/signature-pad.md',
+  '/docs/sprint-status.yaml',
+  '/tests/e2e/',
+  '/docs/ARCHITECTURE_OVERVIEW.md',
+  '/docs/CODEBASE_ANALYSIS.md',
+  '/docs/PRD.md',
+  '/docs/PROCUREMENT_MODULE_REQUIREMENTS.md',
+  '/docs/procurement-epics.md',
+  '/docs/ROADMAP_IMPLEMENTATION.md',
+]
+
+const isAdminOnlyDocPath = (docPath: string | null) => {
+  if (!docPath) return false
+  if (docPath.startsWith('sprint-release-notes:')) return true
+  return ADMIN_ONLY_DOC_PATH_PREFIXES.some((prefix) => docPath.startsWith(prefix))
+}
 
 export default function DocumentViewer() {
   const [searchParams] = useSearchParams();
@@ -32,6 +53,7 @@ export default function DocumentViewer() {
   const [toc, setToc] = useState<{ id: string; text: string; level: number }[]>([]);
   const [readingProgress, setReadingProgress] = useState(0);
   const { t, dateFormat } = useLocalization();
+  const isAdmin = useHasRole('admin');
   
   const docPath = searchParams.get("path");
   const docName = searchParams.get("name") || t("documentation.preview.title");
@@ -65,6 +87,10 @@ export default function DocumentViewer() {
       setLoading(true);
       setError(null);
       try {
+        if (!isAdmin && isAdminOnlyDocPath(docPath)) {
+          throw new Error(t('contentHub.errors.accessDenied'))
+        }
+
         let content: string;
         const sprintReleaseNotesPrefix = 'sprint-release-notes:';
         if (docPath.startsWith(sprintReleaseNotesPrefix)) {
@@ -104,7 +130,7 @@ export default function DocumentViewer() {
     };
 
     fetchDocument();
-  }, [docPath, t]);
+  }, [docPath, isAdmin, t]);
 
   const handlePrint = () => {
     window.print();

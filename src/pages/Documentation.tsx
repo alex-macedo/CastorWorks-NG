@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { useLocalization } from "@/contexts/LocalizationContext";
 import { SidebarHeaderShell } from "@/components/Layout/SidebarHeaderShell";
 import { useSprints } from "@/hooks/useSprints";
+import { useHasRole } from "@/hooks/useUserRoles";
 
 interface DocumentSection {
   title: string;
@@ -27,6 +28,7 @@ export default function Documentation() {
   const navigate = useNavigate();
   const { language, t } = useLocalization();
   const { data: sprints = [] } = useSprints();
+  const isAdmin = useHasRole('admin');
   const closedSprints = sprints.filter((s) => s.status === 'closed');
 
   // Map language codes to documentation paths
@@ -254,6 +256,43 @@ export default function Documentation() {
     navigate(`/documentation/viewer?path=${encodeURIComponent(path)}&name=${encodeURIComponent(name)}`);
   };
 
+  const visibleTabs = [
+    {
+      value: 'user-guides',
+      icon: FileText,
+      label: t('documentation.tabs.userGuides'),
+      section: userGuides,
+    },
+    ...(isAdmin
+      ? [
+          {
+            value: 'ai-features',
+            icon: Sparkles,
+            label: t('documentation.tabs.aiFeatures'),
+            section: aiFeaturesDocs,
+          },
+          {
+            value: 'technical',
+            icon: BookText,
+            label: t('documentation.tabs.technical'),
+            section: technicalDocs,
+          },
+          {
+            value: 'tests',
+            icon: TestTube,
+            label: t('documentation.tabs.tests'),
+            section: testDocs,
+          },
+          {
+            value: 'architecture',
+            icon: ChevronRight,
+            label: t('documentation.tabs.architecture'),
+            section: architectureDocs,
+          },
+        ]
+      : []),
+  ];
+
   const renderDocumentList = (section: DocumentSection) => (
     <div className="space-y-4">
       <div className="mb-6">
@@ -308,196 +347,168 @@ export default function Documentation() {
       </div>
 </SidebarHeaderShell>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <Card>
-          <CardHeader className="pb-3">
-            <CardDescription>{t("documentation.stats.userGuides")}</CardDescription>
-            <CardTitle className="text-3xl">7</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              {t("documentation.stats.userGuidesDesc")}
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-3">
-            <CardDescription>{t("documentation.stats.testCases")}</CardDescription>
-            <CardTitle className="text-3xl">35</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              {t("documentation.stats.testCasesDesc")}
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-3">
-            <CardDescription>{t("documentation.stats.technicalDocs")}</CardDescription>
-            <CardTitle className="text-3xl">10+</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              {t("documentation.stats.technicalDocsDesc")}
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-3">
-            <CardDescription>{t("documentation.stats.storiesComplete")}</CardDescription>
-            <CardTitle className="text-3xl">40/40</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              {t("documentation.stats.storiesCompleteDesc")}
-            </p>
-          </CardContent>
-        </Card>
-      </div>
+      {isAdmin && (
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+          <Card>
+            <CardHeader className="pb-3">
+              <CardDescription>{t("documentation.stats.userGuides")}</CardDescription>
+              <CardTitle className="text-3xl">7</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-muted-foreground">
+                {t("documentation.stats.userGuidesDesc")}
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardDescription>{t("documentation.stats.testCases")}</CardDescription>
+              <CardTitle className="text-3xl">35</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-muted-foreground">
+                {t("documentation.stats.testCasesDesc")}
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardDescription>{t("documentation.stats.technicalDocs")}</CardDescription>
+              <CardTitle className="text-3xl">10+</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-muted-foreground">
+                {t("documentation.stats.technicalDocsDesc")}
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardDescription>{t("documentation.stats.storiesComplete")}</CardDescription>
+              <CardTitle className="text-3xl">40/40</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-muted-foreground">
+                {t("documentation.stats.storiesCompleteDesc")}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      )}
 
       {/* Main Content */}
       <Tabs defaultValue="user-guides" variant="pill" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="user-guides">
-            <FileText className="h-4 w-4 mr-2" />
-            {t("documentation.tabs.userGuides")}
-          </TabsTrigger>
-          <TabsTrigger value="ai-features">
-            <Sparkles className="h-4 w-4 mr-2" />
-            {t("documentation.tabs.aiFeatures")}
-          </TabsTrigger>
-          <TabsTrigger value="technical">
-            <BookText className="h-4 w-4 mr-2" />
-            {t("documentation.tabs.technical")}
-          </TabsTrigger>
-          <TabsTrigger value="tests">
-            <TestTube className="h-4 w-4 mr-2" />
-            {t("documentation.tabs.tests")}
-          </TabsTrigger>
-          <TabsTrigger value="architecture">
-            <ChevronRight className="h-4 w-4 mr-2" />
-            {t("documentation.tabs.architecture")}
-          </TabsTrigger>
+        <TabsList className={`grid w-full ${isAdmin ? 'grid-cols-5' : 'grid-cols-1'}`}>
+          {visibleTabs.map((tab) => {
+            const Icon = tab.icon
+
+            return (
+              <TabsTrigger key={tab.value} value={tab.value}>
+                <Icon className="h-4 w-4 mr-2" />
+                {tab.label}
+              </TabsTrigger>
+            )
+          })}
         </TabsList>
 
-        <TabsContent value="user-guides">
-          <ScrollArea className="h-[600px] pr-4">
-            {renderDocumentList(userGuides)}
-          </ScrollArea>
-        </TabsContent>
-
-        <TabsContent value="ai-features">
-          <ScrollArea className="h-[600px] pr-4">
-            {renderDocumentList(aiFeaturesDocs)}
-          </ScrollArea>
-        </TabsContent>
-
-        <TabsContent value="technical">
-          <ScrollArea className="h-[600px] pr-4">
-            {renderDocumentList(technicalDocs)}
-          </ScrollArea>
-        </TabsContent>
-
-        <TabsContent value="tests">
-          <ScrollArea className="h-[600px] pr-4">
-            {renderDocumentList(testDocs)}
-          </ScrollArea>
-        </TabsContent>
-
-        <TabsContent value="architecture">
-          <ScrollArea className="h-[600px] pr-4">
-            {renderDocumentList(architectureDocs)}
-          </ScrollArea>
-        </TabsContent>
+        {visibleTabs.map((tab) => (
+          <TabsContent key={tab.value} value={tab.value}>
+            <ScrollArea className="h-[600px] pr-4">
+              {renderDocumentList(tab.section)}
+            </ScrollArea>
+          </TabsContent>
+        ))}
       </Tabs>
 
-      {/* Quick Links */}
-      <Separator className="my-8" />
+      {isAdmin && (
+        <>
+          <Separator className="my-8" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">{t("documentation.quickAccess.title")}</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <Button
-              variant="outline"
-              className="w-full justify-start"
-              onClick={() => handleViewDocument(
-                t("documentation.documents.supervisorGuide.name"),
-                getLocalizedPath("/docs/user-guides/supervisor-delivery-confirmation-guide.md")
-              )}
-            >
-              👷 {t("documentation.quickAccess.supervisors")}
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full justify-start"
-              onClick={() => handleViewDocument(
-                t("documentation.documents.adminPaymentGuide.name"),
-                getLocalizedPath("/docs/user-guides/admin-payment-processing-guide.md")
-              )}
-            >
-              💰 {t("documentation.quickAccess.accountants")}
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full justify-start"
-              onClick={() => handleViewDocument(
-                t("documentation.documents.supplierAckGuide.name"),
-                getLocalizedPath("/docs/user-guides/supplier-po-acknowledgment-guide.md")
-              )}
-            >
-              📦 {t("documentation.quickAccess.suppliers")}
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full justify-start"
-              onClick={() => handleViewDocument(
-                t("documentation.documents.budgetGuide.name"),
-                getLocalizedPath("/docs/user-guides/project-budget-expenses-guide.md")
-              )}
-            >
-              📊 {t("documentation.documents.budgetGuide.name")} (PM)
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full justify-start"
-              onClick={() => handleViewDocument(
-                t("documentation.documents.pmAckGuide.name"),
-                getLocalizedPath("/docs/user-guides/pm-po-acknowledgment-guide.md")
-              )}
-            >
-              👔 {t("documentation.quickAccess.projectManagers")}
-            </Button>
-          </CardContent>
-        </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">{t("documentation.quickAccess.title")}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => handleViewDocument(
+                    t("documentation.documents.supervisorGuide.name"),
+                    getLocalizedPath("/docs/user-guides/supervisor-delivery-confirmation-guide.md")
+                  )}
+                >
+                  👷 {t("documentation.quickAccess.supervisors")}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => handleViewDocument(
+                    t("documentation.documents.adminPaymentGuide.name"),
+                    getLocalizedPath("/docs/user-guides/admin-payment-processing-guide.md")
+                  )}
+                >
+                  💰 {t("documentation.quickAccess.accountants")}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => handleViewDocument(
+                    t("documentation.documents.supplierAckGuide.name"),
+                    getLocalizedPath("/docs/user-guides/supplier-po-acknowledgment-guide.md")
+                  )}
+                >
+                  📦 {t("documentation.quickAccess.suppliers")}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => handleViewDocument(
+                    t("documentation.documents.budgetGuide.name"),
+                    getLocalizedPath("/docs/user-guides/project-budget-expenses-guide.md")
+                  )}
+                >
+                  📊 {t("documentation.documents.budgetGuide.name")} (PM)
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => handleViewDocument(
+                    t("documentation.documents.pmAckGuide.name"),
+                    getLocalizedPath("/docs/user-guides/pm-po-acknowledgment-guide.md")
+                  )}
+                >
+                  👔 {t("documentation.quickAccess.projectManagers")}
+                </Button>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">{t("documentation.implementationInfo.title")}</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.filesChanged")}</span>
-              <Badge>19 files</Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.linesOfCode")}</span>
-              <Badge>~4,200 LOC</Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.newRoutes")}</span>
-              <Badge>9 routes</Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.documentation")}</span>
-              <Badge>~2,500 lines</Badge>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">{t("documentation.implementationInfo.title")}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.filesChanged")}</span>
+                  <Badge>19 files</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.linesOfCode")}</span>
+                  <Badge>~4,200 LOC</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.newRoutes")}</span>
+                  <Badge>9 routes</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">{t("documentation.implementationInfo.documentation")}</span>
+                  <Badge>~2,500 lines</Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </>
+      )}
     </div>
   );
 }

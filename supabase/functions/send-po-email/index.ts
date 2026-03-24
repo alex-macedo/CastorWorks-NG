@@ -6,6 +6,7 @@
 
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.3'
+import { sendEmailViaHostinger } from '../_shared/providers/index.ts'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -534,17 +535,18 @@ serve(async (req) => {
     const pmEmail = poData.projects?.users?.email || ''
 
     // ============================================================================
-    // Step 8: Send email via Resend API
+    // Step 8: Send email via Hostinger SMTP
     // ============================================================================
 
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER')
 
-    if (!RESEND_API_KEY) {
-      console.error('RESEND_API_KEY not configured')
+    if (!hostingerFromEmail) {
+      console.error('Hostinger SMTP not configured')
       return new Response(
         JSON.stringify({
           error: 'Email service not configured',
-          message: 'RESEND_API_KEY environment variable is not set',
+          message: 'Hostinger SMTP environment variables are not set',
         }),
         {
           status: 500,
@@ -557,35 +559,30 @@ serve(async (req) => {
 
     console.log('Sending email to:', supplierEmail)
 
-    const emailResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'EngPro Orders <onboarding@resend.dev>',
-        to: [supplierEmail],
-        cc: pmEmail ? [pmEmail] : [],
-        subject: emailSubject,
-        html: emailHtml,
+    let emailResult
+
+    try {
+      emailResult = await sendEmailViaHostinger({
         attachments: [
           {
             filename: `${poData.purchase_order_number}.pdf`,
             content: pdfBase64,
+            contentType: 'application/pdf',
           },
         ],
-      }),
-    })
-
-    const emailResult = await emailResponse.json()
-
-    if (!emailResponse.ok) {
-      console.error('Email send failed:', emailResult)
+        cc: pmEmail ? [pmEmail] : [],
+        fromEmail: hostingerFromEmail,
+        fromName: 'CastorWorks Orders',
+        html: emailHtml,
+        subject: emailSubject,
+        to: [supplierEmail],
+      })
+    } catch (error) {
+      console.error('Email send failed:', error)
       return new Response(
         JSON.stringify({
           error: 'Failed to send email',
-          details: emailResult,
+          details: error instanceof Error ? error.message : error,
         }),
         {
           status: 500,

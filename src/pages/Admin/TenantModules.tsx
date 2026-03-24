@@ -11,9 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Puzzle } from 'lucide-react'
 import { toast } from 'sonner'
 import { useState } from 'react'
+import { SidebarHeaderShell } from '@/components/Layout/SidebarHeaderShell'
 
 interface TenantInfo {
   id: string
@@ -145,13 +146,19 @@ export default function TenantModules() {
   }
 
   return (
-    <div className="p-6 space-y-4">
-      <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon" onClick={() => navigate('/admin/tenants')} aria-label={t('common:back')}>
-          <ArrowLeft className="h-4 w-4" />
-        </Button>
-        <h1 className="text-xl font-semibold">{t('common:adminTenantModules.title')}</h1>
-      </div>
+    <div className="p-6 space-y-6">
+      <SidebarHeaderShell>
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" size="icon" onClick={() => navigate('/admin/tenants')} aria-label={t('common:back')} className="shrink-0 text-white hover:bg-white/20 hover:text-white">
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+          <Puzzle className="h-8 w-8 shrink-0" />
+          <div>
+            <h1 className="text-2xl font-bold">{t('common:adminTenantModules.title')}</h1>
+            <p className="text-muted-foreground mt-1">{t('navigation:adminTenantModulesSubtitle')}</p>
+          </div>
+        </div>
+      </SidebarHeaderShell>
       <Card>
         <CardHeader>
           <CardTitle>{tenant?.name ?? ''}</CardTitle>

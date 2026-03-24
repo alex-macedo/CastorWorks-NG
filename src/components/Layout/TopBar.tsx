@@ -17,12 +17,14 @@ import { PageBreadcrumbs } from "./PageBreadcrumbs";
 import { HelpIcon } from "../Help/HelpIcon";
 import { NotificationBell } from "../Notifications/NotificationBell";
 import { RunningTimeIndicator } from "@/components/Shared/TimeClock/RunningTimeIndicator";
+import { FloatingTimeClock } from "@/components/Shared/TimeClock/FloatingTimeClock";
 import {
   languageMetadata,
   useLocalization,
   type Language,
 } from "@/contexts/LocalizationContext";
 import { useUserPreferences } from "@/hooks/useUserPreferences";
+import { useCurrentUserRoles } from "@/hooks/useUserRoles";
 
 type ThemeValue = "light" | "dark" | "system";
 
@@ -31,6 +33,7 @@ const LANGUAGES: Language[] = ['en-US', 'es-ES', 'fr-FR', 'pt-BR'];
 export const TopBar = () => {
   const navigate = useNavigate();
   const { t, language, setLanguage } = useLocalization();
+  const roles = useCurrentUserRoles();
   const { preferences, isLoading: isLoadingPreferences, updatePreferences } = useUserPreferences();
   const { setTheme, theme: activeTheme } = useTheme();
   const { mutate: updateUserTheme, isPending: isUpdatingTheme } = updatePreferences;
@@ -201,6 +204,11 @@ export const TopBar = () => {
     themeUpdateSubmitted.current = false;
   };
 
+  const isGlobalAdmin = roles.includes('global_admin');
+  const canUseTimeTrackingShortcut = roles.some(role =>
+    ['admin', 'project_manager', 'architect', 'global_admin'].includes(role)
+  );
+
   return (
     <div className="flex items-center justify-between w-full gap-4">
       <PageBreadcrumbs />
@@ -293,19 +301,23 @@ export const TopBar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
           <div className="hidden sm:flex items-center gap-2">
-            <PrefetchButton variant="ghost" size="sm" prefetchPath="/roadmap" onClick={() => navigate("/roadmap")}>
-              <LayoutGrid className="h-4 w-4 mr-2" />
-              <span className="hidden sm:inline">{t("topBar.roadmap")}</span>
-            </PrefetchButton>
+            {isGlobalAdmin && (
+              <PrefetchButton variant="ghost" size="sm" prefetchPath="/roadmap" onClick={() => navigate("/roadmap")}>
+                <LayoutGrid className="h-4 w-4 mr-2" />
+                <span className="hidden sm:inline">{t("topBar.roadmap")}</span>
+              </PrefetchButton>
+            )}
             <PrefetchButton variant="ghost" size="sm" prefetchPath="/weather" onClick={() => navigate("/weather")}>
               <CloudSun className="h-4 w-4 mr-2" />
               <span className="hidden sm:inline">{t("topBar.weather")}</span>
             </PrefetchButton>
+            {canUseTimeTrackingShortcut && <FloatingTimeClock variant="topbar" />}
           </div>
           <div className="sm:hidden flex items-center gap-1">
             <PrefetchButton variant="ghost" size="sm" prefetchPath="/weather" onClick={() => navigate("/weather")}>
               <CloudSun className="h-4 w-4" />
             </PrefetchButton>
+            {canUseTimeTrackingShortcut && <FloatingTimeClock variant="topbar" />}
           </div>
         </div>
       </div>

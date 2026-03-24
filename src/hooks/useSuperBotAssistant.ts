@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { aiClient, formatAIError } from '@/lib/ai/client'
 import { supabase } from '@/integrations/supabase/client'
+import { useLocalization } from '@/contexts/LocalizationContext'
 
 interface Message {
   id: string
@@ -22,6 +23,7 @@ const generateUUID = (): string => {
 }
 
 export const useSuperBotAssistant = () => {
+  const { language, t } = useLocalization()
   const [messages, setMessages] = useState<Message[]>([])
   const [sessionId] = useState(() => {
     const existing = localStorage.getItem('super_bot_session_id')
@@ -65,6 +67,7 @@ export const useSuperBotAssistant = () => {
       const data = await aiClient.superBot({
         message,
         sessionId,
+        language,
       }) as { message?: string }
 
       const assistantText = data?.message || 'No response from Super Bot'
@@ -83,7 +86,7 @@ export const useSuperBotAssistant = () => {
         {
           id: generateUUID(),
           role: 'assistant',
-          message: `Super Bot error: ${errorMessage}`,
+          message: `${t('ai.superBot.errorPrefix') || 'Super Bot error'}: ${errorMessage}`,
           created_at: new Date().toISOString(),
         },
       ])

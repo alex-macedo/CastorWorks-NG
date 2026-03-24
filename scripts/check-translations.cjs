@@ -36,7 +36,7 @@ function colorLog(color, message) {
  */
 function getAllKeys(obj, prefix = '') {
   const keys = [];
-  
+
   for (const key in obj) {
     if (typeof obj[key] === 'object' && obj[key] !== null) {
       keys.push(...getAllKeys(obj[key], prefix ? `${prefix}.${key}` : key));
@@ -44,8 +44,26 @@ function getAllKeys(obj, prefix = '') {
       keys.push(prefix ? `${prefix}.${key}` : key);
     }
   }
-  
+
   return keys.sort();
+}
+
+/**
+ * Recursively get all key-value pairs from a nested object
+ */
+function getAllKeyValues(obj, prefix = '') {
+  const pairs = {};
+
+  for (const key in obj) {
+    const fullKey = prefix ? `${prefix}.${key}` : key;
+    if (typeof obj[key] === 'object' && obj[key] !== null) {
+      Object.assign(pairs, getAllKeyValues(obj[key], fullKey));
+    } else {
+      pairs[fullKey] = obj[key];
+    }
+  }
+
+  return pairs;
 }
 
 /**
@@ -105,10 +123,23 @@ function checkTranslations() {
       const referenceKeys = getAllKeys(referenceTranslations);
       const currentKeys = getAllKeys(currentTranslations);
       
-      // Find missing keys
+      // Find missing keys (not present at all)
       for (const key of referenceKeys) {
         if (!currentKeys.includes(key)) {
-          missingKeys.push({ namespace, key });
+          missingKeys.push({ namespace, key, reason: 'missing' });
+        }
+      }
+
+      // Find empty-value keys (present but empty string or null — treat as missing)
+      const currentKV = getAllKeyValues(currentTranslations);
+      for (const [key, value] of Object.entries(currentKV)) {
+        if (value === '' || value === null) {
+          // Only flag if the reference (en-US) has a non-empty value for this key
+          const referenceKV = getAllKeyValues(referenceTranslations);
+          const refValue = referenceKV[key];
+          if (refValue !== undefined && refValue !== '' && refValue !== null) {
+            missingKeys.push({ namespace, key, reason: 'empty' });
+          }
         }
       }
     }
@@ -137,13 +168,15 @@ function checkTranslations() {
       continue;
     }
     
-    colorLog('red', `❌ ${lang}: ${missing.length} missing translations`);
-    
+    const missingCount = missing.filter(m => m.reason !== 'empty').length;
+    const emptyCount = missing.filter(m => m.reason === 'empty').length;
+    colorLog('red', `❌ ${lang}: ${missingCount} missing keys, ${emptyCount} empty values`);
+
     // Group by namespace
     const byNamespace = {};
-    for (const { namespace, key } of missing) {
+    for (const { namespace, key, reason } of missing) {
       if (!byNamespace[namespace]) byNamespace[namespace] = [];
-      byNamespace[namespace].push(key);
+      byNamespace[namespace].push(reason === 'empty' ? `${key} [empty]` : key);
     }
     
     for (const [namespace, keys] of Object.entries(byNamespace)) {

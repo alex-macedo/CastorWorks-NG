@@ -1,0 +1,40 @@
+{
+  "annual": "Annuel",
+  "billingPeriod": "Période de facturation",
+  "changePlan": "Changer de plan",
+  "currentPlan": "Plan actuel",
+  "loadingSubscription": "Chargement de l'abonnement…",
+  "manageBilling": "Gérer la facturation",
+  "monthly": "Mensuel",
+  "nextRenewal": "Prochain renouvellement",
+  "noActiveSubscription": "Aucun abonnement actif",
+  "pageTitle": "Abonnement",
+  "paymentCanceled": "Paiement annulé",
+  "paymentSuccess": "Paiement réussi",
+  "status": {
+    "active": "Actif",
+    "canceled": "Annulé",
+    "past_due": "En retard"
+  },
+  "activatedDescription": "Déconnectez-vous et reconnectez-vous pour accéder aux fonctionnalités de votre nouveau plan.",
+  "activatedTitle": "Plan activé !",
+  "signOutNow": "Se déconnecter maintenant",
+  "subscribeNow": "S'abonner maintenant",
+  "tierPicker": {
+    "annual": "Annuel",
+    "cancel": "Annuler",
+    "checkoutError": "Erreur lors du démarrage du paiement",
+    "noPortalUrl": "Aucune URL du portail renvoyée",
+    "portalOpenFailed": "Échec de l'ouverture du portail de facturation",
+    "confirm": "Confirmer",
+    "custom": "Personnalisé",
+    "loading": "Chargement…",
+    "monthly": "Mensuel",
+    "perMonthAnnual": "par mois (annuel)",
+    "selectTier": "Sélectionnez un plan",
+    "title": "Choisissez votre plan"
+  },
+  "trialDaysLeft": "{{count}} jours restants dans votre période d'essai",
+  "trialDaysLeft_other": "{{count}} jours restants dans votre période d'essai",
+  "upgradeToPaid": "Passer au plan payant"
+}

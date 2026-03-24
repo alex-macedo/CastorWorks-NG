@@ -59,6 +59,7 @@ interface ProposalPreviewProps {
 }
 
 export const ProposalPreview = ({ proposal, estimate, companyInfo }: ProposalPreviewProps) => {
+  const { t } = useLocalization()
   const expiresDate = useMemo(() => {
     if (proposal.expires_at) return new Date(proposal.expires_at);
     const now = new Date();

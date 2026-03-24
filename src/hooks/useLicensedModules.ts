@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { supabase } from '@/integrations/supabase/client'
 import { useTenant } from '@/contexts/TenantContext'
 
@@ -26,7 +26,7 @@ export function useLicensedModules(): {
     staleTime: STALE_TIME_MS,
   })
 
-  const modules = data ?? []
+  const modules = useMemo(() => data ?? [], [data])
   const hasModule = useCallback(
     (id: string) => modules.includes(id),
     [modules]

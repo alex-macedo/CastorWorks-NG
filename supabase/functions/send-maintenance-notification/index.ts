@@ -1,11 +1,9 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { Resend } from "https://esm.sh/resend@4.0.0";
 import React from "https://esm.sh/react@18.3.1";
 import { renderAsync } from "https://esm.sh/@react-email/components@0.0.22";
 import { MaintenanceAlertEmail } from "./_templates/maintenance-alert.tsx";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+import { sendEmailViaHostinger } from "../_shared/providers/index.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -120,17 +118,19 @@ const handler = async (req: Request): Promise<Response> => {
       ? `Scheduled Maintenance: ${requestData.title}`
       : "System Maintenance Notice";
 
-    const { data: emailResponse, error: emailError } = await resend.emails.send({
-      from: "System Notifications <onboarding@resend.dev>",
-      to: userEmails,
-      subject,
-      html,
-    });
-
-    if (emailError) {
-      console.error("Error sending emails:", emailError);
-      throw emailError;
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
+    if (!hostingerFromEmail) {
+      throw new Error('Hostinger SMTP not configured');
     }
+
+    const emailResponse = await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: 'System Notifications',
+      html,
+      subject,
+      to: userEmails,
+    });
 
     console.log("Emails sent successfully:", emailResponse);
 
@@ -138,7 +138,7 @@ const handler = async (req: Request): Promise<Response> => {
       JSON.stringify({
         success: true,
         message: `Notification sent to ${userEmails.length} users`,
-        emailId: emailResponse?.id,
+        emailId: emailResponse?.messageId,
       }),
       {
         status: 200,

@@ -68,6 +68,8 @@ import annotationsEnUS from './en-US/annotations.json';
 import emailEnUS from './en-US/email.json';
 import logisticsEnUS from './en-US/logistics.json';
 import timelineEnUS from './en-US/timeline.json';
+import subscriptionEnUS from './en-US/subscription.json';
+import trialEnUS from './en-US/trial.json';
 
 // pt-BR imports
 import accessibilityPtBR from './pt-BR/accessibility.json';
@@ -135,6 +137,8 @@ import annotationsPtBR from './pt-BR/annotations.json';
 import emailPtBR from './pt-BR/email.json';
 import logisticsPtBR from './pt-BR/logistics.json';
 import timelinePtBR from './pt-BR/timeline.json';
+import subscriptionPtBR from './pt-BR/subscription.json';
+import trialPtBR from './pt-BR/trial.json';
 
 // es-ES imports
 import accessibilityEsES from './es-ES/accessibility.json';
@@ -202,6 +206,8 @@ import annotationsEsES from './es-ES/annotations.json';
 import emailEsES from './es-ES/email.json';
 import logisticsEsES from './es-ES/logistics.json';
 import timelineEsES from './es-ES/timeline.json';
+import subscriptionEsES from './es-ES/subscription.json';
+import trialEsES from './es-ES/trial.json';
 
 // fr-FR imports
 import accessibilityFrFR from './fr-FR/accessibility.json';
@@ -269,6 +275,13 @@ import annotationsFrFR from './fr-FR/annotations.json';
 import emailFrFR from './fr-FR/email.json';
 import logisticsFrFR from './fr-FR/logistics.json';
 import timelineFrFR from './fr-FR/timeline.json';
+import subscriptionFrFR from './fr-FR/subscription.json';
+import trialFrFR from './fr-FR/trial.json';
+
+import platformenUS from './en-US/platform.json';
+import platformptBR from './pt-BR/platform.json';
+import platformesES from './es-ES/platform.json';
+import platformfrFR from './fr-FR/platform.json';
 
 export const criticalTranslations: Record<Language, Record<string, any>> = {
   'en-US': {
@@ -337,6 +350,9 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     email: emailEnUS,
     logistics: logisticsEnUS,
     timeline: timelineEnUS,
+    subscription: subscriptionEnUS,
+    trial: trialEnUS,
+    platform: platformenUS,
   },
   'pt-BR': {
     accessibility: accessibilityPtBR,
@@ -404,6 +420,9 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     email: emailPtBR,
     logistics: logisticsPtBR,
     timeline: timelinePtBR,
+    subscription: subscriptionPtBR,
+    trial: trialPtBR,
+    platform: platformptBR,
   },
   'es-ES': {
     accessibility: accessibilityEsES,
@@ -471,6 +490,9 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     email: emailEsES,
     logistics: logisticsEsES,
     timeline: timelineEsES,
+    subscription: subscriptionEsES,
+    trial: trialEsES,
+    platform: platformesES,
   },
   'fr-FR': {
     accessibility: accessibilityFrFR,
@@ -538,6 +560,9 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     email: emailFrFR,
     logistics: logisticsFrFR,
     timeline: timelineFrFR,
+    subscription: subscriptionFrFR,
+    trial: trialFrFR,
+    platform: platformfrFR,
   },
 };
 

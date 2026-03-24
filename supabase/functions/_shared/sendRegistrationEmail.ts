@@ -1,7 +1,6 @@
-import { Resend } from "https://esm.sh/resend@4.0.0";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { sendEmailViaHostinger } from './providers/index.ts';
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY")!);
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
@@ -23,7 +22,12 @@ export async function sendRegistrationEmail(data: RegistrationEmailData) {
       .single();
 
     const companyName = companySettings?.name || 'CastorWorks';
-    const senderEmail = companySettings?.email || 'onboarding@resend.dev';
+    const senderEmail = companySettings?.email || 'suporte@castorworks.cloud';
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER');
+    if (!hostingerFromEmail) {
+      throw new Error('Hostinger SMTP not configured');
+    }
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -70,11 +74,13 @@ export async function sendRegistrationEmail(data: RegistrationEmailData) {
       </html>
     `;
 
-    const emailResponse = await resend.emails.send({
-      from: `${companyName} <onboarding@resend.dev>`,
-      to: [userEmail],
-      subject: `Welcome to ${companyName} - Account Registration`,
+    const emailResponse = await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: companyName,
       html: emailHtml,
+      replyTo: senderEmail,
+      subject: `Welcome to ${companyName} - Account Registration`,
+      to: [userEmail],
     });
 
     // Log the email notification
@@ -86,7 +92,7 @@ export async function sendRegistrationEmail(data: RegistrationEmailData) {
       sent_at: new Date().toISOString(),
     });
 
-    return { success: true, emailId: emailResponse.data?.id };
+    return { success: true, emailId: emailResponse.messageId };
   } catch (error) {
     console.error('Error sending registration email:', error);
 

@@ -5,6 +5,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent } from '@/components/ui/card';
 import { formatDate } from '@/utils/formatters';
 import { useLocalization } from "@/contexts/LocalizationContext";
+import { Activity } from 'lucide-react';
+import { SidebarHeaderShell } from '@/components/Layout/SidebarHeaderShell';
 
 export default function TelemetryIssues() {
   const { t } = useLocalization();
@@ -35,8 +37,16 @@ export default function TelemetryIssues() {
   }, []);
 
   return (
-    <div className="p-6 space-y-4">
-      <h1 className="text-2xl font-bold">{t("admin:telemetryUnlinkedApprovals")}</h1>
+    <div className="p-6 space-y-6">
+      <SidebarHeaderShell>
+        <div className="flex items-center gap-4">
+          <Activity className="h-8 w-8 shrink-0" />
+          <div>
+            <h1 className="text-2xl font-bold">{t("admin:telemetryUnlinkedApprovals")}</h1>
+            <p className="text-muted-foreground mt-1">{t('navigation:telemetryIssuesSubtitle')}</p>
+          </div>
+        </div>
+      </SidebarHeaderShell>
       {loading ? (
         <div>{t("commonUI.loading") }</div>
       ) : events.length === 0 ? (

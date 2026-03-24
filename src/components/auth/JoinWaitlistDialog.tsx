@@ -1,0 +1,380 @@
+import { useMemo, useState } from 'react'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { CheckCircle2, Loader2, ShieldCheck, Sparkles, Star } from 'lucide-react'
+import { toast } from 'sonner'
+
+import { useLocalization } from '@/contexts/LocalizationContext'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.replace(/\/$/, '') ?? ''
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY ?? ''
+
+interface JoinWaitlistDialogProps {
+  source: string
+  children: React.ReactNode
+}
+
+interface JoinWaitlistResponse {
+  success: boolean
+  alreadyJoined?: boolean
+  message?: string
+  error?: string
+}
+
+interface WaitlistFormValues {
+  fullName: string
+  companyName: string
+  email: string
+  cellPhone: string
+  moreInfoRequest?: string
+}
+
+function getWaitlistEndpoint() {
+  if (typeof window !== 'undefined') {
+    return new URL('/functions/v1/join-waiting-list', window.location.origin).toString()
+  }
+
+  if (supabaseUrl) {
+    return `${supabaseUrl}/functions/v1/join-waiting-list`
+  }
+
+  return '/functions/v1/join-waiting-list'
+}
+
+export function JoinWaitlistDialog({ source, children }: JoinWaitlistDialogProps) {
+  const { t, language } = useLocalization()
+  const [open, setOpen] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const schema = useMemo(
+    () =>
+      z.object({
+        fullName: z.string().trim().min(2, t('auth:login.waitlist.validation.fullName')),
+        companyName: z.string().trim().min(2, t('auth:login.waitlist.validation.companyName')),
+        email: z.string().trim().email(t('auth:login.waitlist.validation.email')),
+        cellPhone: z
+          .string()
+          .trim()
+          .refine(
+            (value) => value.replace(/\D/g, '').length >= 8,
+            t('auth:login.waitlist.validation.cellPhone'),
+          ),
+        moreInfoRequest: z.string().trim().max(500).optional().or(z.literal('')),
+      }),
+    [t],
+  )
+
+  const form = useForm<WaitlistFormValues>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      fullName: '',
+      companyName: '',
+      email: '',
+      cellPhone: '',
+      moreInfoRequest: '',
+    },
+  })
+
+  const resetState = () => {
+    form.reset()
+    setIsSubmitted(false)
+  }
+
+  const onOpenChange = (nextOpen: boolean) => {
+    setOpen(nextOpen)
+    if (!nextOpen) {
+      resetState()
+    }
+  }
+
+  const onSubmit = async (values: WaitlistFormValues) => {
+    form.clearErrors('root')
+
+    try {
+      const normalizedLocale = language === 'pt-BR' ? 'pt-BR' : 'en'
+      const endpoint = getWaitlistEndpoint()
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+      }
+
+      if (supabaseAnonKey) {
+        headers.apikey = supabaseAnonKey
+        headers.Authorization = `Bearer ${supabaseAnonKey}`
+      }
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          ...values,
+          source,
+          locale: normalizedLocale,
+        }),
+      })
+
+      const payload = (await response.json().catch(() => ({}))) as JoinWaitlistResponse
+
+      if (!response.ok) {
+        throw new Error(payload.error || t('auth:login.waitlist.form.error'))
+      }
+
+      setIsSubmitted(true)
+      toast.success(
+        payload.alreadyJoined
+          ? t('auth:login.waitlist.toast.duplicate')
+          : t('auth:login.waitlist.toast.success'),
+      )
+    } catch (error) {
+      console.error('[join-waitlist-dialog] submit failed', error)
+      form.setError('root', { message: t('auth:login.waitlist.form.error') })
+      toast.error(t('auth:login.waitlist.toast.error'))
+    }
+  }
+
+  const highlights = [
+    {
+      icon: Sparkles,
+      title: t('auth:login.waitlist.card.priority'),
+      description: t('auth:login.waitlist.card.priorityDesc'),
+    },
+    {
+      icon: Star,
+      title: t('auth:login.waitlist.card.guided'),
+      description: t('auth:login.waitlist.card.guidedDesc'),
+    },
+    {
+      icon: ShieldCheck,
+      title: t('auth:login.waitlist.card.updates'),
+      description: t('auth:login.waitlist.card.updatesDesc'),
+    },
+  ]
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent
+        size="xl"
+        className="max-h-[92vh] overflow-y-auto border-slate-800 bg-slate-950 p-0 text-white shadow-2xl"
+      >
+        <div className="relative overflow-hidden rounded-lg">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:26px_26px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.22),transparent_45%),radial-gradient(circle_at_bottom,rgba(249,115,22,0.14),transparent_38%)]" />
+
+          <div className="relative grid gap-0 lg:grid-cols-[1.05fr_1fr]">
+            <div className="border-b border-white/10 p-8 lg:border-b-0 lg:border-r lg:p-10">
+              <DialogHeader className="text-left">
+                <div className="mb-5 inline-flex w-fit items-center rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">
+                  {t('auth:login.waitlist.badge')}
+                </div>
+                <DialogTitle className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                  {t('auth:login.waitlist.title')}
+                </DialogTitle>
+                <DialogDescription className="max-w-xl text-base leading-relaxed text-slate-300">
+                  {t('auth:login.waitlist.subtitle')}
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="mt-8 space-y-4">
+                {highlights.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-400/10 text-sky-200">
+                        <item.icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-white">{item.title}</p>
+                        <p className="mt-1 text-sm leading-relaxed text-slate-300">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-6 text-sm leading-relaxed text-slate-400">
+                {t('auth:login.waitlist.trust')}
+              </p>
+            </div>
+
+            <div className="p-8 lg:p-10">
+              {isSubmitted ? (
+                <div className="flex h-full min-h-[420px] flex-col items-center justify-center text-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
+                    <CheckCircle2 className="h-8 w-8" />
+                  </div>
+                  <h3 className="mt-6 text-2xl font-semibold text-white">
+                    {t('auth:login.waitlist.form.successTitle')}
+                  </h3>
+                  <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-300">
+                    {t('auth:login.waitlist.form.successDescription')}
+                  </p>
+                  <Button
+                    type="button"
+                    className="mt-8 h-11 rounded-full bg-white px-6 text-slate-950 hover:bg-slate-100"
+                    onClick={() => onOpenChange(false)}
+                  >
+                    {t('auth:login.waitlist.form.successCta')}
+                  </Button>
+                </div>
+              ) : (
+                <Form {...form}>
+                  <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <FormField
+                        control={form.control}
+                        name="fullName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-slate-200">
+                              {t('auth:login.waitlist.form.fullName')}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                placeholder={t('auth:login.waitlist.form.fullNamePlaceholder')}
+                                className="h-11 rounded-xl border-white/10 bg-white/5 text-white placeholder:text-slate-400"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="companyName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-slate-200">
+                              {t('auth:login.waitlist.form.companyName')}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                placeholder={t('auth:login.waitlist.form.companyNamePlaceholder')}
+                                className="h-11 rounded-xl border-white/10 bg-white/5 text-white placeholder:text-slate-400"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-slate-200">
+                              {t('auth:login.waitlist.form.email')}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                type="email"
+                                placeholder={t('auth:login.waitlist.form.emailPlaceholder')}
+                                className="h-11 rounded-xl border-white/10 bg-white/5 text-white placeholder:text-slate-400"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="cellPhone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-slate-200">
+                              {t('auth:login.waitlist.form.cellPhone')}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                inputMode="tel"
+                                placeholder={t('auth:login.waitlist.form.cellPhonePlaceholder')}
+                                className="h-11 rounded-xl border-white/10 bg-white/5 text-white placeholder:text-slate-400"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="moreInfoRequest"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-slate-200">
+                            {t('auth:login.waitlist.form.moreInfoRequest')}
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              {...field}
+                              rows={4}
+                              placeholder={t('auth:login.waitlist.form.moreInfoRequestPlaceholder')}
+                              className="rounded-xl border-white/10 bg-white/5 text-white placeholder:text-slate-400"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {form.formState.errors.root ? (
+                      <p className="text-sm text-rose-300">{form.formState.errors.root.message}</p>
+                    ) : null}
+
+                    <Button
+                      type="submit"
+                      className="mt-2 h-12 w-full rounded-full bg-white text-slate-950 hover:bg-slate-100"
+                      disabled={form.formState.isSubmitting}
+                    >
+                      {form.formState.isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          {t('auth:login.waitlist.form.submitting')}
+                        </>
+                      ) : (
+                        t('auth:login.waitlist.form.submit')
+                      )}
+                    </Button>
+                  </form>
+                </Form>
+              )}
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}

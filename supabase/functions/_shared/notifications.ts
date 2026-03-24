@@ -4,6 +4,7 @@
  */
 
 import { SupabaseClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { sendEmailViaHostinger } from './providers/index.ts'
 
 interface ProjectManagerNotificationData {
   project_id: string
@@ -61,15 +62,16 @@ export async function getProjectManagerDetails(
 }
 
 /**
- * Send approval notification email via Resend
+ * Send approval notification email via Hostinger SMTP
  */
 export async function sendApprovalNotification(
   data: ApprovalNotificationData
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
-    if (!RESEND_API_KEY) {
-      return { success: false, error: 'RESEND_API_KEY not configured' }
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER')
+    if (!hostingerFromEmail) {
+      return { success: false, error: 'Hostinger SMTP not configured' }
     }
 
     const BASE_URL = Deno.env.get('SUPABASE_URL')?.replace('/rest/v1', '') || ''
@@ -153,24 +155,13 @@ export async function sendApprovalNotification(
       </html>
     `
 
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'EngPro <onboarding@resend.dev>',
-        to: [data.project_manager_email],
-        subject: `Quote Approved - ${data.project_name}`,
-        html: emailHtml,
-      }),
+    await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: 'CastorWorks',
+      html: emailHtml,
+      subject: `Quote Approved - ${data.project_name}`,
+      to: [data.project_manager_email],
     })
-
-    if (!response.ok) {
-      const errorText = await response.text()
-      return { success: false, error: `Resend API error: ${errorText}` }
-    }
 
     return { success: true }
   } catch (err) {
@@ -180,15 +171,16 @@ export async function sendApprovalNotification(
 }
 
 /**
- * Send rejection notification email via Resend
+ * Send rejection notification email via Hostinger SMTP
  */
 export async function sendRejectionNotification(
   data: RejectionNotificationData
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
-    if (!RESEND_API_KEY) {
-      return { success: false, error: 'RESEND_API_KEY not configured' }
+    const hostingerFromEmail = Deno.env.get('HOSTINGER_EMAIL_ACCOUNT')
+      ?? Deno.env.get('HOSTINGER_SMTP_USER')
+    if (!hostingerFromEmail) {
+      return { success: false, error: 'Hostinger SMTP not configured' }
     }
 
     const BASE_URL = Deno.env.get('SUPABASE_URL')?.replace('/rest/v1', '') || ''
@@ -257,24 +249,13 @@ export async function sendRejectionNotification(
       </html>
     `
 
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'EngPro <onboarding@resend.dev>',
-        to: [data.project_manager_email],
-        subject: `Quotes Rejected - ${data.project_name}`,
-        html: emailHtml,
-      }),
+    await sendEmailViaHostinger({
+      fromEmail: hostingerFromEmail,
+      fromName: 'CastorWorks',
+      html: emailHtml,
+      subject: `Quotes Rejected - ${data.project_name}`,
+      to: [data.project_manager_email],
     })
-
-    if (!response.ok) {
-      const errorText = await response.text()
-      return { success: false, error: `Resend API error: ${errorText}` }
-    }
 
     return { success: true }
   } catch (err) {

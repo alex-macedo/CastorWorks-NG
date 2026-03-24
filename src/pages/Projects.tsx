@@ -218,6 +218,9 @@ const Projects = () => {
     });
   }, [projectsFromFilter, searchTerm, sortBy, filters.minBudget, filters.maxBudget, filters.startDateFrom, filters.startDateTo]);
 
+  const filteredProjectsCount = filteredProjects.length;
+  const totalProjectsCount = Array.isArray(projects) ? projects.length : 0;
+
   useEffect(() => {
     if (!filteredProjects.length) return;
     const loadImages = async () => {
@@ -369,9 +372,9 @@ const Projects = () => {
         </ToggleGroup>
       </div>
 
-      {(filteredProjects as any[]).length > 0 && (
+      {filteredProjectsCount > 0 && (
         <div className="flex items-center justify-between gap-4 text-sm text-muted-foreground">
-          <span>{t('projects:showingResults', { count: (filteredProjects as any[]).length, total: (projects as any)?.length ?? 0 })}</span>
+          <span>{t('projects:showingResults', { count: filteredProjectsCount, total: totalProjectsCount })}</span>
           <span className="whitespace-nowrap">{t('common:scheduleStatus.timezoneChip', { timezone: systemPreferences?.system_time_zone || 'America/New_York' })}</span>
         </div>
       )}

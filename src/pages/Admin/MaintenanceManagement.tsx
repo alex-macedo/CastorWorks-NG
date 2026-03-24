@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Plus, Trash2, Power, PowerOff } from "lucide-react";
+import { Calendar, Clock, Plus, Trash2, Power, PowerOff, Settings2 } from "lucide-react";
+import { SidebarHeaderShell } from "@/components/Layout/SidebarHeaderShell";
 import { useMaintenanceSettings, useUpdateMaintenanceSettings } from "@/hooks/useMaintenanceSettings";
 import {
   useScheduledMaintenance,
@@ -84,6 +85,16 @@ export default function MaintenanceManagement() {
 
   return (
     <div className="p-6 space-y-6">
+      <SidebarHeaderShell>
+        <div className="flex items-center gap-4">
+          <Settings2 className="h-8 w-8 shrink-0" />
+          <div>
+            <h1 className="text-2xl font-bold">{t("maintenance.title")}</h1>
+            <p className="text-muted-foreground mt-1">{t("navigation:maintenanceSubtitle")}</p>
+          </div>
+        </div>
+      </SidebarHeaderShell>
+
       {/* Current Maintenance Mode */}
       <Card>
         <CardHeader>

@@ -46,6 +46,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
   const navigate = useNavigate();
   const { t } = useLocalization();
   const isClient = useHasRole('client');
+  const isGlobalAdmin = useHasRole('global_admin');
 
   const commands: Command[] = React.useMemo(() => [
     // Navigation Commands
@@ -137,17 +138,19 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
       },
       category: 'navigation',
     },
-    {
-      id: 'nav-roadmap',
-      label: t('navigation.roadmap') || 'Roadmap',
-      keywords: ['timeline', 'schedule', 'gantt'],
-      icon: Calendar,
-      action: () => {
-        navigate('/roadmap');
-        onOpenChange(false);
-      },
-      category: 'navigation',
-    },
+    ...(isGlobalAdmin
+      ? [{
+          id: 'nav-roadmap',
+          label: t('navigation.roadmap') || 'Roadmap',
+          keywords: ['timeline', 'schedule', 'gantt'],
+          icon: Calendar,
+          action: () => {
+            navigate('/roadmap');
+            onOpenChange(false);
+          },
+          category: 'navigation' as const,
+        }]
+      : []),
     {
       id: 'nav-materials',
       label: t('navigation.materials') || 'Materials & Labor',
@@ -221,7 +224,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
       return false;
     }
     return true;
-  }), [navigate, onOpenChange, t, isClient]);
+  }), [navigate, onOpenChange, t, isClient, isGlobalAdmin]);
 
   const navigationCommands = commands.filter(cmd => cmd.category === 'navigation');
   const actionCommands = commands.filter(cmd => cmd.category === 'actions');

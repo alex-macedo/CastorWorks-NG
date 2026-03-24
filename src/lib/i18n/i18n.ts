@@ -171,7 +171,10 @@ export const i18nInitPromise = i18n
       'forms',
       'annotations',
       'email',
-      'logistics'
+      'logistics',
+      'subscription',
+      'trial',
+      'platform'
     ],
 
     // Interpolation settings (match current behavior)

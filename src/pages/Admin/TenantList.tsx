@@ -12,6 +12,8 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Button } from '@/components/ui/button'
+import { Building2 } from 'lucide-react'
+import { SidebarHeaderShell } from '@/components/Layout/SidebarHeaderShell'
 
 interface TenantRow {
   id: string
@@ -49,7 +51,17 @@ export default function TenantList() {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-6 space-y-6">
+      <SidebarHeaderShell>
+        <div className="flex items-center gap-4">
+          <Building2 className="h-8 w-8 shrink-0" />
+          <div>
+            <h1 className="text-2xl font-bold">{t('common:adminTenants.title')}</h1>
+            <p className="text-muted-foreground mt-1">{t('navigation:adminTenantsSubtitle')}</p>
+          </div>
+        </div>
+      </SidebarHeaderShell>
+
       <Card>
         <CardHeader>
           <CardTitle>{t('common:adminTenants.title')}</CardTitle>

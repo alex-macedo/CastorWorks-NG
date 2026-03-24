@@ -1,0 +1,64 @@
+- id: castorworks-ng-foundation-001
+  fact: "Founding Engineer hire approval 3f29b397-d5ce-4ef8-9902-9f89fed3aa63 is approved, and the agent is now idle."
+  category: milestone
+  timestamp: "2026-03-15"
+  source: "2026-03-15"
+  status: active
+  superseded_by: null
+  related_entities:
+    - companies/castorworks
+    - projects/castorworks-ng-foundation
+  last_accessed: "2026-03-15"
+  access_count: 1
+
+- id: castorworks-ng-foundation-002
+  fact: "Roadmap issue CAS-2 and child tasks CAS-3 through CAS-6 were created for initial execution planning."
+  category: milestone
+  timestamp: "2026-03-15"
+  source: "2026-03-15"
+  status: active
+  superseded_by: null
+  related_entities:
+    - companies/castorworks
+    - projects/castorworks-ng-foundation
+  last_accessed: "2026-03-15"
+  access_count: 1
+
+- id: castorworks-ng-foundation-003
+  fact: "Issue CAS-7 requested five hires (CMO, CTO, COO, CodexCoder-1, CodexCoder-2); all five hire approvals were submitted and are pending board decision."
+  category: status
+  timestamp: "2026-03-15"
+  source: "2026-03-15"
+  status: superseded
+  superseded_by: castorworks-ng-foundation-004
+  related_entities:
+    - companies/castorworks
+    - projects/castorworks-ng-foundation
+  last_accessed: "2026-03-15"
+  access_count: 2
+
+- id: castorworks-ng-foundation-004
+  fact: "All five CAS-7 hire approvals were approved, the agents were activated, and issue CAS-7 was closed as done after board unblock guidance."
+  category: milestone
+  timestamp: "2026-03-15"
+  source: "2026-03-15"
+  status: active
+  superseded_by: null
+  related_entities:
+    - companies/castorworks
+    - projects/castorworks-ng-foundation
+  last_accessed: "2026-03-15"
+  access_count: 2
+
+- id: castorworks-ng-foundation-005
+  fact: "CAS-13 was mention-escalated to CEO, but checkout takeover failed with 409 because Founding Engineer is the active assignee; CEO posted next-step guidance instead of force-taking ownership."
+  category: status
+  timestamp: "2026-03-15"
+  source: "2026-03-15"
+  status: active
+  superseded_by: null
+  related_entities:
+    - companies/castorworks
+    - projects/castorworks-ng-foundation
+  last_accessed: "2026-03-15"
+  access_count: 1
