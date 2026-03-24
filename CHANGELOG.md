@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Platform Admin Module — Full CRUD (2026-03-16):**
+  - 6 new DB migrations:
+    - `20260316000000_create_platform_tasks.sql` — `platform_tasks` table with RLS (any platform role read/write; owner+super_admin delete)
+    - `20260316000001_create_platform_communication_log.sql` — append-only `platform_communication_log` table (no UPDATE RLS)
+    - `20260316000002_create_platform_support_tickets.sql` — `platform_support_tickets` + `platform_support_messages` tables with thread-based messaging
+    - `20260316000003_create_global_templates.sql` — `global_templates` table with family/status lifecycle and versioning
+    - `20260316000004_extend_contacts_rls_for_platform_roles.sql` — extends contact RLS to include all platform roles
+    - `20260316000005_extend_tenants_policies_for_platform.sql` — adds tenants UPDATE/DELETE policies and extends SELECT for platform roles
+  - New `platform` i18n namespace with all keys across en-US, pt-BR, es-ES, fr-FR
+  - New `src/types/platform.types.ts` — TypeScript interfaces + Zod schemas for Tasks, CommLog, SupportTickets, GlobalTemplates, Tenants
+  - 5 new hooks: `usePlatformTasks`, `usePlatformCommunicationLog`, `usePlatformSupportTickets`, `useGlobalTemplates`, `useTenants`
+  - 16 new shared components under `src/components/Platform/`:
+    - Contacts: `ContactSheet`, `DeleteContactDialog`
+    - Customers: `TenantSheet`, `DeleteTenantDialog`
+    - Tasks: `TaskSheet`, `DeleteTaskDialog`, `TaskStatusBadge`, `TaskPriorityBadge`
+    - CommunicationLog: `LogEntrySheet`, `DeleteLogEntryDialog`
+    - SupportChat: `TicketSheet`, `SupportTicketStatusBadge`, `SupportTicketPriorityBadge`
+    - GlobalTemplates: `TemplateSheet`, `DeleteTemplateDialog`, `TemplateStatusBadge`
+  - All 8 Platform workspace pages rewritten with full CRUD tables, Sheet forms, and AlertDialog confirms:
+    - `PlatformContacts` — create/edit/delete contacts
+    - `PlatformCustomers` — create/edit/delete tenants (with cascade warning) + slug auto-gen
+    - `PlatformForms` — status tabs + publish/unpublish/duplicate/delete
+    - `PlatformCampaigns` — execute/cancel/delete with confirm dialogs
+    - `PlatformTasks` — status filter tabs + create/edit/delete with priority & status badges
+    - `PlatformCommunicationLog` — append-only log with channel icons, direction/status badges
+    - `PlatformGlobalTemplates` — family filter tabs + publish/archive/delete lifecycle (delete blocked on published)
+    - `PlatformSupportChat` — two-pane layout (ticket list + message thread + reply form)
+
 - **Platform Team Workspace & Role Model:**
   - DB migration `20260315000000_add_platform_roles.sql`: adds `platform_owner`, `platform_support`, `platform_sales` to the `app_role` enum using the idempotent `IF NOT EXISTS` pattern
   - `AppRole` TypeScript union extended with all three new platform roles

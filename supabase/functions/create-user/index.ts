@@ -1,6 +1,6 @@
 /**
  * Create a new user with roles via Supabase Admin SDK
- * 
+ *
  * Request body:
  * {
  *   email: string
@@ -8,6 +8,8 @@
  *   display_name?: string
  *   roles?: string[]
  *   send_invite?: boolean
+ *   tenant_id?: string       // Optional: assign user to a workspace
+ *   tenant_role?: string     // Required if tenant_id provided: role within the workspace
  * }
  */
 
@@ -108,7 +110,9 @@ serve(async (req) => {
 
     // Parse request body
     const body = await req.json();
-    const { email, password, display_name, roles, send_invite } = body;
+    // Note: send_invite is kept for potential future use (e.g., sending welcome emails via SMTP)
+    // but email_confirm is always true so admin-created users can log in immediately
+    const { email, password, display_name, roles, tenant_id, tenant_role } = body;
 
     // Validate inputs
     if (!email || !password) {
@@ -132,7 +136,7 @@ serve(async (req) => {
     const { data: newUserData, error: createError } = await supabaseAdmin.auth.admin.createUser({
       email,
       password,
-      email_confirm: !send_invite, // If sending invite, user needs to verify email
+      email_confirm: true, // Always confirm email for admin-created users (they're trusted)
       user_metadata: {
         display_name: displayName,
       },
@@ -214,9 +218,34 @@ serve(async (req) => {
       // Don't fail completely
     }
 
+    // Assign user to workspace if tenant_id provided
+    let tenantAssigned = false;
+    if (tenant_id && tenant_role) {
+      const { error: tenantUserError } = await supabaseAdmin
+        .from("tenant_users")
+        .upsert(
+          {
+            tenant_id,
+            user_id: userId,
+            role: tenant_role,
+            is_owner: false,
+            invited_at: new Date().toISOString(),
+          },
+          { onConflict: "tenant_id,user_id", ignoreDuplicates: false }
+        );
+
+      if (tenantUserError) {
+        console.error("Error assigning user to workspace:", tenantUserError);
+        // Don't fail completely - user is created, just not assigned to workspace
+      } else {
+        tenantAssigned = true;
+        console.log(`User ${email} assigned to workspace ${tenant_id} with role ${tenant_role}`);
+      }
+    }
+
     const isNewUser = !createError;
     console.log(
-      `User ${email} ${isNewUser ? "created" : "roles updated"} with roles: ${rolesToAssign.join(", ")}`
+      `User ${email} ${isNewUser ? "created" : "roles updated"} with roles: ${rolesToAssign.join(", ")}${tenantAssigned ? ` and assigned to workspace` : ""}`
     );
 
     return jsonResponse(
@@ -230,6 +259,8 @@ serve(async (req) => {
           email,
           display_name: displayName,
           roles: rolesToAssign,
+          tenant_id: tenantAssigned ? tenant_id : undefined,
+          tenant_role: tenantAssigned ? tenant_role : undefined,
         },
       },
       201

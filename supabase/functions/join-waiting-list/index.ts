@@ -17,7 +17,9 @@ const submissionSchema = z.object({
   cellPhone: z.string().trim().min(8).max(40),
   moreInfoRequest: z.string().trim().max(500).optional().or(z.literal("")),
   source: z.string().trim().min(2).max(80),
-  locale: z.enum(['pt-BR', 'en']).default('en'),
+  locale: z.string().trim().default('en').transform((v: string) =>
+    v === 'pt-BR' ? 'pt-BR' : 'en'
+  ),
 })
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL') ?? ''
@@ -126,28 +128,36 @@ serve(async (req) => {
         userName: payload.fullName.trim(),
       })
 
-      await supabase.from('email_notifications').insert({
-        recipient_email: normalizedEmail,
-        subject: emailResult.subject,
-        body: emailResult.body,
-        notification_type: alreadyJoined ? 'waiting_list_repeat_confirmation' : 'waiting_list_confirmation',
-        status: 'sent',
-        sent_at: new Date().toISOString(),
-      })
+      try {
+        await supabase.from('email_notifications').insert({
+          recipient_email: normalizedEmail,
+          subject: emailResult.subject,
+          body: emailResult.body,
+          notification_type: alreadyJoined ? 'waiting_list_repeat_confirmation' : 'waiting_list_confirmation',
+          status: 'sent',
+          sent_at: new Date().toISOString(),
+        })
+      } catch (notifErr) {
+        console.warn('[join-waiting-list] email_notifications sent-insert failed', notifErr)
+      }
     } catch (emailError) {
       const emailMessage = emailError instanceof Error ? emailError.message : 'Unknown email error'
       emailDeliveryStatus = 'failed'
 
-      await supabase.from('email_notifications').insert({
-        recipient_email: normalizedEmail,
-        subject: payload.locale === 'pt-BR'
-          ? 'Voce entrou na lista de espera da CastorWorks'
-          : 'You joined the CastorWorks waiting list',
-        body: '',
-        notification_type: alreadyJoined ? 'waiting_list_repeat_confirmation' : 'waiting_list_confirmation',
-        status: 'failed',
-        error_message: emailMessage,
-      })
+      try {
+        await supabase.from('email_notifications').insert({
+          recipient_email: normalizedEmail,
+          subject: payload.locale === 'pt-BR'
+            ? 'Voce entrou na lista de espera da CastorWorks'
+            : 'You joined the CastorWorks waiting list',
+          body: '',
+          notification_type: alreadyJoined ? 'waiting_list_repeat_confirmation' : 'waiting_list_confirmation',
+          status: 'failed',
+          error_message: emailMessage,
+        })
+      } catch (notifErr) {
+        console.warn('[join-waiting-list] email_notifications failed-insert error', notifErr)
+      }
       console.error('[join-waiting-list] confirmation email failed', emailError)
     }
 
