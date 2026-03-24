@@ -28,7 +28,9 @@
     "regenerate": "Regenerar Insights"
   },
   "superBot": {
+    "analytics": "Análises",
     "clearConversation": "Limpar conversa",
+    "errorPrefix": "Erro do Super Bot",
     "greeting": "Bom dia",
     "greetingQuestion": "Como posso ajudar você hoje?",
     "greetings": {
@@ -52,6 +54,12 @@
     "searchPlaceholder": "Buscar conversas...",
     "subheadline": "Peça em linguagem natural para consultar e atualizar dados.",
     "suggestions": "Sugestões",
+    "templateTitles": {
+      "delayedProjects": "Visão de Projetos Atrasados",
+      "duePayments": "Resumo de Pagamentos em Aberto",
+      "updateTasks": "Fechar Tarefas até Hoje",
+      "vendorQuotes": "Fornecedores sem Proposta"
+    },
     "title": "Super Bot"
   }
 }

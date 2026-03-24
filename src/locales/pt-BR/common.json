@@ -17,6 +17,8 @@
     "takePhoto": "Take Photo",
     "transactionReferenceOptional": "Transaction Reference (Optional)"
   },
+  "activatedDescription": "Sua conta está ativa.",
+  "activatedTitle": "Ativado",
   "active": "Ativo",
   "activeProjects": "activeProjects",
   "activity": {
@@ -329,7 +331,9 @@
       "regenerate": "Regenerate Insights"
     },
     "superBot": {
+      "analytics": "",
       "clearConversation": "clearConversation",
+      "errorPrefix": "",
       "greetingQuestion": "greetingQuestion",
       "greetings": {
         "afternoon": "afternoon",
@@ -350,7 +354,13 @@
       },
       "searchPlaceholder": "searchPlaceholder",
       "subheadline": "subheadline",
-      "suggestions": "suggestions"
+      "suggestions": "suggestions",
+      "templateTitles": {
+        "delayedProjects": "",
+        "duePayments": "",
+        "updateTasks": "",
+        "vendorQuotes": ""
+      }
     }
   },
   "aiAnalyze": "AI Analyze",
@@ -588,6 +598,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
+  "annual": "Anual",
   "app": {
     "active": "Active",
     "activeProjects": "Active Projects",
@@ -1486,6 +1497,13 @@
   "bi-weekly": "Bi-Weekly",
   "biWeekly": "Bi-Weekly",
   "billableHours": "billableHours",
+  "billing": {
+    "downloadInvoice": "Baixar Fatura",
+    "downloadInvoiceFailed": "Falha ao baixar a fatura",
+    "emptyState": "Nenhum histórico de cobrança ainda",
+    "title": "Histórico de Cobrança"
+  },
+  "billingPeriod": "Período de Cobrança",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1787,6 +1805,7 @@
     "taxes": "Taxes"
   },
   "change": "[EN] Change",
+  "changePlan": "Mudar Plano",
   "clear": "Clear",
   "clearAll": "Clear All",
   "clearFilter": "Clear Filter",
@@ -1976,9 +1995,9 @@
       "welcomeDefault": "welcomeDefault"
     },
     "definitions": {
-      "noDefinitions": "",
-      "subtitle": "",
-      "title": ""
+      "noDefinitions": "Nenhuma definição ainda",
+      "subtitle": "Acompanhe decisões e definições do cliente",
+      "title": "Definições"
     },
     "description": "Description:",
     "documents": {
@@ -2463,6 +2482,7 @@
   "collapse": "Collapse",
   "collapseAll": "Collapse All",
   "colors": "Colors",
+  "comingSoon": "",
   "common": {
     "accessDenied": "accessDenied",
     "accessNotEnabled": "accessNotEnabled",
@@ -2694,7 +2714,7 @@
     },
     "post": "post",
     "posting": "posting",
-    "preview": "",
+    "preview": "Pré-visualização",
     "previous": "previous",
     "print": "print",
     "promoting": "promoting",
@@ -3114,6 +3134,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
+  "currentPlan": "Plano Atual",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Items you requested quotes for",
@@ -3291,6 +3312,9 @@
   "date": "Date",
   "dateRange": "Date range",
   "days": "days",
+  "daysLeft_many": "{{count}} dias restantes",
+  "daysLeft_one": "{{count}} dia restante",
+  "daysLeft_other": "{{count}} dias restantes",
   "dbExportImport": {
     "databaseExportImport": "Database Export / Import"
   },
@@ -4569,6 +4593,7 @@
   },
   "linkCopied": "Link copied to clipboard",
   "loading": "Carregando...",
+  "loadingSubscription": "Carregando assinatura...",
   "location": "Location",
   "logistics": "Logistics",
   "maintenance": {
@@ -4587,6 +4612,8 @@
     "startTimeLabel": "Start Time",
     "titleLabel": "Title"
   },
+  "manage": "",
+  "manageBilling": "Gerenciar Cobrança",
   "materials": "Materials",
   "meetingReview": {
     "confirm": "confirm",
@@ -4617,7 +4644,7 @@
     "quickNote": "quickNote",
     "recordWithAI": "recordWithAI",
     "recording": "recording",
-    "resume": "",
+    "resume": "Retomar",
     "show": "show",
     "showWhisper": "showWhisper",
     "start": "start",
@@ -4626,8 +4653,8 @@
     "startNewMeeting": "startNewMeeting",
     "titlePlaceholder": "titlePlaceholder",
     "total": "total",
-    "transcriptPlaceholder": "",
-    "unmute": "",
+    "transcriptPlaceholder": "A transcrição da reunião aparecerá aqui...",
+    "unmute": "Ativar Microfone",
     "waitingForSpeech": "waitingForSpeech",
     "whisperModeActive": "whisperModeActive"
   },
@@ -4683,6 +4710,7 @@
     "financial": "financial",
     "materials": "materials",
     "myDashboard": "myDashboard",
+    "myTimesheet": "Meu ponto",
     "notifications": "notifications",
     "platform": "platform",
     "procurement": "procurement",
@@ -4700,8 +4728,10 @@
   },
   "new": "New",
   "next": "Next",
+  "nextRenewal": "Próxima Renovação",
   "nextStep": "Next Step",
   "no": "No",
+  "noActiveSubscription": "Sem assinatura ativa",
   "noAddress": "No address provided",
   "noChanges": "No changes to save",
   "noContactsAvailable": "No contacts available. Add clients, suppliers, or contractors first.",
@@ -4751,10 +4781,10 @@
   },
   "notifications": {
     "actions": {
-      "payNow": "",
-      "reviewBudget": "",
-      "view": "",
-      "viewSchedule": ""
+      "payNow": "Pagar Agora",
+      "reviewBudget": "Revisar Orçamento",
+      "view": "Ver",
+      "viewSchedule": "Ver Cronograma"
     },
     "aiAssistant": {
       "description": "description",
@@ -4819,10 +4849,10 @@
     "empty": "empty",
     "failed": "failed",
     "older": "older",
-    "payNow": "",
+    "payNow": "Pagar Agora",
     "pending": "pending",
     "requiresAction": "requiresAction",
-    "reviewBudget": "",
+    "reviewBudget": "Revisar Orçamento",
     "sendEmail": "sendEmail",
     "sendWhatsApp": "sendWhatsApp",
     "subtitle": "subtitle",
@@ -4837,7 +4867,7 @@
     "totalSent": "totalSent",
     "unread": "unread",
     "urgent": "urgent",
-    "viewSchedule": "",
+    "viewSchedule": "Ver Cronograma",
     "whatsApp": {
       "cancel": "cancel",
       "dialogDescription": "dialogDescription",
@@ -4974,6 +5004,7 @@
     "projectCalendarDesc": "Manage working days and holidays for accurate project scheduling",
     "systemOperational": "System Operational"
   },
+  "pageTitle": "Assinatura",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5190,6 +5221,7 @@
     }
   },
   "paused": "Paused",
+  "paymentCanceled": "Pagamento cancelado",
   "paymentLinks": {
     "title": "title"
   },
@@ -5204,6 +5236,7 @@
     "debitCard": "Debit Card",
     "wireTransfer": "Wire Transfer"
   },
+  "paymentSuccess": "Pagamento efetuado com sucesso",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -6754,19 +6787,19 @@
     "addComment": "addComment",
     "aiToWork": "aiToWork",
     "aiToWorkDialog": {
-      "bridgeNotRunning": "",
-      "bridgeTimeout": "",
-      "checking": "",
+      "bridgeNotRunning": "Bridge não está em execução",
+      "bridgeTimeout": "Tempo de conexão do bridge esgotado",
+      "checking": "Verificando...",
       "copied": "copiado",
       "copy": "copiar",
-      "copyTerminalCommand": "",
+      "copyTerminalCommand": "Copiar Comando do Terminal",
       "description": "descrição",
-      "output": "",
-      "running": "",
-      "startBridge": "",
-      "taskSummary": "",
+      "output": "Saída",
+      "running": "Executando...",
+      "startBridge": "Iniciar Bridge",
+      "taskSummary": "Resumo da Tarefa",
       "title": "título",
-      "untitledTask": ""
+      "untitledTask": "Tarefa Sem Título"
     },
     "allCategories": "allCategories",
     "analytics": "analytics",
@@ -6841,9 +6874,9 @@
     "created": "created",
     "defaultColumn": "Coluna padrão",
     "deleteAttachment": "deleteAttachment",
-    "deleteItem": "",
-    "deleteItemConfirmDescription": "",
-    "deleteItemConfirmTitle": "",
+    "deleteItem": "Excluir Item",
+    "deleteItemConfirmDescription": "Tem certeza que deseja excluir este item? Esta ação não pode ser desfeita.",
+    "deleteItemConfirmTitle": "Excluir Item?",
     "description": "description",
     "descriptionField": "descriptionField",
     "descriptionPlaceholder": "descriptionPlaceholder",
@@ -6869,7 +6902,7 @@
     "newItemDescription": "newItemDescription",
     "noAttachments": "noAttachments",
     "noComments": "noComments",
-    "noDescription": "",
+    "noDescription": "Sem descrição",
     "noItems": "noItems",
     "noSprint": "Sem sprint",
     "notes": "notes",
@@ -7127,6 +7160,7 @@
       "id": "id",
       "idCannotChange": "idCannotChange",
       "idHint": "idHint",
+      "idPlaceholder": "ex.: empreiteiro",
       "label": "label",
       "labelPlaceholder": "labelPlaceholder",
       "noTypes": "noTypes",
@@ -7144,7 +7178,13 @@
     "currencyUpdated": "currencyUpdated",
     "dark": "dark",
     "dataManagement": {
-      "exportingLabel": "exportingLabel"
+      "exportingLabel": "exportingLabel",
+      "toast": {
+        "exportFailedWithMessage": "Falha na exportação: {{message}}",
+        "exportSuccess": "Dados exportados com sucesso",
+        "exportSuccessWithFormat": "Dados exportados com sucesso como {{format}}",
+        "selectTableError": "Selecione pelo menos uma tabela para exportar"
+      }
     },
     "dateFormat": "dateFormat",
     "dateFormatOptions": {
@@ -7229,12 +7269,13 @@
         "apiTesting": "apiTesting",
         "google": "google",
         "thirdParty": "thirdParty",
-        "whatsapp": ""
+        "whatsapp": "WhatsApp"
       },
       "whatsapp": {
-        "aiAutoResponderDisabled": "",
-        "aiAutoResponderEnabled": "",
-        "saved": ""
+        "aiAutoResponderDisabled": "Respondedor Automático de IA Desativado",
+        "aiAutoResponderEnabled": "Respondedor Automático de IA Ativado",
+        "saved": "Configurações do WhatsApp salvas",
+        "updateFailed": "Falha ao atualizar"
       }
     },
     "language": "language",
@@ -7336,6 +7377,21 @@
     "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
     "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
     "settingsUpdated": "settingsUpdated",
+    "sidebarOrder": {
+      "collapse": "Recolher",
+      "description": "Arraste e solte para reordenar os itens e submenus da barra lateral",
+      "directLink": "Link direto",
+      "expand": "Expandir",
+      "itemsCount_many": "",
+      "itemsCount_one": "{{count}} item",
+      "itemsCount_other": "{{count}} itens",
+      "link": "Link",
+      "menu": "Menu",
+      "resetToDefault": "Restaurar Padrão",
+      "saveChanges": "Salvar Alterações",
+      "title": "Gerenciamento de Ordem do Menu",
+      "unsavedChangesAlert": "Você tem alterações não salvas. Clique em Salvar Alterações para aplicar a nova ordem do menu."
+    },
     "sinapi": {
       "autoUpdatePrices": "autoUpdatePrices",
       "autoUpdatePricesDescription": "autoUpdatePricesDescription",
@@ -7370,6 +7426,7 @@
       "dropdown-options": "dropdown-options",
       "general": "general",
       "integrations": "integrations",
+      "log-search": "Pesquisa de registros",
       "pwa": "pwa",
       "sinapi": "sinapi",
       "users": "users"
@@ -7575,6 +7632,27 @@
       "unsavedChanges": "unsavedChanges",
       "unsavedChangesDescription": "unsavedChangesDescription"
     },
+    "translationMaintenance": {
+      "allComplete": "Todas as traduções completas!",
+      "category": "Categoria",
+      "description": "Revise e atualize todas as traduções para o idioma selecionado",
+      "loadError": "Falha ao carregar traduções",
+      "missing_many": "",
+      "missing_one": "{{count}} tradução faltando",
+      "missing_other": "{{count}} traduções faltando",
+      "noSourceText": "Sem texto de origem",
+      "noTranslationsToSave": "Nenhuma tradução para salvar",
+      "percentComplete": "{{percent}}% completo",
+      "placeholder": "Insira a tradução em {{language}}...",
+      "saveError": "Falha ao salvar traduções",
+      "saveSuccess_many": "",
+      "saveSuccess_one": "{{count}} tradução salva com sucesso para {{language}}",
+      "saveSuccess_other": "{{count}} traduções salvas com sucesso para {{language}}",
+      "title": "Manutenção de Traduções",
+      "translated": "{{completed}} / {{total}} traduzidas",
+      "unsavedChanges": "Alterações não salvas",
+      "value": "Valor"
+    },
     "translations": {
       "cancel": "cancel",
       "languageNames": {
@@ -7598,6 +7676,7 @@
     },
     "twoFactorAuth": "twoFactorAuth",
     "unsavedChanges": "unsavedChanges",
+    "userManagementUnknownUser": "Usuário Desconhecido",
     "userPreferences": {
       "appearanceLabel": "appearanceLabel",
       "appearanceOptions": {
@@ -7646,6 +7725,7 @@
   "showLess": "Show less",
   "showMore": "Mostrar mais",
   "signOutError": "Failed to sign out",
+  "signOutNow": "Sair agora",
   "signOutSuccess": "Signed out successfully",
   "skip": "Skip",
   "start": "Start",
@@ -7655,6 +7735,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
+    "canceled": "Cancelado",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7665,6 +7746,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
+    "past_due": "Em Atraso",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7680,10 +7762,11 @@
     "inactive": "Inactive"
   },
   "stop": "Stop",
-  "studioPrincipal": "",
+  "studioPrincipal": "Estúdio Principal",
   "studioTools": "studioTools",
   "submit": "Submit",
   "submitting": "Submitting...",
+  "subscribeNow": "Assinar Agora",
   "success": "Success",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8260,6 +8343,20 @@
     "withBadges": "With badges"
   },
   "thisMonth": "This month",
+  "tierPicker": {
+    "annual": "Anual",
+    "cancel": "Cancelar",
+    "checkoutError": "Falha no pagamento. Tente novamente.",
+    "confirm": "Confirmar",
+    "custom": "Personalizado",
+    "loading": "Carregando...",
+    "monthly": "Mensal",
+    "noPortalUrl": "Nenhuma URL do portal retornada",
+    "perMonthAnnual": "/mês (cobrado anualmente)",
+    "portalOpenFailed": "Falha ao abrir o portal de cobrança",
+    "selectTier": "Selecionar Plano",
+    "title": "Escolha seu Plano"
+  },
   "timeline": {
     "actions": {
       "closePhase": "closePhase",
@@ -8386,14 +8483,14 @@
       "blockingCount_many": "blockingCount",
       "blockingCount_one": "blockingCount",
       "blockingCount_other": "blockingCount",
-      "createError": "",
-      "createSuccess": "",
+      "createError": "Falha ao criar definição",
+      "createSuccess": "Definição criada",
       "daysOverdue": "daysOverdue",
       "daysRemaining": "daysRemaining",
       "deleteConfirm": "deleteConfirm",
       "deleteDefinition": "deleteDefinition",
-      "deleteError": "",
-      "deleteSuccess": "",
+      "deleteError": "Falha ao excluir definição",
+      "deleteSuccess": "Definição excluída",
       "dueToday": "dueToday",
       "editDefinition": "editDefinition",
       "filterAll": "filterAll",
@@ -8405,9 +8502,9 @@
       "followUpCount_many": "followUpCount",
       "followUpCount_one": "followUpCount",
       "followUpCount_other": "followUpCount",
-      "followUpError": "",
+      "followUpError": "Falha ao enviar acompanhamento",
       "followUpPlaceholder": "followUpPlaceholder",
-      "followUpSuccess": "",
+      "followUpSuccess": "Acompanhamento enviado",
       "form": {
         "contactLabel": "contactLabel",
         "dateLabel": "dateLabel",
@@ -8442,8 +8539,8 @@
       "totalDefinitions_many": "totalDefinitions",
       "totalDefinitions_one": "totalDefinitions",
       "totalDefinitions_other": "totalDefinitions",
-      "updateError": "",
-      "updateSuccess": ""
+      "updateError": "Falha ao atualizar definição",
+      "updateSuccess": "Definição atualizada"
     },
     "comments": {
       "title": "Comentários"
@@ -8459,8 +8556,8 @@
       "addDelay": "addDelay",
       "correctiveActions": "correctiveActions",
       "correctiveActionsPlaceholder": "correctiveActionsPlaceholder",
-      "createError": "",
-      "createSuccess": "",
+      "createError": "Falha ao registrar atraso",
+      "createSuccess": "Atraso registrado",
       "delayDays": "delayDays",
       "description": "description",
       "descriptionPlaceholder": "descriptionPlaceholder",
@@ -8470,11 +8567,11 @@
       "subcontractorTrade": "subcontractorTrade",
       "subcontractorTradePlaceholder": "subcontractorTradePlaceholder",
       "title": "title",
-      "updateError": "",
-      "updateSuccess": "",
+      "updateError": "Falha ao atualizar atraso",
+      "updateSuccess": "Atraso atualizado",
       "validation": {
-        "delayDaysMin": "",
-        "descriptionMinLength": ""
+        "delayDaysMin": "O atraso deve ser de pelo menos 1 dia",
+        "descriptionMinLength": "A descrição deve ter pelo menos 10 caracteres"
       }
     },
     "dependencies": {
@@ -8586,13 +8683,13 @@
     },
     "summary": {
       "categoryLabel": "categoryLabel",
-      "clientDecisions": "",
-      "clientOverdue": "",
+      "clientDecisions": "Decisões do Cliente",
+      "clientOverdue": "Cliente em Atraso",
       "completed": "completed",
       "completedPhases": "completedPhases",
       "definitions": "definitions",
       "delayedDays": "delayedDays",
-      "highImpact": "",
+      "highImpact": "Alto Impacto",
       "nextMilestone": "nextMilestone",
       "overallStatus": "overallStatus",
       "pending": "pending",
@@ -8752,6 +8849,12 @@
     "other": "Other",
     "services": "Services"
   },
+  "trialDaysLeft_many": "{{count}} dias de teste restantes",
+  "trialDaysLeft_one": "{{count}} dia de teste restante",
+  "trialDaysLeft_other": "{{count}} dias de teste restantes",
+  "trialDaysLeft_other_many": "{{count}} dias de teste restantes",
+  "trialDaysLeft_other_one": "{{count}} dia de teste restante",
+  "trialDaysLeft_other_other": "{{count}} dias de teste restantes",
   "tryDifferentSearch": "Try a different search term",
   "ui": {
     "clickToViewProjectDetails": "Click to view project details",
@@ -8791,6 +8894,8 @@
   "updated": "atualizado com sucesso",
   "updatedAt": "Atualizado em",
   "updating": "Atualizando...",
+  "upgradeNow": "Fazer Upgrade Agora",
+  "upgradeToPaid": "Upgrade para Pago",
   "upload": "Enviar",
   "uploadErrorDescription": "Ocorreu um erro ao enviar o arquivo",
   "uploadErrorTitle": "Erro no Upload",

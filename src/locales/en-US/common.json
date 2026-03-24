@@ -17,6 +17,8 @@
     "takePhoto": "Take Photo",
     "transactionReferenceOptional": "Transaction Reference (Optional)"
   },
+  "activatedDescription": "Your account is now active.",
+  "activatedTitle": "Activated",
   "active": "Active",
   "activeProjects": "activeProjects",
   "activity": {
@@ -329,7 +331,9 @@
       "regenerate": "Regenerate Insights"
     },
     "superBot": {
+      "analytics": "analytics",
       "clearConversation": "clearConversation",
+      "errorPrefix": "errorPrefix",
       "greetingQuestion": "greetingQuestion",
       "greetings": {
         "afternoon": "afternoon",
@@ -350,7 +354,13 @@
       },
       "searchPlaceholder": "searchPlaceholder",
       "subheadline": "subheadline",
-      "suggestions": "suggestions"
+      "suggestions": "suggestions",
+      "templateTitles": {
+        "delayedProjects": "delayedProjects",
+        "duePayments": "duePayments",
+        "updateTasks": "updateTasks",
+        "vendorQuotes": "vendorQuotes"
+      }
     }
   },
   "aiAnalyze": "AI Analyze",
@@ -588,6 +598,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
+  "annual": "annual",
   "app": {
     "active": "Active",
     "activeProjects": "Active Projects",
@@ -1486,6 +1497,13 @@
   "bi-weekly": "Bi-Weekly",
   "biWeekly": "Bi-Weekly",
   "billableHours": "billableHours",
+  "billing": {
+    "downloadInvoice": "downloadInvoice",
+    "downloadInvoiceFailed": "Failed to download invoice",
+    "emptyState": "emptyState",
+    "title": "title"
+  },
+  "billingPeriod": "billingPeriod",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1787,6 +1805,7 @@
     "taxes": "Taxes"
   },
   "change": "Change",
+  "changePlan": "changePlan",
   "clear": "Clear",
   "clearAll": "Clear All",
   "clearFilter": "Clear Filter",
@@ -2463,6 +2482,7 @@
   "collapse": "Collapse",
   "collapseAll": "Collapse All",
   "colors": "Colors",
+  "comingSoon": "comingSoon",
   "common": {
     "accessDenied": "accessDenied",
     "accessNotEnabled": "accessNotEnabled",
@@ -3114,6 +3134,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
+  "currentPlan": "currentPlan",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Items you requested quotes for",
@@ -3291,6 +3312,9 @@
   "date": "Date",
   "dateRange": "Date range",
   "days": "days",
+  "daysLeft_many": "{{count}} days left",
+  "daysLeft_one": "daysLeft_one",
+  "daysLeft_other": "daysLeft",
   "dbExportImport": {
     "databaseExportImport": "Database Export / Import"
   },
@@ -4569,6 +4593,7 @@
   },
   "linkCopied": "Link copied to clipboard",
   "loading": "Loading...",
+  "loadingSubscription": "loadingSubscription",
   "location": "Location",
   "logistics": "Logistics",
   "maintenance": {
@@ -4587,6 +4612,8 @@
     "startTimeLabel": "Start Time",
     "titleLabel": "Title"
   },
+  "manage": "manage",
+  "manageBilling": "manageBilling",
   "materials": "Materials",
   "meetingReview": {
     "confirm": "confirm",
@@ -4683,6 +4710,7 @@
     "financial": "financial",
     "materials": "materials",
     "myDashboard": "myDashboard",
+    "myTimesheet": "My timesheet",
     "notifications": "notifications",
     "platform": "platform",
     "procurement": "procurement",
@@ -4700,8 +4728,10 @@
   },
   "new": "New",
   "next": "Next",
+  "nextRenewal": "nextRenewal",
   "nextStep": "Next Step",
   "no": "No",
+  "noActiveSubscription": "noActiveSubscription",
   "noAddress": "No address provided",
   "noChanges": "No changes to save",
   "noContactsAvailable": "No contacts available. Add clients, suppliers, or contractors first.",
@@ -4974,6 +5004,7 @@
     "projectCalendarDesc": "Manage working days and holidays for accurate project scheduling",
     "systemOperational": "System Operational"
   },
+  "pageTitle": "pageTitle",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5190,6 +5221,7 @@
     }
   },
   "paused": "Paused",
+  "paymentCanceled": "paymentCanceled",
   "paymentLinks": {
     "title": "title"
   },
@@ -5204,6 +5236,7 @@
     "debitCard": "Debit Card",
     "wireTransfer": "Wire Transfer"
   },
+  "paymentSuccess": "paymentSuccess",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -7127,6 +7160,7 @@
       "id": "id",
       "idCannotChange": "idCannotChange",
       "idHint": "idHint",
+      "idPlaceholder": "e.g. contractor",
       "label": "label",
       "labelPlaceholder": "labelPlaceholder",
       "noTypes": "noTypes",
@@ -7144,7 +7178,13 @@
     "currencyUpdated": "currencyUpdated",
     "dark": "dark",
     "dataManagement": {
-      "exportingLabel": "exportingLabel"
+      "exportingLabel": "exportingLabel",
+      "toast": {
+        "exportFailedWithMessage": "Export failed: {{message}}",
+        "exportSuccess": "Data exported successfully",
+        "exportSuccessWithFormat": "Data exported successfully as {{format}}",
+        "selectTableError": "Please select at least one table to export"
+      }
     },
     "dateFormat": "dateFormat",
     "dateFormatOptions": {
@@ -7234,7 +7274,8 @@
       "whatsapp": {
         "aiAutoResponderDisabled": "aiAutoResponderDisabled",
         "aiAutoResponderEnabled": "aiAutoResponderEnabled",
-        "saved": "saved"
+        "saved": "saved",
+        "updateFailed": "Failed to update"
       }
     },
     "language": "language",
@@ -7336,6 +7377,20 @@
     "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
     "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
     "settingsUpdated": "settingsUpdated",
+    "sidebarOrder": {
+      "collapse": "Collapse",
+      "description": "Drag and drop to reorder sidebar menu items and submenus",
+      "directLink": "Direct link",
+      "expand": "Expand",
+      "itemsCount_one": "{{count}} item",
+      "itemsCount_other": "{{count}} items",
+      "link": "Link",
+      "menu": "Menu",
+      "resetToDefault": "Reset to Default",
+      "saveChanges": "Save Changes",
+      "title": "Menu Order Management",
+      "unsavedChangesAlert": "You have unsaved changes. Click Save Changes to apply the new menu order."
+    },
     "sinapi": {
       "autoUpdatePrices": "autoUpdatePrices",
       "autoUpdatePricesDescription": "autoUpdatePricesDescription",
@@ -7370,6 +7425,7 @@
       "dropdown-options": "dropdown-options",
       "general": "general",
       "integrations": "integrations",
+      "log-search": "log-search",
       "pwa": "pwa",
       "sinapi": "sinapi",
       "users": "users"
@@ -7575,6 +7631,25 @@
       "unsavedChanges": "unsavedChanges",
       "unsavedChangesDescription": "unsavedChangesDescription"
     },
+    "translationMaintenance": {
+      "allComplete": "All translations complete!",
+      "category": "Category",
+      "description": "Review and update all translations for the selected language",
+      "loadError": "Failed to load translations",
+      "missing_one": "{{count}} translation missing",
+      "missing_other": "{{count}} translations missing",
+      "noSourceText": "No source text",
+      "noTranslationsToSave": "No translations to save",
+      "percentComplete": "{{percent}}% complete",
+      "placeholder": "Enter {{language}} translation...",
+      "saveError": "Failed to save translations",
+      "saveSuccess_one": "Successfully saved {{count}} translation for {{language}}",
+      "saveSuccess_other": "Successfully saved {{count}} translations for {{language}}",
+      "title": "Translation Maintenance",
+      "translated": "{{completed}} / {{total}} translated",
+      "unsavedChanges": "Unsaved changes",
+      "value": "Value"
+    },
     "translations": {
       "cancel": "cancel",
       "languageNames": {
@@ -7598,6 +7673,7 @@
     },
     "twoFactorAuth": "twoFactorAuth",
     "unsavedChanges": "unsavedChanges",
+    "userManagementUnknownUser": "Unknown User",
     "userPreferences": {
       "appearanceLabel": "appearanceLabel",
       "appearanceOptions": {
@@ -7646,6 +7722,7 @@
   "showLess": "Show less",
   "showMore": "Show more",
   "signOutError": "Failed to sign out",
+  "signOutNow": "Sign out now",
   "signOutSuccess": "Signed out successfully",
   "skip": "Skip",
   "start": "Start",
@@ -7655,6 +7732,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
+    "canceled": "canceled",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7665,6 +7743,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
+    "past_due": "past_due",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7684,6 +7763,7 @@
   "studioTools": "studioTools",
   "submit": "Submit",
   "submitting": "Submitting...",
+  "subscribeNow": "subscribeNow",
   "success": "Success",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8260,6 +8340,20 @@
     "withBadges": "With badges"
   },
   "thisMonth": "This month",
+  "tierPicker": {
+    "annual": "annual",
+    "cancel": "cancel",
+    "checkoutError": "checkoutError",
+    "confirm": "confirm",
+    "custom": "custom",
+    "loading": "loading",
+    "monthly": "monthly",
+    "noPortalUrl": "No portal URL returned",
+    "perMonthAnnual": "perMonthAnnual",
+    "portalOpenFailed": "Failed to open billing portal",
+    "selectTier": "selectTier",
+    "title": "title"
+  },
   "timeline": {
     "actions": {
       "closePhase": "closePhase",
@@ -8752,6 +8846,12 @@
     "other": "Other",
     "services": "Services"
   },
+  "trialDaysLeft_many": "{{count}} days left",
+  "trialDaysLeft_one": "trialDaysLeft",
+  "trialDaysLeft_other": "trialDaysLeft",
+  "trialDaysLeft_other_many": "{{count}} days left",
+  "trialDaysLeft_other_one": "trialDaysLeft_other",
+  "trialDaysLeft_other_other": "trialDaysLeft_other",
   "tryDifferentSearch": "Try a different search term",
   "ui": {
     "clickToViewProjectDetails": "Click to view project details",
@@ -8791,6 +8891,8 @@
   "updated": "updated successfully",
   "updatedAt": "Updated at",
   "updating": "Updating...",
+  "upgradeNow": "upgradeNow",
+  "upgradeToPaid": "upgradeToPaid",
   "upload": "Upload",
   "uploadErrorDescription": "uploadErrorDescription",
   "uploadErrorTitle": "uploadErrorTitle",

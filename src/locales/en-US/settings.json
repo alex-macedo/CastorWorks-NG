@@ -1,12 +1,33 @@
 {
-  "adminOnly": "adminOnly",
-  "adminRequired": "adminRequired",
+  "addUser": "Add User",
+  "addUserDialog": {
+    "create": "Create User",
+    "creating": "Creating user...",
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "Enter display name (optional)",
+    "email": "Email",
+    "emailPlaceholder": "user@example.com",
+    "error": "Failed to create user",
+    "password": "Password",
+    "passwordHint": "Password must be at least 8 characters",
+    "passwordPlaceholder": "Enter password",
+    "selectRoles": "Select Roles",
+    "sendInvite": "Send invitation email (user will set their own password)",
+    "success": "User created successfully. Invitation email sent.",
+    "tempPassword": "Temporary Password",
+    "tempPasswordHint": "User will be asked to change password on first login",
+    "tempPasswordPlaceholder": "Enter temporary password",
+    "title": "Add New User"
+  },
+  "addValue": "Add New Value",
+  "adminOnly": "Admin Only",
+  "adminRequired": "Admin Required",
   "adminTools": {
-    "database": "database",
-    "maintenance": "maintenance",
-    "telemetry": "telemetry",
-    "title": "title",
-    "whatsapp": "whatsapp"
+    "database": "Database",
+    "maintenance": "Maintenance",
+    "telemetry": "Telemetry",
+    "title": "Admin Tools",
+    "whatsapp": "WhatsApp"
   },
   "aiConfigDialog": {
     "autoApplyHelp": "autoApplyHelp",
@@ -20,14 +41,56 @@
     "confidenceThresholdLabel": "confidenceThresholdLabel",
     "descriptionProject": "descriptionProject",
     "descriptionUser": "descriptionUser",
+    "features": {
+      "budget_insights": {
+        "description": "Provides actionable insights about project budgets and spending.",
+        "label": "Budget Insights"
+      },
+      "budget_risk_assessment": {
+        "description": "Analyzes financial risks and highlights potential overruns.",
+        "label": "Budget Risk Assessment"
+      },
+      "cost_prediction": {
+        "description": "Forecasts future costs using historical data and trends.",
+        "label": "Cost Prediction"
+      },
+      "delay_prediction": {
+        "description": "Predicts tasks likely to be delayed and recommends mitigation.",
+        "label": "Delay Prediction"
+      },
+      "financial_anomaly_detection": {
+        "description": "Finds unusual financial patterns that may indicate errors or fraud.",
+        "label": "Financial Anomaly Detection"
+      },
+      "material_analysis": {
+        "description": "Evaluates material choices and availability impacts.",
+        "label": "Material Analysis"
+      },
+      "procurement_recommendations": {
+        "description": "Suggests procurement actions to optimize costs and timelines.",
+        "label": "Procurement Recommendations"
+      },
+      "quality_inspection": {
+        "description": "Assists with automated checks and quality scoring.",
+        "label": "Quality Inspection"
+      },
+      "safety_scanning": {
+        "description": "Detects potential safety issues from plans and reports.",
+        "label": "Safety Scanning"
+      },
+      "schedule_optimization": {
+        "description": "Suggests schedule adjustments to improve on-time delivery.",
+        "label": "Schedule Optimization"
+      }
+    },
     "featuresTitle": "featuresTitle",
     "notificationFrequencyLabel": "notificationFrequencyLabel",
     "notificationOptions": {
-      "daily": "daily",
-      "disabled": "disabled",
-      "hourly": "hourly",
-      "realtime": "realtime",
-      "weekly": "weekly"
+      "daily": "Daily",
+      "disabled": "Disabled",
+      "hourly": "Hourly",
+      "realtime": "Real-time",
+      "weekly": "Weekly"
     },
     "preferencesTitle": "preferencesTitle",
     "resetButton": "resetButton",
@@ -59,62 +122,63 @@
     "wasHelpful": "wasHelpful"
   },
   "apiTesting": {
-    "addHeaderButton": "addHeaderButton",
+    "addHeaderButton": "Add Header",
     "authOptions": {
-      "apiKey": "apiKey",
-      "basic": "basic",
-      "bearer": "bearer",
-      "none": "none"
+      "apiKey": "API Key",
+      "basic": "Basic",
+      "bearer": "Bearer Token",
+      "none": "None"
     },
-    "authenticationLabel": "authenticationLabel",
-    "copyButton": "copyButton",
-    "headersLabel": "headersLabel",
-    "lastUsed": "lastUsed",
-    "loadButton": "loadButton",
-    "methodLabel": "methodLabel",
-    "newTestButton": "newTestButton",
-    "noHeaders": "noHeaders",
-    "noResponse": "noResponse",
-    "noSavedTests": "noSavedTests",
-    "requestBodyLabel": "requestBodyLabel",
-    "requestHeadersTitle": "requestHeadersTitle",
-    "responseBodyLabel": "responseBodyLabel",
-    "responseHeadersTitle": "responseHeadersTitle",
-    "savedTestsTitle": "savedTestsTitle",
-    "sendRequestButton": "sendRequestButton",
+    "authenticationLabel": "Authentication",
+    "copyButton": "Copy",
+    "headersLabel": "Headers",
+    "lastUsed": "Last used",
+    "loadButton": "Load",
+    "methodLabel": "Method",
+    "newTestButton": "New Test",
+    "noHeaders": "No headers",
+    "noResponse": "No response yet",
+    "noSavedTests": "No saved tests yet",
+    "requestBodyLabel": "Request Body",
+    "requestHeadersTitle": "Request Headers",
+    "responseBodyLabel": "Response Body",
+    "responseHeadersTitle": "Response Headers",
+    "savedTestsTitle": "Saved Tests",
+    "sendRequestButton": "Send Request",
     "tabs": {
-      "headers": "headers",
-      "history": "history",
-      "request": "request",
-      "response": "response"
+      "headers": "Headers",
+      "history": "History",
+      "request": "Request",
+      "response": "Response"
     },
-    "testNameLabel": "testNameLabel",
-    "title": "title",
+    "testNameLabel": "Test Name",
+    "title": "API Testing",
     "toast": {
-      "copiedDescription": "copiedDescription",
-      "copiedTitle": "copiedTitle",
-      "errorTitle": "errorTitle",
-      "invalidUrl": "invalidUrl",
-      "missingTestName": "missingTestName",
-      "networkError": "networkError",
-      "requestCompletedDescription": "requestCompletedDescription",
-      "requestCompletedTitle": "requestCompletedTitle",
-      "requestFailedTitle": "requestFailedTitle",
-      "testDeletedDescription": "testDeletedDescription",
-      "testDeletedTitle": "testDeletedTitle",
-      "testLoadedDescription": "testLoadedDescription",
-      "testLoadedTitle": "testLoadedTitle",
-      "testSavedDescription": "testSavedDescription",
-      "testSavedTitle": "testSavedTitle"
+      "copiedDescription": "Response copied to clipboard",
+      "copiedTitle": "Copied",
+      "errorTitle": "Error",
+      "invalidUrl": "Invalid URL",
+      "missingTestName": "Please enter a test name",
+      "networkError": "Network error",
+      "requestCompletedDescription": "Request completed successfully",
+      "requestCompletedTitle": "Request Completed",
+      "requestFailedTitle": "Request Failed",
+      "testDeletedDescription": "Test deleted successfully",
+      "testDeletedTitle": "Test Deleted",
+      "testLoadedDescription": "Test loaded successfully",
+      "testLoadedTitle": "Test Loaded",
+      "testSavedDescription": "Test saved successfully",
+      "testSavedTitle": "Test Saved"
     },
-    "urlLabel": "urlLabel"
+    "urlLabel": "URL"
   },
+  "assignRole": "Assign Role",
   "autoCreateBudgets": {
-    "bdiBrazil": "bdiBrazil",
-    "costControl": "costControl",
-    "simple": "simple"
+    "bdiBrazil": "BDI Brazil",
+    "costControl": "Cost Control",
+    "simple": "Simple"
   },
-  "autoCreateBudgetsLabel": "autoCreateBudgetsLabel",
+  "autoCreateBudgetsLabel": "Auto-create budgets",
   "bdi": {
     "descriptions": {
       "centralAdmin": "Corporate overhead allocated to projects (%)",
@@ -147,62 +211,75 @@
     "saveButton": "Save",
     "totalLabel": "Total BDI"
   },
-  "changePassword": "changePassword",
+  "billing": {
+    "downloadInvoice": "Download invoice",
+    "downloadInvoiceFailed": "Failed to download invoice",
+    "emptyState": "No billing history yet",
+    "title": "Billing history"
+  },
+  "changePassword": "Change Password",
   "cityLabel": "City",
   "cityPlaceholder": "City",
+  "comingSoon": "Coming Soon",
   "company": "company",
-  "companyName": "companyName",
+  "companyName": "Company Name",
   "companyProfile": {
-    "additionalInfoLabel": "additionalInfoLabel",
-    "additionalInfoPlaceholder": "additionalInfoPlaceholder",
-    "addressLabel": "addressLabel",
-    "addressLookupErrorMessage": "addressLookupErrorMessage",
-    "addressLookupErrorTitle": "addressLookupErrorTitle",
-    "addressPlaceholder": "addressPlaceholder",
+    "additionalInfoLabel": "Additional Quote Information",
+    "additionalInfoPlaceholder": "Add details that should appear in quotes or proposals",
+    "addressLabel": "Address",
+    "addressLookupErrorMessage": "We could not find an address for this ZIP code.",
+    "addressLookupErrorTitle": "Address Lookup Failed",
+    "addressPlaceholder": "Street, number, district, city, state",
+    "charactersCount": "{{count}}/500 characters",
     "charactersCount_many": "charactersCount_many",
     "charactersCount_one": "charactersCount",
     "charactersCount_other": "charactersCount",
-    "cnpjLabel": "cnpjLabel",
-    "cnpjPlaceholder": "cnpjPlaceholder",
-    "companyDescriptionLabel": "companyDescriptionLabel",
-    "companyDescriptionPlaceholder": "companyDescriptionPlaceholder",
-    "companyLogoAlt": "companyLogoAlt",
-    "companyLogoLabel": "companyLogoLabel",
-    "companyNameLabel": "companyNameLabel",
-    "companyNamePlaceholder": "companyNamePlaceholder",
-    "companyNameRequired": "companyNameRequired",
-    "emailLabel": "emailLabel",
-    "emailPlaceholder": "emailPlaceholder",
-    "fileSizeError": "fileSizeError",
-    "fileTypeError": "fileTypeError",
-    "generalInformation": "generalInformation",
-    "generalInformationDescription": "generalInformationDescription",
-    "generalTermsLabel": "generalTermsLabel",
-    "generalTermsPlaceholder": "generalTermsPlaceholder",
-    "invalidCNPJ": "invalidCNPJ",
-    "invalidEmail": "invalidEmail",
-    "invalidURL": "invalidURL",
-    "logoHint": "logoHint",
-    "logoProcessError": "logoProcessError",
-    "logoUploadSuccess": "logoUploadSuccess",
-    "phoneLabel": "phoneLabel",
-    "phonePlaceholder": "phonePlaceholder",
-    "quoteInformation": "quoteInformation",
-    "quoteInformationDescription": "quoteInformationDescription",
-    "saveButton": "saveButton",
-    "saveError": "saveError",
-    "saveSuccess": "saveSuccess",
-    "uploading": "uploading",
-    "websiteLabel": "websiteLabel",
-    "websitePlaceholder": "websitePlaceholder",
-    "zipCodeHint": "zipCodeHint",
-    "zipCodeLabel": "zipCodeLabel",
-    "zipCodePlaceholder": "zipCodePlaceholder"
+    "cnpjLabel": "CNPJ",
+    "cnpjPlaceholder": "00.000.000/0000-00",
+    "collapseCompanyProfile": "Collapse Company Profile",
+    "companyDescriptionLabel": "Company Description",
+    "companyDescriptionPlaceholder": "Describe your company, specialties, and differentiators",
+    "companyLogoAlt": "Company logo preview",
+    "companyLogoLabel": "Company Logo",
+    "companyNameLabel": "Company Name",
+    "companyNamePlaceholder": "Enter the company name",
+    "companyNameRequired": "Company name is required",
+    "emailLabel": "Email",
+    "emailPlaceholder": "company@example.com",
+    "fileSizeError": "The selected file is too large.",
+    "fileTypeError": "Please upload a valid image file.",
+    "generalInformation": "General Information",
+    "generalInformationDescription": "Basic company details shown across the application and generated materials.",
+    "generalTermsLabel": "General Terms",
+    "generalTermsPlaceholder": "Add standard terms and conditions for your quotes",
+    "invalidCNPJ": "Please enter a valid CNPJ.",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidURL": "Please enter a valid website URL.",
+    "logoHint": "Recommended formats: PNG or JPG. Best results with a square image.",
+    "logoProcessError": "We could not process the selected logo.",
+    "logoUploadSuccess": "Company logo uploaded successfully.",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "(00) 00000-0000",
+    "processing": "Processing",
+    "processingDescription": "Removing background with AI... This may take a moment.",
+    "processingWithAI": "Processing with AI...",
+    "quoteInformation": "Quote Information",
+    "quoteInformationDescription": "Extra content used in estimates, proposals, and commercial documents.",
+    "saveButton": "Save Company Profile",
+    "saveError": "Failed to save the company profile.",
+    "saveSuccess": "Company profile saved successfully.",
+    "uploading": "Uploading...",
+    "websiteLabel": "Website",
+    "websitePlaceholder": "https://yourcompany.com",
+    "zipCodeHint": "Enter the ZIP/CEP and click the location icon to fill the address automatically.",
+    "zipCodeLabel": "ZIP / CEP",
+    "zipCodePlaceholder": "00000-000"
   },
-  "companyProfileTitle": "companyProfileTitle",
+  "companyProfileSaved": "Company profile updated",
+  "companyProfileTitle": "Company Profile",
   "confirmPassword": "confirmPassword",
   "confirmPasswordPlaceholder": "confirmPasswordPlaceholder",
-  "contactEmail": "contactEmail",
+  "contactEmail": "Contact Email",
   "contactTypes": {
     "addDescription": "addDescription",
     "addType": "addType",
@@ -221,6 +298,7 @@
     "id": "id",
     "idCannotChange": "idCannotChange",
     "idHint": "idHint",
+    "idPlaceholder": "contractor",
     "label": "label",
     "labelPlaceholder": "labelPlaceholder",
     "noTypes": "noTypes",
@@ -229,7 +307,7 @@
     "resetDefaults": "resetDefaults",
     "title": "title"
   },
-  "currency": "currency",
+  "currency": "Currency",
   "currencyOptions": {
     "BRL": "BRL",
     "EUR": "EUR",
@@ -240,6 +318,7 @@
   "currentPasswordPlaceholder": "currentPasswordPlaceholder",
   "dark": "dark",
   "dataManagement": {
+    "backupFileLabel": "Backup File",
     "clearAllData": "Clear all data",
     "completeDatabaseExportDescription": "Export the full database.",
     "csvFileHelper": "Select a CSV file to import.",
@@ -281,6 +360,7 @@
       "excel": "Excel",
       "json": "JSON"
     },
+    "exportProgressLabel": "Export Progress",
     "exportSelectedTables": "exportSelectedTables",
     "exportTable": "Export 1 table",
     "exportTable_one": "exportTable",
@@ -291,8 +371,11 @@
     "exportingAllData": "Exporting...",
     "exportingDatabaseDump": "Exporting...",
     "exportingLabel": "Exporting...",
+    "exportingSelectedTables": "Exporting Selected Tables...",
+    "importBackupButton": "Import Backup",
     "importBackupDescription": "Select a backup file to restore.",
     "importBackupTitle": "Import backup",
+    "importCsvDataButton": "Import CSV Data",
     "importInstructionsImport": "Import dump:",
     "importInstructionsMigrations": "Run migrations:",
     "importInstructionsTitle": "Instructions",
@@ -309,8 +392,9 @@
     "importResultsTitle": "Results",
     "lastBackup": "Last backup: {{date}}",
     "loadingStatistics": "Loading...",
-    "quickBackupDescription": "quickBackupDescription",
-    "quickBackupTitle": "quickBackupTitle",
+    "noFileChosen": "No file chosen",
+    "quickBackupDescription": "Export a quick backup of your data",
+    "quickBackupTitle": "Quick Backup",
     "selectAll": "Select all",
     "selectCsvFileLabel": "CSV file",
     "selectDestinationTableLabel": "Destination table",
@@ -326,9 +410,16 @@
       "localSupabase": "Local Supabase",
       "postgresql": "PostgreSQL"
     },
+    "tableOptions": {
+      "clients": "Clients",
+      "financialEntries": "Financial Entries",
+      "projects": "Projects",
+      "users": "Users"
+    },
     "targetTableLabel": "targetTableLabel",
     "toast": {
       "clearDataNotAvailable": "Clear data is not available.",
+      "csvImportSuccess": "Successfully imported {{count}} records into {{table}}",
       "csvImportSuccess_one": "csvImportSuccess",
       "csvImportSuccess_other": "csvImportSuccess",
       "deleteConfirmError": "Could not delete.",
@@ -337,58 +428,85 @@
       "exportDumpCompleteTitle": "Export complete",
       "exportDumpFailedDescription": "Failed to generate dump.",
       "exportDumpFailedTitle": "Export failed",
+      "exportFailedWithMessage": "Export failed: {{message}}",
       "exportSelectedSuccess": "Export completed.",
       "exportSuccess": "Data exported successfully.",
+      "exportSuccessWithFormat": "Data exported successfully as {{format}}",
       "importFailedTitle": "Import failed",
       "importSuccess": "Data imported successfully.",
       "infoTitle": "Information",
       "partialImportDescription": "Some rows failed to import.",
       "partialImportTitle": "Partial import",
       "selectTableAndFileError": "Select a table and file.",
-      "selectTableError": "Please select at least one table.",
+      "selectTableError": "Please select at least one table to export",
       "successTitle": "Success"
     }
   },
-  "dateFormat": "dateFormat",
+  "dateFormat": "Date Format",
   "dateFormatOptions": {
     "DD/MM/YYYY": "DD/MM/YYYY",
     "MM/DD/YYYY": "MM/DD/YYYY",
     "YYYY-MM-DD": "YYYY-MM-DD"
   },
-  "defaultBudgetModelLabel": "defaultBudgetModelLabel",
-  "defaultCurrencyLabel": "defaultCurrencyLabel",
-  "defaultDateFormatLabel": "defaultDateFormatLabel",
-  "defaultLanguageLabel": "defaultLanguageLabel",
+  "defaultBudgetModel": "Default Budget Model",
+  "defaultBudgetModelLabel": "Default Budget Model",
+  "defaultCurrencyLabel": "Default Currency",
+  "defaultDateFormatLabel": "Default Date Format",
+  "defaultLanguageLabel": "Default Language",
   "defaultValuesForm": {
     "defaultFreightPercentage": "defaultFreightPercentage",
-    "defaultLaborRatesTitle": "defaultLaborRatesTitle",
+    "defaultLaborRatesTitle": "Default Labor Rates",
     "defaultPaymentTerms": "defaultPaymentTerms",
     "defaultProfitMargin": "defaultProfitMargin",
-    "defaultProjectSettingsTitle": "defaultProjectSettingsTitle",
+    "defaultProjectSettingsTitle": "Default Project Settings",
     "defaultStateSINAPI": "defaultStateSINAPI",
     "installmentsDueDays": "installmentsDueDays",
     "laborRates": {
-      "electrician": "electrician",
-      "mason": "mason",
-      "painter": "painter",
-      "plumber": "plumber",
-      "projectManager": "projectManager"
+      "electrician": "Electrician",
+      "mason": "Mason",
+      "painter": "Painter",
+      "plumber": "Plumber",
+      "projectManager": "Project Manager"
     },
     "paymentTermsPlaceholder": "paymentTermsPlaceholder",
     "saveDefaultValues": "saveDefaultValues",
     "selectStatePlaceholder": "selectStatePlaceholder"
   },
-  "digitalSignature": {
-    "saveButton": "Save signature"
+  "demoData": {
+    "description": "Generate mockup data for testing and demonstration",
+    "errorGenerating": "Failed to generate payment data",
+    "generatePayments": "Generate Payments",
+    "generatingPayments": "Generating payments...",
+    "paymentsGenerated": "Successfully generated {{count}} payment transactions",
+    "title": "Demo Data"
   },
-  "disabled": "disabled",
+  "digitalSignature": {
+    "currentSignature": "Current Signature",
+    "description": "Draw your signature below. It will be used on PDF documents when digital signatures are enabled.",
+    "saveButton": "Save signature",
+    "title": "Digital Signature"
+  },
+  "disabled": "Disabled",
   "dropdownOptions": {
     "addDescription": "addDescription",
     "addOption": "addOption",
+    "categories": {
+      "constructionUnit": "Construction Unit",
+      "finishingType": "Finishing Type",
+      "floorType": "Floor Type",
+      "projectStatus": "Project Status",
+      "projectType": "Project Type",
+      "roofType": "Roof Type",
+      "salesPipelineColumns": "Sales Pipeline",
+      "taskPriority": "Task Priority",
+      "taskStatus": "Task Status",
+      "terrainType": "Terrain Type"
+    },
     "default": "default",
     "deleteDescription": "deleteDescription",
     "deleteTitle": "deleteTitle",
     "dependenciesNotice": "dependenciesNotice",
+    "description": "Manage dropdown values for forms and fields across the application",
     "dragDrop": {
       "reorderDescription": "reorderDescription",
       "reorderError": "reorderError",
@@ -417,6 +535,11 @@
       "valueReadOnly": "valueReadOnly"
     },
     "setDefault": "setDefault",
+    "success": {
+      "added": "Option added successfully",
+      "deleted": "Option deleted successfully",
+      "updated": "Option updated successfully"
+    },
     "table": {
       "actions": "actions",
       "active": "active",
@@ -427,23 +550,29 @@
     },
     "title": "title"
   },
-  "editCompanyProfile": "editCompanyProfile",
-  "editProfile": "editProfile",
+  "editCompanyProfile": "Edit Company Profile",
+  "editProfile": "Edit Profile",
   "editProfileDialog": {
     "avatarChange": "Change photo",
     "avatarFileSizeError": "File too large",
     "avatarFileTypeError": "Invalid file type",
+    "avatarHelp": "Enter a public URL or a storage path.",
     "avatarPreview": "Preview",
     "avatarRemove": "Remove photo",
+    "avatarRemoveSuccess": "Avatar removed successfully",
     "avatarUpload": "Upload photo",
+    "avatarUploadError": "Failed to upload avatar",
+    "avatarUploadSuccess": "Avatar uploaded successfully",
     "avatarUploading": "Uploading..."
   },
   "editUserProfile": "Edit profile",
+  "editValue": "Edit Value",
   "email": "email",
   "emailAdminOnly": "Only an administrator can change the email.",
-  "enabled": "enabled",
-  "errorSavingSettings": "errorSavingSettings",
-  "financialAlerts": "financialAlerts",
+  "emailNotifications": "Email Notifications",
+  "enabled": "Enabled",
+  "errorSavingSettings": "Error saving settings",
+  "financialAlerts": "Financial Alerts",
   "globalAdminSupportOnly": "Global admin only",
   "googleDrive": {
     "autoSyncDescription": "Automatically sync documents.",
@@ -482,67 +611,90 @@
     }
   },
   "inssReference": {
-    "categoriesDescription": "categoriesDescription",
-    "categoriesTitle": "categoriesTitle",
-    "description": "description",
-    "destinationsDescription": "destinationsDescription",
-    "destinationsTitle": "destinationsTitle",
-    "fatorAjusteDescription": "fatorAjusteDescription",
-    "fatorAjusteTitle": "fatorAjusteTitle",
-    "fatorSocialDescription": "fatorSocialDescription",
-    "fatorSocialTitle": "fatorSocialTitle",
+    "categoriesDescription": "Construction categories for INSS deduction",
+    "categoriesTitle": "Categories",
+    "description": "INSS reference rates and rules for construction",
+    "destinationsDescription": "Destination categories for construction types",
+    "destinationsTitle": "Destinations",
+    "fatorAjusteDescription": "Adjustment factor for INSS calculation",
+    "fatorAjusteTitle": "Adjustment Factor",
+    "fatorSocialDescription": "Social factor applied to INSS rates",
+    "fatorSocialTitle": "Social Factor",
     "labels": {
-      "applicableReduction": "applicableReduction",
-      "appliesTo": "appliesTo",
-      "excludedItems": "excludedItems",
-      "fixedDeduction": "fixedDeduction",
-      "minInvoices": "minInvoices",
-      "usinadosNote": "usinadosNote"
+      "adicionalRat": "Additional RAT",
+      "adicionalRatDecimal": "Additional RAT (decimal)",
+      "applicableReduction": "Applicable Reduction",
+      "appliesTo": "Applies to",
+      "excludedItems": "Excluded Items",
+      "fixedDeduction": "Fixed Deduction",
+      "minInvoices": "Min. Invoices",
+      "patronalRate": "Employer Contribution",
+      "patronalRateDecimal": "Employer Contribution (decimal)",
+      "ratGilrat": "RAT/GILRAT",
+      "ratGilratDecimal": "RAT/GILRAT (decimal)",
+      "terceiros": "Third Parties",
+      "terceirosDecimal": "Third Parties (decimal)",
+      "totalRateDecimal": "Total Rate (decimal)",
+      "usinadosNote": "Usinados note"
     },
-    "laborDescription": "laborDescription",
-    "laborTitle": "laborTitle",
-    "lastUpdated": "lastUpdated",
-    "prefabDescription": "prefabDescription",
-    "prefabTitle": "prefabTitle",
-    "ratesDescription": "ratesDescription",
-    "ratesTitle": "ratesTitle",
+    "laborDescription": "Labor rates for INSS",
+    "laborTitle": "Labor",
+    "lastUpdated": "Last updated",
+    "ofRmt": "of RMT",
+    "placeholders": {
+      "limit": "Limit",
+      "reductionPct": "Red. %"
+    },
+    "prefabDescription": "INSS rates for prefab construction",
+    "prefabTitle": "Prefab",
+    "ratesDescription": "INSS rate tables for construction",
+    "ratesDescriptionAdicionalRat": "Special Retirement",
+    "ratesDescriptionPatronal": "Social Security",
+    "ratesDescriptionRatGilrat": "Environmental Work Risks",
+    "ratesDescriptionTerceiros": "Sesi, Senai, Sebrae, etc.",
+    "ratesTitle": "Rates",
+    "reductionSuffix": "{{pct}}% reduction",
+    "specialRulesNone": "None",
     "table": {
-      "areaRange": "areaRange",
-      "areaThreshold": "areaThreshold",
-      "category": "category",
-      "component": "component",
-      "constructionType": "constructionType",
-      "description": "description",
-      "destination": "destination",
-      "effectiveReduction": "effectiveReduction",
-      "equivalence": "equivalence",
-      "maxReduction": "maxReduction",
-      "minRemuneration": "minRemuneration",
-      "multiplier": "multiplier",
-      "percentage": "percentage",
-      "reduction": "reduction",
-      "specialRules": "specialRules",
-      "value": "value"
+      "areaRange": "Area Range",
+      "areaThreshold": "Area Threshold",
+      "category": "Category",
+      "component": "Component",
+      "constructionType": "Construction Type",
+      "description": "Description",
+      "destination": "Destination",
+      "effectiveReduction": "Effective Reduction",
+      "equivalence": "Equivalence",
+      "maxReduction": "Max Reduction",
+      "minRemuneration": "Min. Remuneration",
+      "multiplier": "Multiplier",
+      "percentage": "Percentage",
+      "reduction": "Reduction",
+      "specialRules": "Special Rules",
+      "total": "TOTAL",
+      "value": "Value"
     },
     "tabs": {
-      "ajuste": "ajuste",
-      "categories": "categories",
-      "equivalence": "equivalence",
-      "fatorSocial": "fatorSocial",
-      "labor": "labor",
-      "prefab": "prefab",
-      "rates": "rates",
-      "usinados": "usinados"
+      "ajuste": "Adjustment",
+      "categories": "Categories",
+      "equivalence": "Equivalence",
+      "fatorSocial": "Social Factor",
+      "labor": "Labor",
+      "prefab": "Prefab",
+      "rates": "Rates",
+      "usinados": "Usinados"
     },
-    "title": "title",
-    "usinadosDescription": "usinadosDescription",
-    "usinadosTitle": "usinadosTitle"
+    "title": "INSS Reference",
+    "upTo": "Up to",
+    "upToArea": "up to {{area}} m²",
+    "usinadosDescription": "INSS rates for usinados elements",
+    "usinadosTitle": "Usinados"
   },
   "inssStrategyLinks": {
     "addFirstStep": "addFirstStep",
     "addStep": "addStep",
     "description": "description",
-    "errorUpdate": "errorUpdate",
+    "errorUpdate": "Failed to update",
     "externalUrlLabel": "externalUrlLabel",
     "externalUrlPlaceholder": "externalUrlPlaceholder",
     "newStep": "newStep",
@@ -568,10 +720,18 @@
     "whatsapp": {
       "aiAutoResponderDisabled": "aiAutoResponderDisabled",
       "aiAutoResponderEnabled": "aiAutoResponderEnabled",
-      "saved": "saved"
+      "saved": "saved",
+      "updateFailed": "Failed to update"
     }
   },
-  "language": "language",
+  "internationalization": "Internationalization",
+  "internationalizationDescription": "Configure language preferences for the application",
+  "invalidCurrentPassword": "Current password is incorrect",
+  "language": "Language",
+  "languageOptions": {
+    "en-US": "English (US)",
+    "pt-BR": "Portuguese (Brazil)"
+  },
   "languageOptionsExtended": {
     "en-US": "en-US",
     "es-ES": "es-ES",
@@ -597,6 +757,8 @@
       "saveSuccess": "saveSuccess",
       "sortOrderLabel": "sortOrderLabel",
       "spanishLabel": "spanishLabel",
+      "unsavedChanges": "Unsaved Changes",
+      "unsavedChangesDesc": "You have unsaved changes in the translation editor.",
       "updateValue": "updateValue"
     },
     "loadingConfiguration": "loadingConfiguration",
@@ -611,6 +773,7 @@
     },
     "targetLanguage": "targetLanguage",
     "title": "title",
+    "valuesCount": "{{count}} values",
     "valuesCount_many": "valuesCount_many",
     "valuesCount_one": "valuesCount",
     "valuesCount_other": "valuesCount"
@@ -618,8 +781,9 @@
   "loggedOut": "loggedOut",
   "logout": "logout",
   "logoutError": "logoutError",
-  "manageNotifications": "manageNotifications",
+  "manageNotifications": "Manage Notifications",
   "manageRoles": "Manage roles",
+  "manageTranslations": "Manage Translations",
   "name": "Name",
   "namePlaceholder": "Enter your name",
   "newPassword": "newPassword",
@@ -627,22 +791,60 @@
   "noName": "noName",
   "noRoles": "No roles",
   "noUsers": "No users",
-  "notEnabled": "notEnabled",
-  "notificationPreferences": "notificationPreferences",
+  "notEnabled": "Not enabled",
+  "notificationPreferences": "Notification Preferences",
   "notifications": {
-    "checkFrequency": "checkFrequency",
-    "checkFrequencyHelp": "checkFrequencyHelp",
-    "checkFrequencyValue": "checkFrequencyValue",
-    "materialDelivery": "materialDelivery",
-    "scheduleChanges": "scheduleChanges"
+    "checkFrequency": "Check Frequency",
+    "checkFrequencyHelp": "How often to check for new notifications (seconds)",
+    "checkFrequencyValue": "Every {{value}}s",
+    "materialDelivery": "Material Delivery",
+    "scheduleChanges": "Schedule Changes"
   },
+  "notificationsSaved": "Notification preferences saved",
+  "numberFormat": "Number Format",
   "numberFormatDescription": "numberFormatDescription",
   "numberFormatOptions": {
     "compact": "compact",
     "full": "full"
   },
   "numberFormatPreviewHeading": "numberFormatPreviewHeading",
+  "onboarding": {
+    "confirmButton": "Confirm onboarding",
+    "deleteButton": "Delete",
+    "deleteDialog": {
+      "cancel": "Cancel",
+      "confirm": "Delete user",
+      "description": "This will permanently delete {{email}} from the system. This action cannot be undone.",
+      "title": "Delete pending user?"
+    },
+    "description": "Users who have registered but have not yet been granted access. Confirm each user to create their profile, assign a role, and send a welcome email.",
+    "empty": {
+      "description": "All registered users have been onboarded. New registrations will appear here.",
+      "title": "All users are onboarded"
+    },
+    "onboardButton": "Onboard",
+    "pendingCount": "{{count}} user pending",
+    "pendingCount_one": "{{count}} user pending",
+    "pendingCount_other": "{{count}} users pending",
+    "refresh": "Refresh",
+    "table": {
+      "action": "Actions",
+      "email": "Email",
+      "registeredAt": "Registered",
+      "role": "Default role"
+    },
+    "title": "Pending onboarding",
+    "toast": {
+      "deleteError": "Failed to delete user",
+      "deleteSuccess": "User deleted",
+      "deleteSuccessDescription": "{{email}} has been permanently removed from the system.",
+      "error": "Onboarding failed",
+      "success": "User onboarded",
+      "successDescription": "{{email}} has been onboarded with role {{role}} and will receive a welcome email."
+    }
+  },
   "password": "password",
+  "passwordChanged": "Password changed successfully",
   "passwordMismatch": "passwordMismatch",
   "passwordMustBeDifferent": "passwordMustBeDifferent",
   "passwordTooShort": "passwordTooShort",
@@ -650,30 +852,78 @@
   "phoneLabel": "Phone",
   "phonePlaceholder": "Phone number",
   "profile": "Profile",
-  "projectUpdates": "projectUpdates",
+  "projectUpdates": "Project Updates",
   "pwa": {
     "androidInstructions": "androidInstructions",
     "available": "available",
+    "benefits": {
+      "fasterLoading": "Faster loading times",
+      "nativeExperience": "Native app-like experience",
+      "notifications": "Push notifications (if enabled)",
+      "offlineAccess": "Offline access to cached data",
+      "shortcut": "Desktop/home screen shortcut",
+      "title": "Benefits of Installing"
+    },
     "chromeAndroid": {
+      "step1": "Tap the menu (⋮)",
+      "step2": "Tap \"Add to Home screen\"",
+      "step3": "Tap \"Install\"",
       "title": "title"
     },
+    "chromeDesktop": {
+      "step1": "Click the install icon in the address bar",
+      "step2": "Or click the menu (⋮) → \"Install CastorWorks\"",
+      "title": "On Chrome/Edge (Desktop):"
+    },
     "description": "description",
+    "installInstructions": "Install Instructions",
     "installation": "installation",
+    "installationInstructions": "Installation Instructions",
     "iosInstructions": "iosInstructions",
     "offlineMode": "offlineMode",
     "offlineModeDesc": "offlineModeDesc",
     "safariIOS": {
+      "step1": "Tap the Share button",
+      "step2": "Scroll down and tap \"Add to Home Screen\"",
+      "step3": "Tap \"Add\"",
       "title": "title"
     },
-    "title": "title"
+    "status": {
+      "installed": "✓ App is installed",
+      "notInstalled": "App is not installed",
+      "title": "Installation Status"
+    },
+    "title": "title",
+    "toastMessage": "Please use your browser's install feature to add this app to your device"
   },
+  "removeRole": "Remove Role",
   "role": "Role",
-  "roleAccountant": "roleAccountant",
-  "roleAdmin": "roleAdmin",
-  "roleAdminOffice": "roleAdminOffice",
-  "roleArchitect": "roleArchitect",
-  "roleClient": "roleClient",
-  "roleGlobalAdmin": "roleGlobalAdmin",
+  "roleAccountant": "Accountant",
+  "roleAdmin": "Admin",
+  "roleAdminOffice": "Admin Office",
+  "roleArchitect": "Architect",
+  "roleClient": "Client",
+  "roleDescriptions": {
+    "admin": "Full access to every sidebar option and application setting.",
+    "admin_office": "Back-office focus with client, finance, and procurement tools.",
+    "architect": "Access only to architect portal pages for project design and client management.",
+    "client": "Read-only access to curated dashboards and shared documentation.",
+    "global_admin": "Support staff only. Full access to all projects including architect-owned. Can be assigned only to users marked as support users.",
+    "platform_owner": "Full access to the platform workspace and customer admin tools. Internal platform-team use only.",
+    "platform_sales": "Platform team: Contacts, Campaigns, Forms, Task Management, and Communication Log.",
+    "platform_support": "Platform team: Support Chat, Contacts, Forms, Task Management, and Communication Log.",
+    "project_manager": "Full access to project tools except the Settings area.",
+    "site_supervisor": "Field execution focus with delivery and build-tracking tools.",
+    "super_admin": "Platform infrastructure role. Full tenant and licensing governance. Not a tenant-facing role.",
+    "viewer": "Can monitor dashboards and reports without making changes."
+  },
+  "roleGlobalAdmin": "Global Admin",
+  "roleManagement": {
+    "assignFailed": "Failed to assign role: {{error}}",
+    "assignedSuccess": "Role assigned successfully",
+    "removeFailed": "Failed to remove role: {{error}}",
+    "removedSuccess": "Role removed successfully"
+  },
   "rolePermissions": {
     "legend": "Check the boxes to allow access.",
     "noTabs": "No tabs",
@@ -682,9 +932,13 @@
     "tabs": "Tabs",
     "title": "Role permissions"
   },
-  "roleProjectManager": "roleProjectManager",
-  "roleSiteSupervisor": "roleSiteSupervisor",
-  "roleViewer": "roleViewer",
+  "rolePlatformOwner": "Platform Owner",
+  "rolePlatformSales": "Platform Sales",
+  "rolePlatformSupport": "Platform Support",
+  "roleProjectManager": "Project Manager",
+  "roleSiteSupervisor": "Site Supervisor",
+  "roleSuperAdmin": "Super Admin",
+  "roleViewer": "Viewer",
   "salesPipelineColumns": {
     "description": "description",
     "selectAll": "selectAll",
@@ -692,23 +946,50 @@
     "updating": "updating",
     "visibleCount": "visibleCount"
   },
+  "salesPipelineColumnsHeading": "Sales Pipeline Columns",
   "saveChanges": "saveChanges",
   "saving": "saving",
-  "security": "security",
+  "security": "Security",
   "selectCurrency": "selectCurrency",
   "selectLanguage": "selectLanguage",
   "selectTheme": "selectTheme",
+  "settings": {
+    "aiFeedback": {
+      "buttons": {
+        "no": "No",
+        "yes": "Yes"
+      }
+    }
+  },
   "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
   "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
   "settingsUpdated": "settingsUpdated",
+  "sidebarOrder": {
+    "collapse": "Collapse",
+    "description": "Drag and drop to reorder sidebar menu items and submenus",
+    "directLink": "Direct link",
+    "expand": "Expand",
+    "itemsCount": "{{count}} items",
+    "link": "Link",
+    "menu": "Menu",
+    "resetToDefault": "Reset to Default",
+    "saveChanges": "Save Changes",
+    "title": "Menu Order Management",
+    "unsavedChangesAlert": "You have unsaved changes. Click \"Save Changes\" to apply the new menu order."
+  },
   "sidebarPermissions": {
     "adminNote": "Admins have full access.",
     "cancel": "Cancel",
     "collapseAll": "Collapse all",
+    "confirmChanges": "Are you sure you want to save these permission changes?",
     "expandAll": "Expand all",
     "saveChanges": "Save changes",
+    "saveError": "Failed to update permissions",
+    "saveSuccess": "Permissions updated successfully",
     "saving": "Saving...",
+    "subtitle": "Manage which roles can access each sidebar option and its child tabs. Click the chevron to expand and manage tab-level permissions.",
     "tabPermission": "Tab permission",
+    "title": "Sidebar Access Management",
     "unsavedChanges": "You have unsaved changes."
   },
   "sinapi": {
@@ -735,51 +1016,71 @@
     "type": "Type",
     "unit": "Unit"
   },
+  "sourceBadge": "Source",
+  "sourceLanguage": "Source Language (Base)",
+  "sourceLanguageDescription": "All translations are based on English source text",
   "status": {
-    "noRoles": "noRoles",
-    "notSet": "notSet"
+    "noRoles": "No roles",
+    "notSet": "Not set"
   },
-  "subtitle": "subtitle",
+  "stringsTranslated": "{{translated}} of {{total}} strings translated",
+  "subtitle": "Manage your account and application preferences",
   "system": "system",
   "systemNumberFormatLabel": "systemNumberFormatLabel",
-  "systemPreferences": "systemPreferences",
-  "systemPreferencesAdminDescription": "systemPreferencesAdminDescription",
-  "systemPreferencesDefaultsNote": "systemPreferencesDefaultsNote",
-  "systemPreferencesReadOnly": "systemPreferencesReadOnly",
-  "systemPreferencesViewOnlyDescription": "systemPreferencesViewOnlyDescription",
-  "systemSettingsUpdated": "systemSettingsUpdated",
+  "systemPreferences": "System Preferences",
+  "systemPreferencesAdminDescription": "Set the default system values applied across the workspace.",
+  "systemPreferencesAutoSave": "Settings are automatically saved when changed.",
+  "systemPreferencesDefaultsNote": "These defaults are used when a user has not set a personal preference.",
+  "systemPreferencesReadOnly": "Read-only",
+  "systemPreferencesViewOnlyDescription": "You can review the current system defaults, but only administrators can edit them.",
+  "systemSettingsUpdated": "System settings updated",
   "systemTemperatureUnitLabel": "systemTemperatureUnitLabel",
   "systemTimeZoneLabel": "systemTimeZoneLabel",
   "systemWeatherLocationLabel": "systemWeatherLocationLabel",
   "tabs": {
     "admin-tools": "Admin tools",
+    "ai-providers": "AI Providers",
+    "api-testing": "API Testing",
     "bdi": "BDI",
-    "business-settings": "business-settings",
+    "billing": "Billing",
+    "business-settings": "Business Settings",
+    "company": "Company",
     "contact-types": "Contact types",
     "csv-import": "CSV import",
-    "data-management": "data-management",
+    "data": "Data",
+    "data-management": "Data Management",
     "defaults": "Defaults",
-    "demoData": "demoData",
+    "demoData": "Demo Data",
     "dropdown-options": "Dropdown options",
     "general": "General",
-    "inss-reference": "inss-reference",
-    "inss-strategy": "inss-strategy",
+    "inss-reference": "INSS Reference",
+    "inss-strategy": "INSS Strategy",
     "integrations": "Integrations",
-    "menu-order": "menu-order",
-    "permission-management": "permission-management",
+    "internationalization": "Internationalization",
+    "localization": "Localization",
+    "log-search": "Log Search",
+    "menu-order": "Menu Order",
+    "onboarding": "Onboarding",
+    "permission-management": "Permission Management",
     "preferences": "Preferences",
     "pwa": "PWA",
     "quick-backup": "Quick backup",
     "selective-export": "Selective export",
     "sinapi": "SINAPI",
-    "system-preferences": "system-preferences",
-    "system-translation": "system-translation",
-    "translation-dashboard": "translation-dashboard",
-    "translation-editor": "translation-editor",
-    "user-management": "user-management",
-    "user-preferences": "user-preferences",
+    "subscription": "Subscription",
+    "system-preferences": "System Preferences",
+    "system-translation": "System Translation",
+    "theme": "Theme",
+    "third-party": "Third-Party Services",
+    "translation-dashboard": "Translation Dashboard",
+    "translation-editor": "Translation Editor",
+    "user-management": "User Management",
+    "user-preferences": "User Preferences",
     "users": "Users"
   },
+  "targetLanguage": "Target Language",
+  "targetLanguageDescription": "Select your preferred language for the interface",
+  "temperatureUnit": "Temperature Unit",
   "temperatureUnitOptions": {
     "C": "C",
     "F": "F"
@@ -855,8 +1156,12 @@
     "livePreview": "livePreview",
     "modeSelector": "modeSelector",
     "preview": {
+      "buttonStyles": "Button Styles",
+      "cardStyles": "Card Styles",
+      "colorPalette": "Color Palette",
       "description": "description",
-      "title": "title"
+      "title": "title",
+      "typography": "Typography"
     },
     "reset": "reset",
     "resetTheme": "resetTheme",
@@ -913,6 +1218,41 @@
       "connectionFailed": "connectionFailed",
       "missingRequiredFields": "missingRequiredFields"
     },
+    "integrations": {
+      "awsS3": {
+        "description": "Amazon S3 for file storage and CDN"
+      },
+      "cloudinary": {
+        "description": "Image and video management with transformations"
+      },
+      "docusign": {
+        "description": "Electronic signature and document workflow"
+      },
+      "googleAnalytics": {
+        "description": "Website analytics and user behavior tracking"
+      },
+      "mailgun": {
+        "description": "Email delivery service with analytics"
+      },
+      "microsoftTeams": {
+        "description": "Enterprise communication and collaboration"
+      },
+      "mixpanel": {
+        "description": "Product analytics and user engagement insights"
+      },
+      "paypal": {
+        "description": "Process PayPal payments and payouts"
+      },
+      "sendgrid": {
+        "description": "Transactional email delivery and marketing emails"
+      },
+      "slack": {
+        "description": "Team communication and notifications"
+      },
+      "stripe": {
+        "description": "Accept credit card payments and manage subscriptions"
+      }
+    },
     "lastTested": "lastTested",
     "oauthSetupTitle": "oauthSetupTitle",
     "oauthSteps": {
@@ -930,6 +1270,13 @@
     "requiredSettingsTitle": "requiredSettingsTitle",
     "saveConfigurationButton": "saveConfigurationButton",
     "setupInstructionsTitle": "setupInstructionsTitle",
+    "status": {
+      "configured": "Configured",
+      "connected": "Connected",
+      "error": "Error",
+      "not_configured": "Not configured",
+      "testing": "Testing"
+    },
     "tabs": {
       "configure": "configure",
       "overview": "overview"
@@ -953,13 +1300,14 @@
     "webhookTitle": "webhookTitle",
     "webhookUrlHelp": "webhookUrlHelp"
   },
+  "timeZone": "Time Zone",
   "timeZoneOptions": {
     "America/New_York": "America/New_York",
     "America/Sao_Paulo": "America/Sao_Paulo",
     "Asia/Tokyo": "Asia/Tokyo",
     "Europe/London": "Europe/London"
   },
-  "title": "title",
+  "title": "Settings",
   "translationCoverage": {
     "description": "description",
     "loading": "loading",
@@ -967,6 +1315,7 @@
       "action": "action",
       "addTranslation": "addTranslation",
       "category": "category",
+      "description": "{{count}} item(s) need translation",
       "description_many": "description_many",
       "description_one": "description",
       "description_other": "description",
@@ -981,6 +1330,7 @@
     "review": {
       "action": "action",
       "currentTranslation": "currentTranslation",
+      "description": "{{count}} translation(s) marked for review",
       "description_many": "description_many",
       "description_one": "description",
       "description_other": "description",
@@ -995,18 +1345,20 @@
   "translationDashboard": {
     "allComplete": "allComplete",
     "completion": "completion",
-    "coverageByNamespace": "coverageByNamespace",
-    "coverageDescription": "coverageDescription",
+    "coverageByNamespace": "Coverage by Namespace",
+    "coverageDescription": "Review translation completion by namespace across each supported language.",
     "description": "description",
     "exportError": "exportError",
     "exportMissing": "exportMissing",
     "exportNoMissing": "exportNoMissing",
     "exportSuccess": "exportSuccess",
+    "issuesFound": "Issues Found ({{count}})",
     "issuesFound_many": "issuesFound_many",
     "issuesFound_one": "issuesFound",
     "issuesFound_other": "issuesFound",
     "syncError": "syncError",
     "syncNoChanges": "syncNoChanges",
+    "syncSuccess": "Sync complete! Added {{count}} keys across {{files}} files.",
     "syncSuccess_many": "syncSuccess_many",
     "syncSuccess_one": "syncSuccess",
     "syncSuccess_other": "syncSuccess",
@@ -1029,6 +1381,7 @@
     "targetLanguage": "targetLanguage",
     "targetLanguageLabel": "targetLanguageLabel",
     "title": "title",
+    "translationsMissing": "{{count}} translation(s) missing",
     "translationsMissing_many": "translationsMissing_many",
     "translationsMissing_one": "translationsMissing",
     "translationsMissing_other": "translationsMissing",
@@ -1036,9 +1389,32 @@
     "unsavedChanges": "unsavedChanges",
     "unsavedChangesDescription": "unsavedChangesDescription"
   },
+  "translationMaintenance": {
+    "allComplete": "All translations complete!",
+    "category": "Category",
+    "description": "Review and update all translations for the selected language",
+    "loadError": "Failed to load translations. Check browser console for details.",
+    "missing": "{{count}} translations missing",
+    "missing_one": "{{count}} translation missing",
+    "missing_other": "{{count}} translations missing",
+    "noSourceText": "No source text",
+    "noTranslationsToSave": "No translations to save",
+    "percentComplete": "{{percent}}% complete",
+    "placeholder": "Enter {{language}} translation...",
+    "saveError": "Failed to save translations",
+    "saveSuccess": "Successfully saved {{count}} translations for {{language}}",
+    "title": "Translation Maintenance",
+    "translated": "{{completed}} / {{total}} translated",
+    "unsavedChanges": "Unsaved changes",
+    "value": "Value"
+  },
   "translations": {
     "cancel": "cancel",
     "languageNames": {
+      "en-US": "English",
+      "es-ES": "Español",
+      "fr-FR": "Français",
+      "pt-BR": "Português",
       "title": "title"
     },
     "lastReviewed": "lastReviewed",
@@ -1055,11 +1431,13 @@
     "saveSuccess": "saveSuccess",
     "saveTranslations": "saveTranslations",
     "saving": "saving",
-    "translationLabel": "translationLabel"
+    "translationLabel": "Translation"
   },
-  "twoFactorAuth": "twoFactorAuth",
+  "twoFactorAuth": "Two-factor authentication",
   "unsavedChanges": "unsavedChanges",
+  "updatePreferences": "Update Preferences",
   "userManagement": "User management",
+  "userManagementUnknownUser": "Unknown User",
   "userPreferences": {
     "appearanceLabel": "Appearance",
     "appearanceOptions": {
@@ -1068,32 +1446,35 @@
       "system": "System"
     },
     "dateFormatOptions": {
-      "MMM_DD_YYYY": "MMM_DD_YYYY"
+      "MMM_DD_YYYY": "MMM DD, YYYY"
     },
     "notificationsDescriptions": {
-      "financialAlerts": "financialAlerts",
-      "materialDelivery": "materialDelivery",
-      "projectUpdates": "projectUpdates",
-      "scheduleChanges": "scheduleChanges"
+      "financialAlerts": "Alerts for financial events (invoices, payments, budgets)",
+      "materialDelivery": "Updates when materials are delivered",
+      "projectUpdates": "General project status and milestone updates",
+      "scheduleChanges": "Schedule and timeline change alerts"
     },
-    "notificationsTitle": "notificationsTitle",
+    "notificationsTitle": "Notification Preferences",
     "reportOptions": {
-      "detailed": "detailed",
-      "standard": "standard",
-      "summary": "summary"
+      "detailed": "Detailed",
+      "standard": "Standard",
+      "summary": "Summary"
     },
-    "reportsLabel": "reportsLabel",
-    "saveButton": "saveButton",
-    "supervisorModeDescription": "supervisorModeDescription",
+    "reportsLabel": "Default Report Template",
+    "saveButton": "Save Preferences",
+    "supervisorModeDescription": "Choose whether the supervisor interface should default to mobile, desktop, or switch automatically.",
     "supervisorModeLabel": "Supervisor mode",
     "supervisorModeOptions": {
       "auto": "Auto",
       "desktop": "Desktop",
       "mobile": "Mobile"
     },
-    "supervisorTitle": "Supervisor",
-    "title": "title"
+    "supervisorTitle": "Supervisor Preferences",
+    "title": "User Preferences"
   },
   "userProfile": "User profile",
-  "weatherLocationPlaceholder": "weatherLocationPlaceholder"
+  "userProfileSaved": "User profile updated",
+  "users": "Users",
+  "weatherLocation": "Weather Location",
+  "weatherLocationPlaceholder": "Enter a city or region"
 }

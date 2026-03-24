@@ -17,6 +17,8 @@
     "takePhoto": "Prendre une Photo",
     "transactionReferenceOptional": "Référence de transaction (facultatif)"
   },
+  "activatedDescription": "Votre compte est maintenant actif.",
+  "activatedTitle": "Activé",
   "active": "Actif",
   "activeProjects": "activeProjects",
   "activity": {
@@ -329,7 +331,9 @@
       "regenerate": "Régénérer les Insights"
     },
     "superBot": {
+      "analytics": "",
       "clearConversation": "clearConversation",
+      "errorPrefix": "",
       "greetingQuestion": "greetingQuestion",
       "greetings": {
         "afternoon": "afternoon",
@@ -350,7 +354,13 @@
       },
       "searchPlaceholder": "searchPlaceholder",
       "subheadline": "subheadline",
-      "suggestions": "suggestions"
+      "suggestions": "suggestions",
+      "templateTitles": {
+        "delayedProjects": "",
+        "duePayments": "",
+        "updateTasks": "",
+        "vendorQuotes": ""
+      }
     }
   },
   "aiAnalyze": "Analyse IA",
@@ -588,6 +598,7 @@
     "unassigned": "unassigned",
     "uploadPhoto": "uploadPhoto"
   },
+  "annual": "Annuel",
   "app": {
     "active": "Actif",
     "activeProjects": "Projets Actifs",
@@ -1486,6 +1497,13 @@
   "bi-weekly": "Bimensuel",
   "biWeekly": "Bimensuel",
   "billableHours": "billableHours",
+  "billing": {
+    "downloadInvoice": "Télécharger la facture",
+    "downloadInvoiceFailed": "Échec du téléchargement de la facture",
+    "emptyState": "Aucun historique de facturation",
+    "title": "Historique de facturation"
+  },
+  "billingPeriod": "Période de facturation",
   "branding": {
     "changeLogo": "changeLogo",
     "firmName": "firmName",
@@ -1787,6 +1805,7 @@
     "taxes": "Taxes/Impôts"
   },
   "change": "[EN] Change",
+  "changePlan": "Changer de plan",
   "clear": "Effacer",
   "clearAll": "Tout Effacer",
   "clearFilter": "Effacer le filtre",
@@ -1976,9 +1995,9 @@
       "welcomeDefault": "welcomeDefault"
     },
     "definitions": {
-      "noDefinitions": "",
-      "subtitle": "",
-      "title": ""
+      "noDefinitions": "Aucune définition encore",
+      "subtitle": "Suivez les décisions et définitions du client",
+      "title": "Définitions"
     },
     "description": "Description:",
     "documents": {
@@ -2463,6 +2482,7 @@
   "collapse": "Réduire",
   "collapseAll": "Tout réduire",
   "colors": "Couleurs",
+  "comingSoon": "",
   "common": {
     "accessDenied": "accessDenied",
     "accessNotEnabled": "accessNotEnabled",
@@ -2694,7 +2714,7 @@
     },
     "post": "post",
     "posting": "posting",
-    "preview": "",
+    "preview": "Aperçu",
     "previous": "previous",
     "print": "print",
     "promoting": "promoting",
@@ -3114,6 +3134,7 @@
     "eur": "EUR (€)",
     "usd": "USD ($)"
   },
+  "currentPlan": "Plan actuel",
   "currentPortfolio": "currentPortfolio",
   "customerApprovalPortal": {
     "itemsRequested": "Articles pour lesquels vous avez demandé des devis",
@@ -3291,6 +3312,9 @@
   "date": "Date",
   "dateRange": "Plage de Dates",
   "days": "jours",
+  "daysLeft_many": "{{count}} jours restants",
+  "daysLeft_one": "{{count}} jour restant",
+  "daysLeft_other": "{{count}} jours restants",
   "dbExportImport": {
     "databaseExportImport": "Export / Import de Base de Données"
   },
@@ -4569,6 +4593,7 @@
   },
   "linkCopied": "Lien copié dans le presse-papiers",
   "loading": "Chargement...",
+  "loadingSubscription": "Chargement de l'abonnement...",
   "location": "Emplacement",
   "logistics": "Logistique",
   "maintenance": {
@@ -4587,6 +4612,8 @@
     "startTimeLabel": "Heure de Début",
     "titleLabel": "Titre"
   },
+  "manage": "",
+  "manageBilling": "Gérer la facturation",
   "materials": "Matériaux",
   "meetingReview": {
     "confirm": "confirm",
@@ -4617,7 +4644,7 @@
     "quickNote": "quickNote",
     "recordWithAI": "recordWithAI",
     "recording": "recording",
-    "resume": "",
+    "resume": "Reprendre",
     "show": "show",
     "showWhisper": "showWhisper",
     "start": "start",
@@ -4626,8 +4653,8 @@
     "startNewMeeting": "startNewMeeting",
     "titlePlaceholder": "titlePlaceholder",
     "total": "total",
-    "transcriptPlaceholder": "",
-    "unmute": "",
+    "transcriptPlaceholder": "La transcription de la réunion apparaîtra ici...",
+    "unmute": "Réactiver le son",
     "waitingForSpeech": "waitingForSpeech",
     "whisperModeActive": "whisperModeActive"
   },
@@ -4683,6 +4710,7 @@
     "financial": "financial",
     "materials": "materials",
     "myDashboard": "myDashboard",
+    "myTimesheet": "Ma feuille de temps",
     "notifications": "notifications",
     "platform": "platform",
     "procurement": "procurement",
@@ -4700,8 +4728,10 @@
   },
   "new": "Nouveau",
   "next": "Suivant",
+  "nextRenewal": "Prochain renouvellement",
   "nextStep": "Étape suivante",
   "no": "Non",
+  "noActiveSubscription": "Aucun abonnement actif",
   "noAddress": "Aucune adresse fournie",
   "noChanges": "Aucune modification à enregistrer",
   "noContactsAvailable": "Aucun contact disponible. Ajoutez d'abord des clients, des fournisseurs ou des entrepreneurs.",
@@ -4751,10 +4781,10 @@
   },
   "notifications": {
     "actions": {
-      "payNow": "",
-      "reviewBudget": "",
-      "view": "",
-      "viewSchedule": ""
+      "payNow": "Payer maintenant",
+      "reviewBudget": "Réviser le budget",
+      "view": "Voir",
+      "viewSchedule": "Voir le planning"
     },
     "aiAssistant": {
       "description": "description",
@@ -4819,10 +4849,10 @@
     "empty": "empty",
     "failed": "failed",
     "older": "older",
-    "payNow": "",
+    "payNow": "Payer maintenant",
     "pending": "pending",
     "requiresAction": "requiresAction",
-    "reviewBudget": "",
+    "reviewBudget": "Réviser le budget",
     "sendEmail": "sendEmail",
     "sendWhatsApp": "sendWhatsApp",
     "subtitle": "subtitle",
@@ -4837,7 +4867,7 @@
     "totalSent": "totalSent",
     "unread": "unread",
     "urgent": "urgent",
-    "viewSchedule": "",
+    "viewSchedule": "Voir le planning",
     "whatsApp": {
       "cancel": "cancel",
       "dialogDescription": "dialogDescription",
@@ -4974,6 +5004,7 @@
     "projectCalendarDesc": "Gérez les jours ouvrables et les jours fériés pour une planification précise du projet",
     "systemOperational": "Système Opérationnel"
   },
+  "pageTitle": "Abonnement",
   "pages": {
     "auditLogs": {
       "description": "description",
@@ -5190,6 +5221,7 @@
     }
   },
   "paused": "En Pause",
+  "paymentCanceled": "Paiement annulé",
   "paymentLinks": {
     "title": "title"
   },
@@ -5204,6 +5236,7 @@
     "debitCard": "Carte de Débit",
     "wireTransfer": "Virement Électronique"
   },
+  "paymentSuccess": "Paiement réussi",
   "payments": {
     "actions": "actions",
     "alert": "alert",
@@ -6754,19 +6787,19 @@
     "addComment": "addComment",
     "aiToWork": "aiToWork",
     "aiToWorkDialog": {
-      "bridgeNotRunning": "",
-      "bridgeTimeout": "",
-      "checking": "",
+      "bridgeNotRunning": "Le pont n'est pas en cours d'exécution",
+      "bridgeTimeout": "Délai de connexion du pont dépassé",
+      "checking": "Vérification...",
       "copied": "copié",
       "copy": "copier",
-      "copyTerminalCommand": "",
+      "copyTerminalCommand": "Copier la commande terminal",
       "description": "description",
-      "output": "",
-      "running": "",
-      "startBridge": "",
-      "taskSummary": "",
+      "output": "Sortie",
+      "running": "En cours d'exécution...",
+      "startBridge": "Démarrer le pont",
+      "taskSummary": "Résumé de la tâche",
       "title": "titre",
-      "untitledTask": ""
+      "untitledTask": "Tâche sans titre"
     },
     "allCategories": "allCategories",
     "analytics": "analytics",
@@ -6841,9 +6874,9 @@
     "created": "created",
     "defaultColumn": "Colonne par défaut",
     "deleteAttachment": "deleteAttachment",
-    "deleteItem": "",
-    "deleteItemConfirmDescription": "",
-    "deleteItemConfirmTitle": "",
+    "deleteItem": "Supprimer l'élément",
+    "deleteItemConfirmDescription": "Êtes-vous sûr de vouloir supprimer cet élément ? Cette action est irréversible.",
+    "deleteItemConfirmTitle": "Supprimer l'élément ?",
     "description": "description",
     "descriptionField": "descriptionField",
     "descriptionPlaceholder": "descriptionPlaceholder",
@@ -6869,7 +6902,7 @@
     "newItemDescription": "newItemDescription",
     "noAttachments": "noAttachments",
     "noComments": "noComments",
-    "noDescription": "",
+    "noDescription": "Aucune description",
     "noItems": "noItems",
     "noSprint": "Pas de sprint",
     "notes": "notes",
@@ -7127,6 +7160,7 @@
       "id": "id",
       "idCannotChange": "idCannotChange",
       "idHint": "idHint",
+      "idPlaceholder": "ex.: entrepreneur",
       "label": "label",
       "labelPlaceholder": "labelPlaceholder",
       "noTypes": "noTypes",
@@ -7144,7 +7178,13 @@
     "currencyUpdated": "currencyUpdated",
     "dark": "dark",
     "dataManagement": {
-      "exportingLabel": "exportingLabel"
+      "exportingLabel": "exportingLabel",
+      "toast": {
+        "exportFailedWithMessage": "Échec de l'exportation : {{message}}",
+        "exportSuccess": "Données exportées avec succès",
+        "exportSuccessWithFormat": "Données exportées avec succès en {{format}}",
+        "selectTableError": "Veuillez sélectionner au moins une table à exporter"
+      }
     },
     "dateFormat": "dateFormat",
     "dateFormatOptions": {
@@ -7229,12 +7269,13 @@
         "apiTesting": "apiTesting",
         "google": "google",
         "thirdParty": "thirdParty",
-        "whatsapp": ""
+        "whatsapp": "WhatsApp"
       },
       "whatsapp": {
-        "aiAutoResponderDisabled": "",
-        "aiAutoResponderEnabled": "",
-        "saved": ""
+        "aiAutoResponderDisabled": "Répondeur auto IA désactivé",
+        "aiAutoResponderEnabled": "Répondeur auto IA activé",
+        "saved": "Paramètres WhatsApp enregistrés",
+        "updateFailed": "Échec de la mise à jour"
       }
     },
     "language": "language",
@@ -7336,6 +7377,21 @@
     "settingsAccessRestrictedDescription": "settingsAccessRestrictedDescription",
     "settingsAccessRestrictedTitle": "settingsAccessRestrictedTitle",
     "settingsUpdated": "settingsUpdated",
+    "sidebarOrder": {
+      "collapse": "Réduire",
+      "description": "Glissez-déposez pour réorganiser les éléments et sous-menus de la barre latérale",
+      "directLink": "Lien direct",
+      "expand": "Développer",
+      "itemsCount_many": "",
+      "itemsCount_one": "{{count}} élément",
+      "itemsCount_other": "{{count}} éléments",
+      "link": "Lien",
+      "menu": "Menu",
+      "resetToDefault": "Réinitialiser par Défaut",
+      "saveChanges": "Enregistrer les Modifications",
+      "title": "Gestion de l'Ordre du Menu",
+      "unsavedChangesAlert": "Vous avez des modifications non enregistrées. Cliquez sur Enregistrer pour appliquer le nouvel ordre du menu."
+    },
     "sinapi": {
       "autoUpdatePrices": "autoUpdatePrices",
       "autoUpdatePricesDescription": "autoUpdatePricesDescription",
@@ -7370,6 +7426,7 @@
       "dropdown-options": "dropdown-options",
       "general": "general",
       "integrations": "integrations",
+      "log-search": "Recherche de journaux",
       "pwa": "pwa",
       "sinapi": "sinapi",
       "users": "users"
@@ -7575,6 +7632,27 @@
       "unsavedChanges": "unsavedChanges",
       "unsavedChangesDescription": "unsavedChangesDescription"
     },
+    "translationMaintenance": {
+      "allComplete": "Toutes les traductions sont complètes !",
+      "category": "Catégorie",
+      "description": "Vérifiez et mettez à jour toutes les traductions pour la langue sélectionnée",
+      "loadError": "Échec du chargement des traductions",
+      "missing_many": "",
+      "missing_one": "{{count}} traduction manquante",
+      "missing_other": "{{count}} traductions manquantes",
+      "noSourceText": "Pas de texte source",
+      "noTranslationsToSave": "Aucune traduction à enregistrer",
+      "percentComplete": "{{percent}}% terminé",
+      "placeholder": "Entrez la traduction en {{language}}...",
+      "saveError": "Échec de l'enregistrement des traductions",
+      "saveSuccess_many": "",
+      "saveSuccess_one": "{{count}} traduction enregistrée avec succès pour {{language}}",
+      "saveSuccess_other": "{{count}} traductions enregistrées avec succès pour {{language}}",
+      "title": "Maintenance des Traductions",
+      "translated": "{{completed}} / {{total}} traduites",
+      "unsavedChanges": "Modifications non enregistrées",
+      "value": "Valeur"
+    },
     "translations": {
       "cancel": "cancel",
       "languageNames": {
@@ -7598,6 +7676,7 @@
     },
     "twoFactorAuth": "twoFactorAuth",
     "unsavedChanges": "unsavedChanges",
+    "userManagementUnknownUser": "Utilisateur Inconnu",
     "userPreferences": {
       "appearanceLabel": "appearanceLabel",
       "appearanceOptions": {
@@ -7646,6 +7725,7 @@
   "showLess": "Afficher moins",
   "showMore": "Afficher plus",
   "signOutError": "Échec de la déconnexion",
+  "signOutNow": "Se déconnecter maintenant",
   "signOutSuccess": "Déconnexion réussie",
   "skip": "Passer",
   "start": "Démarrer",
@@ -7655,6 +7735,7 @@
     "active": "active",
     "allSystemsOperational": "allSystemsOperational",
     "atRisk": "atRisk",
+    "canceled": "Annulé",
     "complete": "complete",
     "construction": "construction",
     "degraded": "degraded",
@@ -7665,6 +7746,7 @@
     "onSchedule": "onSchedule",
     "operational": "operational",
     "overallStatus": "overallStatus",
+    "past_due": "En retard",
     "permits": "permits",
     "realTimeMonitoring": "realTimeMonitoring",
     "refresh": "refresh",
@@ -7680,10 +7762,11 @@
     "inactive": "Inactif"
   },
   "stop": "Arrêter",
-  "studioPrincipal": "",
+  "studioPrincipal": "Studio principal",
   "studioTools": "studioTools",
   "submit": "Soumettre",
   "submitting": "Soumission...",
+  "subscribeNow": "S'abonner maintenant",
   "success": "Succès",
   "supervisor": {
     "activeCrew": "activeCrew",
@@ -8260,6 +8343,20 @@
     "withBadges": "Avec des badges"
   },
   "thisMonth": "Ce mois-ci",
+  "tierPicker": {
+    "annual": "Annuel",
+    "cancel": "Annuler",
+    "checkoutError": "Échec du paiement. Veuillez réessayer.",
+    "confirm": "Confirmer",
+    "custom": "Personnalisé",
+    "loading": "Chargement...",
+    "monthly": "Mensuel",
+    "noPortalUrl": "Aucune URL de portail retournée",
+    "perMonthAnnual": "/mois (facturé annuellement)",
+    "portalOpenFailed": "Échec de l'ouverture du portail de facturation",
+    "selectTier": "Sélectionner un plan",
+    "title": "Choisissez votre plan"
+  },
   "timeline": {
     "actions": {
       "closePhase": "closePhase",
@@ -8386,14 +8483,14 @@
       "blockingCount_many": "blockingCount",
       "blockingCount_one": "blockingCount",
       "blockingCount_other": "blockingCount",
-      "createError": "",
-      "createSuccess": "",
+      "createError": "Échec de la création de la définition",
+      "createSuccess": "Définition créée",
       "daysOverdue": "daysOverdue",
       "daysRemaining": "daysRemaining",
       "deleteConfirm": "deleteConfirm",
       "deleteDefinition": "deleteDefinition",
-      "deleteError": "",
-      "deleteSuccess": "",
+      "deleteError": "Échec de la suppression de la définition",
+      "deleteSuccess": "Définition supprimée",
       "dueToday": "dueToday",
       "editDefinition": "editDefinition",
       "filterAll": "filterAll",
@@ -8405,9 +8502,9 @@
       "followUpCount_many": "followUpCount",
       "followUpCount_one": "followUpCount",
       "followUpCount_other": "followUpCount",
-      "followUpError": "",
+      "followUpError": "Échec de l'envoi du suivi",
       "followUpPlaceholder": "followUpPlaceholder",
-      "followUpSuccess": "",
+      "followUpSuccess": "Suivi envoyé",
       "form": {
         "contactLabel": "contactLabel",
         "dateLabel": "dateLabel",
@@ -8442,8 +8539,8 @@
       "totalDefinitions_many": "totalDefinitions",
       "totalDefinitions_one": "totalDefinitions",
       "totalDefinitions_other": "totalDefinitions",
-      "updateError": "",
-      "updateSuccess": ""
+      "updateError": "Échec de la mise à jour de la définition",
+      "updateSuccess": "Définition mise à jour"
     },
     "comments": {
       "title": "Commentaires"
@@ -8459,8 +8556,8 @@
       "addDelay": "addDelay",
       "correctiveActions": "correctiveActions",
       "correctiveActionsPlaceholder": "correctiveActionsPlaceholder",
-      "createError": "",
-      "createSuccess": "",
+      "createError": "Échec de la création du délai",
+      "createSuccess": "Délai créé",
       "delayDays": "delayDays",
       "description": "description",
       "descriptionPlaceholder": "descriptionPlaceholder",
@@ -8470,11 +8567,11 @@
       "subcontractorTrade": "subcontractorTrade",
       "subcontractorTradePlaceholder": "subcontractorTradePlaceholder",
       "title": "title",
-      "updateError": "",
-      "updateSuccess": "",
+      "updateError": "Échec de la mise à jour du délai",
+      "updateSuccess": "Délai mis à jour",
       "validation": {
-        "delayDaysMin": "",
-        "descriptionMinLength": ""
+        "delayDaysMin": "Le délai doit être d'au moins 1 jour",
+        "descriptionMinLength": "La description doit contenir au moins 10 caractères"
       }
     },
     "dependencies": {
@@ -8586,13 +8683,13 @@
     },
     "summary": {
       "categoryLabel": "categoryLabel",
-      "clientDecisions": "",
-      "clientOverdue": "",
+      "clientDecisions": "Décisions client",
+      "clientOverdue": "Client en retard",
       "completed": "completed",
       "completedPhases": "completedPhases",
       "definitions": "definitions",
       "delayedDays": "delayedDays",
-      "highImpact": "",
+      "highImpact": "Impact élevé",
       "nextMilestone": "nextMilestone",
       "overallStatus": "overallStatus",
       "pending": "pending",
@@ -8752,6 +8849,12 @@
     "other": "Autre",
     "services": "Services"
   },
+  "trialDaysLeft_many": "{{count}} jours d'essai restants",
+  "trialDaysLeft_one": "{{count}} jour d'essai restant",
+  "trialDaysLeft_other": "{{count}} jours d'essai restants",
+  "trialDaysLeft_other_many": "{{count}} jours d'essai restants",
+  "trialDaysLeft_other_one": "{{count}} jour d'essai restant",
+  "trialDaysLeft_other_other": "{{count}} jours d'essai restants",
   "tryDifferentSearch": "Essayez un autre terme de recherche",
   "ui": {
     "clickToViewProjectDetails": "Cliquez pour voir les détails du projet",
@@ -8791,6 +8894,8 @@
   "updated": "mis à jour avec succès",
   "updatedAt": "Mis à jour le",
   "updating": "Mise à jour...",
+  "upgradeNow": "Mettre à niveau maintenant",
+  "upgradeToPaid": "Passer à la version payante",
   "upload": "Téléverser",
   "uploadErrorDescription": "Une erreur est survenue lors du téléchargement du fichier",
   "uploadErrorTitle": "Erreur de Téléchargement",

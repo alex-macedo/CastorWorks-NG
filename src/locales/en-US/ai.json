@@ -28,7 +28,9 @@
     "regenerate": "Regenerate Insights"
   },
   "superBot": {
+    "analytics": "Analytics",
     "clearConversation": "Clear conversation",
+    "errorPrefix": "Super Bot error",
     "greeting": "Good Morning",
     "greetingQuestion": "How Can I Assist You Today?",
     "greetings": {
@@ -52,6 +54,12 @@
     "searchPlaceholder": "Search chats...",
     "subheadline": "Ask in natural language to query and update data.",
     "suggestions": "Suggestions",
+    "templateTitles": {
+      "delayedProjects": "Delayed Projects Overview",
+      "duePayments": "Due Payments Snapshot",
+      "updateTasks": "Close Tasks Until Today",
+      "vendorQuotes": "Vendors Missing Proposals"
+    },
     "title": "Super Bot"
   }
 }
