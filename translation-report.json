@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-15T04:55:37.971Z",
+  "timestamp": "2026-03-23T22:41:21.520Z",
   "summary": {
-    "totalMissing": 24,
+    "totalMissing": 33,
     "languages": [
       {
         "code": "en-US",
@@ -10,17 +10,17 @@
       },
       {
         "code": "pt-BR",
-        "missing": 8,
+        "missing": 11,
         "complete": false
       },
       {
         "code": "es-ES",
-        "missing": 8,
+        "missing": 11,
         "complete": false
       },
       {
         "code": "fr-FR",
-        "missing": 8,
+        "missing": 11,
         "complete": false
       }
     ]
@@ -65,7 +65,22 @@
       },
       {
         "namespace": "common",
+        "key": "common.manage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "common.required",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
         "key": "manage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "weather.noData",
         "reason": "empty"
       }
     ],
@@ -107,7 +122,22 @@
       },
       {
         "namespace": "common",
+        "key": "common.manage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "common.required",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
         "key": "manage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "weather.noData",
         "reason": "empty"
       }
     ],
@@ -149,7 +179,22 @@
       },
       {
         "namespace": "common",
+        "key": "common.manage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "common.required",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
         "key": "manage",
+        "reason": "empty"
+      },
+      {
+        "namespace": "common",
+        "key": "weather.noData",
         "reason": "empty"
       }
     ]

@@ -46,7 +46,19 @@ interface WaitlistFormValues {
   companyName: string
   email: string
   cellPhone: string
-  moreInfoRequest: string
+  moreInfoRequest?: string
+}
+
+function getWaitlistEndpoint() {
+  if (typeof window !== 'undefined') {
+    return new URL('/functions/v1/join-waiting-list', window.location.origin).toString()
+  }
+
+  if (supabaseUrl) {
+    return `${supabaseUrl}/functions/v1/join-waiting-list`
+  }
+
+  return '/functions/v1/join-waiting-list'
 }
 
 export function JoinWaitlistDialog({ source, children }: JoinWaitlistDialogProps) {
@@ -96,26 +108,27 @@ export function JoinWaitlistDialog({ source, children }: JoinWaitlistDialogProps
   }
 
   const onSubmit = async (values: WaitlistFormValues) => {
-    if (!supabaseUrl || !supabaseAnonKey) {
-      form.setError('root', { message: t('auth:login.waitlist.form.error') })
-      toast.error(t('auth:login.waitlist.toast.error'))
-      return
-    }
-
     form.clearErrors('root')
 
     try {
-      const response = await fetch(`${supabaseUrl}/functions/v1/join-waiting-list`, {
+      const normalizedLocale = language === 'pt-BR' ? 'pt-BR' : 'en'
+      const endpoint = getWaitlistEndpoint()
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+      }
+
+      if (supabaseAnonKey) {
+        headers.apikey = supabaseAnonKey
+        headers.Authorization = `Bearer ${supabaseAnonKey}`
+      }
+
+      const response = await fetch(endpoint, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          apikey: supabaseAnonKey,
-          Authorization: `Bearer ${supabaseAnonKey}`,
-        },
+        headers,
         body: JSON.stringify({
           ...values,
           source,
-          locale: language,
+          locale: normalizedLocale,
         }),
       })
 

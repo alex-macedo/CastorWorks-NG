@@ -72,7 +72,7 @@ export const useForms = (filters?: FormFilters) => {
         return data as Form[];
       } catch (err) {
         logger.error('Forms query failed:', err);
-        return [];
+        throw err;
       }
     },
   });
