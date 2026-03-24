@@ -82,7 +82,7 @@ serve(async (req) => {
     });
 
     // Also create an anon client for authentication
-    const supabaseAnon = createClient(supabaseUrl, ANON_KEY, {
+    const _supabaseAnon = createClient(supabaseUrl, ANON_KEY, {
       auth: {
         autoRefreshToken: false,
         persistSession: false,
