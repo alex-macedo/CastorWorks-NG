@@ -141,6 +141,9 @@ Plans:
 
 **Plans:** TBD
 
+Plans:
+- [x] 07-01-PLAN.md — DB migration: ai_usage_log, consume_ai_actions RPC, add_ai_credits RPC, credit columns; Wave 0 test scaffolds
+
 ---
 
 ## Progress
@@ -154,3 +157,4 @@ Plans:
 | 4. Payment & Subscription | v1.1 | 3/3 | Complete | 2026-03-04 |
 | 5. Billing & Invoices | v1.1 | 2/2 | Complete | 2026-03-04 |
 | 6. Trial & Subscription Emails | v1.1 | 2/2 | Complete | 2026-03-04 |
+| 7. AI Action Credits & Metering | v1.1+ | 1/TBD | In Progress | — |
