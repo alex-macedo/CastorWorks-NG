@@ -3,6 +3,7 @@ import { corsHeaders } from '../_shared/cors.ts'
 import { getAICompletion, VisionContent } from '../_shared/aiProviderClient.ts'
 import { authenticateRequest, createServiceRoleClient, verifyProjectAccess } from '../_shared/authorization.ts'
 import { getCachedInsight, cacheInsight } from '../_shared/aiCache.ts'
+import { consumeAIActions } from '../_shared/ai-metering.ts'
 
 interface AnalyzeSitePhotosPayload {
   photoUrls: string[]
@@ -119,6 +120,16 @@ serve(async (req) => {
     const supabase = createServiceRoleClient()
     const promptVersion = await hashPhotoUrls(photoUrls)
 
+    // AI Metering: consume credits before AI call (2 actions per analyze-site-photos call)
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? ''
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'analyze-site-photos',
+      actions: 2,
+      userId: user.id,
+      modelUsed: 'anthropic',
+    })
+
     if (!forceRefresh) {
       const cached = await getCachedInsight(
         supabase,
@@ -148,7 +159,10 @@ serve(async (req) => {
       jsonOutput: true,
     }
 
-    const { content } = await getAICompletion(visionContent)
+    const { content } = await getAICompletion({
+      ...visionContent,
+      preferredProvider: metering.degraded ? 'openrouter' : undefined,
+    })
 
     // Basic validation of the AI output
     const parsedResult = JSON.parse(content)

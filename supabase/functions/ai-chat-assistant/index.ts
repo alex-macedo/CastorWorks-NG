@@ -18,6 +18,7 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import Anthropic from 'npm:@anthropic-ai/sdk@0.24.3';
 import { authenticateRequest, createServiceRoleClient, verifyProjectAccess } from '../_shared/authorization.ts';
 import { getAICompletion } from '../_shared/aiProviderClient.ts';
+import { consumeAIActions } from '../_shared/ai-metering.ts';
 
 const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
 
@@ -203,7 +204,7 @@ serve(async (req) => {
 
     if (!message || !sessionId) {
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           error: 'Message and sessionId are required',
           code: 'MISSING_PARAMS'
         }),
@@ -213,6 +214,16 @@ serve(async (req) => {
         }
       );
     }
+
+    // AI Metering: consume credits before AI call
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? '';
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'ai-chat-assistant',
+      actions: 1,
+      userId: user.id,
+      modelUsed: 'anthropic',
+    });
 
     // Load recent conversation history
     const { data: history } = await supabaseClient
@@ -326,7 +337,7 @@ serve(async (req) => {
           systemMessage: SYSTEM_PROMPT + contextInfo,
           maxTokens: 2000,
           temperature: 0.7,
-          preferredProvider: topProvider
+          preferredProvider: metering.degraded ? 'openrouter' : topProvider,
         });
 
         assistantMessage = fallbackResponse.content.trim();
@@ -345,6 +356,7 @@ serve(async (req) => {
           systemMessage: SYSTEM_PROMPT + contextInfo,
           maxTokens: 2000,
           temperature: 0.7,
+          preferredProvider: metering.degraded ? 'openrouter' : undefined,
         });
 
         assistantMessage = fallbackResponse.content.trim();

@@ -2,6 +2,7 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { authenticateRequest } from '../_shared/authorization.ts';
 import { createErrorResponse } from '../_shared/errorHandler.ts';
+import { consumeAIActions } from '../_shared/ai-metering.ts';
 
 const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
@@ -48,6 +49,19 @@ serve(async (req) => {
     if (!OPENAI_API_KEY) {
       throw new Error('OPENAI_API_KEY not configured');
     }
+
+    // AI Metering: consume credits before transcription (2 actions per call)
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? '';
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'transcribe-voice-input',
+      actions: 2,
+      userId: user.id,
+      modelUsed: 'whisper-1',
+    });
+    // Note: transcribe-voice-input uses OpenAI Whisper — no preferredProvider routing applies
+    // metering.degraded is available if future routing is needed
+    void metering;
 
     // Parse request
     const requestData: TranscriptionRequest = await req.json();

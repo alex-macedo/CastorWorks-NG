@@ -7,6 +7,8 @@
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import Anthropic from 'https://esm.sh/@anthropic-ai/sdk@0.24.0'
+import { consumeAIActions } from '../_shared/ai-metering.ts'
+import { getAICompletion } from '../_shared/aiProviderClient.ts'
 
 interface RequestBody {
   projectId: string
@@ -66,6 +68,16 @@ export default async function aiSuggestReply(req: Request) {
       )
     }
 
+    // AI Metering: consume credits before AI call
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? ''
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'ai-suggest-reply',
+      actions: 1,
+      userId: user.id,
+      modelUsed: 'anthropic',
+    })
+
     // Fetch message context (last N messages)
     const { data: messages, error: messagesError } = await supabase
       .from('project_messages')
@@ -93,14 +105,7 @@ export default async function aiSuggestReply(req: Request) {
       })
       .join('\n')
 
-    // Call Anthropic Claude API
-    const response = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 300,
-      messages: [
-        {
-          role: 'user',
-          content: `You are a helpful assistant in a construction project management chat.
+    const suggestionPrompt = `You are a helpful assistant in a construction project management chat.
 
 Given this conversation:
 ${conversationContext}
@@ -112,12 +117,28 @@ Return ONLY the suggestions as a numbered list, no explanations or preamble.
 Example format:
 1. That sounds good, let's schedule it for tomorrow.
 2. Can you send me more details about that?`
-        }
-      ]
-    })
 
-    // Parse suggestions from response
-    const suggestionText = response.content[0].type === 'text' ? response.content[0].text : ''
+    let suggestionText = ''
+
+    if (metering.degraded) {
+      // Degraded mode: route to cheapest provider via getAICompletion
+      const aiResponse = await getAICompletion({
+        prompt: suggestionPrompt,
+        maxTokens: 300,
+        preferredProvider: 'openrouter',
+      })
+      suggestionText = aiResponse.content
+    } else {
+      // Standard path: use Anthropic directly
+      const response = await anthropic.messages.create({
+        model: 'claude-3-5-sonnet-20241022',
+        max_tokens: 300,
+        messages: [{ role: 'user', content: suggestionPrompt }]
+      })
+      suggestionText = response.content[0].type === 'text' ? response.content[0].text : ''
+    }
+
+    // Parse suggestions from response (suggestionText already set above)
     const suggestions = suggestionText
       .split('\n')
       .filter(line => /^\d+\./.test(line.trim()))

@@ -12,6 +12,7 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import { authenticateRequest, createServiceRoleClient, verifyAdminRole } from '../_shared/authorization.ts'
 import { getCachedInsight, cacheInsight } from '../_shared/aiCache.ts'
+import { consumeAIActions } from '../_shared/ai-metering.ts'
 
 // Types
 interface CashflowForecastRequest {
@@ -86,6 +87,30 @@ serve(async (req) => {
       return new Response(JSON.stringify({ error: 'Unauthorized' }), {
         status: 403,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+      })
+    }
+
+    // AI Metering: consume credits for cashflow forecast (10 actions per call)
+    // Only meter user-authenticated calls (service-role internal calls bypass metering)
+    if (userId) {
+      const tenantId = (await (async () => {
+        // Attempt to resolve tenant_id from user app_metadata
+        // authenticateRequest returns user but verifyAdminRole doesn't expose app_metadata here
+        // Use supabase to fetch tenant from user_roles
+        const { data: roleRow } = await supabase
+          .from('user_roles')
+          .select('tenant_id')
+          .eq('user_id', userId)
+          .limit(1)
+          .maybeSingle()
+        return roleRow?.tenant_id ?? ''
+      })())
+      await consumeAIActions({
+        tenantId,
+        feature: 'financial-cashflow-forecast',
+        actions: 10,
+        userId,
+        modelUsed: 'statistical',
       })
     }
 

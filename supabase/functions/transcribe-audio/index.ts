@@ -1,5 +1,6 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.38.4'
+import { consumeAIActions } from '../_shared/ai-metering.ts'
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
@@ -111,6 +112,22 @@ serve(async (req: Request) => {
     }
 
     console.log(`Starting transcription for daily_log_id: ${daily_log_id}`)
+
+    // AI Metering: consume credits before transcription (2 actions per transcribe-audio call)
+    // Note: transcribe-audio is an internal service call; tenant_id resolved from daily_log project
+    const { data: logRow } = await supabase
+      .from('daily_logs')
+      .select('project_id, projects(tenant_id)')
+      .eq('id', daily_log_id)
+      .maybeSingle()
+    const tenantId = (logRow?.projects as any)?.tenant_id ?? ''
+    await consumeAIActions({
+      tenantId,
+      feature: 'transcribe-audio',
+      actions: 2,
+      userId: 'system',
+      modelUsed: 'whisper-cpp',
+    })
 
     // Mark as processing
     await updateTranscriptionStatus(daily_log_id, 'processing', {})
