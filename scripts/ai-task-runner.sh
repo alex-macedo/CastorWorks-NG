@@ -57,6 +57,13 @@ runner_log()  { echo "$(date '+%H:%M:%S') [ai-task-runner] $*"; }
 warn() { echo "$(date '+%H:%M:%S') [ai-task-runner] ⚠️  $*" >&2; }
 err()  { echo "$(date '+%H:%M:%S') [ai-task-runner] ❌ $*" >&2; }
 
+build_sprint_scoped_roadmap_url() {
+  local status="$1"
+  local select="${2:-id,title,description,category,priority,position}"
+  printf '%s/rest/v1/roadmap_items?status=eq.%s&sprint_id=eq.%s&select=%s' \
+    "$SUPABASE_URL" "$status" "$SPRINT_ID" "$select"
+}
+
 SUPABASE_URL="${VITE_SUPABASE_URL:-https://dev.castorworks.cloud}"
 SERVICE_KEY="${SUPABASE_SERVICE_ROLE_KEY:-${VITE_SUPABASE_SERVICE_ROLE_KEY:-}}"
 
@@ -190,7 +197,7 @@ SPRINT_IDENTIFIER=""
 if [[ -z "$SERVICE_KEY" ]]; then
   runner_log "Skipping API calls (no key)"
 else
-SPRINT_JSON=$(curl -sS "${SUPABASE_URL}/rest/v1/sprints?status=eq.open&limit=1&select=id,sprint_identifier" "${API_HEADERS[@]}")
+SPRINT_JSON=$(curl -sS "${SUPABASE_URL}/rest/v1/sprints?status=eq.open&order=start_date.desc.nullslast,created_at.desc.nullslast,sprint_identifier.desc&limit=1&select=id,sprint_identifier,start_date,created_at" "${API_HEADERS[@]}")
 SPRINT_ID=$(echo "$SPRINT_JSON" | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
@@ -205,7 +212,8 @@ if data and len(data) > 0:
 " 2>/dev/null || echo "")
 
 if [[ -z "$SPRINT_ID" ]] && [[ -z "$SPECIFIC_ITEM" ]]; then
-  warn "No open sprint found — items will not be assigned to a sprint"
+  warn "No open sprint found — exiting to avoid cross-sprint roadmap mutations"
+  exit 0
 fi
 if [[ -n "$SPRINT_ID" ]]; then
   runner_log "Open sprint: ${SPRINT_IDENTIFIER:-${SPRINT_ID:0:8}...}"
@@ -222,7 +230,7 @@ if [[ -n "$SPECIFIC_ITEM" ]]; then
   IN_PROGRESS_LINE=""
 else
   # 1) Fetch in_progress items first (priority: finish open work before starting new)
-  IN_PROGRESS_JSON=$(curl -sS "${SUPABASE_URL}/rest/v1/roadmap_items?status=eq.in_progress&select=id,title,description,category,priority,position" "${API_HEADERS[@]}")
+  IN_PROGRESS_JSON=$(curl -sS "$(build_sprint_scoped_roadmap_url "in_progress")" "${API_HEADERS[@]}")
   IN_PROGRESS_LINE=$(echo "$IN_PROGRESS_JSON" | python3 -c "
 import sys, json
 pri = {'urgent': 4, 'high': 3, 'medium': 2, 'low': 1}
@@ -237,7 +245,7 @@ for x in data:
     print(x['id'] + '|||' + title + '|||' + desc + '|||' + (x.get('priority') or 'medium') + '|||' + (x.get('category') or ''))
 " 2>/dev/null)
   # 2) Fetch backlog items
-  BACKLOG_JSON=$(curl -sS "${SUPABASE_URL}/rest/v1/roadmap_items?status=eq.backlog&select=id,title,description,category,priority,position" "${API_HEADERS[@]}")
+  BACKLOG_JSON=$(curl -sS "$(build_sprint_scoped_roadmap_url "backlog")" "${API_HEADERS[@]}")
 fi
 else
   BACKLOG_JSON="[]"
@@ -323,7 +331,7 @@ echo "$ITEMS_LINE" | while IFS= read -r line; do
   echo "AI_TASK_META|{\"id\":\"$ITEM_ID\",\"title\":\"$TITLE_ESC\",\"priority\":\"${ITEM_PRIORITY:-medium}\",\"category\":\"${ITEM_CATEGORY:-}\",\"sprint_id\":\"${SPRINT_ID:-}\",\"sprint_identifier\":\"$SPRINT_ESC\"}"
 
   # --- Phase 2: Claim and start task ---
-  if [[ -n "$SPRINT_ID" ]]; then
+  if [[ -n "$SPRINT_ID" ]] && [[ -z "$SPECIFIC_ITEM" ]]; then
     assign_sprint_and_status "$ITEM_ID" "$SPRINT_ID" "in_progress"
     runner_log "Assigned to sprint and moved to In Progress"
   else

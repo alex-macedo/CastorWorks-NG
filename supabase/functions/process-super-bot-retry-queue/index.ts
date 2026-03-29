@@ -1,5 +1,6 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createServiceRoleClient } from "../_shared/authorization.ts";
+import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
+import { createServiceRoleClient } from '../_shared/authorization.ts'
+import { processRetryQueueJob } from '../_shared/superBotRetryQueue.ts'
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -7,23 +8,9 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-const RETRYABLE_INTENTS = new Set([
-  "delayed_projects",
-  "due_payments",
-  "quotes_without_vendor_proposal",
-  "update_tasks_until_today",
-]);
-
-export type RetryQueueDependencies = {
-  createServiceRoleClient?: typeof createServiceRoleClient;
-};
-
-export const handleRequest = async (
-  req: Request,
-  overrides: RetryQueueDependencies = {},
-) => {
-  if (req.method === "OPTIONS") {
-    return new Response("ok", { headers: corsHeaders });
+serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
   }
 
   try {
@@ -58,99 +45,13 @@ export const handleRequest = async (
     let exhausted = 0;
 
     for (const job of items) {
-      processed += 1;
-      const intent = String(job.intent || "unknown");
-      const attempts = Number(job.attempts || 0) + 1;
-      const maxAttempts = Number(job.max_attempts || 5);
-      const backoff = Math.max(60, Number(job.backoff_seconds || 60) * 2);
-      const willExhaust = attempts >= maxAttempts;
+      processed += 1
+      const result = await processRetryQueueJob({ supabase, job, now: new Date() })
 
-      await supabase
-        .from("castormind_retry_queue")
-        .update({
-          status: "processing",
-          attempts,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("id", job.id);
-
-      await supabase.rpc("log_message", {
-        p_level: "info",
-        p_message: "Retry job processing started",
-        p_context: {
-          queue_job_id: job.id,
-          intent,
-          attempts,
-          max_attempts: maxAttempts,
-        },
-        p_category: "ai.superbot.queue.retrying",
-        p_component: "process-super-bot-retry-queue",
-        p_severity: "low",
-      });
-
-      // Current retry strategy: verify intent is still retryable and mark as success.
-      // Business operation replay can be expanded in the next iteration.
-      const retrySucceeded = RETRYABLE_INTENTS.has(intent);
-
-      if (retrySucceeded) {
-        await supabase
-          .from("castormind_retry_queue")
-          .update({
-            status: "succeeded",
-            completed_at: new Date().toISOString(),
-            updated_at: new Date().toISOString(),
-            last_error: null,
-          })
-          .eq("id", job.id);
-
-        succeeded += 1;
-
-        await supabase.rpc("log_message", {
-          p_level: "info",
-          p_message: "Retry job succeeded",
-          p_context: { queue_job_id: job.id, intent, attempts },
-          p_category: "ai.superbot.queue.succeeded",
-          p_component: "process-super-bot-retry-queue",
-          p_severity: "low",
-        });
-      } else if (willExhaust) {
-        await supabase
-          .from("castormind_retry_queue")
-          .update({
-            status: "exhausted",
-            completed_at: new Date().toISOString(),
-            updated_at: new Date().toISOString(),
-            last_error: "Intent is not retryable by worker",
-          })
-          .eq("id", job.id);
-
-        exhausted += 1;
-
-        await supabase.rpc("log_message", {
-          p_level: "warning",
-          p_message: "Retry job exhausted",
-          p_context: {
-            queue_job_id: job.id,
-            intent,
-            attempts,
-            max_attempts: maxAttempts,
-          },
-          p_category: "ai.superbot.queue.exhausted",
-          p_component: "process-super-bot-retry-queue",
-          p_severity: "medium",
-        });
-      } else {
-        const nextRunAt = new Date(Date.now() + backoff * 1000).toISOString();
-        await supabase
-          .from("castormind_retry_queue")
-          .update({
-            status: "queued",
-            next_run_at: nextRunAt,
-            backoff_seconds: backoff,
-            updated_at: new Date().toISOString(),
-            last_error: "Intent is not retryable by worker",
-          })
-          .eq("id", job.id);
+      if (result.status === 'succeeded') {
+        succeeded += 1
+      } else if (result.status === 'exhausted') {
+        exhausted += 1
       }
     }
 
@@ -169,8 +70,4 @@ export const handleRequest = async (
       },
     );
   }
-};
-
-if (import.meta.main) {
-  serve(handleRequest);
-}
+})
