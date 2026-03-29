@@ -3,9 +3,10 @@ import { createServiceRoleClient } from '../_shared/authorization.ts'
 import { processRetryQueueJob } from '../_shared/superBotRetryQueue.ts'
 
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-}
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
+};
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -13,31 +14,35 @@ serve(async (req) => {
   }
 
   try {
-    const authHeader = req.headers.get('Authorization') || ''
-    const expected = `Bearer ${Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || ''}`
+    const authHeader = req.headers.get("Authorization") || "";
+    const expected = `Bearer ${
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || ""
+    }`;
     if (!authHeader || authHeader !== expected) {
-      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 403,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      })
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     }
 
-    const supabase = createServiceRoleClient()
-    const nowIso = new Date().toISOString()
+    const createClient = overrides.createServiceRoleClient ||
+      createServiceRoleClient;
+    const supabase = createClient();
+    const nowIso = new Date().toISOString();
 
     const { data: jobs, error } = await supabase
-      .from('castormind_retry_queue')
-      .select('*')
-      .eq('status', 'queued')
-      .lte('next_run_at', nowIso)
-      .order('created_at', { ascending: true })
-      .limit(20)
+      .from("castormind_retry_queue")
+      .select("*")
+      .eq("status", "queued")
+      .lte("next_run_at", nowIso)
+      .order("created_at", { ascending: true })
+      .limit(20);
 
-    if (error) throw error
-    const items = jobs || []
-    let processed = 0
-    let succeeded = 0
-    let exhausted = 0
+    if (error) throw error;
+    const items = jobs || [];
+    let processed = 0;
+    let succeeded = 0;
+    let exhausted = 0;
 
     for (const job of items) {
       processed += 1
@@ -52,12 +57,17 @@ serve(async (req) => {
 
     return new Response(
       JSON.stringify({ processed, succeeded, exhausted }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
-    )
+      { headers: { ...corsHeaders, "Content-Type": "application/json" } },
+    );
   } catch (error) {
     return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : 'Internal server error' }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
-    )
+      JSON.stringify({
+        error: error instanceof Error ? error.message : "Internal server error",
+      }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
   }
 })

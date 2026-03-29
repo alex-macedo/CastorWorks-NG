@@ -278,6 +278,11 @@ import timelineFrFR from './fr-FR/timeline.json';
 import subscriptionFrFR from './fr-FR/subscription.json';
 import trialFrFR from './fr-FR/trial.json';
 
+import platformenUS from './en-US/platform.json';
+import platformptBR from './pt-BR/platform.json';
+import platformesES from './es-ES/platform.json';
+import platformfrFR from './fr-FR/platform.json';
+
 export const criticalTranslations: Record<Language, Record<string, any>> = {
   'en-US': {
     accessibility: accessibilityEnUS,
@@ -347,6 +352,7 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     timeline: timelineEnUS,
     subscription: subscriptionEnUS,
     trial: trialEnUS,
+    platform: platformenUS,
   },
   'pt-BR': {
     accessibility: accessibilityPtBR,
@@ -416,6 +422,7 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     timeline: timelinePtBR,
     subscription: subscriptionPtBR,
     trial: trialPtBR,
+    platform: platformptBR,
   },
   'es-ES': {
     accessibility: accessibilityEsES,
@@ -485,6 +492,7 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     timeline: timelineEsES,
     subscription: subscriptionEsES,
     trial: trialEsES,
+    platform: platformesES,
   },
   'fr-FR': {
     accessibility: accessibilityFrFR,
@@ -554,6 +562,7 @@ export const criticalTranslations: Record<Language, Record<string, any>> = {
     timeline: timelineFrFR,
     subscription: subscriptionFrFR,
     trial: trialFrFR,
+    platform: platformfrFR,
   },
 };
 

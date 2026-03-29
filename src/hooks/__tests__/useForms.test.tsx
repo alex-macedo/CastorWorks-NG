@@ -223,6 +223,27 @@ describe('useForms', () => {
       // The hook returns null when data is null (not an empty array)
       expect(result.current.forms).toBeNull();
     });
+
+    it('should surface query errors instead of hiding them as empty results', async () => {
+      const queryError = new Error('Forms query failed');
+      const thenableBuilder = createThenableQueryBuilder({
+        data: null,
+        error: queryError,
+      });
+      vi.mocked(supabase.from).mockReturnValue(thenableBuilder);
+
+      const { result } = renderHook(
+        () => useForms(),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.error).toBe(queryError);
+      });
+
+      expect(result.current.error).toBe(queryError);
+      expect(result.current.forms).toEqual([]);
+    });
   });
 
   describe('createForm mutation', () => {
