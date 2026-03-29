@@ -26,7 +26,9 @@ export async function sendWaitlistConfirmationEmail({
   userName,
 }: WaitlistEmailInput) {
   if (!smtpUser) {
-    throw new Error('Hostinger SMTP is not fully configured')
+    throw new Error(
+      'SMTP not configured: set HOSTINGER_SMTP_USER or HOSTINGER_EMAIL_ACCOUNT in Edge Function secrets'
+    )
   }
 
   let companySettings: {

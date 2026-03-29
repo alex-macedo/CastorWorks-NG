@@ -258,6 +258,31 @@ export default function Weather() {
     );
   }
 
+  if (!displayData) {
+    return (
+      <Container size="default">
+        <div className="space-y-6">
+          <SidebarHeaderShell>
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-3xl font-bold">{t('weather.title')}</h1>
+                <p className="text-sm text-sidebar-primary-foreground/80">{weatherLocation}</p>
+              </div>
+              <Button onClick={retry} variant="default" size="sm" disabled={loading}>
+                <RefreshCw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
+                {t('weather.refresh')}
+              </Button>
+            </div>
+          </SidebarHeaderShell>
+          <Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>{t('weather.noData')}</AlertDescription>
+          </Alert>
+        </div>
+      </Container>
+    );
+  }
+
   return (
     <Container size="default">
       <div className="space-y-6">

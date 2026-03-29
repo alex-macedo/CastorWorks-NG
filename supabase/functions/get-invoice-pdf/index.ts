@@ -71,7 +71,7 @@ Deno.serve(async (req: Request) => {
   let inv: Stripe.Invoice
   try {
     inv = await stripe.invoices.retrieve(invoiceId, { expand: ['lines.data'] })
-  } catch (e) {
+  } catch (_e) {
     return jsonResponse({ error: 'Invoice not found' }, 404)
   }
 
