@@ -254,6 +254,12 @@ export function AppSidebar() {
     : undefined;
   const isAnyPortalLayerOpen = Boolean(pendingPortalModal || portalModal);
 
+  const getOptionLabel = (option: (typeof SIDEBAR_OPTIONS)[number]) =>
+    option.titleKey ? t(option.titleKey) : (option.title ?? option.id)
+
+  const getTabLabel = (tab: (typeof SIDEBAR_OPTIONS)[number]['tabs'][number]) =>
+    tab.titleKey ? t(tab.titleKey) : (tab.title ?? tab.id)
+
   useEffect(() => {
     if (!isAnyPortalLayerOpen) return;
 
@@ -492,7 +498,7 @@ export function AppSidebar() {
                             onClick={() =>
                               openPortalModal({
                                 id: option.id as "mobile-app" | "supervisor",
-                                title: option.title || (option.titleKey ? t(option.titleKey) : ""),
+                                title: getOptionLabel(option),
                                 path: option.path || "/",
                               })
                             }
@@ -501,7 +507,7 @@ export function AppSidebar() {
                             )}
                           >
                             <option.icon />
-                            <span>{option.title || (option.titleKey ? t(option.titleKey) : "")}</span>
+                            <span>{getOptionLabel(option)}</span>
                           </SidebarMenuButton>
                         ) : (
                           <SidebarMenuButton asChild>
@@ -513,7 +519,7 @@ export function AppSidebar() {
                               }
                             >
                               <option.icon />
-                              <span>{option.title || t(option.titleKey)}</span>
+                              <span>{getOptionLabel(option)}</span>
                             </PrefetchLink>
                           </SidebarMenuButton>
                         )}
@@ -529,7 +535,7 @@ export function AppSidebar() {
                           <CollapsibleTrigger asChild>
                             <SidebarMenuButton className="w-full">
                               <option.icon />
-                              <span>{option.title || t(option.titleKey)}</span>
+                              <span>{getOptionLabel(option)}</span>
                               <ChevronRight className={`ml-auto transition-transform duration-200 group-data-[state=open]/${option.id}:rotate-90`} />
                             </SidebarMenuButton>
                           </CollapsibleTrigger>
@@ -549,7 +555,7 @@ export function AppSidebar() {
                                       >
                                         <div className="flex items-center gap-2">
                                           <tab.icon className="h-4 w-4 shrink-0" />
-                                          <span className="truncate">{tab.title || t(tab.titleKey)}</span>
+                                          <span className="truncate">{getTabLabel(tab)}</span>
                                         </div>
                                         {(tab.id.includes('inss-planning') || tab.id.includes('inss-strategy')) && !hasStrategy && (
                                           <Lock className="h-3.5 w-3.5 text-blue-600 shrink-0 ml-auto" />
