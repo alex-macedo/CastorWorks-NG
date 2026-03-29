@@ -2,6 +2,8 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.38.4'
 import { getCachedInsight, cacheInsight } from '../_shared/aiCache.ts'
 import { authenticateRequest, verifyProjectAccess } from '../_shared/authorization.ts'
+import { consumeAIActions } from '../_shared/ai-metering.ts'
+import { getAICompletion } from '../_shared/aiProviderClient.ts'
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
@@ -121,6 +123,16 @@ serve(async (req: Request) => {
       )
     }
 
+    // AI Metering: consume credits before AI call (5 actions per summarize-meeting call)
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? ''
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'summarize-meeting',
+      actions: 5,
+      userId: user.id,
+      modelUsed: 'anthropic',
+    })
+
     console.log(`Generating summary for daily_log_id: ${daily_log_id}`)
 
     const promptVersion = await hashTranscript(transcript)
@@ -153,8 +165,18 @@ serve(async (req: Request) => {
       }
     }
 
-    // Generate summary with Claude
-    const summary = await generateSummaryWithClaude(transcript)
+    // Generate summary — route to cheapest provider when degraded
+    let summary: string
+    if (metering.degraded) {
+      const aiResponse = await getAICompletion({
+        prompt: SUMMARY_PROMPT + transcript,
+        maxTokens: 256,
+        preferredProvider: 'openrouter',
+      })
+      summary = aiResponse.content.trim()
+    } else {
+      summary = await generateSummaryWithClaude(transcript)
+    }
     console.log('Summary generation complete')
 
     // Update database with summary

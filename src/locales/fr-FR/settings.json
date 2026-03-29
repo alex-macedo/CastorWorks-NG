@@ -217,6 +217,29 @@
     "emptyState": "Aucun historique de facturation pour le moment",
     "title": "Historique de facturation"
   },
+  "aiUsage": {
+    "title": "Utilisation IA",
+    "loading": "Chargement de l'utilisation IA...",
+    "nearLimit": "Proche de la limite",
+    "enterpriseUnlimited": "Actions IA illimitées",
+    "resetOn": "Réinitialisation le {{date}}",
+    "unlimitedLabel": "Actions IA illimitées",
+    "progressLabel": "{{used}} / {{total}} actions IA utilisées ce mois-ci",
+    "actionsLabel": "Actions IA",
+    "reducedModeNudge": "Exécution en IA réduite — Obtenir plus d'actions",
+    "topFeatures": "Fonctionnalités principales ce mois-ci",
+    "noUsage": "Aucune utilisation IA enregistrée pour le moment.",
+    "getMoreActions": "Obtenir plus d'actions",
+    "pack": {
+      "title": "Obtenir plus d'actions",
+      "description": "Achetez des packs ponctuels d'actions IA. Les crédits s'accumulent et n'expirent pas.",
+      "actions": "{{count}} actions",
+      "buyNow": "Acheter",
+      "redirecting": "Redirection...",
+      "checkoutFailed": "Échec du démarrage du checkout.",
+      "missingTenant": "Tenant introuvable."
+    }
+  },
   "changePassword": "Changer le mot de passe",
   "cityLabel": "Ville",
   "cityPlaceholder": "Ville",
@@ -1046,6 +1069,7 @@
   "systemWeatherLocationLabel": "Emplacement météo",
   "tabs": {
     "admin-tools": "Outils admin",
+    "ai-usage": "Utilisation IA",
     "ai-providers": "Fournisseurs IA",
     "api-testing": "Tests API",
     "bdi": "BDI",

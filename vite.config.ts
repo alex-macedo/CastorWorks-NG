@@ -30,27 +30,27 @@ export default defineConfig(({ mode }) => ({
       "/auth/v1": {
         target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
         changeOrigin: true,
-        secure: true
+        secure: false
       },
       "/rest/v1": {
         target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
         changeOrigin: true,
-        secure: true
+        secure: false
       },
       "/storage/v1": {
         target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
         changeOrigin: true,
-        secure: true
+        secure: false
       },
       "/functions/v1": {
         target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
         changeOrigin: true,
-        secure: true
+        secure: false
       },
       "/realtime/v1": {
         target: process.env.VITE_SUPABASE_URL || "https://devng.castorworks.cloud",
         changeOrigin: true,
-        secure: true,
+        secure: false,
         ws: true
       }
     }

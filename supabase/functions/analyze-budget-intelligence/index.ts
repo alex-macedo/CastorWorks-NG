@@ -20,6 +20,7 @@ import {
 import { createErrorResponse } from '../_shared/errorHandler.ts';
 import { getCachedInsight, cacheInsight } from '../_shared/aiCache.ts';
 import { getAICompletion } from '../_shared/aiProviderClient.ts';
+import { consumeAIActions } from '../_shared/ai-metering.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -54,6 +55,16 @@ serve(async (req) => {
 
     // ✅ MANDATORY SECURITY CHECK: Verify access before any DB operations
     await verifyProjectAccess(user.id, projectId, supabase);
+
+    // AI Metering: consume credits before AI call (5 actions per analyze-budget-intelligence call)
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? '';
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'analyze-budget-intelligence',
+      actions: 5,
+      userId: user.id,
+      modelUsed: 'anthropic',
+    });
 
     // Check cache first (unless force refresh)
     if (!forceRefresh) {
@@ -98,7 +109,8 @@ serve(async (req) => {
     const analysis = await generateBudgetIntelligenceAnalysis(
       budgetData,
       language,
-      projectId
+      projectId,
+      metering.preferredProvider
     );
 
     // Cache the result
@@ -238,7 +250,8 @@ async function fetchBudgetData(
 async function generateBudgetIntelligenceAnalysis(
   budgetData: any,
   language: string,
-  projectId: string
+  projectId: string,
+  preferredProvider?: 'openrouter'
 ): Promise<any> {
   console.log('[Budget Intelligence] Starting AI analysis for project:', projectId);
 
@@ -268,6 +281,7 @@ CRITICAL: Your response must be valid JSON that can be parsed. Do not include an
       insightType: 'budget-intelligence',
       maxTokens: 3000,
       temperature: 0.3, // Lower temperature for more consistent analysis
+      preferredProvider,
     });
 
     console.log('[Budget Intelligence] ✅ Successfully generated analysis with', response.provider, 'model:', response.model);

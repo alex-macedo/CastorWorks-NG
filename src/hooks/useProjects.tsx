@@ -299,6 +299,12 @@ export const useProjects = () => {
     },
   });
 
+  // Normalize finishing_type to match DB enum ('Simple', 'Medium', 'High')
+  const normalizeFinishingType = (value: string | null | undefined): string | null | undefined => {
+    if (!value) return value;
+    return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+  };
+
   const createProject = useMutation({
     mutationFn: async (projectData: ProjectInsert) => {
       const {
@@ -334,6 +340,7 @@ export const useProjects = () => {
         .from('projects')
         .insert({
           ...rest,
+          finishing_type: normalizeFinishingType(rest.finishing_type),
           construction_address: finalAddress,
           owner_id: user.id,
         })
@@ -540,6 +547,9 @@ export const useProjects = () => {
   const updateProject = useMutation({
     mutationFn: async (projectData: any) => {
       const { id, create_default_phases, silent, ...project } = projectData;
+      if (project.finishing_type !== undefined) {
+        project.finishing_type = normalizeFinishingType(project.finishing_type);
+      }
       const { data, error } = await supabase.from('projects').update(project).eq('id', id).select().single();
       if (error) throw error;
       return { data, silent };

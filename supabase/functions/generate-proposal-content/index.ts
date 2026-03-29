@@ -3,6 +3,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { authenticateRequest, createServiceRoleClient, verifyProjectAccess } from '../_shared/authorization.ts';
 import { getAICompletion } from '../_shared/aiProviderClient.ts';
 import { getCachedInsight, cacheInsight } from '../_shared/aiCache.ts';
+import { consumeAIActions } from '../_shared/ai-metering.ts';
 
 const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
@@ -158,6 +159,16 @@ serve(async (req: Request) => {
         return unauthorizedResponse(message);
       }
     }
+
+    // AI Metering: consume credits before AI calls (10 actions per generate-proposal-content call)
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? '';
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'generate-proposal-content',
+      actions: 10,
+      userId: user.id,
+      modelUsed: 'anthropic',
+    });
 
     const cacheKey = buildProposalCacheKey(
       estimateId,
@@ -389,7 +400,8 @@ Be specific and actionable. Format with clear subsections.`;
         prompt,
         systemMessage: `You are a professional proposal writer for construction and architecture firms. ${languageInstructions[language] || languageInstructions['en-US']} Write in a ${tone} tone. Be specific, accurate, and relevant to the project. Format your response in plain text that can be directly used in a proposal document.`,
         maxTokens: 1500,
-        temperature: 0.7
+        temperature: 0.7,
+        preferredProvider: metering.degraded ? 'openrouter' : undefined,
       });
 
       generatedContent[section] = aiResponse.content;

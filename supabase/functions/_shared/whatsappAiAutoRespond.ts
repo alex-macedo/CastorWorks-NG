@@ -8,6 +8,7 @@
 
 import { getAICompletion } from './aiProviderClient.ts'
 import { WhatsAppClient } from './whatsapp-client.ts'
+import { consumeAIActions } from './ai-metering.ts'
 
 export interface AiAutoRespondInput {
   fromPhone: string;
@@ -108,12 +109,33 @@ Guidelines:
 
     const prompt = `Incoming WhatsApp query from contact:\n\n"${trimmedText}"\n\nProvide a helpful, data-driven response (max ~500 chars).`;
 
+    // AI Metering: consume 1 action for the WhatsApp AI auto-responder path
+    // Tenant is resolved via project context; falls back to empty string if no project linked
+    const meteringTenantId = projectContext?.projectId
+      ? await (async () => {
+          const { data: projRow } = await supabase
+            .from('projects')
+            .select('tenant_id')
+            .eq('id', projectContext.projectId)
+            .maybeSingle()
+          return projRow?.tenant_id ?? ''
+        })()
+      : ''
+    const metering = await consumeAIActions({
+      tenantId: meteringTenantId,
+      feature: 'whatsapp-webhook',
+      actions: 1,
+      userId: 'system',
+      modelUsed: 'anthropic',
+    })
+
     const response = await getAICompletion({
       prompt,
       systemMessage,
       insightType: 'whatsapp-auto-responder',
       maxTokens: 400,
       temperature: 0.3,
+      preferredProvider: metering.degraded ? 'openrouter' : undefined,
     })
 
     const replyText = (response.content || '').trim()

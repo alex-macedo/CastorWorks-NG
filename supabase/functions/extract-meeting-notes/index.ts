@@ -2,6 +2,8 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.38.4'
 import { getCachedInsight, cacheInsight } from '../_shared/aiCache.ts'
 import { authenticateRequest, verifyProjectAccess } from '../_shared/authorization.ts'
+import { consumeAIActions } from '../_shared/ai-metering.ts'
+import { getAICompletion } from '../_shared/aiProviderClient.ts'
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
@@ -142,6 +144,16 @@ serve(async (req: Request) => {
       )
     }
 
+    // AI Metering: consume credits before AI call (5 actions per extract-meeting-notes call)
+    const tenantId = user.app_metadata?.tenant_id as string | undefined ?? ''
+    const metering = await consumeAIActions({
+      tenantId,
+      feature: 'extract-meeting-notes',
+      actions: 5,
+      userId: user.id,
+      modelUsed: 'anthropic',
+    })
+
     console.log(`Extracting notes for daily_log_id: ${daily_log_id}`)
 
     const promptVersion = await hashTranscript(transcript)
@@ -174,8 +186,20 @@ serve(async (req: Request) => {
       }
     }
 
-    // Extract notes with Claude
-    const notes = await extractNotesWithClaude(transcript)
+    // Extract notes — route to cheapest provider when degraded
+    let notes: object
+    if (metering.degraded) {
+      const aiResponse = await getAICompletion({
+        prompt: NOTES_EXTRACTION_PROMPT + transcript,
+        maxTokens: 1024,
+        preferredProvider: 'openrouter',
+      })
+      const jsonMatch = aiResponse.content.match(/\{[\s\S]*\}/)
+      if (!jsonMatch) throw new Error('Failed to parse JSON from AI response')
+      notes = JSON.parse(jsonMatch[0])
+    } else {
+      notes = await extractNotesWithClaude(transcript)
+    }
     console.log('Notes extraction complete')
 
     // Save to database
