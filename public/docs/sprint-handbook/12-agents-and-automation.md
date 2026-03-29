@@ -51,6 +51,16 @@ For sprint work:
   - “how to debug X”
   - “API contract for X”
 
+### Roadmap execution notes
+
+When roadmap items or migration seeds reference docs under `docs/plans/`, keep those notes present and aligned with the code.
+
+For the current Super Bot / CastorMind natural-language data tasks, use:
+
+- `docs/plans/castorworks-AI-Chat-Assistant-NL-Data-Tasks.md`
+
+That note captures the verified implementation baseline, known gaps, and the evidence expected before roadmap items are closed.
+
 ## Planning larger changes
 
 When a change will:
