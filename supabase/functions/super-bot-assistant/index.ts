@@ -1,6 +1,12 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { authenticateRequest, createServiceRoleClient } from '../_shared/authorization.ts'
 import { getAICompletion } from '../_shared/aiProviderClient.ts'
+import {
+  BULK_LIMIT,
+  OVERRIDE_PHRASE,
+  executeUpdateTasksUntilToday,
+  extractProjectIdentifier,
+} from '../_shared/superBotUpdateTasks.ts'
 
 type AssistantIntent =
   | 'delayed_projects'
@@ -33,8 +39,6 @@ const corsHeaders = {
 }
 
 const DEFAULT_LIMIT = 100
-const BULK_LIMIT = 100
-const OVERRIDE_PHRASE = 'override bulk update'
 const DEFAULT_LANGUAGE: SupportedLanguage = 'en-US'
 
 const isSupportedLanguage = (value: string): value is SupportedLanguage =>
@@ -226,9 +230,6 @@ const copyByLanguage: Record<SupportedLanguage, SuperBotCopy> = {
   },
 }
 
-const isUUID = (value: string) =>
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value)
-
 const nowDate = () => new Date().toISOString().slice(0, 10)
 
 const RETRYABLE_INTENTS: AssistantIntent[] = [
@@ -380,17 +381,6 @@ const parseIntentWithLLM = async (message: string): Promise<LLMIntentPayload | n
   } catch {
     return null
   }
-}
-
-const extractProjectIdentifier = (message: string): string | null => {
-  const quoted = message.match(/["']([^"']+)["']/)
-  if (quoted?.[1]) return quoted[1].trim()
-
-  const pattern = /project\s+(.+?)(?:\s+until|\s+as\s+of|\s+today|$)/i
-  const match = message.match(pattern)
-  if (match?.[1]) return match[1].trim()
-
-  return null
 }
 
 serve(async (req) => {
@@ -743,102 +733,54 @@ serve(async (req) => {
     if (intent === 'update_tasks_until_today') {
       await logEvent('info', 'Executing update_tasks tool', 'ai.superbot.tool.start', { tool: 'update_project_tasks_until_today' })
 
-      const projectIdentifier = llmIntent?.project_identifier || extractProjectIdentifier(message)
-      if (!projectIdentifier) {
+      const untilDate = llmIntent?.until_date && llmIntent.until_date !== 'current_date'
+        ? llmIntent.until_date
+        : nowDate()
+
+      const operation = await executeUpdateTasksUntilToday({
+        supabase,
+        projectIdentifier: llmIntent?.project_identifier || extractProjectIdentifier(message),
+        untilDate,
+        forceUpdate: forceUpdate || Boolean(llmIntent?.force_update),
+        overridePhrase: overridePhrase || llmIntent?.override_phrase || '',
+      })
+
+      if (operation.outcome === 'project_required') {
         assistantMessage = copy.projectRequired
-      } else {
-        const projectQuery = isUUID(projectIdentifier)
-          ? supabase.from('projects').select('id, name').eq('id', projectIdentifier).limit(1)
-          : supabase.from('projects').select('id, name').ilike('name', `%${projectIdentifier}%`).limit(1)
+      } else if (operation.outcome === 'project_not_found') {
+        assistantMessage = copy.projectNotFound(operation.projectIdentifier)
+      } else if (operation.outcome === 'guardrail_blocked') {
+        assistantMessage = copy.guardrailBlocked(operation.attemptedCount)
+        await logEvent(
+          'warning',
+          'Bulk task update blocked by guardrail',
+          'ai.superbot.guardrail.blocked',
+          { project_id: operation.projectId, attempted_count: operation.attemptedCount },
+          'high'
+        )
+      } else if (operation.outcome === 'no_pending_tasks') {
+        assistantMessage = copy.noPendingTasks(operation.projectName, operation.untilDate)
+      } else if (operation.outcome === 'updated') {
+        results.push({
+          intent,
+          tool: 'update_project_tasks_until_today',
+          data: {
+            project_id: operation.projectId,
+            project_name: operation.projectName,
+            updated_count: operation.updatedCount,
+            task_ids: operation.taskIds,
+          },
+        })
 
-        const { data: projectRows, error: projectError } = await projectQuery
-        if (projectError) throw projectError
+        assistantMessage = copy.tasksUpdated(operation.updatedCount, operation.projectName, operation.untilDate)
 
-        const project = projectRows?.[0]
-        if (!project) {
-          assistantMessage = copy.projectNotFound(projectIdentifier)
-        } else {
-          const untilDate = llmIntent?.until_date && llmIntent.until_date !== 'current_date'
-            ? llmIntent.until_date
-            : nowDate()
-
-          const { data: allCandidates, error: candidatesError } = await supabase
-            .from('architect_tasks')
-            .select('id, title, due_date, status, status_id')
-            .eq('project_id', project.id)
-            .lte('due_date', untilDate)
-            .limit(300)
-
-          if (candidatesError) throw candidatesError
-
-          const candidates = (allCandidates || []).filter((task: Record<string, unknown>) => {
-            const status = String(task.status || '').toLowerCase()
-            return !['completed', 'done'].includes(status)
-          })
-
-          const effectiveForce = forceUpdate || Boolean(llmIntent?.force_update)
-          const effectiveOverride = (overridePhrase || llmIntent?.override_phrase || '').trim().toLowerCase()
-
-          if (candidates.length > BULK_LIMIT && !effectiveForce && effectiveOverride !== OVERRIDE_PHRASE) {
-            assistantMessage = copy.guardrailBlocked(candidates.length)
-            await logEvent(
-              'warning',
-              'Bulk task update blocked by guardrail',
-              'ai.superbot.guardrail.blocked',
-              { project_id: project.id, attempted_count: candidates.length },
-              'high'
-            )
-          } else if (candidates.length === 0) {
-            assistantMessage = copy.noPendingTasks(project.name, untilDate)
-          } else {
-            const { data: statuses } = await supabase
-              .from('project_task_statuses')
-              .select('id, is_completed')
-              .eq('project_id', project.id)
-              .eq('is_completed', true)
-              .limit(1)
-
-            const completedStatusId = statuses?.[0]?.id
-            const taskIds = candidates.map((task: Record<string, unknown>) => String(task.id))
-
-            const updatePayload: Record<string, unknown> = {
-              status: 'completed',
-              updated_at: new Date().toISOString(),
-            }
-
-            if (completedStatusId) {
-              updatePayload.status_id = completedStatusId
-            }
-
-            const { error: updateError } = await supabase
-              .from('architect_tasks')
-              .update(updatePayload)
-              .in('id', taskIds)
-
-            if (updateError) throw updateError
-
-            results.push({
-              intent,
-              tool: 'update_project_tasks_until_today',
-              data: {
-                project_id: project.id,
-                project_name: project.name,
-                updated_count: candidates.length,
-                task_ids: taskIds,
-              },
-            })
-
-            assistantMessage = copy.tasksUpdated(candidates.length, project.name, untilDate)
-
-            await logEvent(
-              'info',
-              'Bulk task update executed',
-              'ai.superbot.mutation',
-              { project_id: project.id, updated_count: candidates.length, task_ids: taskIds.slice(0, 20) },
-              candidates.length >= 20 ? 'high' : 'medium'
-            )
-          }
-        }
+        await logEvent(
+          'info',
+          'Bulk task update executed',
+          'ai.superbot.mutation',
+          { project_id: operation.projectId, updated_count: operation.updatedCount, task_ids: operation.taskIds.slice(0, 20) },
+          operation.updatedCount >= 20 ? 'high' : 'medium'
+        )
       }
 
       await logEvent('info', 'Update tasks tool finished', 'ai.superbot.tool.finish', {

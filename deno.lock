@@ -5,6 +5,21 @@
     "https://esm.sh/stripe@14?target=denonext": "https://esm.sh/stripe@14.25.0?target=denonext"
   },
   "remote": {
+    "https://deno.land/std@0.168.0/async/abortable.ts": "80b2ac399f142cc528f95a037a7d0e653296352d95c681e284533765961de409",
+    "https://deno.land/std@0.168.0/async/deadline.ts": "2c2deb53c7c28ca1dda7a3ad81e70508b1ebc25db52559de6b8636c9278fd41f",
+    "https://deno.land/std@0.168.0/async/debounce.ts": "60301ffb37e730cd2d6f9dadfd0ecb2a38857681bd7aaf6b0a106b06e5210a98",
+    "https://deno.land/std@0.168.0/async/deferred.ts": "77d3f84255c3627f1cc88699d8472b664d7635990d5358c4351623e098e917d6",
+    "https://deno.land/std@0.168.0/async/delay.ts": "5a9bfba8de38840308a7a33786a0155a7f6c1f7a859558ddcec5fe06e16daf57",
+    "https://deno.land/std@0.168.0/async/mod.ts": "7809ad4bb223e40f5fdc043e5c7ca04e0e25eed35c32c3c32e28697c553fa6d9",
+    "https://deno.land/std@0.168.0/async/mux_async_iterator.ts": "770a0ff26c59f8bbbda6b703a2235f04e379f73238e8d66a087edc68c2a2c35f",
+    "https://deno.land/std@0.168.0/async/pool.ts": "6854d8cd675a74c73391c82005cbbe4cc58183bddcd1fbbd7c2bcda42b61cf69",
+    "https://deno.land/std@0.168.0/async/retry.ts": "e8e5173623915bbc0ddc537698fa418cf875456c347eda1ed453528645b42e67",
+    "https://deno.land/std@0.168.0/async/tee.ts": "3a47cc4e9a940904fd4341f0224907e199121c80b831faa5ec2b054c6d2eff5e",
+    "https://deno.land/std@0.168.0/fmt/colors.ts": "03ad95e543d2808bc43c17a3dd29d25b43d0f16287fe562a0be89bf632454a12",
+    "https://deno.land/std@0.168.0/http/server.ts": "e99c1bee8a3f6571ee4cdeb2966efad465b8f6fe62bec1bdb59c1f007cc4d155",
+    "https://deno.land/std@0.168.0/testing/_diff.ts": "a23e7fc2b4d8daa3e158fa06856bedf5334ce2a2831e8bf9e509717f455adb2c",
+    "https://deno.land/std@0.168.0/testing/_format.ts": "cd11136e1797791045e639e9f0f4640d5b4166148796cad37e6ef75f7d7f3832",
+    "https://deno.land/std@0.168.0/testing/asserts.ts": "51353e79437361d4b02d8e32f3fc83b22231bc8f8d4c841d86fd32b0b0afe940",
     "https://esm.sh/@supabase/supabase-js@2.98.0": "7c91584aa8d7c3b272be04122a907e00a7028a20d0eaf5e40b2eb1eed10f06b3",
     "https://esm.sh/pdf-lib@1.17.1?target=denonext": "cf7c5527829cb9bbb3aa20d339c530067441c10eb98880360aea9e77c3c87ff8",
     "https://esm.sh/stripe@14.25.0?target=denonext": "5c144d95e39f91ac9633debba114dc7260c0e312d70d7d89a8f90bf95ae65595"
@@ -13,12 +28,12 @@
     "packageJson": {
       "dependencies": [
         "npm:@anthropic-ai/claude-code@^2.0.76",
-        "npm:@anthropic-ai/sdk@~0.71.2",
+        "npm:@anthropic-ai/sdk@0.78",
         "npm:@dnd-kit/core@^6.3.1",
         "npm:@dnd-kit/sortable@10",
         "npm:@dnd-kit/utilities@^3.2.2",
         "npm:@eslint/js@^9.39.2",
-        "npm:@github/copilot-sdk@~0.1.29",
+        "npm:@github/copilot-sdk@~0.1.32",
         "npm:@hookform/resolvers@^5.2.2",
         "npm:@huggingface/transformers@^3.8.0",
         "npm:@playwright/test@^1.58.2",
@@ -51,7 +66,7 @@
         "npm:@radix-ui/react-toggle@^1.1.10",
         "npm:@radix-ui/react-tooltip@^1.2.8",
         "npm:@supabase/supabase-js@^2.83.0",
-        "npm:@swc/core@^1.15.7",
+        "npm:@swc/core@^1.15.18",
         "npm:@tailwindcss/postcss@^4.2.1",
         "npm:@tailwindcss/typography@~0.5.19",
         "npm:@tailwindcss/vite@^4.2.1",
@@ -74,7 +89,7 @@
         "npm:@tiptap/react@^3.20.0",
         "npm:@tiptap/starter-kit@^3.14.0",
         "npm:@types/file-saver@^2.0.7",
-        "npm:@types/node@^25.3.3",
+        "npm:@types/node@^25.3.5",
         "npm:@types/react-dom@^19.2.3",
         "npm:@types/react@^19.2.7",
         "npm:@vitejs/plugin-react-swc@^4.2.3",
@@ -98,7 +113,7 @@
         "npm:file-saver@^2.0.5",
         "npm:framer-motion@^12.23.24",
         "npm:globals@17",
-        "npm:happy-dom@^20.0.11",
+        "npm:happy-dom@^20.8.3",
         "npm:html2canvas@^1.4.1",
         "npm:html5-qrcode@^2.3.8",
         "npm:husky@^9.1.7",
@@ -109,7 +124,7 @@
         "npm:jsdom@^27.2.0",
         "npm:jspdf-autotable@^5.0.2",
         "npm:jspdf@^4.1.0",
-        "npm:lucide-react@0.575",
+        "npm:lucide-react@0.577",
         "npm:next-themes@~0.4.6",
         "npm:openai@^6.25.0",
         "npm:postcss@^8.5.6",
@@ -131,7 +146,7 @@
         "npm:sonner@^2.0.7",
         "npm:stripe@^14.21.0",
         "npm:supabase-cli@^0.0.21",
-        "npm:supabase@^2.72.9",
+        "npm:supabase@^2.77.0",
         "npm:tailwind-merge@^3.4.0",
         "npm:tailwindcss-animate@^1.0.7",
         "npm:tailwindcss@^4.2.1",
@@ -145,7 +160,15 @@
         "npm:workbox-window@^7.4.0",
         "npm:zod@^4.3.5",
         "npm:zustand@^5.0.10"
-      ]
+      ],
+      "overrides": {
+        "@radix-ui/react-context": "1.1.2",
+        "@radix-ui/react-roving-focus": "1.1.11",
+        "@radix-ui/react-primitive": "2.1.3",
+        "lodash": "^4.17.23",
+        "tar": "^7.5.6",
+        "serialize-javascript": "^7.0.3"
+      }
     }
   }
 }

@@ -46,10 +46,12 @@ export const useOpenSprint = () => {
         .from('sprints')
         .select('*')
         .eq('status', 'open')
+        .order('start_date', { ascending: false })
+        .order('created_at', { ascending: false })
         .limit(1)
-        .single();
-      
-      if (error && error.code !== 'PGRST116') throw error;
+        .maybeSingle();
+
+      if (error) throw error;
       return data as Sprint | null;
     },
   });
