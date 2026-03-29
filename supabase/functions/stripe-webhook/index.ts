@@ -149,6 +149,30 @@ Deno.serve(async (req: Request) => {
         break
       }
 
+      case 'checkout.session.completed': {
+        const session = event.data.object as Stripe.Checkout.Session
+        const metadata = session.metadata ?? {}
+        if (metadata.type !== 'ai_action_pack') {
+          break
+        }
+
+        const tenantId = metadata.tenant_id
+        const credits = Number(metadata.credits ?? '0')
+        if (!tenantId || !Number.isFinite(credits) || credits <= 0) {
+          console.warn('Invalid ai_action_pack metadata:', metadata)
+          break
+        }
+
+        const { error: addCreditsError } = await supabase.rpc('add_ai_credits', {
+          p_tenant_id: tenantId,
+          p_credits: credits,
+        })
+        if (addCreditsError) {
+          throw addCreditsError
+        }
+        break
+      }
+
       default:
         console.log('Unhandled event type:', event.type)
     }
