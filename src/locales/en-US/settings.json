@@ -217,6 +217,29 @@
     "emptyState": "No billing history yet",
     "title": "Billing history"
   },
+  "aiUsage": {
+    "title": "AI Usage",
+    "loading": "Loading AI usage...",
+    "nearLimit": "Near limit",
+    "enterpriseUnlimited": "Unlimited AI actions",
+    "resetOn": "Resets on {{date}}",
+    "unlimitedLabel": "Unlimited AI Actions",
+    "progressLabel": "{{used}} / {{total}} AI Actions used this month",
+    "actionsLabel": "AI Actions",
+    "reducedModeNudge": "Running on reduced AI — Get More Actions",
+    "topFeatures": "Top features this month",
+    "noUsage": "No AI usage recorded yet.",
+    "getMoreActions": "Get More Actions",
+    "pack": {
+      "title": "Get More Actions",
+      "description": "Buy one-time AI action packs. Credits stack and do not expire.",
+      "actions": "{{count}} actions",
+      "buyNow": "Buy now",
+      "redirecting": "Redirecting...",
+      "checkoutFailed": "Failed to start checkout.",
+      "missingTenant": "Tenant not found."
+    }
+  },
   "changePassword": "Change Password",
   "cityLabel": "City",
   "cityPlaceholder": "City",
@@ -1039,6 +1062,7 @@
   "systemWeatherLocationLabel": "systemWeatherLocationLabel",
   "tabs": {
     "admin-tools": "Admin tools",
+    "ai-usage": "AI Usage",
     "ai-providers": "AI Providers",
     "api-testing": "API Testing",
     "bdi": "BDI",

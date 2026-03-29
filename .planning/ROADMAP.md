@@ -30,7 +30,7 @@ Multi-tenant SaaS transformation. **v1.0 Foundation and Licensing** shipped 2026
 
 ### 📋 v1.1+ (Later milestones)
 
-- [ ] **Phase 7: AI Action Credits & Metering** — ai_usage_log, consumeAIActions, model routing, graceful degradation
+- [x] **Phase 7: AI Action Credits & Metering** — ai_usage_log, consumeAIActions, model routing, graceful degradation (completed 2026-03-29)
 - [ ] **Phase 8: Storage & Data Isolation** — Tenant-prefixed storage, quota, usage dashboard
 - [ ] **Phase 9: Edge Functions & API Security** — Tenant context audit, Client Portal token, Realtime, rate limiting
 - [ ] **Phase 10: Super Admin & Operations** — Dashboard, suspension, export, alerts, impersonation
@@ -139,7 +139,7 @@ Plans:
 4. Model routing selects the appropriate model tier based on tenant plan.
 5. When credits are exhausted, the app gracefully degrades (no hard error; shows upgrade prompt).
 
-**Plans:** TBD
+**Plans:** 2/2 plans complete
 
 Plans:
 - [x] 07-01-PLAN.md — DB migration: ai_usage_log, consume_ai_actions RPC, add_ai_credits RPC, credit columns; Wave 0 test scaffolds
@@ -157,4 +157,4 @@ Plans:
 | 4. Payment & Subscription | v1.1 | 3/3 | Complete | 2026-03-04 |
 | 5. Billing & Invoices | v1.1 | 2/2 | Complete | 2026-03-04 |
 | 6. Trial & Subscription Emails | v1.1 | 2/2 | Complete | 2026-03-04 |
-| 7. AI Action Credits & Metering | v1.1+ | 1/TBD | In Progress | — |
+| 7. AI Action Credits & Metering | 2/2 | Complete   | 2026-03-29 | — |

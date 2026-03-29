@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useLocalization, languageMetadata } from "@/contexts/LocalizationContext";
+import { useTenantId } from "@/contexts/TenantContext";
 import { useNavigate } from "react-router-dom";
 import { NumberFormatPreview } from "@/components/Settings/NumberFormatPreview";
 import { toast } from "sonner";
@@ -62,9 +63,11 @@ import { WhatsAppAiAutoResponderCard } from "@/components/Settings/WhatsAppAiAut
 import { AdminToolsPanel } from "@/components/Settings/AdminToolsPanel";
 import { SubscriptionPage } from "@/components/Settings/SubscriptionPage";
 import { BillingPage } from "@/components/Settings/BillingPage";
+import { AIUsagePage } from "@/components/Settings/AIUsagePage";
 const Settings = () => {
   const navigate = useNavigate();
   const { language, currency, timeZone, weatherLocation, temperatureUnit, numberFormat, updateSettings, t } = useLocalization();
+  const tenantId = useTenantId();
   const { data: currentUser } = useUserProfile();
   const { data: currentUserRolesData = [], isLoading: rolesLoading } = useUserRoles();
   const currentUserRoles = currentUserRolesData?.map(r => r.role) || [];
@@ -298,6 +301,7 @@ const Settings = () => {
           <TabsTrigger value="preferences" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.preferences")}</TabsTrigger>
           <TabsTrigger value="subscription" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.subscription")}</TabsTrigger>
           <TabsTrigger value="billing" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.billing")}</TabsTrigger>
+          <TabsTrigger value="ai-usage" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.ai-usage")}</TabsTrigger>
           <TabsTrigger value="business-settings" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.business-settings")}</TabsTrigger>
           <TabsTrigger value="integrations" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t('settings.tabs.integrations')}</TabsTrigger>
           <TabsTrigger value="data-management" className="whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0">{t("settings:tabs.data-management")}</TabsTrigger>
@@ -503,6 +507,10 @@ const Settings = () => {
 
          <TabsContent value="billing" className="mt-6">
            <BillingPage />
+         </TabsContent>
+
+         <TabsContent value="ai-usage" className="mt-6">
+           <AIUsagePage tenantId={tenantId} />
          </TabsContent>
 
          <TabsContent value="users" className="space-y-6">

@@ -217,6 +217,29 @@
     "emptyState": "Nenhum histórico de faturamento ainda",
     "title": "Histórico de faturamento"
   },
+  "aiUsage": {
+    "title": "Uso de IA",
+    "loading": "Carregando uso de IA...",
+    "nearLimit": "Próximo do limite",
+    "enterpriseUnlimited": "Ações de IA ilimitadas",
+    "resetOn": "Reinicia em {{date}}",
+    "unlimitedLabel": "Ações de IA ilimitadas",
+    "progressLabel": "{{used}} / {{total}} ações de IA usadas neste mês",
+    "actionsLabel": "Ações de IA",
+    "reducedModeNudge": "Executando em IA reduzida — Obter mais ações",
+    "topFeatures": "Principais recursos deste mês",
+    "noUsage": "Nenhum uso de IA registrado ainda.",
+    "getMoreActions": "Obter mais ações",
+    "pack": {
+      "title": "Obter mais ações",
+      "description": "Compre pacotes únicos de ações de IA. Os créditos acumulam e não expiram.",
+      "actions": "{{count}} ações",
+      "buyNow": "Comprar agora",
+      "redirecting": "Redirecionando...",
+      "checkoutFailed": "Falha ao iniciar o checkout.",
+      "missingTenant": "Tenant não encontrado."
+    }
+  },
   "changePassword": "Alterar senha",
   "cityLabel": "Cidade",
   "cityPlaceholder": "Cidade",
@@ -1046,6 +1069,7 @@
   "systemWeatherLocationLabel": "Localização do Clima",
   "tabs": {
     "admin-tools": "Ferramentas admin",
+    "ai-usage": "Uso de IA",
     "ai-providers": "Provedores de IA",
     "api-testing": "Teste de API",
     "bdi": "BDI",

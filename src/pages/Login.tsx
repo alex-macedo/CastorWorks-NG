@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Check, Globe } from "lucide-react";
+import { createClient } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -146,6 +147,73 @@ export default function Login() {
     setLoading(true);
 
     try {
+      const isHtmlResponseAuthError = (authError: unknown) => {
+        const message = typeof authError === 'object' && authError !== null && 'message' in authError
+          ? String((authError as { message?: string }).message ?? '').toLowerCase()
+          : '';
+        return (
+          message.includes("unexpected token '<'") ||
+          message.includes('is not valid json')
+        );
+      };
+
+      const resolvedPublishableKey =
+        import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
+        import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      const createRetryClient = (url: string) => {
+        if (!resolvedPublishableKey) return null;
+        return createClient(url, resolvedPublishableKey, {
+          auth: {
+            storage: typeof window !== 'undefined' ? window.localStorage : undefined,
+            persistSession: true,
+            autoRefreshToken: true,
+            debug: false,
+          },
+        });
+      };
+
+      const retrySignInWithClient = async (client: ReturnType<typeof createRetryClient>) => {
+        if (!client) {
+          return { data: null, error: null, attempted: false };
+        }
+
+        const retryResult = await client.auth.signInWithPassword({ email, password });
+        if (!retryResult.error && retryResult.data?.session) {
+          const { error: syncSessionError } = await supabase.auth.setSession({
+            access_token: retryResult.data.session.access_token,
+            refresh_token: retryResult.data.session.refresh_token,
+          });
+          if (syncSessionError) {
+            console.warn('⚠️ [Auth] Session sync after retry failed:', syncSessionError);
+          }
+        }
+
+        return { ...retryResult, attempted: true };
+      };
+
+      const retrySignInWithFallbacks = async () => {
+        const directUrl = import.meta.env.VITE_SUPABASE_URL?.replace(/\/$/, '');
+        const currentOrigin = typeof window !== 'undefined'
+          ? window.location.origin.replace(/\/$/, '')
+          : '';
+        const isLocalhost = typeof window !== 'undefined' &&
+          ['localhost', '127.0.0.1'].includes(window.location.hostname);
+
+        // Try direct Supabase URL when it differs from the current origin.
+        // On localhost this is the key fallback when the Vite proxy fails.
+        if (directUrl && directUrl !== currentOrigin) {
+          const directClient = createRetryClient(directUrl);
+          const directRetry = await retrySignInWithClient(directClient);
+          if (!directRetry.error || !directRetry.attempted) {
+            return directRetry;
+          }
+          console.warn('⚠️ [Auth] Direct Supabase URL retry failed');
+        }
+
+        return { data: null, error: null, attempted: false };
+      };
+
       console.log('🔑 [Auth] Attempting signin...');
       console.log('🔑 [Auth] Sign-in request details:', {
         email: email,
@@ -153,10 +221,19 @@ export default function Login() {
         userAgent: navigator.userAgent.substring(0, 50) + '...'
       });
 
-      const { error, data } = await supabase.auth.signInWithPassword({
+      let { error, data } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
+
+      if (error && isHtmlResponseAuthError(error)) {
+        console.warn('⚠️ [Auth] Received HTML response from auth endpoint, retrying with direct Supabase URL');
+        const retryResult = await retrySignInWithFallbacks();
+        if (retryResult.attempted) {
+          error = retryResult.error;
+          data = retryResult.data;
+        }
+      }
 
       if (error) {
         console.error('❌ [Auth] Signin failed:', error);
