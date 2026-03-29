@@ -1,0 +1,27 @@
+{
+  "sprintIdentifier": "2026-12",
+  "items": [
+    {
+      "title": "Retry worker execution",
+      "taskIds": ["1"],
+      "branch": "roadmap/2026-12-retry-worker-execution",
+      "status": "done",
+      "verification": [
+        "npm run lint",
+        "deno test --allow-env supabase/functions/__tests__/super-bot-retry-queue.test.ts"
+      ],
+      "summary": "Verified retry replay behavior and sprint-scoped execution safeguards."
+    },
+    {
+      "title": "Tool: update project tasks until today",
+      "taskIds": ["2"],
+      "branch": "roadmap/2026-12-superbot-ops-hardening",
+      "status": "done",
+      "verification": [
+        "npm run lint",
+        "deno test --allow-env --allow-net --allow-read supabase/functions/__tests__/super-bot-assistant.test.ts"
+      ],
+      "summary": "Verified authorization, pending-task filtering, and update behavior for update_tasks_until_today."
+    }
+  ]
+}

@@ -53,6 +53,7 @@
     "task-runner": "bash scripts/ai-task-runner.sh",
     "task-runner:dry": "bash scripts/ai-task-runner.sh --dry-run",
     "task-runner:bridge": "node scripts/task-runner-bridge.js",
+    "roadmap:reconcile-team": "node scripts/reconcile-roadmap-team.mjs",
     "prepare": "husky"
   },
   "bin": {
