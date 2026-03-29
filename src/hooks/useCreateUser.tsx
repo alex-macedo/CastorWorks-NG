@@ -11,6 +11,8 @@ interface CreateUserParams {
   displayName?: string;
   roles?: AppRole[];
   sendInvite?: boolean;
+  tenantId?: string;
+  tenantRole?: AppRole;
 }
 
 export function useCreateUser() {
@@ -25,12 +27,14 @@ export function useCreateUser() {
           display_name: params.displayName,
           roles: params.roles,
           send_invite: params.sendInvite,
+          tenant_id: params.tenantId,
+          tenant_role: params.tenantRole,
         },
       });
 
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
-      return data;
+      return { ...data, tenantId: params.tenantId };
     },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ["users-with-roles"] });

@@ -1,0 +1,2896 @@
+{
+  "timestamp": "2026-03-24T16:32:25.032Z",
+  "totalIssues": 437,
+  "filesScanned": 1279,
+  "filesWithIssues": 133,
+  "findings": {
+    "src/main.tsx": [
+      {
+        "line": 41,
+        "text": "Critical Error During Initialization",
+        "type": "jsx-text",
+        "context": "<h2>Critical Error During Initialization</h2>"
+      }
+    ],
+    "src/pages/SupplierPOAcknowledgment.tsx": [
+      {
+        "line": 216,
+        "text": "Please contact your project manager to receive a new link.",
+        "type": "jsx-text",
+        "context": "<p className=\"text-center text-sm text-muted-foreground mt-4\">"
+      },
+      {
+        "line": 277,
+        "text": "Please review and confirm receipt of this purchase order",
+        "type": "jsx-text",
+        "context": "<p className=\"text-muted-foreground\">"
+      },
+      {
+        "line": 288,
+        "text": "Purchase Order Details",
+        "type": "jsx-text",
+        "context": "<FileText className=\"h-5 w-5\" />"
+      },
+      {
+        "line": 339,
+        "text": "Confirm Receipt",
+        "type": "jsx-text",
+        "context": "<CardTitle>Confirm Receipt</CardTitle>"
+      },
+      {
+        "line": 347,
+        "text": "Notes (optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"notes\">Notes (optional)</Label>"
+      },
+      {
+        "line": 380,
+        "text": "Confirm Receipt",
+        "type": "jsx-text",
+        "context": "<CheckCircle className=\"mr-2 h-4 w-4\" />"
+      }
+    ],
+    "src/pages/Settings.tsx": [
+      {
+        "line": 294,
+        "text": "Log Search",
+        "type": "jsx-text",
+        "context": "<TabsTrigger value=\"log-search\" className=\"whitespace-nowrap text-[11px] sm:text-xs px-2 py-1.5 h-auto min-w-0 flex-shrink-0\">Log Search</TabsTrigger>"
+      }
+    ],
+    "src/pages/RoleManagement.tsx": [
+      {
+        "line": 74,
+        "text": "Go Back",
+        "type": "jsx-text",
+        "context": "<ArrowLeft className=\"mr-2 h-4 w-4\" />"
+      }
+    ],
+    "src/pages/ReleasesReport.tsx": [
+      {
+        "line": 65,
+        "text": "Timeline View",
+        "type": "jsx-text",
+        "context": "<TabsTrigger value=\"timeline\">"
+      },
+      {
+        "line": 68,
+        "text": "Manage Tasks",
+        "type": "jsx-text",
+        "context": "<TabsTrigger value=\"manage\">"
+      }
+    ],
+    "src/pages/RLSTest.tsx": [
+      {
+        "line": 460,
+        "text": "Financial data follows the same access rules as projects",
+        "type": "jsx-text",
+        "context": "<li>Financial data follows the same access rules as projects</li>"
+      },
+      {
+        "line": 461,
+        "text": "Only admins and project managers can create new projects",
+        "type": "jsx-text",
+        "context": "<li>Only admins and project managers can create new projects</li>"
+      },
+      {
+        "line": 462,
+        "text": "Only admins can modify company settings",
+        "type": "jsx-text",
+        "context": "<li>Only admins can modify company settings</li>"
+      },
+      {
+        "line": 463,
+        "text": "All authenticated users can view company settings",
+        "type": "jsx-text",
+        "context": "<li>All authenticated users can view company settings</li>"
+      },
+      {
+        "line": 490,
+        "text": "Full access to everything including company settings",
+        "type": "jsx-text",
+        "context": "<strong>Admin:</strong> Full access to everything including company settings"
+      }
+    ],
+    "src/pages/PurchaseRequest.tsx": [
+      {
+        "line": 427,
+        "text": "Back to Procurement",
+        "type": "jsx-text",
+        "context": "<ArrowLeft className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 566,
+        "text": "Import",
+        "type": "jsx-text",
+        "context": "<Upload className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 576,
+        "text": "Export",
+        "type": "jsx-text",
+        "context": "<Download className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 580,
+        "text": "Add Item",
+        "type": "jsx-text",
+        "context": "<Plus className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 602,
+        "text": "Update Quantity",
+        "type": "jsx-text",
+        "context": "<Label>Update Quantity</Label>"
+      },
+      {
+        "line": 612,
+        "text": "Update Unit Price (R$)",
+        "type": "jsx-text",
+        "context": "<Label>Update Unit Price (R$)</Label>"
+      },
+      {
+        "line": 645,
+        "text": "Description *",
+        "type": "jsx-text",
+        "context": "<TableHead className=\"w-[40%]\">Description *</TableHead>"
+      },
+      {
+        "line": 648,
+        "text": "Total",
+        "type": "jsx-text",
+        "context": "<TableHead className=\"w-[150px] text-right\">Total</TableHead>"
+      },
+      {
+        "line": 790,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button type=\"button\" variant=\"outline\">"
+      },
+      {
+        "line": 795,
+        "text": "Submit Request",
+        "type": "jsx-text",
+        "context": "<Save className=\"mr-2 h-4 w-4\" />"
+      }
+    ],
+    "src/pages/MaterialsLabor.tsx": [
+      {
+        "line": 48,
+        "text": "Custo Total Estimado",
+        "type": "jsx-text",
+        "context": "<div className=\"font-bold text-lg mb-2\">Custo Total Estimado</div>"
+      },
+      {
+        "line": 59,
+        "text": "Materials Total",
+        "type": "jsx-text",
+        "context": "<span className=\"font-bold text-lg text-green-800 dark:text-green-200\">Materials Total</span>"
+      }
+    ],
+    "src/pages/Login.tsx": [
+      {
+        "line": 431,
+        "text": "Email",
+        "type": "jsx-text",
+        "context": "}}>"
+      },
+      {
+        "line": 464,
+        "text": "Password",
+        "type": "jsx-text",
+        "context": "}}>"
+      }
+    ],
+    "src/pages/DocumentViewer.tsx": [
+      {
+        "line": 315,
+        "text": "Print version",
+        "type": "jsx-text",
+        "context": "<button onClick={handlePrint} className=\"hover:text-foreground underline underline-offset-2\">Print version</button>"
+      }
+    ],
+    "src/pages/DBExportImport.tsx": [
+      {
+        "line": 64,
+        "text": "Database Export / Import",
+        "type": "jsx-text",
+        "context": "<h1 className=\"text-2xl font-bold mb-4\">Database Export / Import</h1>"
+      }
+    ],
+    "src/pages/CustomerApprovalPortal.tsx": [
+      {
+        "line": 198,
+        "text": "Review and approve quotes for your project",
+        "type": "jsx-text",
+        "context": "<CardDescription>"
+      }
+    ],
+    "src/pages/ClientPortalTokenManagement.tsx": [
+      {
+        "line": 189,
+        "text": "Create a secure access token for a project's client portal",
+        "type": "jsx-text",
+        "context": "<DialogDescription>"
+      },
+      {
+        "line": 258,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<TableHead>Status</TableHead>"
+      }
+    ],
+    "src/pages/ClientAccessManagement.tsx": [
+      {
+        "line": 235,
+        "text": "No projects found for this client",
+        "type": "jsx-text",
+        "context": "<div className=\"p-2 text-sm text-muted-foreground\">"
+      }
+    ],
+    "src/pages/CastorMindAIAnalytics.tsx": [
+      {
+        "line": 70,
+        "text": "Back to Chat",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => navigate('/castormind-ai')}>Back to Chat</Button>"
+      },
+      {
+        "line": 83,
+        "text": "Loading analytics...",
+        "type": "jsx-text",
+        "context": "{isLoading && <Card className=\"p-6 text-sm text-muted-foreground\">Loading analytics...</Card>}"
+      },
+      {
+        "line": 89,
+        "text": "Total Requests",
+        "type": "jsx-text",
+        "context": "<Card className=\"p-3\"><p className=\"text-xs text-muted-foreground\">Total Requests</p><p className=\"text-2xl font-semibold\">{data.kpis.totalRequests}</p></Card>"
+      },
+      {
+        "line": 90,
+        "text": "Success Rate",
+        "type": "jsx-text",
+        "context": "<Card className=\"p-3\"><p className=\"text-xs text-muted-foreground\">Success Rate</p><p className=\"text-2xl font-semibold\">{data.kpis.successRate}%</p></Card>"
+      },
+      {
+        "line": 91,
+        "text": "Error Rate",
+        "type": "jsx-text",
+        "context": "<Card className=\"p-3\"><p className=\"text-xs text-muted-foreground\">Error Rate</p><p className=\"text-2xl font-semibold\">{data.kpis.errorRate}%</p></Card>"
+      },
+      {
+        "line": 93,
+        "text": "Partial Success",
+        "type": "jsx-text",
+        "context": "<Card className=\"p-3\"><p className=\"text-xs text-muted-foreground\">Partial Success</p><p className=\"text-2xl font-semibold\">{data.kpis.partialSuccess}</p></Card>"
+      }
+    ],
+    "src/pages/app/AppTasks.tsx": [
+      {
+        "line": 157,
+        "text": "Total Completion",
+        "type": "jsx-text",
+        "context": "<p className=\"text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]\">"
+      },
+      {
+        "line": 208,
+        "text": "Active Tasks",
+        "type": "jsx-text",
+        "context": "<h3 className=\"text-[11px] font-black text-slate-500 uppercase tracking-[0.25em]\">"
+      },
+      {
+        "line": 211,
+        "text": "Edit",
+        "type": "jsx-text",
+        "context": "<button className=\"text-sky-500 text-[11px] font-black uppercase tracking-widest\">"
+      },
+      {
+        "line": 311,
+        "text": "Upcoming Next Week",
+        "type": "jsx-text",
+        "context": "<h3 className=\"text-[11px] font-black text-slate-500 uppercase tracking-[0.25em]\">"
+      },
+      {
+        "line": 349,
+        "text": "Task Name",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"task-name\" className=\"text-slate-300\">Task Name</Label>"
+      },
+      {
+        "line": 361,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"task-desc\" className=\"text-slate-300\">Description</Label>"
+      },
+      {
+        "line": 372,
+        "text": "Due Date",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"task-due\" className=\"text-slate-300\">Due Date</Label>"
+      },
+      {
+        "line": 389,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 355,
+        "text": "Enter task name...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Enter task name...\""
+      },
+      {
+        "line": 367,
+        "text": "Add details...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Add details...\""
+      },
+      {
+        "line": 376,
+        "text": "Due Date",
+        "type": "attr:title",
+        "context": "title=\"Due Date\""
+      },
+      {
+        "line": 377,
+        "text": "Due Date",
+        "type": "attr:aria-label",
+        "context": "aria-label=\"Due Date\""
+      }
+    ],
+    "src/pages/app/AppMoodboard.tsx": [
+      {
+        "line": 474,
+        "text": "Share Feedback",
+        "type": "jsx-text",
+        "context": "<label className=\"text-[10px] font-black text-slate-500 uppercase tracking-widest\">Share Feedback</label>"
+      },
+      {
+        "line": 503,
+        "text": "Submit Review",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 713,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<span className=\"text-[10px] text-slate-500 uppercase font-bold mt-1\">Status</span>"
+      },
+      {
+        "line": 742,
+        "text": "No comments yet. Be the first to share feedback!",
+        "type": "jsx-text",
+        "context": "<div className=\"text-[13px] text-slate-500 italic\">No comments yet. Be the first to share feedback!</div>"
+      },
+      {
+        "line": 773,
+        "text": "Add Comment",
+        "type": "jsx-text",
+        "context": "<span className=\"material-symbols-outlined\">chat_bubble</span>"
+      },
+      {
+        "line": 331,
+        "text": "Search material library...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Search material library...\""
+      },
+      {
+        "line": 406,
+        "text": "View details",
+        "type": "attr:title",
+        "context": "title=\"View details\""
+      },
+      {
+        "line": 414,
+        "text": "Add comment",
+        "type": "attr:title",
+        "context": "title=\"Add comment\""
+      },
+      {
+        "line": 463,
+        "text": "Close",
+        "type": "attr:title",
+        "context": "title=\"Close\""
+      },
+      {
+        "line": 479,
+        "text": "Tell us what you like or what should be changed about this proposal...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Tell us what you like or what should be changed about this proposal...\""
+      },
+      {
+        "line": 528,
+        "text": "Close AI panel",
+        "type": "attr:title",
+        "context": "title=\"Close AI panel\""
+      }
+    ],
+    "src/pages/app/AppMeetingReview.tsx": [
+      {
+        "line": 74,
+        "text": "Project completion date set for Dec 15th",
+        "type": "jsx-text",
+        "context": "<h4 className=\"text-[17px] font-bold leading-tight\">Project completion date set for Dec 15th</h4>"
+      }
+    ],
+    "src/pages/app/AppFloorPlan.tsx": [
+      {
+        "line": 80,
+        "text": "Add a response...",
+        "type": "jsx-text",
+        "context": "<div className=\"flex-1 h-12 bg-white/5 border border-white/10 rounded-full flex items-center px-5 text-white/40 text-sm\">Add a response...</div>"
+      }
+    ],
+    "src/pages/app/AppFinance.tsx": [
+      {
+        "line": 90,
+        "text": "Total Spent",
+        "type": "jsx-text",
+        "context": "<p className=\"text-[9px] font-black text-slate-500 uppercase tracking-widest\">Total Spent</p>"
+      },
+      {
+        "line": 306,
+        "text": "Project status is",
+        "type": "jsx-text",
+        "context": "<p className=\"text-[13px] text-slate-400 leading-relaxed font-medium\">"
+      }
+    ],
+    "src/pages/app/AppDailyLog.tsx": [
+      {
+        "line": 376,
+        "text": "Tasks",
+        "type": "jsx-text",
+        "context": "<h4 className=\"text-sm font-bold\">Tasks</h4>"
+      },
+      {
+        "line": 431,
+        "text": "Add Task",
+        "type": "jsx-text",
+        "context": "<span className=\"text-sm font-medium\">Add Task</span>"
+      },
+      {
+        "line": 528,
+        "text": "Add your first daily log",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-slate-500\">Add your first daily log</p>"
+      },
+      {
+        "line": 633,
+        "text": "Edit",
+        "type": "jsx-text",
+        "context": "<span className=\"material-symbols-outlined text-base\">edit</span>"
+      },
+      {
+        "line": 715,
+        "text": "Date",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"date\" className=\"text-slate-300\">Date</Label>"
+      },
+      {
+        "line": 858,
+        "text": "Photos help document daily progress",
+        "type": "jsx-text",
+        "context": "<p className=\"text-[10px] text-slate-500 text-center\">Photos help document daily progress</p>"
+      },
+      {
+        "line": 870,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 889,
+        "text": "Filter by Date",
+        "type": "jsx-text",
+        "context": "<DialogTitle className=\"text-lg font-bold\">Filter by Date</DialogTitle>"
+      },
+      {
+        "line": 961,
+        "text": "Title",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"taskTitle\" className=\"text-slate-300\">Title</Label>"
+      },
+      {
+        "line": 974,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"taskDesc\" className=\"text-slate-300\">Description</Label>"
+      },
+      {
+        "line": 986,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<Label className=\"text-slate-300\">Status</Label>"
+      },
+      {
+        "line": 1043,
+        "text": "Due Date",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"taskDue\" className=\"text-slate-300\">Due Date</Label>"
+      },
+      {
+        "line": 694,
+        "text": "Add Log",
+        "type": "attr:aria-label",
+        "context": "aria-label=\"Add Log\""
+      },
+      {
+        "line": 721,
+        "text": "Date",
+        "type": "attr:title",
+        "context": "title=\"Date\""
+      },
+      {
+        "line": 967,
+        "text": "Enter task title...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Enter task title...\""
+      },
+      {
+        "line": 980,
+        "text": "Add details...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Add details...\""
+      },
+      {
+        "line": 1049,
+        "text": "Due Date",
+        "type": "attr:title",
+        "context": "title=\"Due Date\""
+      }
+    ],
+    "src/pages/app/AppBranding.tsx": [
+      {
+        "line": 24,
+        "text": "Project Log Report",
+        "type": "jsx-text",
+        "context": "<p className=\"text-slate-400 text-[9px] font-black uppercase tracking-widest leading-none mb-1.5\">Project Log Report</p>"
+      }
+    ],
+    "src/pages/app/AppAnnotations.tsx": [
+      {
+        "line": 422,
+        "text": "Create annotation",
+        "type": "attr:aria-label",
+        "context": "aria-label=\"Create annotation\""
+      },
+      {
+        "line": 514,
+        "text": "Upload Photo",
+        "type": "attr:title",
+        "context": "}} title=\"Upload Photo\" />"
+      }
+    ],
+    "src/pages/Mobile/Logistics/MobileInventory.tsx": [
+      {
+        "line": 70,
+        "text": "Loading stock...",
+        "type": "jsx-text",
+        "context": "<div className=\"text-center py-10 text-muted-foreground\">Loading stock...</div>"
+      }
+    ],
+    "src/pages/Forms/PublicFormPage.tsx": [
+      {
+        "line": 84,
+        "text": "Loading form…",
+        "type": "jsx-text",
+        "context": "<p className=\"text-muted-foreground\">Loading form…</p>"
+      }
+    ],
+    "src/pages/ClientPortal/InvalidToken.tsx": [
+      {
+        "line": 28,
+        "text": "Go to Login",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => navigate('/login')}>"
+      }
+    ],
+    "src/pages/Admin/TeamCommunication.tsx": [
+      {
+        "line": 62,
+        "text": "Please select a project to view communication log.",
+        "type": "jsx-text",
+        "context": "<AlertDescription>"
+      }
+    ],
+    "src/pages/Admin/TeamChat.tsx": [
+      {
+        "line": 63,
+        "text": "Please select a project to view team chat.",
+        "type": "jsx-text",
+        "context": "<AlertDescription>"
+      }
+    ],
+    "src/pages/Admin/MaintenanceManagement.tsx": [
+      {
+        "line": 132,
+        "text": "Contact Email",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"contact-email\">Contact Email</Label>"
+      },
+      {
+        "line": 143,
+        "text": "Update Settings",
+        "type": "jsx-text",
+        "context": "<Button onClick={handleUpdateSettings} className=\"mt-2\">"
+      },
+      {
+        "line": 178,
+        "text": "Title",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"title\">Title</Label>"
+      },
+      {
+        "line": 189,
+        "text": "Description (Optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"description\">Description (Optional)</Label>"
+      }
+    ],
+    "src/features/tax/components/PrefabInvoiceManager.tsx": [
+      {
+        "line": 84,
+        "text": "Eligible Total",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium text-muted-foreground uppercase\">Eligible Total</CardTitle>"
+      },
+      {
+        "line": 94,
+        "text": "Excluded Total",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium text-muted-foreground uppercase\">Excluded Total</CardTitle>"
+      },
+      {
+        "line": 104,
+        "text": "Grand Total",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium text-muted-foreground uppercase\">Grand Total</CardTitle>"
+      },
+      {
+        "line": 121,
+        "text": "Add Invoice",
+        "type": "jsx-text",
+        "context": "<Plus className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 129,
+        "text": "Date",
+        "type": "jsx-text",
+        "context": "<TableHead>Date</TableHead>"
+      },
+      {
+        "line": 132,
+        "text": "Category",
+        "type": "jsx-text",
+        "context": "<TableHead>Category</TableHead>"
+      },
+      {
+        "line": 134,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<TableHead>Status</TableHead>"
+      },
+      {
+        "line": 140,
+        "text": "Loading...",
+        "type": "jsx-text",
+        "context": "<TableRow><TableCell colSpan={7} className=\"text-center\">Loading...</TableCell></TableRow>"
+      }
+    ],
+    "src/components/RouterErrorBoundary.tsx": [
+      {
+        "line": 132,
+        "text": "Update Available",
+        "type": "jsx-text",
+        "context": "<h2 className=\"text-xl font-semibold text-foreground mb-2\">"
+      },
+      {
+        "line": 173,
+        "text": "Loading application...",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground\">"
+      }
+    ],
+    "src/components/ProjectDetailsDialog.tsx": [
+      {
+        "line": 171,
+        "text": "Overview",
+        "type": "jsx-text",
+        "context": "<TabsTrigger value=\"overview\">Overview</TabsTrigger>"
+      },
+      {
+        "line": 192,
+        "text": "Total Budget:",
+        "type": "jsx-text",
+        "context": "<span className=\"font-medium\">Total Budget:</span> {project.budget}"
+      },
+      {
+        "line": 200,
+        "text": "Status:",
+        "type": "jsx-text",
+        "context": "<span className=\"font-medium\">Status:</span>{\" \"}"
+      }
+    ],
+    "src/components/ui/sheet.tsx": [
+      {
+        "line": 100,
+        "text": "Close",
+        "type": "jsx-text",
+        "context": "<span className=\"sr-only\">Close</span>"
+      }
+    ],
+    "src/components/ui/rich-text-editor.tsx": [
+      {
+        "line": 147,
+        "text": "Loading editor...",
+        "type": "jsx-text",
+        "context": "return <div className={`border rounded-lg p-4 ${height}`}>Loading editor...</div>;"
+      }
+    ],
+    "src/components/ui/dialog.tsx": [
+      {
+        "line": 64,
+        "text": "Close",
+        "type": "jsx-text",
+        "context": "<span className=\"sr-only\">Close</span>"
+      }
+    ],
+    "src/components/ui/data-table.tsx": [
+      {
+        "line": 244,
+        "text": "Previous",
+        "type": "jsx-text",
+        "context": "<ChevronLeft className=\"h-4 w-4\" />"
+      },
+      {
+        "line": 252,
+        "text": "Next",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/ui/command.tsx": [
+      {
+        "line": 31,
+        "text": "Command Menu",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Command Menu</DialogTitle>"
+      }
+    ],
+    "src/components/ui/carousel.tsx": [
+      {
+        "line": 189,
+        "text": "Previous slide",
+        "type": "jsx-text",
+        "context": "<span className=\"sr-only\">Previous slide</span>"
+      },
+      {
+        "line": 217,
+        "text": "Next slide",
+        "type": "jsx-text",
+        "context": "<span className=\"sr-only\">Next slide</span>"
+      }
+    ],
+    "src/components/supervisor/TimelineCard.tsx": [
+      {
+        "line": 177,
+        "text": "View Gallery",
+        "type": "jsx-text",
+        "context": "<Image className=\"h-3 w-3\" />"
+      }
+    ],
+    "src/components/supervisor/PhotoGalleryModal.tsx": [
+      {
+        "line": 172,
+        "text": "Previous",
+        "type": "jsx-text",
+        "context": "<ChevronLeft className=\"h-4 w-4 mr-1\" />"
+      },
+      {
+        "line": 175,
+        "text": "Next",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" size=\"sm\" onClick={handleNext}>"
+      }
+    ],
+    "src/components/supervisor/InspectionTimeline.tsx": [
+      {
+        "line": 227,
+        "text": "Checklist Summary:",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm font-medium text-muted-foreground\">Checklist Summary:</p>"
+      }
+    ],
+    "src/components/forms/Share/FormShareDialog.tsx": [
+      {
+        "line": 169,
+        "text": "Email",
+        "type": "jsx-text",
+        "context": "<Mail className=\"mr-2 h-4 w-4\" />"
+      }
+    ],
+    "src/components/forms/Renderer/FormRenderer.tsx": [
+      {
+        "line": 228,
+        "text": "Close",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 234,
+        "text": "Open CastorWorks App",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 323,
+        "text": "By submitting this form, you agree to our terms of service.",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-slate-500\">"
+      }
+    ],
+    "src/components/forms/Questions/QuestionWrapper.tsx": [
+      {
+        "line": 35,
+        "text": "Required",
+        "type": "attr:title",
+        "context": "{required && <span className=\"text-destructive ml-1\" title=\"Required\">*</span>}"
+      }
+    ],
+    "src/components/forms/Questions/FileUploadQuestion.tsx": [
+      {
+        "line": 79,
+        "text": "Click to upload or drag and drop",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm font-medium\">Click to upload or drag and drop</p>"
+      },
+      {
+        "line": 94,
+        "text": "Ready to upload",
+        "type": "jsx-text",
+        "context": "<span>Ready to upload</span>"
+      },
+      {
+        "line": 105,
+        "text": "Remove file",
+        "type": "jsx-text",
+        "context": "<span className=\"sr-only\">Remove file</span>"
+      }
+    ],
+    "src/components/forms/Questions/DateQuestion.tsx": [
+      {
+        "line": 51,
+        "text": "Pick a date…",
+        "type": "jsx-text",
+        "context": "{value ? format(selectedDate!, 'PPP') : <span>Pick a date…</span>}"
+      }
+    ],
+    "src/components/forms/Collaborators/FormCollaboratorsPanel.tsx": [
+      {
+        "line": 30,
+        "text": "Manage who can view and edit this form",
+        "type": "jsx-text",
+        "context": "<CardDescription>"
+      }
+    ],
+    "src/components/forms/Builder/FormBuilder.tsx": [
+      {
+        "line": 117,
+        "text": "Form Title",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"form-title\">Form Title</Label>"
+      },
+      {
+        "line": 128,
+        "text": "Description (optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"form-description\">Description (optional)</Label>"
+      },
+      {
+        "line": 142,
+        "text": "Create Form",
+        "type": "jsx-text",
+        "context": "<Save className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 148,
+        "text": "Save",
+        "type": "jsx-text",
+        "context": "<Save className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 171,
+        "text": "Add Question",
+        "type": "jsx-text",
+        "context": "<Plus className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 178,
+        "text": "No questions yet. Click \"Add Question\" to get started.",
+        "type": "jsx-text",
+        "context": "<CardContent className=\"py-12 text-center text-muted-foreground\">"
+      },
+      {
+        "line": 200,
+        "text": "Delete",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 123,
+        "text": "Enter form title",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Enter form title\""
+      }
+    ],
+    "src/components/forms/Analytics/FormAnalyticsDashboard.tsx": [
+      {
+        "line": 29,
+        "text": "Loading analytics...",
+        "type": "jsx-text",
+        "context": "<p className=\"text-muted-foreground\">Loading analytics...</p>"
+      },
+      {
+        "line": 62,
+        "text": "Total Responses",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium\">Total Responses</CardTitle>"
+      }
+    ],
+    "src/components/app/MobileAppSidebar.tsx": [
+      {
+        "line": 95,
+        "text": "Studio Menu",
+        "type": "jsx-text",
+        "context": "<h2 className=\"text-xl font-bold tracking-tight text-white\">Studio Menu</h2>"
+      }
+    ],
+    "src/components/TaskManagement/StatusConfigDialog.tsx": [
+      {
+        "line": 167,
+        "text": "Name *",
+        "type": "jsx-text",
+        "context": "<FormLabel>Name *</FormLabel>"
+      },
+      {
+        "line": 178,
+        "text": "Display name for the status column",
+        "type": "jsx-text",
+        "context": "<FormDescription>Display name for the status column</FormDescription>"
+      },
+      {
+        "line": 230,
+        "text": "Color for the status indicator",
+        "type": "jsx-text",
+        "context": "<FormDescription>Color for the status indicator</FormDescription>"
+      },
+      {
+        "line": 260,
+        "text": "Icon to display with the status",
+        "type": "jsx-text",
+        "context": "<FormDescription>Icon to display with the status</FormDescription>"
+      },
+      {
+        "line": 273,
+        "text": "Default Status",
+        "type": "jsx-text",
+        "context": "<FormLabel>Default Status</FormLabel>"
+      },
+      {
+        "line": 274,
+        "text": "New tasks will be assigned this status by default",
+        "type": "jsx-text",
+        "context": "<FormDescription>"
+      },
+      {
+        "line": 292,
+        "text": "Completed Status",
+        "type": "jsx-text",
+        "context": "<FormLabel>Completed Status</FormLabel>"
+      },
+      {
+        "line": 293,
+        "text": "Tasks with this status are considered completed",
+        "type": "jsx-text",
+        "context": "<FormDescription>"
+      },
+      {
+        "line": 305,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button type=\"button\" variant=\"outline\" onClick={() => onOpenChange(false)}>"
+      }
+    ],
+    "src/components/Suppliers/SupplierFormCommon.tsx": [
+      {
+        "line": 39,
+        "text": "Name",
+        "type": "jsx-text",
+        "context": "<FormLabel>Name</FormLabel>"
+      },
+      {
+        "line": 53,
+        "text": "Category",
+        "type": "jsx-text",
+        "context": "<FormLabel>Category</FormLabel>"
+      },
+      {
+        "line": 68,
+        "text": "Contact Email",
+        "type": "jsx-text",
+        "context": "<FormLabel>Contact Email</FormLabel>"
+      },
+      {
+        "line": 82,
+        "text": "Contact Phone",
+        "type": "jsx-text",
+        "context": "<FormLabel>Contact Phone</FormLabel>"
+      },
+      {
+        "line": 93,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button type=\"button\" variant=\"outline\" onClick={onCancel}>"
+      }
+    ],
+    "src/components/Sprint/SprintManagementDialog.tsx": [
+      {
+        "line": 114,
+        "text": "Create New Sprint",
+        "type": "jsx-text",
+        "context": "<SheetTitle>Create New Sprint</SheetTitle>"
+      },
+      {
+        "line": 133,
+        "text": "Title",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"sprint-title\">Title</Label>"
+      },
+      {
+        "line": 144,
+        "text": "Description (Optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"sprint-description\">Description (Optional)</Label>"
+      },
+      {
+        "line": 156,
+        "text": "Start Date",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"start-date\">Start Date</Label>"
+      },
+      {
+        "line": 166,
+        "text": "End Date",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"end-date\">End Date</Label>"
+      },
+      {
+        "line": 181,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/Sprint/SprintHistory.tsx": [
+      {
+        "line": 22,
+        "text": "Loading sprint history...",
+        "type": "jsx-text",
+        "context": "return <div className=\"text-muted-foreground\">Loading sprint history...</div>;"
+      },
+      {
+        "line": 32,
+        "text": "Close your first sprint to see release notes here",
+        "type": "jsx-text",
+        "context": "<CardDescription>Close your first sprint to see release notes here</CardDescription>"
+      },
+      {
+        "line": 70,
+        "text": "View Notes",
+        "type": "jsx-text",
+        "context": "<FileText className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 78,
+        "text": "Download",
+        "type": "jsx-text",
+        "context": "<Download className=\"h-4 w-4 mr-2\" />"
+      }
+    ],
+    "src/components/Sprint/SprintBoard.tsx": [
+      {
+        "line": 29,
+        "text": "Loading sprint...",
+        "type": "jsx-text",
+        "context": "return <div className=\"text-muted-foreground\">Loading sprint...</div>;"
+      },
+      {
+        "line": 37,
+        "text": "Create a new sprint to get started",
+        "type": "jsx-text",
+        "context": "<CardDescription>Create a new sprint to get started</CardDescription>"
+      },
+      {
+        "line": 136,
+        "text": "Close Sprint & Generate Release Notes",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 180,
+        "text": "This will close the sprint and generate release notes with:",
+        "type": "jsx-text",
+        "context": "<p>This will close the sprint and generate release notes with:</p>"
+      },
+      {
+        "line": 190,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<AlertDialogCancel>Cancel</AlertDialogCancel>"
+      },
+      {
+        "line": 191,
+        "text": "Close Sprint",
+        "type": "jsx-text",
+        "context": "<AlertDialogAction onClick={handleCloseSprint}>"
+      }
+    ],
+    "src/components/Settings/TranslationMaintenanceEditor.tsx": [
+      {
+        "line": 215,
+        "text": "Review and update all translations for the selected language",
+        "type": "jsx-text",
+        "context": "<CardDescription>"
+      },
+      {
+        "line": 280,
+        "text": "Save All",
+        "type": "jsx-text",
+        "context": "<Save className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 301,
+        "text": "Check the browser console (F12) for detailed error messages.",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-muted-foreground mt-4\">"
+      },
+      {
+        "line": 312,
+        "text": "Type",
+        "type": "jsx-text",
+        "context": "<TableHead className=\"w-[100px]\">Type</TableHead>"
+      }
+    ],
+    "src/components/Settings/ThemePreview.tsx": [
+      {
+        "line": 156,
+        "text": "Selected Menu Item",
+        "type": "jsx-text",
+        "context": "<span className=\"flex-1\">Selected Menu Item</span>"
+      }
+    ],
+    "src/components/Settings/ThemePresets.tsx": [
+      {
+        "line": 116,
+        "text": "Start with a pre-designed theme or create your own",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground mb-4\">"
+      }
+    ],
+    "src/components/Settings/SidebarOrderManager.tsx": [
+      {
+        "line": 371,
+        "text": "Menu Order Management",
+        "type": "jsx-text",
+        "context": "<h3 className=\"text-lg font-semibold\">Menu Order Management</h3>"
+      },
+      {
+        "line": 372,
+        "text": "Drag and drop to reorder sidebar menu items and submenus",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground\">"
+      },
+      {
+        "line": 389,
+        "text": "Save Changes",
+        "type": "jsx-text",
+        "context": "<Save className=\"h-4 w-4 mr-2\" />"
+      }
+    ],
+    "src/components/Settings/LogSearchPanel.tsx": [
+      {
+        "line": 146,
+        "text": "Error",
+        "type": "jsx-text",
+        "context": "case 'error': return <Badge variant=\"destructive\" className=\"gap-1\"><XCircle className=\"h-3 w-3\" /> Error</Badge>;"
+      },
+      {
+        "line": 147,
+        "text": "Warning",
+        "type": "jsx-text",
+        "context": "case 'warning': return <Badge variant=\"outline\" className=\"border-yellow-500 text-yellow-500 gap-1\"><AlertTriangle className=\"h-3 w-3\" /> Warning</Badge>;"
+      },
+      {
+        "line": 191,
+        "text": "View and manage application error and warning logs.",
+        "type": "jsx-text",
+        "context": "<CardDescription>View and manage application error and warning logs.</CardDescription>"
+      },
+      {
+        "line": 214,
+        "text": "Error",
+        "type": "jsx-text",
+        "context": "<SelectItem value=\"error\">Error</SelectItem>"
+      },
+      {
+        "line": 215,
+        "text": "Warning",
+        "type": "jsx-text",
+        "context": "<SelectItem value=\"warning\">Warning</SelectItem>"
+      },
+      {
+        "line": 352,
+        "text": "View Details",
+        "type": "jsx-text",
+        "context": "<Eye className=\"h-3 w-3 mr-1\" />"
+      },
+      {
+        "line": 358,
+        "text": "View Context",
+        "type": "jsx-text",
+        "context": "<Button variant=\"link\" className=\"h-auto p-0 text-xs text-muted-foreground\">"
+      },
+      {
+        "line": 416,
+        "text": "Previous",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 424,
+        "text": "Next",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 443,
+        "text": "Overview",
+        "type": "jsx-text",
+        "context": "<TabsTrigger value=\"overview\">Overview</TabsTrigger>"
+      },
+      {
+        "line": 462,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<h4 className=\"text-sm font-medium mb-2\">Status</h4>"
+      },
+      {
+        "line": 542,
+        "text": "Clear Log Messages",
+        "type": "jsx-text",
+        "context": "<AlertTriangle className=\"h-5 w-5\" />"
+      },
+      {
+        "line": 565,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<AlertDialogCancel>Cancel</AlertDialogCancel>"
+      },
+      {
+        "line": 201,
+        "text": "Search messages...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Search messages...\""
+      },
+      {
+        "line": 210,
+        "text": "Filter by Level",
+        "type": "attr:placeholder",
+        "context": "<SelectValue placeholder=\"Filter by Level\" />"
+      },
+      {
+        "line": 221,
+        "text": "Filter by Status",
+        "type": "attr:placeholder",
+        "context": "<SelectValue placeholder=\"Filter by Status\" />"
+      },
+      {
+        "line": 236,
+        "text": "From date",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"From date\""
+      },
+      {
+        "line": 244,
+        "text": "To date",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"To date\""
+      },
+      {
+        "line": 251,
+        "text": "Search context...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Search context...\""
+      }
+    ],
+    "src/components/Settings/INSSReferenceDataManager.tsx": [
+      {
+        "line": 127,
+        "text": "Total Rate (decimal)",
+        "type": "jsx-text",
+        "context": "<Label>Total Rate (decimal)</Label>"
+      }
+    ],
+    "src/components/Roadmap/TaskManagementTab.tsx": [
+      {
+        "line": 66,
+        "text": "Loading tasks...",
+        "type": "jsx-text",
+        "context": "return <div className=\"flex items-center justify-center p-8\">Loading tasks...</div>;"
+      },
+      {
+        "line": 101,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<Label>Status</Label>"
+      },
+      {
+        "line": 146,
+        "text": "Save",
+        "type": "jsx-text",
+        "context": "<Button onClick={() => handleSave(task.id)} size=\"sm\">"
+      },
+      {
+        "line": 149,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => setEditingTaskId(null)} size=\"sm\">"
+      },
+      {
+        "line": 166,
+        "text": "Edit",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" size=\"sm\" onClick={() => handleEdit(task)}>"
+      }
+    ],
+    "src/components/Roadmap/TaskCard.tsx": [
+      {
+        "line": 67,
+        "text": "Edit",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/Roadmap/RoadmapGanttChart.tsx": [
+      {
+        "line": 346,
+        "text": "Try adjusting your search or filters",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground mb-4\">"
+      },
+      {
+        "line": 413,
+        "text": "Full Details",
+        "type": "jsx-text",
+        "context": "<BookOpen className=\"h-3.5 w-3.5\" />"
+      }
+    ],
+    "src/components/Roadmap/ImplementationSummary.tsx": [
+      {
+        "line": 140,
+        "text": "Download Full Implementation Report",
+        "type": "jsx-text",
+        "context": "<Download className=\"h-4 w-4\" />"
+      }
+    ],
+    "src/components/Roadmap/DependencySelector.tsx": [
+      {
+        "line": 83,
+        "text": "Add dependency...",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/Reports/ReportViewer.tsx": [
+      {
+        "line": 311,
+        "text": "Use Ctrl+P to print this report",
+        "type": "jsx-text",
+        "context": "<span>Use Ctrl+P to print this report</span>"
+      }
+    ],
+    "src/components/Reports/ProjectDashboardDialog.tsx": [
+      {
+        "line": 40,
+        "text": "Close",
+        "type": "jsx-text",
+        "context": "<span className=\"sr-only\">Close</span>"
+      }
+    ],
+    "src/components/Reports/viewers/ProjectStatusReportView.tsx": [
+      {
+        "line": 209,
+        "text": "Date",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Date</th>"
+      },
+      {
+        "line": 210,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Description</th>"
+      },
+      {
+        "line": 211,
+        "text": "Category",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Category</th>"
+      },
+      {
+        "line": 212,
+        "text": "Amount",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-right\">Amount</th>"
+      }
+    ],
+    "src/components/Reports/viewers/ProfitabilityReportView.tsx": [
+      {
+        "line": 60,
+        "text": "PROFITABILITY ANALYSIS REPORT",
+        "type": "jsx-text",
+        "context": "<h1 className=\"text-2xl font-bold text-blue-600\">PROFITABILITY ANALYSIS REPORT</h1>"
+      },
+      {
+        "line": 66,
+        "text": "Profitability Overview",
+        "type": "jsx-text",
+        "context": "<CardTitle>Profitability Overview</CardTitle>"
+      },
+      {
+        "line": 70,
+        "text": "Total Revenue",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-gray-600\">Total Revenue</p>"
+      },
+      {
+        "line": 74,
+        "text": "Total Costs",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-gray-600\">Total Costs</p>"
+      },
+      {
+        "line": 126,
+        "text": "Cost Category",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Cost Category</th>"
+      },
+      {
+        "line": 127,
+        "text": "Amount",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-right\">Amount</th>"
+      }
+    ],
+    "src/components/Reports/viewers/BudgetReportView.tsx": [
+      {
+        "line": 67,
+        "text": "BUDGET REPORT",
+        "type": "jsx-text",
+        "context": "<h1 className=\"text-2xl font-bold text-blue-600\">BUDGET REPORT</h1>"
+      },
+      {
+        "line": 85,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<p className=\"text-gray-600\">Status</p>"
+      },
+      {
+        "line": 95,
+        "text": "Budget Summary",
+        "type": "jsx-text",
+        "context": "<CardTitle>Budget Summary</CardTitle>"
+      },
+      {
+        "line": 103,
+        "text": "Total Spent",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-gray-600\">Total Spent</p>"
+      },
+      {
+        "line": 120,
+        "text": "Budget Breakdown by Category",
+        "type": "jsx-text",
+        "context": "<CardTitle>Budget Breakdown by Category</CardTitle>"
+      },
+      {
+        "line": 127,
+        "text": "Category",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Category</th>"
+      },
+      {
+        "line": 165,
+        "text": "Date",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Date</th>"
+      },
+      {
+        "line": 166,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Description</th>"
+      },
+      {
+        "line": 167,
+        "text": "Category",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-left\">Category</th>"
+      },
+      {
+        "line": 168,
+        "text": "Amount",
+        "type": "jsx-text",
+        "context": "<th className=\"border border-gray-200 px-4 py-2 text-right\">Amount</th>"
+      }
+    ],
+    "src/components/Reports/hooks/useSendReportEmail.tsx": [
+      {
+        "line": 58,
+        "text": "Download Report",
+        "type": "jsx-text",
+        "context": "<a href=\"${signedUrlData.signedUrl}\" style=\"display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;\">Download Report</a>"
+      }
+    ],
+    "src/components/PurchaseOrders/PhotoUpload.tsx": [
+      {
+        "line": 190,
+        "text": "Add Photos",
+        "type": "jsx-text",
+        "context": "<Upload className=\"mr-2 h-4 w-4\" />"
+      }
+    ],
+    "src/components/PurchaseOrders/POStatusUpdateDialog.tsx": [
+      {
+        "line": 98,
+        "text": "Update Purchase Order Status",
+        "type": "jsx-text",
+        "context": "<SheetTitle>Update Purchase Order Status</SheetTitle>"
+      },
+      {
+        "line": 108,
+        "text": "Current Status",
+        "type": "jsx-text",
+        "context": "<Label>Current Status</Label>"
+      },
+      {
+        "line": 118,
+        "text": "New Status *",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"new-status\">New Status *</Label>"
+      },
+      {
+        "line": 138,
+        "text": "Note (Optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"note\">Note (Optional)</Label>"
+      },
+      {
+        "line": 159,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={handleCancel} disabled={isLoading}>"
+      }
+    ],
+    "src/components/PurchaseOrders/POStatusTimeline.tsx": [
+      {
+        "line": 109,
+        "text": "Current Status",
+        "type": "jsx-text",
+        "context": "<div className=\"text-sm text-blue-600 font-medium mt-1\">Current Status</div>"
+      }
+    ],
+    "src/components/PurchaseOrders/POLineItems.tsx": [
+      {
+        "line": 48,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<TableHead className=\"w-[50%]\">Description</TableHead>"
+      },
+      {
+        "line": 49,
+        "text": "Category",
+        "type": "jsx-text",
+        "context": "<TableHead>Category</TableHead>"
+      },
+      {
+        "line": 52,
+        "text": "Total",
+        "type": "jsx-text",
+        "context": "<TableHead className=\"text-right\">Total</TableHead>"
+      }
+    ],
+    "src/components/PurchaseOrders/POActions.tsx": [
+      {
+        "line": 185,
+        "text": "Cancel Purchase Order",
+        "type": "jsx-text",
+        "context": "<AlertDialogTitle>Cancel Purchase Order</AlertDialogTitle>"
+      },
+      {
+        "line": 192,
+        "text": "Don't Cancel",
+        "type": "jsx-text",
+        "context": "<AlertDialogCancel disabled={isLoading}>Don't Cancel</AlertDialogCancel>"
+      }
+    ],
+    "src/components/PurchaseOrders/CreateSupplierSheet.tsx": [
+      {
+        "line": 138,
+        "text": "Notes",
+        "type": "jsx-text",
+        "context": "<label htmlFor=\"notes\" className=\"block text-sm font-medium text-muted-foreground\">Notes</label>"
+      },
+      {
+        "line": 145,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button type=\"button\" variant=\"outline\" onClick={() => setOpen(false)}>"
+      }
+    ],
+    "src/components/PurchaseOrders/CreateDeliverySheet.tsx": [
+      {
+        "line": 14,
+        "text": "Create Delivery Confirmation",
+        "type": "jsx-text",
+        "context": "<Plus className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 20,
+        "text": "Create Delivery Confirmation",
+        "type": "jsx-text",
+        "context": "<SheetTitle>Create Delivery Confirmation</SheetTitle>"
+      }
+    ],
+    "src/components/Proposals/SignaturePad.tsx": [
+      {
+        "line": 140,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"ghost\" onClick={onCancel} disabled={isSigning}>"
+      }
+    ],
+    "src/components/Proposals/ProposalPreview.tsx": [
+      {
+        "line": 137,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<th className=\"text-left py-3 px-4 text-gray-700 font-semibold\">Description</th>"
+      },
+      {
+        "line": 140,
+        "text": "Amount",
+        "type": "jsx-text",
+        "context": "<th className=\"text-right py-3 px-4 text-gray-700 font-semibold\">Amount</th>"
+      },
+      {
+        "line": 177,
+        "text": "Total Investment",
+        "type": "jsx-text",
+        "context": "<td colSpan={3} className=\"py-4 px-4 text-right font-bold text-gray-900 text-lg\">"
+      },
+      {
+        "line": 249,
+        "text": "Client Signature & Date",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-gray-600\">Client Signature & Date</p>"
+      }
+    ],
+    "src/components/ProjectsTimeline/ProjectsFilter.tsx": [
+      {
+        "line": 39,
+        "text": "Filter",
+        "type": "jsx-text",
+        "context": "<span className=\"text-xs\">Filter</span>"
+      }
+    ],
+    "src/components/ProjectsTimeline/ClientDefinitionDialog.tsx": [
+      {
+        "line": 228,
+        "text": "Select status",
+        "type": "attr:placeholder",
+        "context": "<SelectValue placeholder='Select status' />"
+      }
+    ],
+    "src/components/Projects/MicrosoftProjectLike.example.tsx": [
+      {
+        "line": 305,
+        "text": "Risk Management Dashboard",
+        "type": "attr:title",
+        "context": "title=\"Risk Management Dashboard\""
+      },
+      {
+        "line": 366,
+        "text": "Click tasks to view details",
+        "type": "attr:description",
+        "context": "description=\"Click tasks to view details\""
+      },
+      {
+        "line": 416,
+        "text": "Annual Planning View",
+        "type": "attr:title",
+        "context": "title=\"Annual Planning View\""
+      },
+      {
+        "line": 495,
+        "text": "New Home Build - 123 Main Street",
+        "type": "attr:description",
+        "context": "description=\"New Home Build - 123 Main Street\""
+      },
+      {
+        "line": 609,
+        "text": "Quick View",
+        "type": "attr:title",
+        "context": "title=\"Quick View\""
+      }
+    ],
+    "src/components/ProjectPhases/ProjectPlanView.tsx": [
+      {
+        "line": 654,
+        "text": "Select date",
+        "type": "jsx-text",
+        "context": "if (meta.inputType === 'date') return <Popover open={isDa} onOpenChange={(o) => { if (o && meta.editable) { setActiveCell(meta); setDatePickerOpen(meta); } if (!o && isDa) setDatePickerOpen(null); }}><PopoverTrigger asChild><button type=\"button\" className={`${cls} text-left`} onClick={() => { if (!meta.editable) handleCellClick(meta); else { setActiveCell(meta); setDatePickerOpen(meta); } }}>{p.value ? <span>{formatDate(p.value)}</span> : <span className=\"text-muted-foreground\">Select date</span>}<CalendarIcon className=\"ml-auto h-3.5 w-3.5 opacity-60\" /></button></PopoverTrigger><PopoverContent className=\"p-0\" align=\"start\"><DateInput value={p.value instanceof Date ? format(p.value, \"yyyy-MM-dd\") : p.value ?? \"\"} onChange={(v) => handleDateChange(meta, v)} className=\"w-full\" /></PopoverContent></Popover>;"
+      },
+      {
+        "line": 729,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<AlertDialog open={!!deleteDialog} onOpenChange={() => setDeleteDialog(null)}><AlertDialogContent><AlertDialogHeader><AlertDialogTitle>Delete {deleteDialog?.type === 'phase' ? 'Phase' : 'Activity'}?</AlertDialogTitle><AlertDialogDescription>Are you sure you want to delete \"{deleteDialog?.name}\"? {deleteDialog?.type === 'phase' && 'All activities will also be deleted.'}</AlertDialogDescription></AlertDialogHeader><AlertDialogFooter><AlertDialogCancel>Cancel</AlertDialogCancel><AlertDialogAction onClick={async () => { try { if (deleteDialog?.type === 'phase') await deletePhase.mutateAsync(deleteDialog.id); else await deleteActivity.mutateAsync(deleteDialog.id); setDeleteDialog(null); } catch (e) { /* error ignored */ } }} className=\"bg-destructive text-destructive-foreground\">Delete</AlertDialogAction></AlertDialogFooter></AlertDialogContent></AlertDialog>"
+      },
+      {
+        "line": 729,
+        "text": "Delete",
+        "type": "jsx-text",
+        "context": "<AlertDialog open={!!deleteDialog} onOpenChange={() => setDeleteDialog(null)}><AlertDialogContent><AlertDialogHeader><AlertDialogTitle>Delete {deleteDialog?.type === 'phase' ? 'Phase' : 'Activity'}?</AlertDialogTitle><AlertDialogDescription>Are you sure you want to delete \"{deleteDialog?.name}\"? {deleteDialog?.type === 'phase' && 'All activities will also be deleted.'}</AlertDialogDescription></AlertDialogHeader><AlertDialogFooter><AlertDialogCancel>Cancel</AlertDialogCancel><AlertDialogAction onClick={async () => { try { if (deleteDialog?.type === 'phase') await deletePhase.mutateAsync(deleteDialog.id); else await deleteActivity.mutateAsync(deleteDialog.id); setDeleteDialog(null); } catch (e) { /* error ignored */ } }} className=\"bg-destructive text-destructive-foreground\">Delete</AlertDialogAction></AlertDialogFooter></AlertDialogContent></AlertDialog>"
+      },
+      {
+        "line": 198,
+        "text": "Edit phase",
+        "type": "attr:title",
+        "context": "{canEdit && <td className=\"p-2\"><div className=\"flex items-center gap-1\">{phaseActivities.length > 0 && hasStartableTasks && <TooltipProvider><Tooltip><TooltipTrigger asChild><Button variant=\"ghost\" size=\"sm\" className=\"h-8 px-2\" onClick={onMarkAllStarted} title={t('projectPhases:phase.markAllStarted') || 'Mark all tasks as started'}><PlayIcon className=\"h-4 w-4\" /></Button></TooltipTrigger><TooltipContent><p>{t('projectPhases:phase.markAllStarted') || 'Mark all tasks as started'}</p></TooltipContent></Tooltip></TooltipProvider>}{phaseActivities.length > 0 && hasCompletableTasks && <TooltipProvider><Tooltip><TooltipTrigger asChild><Button variant=\"ghost\" size=\"sm\" className=\"h-8 px-2 text-green-600 hover:text-green-700\" onClick={onMarkAllCompleted} title={t('projectPhases:phase.markAllCompleted') || 'Mark all tasks as completed'}><CheckIcon className=\"h-4 w-4\" /></Button></TooltipTrigger><TooltipContent><p>{t('projectPhases:phase.markAllCompleted') || 'Mark all tasks as completed'}</p></TooltipContent></Tooltip></TooltipProvider>}<Button variant=\"ghost\" size=\"sm\" className=\"h-8 px-2\" onClick={onEdit} title=\"Edit phase\"><Pencil className=\"h-4 w-4\" /></Button><Button variant=\"ghost\" size=\"sm\" className=\"h-8 px-2\" onClick={onAddActivity}><Plus className=\"h-4 w-4\" /></Button><Button variant=\"ghost\" size=\"sm\" className=\"h-8 px-2 text-destructive hover:text-destructive\" onClick={onDelete}><Trash2 className=\"h-4 w-4\" /></Button></div></td>}"
+      }
+    ],
+    "src/components/ProjectPhases/PhasesSpreadsheet.tsx": [
+      {
+        "line": 783,
+        "text": "Delete Selected",
+        "type": "jsx-text",
+        "context": "<Trash2 className=\"h-4 w-4 mr-1\" />"
+      },
+      {
+        "line": 799,
+        "text": "Export CSV",
+        "type": "jsx-text",
+        "context": "<Download className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 899,
+        "text": "Delete Phases?",
+        "type": "jsx-text",
+        "context": "<AlertDialogTitle>Delete Phases?</AlertDialogTitle>"
+      },
+      {
+        "line": 905,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<AlertDialogCancel>Cancel</AlertDialogCancel>"
+      },
+      {
+        "line": 909,
+        "text": "Delete",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/ProjectPhases/PhasesImportDialog.tsx": [
+      {
+        "line": 698,
+        "text": "Import Phases & Activities",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Import Phases & Activities</DialogTitle>"
+      },
+      {
+        "line": 699,
+        "text": "Upload a spreadsheet with project phases and activities",
+        "type": "jsx-text",
+        "context": "<DialogDescription>"
+      },
+      {
+        "line": 715,
+        "text": "Download Template",
+        "type": "jsx-text",
+        "context": "<Download className=\"mr-2 h-3 w-3\" />"
+      },
+      {
+        "line": 734,
+        "text": "Import Settings",
+        "type": "jsx-text",
+        "context": "<Label className=\"text-sm font-medium\">Import Settings</Label>"
+      },
+      {
+        "line": 769,
+        "text": "Save Settings",
+        "type": "jsx-text",
+        "context": "<Save className=\"mr-2 h-3 w-3\" />"
+      },
+      {
+        "line": 793,
+        "text": "Save",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 805,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 824,
+        "text": "Skip rows containing \"Total\" in column A",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"skip-total\" className=\"text-xs cursor-pointer\">"
+      },
+      {
+        "line": 847,
+        "text": "Import Mode",
+        "type": "jsx-text",
+        "context": "<AlertTitle>Import Mode</AlertTitle>"
+      },
+      {
+        "line": 905,
+        "text": "Import Errors",
+        "type": "jsx-text",
+        "context": "<AlertTitle>Import Errors</AlertTitle>"
+      },
+      {
+        "line": 933,
+        "text": "Download the template and compare it with your file structure",
+        "type": "jsx-text",
+        "context": "<li>Download the template and compare it with your file structure</li>"
+      },
+      {
+        "line": 976,
+        "text": "Total Phases",
+        "type": "jsx-text",
+        "context": "<div className=\"text-xs text-muted-foreground\">"
+      },
+      {
+        "line": 984,
+        "text": "Total Activities",
+        "type": "jsx-text",
+        "context": "<div className=\"text-xs text-muted-foreground\">"
+      },
+      {
+        "line": 1008,
+        "text": "Total Budget Percentage:",
+        "type": "jsx-text",
+        "context": "<span className=\"font-medium\">Total Budget Percentage:</span>"
+      },
+      {
+        "line": 1047,
+        "text": "Status",
+        "type": "jsx-text",
+        "context": "<th className=\"px-2 py-2 text-center font-medium\">Status</th>"
+      },
+      {
+        "line": 1079,
+        "text": "Total:",
+        "type": "jsx-text",
+        "context": "<td colSpan={3} className=\"px-2 py-2 text-right\">Total:</td>"
+      },
+      {
+        "line": 1186,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => onOpenChange(false)}>"
+      }
+    ],
+    "src/components/ProjectPhases/DependencyDialog.tsx": [
+      {
+        "line": 133,
+        "text": "Dependency Type",
+        "type": "jsx-text",
+        "context": "<Label className=\"text-xs text-muted-foreground mb-1\">Dependency Type</Label>"
+      },
+      {
+        "line": 199,
+        "text": "Add Predecessor",
+        "type": "jsx-text",
+        "context": "<Plus className=\"h-4 w-4 mr-2\" />"
+      },
+      {
+        "line": 204,
+        "text": "No other activities in this phase to add as predecessors",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground text-center\">"
+      },
+      {
+        "line": 211,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => onOpenChange(false)}>"
+      },
+      {
+        "line": 214,
+        "text": "Save Dependencies",
+        "type": "jsx-text",
+        "context": "<Button onClick={handleSave}>"
+      }
+    ],
+    "src/components/ProjectPhases/CreateFromTemplateDialog.tsx": [
+      {
+        "line": 176,
+        "text": "Create Activities, Phases, and Schedule from Templates",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Create Activities, Phases, and Schedule from Templates</DialogTitle>"
+      },
+      {
+        "line": 267,
+        "text": "WBS Template (Optional)",
+        "type": "jsx-text",
+        "context": "<Label>WBS Template (Optional)</Label>"
+      },
+      {
+        "line": 292,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => onOpenChange(false)}>"
+      }
+    ],
+    "src/components/Photos/PhotoGallery.tsx": [
+      {
+        "line": 368,
+        "text": "Category",
+        "type": "jsx-text",
+        "context": "<Label>Category</Label>"
+      },
+      {
+        "line": 405,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 410,
+        "text": "Save Changes",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/Materials/TaxFeeCard.tsx": [
+      {
+        "line": 124,
+        "text": "Edit",
+        "type": "jsx-text",
+        "context": "<Pencil className=\"h-4 w-4 mr-2\" />"
+      }
+    ],
+    "src/components/Materials/MaterialsTable.tsx": [
+      {
+        "line": 286,
+        "text": "Custo Total Estimado",
+        "type": "jsx-text",
+        "context": "<TableCell colSpan={10} className=\"font-bold text-lg\">"
+      }
+    ],
+    "src/components/Materials/MaterialsTab.tsx": [
+      {
+        "line": 77,
+        "text": "Import from Excel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => setImportOpen(true)}>"
+      }
+    ],
+    "src/components/Materials/MaterialsImportDialog.tsx": [
+      {
+        "line": 182,
+        "text": "Import Materials from Excel",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Import Materials from Excel</DialogTitle>"
+      },
+      {
+        "line": 212,
+        "text": "Name",
+        "type": "jsx-text",
+        "context": "<TableHead>Name</TableHead>"
+      }
+    ],
+    "src/components/Materials/LaborTypeCard.tsx": [
+      {
+        "line": 91,
+        "text": "Edit",
+        "type": "jsx-text",
+        "context": "<Pencil className=\"h-4 w-4 mr-2\" />"
+      }
+    ],
+    "src/components/Layout/AppSidebar.tsx": [
+      {
+        "line": 728,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 735,
+        "text": "Open",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 675,
+        "text": "Close dimension selector",
+        "type": "attr:aria-label",
+        "context": "aria-label=\"Close dimension selector\""
+      },
+      {
+        "line": 756,
+        "text": "Close",
+        "type": "attr:aria-label",
+        "context": "aria-label=\"Close\""
+      }
+    ],
+    "src/components/Gantt/WeatherRestrictionPanel.tsx": [
+      {
+        "line": 233,
+        "text": "Add Restriction",
+        "type": "jsx-text",
+        "context": "<Plus className=\"h-4 w-4\" />"
+      },
+      {
+        "line": 254,
+        "text": "Affected Tasks",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium text-gray-600\">"
+      },
+      {
+        "line": 260,
+        "text": "Tasks impacted",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-gray-500 mt-1\">Tasks impacted</p>"
+      },
+      {
+        "line": 266,
+        "text": "Critical Tasks",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium text-gray-600\">"
+      },
+      {
+        "line": 372,
+        "text": "Add Weather Restriction",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Add Weather Restriction</DialogTitle>"
+      },
+      {
+        "line": 378,
+        "text": "Restriction Name",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"restriction-name\">Restriction Name</Label>"
+      },
+      {
+        "line": 394,
+        "text": "Start Date",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"start-date\">Start Date</Label>"
+      },
+      {
+        "line": 410,
+        "text": "End Date",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"end-date\">End Date</Label>"
+      },
+      {
+        "line": 468,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => setShowDialog(false)}>"
+      },
+      {
+        "line": 474,
+        "text": "Add Restriction",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/Gantt/UnifiedGanttChart.tsx": [
+      {
+        "line": 681,
+        "text": "Link Tasks",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 649,
+        "text": "Search tasks...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Search tasks...\""
+      }
+    ],
+    "src/components/Gantt/ScenarioExecutor.tsx": [
+      {
+        "line": 205,
+        "text": "Will increase allocation percentage on all tasks",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-blue-600 mt-2\">"
+      },
+      {
+        "line": 224,
+        "text": "Will decrease allocation percentage on all tasks",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-orange-600 mt-2\">"
+      },
+      {
+        "line": 232,
+        "text": "Execution Summary",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm font-medium mb-2\">Execution Summary</p>"
+      }
+    ],
+    "src/components/Gantt/ScenarioComparison.tsx": [
+      {
+        "line": 257,
+        "text": "Total Duration",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs font-medium text-green-700\">Total Duration</p>"
+      }
+    ],
+    "src/components/Gantt/ResourceLevelingVisualization.tsx": [
+      {
+        "line": 294,
+        "text": "View Resource:",
+        "type": "jsx-text",
+        "context": "<label className=\"text-sm font-medium\">View Resource:</label>"
+      },
+      {
+        "line": 300,
+        "text": "All Resources (Total Load)",
+        "type": "jsx-text",
+        "context": "<SelectItem value=\"all\">All Resources (Total Load)</SelectItem>"
+      },
+      {
+        "line": 394,
+        "text": "Assigned to tasks",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-gray-500 mt-1\">Assigned to tasks</p>"
+      }
+    ],
+    "src/components/Gantt/ResourceHistogram.tsx": [
+      {
+        "line": 175,
+        "text": "Resource Utilization Summary",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-base\">Resource Utilization Summary</CardTitle>"
+      },
+      {
+        "line": 187,
+        "text": "Used / Total",
+        "type": "jsx-text",
+        "context": "<th className=\"text-center font-semibold py-2 px-3\">Used / Total</th>"
+      }
+    ],
+    "src/components/Gantt/PortfolioDashboard.tsx": [
+      {
+        "line": 120,
+        "text": "Projects",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-muted-foreground\">Projects</p>"
+      },
+      {
+        "line": 127,
+        "text": "Tasks",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-muted-foreground\">Tasks</p>"
+      },
+      {
+        "line": 134,
+        "text": "Total Duration",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-muted-foreground\">Total Duration</p>"
+      },
+      {
+        "line": 149,
+        "text": "Portfolio Overview",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-base\">Portfolio Overview</CardTitle>"
+      },
+      {
+        "line": 154,
+        "text": "Total Cost",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs font-medium text-blue-600\">Total Cost</p>"
+      }
+    ],
+    "src/components/Gantt/MaterialConstraintManager.tsx": [
+      {
+        "line": 240,
+        "text": "Add Material",
+        "type": "jsx-text",
+        "context": "<Plus className=\"h-4 w-4\" />"
+      },
+      {
+        "line": 261,
+        "text": "Affected Tasks",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium text-gray-600\">"
+      },
+      {
+        "line": 286,
+        "text": "Critical tasks",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-gray-500 mt-1\">Critical tasks</p>"
+      },
+      {
+        "line": 384,
+        "text": "Add Material Constraint",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Add Material Constraint</DialogTitle>"
+      },
+      {
+        "line": 390,
+        "text": "Material Name",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"material-name\">Material Name</Label>"
+      },
+      {
+        "line": 406,
+        "text": "Description (optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"material-desc\">Description (optional)</Label>"
+      },
+      {
+        "line": 489,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => setShowDialog(false)}>"
+      },
+      {
+        "line": 495,
+        "text": "Add Material",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 409,
+        "text": "Add notes about this material...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Add notes about this material...\""
+      }
+    ],
+    "src/components/Gantt/GanttDependencyEditor.tsx": [
+      {
+        "line": 415,
+        "text": "Create Dependency",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Create Dependency</DialogTitle>"
+      },
+      {
+        "line": 431,
+        "text": "Dependency Type",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"dep-type\">Dependency Type</Label>"
+      },
+      {
+        "line": 490,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={handleCancelDependency}>"
+      },
+      {
+        "line": 493,
+        "text": "Create Link",
+        "type": "jsx-text",
+        "context": "<Button onClick={handleConfirmDependency} className=\"bg-amber-500 hover:bg-amber-600\">"
+      }
+    ],
+    "src/components/Gantt/EarnedValueDashboard.tsx": [
+      {
+        "line": 126,
+        "text": "Project Status",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-muted-foreground\">Project Status</p>"
+      }
+    ],
+    "src/components/Gantt/DependencyFormDialog.tsx": [
+      {
+        "line": 311,
+        "text": "Add Predecessor",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"search-predecessor\" className=\"text-base font-semibold\">"
+      },
+      {
+        "line": 329,
+        "text": "No matching tasks",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground p-3 italic\">No matching tasks</p>"
+      },
+      {
+        "line": 366,
+        "text": "Dependency Type",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"dep-type-form\">Dependency Type</Label>"
+      },
+      {
+        "line": 424,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 431,
+        "text": "Add Dependency",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 319,
+        "text": "Search tasks by name or ID...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Search tasks by name or ID...\""
+      }
+    ],
+    "src/components/Gantt/CriticalPathDashboard.tsx": [
+      {
+        "line": 206,
+        "text": "Total Slack",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-sm font-medium text-gray-600\">"
+      },
+      {
+        "line": 252,
+        "text": "Critical Path Tasks",
+        "type": "jsx-text",
+        "context": "<BarChart3 className=\"h-5 w-5\" />"
+      },
+      {
+        "line": 255,
+        "text": "Tasks with zero float that determine project completion date",
+        "type": "jsx-text",
+        "context": "<CardDescription>"
+      },
+      {
+        "line": 263,
+        "text": "Task Name",
+        "type": "jsx-text",
+        "context": "<TableHeader>Task Name</TableHeader>"
+      },
+      {
+        "line": 264,
+        "text": "Start Date",
+        "type": "jsx-text",
+        "context": "<TableHeader>Start Date</TableHeader>"
+      },
+      {
+        "line": 265,
+        "text": "End Date",
+        "type": "jsx-text",
+        "context": "<TableHeader>End Date</TableHeader>"
+      },
+      {
+        "line": 331,
+        "text": "Non-critical tasks with scheduling flexibility",
+        "type": "jsx-text",
+        "context": "<CardDescription>"
+      },
+      {
+        "line": 338,
+        "text": "Non-critical tasks:",
+        "type": "jsx-text",
+        "context": "<span>Non-critical tasks:</span>"
+      },
+      {
+        "line": 352,
+        "text": "Total project buffer:",
+        "type": "jsx-text",
+        "context": "<span>Total project buffer:</span>"
+      }
+    ],
+    "src/components/Gantt/CompressionAnalyzer.tsx": [
+      {
+        "line": 125,
+        "text": "Compression Analysis Summary",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-base\">Compression Analysis Summary</CardTitle>"
+      },
+      {
+        "line": 267,
+        "text": "Fast-track low-risk tasks only. Minimal cost increase.",
+        "type": "jsx-text",
+        "context": "<p>Fast-track low-risk tasks only. Minimal cost increase.</p>"
+      }
+    ],
+    "src/components/Gantt/BaselineScenarioManager.tsx": [
+      {
+        "line": 249,
+        "text": "Create and compare schedule scenarios",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-gray-500\">"
+      },
+      {
+        "line": 280,
+        "text": "End Date:",
+        "type": "jsx-text",
+        "context": "<span className=\"text-sm text-gray-600\">End Date:</span>"
+      },
+      {
+        "line": 286,
+        "text": "Tasks:",
+        "type": "jsx-text",
+        "context": "<span className=\"text-sm text-gray-600\">Tasks:</span>"
+      },
+      {
+        "line": 325,
+        "text": "End Date:",
+        "type": "jsx-text",
+        "context": "<span className=\"text-sm text-gray-600\">End Date:</span>"
+      },
+      {
+        "line": 386,
+        "text": "Create New Scenario",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Create New Scenario</DialogTitle>"
+      },
+      {
+        "line": 392,
+        "text": "Scenario Name",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"scenario-name\">Scenario Name</Label>"
+      },
+      {
+        "line": 408,
+        "text": "Type",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"scenario-type\">Type</Label>"
+      },
+      {
+        "line": 429,
+        "text": "Description (optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"scenario-desc\">Description (optional)</Label>"
+      },
+      {
+        "line": 445,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => setShowCreateDialog(false)}>"
+      },
+      {
+        "line": 451,
+        "text": "Create Scenario",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 432,
+        "text": "Add notes about this scenario...",
+        "type": "attr:placeholder",
+        "context": "placeholder=\"Add notes about this scenario...\""
+      }
+    ],
+    "src/components/Financial/HierarchicalLedgerTable.tsx": [
+      {
+        "line": 215,
+        "text": "Total:",
+        "type": "jsx-text",
+        "context": "<span>Total:</span>"
+      }
+    ],
+    "src/components/Financial/FinancialEntryForm.tsx": [
+      {
+        "line": 578,
+        "text": "Withholding Total (Retenções):",
+        "type": "jsx-text",
+        "context": "<span className=\"text-muted-foreground\">Withholding Total (Retenções):</span>"
+      },
+      {
+        "line": 582,
+        "text": "Net Amount (Líquido):",
+        "type": "jsx-text",
+        "context": "<span className=\"text-muted-foreground font-bold\">Net Amount (Líquido):</span>"
+      }
+    ],
+    "src/components/Financial/CurrencyConverter.tsx": [
+      {
+        "line": 63,
+        "text": "Converted Amount:",
+        "type": "jsx-text",
+        "context": "<span className=\"text-sm text-muted-foreground\">Converted Amount:</span>"
+      }
+    ],
+    "src/components/Financial/BudgetHealthCard.tsx": [
+      {
+        "line": 99,
+        "text": "Budget Overview",
+        "type": "jsx-text",
+        "context": "<h3 className=\"font-bold text-sm\">"
+      },
+      {
+        "line": 112,
+        "text": "Total Budget",
+        "type": "jsx-text",
+        "context": "<p className=\"text-[10px] text-muted-foreground font-medium uppercase tracking-wider\">"
+      },
+      {
+        "line": 124,
+        "text": "Total Spent",
+        "type": "jsx-text",
+        "context": "<p className=\"text-[10px] text-muted-foreground font-medium uppercase tracking-wider\">"
+      }
+    ],
+    "src/components/Estimates/EstimateWizard/DescriptionStep.tsx": [
+      {
+        "line": 243,
+        "text": "Click to upload files",
+        "type": "jsx-text",
+        "context": "<h3 className=\"text-lg font-semibold mb-2\">"
+      },
+      {
+        "line": 255,
+        "text": "Max 50MB per file, 200MB total",
+        "type": "jsx-text",
+        "context": "<p className=\"text-xs text-muted-foreground mt-4\">"
+      }
+    ],
+    "src/components/Documents/DragDropZone.tsx": [
+      {
+        "line": 138,
+        "text": "Release to upload files to this folder",
+        "type": "jsx-text",
+        "context": "<p className=\"mt-2 text-sm text-muted-foreground\">"
+      }
+    ],
+    "src/components/Documents/DocumentList.tsx": [
+      {
+        "line": 357,
+        "text": "Download",
+        "type": "jsx-text",
+        "context": "<Download className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 361,
+        "text": "Share",
+        "type": "jsx-text",
+        "context": "<Share2 className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 365,
+        "text": "Delete",
+        "type": "jsx-text",
+        "context": "<Trash2 className=\"mr-2 h-4 w-4\" />"
+      }
+    ],
+    "src/components/Dev/TranslationDevTools.tsx": [
+      {
+        "line": 233,
+        "text": "Save to Files (Auto)",
+        "type": "jsx-text",
+        "context": "<Save className=\"h-4 w-4\" />"
+      },
+      {
+        "line": 244,
+        "text": "Generate Report (Console)",
+        "type": "jsx-text",
+        "context": "<Languages className=\"h-4 w-4\" />"
+      },
+      {
+        "line": 266,
+        "text": "Download JSON Files",
+        "type": "jsx-text",
+        "context": "<Download className=\"h-4 w-4\" />"
+      }
+    ],
+    "src/components/Dashboard/ProjectsTimelineChart.tsx": [
+      {
+        "line": 41,
+        "text": "No projects available",
+        "type": "jsx-text",
+        "context": "<div className=\"h-[300px] flex items-center justify-center text-muted-foreground\">"
+      }
+    ],
+    "src/components/Dashboard/ProjectsStatusTable.tsx": [
+      {
+        "line": 113,
+        "text": "View Details",
+        "type": "jsx-text",
+        "context": "<Eye className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 117,
+        "text": "Add Expense",
+        "type": "jsx-text",
+        "context": "<DollarSign className=\"mr-2 h-4 w-4\" />"
+      },
+      {
+        "line": 121,
+        "text": "View Schedule",
+        "type": "jsx-text",
+        "context": "<Calendar className=\"mr-2 h-4 w-4\" />"
+      }
+    ],
+    "src/components/Dashboard/MiniCalendar.example.tsx": [
+      {
+        "line": 80,
+        "text": "Select Date",
+        "type": "jsx-text",
+        "context": "<h3 className=\"text-sm font-medium mb-2\">Select Date</h3>"
+      },
+      {
+        "line": 195,
+        "text": "Select a Date",
+        "type": "attr:title",
+        "context": "title=\"Select a Date\""
+      }
+    ],
+    "src/components/Dashboard/DemoDataWidget.tsx": [
+      {
+        "line": 45,
+        "text": "Demo Data Status",
+        "type": "jsx-text",
+        "context": "<CardTitle className=\"text-lg\">Demo Data Status</CardTitle>"
+      },
+      {
+        "line": 80,
+        "text": "Projects",
+        "type": "jsx-text",
+        "context": "<span className=\"text-sm font-medium\">Projects</span>"
+      }
+    ],
+    "src/components/CustomerPortal/DesktopQuoteComparison.tsx": [
+      {
+        "line": 235,
+        "text": "Sort by:",
+        "type": "jsx-text",
+        "context": "<span className=\"text-sm text-muted-foreground\">Sort by:</span>"
+      }
+    ],
+    "src/components/CustomerPortal/ApprovalSuccessScreen.tsx": [
+      {
+        "line": 60,
+        "text": "The supplier will be contacted to confirm the order",
+        "type": "jsx-text",
+        "context": "<li>The supplier will be contacted to confirm the order</li>"
+      },
+      {
+        "line": 67,
+        "text": "Your project manager will contact you to discuss alternatives",
+        "type": "jsx-text",
+        "context": "<li>Your project manager will contact you to discuss alternatives</li>"
+      }
+    ],
+    "src/components/CustomerPortal/ApprovalActionBar.tsx": [
+      {
+        "line": 212,
+        "text": "You are about to approve this quote. This action will:",
+        "type": "jsx-text",
+        "context": "<p>"
+      },
+      {
+        "line": 217,
+        "text": "Reject all other quotes for this request",
+        "type": "jsx-text",
+        "context": "<li>Reject all other quotes for this request</li>"
+      },
+      {
+        "line": 228,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<AlertDialogCancel disabled={isProcessing}>"
+      },
+      {
+        "line": 272,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<AlertDialogCancel disabled={isProcessing}>"
+      }
+    ],
+    "src/components/ClientPortal/Schedule/EventDetailsCard.tsx": [
+      {
+        "line": 41,
+        "text": "Event Details",
+        "type": "jsx-text",
+        "context": "<CardTitle>Event Details</CardTitle>"
+      },
+      {
+        "line": 90,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<div className=\"font-medium mb-1\">Description</div>"
+      }
+    ],
+    "src/components/ClientPortal/Dialogs/StartChatDialog.tsx": [
+      {
+        "line": 150,
+        "text": "Loading team members...",
+        "type": "jsx-text",
+        "context": "<div className=\"py-8 text-center text-sm text-muted-foreground\">Loading team members...</div>"
+      },
+      {
+        "line": 204,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/ClientPortal/Dialogs/PaymentModal.tsx": [
+      {
+        "line": 171,
+        "text": "Amount:",
+        "type": "jsx-text",
+        "context": "<span className=\"text-muted-foreground\">Amount:</span>"
+      },
+      {
+        "line": 215,
+        "text": "Payment Reference (Optional)",
+        "type": "jsx-text",
+        "context": "<Label htmlFor=\"reference\">Payment Reference (Optional)</Label>"
+      },
+      {
+        "line": 235,
+        "text": "Bank transfer details will be provided in the next step.",
+        "type": "jsx-text",
+        "context": "<div className=\"text-xs text-muted-foreground bg-blue-50 dark:bg-blue-950 p-2 rounded\">"
+      },
+      {
+        "line": 241,
+        "text": "Please contact us for check payment instructions.",
+        "type": "jsx-text",
+        "context": "<div className=\"text-xs text-muted-foreground bg-blue-50 dark:bg-blue-950 p-2 rounded\">"
+      },
+      {
+        "line": 253,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ],
+    "src/components/ClientPortal/Dialogs/InvoiceDetailsModal.tsx": [
+      {
+        "line": 110,
+        "text": "Invoice Details",
+        "type": "jsx-text",
+        "context": "<SheetTitle>Invoice Details</SheetTitle>"
+      },
+      {
+        "line": 163,
+        "text": "Description",
+        "type": "jsx-text",
+        "context": "<TableHead>Description</TableHead>"
+      },
+      {
+        "line": 166,
+        "text": "Amount",
+        "type": "jsx-text",
+        "context": "<TableHead className=\"text-right\">Amount</TableHead>"
+      },
+      {
+        "line": 280,
+        "text": "View Conversation",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" size=\"sm\" onClick={() => onOpenConversation?.(invoice.id)}>"
+      }
+    ],
+    "src/components/Architect/Tasks/TaskFormDialog.tsx": [
+      {
+        "line": 86,
+        "text": "Remove tag",
+        "type": "attr:title",
+        "context": "title=\"Remove tag\""
+      }
+    ],
+    "src/components/Architect/Projects/GrantAccessDialog.tsx": [
+      {
+        "line": 118,
+        "text": "Loading projects...",
+        "type": "jsx-text",
+        "context": "<div className=\"p-2 text-sm text-muted-foreground\">Loading projects...</div>"
+      },
+      {
+        "line": 120,
+        "text": "You don't own any projects yet. Create a project first.",
+        "type": "jsx-text",
+        "context": "<div className=\"p-2 text-sm text-muted-foreground\">"
+      },
+      {
+        "line": 132,
+        "text": "Only projects you own can have access granted",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground\">"
+      },
+      {
+        "line": 152,
+        "text": "Loading users...",
+        "type": "jsx-text",
+        "context": "<div className=\"p-2 text-sm text-muted-foreground\">Loading users...</div>"
+      },
+      {
+        "line": 204,
+        "text": "Loading grants...",
+        "type": "jsx-text",
+        "context": "<div className=\"text-sm text-muted-foreground py-4\">Loading grants...</div>"
+      },
+      {
+        "line": 269,
+        "text": "Close",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => onOpenChange(false)}>"
+      }
+    ],
+    "src/components/AI/CostPredictionCard.tsx": [
+      {
+        "line": 46,
+        "text": "AI-powered cost estimation based on similar projects",
+        "type": "jsx-text",
+        "context": "<CardDescription>"
+      },
+      {
+        "line": 71,
+        "text": "Predicted Total Cost",
+        "type": "jsx-text",
+        "context": "<p className=\"text-sm text-muted-foreground\">Predicted Total Cost</p>"
+      }
+    ],
+    "src/components/AI/AIRecommendationList.tsx": [
+      {
+        "line": 272,
+        "text": "Reject",
+        "type": "jsx-text",
+        "context": "<XCircle className=\"h-4 w-4\" />"
+      },
+      {
+        "line": 281,
+        "text": "View Details",
+        "type": "jsx-text",
+        "context": ">"
+      },
+      {
+        "line": 300,
+        "text": "Reject Recommendation",
+        "type": "jsx-text",
+        "context": "<DialogTitle>Reject Recommendation</DialogTitle>"
+      },
+      {
+        "line": 316,
+        "text": "Cancel",
+        "type": "jsx-text",
+        "context": "<Button variant=\"outline\" onClick={() => setRejectDialogOpen(false)}>"
+      },
+      {
+        "line": 323,
+        "text": "Reject",
+        "type": "jsx-text",
+        "context": ">"
+      }
+    ]
+  }
+}
